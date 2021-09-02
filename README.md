@@ -31,7 +31,7 @@ Néanmoins, pour ceux qui souhaitent des éclairages différents sur les notions
 
 - @varian2015 *Introduction à la microéconomie*
 - @varian2008 *Analyse Microéconomique*
-- @pindick2012 *Microéconomie**
+- @pindyck2012 *Microéconomie*
 - @jeleva2014 *Microéconomie*
 
 Et enfin une référence avancée, pour ceux qui cherchent les fondements mathématiques (en anglais):
