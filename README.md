@@ -40,4 +40,14 @@ Et enfin une référence avancée, pour ceux qui cherchent les fondements mathé
 
 # Plan du cours
 
+1. Rappels sur la concurrence pure et parfaite
+2. Monopoles
+    - Monopoles simples
+    - Monopoles discriminants
+    - Pouvoir de marché et principes de tarification
+3. Oligopoles
+    - Duopoles à la Cournot
+    - Duopoles à la Stackelberg
+    - Collusion
+
 # Références
