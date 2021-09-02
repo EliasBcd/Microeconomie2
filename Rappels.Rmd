@@ -1,0 +1,74 @@
+---
+title: 'Rappels : le marché concurrence pure et parfaite'
+author:
+    - "Elias Bouacida"
+    - "Antoine Terracol"
+date: "Septembre 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Les hypothèes de la concurrence pure et parfaite (CPP)
+
+1. Atomicité des agents
+2. Information parfaite
+3. Mobilité parfaite des facteurs de production
+4. Homogénéïté des biens
+5. Libre entrées et sorties des marchés
+
+L'hypothèse 1 implique que personne n'a d'influence *individuellement* sur les prix.
+En d'autres termes, chaque acteur est petit face au marché et considère le prix du marché comme une *donnée* qu'il ne peut pas influencer.
+C'est l'hypothèse dite aussi de *price-taker*.
+
+L'hypothèse 2 signifie que tous les acteurs disposent de toutes les informations pertinentes.
+Il n'y a, par exemple, pas de coût pour de recherche d'information.
+
+L'hypothèse 3 garantit l'homogénéïté spatiale du prix des facteurs.
+Les différences de coûts entre producteurs ne peuvent donc être dus qu'au différence technologique entre ceux-ci, et non à une différence de coût des facteurs de production.
+
+L'hypothèse 4 qu'il n'y notamment pas d'effet des marques.
+
+L'hypothèse 5 qu'il n'y pas de barrière à l'entrée dans le marché.
+Concrètement, cela implique qu'il est impossible de faire du bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.
+
+La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un *pouvoir de marché* aux entreprises en place.
+
+# L'équilibre de marché
+
+*Demande agrégée (D)* : Somme des demandes individuelles pour chaque niveau de prix.
+
+*Offre agrégée (S)* : Somme des offres individuelles pour chaque niveau de prix.
+
+L'équilibre de marché se fait à l'intersection entre S et D (quand S=D).
+
+Graph avec offre demande
+
+La courbe de demande correspond à la suite des prix de réserve des individus, c'est-à-dire aux prix maximal que chaque individu est prêt à payer pour obtenir une unité *supplémentaire* du bien.
+
+La courbe d'offre correspond à la série des coûts marginaux de production, c'est-à-dire les prix minimaux auxquels les producteurs souhaitent vendre une unité supplémentaire du bien.
+
+La vente de toutes les unités jusqu'à la quantité d'équilibre $q^*$ au prix $p^*$ procure un *surplus* aux agents économiques.
+
+Graph avec surplus
+
+**Propriétés :**
+
+- L'équilibre en CPP est celui qui **maximise** le *surplus total*.
+Tout autre couple prix/quantité abouti à un surplus total plus faible.
+- L'équilibre de CPP est *Pareto-optimal*, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
+(C'est ce qu'on appelle le 1er théorème du bien-être)
+
+Ces propriétés font de la CPP une "référence" par rapport à laquelle on peut comparer les résultats des autres structures de marché.
+
+# Perception par les agents isolés
+
+L'hypothèse d'atomicité indique que les agents individuels sont isolés au sein d'un très grand nombre d'autres agents.
+Ainsi, aucun agent n'a d'influence sur le prix en modifiant son comportement.
+Une conséquence direct est que le comportement des autres agents est perçu comme étant infiniment élastique.
+C'est-à-dire qu'un producteur sait qu'au prix de marché, il pourra vendre toute sa production, mais que s'il pratique un prix même légérement plus élevé, il ne vendra **rien**.
+Il perçoit ainsi une demande infiniment élastique au prix,  au niveau du prix $p^*$.
+
+GRAPH
