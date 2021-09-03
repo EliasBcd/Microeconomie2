@@ -5,8 +5,8 @@ author:
 - Antoine Terracol
 date: "Septembre 2021"
 output:
-  html_document: default
-  pdf_document: default
+  bookdown::pdf_book: default
+  bookdown::html_book: default
 ---
 
 ```{r setup, include=FALSE}
