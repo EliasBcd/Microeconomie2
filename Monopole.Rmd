@@ -1,0 +1,152 @@
+---
+title: "Le monopole"
+author:
+- Elias Bouacida
+- Antoine Terracol
+date: "Septembre 2021"
+output:
+  bookdown::pdf_book: default
+  bookdown::html_book: default
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r theme, echo=FALSE}
+library(ggplot2)
+theme_perso <- function(base_size = 14) {
+    theme_bw(base_size = base_size) %+replace%
+        theme(
+      # L'ensemble de la figure
+      plot.title = element_text(size = rel(1), face = "bold", margin = margin(0,0,5,0), hjust = 0),
+      # Zone où se situe le graphique
+      panel.grid.minor = element_blank(),
+      panel.border = element_blank(),
+      # Les axes
+      axis.title = element_text(size = rel(0.85), face = "bold"),
+      axis.text = element_text(size = rel(0.70), face = "bold"),
+      axis.line = element_line(color = "black", arrow = arrow(length = unit(0.3, "lines"), type = "closed")),
+      # La légende
+      legend.title = element_text(size = rel(0.85), face = "bold"),
+      legend.text = element_text(size = rel(0.70), face = "bold"),
+      legend.key = element_rect(fill = "transparent", colour = NA),
+      legend.key.size = unit(1.5, "lines"),
+      legend.background = element_rect(fill = "transparent", colour = NA),
+      # Les étiquettes dans le cas d'un facetting
+      strip.background = element_rect(fill = "#17252D", color = "#17252D"),
+      strip.text = element_text(size = rel(0.85), face = "bold", color = "white", margin = margin(5,0,5,0))
+    )
+}
+
+theme_set(theme_perso())
+```
+
+# Le monopole
+
+::: {.definition name="Monopole"}
+Un *monopole* est sur un marché donné l'unique entreprise qui produit le bien.
+:::
+
+
+C'est le cas extrême opposé à la concurrence pure et parfaite, du côté du producteur.
+Il est intéressant à étudier car il nous renseigne sur les principaux aspects du comportement des entreprises dans les cas intermédiaires.
+
+
+Il y a de nombreuses raisons qui aboutissent à l'existence de monopoles.
+Les principales sont:
+
+- Légales, à cause de réglementation particulières.
+C'est ce qu'on appelle en général des professions réglementées, comme les avocats, les bureaux de tabac, les taxis...
+- Légales, à cause des brevets sur une technologie données (industrie pharmaceutique...)
+- Historique, le premier arrivé
+- Monopoles *naturels*: en présence d'économies d'échelles, produire une quantité donnée revient moins cher avec une seule firme qu'avec plusieurs.
+C'est notamment les cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, etc).
+Plus généralement, les industries avec des coûts fixes / coûts d'entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile...)
+- Exclusivité sur la production de certaines matières premières (cuivre au Chili, terres rares en Chine,...)
+- Coalitions créant un cartel 
+
+# Recette et recette marginale
+
+## Définition
+
+A la différence du cas de la concurrence pure et parfaite, le monopole perçoit la courbe de demande agrégée, et non plus celle avec une élasticité infinie.
+Le choix de la quantité qu'il met sur le marché modifie le prix auquel il pourra vendre sa production, et il le sait.  
+Il va choisir **un** des paramètres du couple $(x, P(x))$, et l'autre en découlera, à travers la demande $P(x)$.
+Autrement dit, s'il choisit $x$, $P(x)$ sera déterminé par la demande (inverse).
+Si, au contraire, il choisit $P$, $x$ sera déterminé par la demande.
+
+En CPP, la recette totale du producteur individuel était $R(x) = x\cdot P(q^*)$, où $x$ est sa production individuel, $q^*$ la quantité d'équilibre sur le marché (résultat de la production de *toutes* les entreprises présentes sur le marché) et $P(q^*)=p^*$ est le prix d'équilibre.
+
+En monopole, le prix dépend de la production du monopole (ou l'inverse, peu importe) :
+\[
+R(x) = x\cdot P(x)
+\]
+
+::: {.definition name="Recette marginale"}
+La recette marginale correspond à la variation de la recette totale provoquée par une "petite" variation $\Delta q$ de la quantité mise sur le marché.
+
+\[R_m(q) = \lim_{\Delta q\to 0} \frac{R(q+\Delta q)-q}{\Delta q} = \frac{d R(q)}{d q} = R'(q)\]
+:::
+
+La recette marginale est mesurée en unité monétaire par unité de bien (comme le prix).
+
+## Recette marginale et courbe de demande
+
+Comme la courbe de demande est décroissante (l’élasticité prix de la demande est négative $\varepsilon_{q/P_q} <0$), $P(q)$ et $q$ ont une relation inverse. 
+Autrement dit, si $q$ augmente, alors $p$ baisse, et réciproquement.
+
+Cela implique que la recette totale va augmenter ou baisser suivant les propriétés de la courbe de demande.
+
+GRAPH MONTRANT LES GAINS / PERTES DU PRODUCTEUR
+
+Quel est le paramètre important de la courbe de demande qui détermine si le revenu $R$ augmente ou diminue (càd si $R_m$ est positive ou négative) ?
+
+\begin{align*}
+R(q) & = qP(q)\\
+R_m(q)& = \frac{dR(q)}{dq} \\
+& = \frac{d (qP(q))}{dq} \\
+& = P(q) + q\frac{d P(q)}{dq} \\
+& = P(q)\left(1 + \frac{q}{P(q)}\frac{d P(q)}{dq} \right)\\
+& = P(q)\left(1 + \frac{1}{\varepsilon_{q/P_q}}\right)
+\end{align*}
+
+Rappel : $\frac{P(q)}{q}\frac{dq}{dP(q)} = \varepsilon_{q/P_q} <0$
+
+\begin{equation}
+R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/P_q}|}\right)\\
+(\#eq:rm)
+\end{equation}
+
+
+De l'équation \@ref(eq:rm), on voit clairement que le signe de $R_m$ dépend de l'élasticité prix de la demande.
+
+1. Si la demande est élastique ($|\varepsilon_{q/P_q}|>1$), alors $R_m(q)>0$, donc si la quantité augmente, le revenu augmente.
+2. Si la demande est inélastique ($|\varepsilon_{q/P_q}|<1$), alors $R_m(q)<0$, donc si la quantité augmente, le revenu diminue.
+
+GRAPH avec la représentation des élasticité sur la demande.
+
+## Représentation graphique
+
+La courbe de recette marginale est toujours située en-dessous de la courbe de demande :
+\[
+R_m(q) = P(q) + q\frac{d P(q)}{dq} < P(q)
+\]
+et $\frac{d P(q)}{dq}$ est négative (la demande est décroissante quand le prix augmente).
+
+### Exemple avec une courbe de demande linéaire
+
+Prenons maintenant l'exemple d'une courbe de demande linéaire quelconque $P(q) = a-bq$ ($a$ et $b$ sont des paramètres quelconques).
+On obtient alors $R_m(q) = a-2bq$.  
+Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus forte que la demande, et ayant la même ordonnée à l'origine.
+La recette marginale divise en deux  tout segment horizontal entre l'axe des ordonnées et la courbe de demande.
+
+GRAPH
+
+La recette marginale est atteinte lorsque la valeur absolue de l'élasticité prix de la demande est égale à 1 ($|\varepsilon_{q/P_q}|=1$).
+
+GRAPH 
+
+GRAPH mesure de la recette totale.
