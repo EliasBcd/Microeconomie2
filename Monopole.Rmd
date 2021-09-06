@@ -5,17 +5,17 @@ author:
 - Antoine Terracol
 date: "Septembre 2021"
 output:
-  bookdown::pdf_book: default
   bookdown::html_book: default
+  bookdown::pdf_book: default
 ---
 
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = F, warning = F)
 ```
 
-```{r theme, echo=FALSE}
+```{r theme}
 library(ggplot2)
 theme_perso <- function(base_size = 14) {
     theme_bw(base_size = base_size) %+replace%
@@ -26,18 +26,18 @@ theme_perso <- function(base_size = 14) {
       panel.grid.minor = element_blank(),
       panel.border = element_blank(),
       # Les axes
-      axis.title = element_text(size = rel(0.85), face = "bold"),
-      axis.text = element_text(size = rel(0.70), face = "bold"),
+      axis.title = element_text(size = rel(1), face = "bold"),
+      axis.text = element_text(size = rel(1), face = "bold"),
       axis.line = element_line(color = "black", arrow = arrow(length = unit(0.3, "lines"), type = "closed")),
       # La légende
-      legend.title = element_text(size = rel(0.85), face = "bold"),
-      legend.text = element_text(size = rel(0.70), face = "bold"),
+      legend.title = element_text(size = rel(1), face = "bold"),
+      legend.text = element_text(size = rel(1), face = "bold"),
       legend.key = element_rect(fill = "transparent", colour = NA),
       legend.key.size = unit(1.5, "lines"),
       legend.background = element_rect(fill = "transparent", colour = NA),
       # Les étiquettes dans le cas d'un facetting
       strip.background = element_rect(fill = "#17252D", color = "#17252D"),
-      strip.text = element_text(size = rel(0.85), face = "bold", color = "white", margin = margin(5,0,5,0))
+      strip.text = element_text(size = rel(1), face = "bold", color = "white", margin = margin(5,0,5,0))
     )
 }
 
@@ -100,7 +100,51 @@ Autrement dit, si $q$ augmente, alors $p$ baisse, et réciproquement.
 
 Cela implique que la recette totale va augmenter ou baisser suivant les propriétés de la courbe de demande.
 
-GRAPH MONTRANT LES GAINS / PERTES DU PRODUCTEUR
+
+```{r base, include=FALSE}
+
+x=seq(0, 1, length=11)
+df <- data.frame(x)
+
+D <- function(q){1-q}
+
+lab1 <-expression("P(q+"*Delta*'q)')
+lab2 <-expression("q+"*Delta*'q')
+
+S1 = data.frame(x = c(0, 0.1), y = c(0.9, 0.9))
+S2 = data.frame(x = c(0.1, 0.2), y = c(0.8, 0.8))
+S3 = data.frame(x = c(0, 0.8), y = c(0.2, 0.2))
+S4 = data.frame(x = c(0.8, 0.9), y = c(0.1, 0.1))
+
+p <- ggplot(df, aes(x=x)) +
+    stat_function(fun=function(x) D(x), colour = "blue") +
+    scale_y_continuous(expand = c(0, 0), breaks = c(0.1, 0.2, 0.8, 0.9), labels = c(lab1, 'P(q)', lab1, 'P(q)'), limits = c(0, 1.2)) +
+    scale_x_continuous(expand = c(0, 0), breaks = c(0.1, 0.2, 0.8, 0.9),  labels = c('q', lab2, 'q', lab2), limits = c(0, 1.2)) +
+    labs(x="quantité", y = "prix", title="Recette marginale d'un monopole") +
+    annotate("text", x = 0.3, y = 1, label ="courbe de demande", colour = "blue") +
+    geom_segment(x=0.9, y=0, xend = 0.9, yend = 0.1, linetype="dashed") +
+    geom_segment(x=0.8, y=0, xend = 0.8, yend = 0.2, linetype="dashed") +
+    geom_segment(x=0.2, y=0, xend = 0.2, yend = 0.8, linetype="dashed") +
+    geom_segment(x=0.1, y=0, xend = 0.1, yend = 0.9, linetype="dashed") +
+    geom_segment(x=0, y = 0.9, xend = 0.1, yend = 0.9, linetype="dashed") +
+    geom_segment(x=0, y = 0.8, xend = 0.2, yend = 0.8, linetype="dashed") +
+    geom_segment(x=0, y = 0.2, xend = 0.8, yend = 0.2, linetype="dashed") +
+    geom_segment(x=0, y = 0.1, xend = 0.9, yend = 0.1, linetype="dashed")
+
+```
+
+```{r recette_marginale, include=T}
+p1 <- p
+
+p1 + geom_ribbon(data = S1, aes(x=x, ymin=0.8, ymax = y), fill="green", alpha = 0.5) +
+    geom_ribbon(data = S2, aes(x=x, ymin=0, ymax = y), fill="red", alpha = 0.5) +
+    geom_ribbon(data = S3, aes(x=x, ymin=0.1, ymax = y), fill="red", alpha = 0.5) +
+    geom_ribbon(data = S4, aes(x=x, ymin=0, ymax = y), fill="green", alpha = 0.5) +
+  annotate("text", x=0.05, y=0.85, label="+", colour="darkgreen", size = rel(10)) +
+  annotate("text", x=0.4, y=0.15, label="-", colour="darkred", size = rel(10)) +
+  annotate("text", x=0.15, y=0.4, label="-", colour="darkred", size = rel(10)) +
+  annotate("text", x=0.85, y=0.05, label="+", colour="darkgreen", size = rel(10))
+```
 
 Quel est le paramètre important de la courbe de demande qui détermine si le revenu $R$ augmente ou diminue (càd si $R_m$ est positive ou négative) ?
 
@@ -126,7 +170,22 @@ De l'équation \@ref(eq:rm), on voit clairement que le signe de $R_m$ dépend de
 1. Si la demande est élastique ($|\varepsilon_{q/P_q}|>1$), alors $R_m(q)>0$, donc si la quantité augmente, le revenu augmente.
 2. Si la demande est inélastique ($|\varepsilon_{q/P_q}|<1$), alors $R_m(q)<0$, donc si la quantité augmente, le revenu diminue.
 
-GRAPH avec la représentation des élasticité sur la demande.
+```{r elasticite}
+p2 <- p;
+
+lab1 = expression('|'*epsilon*'|'>1)
+lab2 = expression('|'*epsilon*'|'<1)
+lab3 = expression('|'*epsilon*'|'==1)
+
+
+p2 + geom_segment(x=0, y=0, xend = 0.5, yend = 0.5, linetype="dashed") +
+  geom_segment(x=0, y=1, xend = 0.5, yend = 0.5, colour="green") +
+    geom_segment(x=1, y=0, xend = 0.5, yend = 0.5, colour="red") +
+  annotate("text", x=0.35, y=0.75, label=lab1, size = 10, colour="darkgreen") +
+  annotate("text", x=0.85, y=0.25, label=lab2, size = 10, colour="darkred") +
+  annotate("text", x=0.65, y=0.5, label=lab3, size = 10, colour="darkblue") +
+  annotate("point", x=0.5, y=0.5, label=lab3, size = 4, colour="darkblue")
+```
 
 ## Représentation graphique
 
