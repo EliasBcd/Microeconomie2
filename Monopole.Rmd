@@ -5,8 +5,8 @@ author:
 - Antoine Terracol
 date: "Septembre 2021"
 output:
-  bookdown::html_book: default
   bookdown::pdf_book: default
+  bookdown::html_book: default
 ---
 
 
@@ -291,7 +291,7 @@ R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/P_q}|}\right)\\
 \]
 Comme à l'optimum, d'après l'équation \@ref(eq:cpo), on doit avoir $R_m(q^*)=C_m(q^*)$, on a :
 \[
-R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/P_q}(q^*)|}\right) = C_m(q^*) (#eq:rmcm)
+R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/P_q}(q^*)|}\right) = C_m(q^*) (\#eq:rmcm)
 \]
 On observe ici un lien avec la solution en CPP.
 En effet, en CPP, l'élasticité de la demande au prix est perçue comme infinie, on aura donc bien $P(q^*) = C_m(q^*)$, la solution obtenue en CPP.
@@ -331,7 +331,7 @@ On en déduit :
 ::: {.definition #Lerner name="Indice de Lerner"}
 On définit l'indice de Lerner par :
 \[
-\frac{1}{|\varepsilon_{q/P_q}(q^*)|} = \frac{P(q^*) - C_m(q^*)}{P(q^*)} (#eq:Lerner)
+\frac{1}{|\varepsilon_{q/P_q}(q^*)|} = \frac{P(q^*) - C_m(q^*)}{P(q^*)} (\#eq:Lerner)
 \]
 La partie gauche de l'équation est l'indice de Lerner, et la partie droite indique la capacité du monopole à vendre au-dessus de son coût marginal, en pourcentage du prix total.
 :::
@@ -370,3 +370,290 @@ Il est donc possible d'avoir une amélioration parétienne qui améliore à la f
 Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d'autre pour obtenir cette amélioration.
 
 # Régulation des monopole
+
+Cette partie va traiter de la manière dont un gouvernement peut inciter un monopole à modifier son comportement.
+
+## Taxe unitaire
+
+Un gouvernement impose une taxe de $t$ unités monétaire par unité de bien produite.
+On a donc :
+
+\[
+\pi(q) = R(q) - C(q) -tq
+\]
+La condition de première ordre de la maximisation du producteur de l'équation \@ref(eq:cpo) devient alors :
+\[
+\begin{array}{rl}
+&\frac{d(R(q)-C(q) -tq)}{dq}(q^*) = 0\\
+\Leftrightarrow & R_m(q^*)-C_m(q*) -t = 0\\
+\Leftrightarrow & R_m(q^*) = C_m(q^*) + t
+\end{array}
+\]
+Le problème est exactement le même que précédemment, en intégrant la taxe dans le coût marginal.
+Pour le monopole, c'est comme si l'état ajoutait un coût $t$ à chaque unité produite, ce qui est effectivement ce que l'état fait.
+
+GRAPH avec une translation du coût marginal.
+
+Cela entraîne une diminution de la quantité produite et une augmentation du prix.
+Le surplus des consommateurs baisse, ainsi que celui du monopole.
+
+Une vue **alternative** à l'augmentation du coût marginal est de considérer que la taxe diminue la recette marginale de $t$ :
+\[
+ R_m(q^*) -t = C_m(q^*)
+\]
+
+GRAPH avec diminution de la recette marginale.
+
+Si le gouvernement utilise une taxe négative (= une subvention), alors le gouvernement peut augmenter la production et de diminuer le prix.
+
+## Taxe forfaitaire
+
+Avec une taxe forfaitaire, l'état prélève un montant $T$ indépendant de la quantité produite sur le profit du producteur.
+\[
+\pi(q) = R(q) - C(q) -T
+\]
+La condition du premier ordre de l'équation \@ref(eq:cpo) devient alors :
+\[
+\begin{array}{rl}
+& \frac{d(R(q)-C(q) -T)}{dq}(q^*) = 0\\
+\Leftrightarrow & R_m(q^*)-C_m(q*) = 0\\
+\Leftrightarrow & R_m(q^*) = C_m(q^*)
+\end{array}
+\]
+On retrouve exactement la même condition d'optimalité qu'en l'absence de taxe.
+Si elle n'est pas trop élevée, une taxe forfaitaire n'a *aucune* influence sur la quantité produite et prix.
+Si la taxe forfaitaire est très élevée, supérieure au profit $R(q^*) - C(q^*) <T$, le monopole préfère ne rien produire et le surplus social est nul.
+
+On peut donc envisager de combiner une subvention unitaire au monopole combinée à une taxe forfaitaire pour augmenter le surplus total.
+
+## Impôt sur profit
+
+Au lieu de taxer chaque unité produite, on peut taxe le niveau de profit à un taux $t$.
+Le profit devient alors
+\[
+\pi(q) = R(q) - C(q) -t( R(q) - C(q)) = (1-t)(R(q) - C(q))
+\]
+La condition du premier ordre de l'équation \@ref(eq:cpo) devient alors :
+\[
+\begin{array}{rl}
+&\frac{d((1-t)(R(q)-C(q)))}{dq}(q^*) = 0\\
+\Leftrightarrow & (1-t)(R_m(q^*)-C_m(q*)) = 0\\
+\Leftrightarrow & R_m(q^*) = C_m(q^*)
+\end{array}
+\]
+
+Comme pour la taxe forfaitaire, le comportement du monopole n'est pas modifié par une taxe sur le profit.
+On peut donc aussi envisager une subvention à la production et une taxe proportionnelle sur le profit.
+
+## Fixation d'un prix maximum
+
+Le gouvernement interdit de vendre au-dessus d'une prix maximum $p^{max}$
+
+Le gouvernement modifie ainsi la demande perçue par le producteur.
+
+GRAPH
+
+Si le prix maximum est inférieur au prix de concurrence pure et parfaite, les quantités produites peuvent devenir sous-optimale.
+Le gouvernement peux maximiser le surplus social en prenant le prix concurrentiel comme prix maximum.  
+*Rappel :* En CPP, on obtient le prix à l'aide de la courbe de coût marginal.
+L'équilibre est au moment a lieu quand le coût marginal est la demande se croisent.
+
+GRAPH
+
+Avec un prix maximum égal au prix de concurrence pure et parfaite, le revenu marginal comme la courbe de coût marginal au point d'équilibre de la concurrence pure et parfaite.
+
+Globalement, si le prix maximal est entre le prix de monopole et le prix de concurrence pure et parfaite, alors la quantité produite augment quand le prix maximal diminue.
+Si au contraire le prix maximal est inférieur au prix de CPP (et donc de monopole), alors la quantité produite diminue quand le prix maximal augmente.
+
+## Cas du monopole naturel
+
+Une situation de monopole naturel émerge à cause d'une structure particulière de la technologie de production et des coûts, plutôt qu'à cause d'une disposition légale.
+
+
+::: {definition name="Monopole naturel"}
+Un monopole naturel émerge en présence d'une technologie dotée de rendements d'échelles *croissants* dans la zone de production optimale.
+:::
+
+Les rendements d'échelles sont croissants lorsque la technologie de production $f$ est telle que :
+\[
+f(\lambda z_1, \lambda z_2, ...\lambda z_n) > \lambda f(z_1,z_2, ..., z_n)
+\]
+où les $z_i$ sont les facteurs de productions.
+En mots : une entreprise utilisant $\lambda$ fois plus de facteurs de productions qu'une petite entreprise produit plus que $\lambda$ petites entreprises réunies.
+
+En général, un monopole naturel émerge à cause de coûts fixes élevés.
+Par exemple, lorsqu'il faut investir dans un réseau (ferrés, téléphone, électricité, etc).
+
+Une conséquence des économies d'échelles est que le coût moyen est décroissant :
+\[
+C_M(f(\lambda z)) =\frac{\lambda z\cdot w_z}{f(\lambda z)} < C_M(\lambda f(z)) = \frac{\lambda z\cdot w_z}{\lambda f(z)}
+\]
+car $f(\lambda z)>\lambda f(z)$
+Cela signifie qu'une seule entreprise qui produit $f(\lambda z)$ est plus efficace que $\lambda$ entreprises qui produisent $\lambda f(z)$.
+
+De manière générale, il y a presque toujours une zone où le coût moyen est décroissant, mais elle est rarement très étendue.
+
+GRAPH avec zone d'économie d'échelle.
+
+*Rappel :* Lorsque le coût moyen est décroissant, c'est que le coût marginal est inférieur au coût moyen.
+\[
+CM(q) = \frac{C(q)}{q}
+\]
+\[
+CM'(q) =\frac{C'(q)q-C(q)}{q^2} = \frac{C_m(q)-C_M(q)}{q}
+\]
+Or $CM'(q)<0$, comme le coût marginal est décroissant.
+On en déduit donc que 
+\[
+C_m(q)-C_M(q)< 0 \Leftrightarrow C_m(q)<C_M(q)
+\]
+
+**Question :** Que se passe-t-il quand la fonction de demande inverse coupe la courbe de coût marginal dans la partie ou le coût marginal est inférieur au coût moyen (où $C_m<C_M$) ?
+
+GRAPH avec les courbes de coût moyen et coût marginaux.
+
+Si on impose une tarification au coût marginal, alors le monopole fait des pertes, car le prix est inférieur au coût moyen.
+La régulation "optimale" généralement utilisée impose *un prix au coût moyen* et une obligation de satisfaire toute la demande.
+Le monopole fait alors un profit nul.
+
+Une solution alternative est un prix égal au coût moyen assorti de subventions pour couvrir les pertes.
+
+# Le monopole discriminant
+
+Un monopole discriminant pratique un prix différent pour chaque (groupe de) consommateur.
+Pour cela, il doit pouvoir identifier l'appartenance de chaque consommateur à un groupe et les marchés entre les consommateurs doivent être hermétiques.
+En particulier, il ne faut pas qu'un consommateur puisse revendre son unité de produit à un autre consommateur.
+
+Il existe 3 types de discriminations par les prix, les discrimination du premier, deuxième et troisième degrés. 
+On ne traitera que les discriminations du premier et troisième degré.
+
+## Discrimination au premier degré (discrimination parfaite)
+
+Dans une discrimination parfaite, le monopole connaît la valorisation (prix de réserve) de chaque individu et lui fait payer le prix maximum qu'il est prêt à payer (son prix de réserve donc).
+Le consommateur ne retient alors aucun surplus, la *totalité* du surplus est capturé par le producteur.
+
+*Question :* Quel va être le niveau de production du monopole ?
+
+Comme le monopole fait payer chaque unité à la valorisation du consommateur, la première unité est vendue au prix P(1), la deuxième au prix P(2), etc.
+La recette totale est donc :
+\[
+R(q) = \int_0^q P(x) dx
+\]
+Notons le coût total $C(q)$.
+Le profit est :
+\[
+\pi(q) = R(q) - C(q) = \int_0^q P(x) dx -C(q)
+\]
+La condition du premier ordre s'écrit donc :
+\[
+\begin{array}{rl}
+&\frac{d\pi(q^*)}{dq} = 0\\
+\Leftrightarrow & \frac{d\int_0^{q^*} P(x) dx -C(q^*)}{dq} = 0\\
+\Leftrightarrow & P(q^*) - C_m(q^*) = 0\\
+\Leftrightarrow & P(q^*) = C_m(q^*)
+\end{array}
+\]
+La recette marginale est ici confondue avec la courbe de demande.
+L'optimum se trouve donc au point où la courbe de coût marginal coupe la courbe de demande (inverse).
+C'est la même condition qu'en CPP.
+Le monopole parfaitement discriminant produit donc la quantité de concurrence pure et parfaite.
+Le prix de la dernière unité vendue par le monopole est égal au prix de la concurrence pure et parfaite, même si les prix des autres unités vendues sont supérieur au prix de la CPP.
+
+GRAPH avec discrimination parfaite
+
+La situation de discrimination parfaite est un optimum de Pareto.
+En effet, le surplus social est maximal (mais capturé entièrement par le monopole).
+
+## Discrimination du troisième degré
+
+A faire si le temps le permet.
+
+Il s'agit de faire payer un prix différent à chaque groupe de consommateur, en fonction des caractéristiques de leurs fonctions de demande.
+Tous les membres d'un groupe payent donc le même prix, contrairement à la discrimination au premier degré.
+
+:::{.example name="Discrimination au troisième degré"}
+Les tarifs jeunes de la SNCF, les tarifs familles.
+Il est important de pouvoir identifier les groupes.
+:::
+
+*Question :* Comment répartir la production entre les différents groupes ?
+
+1. Quelle production totale ?
+2. Quelle répartition ?
+
+*Méthode :* On résout d'abord 2 en supposant que 1 est déjà résolu.
+On obtient alors la répartition en fonction de la production totale.
+Puis ou résout 1 à l'aide de la solution de 2.
+
+On modélise le problème de la manière suivante :
+
+- 2 groupes A et B;
+- Avec des fonctions de demande inverses $P_A(q_A)$ et $P_B(q_B)$;
+- Une quantité $q$ totale a été produite, qu'il faut répartir entre les 2 groupes : $q=q_A+q_B$
+
+Le problème du monopole s'écrit :
+\[
+\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q)
+\]
+La quantité totale $q$ est fixée, donc le coût total l'est aussi et peut être supprimé du problème de maximisation.
+On cherche donc :
+\[
+\max_{q_A, q_B} q_AP_A(q_A) + q_BP_B(q_B) 
+\]
+Avec $q=q_A+q_B$, donc $q_B=q-q_A$, le problème devient :
+\[
+\begin{array}{rl}
+&\max_{q_A, 0\leq q_A\leq q} q_AP_A(q_A) + (q-q_A)P_B(q-q_A) \\
+\Leftrightarrow &\max_{q_A, 0\leq q_A\leq q} R_A(q_A) + R_B(q-q_A) 
+\end{array}
+\]
+La condition du premier ordre s'écrit :
+\[
+\begin{array}{rl}
+&\frac{dR_A(q_A) + R_B(q-q_A) }{dq_A} = 0\\
+\Leftrightarrow & R_{mA}(q_A) - R_{mB}(q-q_A) = 0\\
+\Leftrightarrow & R_{mA}(q_A) = R_{mB}(q_B) 
+(\#eq:cpo3e)
+\end{array}
+\]
+L'équation \@ref(eq:cpo3e) nous dit que le monopole réparti la quantité totale produite de manière égaliser les recettes marginales entre les deux groupes.
+
+Intuitivement, si la recette marginale issue du groupe A est supérieure à celle issue du groupe B ($R_{mA}(q_A) > R_{mB}(q_B)$), alors en diminuant  la quantité $q_B$ dans le groupe B et en la transférant au groupe A, le monopole perd $R_{mB}(q_B)$ et gagne $R_{mA}(q_A)$, donc la recette totale augmente et le profit aussi.
+Inversement dans le cas opposé.
+
+Maintenant que la répartition est résolue, il faut trouver la quantité totale produite.
+Le problème devient maintenant :
+\[
+\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q_A+q_B)
+\]
+La condition du premier ordre s'obtient maintenant en dérivant suivant $q_A$ et $q_B$ séparément :
+\[
+\begin{array}{rcl}
+\frac{\partial\pi(q_A, q_B)}{\partial q_A} = 0&\Leftrightarrow& R_{mA}(q_A) = C_m(q_A+q_B)\\
+\frac{\partial\pi(q_A, q_B)}{\partial q_B} = 0&\Leftrightarrow& R_{mB}(q_B) = C_m(q_A+q_B)\\
+\end{array}
+\]
+Le monopole doit faire en sorte que le coût marginal de sa production totale soit égale à la recette marginale sur chacun des marchés.
+
+*Intuition :*
+Le monopole doit égaliser la recette marginale sur les deux marchés.
+Or le coût marginal dépend de la quantité *totale* produite, pas de la répartition entre les marchés.
+Si on est dans la situation telle que $C_m(q)<R_{mA}(q_A)$, alors il y a la possibilité de faire du profit sur le marché A (et le marché B par conséquent).
+Inversement, si $C_m(q)>R_{mA}(q_A)$, alors le monopole fait des pertes.
+
+\[
+\begin{array}{crcl}
+&R_{mA}(q_A^*) &=& R_{mB}(q_B^*)\\
+\Leftrightarrow & P_A(q_A^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_A}\right|}\right) & = & P_B(q_B^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_B}\right|}\right)
+\end{array}
+\]
+Sans perte de généralité, on peut supposer que $P_A(q_A^*)> P_B(q_B^*)$.
+On obtient alors que :
+\[
+1-\frac{1}{\left|\varepsilon_{q/p_A}\right|} <1-\frac{1}{\left|\varepsilon_{q/p_B}\right|}
+\]
+Autrement dit 
+\[
+\left|\varepsilon_{q/p_B}\right|>\left|\varepsilon_{q/p_A}\right|
+\]
+Le prix est donc plus faible pour le groupe où l’élasticité prix de la demande est plus élevée.

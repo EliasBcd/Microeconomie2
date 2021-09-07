@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="2.1 Définition | Le monopole" />
+<meta property="og:title" content="4.5 Cas du monopole naturel | Le monopole" />
 <meta property="og:type" content="book" />
 
 
@@ -23,9 +23,9 @@ MathJax.Hub.Config({
 </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta name="description" content="2.1 Définition | Le monopole">
+<meta name="description" content="4.5 Cas du monopole naturel | Le monopole">
 
-<title>2.1 Définition | Le monopole</title>
+<title>4.5 Cas du monopole naturel | Le monopole</title>
 
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
@@ -119,27 +119,51 @@ details > summary {
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="définition" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Définition</h2>
-<p>A la différence du cas de la concurrence pure et parfaite, le monopole perçoit la courbe de demande agrégée, et non plus celle avec une élasticité infinie.
-Le choix de la quantité qu’il met sur le marché modifie le prix auquel il pourra vendre sa production, et il le sait.<br />
-Il va choisir <strong>un</strong> des paramètres du couple <span class="math inline">\((x, P(x))\)</span>, et l’autre en découlera, à travers la demande <span class="math inline">\(P(x)\)</span>.
-Autrement dit, s’il choisit <span class="math inline">\(x\)</span>, <span class="math inline">\(P(x)\)</span> sera déterminé par la demande (inverse).
-Si, au contraire, il choisit <span class="math inline">\(P\)</span>, <span class="math inline">\(x\)</span> sera déterminé par la demande.</p>
-<p>En CPP, la recette totale du producteur individuel était <span class="math inline">\(R(x) = x\cdot P(q^*)\)</span>, où <span class="math inline">\(x\)</span> est sa production individuel, <span class="math inline">\(q^*\)</span> la quantité d’équilibre sur le marché (résultat de la production de <em>toutes</em> les entreprises présentes sur le marché) et <span class="math inline">\(P(q^*)=p^*\)</span> est le prix d’équilibre.</p>
-<p>En monopole, le prix dépend de la production du monopole (ou l’inverse, peu importe) :
+<div id="cas-du-monopole-naturel" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Cas du monopole naturel</h2>
+<p>Une situation de monopole naturel émerge à cause d’une structure particulière de la technologie de production et des coûts, plutôt qu’à cause d’une disposition légale.</p>
+<p>::: {definition name=“Monopole naturel”}
+Un monopole naturel émerge en présence d’une technologie dotée de rendements d’échelles <em>croissants</em> dans la zone de production optimale.
+:::</p>
+<p>Les rendements d’échelles sont croissants lorsque la technologie de production <span class="math inline">\(f\)</span> est telle que :
 <span class="math display">\[
-R(x) = x\cdot P(x)
+f(\lambda z_1, \lambda z_2, ...\lambda z_n) &gt; \lambda f(z_1,z_2, ..., z_n)
+\]</span>
+où les <span class="math inline">\(z_i\)</span> sont les facteurs de productions.
+En mots : une entreprise utilisant <span class="math inline">\(\lambda\)</span> fois plus de facteurs de productions qu’une petite entreprise produit plus que <span class="math inline">\(\lambda\)</span> petites entreprises réunies.</p>
+<p>En général, un monopole naturel émerge à cause de coûts fixes élevés.
+Par exemple, lorsqu’il faut investir dans un réseau (ferrés, téléphone, électricité, etc).</p>
+<p>Une conséquence des économies d’échelles est que le coût moyen est décroissant :
+<span class="math display">\[
+C_M(f(\lambda z)) =\frac{\lambda z\cdot w_z}{f(\lambda z)} &lt; C_M(\lambda f(z)) = \frac{\lambda z\cdot w_z}{\lambda f(z)}
+\]</span>
+car <span class="math inline">\(f(\lambda z)&gt;\lambda f(z)\)</span>
+Cela signifie qu’une seule entreprise qui produit <span class="math inline">\(f(\lambda z)\)</span> est plus efficace que <span class="math inline">\(\lambda\)</span> entreprises qui produisent <span class="math inline">\(\lambda f(z)\)</span>.</p>
+<p>De manière générale, il y a presque toujours une zone où le coût moyen est décroissant, mais elle est rarement très étendue.</p>
+<p>GRAPH avec zone d’économie d’échelle.</p>
+<p><em>Rappel :</em> Lorsque le coût moyen est décroissant, c’est que le coût marginal est inférieur au coût moyen.
+<span class="math display">\[
+CM(q) = \frac{C(q)}{q}
+\]</span>
+<span class="math display">\[
+CM&#39;(q) =\frac{C&#39;(q)q-C(q)}{q^2} = \frac{C_m(q)-C_M(q)}{q}
+\]</span>
+Or <span class="math inline">\(CM&#39;(q)&lt;0\)</span>, comme le coût marginal est décroissant.
+On en déduit donc que
+<span class="math display">\[
+C_m(q)-C_M(q)&lt; 0 \Leftrightarrow C_m(q)&lt;C_M(q)
 \]</span></p>
-<div class="definition">
-<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 2.1  (Recette marginale) </strong></span>La recette marginale correspond à la variation de la recette totale provoquée par une “petite” variation <span class="math inline">\(\Delta q\)</span> de la quantité mise sur le marché.</p>
-<p><span class="math display">\[R_m(q) = \lim_{\Delta q\to 0} \frac{R(q+\Delta q)-q}{\Delta q} = \frac{d R(q)}{d q} = R&#39;(q)\]</span></p>
+<p><strong>Question :</strong> Que se passe-t-il quand la fonction de demande inverse coupe la courbe de coût marginal dans la partie ou le coût marginal est inférieur au coût moyen (où <span class="math inline">\(C_m&lt;C_M\)</span>) ?</p>
+<p>GRAPH avec les courbes de coût moyen et coût marginaux.</p>
+<p>Si on impose une tarification au coût marginal, alors le monopole fait des pertes, car le prix est inférieur au coût moyen.
+La régulation “optimale” généralement utilisée impose <em>un prix au coût moyen</em> et une obligation de satisfaire toute la demande.
+Le monopole fait alors un profit nul.</p>
+<p>Une solution alternative est un prix égal au coût moyen assorti de subventions pour couvrir les pertes.</p>
 </div>
-<p>La recette marginale est mesurée en unité monétaire par unité de bien (comme le prix).</p>
-</div>
+<!-- </div> -->
 <p style="text-align: center;">
-<a href="2-recette-et-recette-marginale.html"><button class="btn btn-default">Previous</button></a>
-<a href="2.2-recette-marginale-et-courbe-de-demande.html"><button class="btn btn-default">Next</button></a>
+<a href="4.4-fixation-dun-prix-maximum.html"><button class="btn btn-default">Previous</button></a>
+<a href="5-le-monopole-discriminant.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>
 </div>

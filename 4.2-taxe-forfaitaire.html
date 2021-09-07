@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="2.1 Définition | Le monopole" />
+<meta property="og:title" content="4.2 Taxe forfaitaire | Le monopole" />
 <meta property="og:type" content="book" />
 
 
@@ -23,9 +23,9 @@ MathJax.Hub.Config({
 </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta name="description" content="2.1 Définition | Le monopole">
+<meta name="description" content="4.2 Taxe forfaitaire | Le monopole">
 
-<title>2.1 Définition | Le monopole</title>
+<title>4.2 Taxe forfaitaire | Le monopole</title>
 
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
@@ -119,27 +119,28 @@ details > summary {
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="définition" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Définition</h2>
-<p>A la différence du cas de la concurrence pure et parfaite, le monopole perçoit la courbe de demande agrégée, et non plus celle avec une élasticité infinie.
-Le choix de la quantité qu’il met sur le marché modifie le prix auquel il pourra vendre sa production, et il le sait.<br />
-Il va choisir <strong>un</strong> des paramètres du couple <span class="math inline">\((x, P(x))\)</span>, et l’autre en découlera, à travers la demande <span class="math inline">\(P(x)\)</span>.
-Autrement dit, s’il choisit <span class="math inline">\(x\)</span>, <span class="math inline">\(P(x)\)</span> sera déterminé par la demande (inverse).
-Si, au contraire, il choisit <span class="math inline">\(P\)</span>, <span class="math inline">\(x\)</span> sera déterminé par la demande.</p>
-<p>En CPP, la recette totale du producteur individuel était <span class="math inline">\(R(x) = x\cdot P(q^*)\)</span>, où <span class="math inline">\(x\)</span> est sa production individuel, <span class="math inline">\(q^*\)</span> la quantité d’équilibre sur le marché (résultat de la production de <em>toutes</em> les entreprises présentes sur le marché) et <span class="math inline">\(P(q^*)=p^*\)</span> est le prix d’équilibre.</p>
-<p>En monopole, le prix dépend de la production du monopole (ou l’inverse, peu importe) :
+<div id="taxe-forfaitaire" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Taxe forfaitaire</h2>
+<p>Avec une taxe forfaitaire, l’état prélève un montant <span class="math inline">\(T\)</span> indépendant de la quantité produite sur le profit du producteur.
 <span class="math display">\[
-R(x) = x\cdot P(x)
-\]</span></p>
-<div class="definition">
-<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 2.1  (Recette marginale) </strong></span>La recette marginale correspond à la variation de la recette totale provoquée par une “petite” variation <span class="math inline">\(\Delta q\)</span> de la quantité mise sur le marché.</p>
-<p><span class="math display">\[R_m(q) = \lim_{\Delta q\to 0} \frac{R(q+\Delta q)-q}{\Delta q} = \frac{d R(q)}{d q} = R&#39;(q)\]</span></p>
-</div>
-<p>La recette marginale est mesurée en unité monétaire par unité de bien (comme le prix).</p>
+\pi(q) = R(q) - C(q) -T
+\]</span>
+La condition du premier ordre de l’équation <a href="3.1-maximisation-du-profit.html#eq:cpo">(3.1)</a> devient alors :
+<span class="math display">\[
+\begin{array}{rl}
+&amp; \frac{d(R(q)-C(q) -T)}{dq}(q^*) = 0\\
+\Leftrightarrow &amp; R_m(q^*)-C_m(q*) = 0\\
+\Leftrightarrow &amp; R_m(q^*) = C_m(q^*)
+\end{array}
+\]</span>
+On retrouve exactement la même condition d’optimalité qu’en l’absence de taxe.
+Si elle n’est pas trop élevée, une taxe forfaitaire n’a <em>aucune</em> influence sur la quantité produite et prix.
+Si la taxe forfaitaire est très élevée, supérieure au profit <span class="math inline">\(R(q^*) - C(q^*) &lt;T\)</span>, le monopole préfère ne rien produire et le surplus social est nul.</p>
+<p>On peut donc envisager de combiner une subvention unitaire au monopole combinée à une taxe forfaitaire pour augmenter le surplus total.</p>
 </div>
 <p style="text-align: center;">
-<a href="2-recette-et-recette-marginale.html"><button class="btn btn-default">Previous</button></a>
-<a href="2.2-recette-marginale-et-courbe-de-demande.html"><button class="btn btn-default">Next</button></a>
+<a href="4.1-taxe-unitaire.html"><button class="btn btn-default">Previous</button></a>
+<a href="4.3-impôt-sur-profit.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>
 </div>

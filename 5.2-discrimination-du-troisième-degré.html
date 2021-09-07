@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="3.2 Propriétés de la solution de la maximisation du monopole | Le monopole" />
+<meta property="og:title" content="5.2 Discrimination du troisième degré | Le monopole" />
 <meta property="og:type" content="book" />
 
 
@@ -23,9 +23,9 @@ MathJax.Hub.Config({
 </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta name="description" content="3.2 Propriétés de la solution de la maximisation du monopole | Le monopole">
+<meta name="description" content="5.2 Discrimination du troisième degré | Le monopole">
 
-<title>3.2 Propriétés de la solution de la maximisation du monopole | Le monopole</title>
+<title>5.2 Discrimination du troisième degré | Le monopole</title>
 
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
@@ -119,35 +119,95 @@ details > summary {
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="propriétés-de-la-solution-de-la-maximisation-du-monopole" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Propriétés de la solution de la maximisation du monopole</h2>
-<p>On avait dans l’équation <a href="2.2-recette-marginale-et-courbe-de-demande.html#eq:rm">(2.1)</a> :
-<span class="math display">\[
-R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/P_q}|}\right)\\
-\]</span>
-Comme à l’optimum, d’après l’équation <a href="3.1-maximisation-du-profit.html#eq:cpo">(3.1)</a>, on doit avoir <span class="math inline">\(R_m(q^*)=C_m(q^*)\)</span>, on a :
-<span class="math display" id="eq:rmcm">\[
-R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/P_q}(q^*)|}\right) = C_m(q^*) \tag{3.3}
-\]</span>
-On observe ici un lien avec la solution en CPP.
-En effet, en CPP, l’élasticité de la demande au prix est perçue comme infinie, on aura donc bien <span class="math inline">\(P(q^*) = C_m(q^*)\)</span>, la solution obtenue en CPP.
-Dès lors que l’élasticité de la demande au prix n’est plus infinie en revanche, on obtient :
-<span class="math display">\[
- P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/P_q}(q^*)\right|}} &gt; C_m(q^*)
-\]</span></p>
-<p><em>Question :</em> Dans quelle zone d’élasticité le monopole va-t-il opérer ?</p>
-<p>On voit que si <span class="math inline">\(\left|\varepsilon_{q/P_q}(q^*)\right|&lt;1\)</span>, c’est-à-dire que si la demande est inélastique, alors <span class="math inline">\(1 - \frac{1}{\left|\varepsilon_{q/P_q}(q^*)\right|} &lt;0\)</span>, ce qui implique que la recette marginale <span class="math inline">\(R_m\)</span> est négative, et donc impossible à égaliser avec le coût marginal <span class="math inline">\(C_m\)</span>.<br />
-On peut voir la réponse d’une autre façon.
-Si la pente est inélastique, alors le revenu <span class="math inline">\(R\)</span> augmente quand la quantité <span class="math inline">\(q\)</span> baisse.
-Le coût total <span class="math inline">\(C\)</span> baisse aussi quand la quantité baisse.
-Le monopole aurait donc tout intérêt à réduire sa production lorsque la demande est inélastique.</p>
-<div class="corollary">
-<p><span id="cor:unlabeled-div-4" class="corollary"><strong>Corollary 3.1  </strong></span>Le monopole opère donc nécessairement dans la zone élastique de la courbe de demande : <span class="math inline">\(\left|\varepsilon_{q/P_q}(q^*)\right|&gt;1\)</span> .</p>
+<div id="discrimination-du-troisième-degré" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Discrimination du troisième degré</h2>
+<p>A faire si le temps le permet.</p>
+<p>Il s’agit de faire payer un prix différent à chaque groupe de consommateur, en fonction des caractéristiques de leurs fonctions de demande.
+Tous les membres d’un groupe payent donc le même prix, contrairement à la discrimination au premier degré.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-6" class="example"><strong>Example 5.1  (Discrimination au troisième degré) </strong></span>Les tarifs jeunes de la SNCF, les tarifs familles.
+Il est important de pouvoir identifier les groupes.</p>
 </div>
+<p><em>Question :</em> Comment répartir la production entre les différents groupes ?</p>
+<ol style="list-style-type: decimal">
+<li>Quelle production totale ?</li>
+<li>Quelle répartition ?</li>
+</ol>
+<p><em>Méthode :</em> On résout d’abord 2 en supposant que 1 est déjà résolu.
+On obtient alors la répartition en fonction de la production totale.
+Puis ou résout 1 à l’aide de la solution de 2.</p>
+<p>On modélise le problème de la manière suivante :</p>
+<ul>
+<li>2 groupes A et B;</li>
+<li>Avec des fonctions de demande inverses <span class="math inline">\(P_A(q_A)\)</span> et <span class="math inline">\(P_B(q_B)\)</span>;</li>
+<li>Une quantité <span class="math inline">\(q\)</span> totale a été produite, qu’il faut répartir entre les 2 groupes : <span class="math inline">\(q=q_A+q_B\)</span></li>
+</ul>
+<p>Le problème du monopole s’écrit :
+<span class="math display">\[
+\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q)
+\]</span>
+La quantité totale <span class="math inline">\(q\)</span> est fixée, donc le coût total l’est aussi et peut être supprimé du problème de maximisation.
+On cherche donc :
+<span class="math display">\[
+\max_{q_A, q_B} q_AP_A(q_A) + q_BP_B(q_B) 
+\]</span>
+Avec <span class="math inline">\(q=q_A+q_B\)</span>, donc <span class="math inline">\(q_B=q-q_A\)</span>, le problème devient :
+<span class="math display">\[
+\begin{array}{rl}
+&amp;\max_{q_A, 0\leq q_A\leq q} q_AP_A(q_A) + (q-q_A)P_B(q-q_A) \\
+\Leftrightarrow &amp;\max_{q_A, 0\leq q_A\leq q} R_A(q_A) + R_B(q-q_A) 
+\end{array}
+\]</span>
+La condition du premier ordre s’écrit :
+<span class="math display" id="eq:cpo3e">\[
+\begin{array}{rl}
+\frac{dR_A(q_A) + R_B(q-q_A) }{dq_A} = 0\\
+\Leftrightarrow &amp; R_{mA}(q_A) - R_{mB}(q-q_A) = 0
+\Leftrightarrow &amp; R_{mA}(q_A) = R_{mB}(q_B) 
+\tag{5.1}
+\end{array}
+\]</span>
+L’équation <a href="5.2-discrimination-du-troisième-degré.html#eq:cpo3e">(5.1)</a> nous dit que le monopole réparti la quantité totale produite de manière égaliser les recettes marginales entre les deux groupes.</p>
+<p>Intuitivement, si la recette marginale issue du groupe A est supérieure à celle issue du groupe B (<span class="math inline">\(R_{mA}(q_A) &gt; R_{mB}(q_B)\)</span>), alors en diminuant la quantité <span class="math inline">\(q_B\)</span> dans le groupe B et en la transférant au groupe A, le monopole perd <span class="math inline">\(R_{mB}(q_B)\)</span> et gagne <span class="math inline">\(R_{mA}(q_A)\)</span>, donc la recette totale augmente et le profit aussi.
+Inversement dans le cas opposé.</p>
+<p>Maintenant que la répartition est résolue, il faut trouver la quantité totale produite.
+Le problème devient maintenant :
+<span class="math display">\[
+\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q_A+q_B)
+\]</span>
+La condition du premier ordre s’obtient maintenant en dérivant suivant <span class="math inline">\(q_A\)</span> et <span class="math inline">\(q_B\)</span> séparément :
+<span class="math display">\[
+\begin{array}{rcl}
+\frac{\partial\pi(q_A, q_B)}{\partial q_A} = 0&amp;\Leftrightarrow&amp; R_{mA}(q_A) = C_m(q_A+q_B)\\
+\frac{\partial\pi(q_A, q_B)}{\partial q_B} = 0&amp;\Leftrightarrow&amp; R_{mB}(q_B) = C_m(q_A+q_B)\\
+\end{array}
+\]</span>
+Le monopole doit faire en sorte que le coût marginal de sa production totale soit égale à la recette marginale sur chacun des marchés.</p>
+<p><em>Intuition :</em>
+Le monopole doit égaliser la recette marginale sur les deux marchés.
+Or le coût marginal dépend de la quantité <em>totale</em> produite, pas de la répartition entre les marchés.
+Si on est dans la situation telle que <span class="math inline">\(C_m(q)&lt;R_{mA}(q_A)\)</span>, alors il y a la possibilité de faire du profit sur le marché A (et le marché B par conséquent).
+Inversement, si <span class="math inline">\(C_m(q)&gt;R_{mA}(q_A)\)</span>, alors le monopole fait des pertes.</p>
+<p><span class="math display">\[
+\begin{array}{crcl}
+&amp;R_{mA}(q_A^*) &amp;=&amp; R_{mB}(q_B^*)\\
+\Leftrightarrow &amp; P_A(q_A^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_A}\right|}\right) &amp; = &amp; P_B(q_B^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_B}\right|}\right)
+\end{array}
+\]</span>
+Sans perte de généralité, on peut supposer que <span class="math inline">\(P_A(q_A^*)&gt; P_B(q_B^*)\)</span>.
+On obtient alors que :
+<span class="math display">\[
+1-\frac{1}{\left|\varepsilon_{q/p_A}\right|} &lt;1-\frac{1}{\left|\varepsilon_{q/p_B}\right|}
+\]</span>
+Autrement dit
+<span class="math display">\[
+\left|\varepsilon_{q/p_B}\right|&gt;\left|\varepsilon_{q/p_A}\right|
+\]</span>
+Le prix est donc plus faible pour le groupe où l’élasticité prix de la demande est plus élevée.</p>
 </div>
+<!-- </div> -->
 <p style="text-align: center;">
-<a href="3.1-maximisation-du-profit.html"><button class="btn btn-default">Previous</button></a>
-<a href="3.3-indice-de-pouvoir-du-monopole.html"><button class="btn btn-default">Next</button></a>
+<a href="5.1-discrimination-au-premier-degré-discrimination-parfaite.html"><button class="btn btn-default">Previous</button></a>
 </p>
 </div>
 </div>
