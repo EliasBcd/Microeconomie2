@@ -95,7 +95,7 @@ La recette marginale est mesurée en unité monétaire par unité de bien (comme
 
 ## Recette marginale et courbe de demande
 
-Comme la courbe de demande est décroissante (l’élasticité prix de la demande est négative $\varepsilon_{q/P_q} <0$), $P(q)$ et $q$ ont une relation inverse. 
+Comme la courbe de demande est décroissante (l'élasticité prix de la demande est négative $\varepsilon_{q/P_q} <0$), $P(q)$ et $q$ ont une relation inverse. 
 Autrement dit, si $q$ augmente, alors $p$ baisse, et réciproquement.
 
 Cela implique que la recette totale va augmenter ou baisser suivant les propriétés de la courbe de demande.
@@ -209,3 +209,164 @@ La recette marginale est atteinte lorsque la valeur absolue de l'élasticité pr
 GRAPH 
 
 GRAPH mesure de la recette totale.
+
+# Décision de production du monopole
+
+## Maximisation du profit
+
+Comme dans le cas de la CPP, on suppose que le monopole cherche à maximiser son profit $\pi(q)=R(q)-C(q)$, où $C(q)$ est la fonction de coût (total) du monopole.  
+Il y a 2 conditions d'optimalités, les conditions de premier (la dérivée du profit à l'optimum est nulle: $\pi'(q^*)=0$) et second ordre (la dérivée seconde du profit à l'optimum est strictement négative $\pi''(q^*)<0$), ainsi qu'une contrainte, que le profit à l'optimum soit positif ($\pi(q^*)>0$).
+
+La condition de premier ordre s'exprime ainsi :
+\[
+\begin{array}{rcl}
+\frac{d\pi(q^*)}{dq} &=&0\\
+\Leftrightarrow \frac{dR(q^*)}{dq} - \frac{dC(q^*)}{dq} &=& 0\\
+\Leftrightarrow R_m(q^*) &=&C_m(q^*) (\#eq:cpo)
+\end{array}
+\]
+
+On doit avoir égalité du coût marginal et du revenu marginal à l'optimum.
+
+La condition du second ordre s'exprime ainsi :
+\[
+\begin{array}{rcl}
+\frac{d^2\pi(q^*)}{dq^2} &<&0\\
+\Leftrightarrow \frac{dR_m(q^*)}{dq} - \frac{dC_m(q^*)}{dq} &<& 0\\
+\Leftrightarrow \frac{dR_m(q^*)}{dq} &<&\frac{dC_m(q^*)}{dq} (\#eq:cso)
+\end{array}
+\]
+La dérivée de la recette marginale doit être inférieure à la dérivée du coût marginal.
+Autrement dit, la recette marginale doit croître moins vite que le coût marginal.
+Cette condition est en particulier vérifiée si la recette marginale est décroissante et le coût marginal croissant.
+
+Finalement, il faut vérifier que le profit à l'optimum est positif ($\pi(q^*)>0$).
+Dans le cas contraire, le marché n'existerait tout simplement pas, car le monopole ne voudrait pas produire le bien.
+
+GRAPH avec recette marginale et coût marginal.
+On tarifie sur  la courbe de **demande**.
+
+::: {.example name="Maximisation du monopole"}
+Prenons un monopole avec une fonction de coût $C(q)=50+q^2$.
+Le monopole fait face à une demande inverse $P(q) = 40-q$.
+
+Le coût marginal est :
+\[
+C_m(q) = \frac{dC(q)}{dq}=2q
+\]
+
+La recette totale est :
+\[
+R(q) = qP(q) = q(40-q) = 40q-q^2
+\]
+La recette marginale est donc :
+\[
+R_m(q) = \frac{dR(q)}{dq} = 40 - 2q
+\]
+Le profit vaut :
+\[
+\pi(q) = R(q)-C(q)
+\]
+Conformément à l'équation \@ref(eq:cpo), il est maximal lorsque :
+\[
+\begin{array}{rcl}
+R_m(q^*) &=&C_m(q^*)\\
+\Leftrightarrow 40 -2q &= &2q\\
+\Leftrightarrow q^*&=&10
+\end{array}
+\]
+La condition de second ordre de l'équation \@ref(eq:cso) est bien vérifiée, car $-2<2$.
+
+Le prix de vente vaut :
+\[P(q^*) = P(10) = 40-10 = 30\]
+La recette vaut 300, le coût 150. 
+On a donc un profit de **150**, qui est bien positif.
+:::
+
+## Propriétés de la solution de la maximisation du monopole
+
+On avait dans l'équation \@ref(eq:rm) :
+\[
+R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/P_q}|}\right)\\
+\]
+Comme à l'optimum, d'après l'équation \@ref(eq:cpo), on doit avoir $R_m(q^*)=C_m(q^*)$, on a :
+\[
+R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/P_q}(q^*)|}\right) = C_m(q^*) (#eq:rmcm)
+\]
+On observe ici un lien avec la solution en CPP.
+En effet, en CPP, l'élasticité de la demande au prix est perçue comme infinie, on aura donc bien $P(q^*) = C_m(q^*)$, la solution obtenue en CPP.
+Dès lors que l'élasticité de la demande au prix n'est plus infinie en revanche, on obtient :
+\[
+ P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/P_q}(q^*)\right|}} > C_m(q^*)
+\]
+
+*Question :* Dans quelle zone d'élasticité le monopole va-t-il opérer ?
+
+On voit que si $\left|\varepsilon_{q/P_q}(q^*)\right|<1$, c'est-à-dire que si la demande est inélastique, alors $1 - \frac{1}{\left|\varepsilon_{q/P_q}(q^*)\right|} <0$, ce qui implique que la recette marginale $R_m$ est négative, et donc impossible à égaliser avec le coût marginal $C_m$.  
+On peut voir la réponse d'une autre façon.
+Si la pente est inélastique, alors le revenu $R$ augmente quand la quantité $q$ baisse. 
+Le coût total $C$ baisse aussi quand la quantité baisse. 
+Le monopole aurait donc tout intérêt à réduire sa production lorsque la demande est inélastique.
+
+::: {.corollary}
+Le monopole opère donc nécessairement dans la zone élastique de la courbe de demande : $\left|\varepsilon_{q/P_q}(q^*)\right|>1$ .
+::: 
+
+## Indice de pouvoir du monopole
+
+La capacité du monopole à vendre à un prix supérieur au coût marginal dépend de la plus ou moins grande élasticité de la demande au prix.
+Cela permet de construire un indice du *pouvoir de monopole* à partir de l'élasticité du prix à la demande à l'équilibre.
+On a d'après l'équation \@ref(eq:rmcm) :
+\[
+R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/P_q}(q^*)|}\right) = C_m(q^*) 
+\]
+On en déduit :
+
+\[\begin{array}{rl}
+& C_m(q^*) = P(q^*) - \frac{P(q^*)}{|\varepsilon_{q/P_q}(q^*)|}\\
+\Leftrightarrow & P(q^*) - C_m(q^*) = \frac{P(q^*)}{|\varepsilon_{q/P_q}(q^*)|}
+\end{array}
+\]
+
+::: {.definition #Lerner name="Indice de Lerner"}
+On définit l'indice de Lerner par :
+\[
+\frac{1}{|\varepsilon_{q/P_q}(q^*)|} = \frac{P(q^*) - C_m(q^*)}{P(q^*)} (#eq:Lerner)
+\]
+La partie gauche de l'équation est l'indice de Lerner, et la partie droite indique la capacité du monopole à vendre au-dessus de son coût marginal, en pourcentage du prix total.
+:::
+
+On peut construire à partir de l'équation précédente le *markup pricing*.
+
+:::{.definition name="Markup pricing"}
+\[
+P(q^*) =\frac{|\varepsilon_{q/P_q}(q^*)|}{|\varepsilon_{q/P_q}(q^*)|-1} C_m(q^*)
+\]
+:::
+
+
+
+## Variation de la demande
+
+Les décisions de production du monopole et la fixation de son prix dépendent de la demande à laquelle il fait face et du coût marginal.
+Le monopole n'a **pas de courbe d'offre** au sens où il n'y a pas de relation univoque entre prix et quantité produite, à la différence des producteurs en CPP.
+En monopole, si la demande change, le monopole s'adapte, soit en changeant sa production, mais pas son prix, ou l'inverse.
+
+GRAPH avec changement de demandes
+
+En CPP, un changement de demande, si elle implique une changement du prix d'équilibre, entraîne forcément un changement dans la quantité produite par un producteur individuel.
+
+## L'inefficience du monopole
+
+La production du monopole est inférieure à la production en CPP, et le prix est supérieur au prix de CPP.
+
+GRAPH avec surplus du monopole
+
+Cela signifie que le surplus du producteur (son profit) est plus élevé en monopole qu'en CPP, et que le surplus des consommateur est plus faible.
+Il y a globalement une perte sèche de surplus total.
+**Le monopole est inefficace au sens de Pareto.**
+Il existe des consommateurs prêt à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche).
+Il est donc possible d'avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole.
+Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d'autre pour obtenir cette amélioration.
+
+# Régulation des monopole
