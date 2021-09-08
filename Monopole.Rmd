@@ -1,5 +1,5 @@
 ---
-title: "Le monopole"
+title: "Monopole"
 author:
 - Elias Bouacida
 - Antoine Terracol

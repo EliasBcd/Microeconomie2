@@ -1,0 +1,228 @@
+---
+title: "Oligopoles"
+author:
+- Elias Bouacida
+- Antoine Terracol
+date: "Septembre 2021"
+output:
+  bookdown::pdf_book: default
+  bookdown::html_book: default
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, warning = F)
+```
+
+```{r theme}
+library(ggplot2)
+theme_perso <- function(base_size = 14) {
+    theme_bw(base_size = base_size) %+replace%
+        theme(
+      # L'ensemble de la figure
+      plot.title = element_text(size = rel(1), face = "bold", margin = margin(0,0,5,0), hjust = 0),
+      # Zone où se situe le graphique
+      panel.grid.minor = element_blank(),
+      panel.border = element_blank(),
+      # Les axes
+      axis.title = element_text(size = rel(1), face = "bold"),
+      axis.text = element_text(size = rel(1), face = "bold"),
+      axis.line = element_line(color = "black", arrow = arrow(length = unit(0.3, "lines"), type = "closed")),
+      # La légende
+      legend.title = element_text(size = rel(1), face = "bold"),
+      legend.text = element_text(size = rel(1), face = "bold"),
+      legend.key = element_rect(fill = "transparent", colour = NA),
+      legend.key.size = unit(1.5, "lines"),
+      legend.background = element_rect(fill = "transparent", colour = NA),
+      # Les étiquettes dans le cas d'un facetting
+      strip.background = element_rect(fill = "#17252D", color = "#17252D"),
+      strip.text = element_text(size = rel(1), face = "bold", color = "white", margin = margin(5,0,5,0))
+    )
+}
+
+theme_set(theme_perso())
+```
+
+# Introduction
+
+On considère maintenant la situation où il n'y a plus une seule entreprise, mais plusieurs, qui sont en situation d'*interactions stratégiques*.
+Les décisions de chaque acteur dépend des décisions des autres acteurs (ou des anticipations de ces décisions).  
+On parle de *duopole* dans le cas où le marché compte deux entreprises et d'*oligopole* dans le cas où il compte plus que deux entreprises.  
+Les entreprises peuvent se faire concurrence de différentes manières :
+
+- En quantité, concurrence dite à la *Cournot* ;
+- En prix, concurrence à la *Bertrand* ;
+- En prenant une situation de leader ou de follower, à la *Stackelberg* ;
+- En format une entente, dans un *cartel* ;
+- Dans une concurrence spatiale, à la *Hotelling*.
+
+Nous verrons dans ce cours les concurrences à la Cournot et à la Stackelberg, ainsi que les cartels.
+
+
+# Duopole à la Cournot
+
+## Introduction
+
+On considère deux entreprises sur le même marché qui doivent choisir les quantités à produire.
+Le prix est déterminé par la quantité *totale* produite par les deux entreprises et la fonction de demande sur le marché.
+On a donc (où $C_1$ et $C_2$ sont les fonctions de coût total de chaque entreprise et $P$ est la fonction de demande inverse) :
+\[
+\begin{array}{rcl}
+\pi_1(q_1, q_2) &=& P(q_1+q_2)\cdot q_1-C_1(q_1)\\
+\pi_2(q_1, q_2) &=& P(q_1+q_2)\cdot q_2-C_2(q_2)
+\end{array}
+\]
+L'action d'une entreprise a des conséquences sur le profit réalisé par l'autre entreprise, même si celle-ci ne fait rien.
+En particulier, si $q_1$ augmente, alors le prix du marché diminue, au travers de la fonction de demande inverse $P$, et donc le profit de l'entreprise 2 $\pi_2$ diminue, et réciproquement si $q_2$ augmente.
+Il y a donc un conflit d'intérêt entre les producteurs.
+Chaque entreprise doit anticiper l'action de l'autre et réagir à cette anticipation le mieux possible.
+
+*Question :* Peut-il y avoir un équilibre dans cette situation ?
+
+## Formalisation du problème
+
+- 2 entreprises 1 et 2, avec chacune une fonction de coût $C_1(q_1)$ et $C_2(q_2)$.
+- Une fonction de demande inverse $P(q_1+q_2)$.
+
+### Expression des profits
+
+On a des profits :
+\[
+\begin{array}{rcl}
+\pi_1(q_1, q_2) &=& P(q_1+q_2)\cdot q_1-C_1(q_1)\\
+\pi_2(q_1, q_2) &=& P(q_1+q_2)\cdot q_2-C_2(q_2)
+\end{array}
+\]
+
+Supposons que l'entreprise 1 *croit* que l'entreprise 2 va produire $q_2^e$. 
+Quelle est sa production optimale ?
+Son problème est :
+\[
+\max_{q_1} \pi_1(q_1, q_2^e) =  q_1P(q_1+q_2^e)-C_1(q_1)
+\]
+On peut déduire de ce problème d'optimisation la *fonction de réaction* $q_1(q_2^e)=f_1(q_2^e)$ qui maximise $\pi_1(q_1)$ en fonction de la production anticipée $q_2^e$ de l'entreprise 2.
+
+De la même manière, l'entreprise 2 cherche à maximiser $\pi_2$ en fonction de la production anticipée $q_1^e$ de l'entreprise 1.
+Son programme est :
+\[
+\max_{q_2} \pi_2(q_1^e, q_2) =  q_1P(q_1^e+q_2)-C_2(q_2)
+\]
+Elle aura également une fonction de réaction $q_2(q_1^e)=f_2(q_1^e)$.
+
+### Forme des fonctions de réaction
+
+Si l'entreprise $i$ pense que l'entreprise $j$ ne va rien produire, alors elle se trouve dans une situation de monopole et se comporte comme tel.
+Elle produit de manière à égaliser coût marginal et recette marginale ($R_{im}=C_{im}$).
+
+Si l'entreprise $i$ pense que l'entreprise $j$ va produire $q_j^e>0$, alors elle est en monopole sur le **reste** de la demande.
+Cette dernière correspond à la demande totale décalée de $q_j^e>0$ vers la gauche.
+Le croisement entre recette marginale et coût marginal se fait donc à un niveau plus faible qu'auparavant.
+
+Plus l'entreprise $i$ pense que l'entreprise $j$ va produire une grande quantité, plus elle aura intérêt à réduire son offre.
+$q_i$ est décroissante en $q_j^e$
+
+GRAPH avec la fonction de demande translatée.
+
+### Caractérisation de l'équilibre
+
+Un équilibre $(q_1^e, q_2^e)$ doit être tel qu'aucune des deux entreprises n'ait intérêt à dévier unilatéralement :
+\[
+\begin{array}{rcl}
+\pi_1(q_1^e, q_2^e) &\geq& \pi_1(q_1, q_2^e)\quad \forall q_1\\
+\pi_2(q_1^e, q_2^e) &\geq& \pi_2(q_1^e, q_2)\quad \forall q_2
+\end{array}
+\]
+
+Les décisions de productions des entreprises doivent être compatibles entre elles.
+Chacun doit prendre en compte les réactions de l'autre.
+C'est ce qu'on appelle un **équilibre de Nash** : un équilibre où personne n'a intérêt à dévier unilatéralement.
+
+Dans le cas du duopole à la Cournot, cela correspond à l'intersection des fonctions de réactions des deux entreprises :
+\[
+\begin{array}{rcl}
+q_1^e&=&f_1(q_2^e)\\
+q_2^e&=&f_2(q_1^e)
+\end{array}
+\]
+
+GRAPH avec une situation d'équilibre.
+
+L'équilibre n'est pas nécessairement stable.
+La stabilité dépend de la pente des fonctions de réactions.
+
+GRAPH avec équilibre instable
+
+## Exemple
+
+### Données du problème
+
+Prenons les fonctions suivantes :
+
+\[
+\begin{array}{r}
+P(q_1+q_2) = a - b(q_1+q_2)\\
+C_1(q_1) = cq^2_1 \\
+C_2(q_2) = cq^2_2 \\
+\end{array}
+\]
+
+### Profits
+
+On en déduit les  profits :
+
+\[
+\begin{array}{rcl}
+\pi_1(q_1, q_2) &=& \left(a-b(q_1+q_2)\right)q_1-cq_1^2\\
+\pi_2(q_1, q_2) &=& \left(a-b(q_1+q_2)\right)q_2-cq_2^2
+\end{array}
+\]
+
+
+### Fonctions de réaction 
+
+Calculons la fonction de réaction de l'entreprise 1.
+Son profit est :
+\[
+\pi_1(q_1, q_2^e) = aq_1-bq_1^2-bq_2^eq_1-cq_1^2 = (a-bq_2^e)q_1-(b+c)q_1^2
+\]
+
+La condition du premier ordre suivant $q_1$ s'écrit (ici $q_2^e$ est considéré comme une donnée par l'entreprise 1) :
+
+\[
+\begin{array}{crcl}
+&\frac{\partial \pi_1}{\partial q_1}&=&0\\
+\Leftrightarrow & (a-bq_2^e)-2(b+c)q_1^* &=& 0\\
+\Leftrightarrow & q_1^* &=& \frac{(a-bq_2^e)}{2(b+c)}
+(\#eq:FR1)
+\end{array}
+\]
+
+On calcule de la même manière (i.e., en utilisant la condition du premier ordre sur les profits de l'entreprise 2) la fonction de réaction de l'entreprise 2 et on obtient par symétrie du problème une légère réécriture de l'équation \@ref(eq:FR1):
+
+\[
+q_2^* = \frac{(a-bq_1^e)}{2(b+c)}
+\]
+
+### Equilibre de Cournot
+
+Quel est alors l'équilibre de Cournot ?
+
+On doit avoir :
+\[
+\begin{array}{rcl}
+f_1(q_2^*) &=& q_1^*\\
+f_2(q_1^*) &=& q_2^*\\
+\end{array}
+\]
+Autrement dit :
+\[
+\begin{array}{rcl}
+q_1^* &=& \frac{(a-bq_2^*)}{2(b+c)} \\
+q_2^* &=&\frac{(a-bq_1^*)}{2(b+c)}\\
+\end{array}
+\]
+On résout le système et on obtient :
+\[
+q_1^*=q_2^* = \frac{a}{3b+2c}
+\]
