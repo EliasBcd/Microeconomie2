@@ -470,7 +470,7 @@ Si au contraire le prix maximal est inférieur au prix de CPP (et donc de monopo
 Une situation de monopole naturel émerge à cause d'une structure particulière de la technologie de production et des coûts, plutôt qu'à cause d'une disposition légale.
 
 
-::: {definition name="Monopole naturel"}
+::: {.definition name="Monopole naturel"}
 Un monopole naturel émerge en présence d'une technologie dotée de rendements d'échelles *croissants* dans la zone de production optimale.
 :::
 
