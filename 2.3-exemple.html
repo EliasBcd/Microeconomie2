@@ -99,6 +99,11 @@ details > summary {
 <li><a href="2.3-exemple.html#fonctions-de-réaction"><span class="toc-section-number">2.3.3</span> Fonctions de réaction</a></li>
 <li><a href="2.3-exemple.html#equilibre-de-cournot"><span class="toc-section-number">2.3.4</span> Equilibre de Cournot</a></li>
 </ul></li>
+<li><a href="2.4-indice-de-lerner.html#indice-de-lerner"><span class="toc-section-number">2.4</span> Indice de Lerner</a></li>
+<li><a href="2.5-extension-oligopole-à-la-cournot.html#extension-oligopole-à-la-cournot"><span class="toc-section-number">2.5</span> Extension : oligopole à la Cournot</a>
+<ul>
+<li><a href="2.5-extension-oligopole-à-la-cournot.html#indice-de-concentration-du-marché"><span class="toc-section-number">2.5.1</span> Indice de concentration du marché</a></li>
+</ul></li>
 </ul></li>
 <li><a href="3-duopole-à-la-stackelberg.html#duopole-à-la-stackelberg"><span class="toc-section-number">3</span> Duopole à la Stackelberg</a>
 <ul>
@@ -145,21 +150,24 @@ C_2(q_2) = cq^2_2 \\
 <p>Calculons la fonction de réaction de l’entreprise 1.
 Son profit est :
 <span class="math display">\[
-\pi_1(q_1, q_2^e) = aq_1-bq_1^2-bq_2^eq_1-cq_1^2 = (a-bq_2^e)q_1-(b+c)q_1^2
+\pi_1(q_1, q_2^a) = aq_1-bq_1^2-bq_2^aq_1-cq_1^2 = (a-bq_2^a)q_1-(b+c)q_1^2
 \]</span></p>
-<p>La condition du premier ordre suivant <span class="math inline">\(q_1\)</span> s’écrit (ici <span class="math inline">\(q_2^e\)</span> est considéré comme une donnée par l’entreprise 1) :</p>
+<p>La condition du premier ordre suivant <span class="math inline">\(q_1\)</span> s’écrit (ici <span class="math inline">\(q_2^a\)</span> est considéré comme une donnée par l’entreprise 1) :</p>
 <p><span class="math display" id="eq:FR1">\[
 \begin{array}{crcl}
 &amp;\frac{\partial \pi_1}{\partial q_1}&amp;=&amp;0\\
-\Leftrightarrow &amp; (a-bq_2^e)-2(b+c)q_1^* &amp;=&amp; 0\\
-\Leftrightarrow &amp; q_1^* &amp;=&amp; \frac{(a-bq_2^e)}{2(b+c)}
+\Leftrightarrow &amp; (a-bq_2^a)-2(b+c)q_1^* &amp;=&amp; 0\\
+\Leftrightarrow &amp; q_1^* &amp;=&amp; \frac{(a-bq_2^a)}{2(b+c)}
 \tag{2.1}
 \end{array}
 \]</span></p>
 <p>On calcule de la même manière (i.e., en utilisant la condition du premier ordre sur les profits de l’entreprise 2) la fonction de réaction de l’entreprise 2 et on obtient par symétrie du problème une légère réécriture de l’équation <a href="2.3-exemple.html#eq:FR1">(2.1)</a>:</p>
 <p><span class="math display">\[
-q_2^* = \frac{(a-bq_1^e)}{2(b+c)}
+q_2^* = \frac{(a-bq_1^a)}{2(b+c)}
 \]</span></p>
+<p>La symétrie du problème provient du fait que les deux entreprises ont exactement la même fonction de coût.
+Ce <em>n’est pas le cas en général</em>.
+Si dans un problème les fonctions de coût sont identiques, alors vous pouvez faire les calculs pour une seule entreprise et déduire simplement les résultats pour la seconde.</p>
 </div>
 <div id="equilibre-de-cournot" class="section level3" number="2.3.4">
 <h3><span class="header-section-number">2.3.4</span> Equilibre de Cournot</h3>
@@ -184,10 +192,9 @@ q_1^*=q_2^* = \frac{a}{3b+2c}
 \]</span></p>
 </div>
 </div>
-<!-- </div> -->
 <p style="text-align: center;">
 <a href="2.2-formalisation-du-problème.html"><button class="btn btn-default">Previous</button></a>
-<a href="3-duopole-à-la-stackelberg.html"><button class="btn btn-default">Next</button></a>
+<a href="2.4-indice-de-lerner.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>
 </div>

@@ -99,6 +99,11 @@ details > summary {
 <li><a href="2.3-exemple.html#fonctions-de-réaction"><span class="toc-section-number">2.3.3</span> Fonctions de réaction</a></li>
 <li><a href="2.3-exemple.html#equilibre-de-cournot"><span class="toc-section-number">2.3.4</span> Equilibre de Cournot</a></li>
 </ul></li>
+<li><a href="2.4-indice-de-lerner.html#indice-de-lerner"><span class="toc-section-number">2.4</span> Indice de Lerner</a></li>
+<li><a href="2.5-extension-oligopole-à-la-cournot.html#extension-oligopole-à-la-cournot"><span class="toc-section-number">2.5</span> Extension : oligopole à la Cournot</a>
+<ul>
+<li><a href="2.5-extension-oligopole-à-la-cournot.html#indice-de-concentration-du-marché"><span class="toc-section-number">2.5.1</span> Indice de concentration du marché</a></li>
+</ul></li>
 </ul></li>
 <li><a href="3-duopole-à-la-stackelberg.html#duopole-à-la-stackelberg"><span class="toc-section-number">3</span> Duopole à la Stackelberg</a>
 <ul>
@@ -119,9 +124,17 @@ details > summary {
 <div class="col-sm-12">
 <div id="introduction-1" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Introduction</h2>
-<p>On considère deux entreprises sur le même marché qui doivent choisir les quantités à produire.
-Le prix est déterminé par la quantité <em>totale</em> produite par les deux entreprises et la fonction de demande sur le marché.
-On a donc (où <span class="math inline">\(C_1\)</span> et <span class="math inline">\(C_2\)</span> sont les fonctions de coût total de chaque entreprise et <span class="math inline">\(P\)</span> est la fonction de demande inverse) :
+<p>On considère deux entreprises sur le même marché qui doivent choisir les quantités à produire, sans connaître la quantité choisie par l’autre (= décision simultanée).<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+Le prix est déterminé par la quantité <em>totale</em> produite par les deux entreprises et la fonction de demande sur le marché.</p>
+<p>Chaque entreprise est caractérisée par :</p>
+<ul>
+<li>Entreprise 1 : quantité <span class="math inline">\(q_1\)</span> produite avec un coût <span class="math inline">\(C_1(q_1)\)</span> ;</li>
+<li>Entreprise 2 : quantité <span class="math inline">\(q_2\)</span> produite avec un coût <span class="math inline">\(C_2(q_2)\)</span>.</li>
+</ul>
+<p>Les fonctions de coût sont <strong>différentes</strong> entre les deux entreprises, contrairement au cas du monopole discriminant au troisème degré, où l’on considérait <span class="math inline">\(C(q_1+q_2)\)</span>.</p>
+<p>La fonction de demande inverse sur le marché est <span class="math inline">\(P(q_1+q_2)\)</span>.
+C’est différent du monopole discriminant où il y avait une fonction de demande par segment.</p>
+<p>On a donc les fonctions de profit:
 <span class="math display">\[
 \begin{array}{rcl}
 \pi_1(q_1, q_2) &amp;=&amp; P(q_1+q_2)\cdot q_1-C_1(q_1)\\
@@ -133,6 +146,12 @@ En particulier, si <span class="math inline">\(q_1\)</span> augmente, alors le p
 Il y a donc un conflit d’intérêt entre les producteurs.
 Chaque entreprise doit anticiper l’action de l’autre et réagir à cette anticipation le mieux possible.</p>
 <p><em>Question :</em> Peut-il y avoir un équilibre dans cette situation ?</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Même marché : bien unique et prix unique.<a href="2.1-introduction-1.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 <p style="text-align: center;">
 <a href="2-duopole-à-la-cournot.html"><button class="btn btn-default">Previous</button></a>

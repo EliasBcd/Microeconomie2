@@ -46,7 +46,18 @@ theme_set(theme_perso())
 
 # Introduction
 
-On considère maintenant la situation où il n'y a plus une seule entreprise, mais plusieurs, qui sont en situation d'*interactions stratégiques*.
+On a vu jusqu'à présent deux cas extrêmes :
+
+- La concurrence pure et parfaite :
+il y a une infinité d'entreprise infinitésimales sur un marché  donné.
+- Le monopole : il y a une seule entreprise sur un marché donné.
+
+Dans les deux cas, l'entreprise ou les entreprises n'ont pas à se préoccuper des autres entreprises.
+Dans le cas du monopole, parce qu'il n'y en a pas.
+Dans le cas de la CPP, l'entreprise observe le prix du marché et prend sa décision en fonction de ce prix, et uniquement de ce prix. 
+Les actions des autres entreprises ne l'influence pas.
+
+On considère maintenant la situation où il n'y a plus une seule ou une infinité d'entreprises, mais plusieurs, qui sont en situation d'*interactions stratégiques*.
 Les décisions de chaque acteur dépend des décisions des autres acteurs (ou des anticipations de ces décisions).  
 On parle de *duopole* dans le cas où le marché compte deux entreprises et d'*oligopole* dans le cas où il compte plus que deux entreprises.  
 Les entreprises peuvent se faire concurrence de différentes manières :
@@ -64,9 +75,20 @@ Nous verrons dans ce cours les concurrences à la Cournot et à la Stackelberg, 
 
 ## Introduction
 
-On considère deux entreprises sur le même marché qui doivent choisir les quantités à produire.
+On considère deux entreprises sur le même marché qui doivent choisir les quantités à produire, sans connaître la quantité choisie par l'autre (= décision simultanée).^[Même marché : bien unique et prix unique.]
 Le prix est déterminé par la quantité *totale* produite par les deux entreprises et la fonction de demande sur le marché.
-On a donc (où $C_1$ et $C_2$ sont les fonctions de coût total de chaque entreprise et $P$ est la fonction de demande inverse) :
+
+Chaque entreprise est caractérisée par :
+
+- Entreprise 1 : quantité $q_1$ produite avec un coût $C_1(q_1)$ ;
+- Entreprise 2 : quantité $q_2$ produite avec un coût $C_2(q_2)$.
+
+Les fonctions de coût sont **différentes** entre les deux entreprises, contrairement au cas du monopole discriminant au troisème degré, où l'on considérait $C(q_1+q_2)$.
+
+La fonction de demande inverse sur le marché est $P(q_1+q_2)$.
+C'est différent du monopole discriminant où il y avait une fonction de demande par segment.
+
+On a donc les fonctions de profit:
 \[
 \begin{array}{rcl}
 \pi_1(q_1, q_2) &=& P(q_1+q_2)\cdot q_1-C_1(q_1)\\
@@ -82,8 +104,6 @@ Chaque entreprise doit anticiper l'action de l'autre et réagir à cette anticip
 
 ## Formalisation du problème
 
-- 2 entreprises 1 et 2, avec chacune une fonction de coût $C_1(q_1)$ et $C_2(q_2)$.
-- Une fonction de demande inverse $P(q_1+q_2)$.
 
 ### Expression des profits
 
@@ -95,54 +115,57 @@ On a des profits :
 \end{array}
 \]
 
-Supposons que l'entreprise 1 *croit* que l'entreprise 2 va produire $q_2^e$. 
+Supposons que l'entreprise 1 *croit* que l'entreprise 2 va produire $q_2^a$. 
 Quelle est sa production optimale ?
 Son problème est :
 \[
-\max_{q_1} \pi_1(q_1, q_2^e) =  q_1P(q_1+q_2^e)-C_1(q_1)
+\max_{q_1} \pi_1(q_1, q_2^a) =  q_1P(q_1+q_2^a)-C_1(q_1)
 \]
-On peut déduire de ce problème d'optimisation la *fonction de réaction* $q_1(q_2^e)=f_1(q_2^e)$ qui maximise $\pi_1(q_1)$ en fonction de la production anticipée $q_2^e$ de l'entreprise 2.
+On peut déduire de ce problème d'optimisation la *fonction de réaction* $q_1(q_2^a)=f_1(q_2^a)$ qui maximise $\pi_1(q_1)$ en fonction de la production anticipée $q_2^a$ de l'entreprise 2.^[La fonction de réaction est parfois aussi connue sous le nom de *fonction de meilleure réponse*.]
+La fonction de réaction $f_1(q_2^a)$ donne la valeur de $q_1$ qui maximise le profit quand l'entreprise 2 produit $q_2^a$.
 
-De la même manière, l'entreprise 2 cherche à maximiser $\pi_2$ en fonction de la production anticipée $q_1^e$ de l'entreprise 1.
+De la même manière, l'entreprise 2 cherche à maximiser $\pi_2$ en fonction de la production anticipée $q_1^a$ de l'entreprise 1.
 Son programme est :
 \[
-\max_{q_2} \pi_2(q_1^e, q_2) =  q_1P(q_1^e+q_2)-C_2(q_2)
+\max_{q_2} \pi_2(q_1^a, q_2) =  q_1P(q_1^a+q_2)-C_2(q_2)
 \]
-Elle aura également une fonction de réaction $q_2(q_1^e)=f_2(q_1^e)$.
+Elle aura également une fonction de réaction $q_2(q_1^a)=f_2(q_1^a)$.
 
 ### Forme des fonctions de réaction
 
 Si l'entreprise $i$ pense que l'entreprise $j$ ne va rien produire, alors elle se trouve dans une situation de monopole et se comporte comme tel.
 Elle produit de manière à égaliser coût marginal et recette marginale ($R_{im}=C_{im}$).
 
-Si l'entreprise $i$ pense que l'entreprise $j$ va produire $q_j^e>0$, alors elle est en monopole sur le **reste** de la demande.
-Cette dernière correspond à la demande totale décalée de $q_j^e>0$ vers la gauche.
+Si l'entreprise $i$ pense que l'entreprise $j$ va produire $q_j^a>0$, alors elle est en monopole sur le **reste** de la demande.
+Cette dernière correspond à la demande totale décalée de $q_j^a>0$ vers la gauche.
 Le croisement entre recette marginale et coût marginal se fait donc à un niveau plus faible qu'auparavant.
 
 Plus l'entreprise $i$ pense que l'entreprise $j$ va produire une grande quantité, plus elle aura intérêt à réduire son offre.
-$q_i$ est décroissante en $q_j^e$
+$q_i$ est décroissante en $q_j^a$
 
 GRAPH avec la fonction de demande translatée.
 
 ### Caractérisation de l'équilibre
 
-Un équilibre $(q_1^e, q_2^e)$ doit être tel qu'aucune des deux entreprises n'ait intérêt à dévier unilatéralement :
+Un équilibre $(q_1^a, q_2^a)$ doit être tel qu'aucune des deux entreprises n'ait intérêt à dévier unilatéralement :
 \[
 \begin{array}{rcl}
-\pi_1(q_1^e, q_2^e) &\geq& \pi_1(q_1, q_2^e)\quad \forall q_1\\
-\pi_2(q_1^e, q_2^e) &\geq& \pi_2(q_1^e, q_2)\quad \forall q_2
+\pi_1(q_1^a, q_2^a) &\geq& \pi_1(q_1, q_2^a)\quad \forall q_1\\
+\pi_2(q_1^a, q_2^a) &\geq& \pi_2(q_1^a, q_2)\quad \forall q_2
 \end{array}
 \]
-
-Les décisions de productions des entreprises doivent être compatibles entre elles.
-Chacun doit prendre en compte les réactions de l'autre.
+Aux points $q_1^a$ et $q_2^a$, aucune entreprise n'a intérêt à dévier unilatéralement de l'équilibre.
+Les décisions prises sont alors mutuellement compatibles.
+Chaque entreprise donne sa meilleure réponse à la meilleure réponse de l'autre.
 C'est ce qu'on appelle un **équilibre de Nash** : un équilibre où personne n'a intérêt à dévier unilatéralement.
 
-Dans le cas du duopole à la Cournot, cela correspond à l'intersection des fonctions de réactions des deux entreprises :
+Dans le cas du duopole à la Cournot, chaque entreprise doit choisir la quantité qui maximise son profit étant donné le choix de l'autre entreprise.
+Chaque entreprise est donc sur sa fonction de réaction.
+L'équilibre est donc à l'intersection des fonctions de réactions des deux entreprises :
 \[
 \begin{array}{rcl}
-q_1^e&=&f_1(q_2^e)\\
-q_2^e&=&f_2(q_1^e)
+q_1^a&=&f_1(q_2^a)\\
+q_2^a&=&f_2(q_1^a)
 \end{array}
 \]
 
@@ -184,16 +207,16 @@ On en déduit les  profits :
 Calculons la fonction de réaction de l'entreprise 1.
 Son profit est :
 \[
-\pi_1(q_1, q_2^e) = aq_1-bq_1^2-bq_2^eq_1-cq_1^2 = (a-bq_2^e)q_1-(b+c)q_1^2
+\pi_1(q_1, q_2^a) = aq_1-bq_1^2-bq_2^aq_1-cq_1^2 = (a-bq_2^a)q_1-(b+c)q_1^2
 \]
 
-La condition du premier ordre suivant $q_1$ s'écrit (ici $q_2^e$ est considéré comme une donnée par l'entreprise 1) :
+La condition du premier ordre suivant $q_1$ s'écrit (ici $q_2^a$ est considéré comme une donnée par l'entreprise 1) :
 
 \[
 \begin{array}{crcl}
 &\frac{\partial \pi_1}{\partial q_1}&=&0\\
-\Leftrightarrow & (a-bq_2^e)-2(b+c)q_1^* &=& 0\\
-\Leftrightarrow & q_1^* &=& \frac{(a-bq_2^e)}{2(b+c)}
+\Leftrightarrow & (a-bq_2^a)-2(b+c)q_1^* &=& 0\\
+\Leftrightarrow & q_1^* &=& \frac{(a-bq_2^a)}{2(b+c)}
 (\#eq:FR1)
 \end{array}
 \]
@@ -201,8 +224,13 @@ La condition du premier ordre suivant $q_1$ s'écrit (ici $q_2^e$ est considér�
 On calcule de la même manière (i.e., en utilisant la condition du premier ordre sur les profits de l'entreprise 2) la fonction de réaction de l'entreprise 2 et on obtient par symétrie du problème une légère réécriture de l'équation \@ref(eq:FR1):
 
 \[
-q_2^* = \frac{(a-bq_1^e)}{2(b+c)}
+q_2^* = \frac{(a-bq_1^a)}{2(b+c)}
 \]
+
+La symétrie du problème provient du fait que les deux entreprises ont exactement la même fonction de coût.
+Ce *n'est pas le cas en général*.
+Si dans un problème les fonctions de coût sont identiques, alors vous pouvez faire les calculs pour une seule entreprise et déduire simplement les résultats pour la seconde.
+
 
 ### Equilibre de Cournot
 
@@ -226,6 +254,120 @@ On résout le système et on obtient :
 \[
 q_1^*=q_2^* = \frac{a}{3b+2c}
 \]
+
+## Indice de Lerner
+
+*Rappel :* En monopole, l'indice de Lerner est :
+\[\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]
+
+:::{.definition name="Indice de Lerner"}
+En oligopole à la Cournot, on définit l'indice de Lerner par :
+\[L = \sum_iS_iL_i\]
+où $S_i=q_i/q$ est la *part de marché* de l'entreprise $i$ et $L_i$ est l'indice de Lerner propre à l'entreprise.
+:::
+$q$ est la production totale $q=\sum_iq_i$.
+
+\[
+\begin{array}{rcl}
+L_i &=&\frac{1}{\left|\varepsilon_{q/p}(q_1, q_2)\right|}\\
+&=&\frac{1}{\left|\frac{\partial q}{\partial p}(q_i)\frac{p}{q_i}\right|}\\
+&=&\frac{1}{\left|\frac{\partial q}{\partial p}(q_i)\frac{p}{q}\frac{q}{q_i}\right|}\\
+&=&\left[\frac{1}{\left|\frac{\partial q}{\partial p}(q_i)\frac{p}{q_i}\right|}\right]\frac{q_i}{q}\\
+&=&\frac{S_i}{\left|\varepsilon_{q/p}(q_1, q_2)\right|}\\
+\end{array}
+\]
+<!--Something fishy here about where the elasticity is computed.-->
+
+On en déduit que :
+\[
+L=\sum_i\frac{S_i^2}{\left|\varepsilon_{q/p}(q_1^*, q_2^*)\right|}
+\]
+
+## Extension : oligopole à la Cournot
+
+On étend l'analyse à $N$ entreprises qui produisent un bien *homogène*.
+Comme ce bien est homogène, le prix est unique sur le marché.
+Chaque entreprise $i$ choisit une quantité $q_i\geq 0$ et les produit à un coût de production $C_i(q_i)$.
+La production totale sur le marché est $q=\sum_i q_i$.
+La fonction de demande inverse sur le marché $P(q)$ dépend de la production *globable* $q$.
+
+Le profit de chaque entreprise s'écrit :
+\[
+\pi(q_i, q_{-i}) = q_iP(q) -C_i(q_i)
+\]
+Où $q_{-i}$ est la somme de la production de toute les entreprises autres que l'entreprise $i$.
+Autrement dit $q=q_i+q_{-i}$.
+
+Le programme de maximisation d'une entreprise $i$ s'écrit :
+\[
+\max_{q_i}\pi(q_i, q_{-i}) = q_iP(q) -C_i(q_i)
+\]
+
+La condition du premier ordre est telle que :
+
+\[
+\begin{array}{crcl}
+&\frac{\partial \pi_i}{\partial q_i} &=& 0\\
+\Leftrightarrow & \frac{\partial  q_iP(q_i+q_{-i}) -C_i(q_i)}{\partial q_i} &= &0\\
+\Leftrightarrow & P(q) + q_i\frac{\partial  P(q)}{\partial q_i} -C_{im}(q_i)&= &0\\
+\Leftrightarrow & P(q) - C_{im}(q_i)&= &-q_i\frac{\partial  P(q)}{\partial q_i} \\
+\Leftrightarrow & \frac{P(q)-C_{im}(q_i)}{P(q)}&= &-\frac{q_i}{P(q)}\frac{\partial  P(q)}{\partial q_i} \\
+\Leftrightarrow & \frac{P(q) -C_{im}(q_i)}{P(q)}&= &-\frac{q}{P(q)}\frac{\partial  P(q)}{\partial q_i}\frac{q_i}{q} \\
+\Leftrightarrow & \frac{P(q) - C_{im}(q_i)}{P(q)}&= &S_i\frac{1}{\left|\varepsilon_{q/p}\right|}
+\end{array}
+\]
+(La dérivée de la fonction de demande suivant le prix est négative).
+
+\[\frac{P(q) -C_{im}(q_i)}{P(q)}= \frac{S_i}{\left|\varepsilon_{q/p}\right|}\]
+Ce résultat est la markup-pricing que peut appliquer chaque entreprise en situation d'oligopole à la Cournot.
+La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l'entreprise.
+
+*Remarques :*  
+
+- En monopole, $S_i=1$ pour le monopole.
+On retrouve alors bien :
+\[\frac{P(q) -C_{im}(q_i)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}\right|}\]
+- En concurrence pure et parfaite $S_i\to 0$, donc $\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0$, ce qui implique bien que $C_{mi}(q_i)\to P(q)$.
+On retrouve qinsi le résultat $P(q)=C_m(q)$.
+
+### Indice de concentration du marché
+
+<!--Pas sûr d'avoir tout compris ici-->
+
+:::{.definition #HHI name="Indice de Hirschmqnn-Herfindal (HHI)"}
+L'indice de Hirschmann-Herfindal est la somme des carrés des part de marchés.
+\[HHI = \sum_{i=1}^NS_i^2\]
+C'est aussi la différence moyenne entre le coût marginal de production et le prix.
+Autrement dit, la moyenne des $L_i$ pondéré par les parts de marché.
+:::
+
+ \[
+ \begin{array}{rcl}
+ \sum_{i=1}^{N}\frac{P(q) -C_{im}(q_i)}{P(q)}S_i &=&\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}\right|}S_i \\
+ &=&\frac{1}{\left|\varepsilon_{q/p}\right|}\sum_{i=1}^NS_i^2\\
+ &=&\frac{HHI}{\left|\varepsilon_{q/p}\right|}
+ \end{array}
+ \]
+
+Interprétation :  
+Imaginons que tout les $N$ entreprises sont identiques (même fonction de coût).
+Elles produisent alors la même quantité optimale à l'équilibre.
+Leur part de marché est donc $S_i=1/N$.
+Le HHI vaut :
+\[
+\begin{array}{rcl}
+HHI&=&\sum_{i=1}^NS_i^2\\
+&=&\sum_{i=1}^N\frac{1}{N^2}\\
+&=&\frac{N}{N^2} \\
+&=&\frac{1}{N}
+\end{array}
+\]
+Le HHI correspond à l'inverse du nombre du nombre d'entreprise qui serait identique sur le marché et donnerait le même écart moyen entre coût marginal et prix.
+Plus le HHI est proche de 1, plus on se rapproche du monopole.
+
+Le HHI est utilisé par les autorités de la concurrence pour évaluer les effets sur les prix de fusions d'entreprises.
+Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.
+
 
 # Duopole à la Stackelberg
 

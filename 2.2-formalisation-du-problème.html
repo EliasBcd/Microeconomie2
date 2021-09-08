@@ -99,6 +99,11 @@ details > summary {
 <li><a href="2.3-exemple.html#fonctions-de-réaction"><span class="toc-section-number">2.3.3</span> Fonctions de réaction</a></li>
 <li><a href="2.3-exemple.html#equilibre-de-cournot"><span class="toc-section-number">2.3.4</span> Equilibre de Cournot</a></li>
 </ul></li>
+<li><a href="2.4-indice-de-lerner.html#indice-de-lerner"><span class="toc-section-number">2.4</span> Indice de Lerner</a></li>
+<li><a href="2.5-extension-oligopole-à-la-cournot.html#extension-oligopole-à-la-cournot"><span class="toc-section-number">2.5</span> Extension : oligopole à la Cournot</a>
+<ul>
+<li><a href="2.5-extension-oligopole-à-la-cournot.html#indice-de-concentration-du-marché"><span class="toc-section-number">2.5.1</span> Indice de concentration du marché</a></li>
+</ul></li>
 </ul></li>
 <li><a href="3-duopole-à-la-stackelberg.html#duopole-à-la-stackelberg"><span class="toc-section-number">3</span> Duopole à la Stackelberg</a>
 <ul>
@@ -119,10 +124,6 @@ details > summary {
 <div class="col-sm-12">
 <div id="formalisation-du-problème" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Formalisation du problème</h2>
-<ul>
-<li>2 entreprises 1 et 2, avec chacune une fonction de coût <span class="math inline">\(C_1(q_1)\)</span> et <span class="math inline">\(C_2(q_2)\)</span>.</li>
-<li>Une fonction de demande inverse <span class="math inline">\(P(q_1+q_2)\)</span>.</li>
-</ul>
 <div id="expression-des-profits" class="section level3" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> Expression des profits</h3>
 <p>On a des profits :
@@ -132,48 +133,52 @@ details > summary {
 \pi_2(q_1, q_2) &amp;=&amp; P(q_1+q_2)\cdot q_2-C_2(q_2)
 \end{array}
 \]</span></p>
-<p>Supposons que l’entreprise 1 <em>croit</em> que l’entreprise 2 va produire <span class="math inline">\(q_2^e\)</span>.
+<p>Supposons que l’entreprise 1 <em>croit</em> que l’entreprise 2 va produire <span class="math inline">\(q_2^a\)</span>.
 Quelle est sa production optimale ?
 Son problème est :
 <span class="math display">\[
-\max_{q_1} \pi_1(q_1, q_2^e) =  q_1P(q_1+q_2^e)-C_1(q_1)
+\max_{q_1} \pi_1(q_1, q_2^a) =  q_1P(q_1+q_2^a)-C_1(q_1)
 \]</span>
-On peut déduire de ce problème d’optimisation la <em>fonction de réaction</em> <span class="math inline">\(q_1(q_2^e)=f_1(q_2^e)\)</span> qui maximise <span class="math inline">\(\pi_1(q_1)\)</span> en fonction de la production anticipée <span class="math inline">\(q_2^e\)</span> de l’entreprise 2.</p>
-<p>De la même manière, l’entreprise 2 cherche à maximiser <span class="math inline">\(\pi_2\)</span> en fonction de la production anticipée <span class="math inline">\(q_1^e\)</span> de l’entreprise 1.
+On peut déduire de ce problème d’optimisation la <em>fonction de réaction</em> <span class="math inline">\(q_1(q_2^a)=f_1(q_2^a)\)</span> qui maximise <span class="math inline">\(\pi_1(q_1)\)</span> en fonction de la production anticipée <span class="math inline">\(q_2^a\)</span> de l’entreprise 2.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>
+La fonction de réaction <span class="math inline">\(f_1(q_2^a)\)</span> donne la valeur de <span class="math inline">\(q_1\)</span> qui maximise le profit quand l’entreprise 2 produit <span class="math inline">\(q_2^a\)</span>.</p>
+<p>De la même manière, l’entreprise 2 cherche à maximiser <span class="math inline">\(\pi_2\)</span> en fonction de la production anticipée <span class="math inline">\(q_1^a\)</span> de l’entreprise 1.
 Son programme est :
 <span class="math display">\[
-\max_{q_2} \pi_2(q_1^e, q_2) =  q_1P(q_1^e+q_2)-C_2(q_2)
+\max_{q_2} \pi_2(q_1^a, q_2) =  q_1P(q_1^a+q_2)-C_2(q_2)
 \]</span>
-Elle aura également une fonction de réaction <span class="math inline">\(q_2(q_1^e)=f_2(q_1^e)\)</span>.</p>
+Elle aura également une fonction de réaction <span class="math inline">\(q_2(q_1^a)=f_2(q_1^a)\)</span>.</p>
 </div>
 <div id="forme-des-fonctions-de-réaction" class="section level3" number="2.2.2">
 <h3><span class="header-section-number">2.2.2</span> Forme des fonctions de réaction</h3>
 <p>Si l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> ne va rien produire, alors elle se trouve dans une situation de monopole et se comporte comme tel.
 Elle produit de manière à égaliser coût marginal et recette marginale (<span class="math inline">\(R_{im}=C_{im}\)</span>).</p>
-<p>Si l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> va produire <span class="math inline">\(q_j^e&gt;0\)</span>, alors elle est en monopole sur le <strong>reste</strong> de la demande.
-Cette dernière correspond à la demande totale décalée de <span class="math inline">\(q_j^e&gt;0\)</span> vers la gauche.
+<p>Si l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> va produire <span class="math inline">\(q_j^a&gt;0\)</span>, alors elle est en monopole sur le <strong>reste</strong> de la demande.
+Cette dernière correspond à la demande totale décalée de <span class="math inline">\(q_j^a&gt;0\)</span> vers la gauche.
 Le croisement entre recette marginale et coût marginal se fait donc à un niveau plus faible qu’auparavant.</p>
 <p>Plus l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> va produire une grande quantité, plus elle aura intérêt à réduire son offre.
-<span class="math inline">\(q_i\)</span> est décroissante en <span class="math inline">\(q_j^e\)</span></p>
+<span class="math inline">\(q_i\)</span> est décroissante en <span class="math inline">\(q_j^a\)</span></p>
 <p>GRAPH avec la fonction de demande translatée.</p>
 </div>
 <div id="caractérisation-de-léquilibre" class="section level3" number="2.2.3">
 <h3><span class="header-section-number">2.2.3</span> Caractérisation de l’équilibre</h3>
-<p>Un équilibre <span class="math inline">\((q_1^e, q_2^e)\)</span> doit être tel qu’aucune des deux entreprises n’ait intérêt à dévier unilatéralement :
+<p>Un équilibre <span class="math inline">\((q_1^a, q_2^a)\)</span> doit être tel qu’aucune des deux entreprises n’ait intérêt à dévier unilatéralement :
 <span class="math display">\[
 \begin{array}{rcl}
-\pi_1(q_1^e, q_2^e) &amp;\geq&amp; \pi_1(q_1, q_2^e)\quad \forall q_1\\
-\pi_2(q_1^e, q_2^e) &amp;\geq&amp; \pi_2(q_1^e, q_2)\quad \forall q_2
+\pi_1(q_1^a, q_2^a) &amp;\geq&amp; \pi_1(q_1, q_2^a)\quad \forall q_1\\
+\pi_2(q_1^a, q_2^a) &amp;\geq&amp; \pi_2(q_1^a, q_2)\quad \forall q_2
 \end{array}
-\]</span></p>
-<p>Les décisions de productions des entreprises doivent être compatibles entre elles.
-Chacun doit prendre en compte les réactions de l’autre.
+\]</span>
+Aux points <span class="math inline">\(q_1^a\)</span> et <span class="math inline">\(q_2^a\)</span>, aucune entreprise n’a intérêt à dévier unilatéralement de l’équilibre.
+Les décisions prises sont alors mutuellement compatibles.
+Chaque entreprise donne sa meilleure réponse à la meilleure réponse de l’autre.
 C’est ce qu’on appelle un <strong>équilibre de Nash</strong> : un équilibre où personne n’a intérêt à dévier unilatéralement.</p>
-<p>Dans le cas du duopole à la Cournot, cela correspond à l’intersection des fonctions de réactions des deux entreprises :
+<p>Dans le cas du duopole à la Cournot, chaque entreprise doit choisir la quantité qui maximise son profit étant donné le choix de l’autre entreprise.
+Chaque entreprise est donc sur sa fonction de réaction.
+L’équilibre est donc à l’intersection des fonctions de réactions des deux entreprises :
 <span class="math display">\[
 \begin{array}{rcl}
-q_1^e&amp;=&amp;f_1(q_2^e)\\
-q_2^e&amp;=&amp;f_2(q_1^e)
+q_1^a&amp;=&amp;f_1(q_2^a)\\
+q_2^a&amp;=&amp;f_2(q_1^a)
 \end{array}
 \]</span></p>
 <p>GRAPH avec une situation d’équilibre.</p>
@@ -181,6 +186,12 @@ q_2^e&amp;=&amp;f_2(q_1^e)
 La stabilité dépend de la pente des fonctions de réactions.</p>
 <p>GRAPH avec équilibre instable</p>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>La fonction de réaction est parfois aussi connue sous le nom de <em>fonction de meilleure réponse</em>.<a href="2.2-formalisation-du-problème.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 <p style="text-align: center;">
 <a href="2.1-introduction-1.html"><button class="btn btn-default">Previous</button></a>

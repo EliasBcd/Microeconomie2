@@ -5,8 +5,8 @@ author:
 - Antoine Terracol
 date: "Septembre 2021"
 output:
-  bookdown::pdf_book: default
   bookdown::html_book: default
+  bookdown::pdf_book: default
 ---
 
 
@@ -564,12 +564,37 @@ GRAPH avec discrimination parfaite
 La situation de discrimination parfaite est un optimum de Pareto.
 En effet, le surplus social est maximal (mais capturé entièrement par le monopole).
 
+En pratique, il est très difficile de faire de la discrimination parfaite.
+Les entreprises essaient de s'en approcher le plus possible.
+
+Un exemple existe, lors d'une vente de bons du trésors des Etats-Unis.
+Chaque ménage intéressé soumettait une offre (prix, quantité) au gouvernement.
+Le gouvernement triait les offres par ordre décroissant de prix et les satisfait jusqu'à épuisement des bons à vendre.
+
+## Discrimination du deuxième degré
+
+:::{.definition name="Discrimination du deuxième degré"}
+La discrimination du deuxième degré a lieu lorsque les prix de ventes dépendent des quantités achetées.
+:::
+
+Par exemple, si les 10 premières unités vendues le sont à 5€, et les suivantes à 2€.
+Les prix de ventes sont nécessairement *décroissants* avec la quantité vendue.
+
+GRAPH avec 3 seuils de quantité.
+
+Le monopole ajuste les quantités seuil afin de maximiser son profit.
+Il y a un nombre fini de seuils de dégressivité.
+Plus il y a de seuils, plus on s'approche d'un situation de discrimination parfaite.
+
+
 ## Discrimination du troisième degré
 
 A faire si le temps le permet.
 
 Il s'agit de faire payer un prix différent à chaque groupe de consommateur, en fonction des caractéristiques de leurs fonctions de demande.
 Tous les membres d'un groupe payent donc le même prix, contrairement à la discrimination au premier degré.
+Les groupes sont en général caractérisés par des propensions à payer différentes.
+Il s'agit d'une segmentation des consommateurs.
 
 :::{.example name="Discrimination au troisième degré"}
 Les tarifs jeunes de la SNCF, les tarifs familles.
@@ -596,7 +621,7 @@ Le problème du monopole s'écrit :
 \max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q)
 \]
 La quantité totale $q$ est fixée, donc le coût total l'est aussi et peut être supprimé du problème de maximisation.
-On cherche donc :
+On cherche donc juste à maximiser la recette totale :
 \[
 \max_{q_A, q_B} q_AP_A(q_A) + q_BP_B(q_B) 
 \]
@@ -620,6 +645,7 @@ L'équation \@ref(eq:cpo3e) nous dit que le monopole réparti la quantité total
 
 Intuitivement, si la recette marginale issue du groupe A est supérieure à celle issue du groupe B ($R_{mA}(q_A) > R_{mB}(q_B)$), alors en diminuant  la quantité $q_B$ dans le groupe B et en la transférant au groupe A, le monopole perd $R_{mB}(q_B)$ et gagne $R_{mA}(q_A)$, donc la recette totale augmente et le profit aussi.
 Inversement dans le cas opposé.
+Il n'est donc pas intéressant de transférer la production d'un groupe vers un autre lorsque $R_{mA}(q_A) = R_{mB}(q_B) $ (et seulement dans ce cas).
 
 Maintenant que la répartition est résolue, il faut trouver la quantité totale produite.
 Le problème devient maintenant :
@@ -641,6 +667,8 @@ Or le coût marginal dépend de la quantité *totale* produite, pas de la répar
 Si on est dans la situation telle que $C_m(q)<R_{mA}(q_A)$, alors il y a la possibilité de faire du profit sur le marché A (et le marché B par conséquent).
 Inversement, si $C_m(q)>R_{mA}(q_A)$, alors le monopole fait des pertes.
 
+NB: On utilise bien $C_m(q_A+q_B)$ et non $C_m(q_A)$ ou $C_m(q_B)$ car c'est bien la variation du coût total lorsqu'on augmente "un peu" $q_A$ et $q_B$ reste fixe.
+
 \[
 \begin{array}{crcl}
 &R_{mA}(q_A^*) &=& R_{mB}(q_B^*)\\
@@ -657,3 +685,12 @@ Autrement dit
 \left|\varepsilon_{q/p_B}\right|>\left|\varepsilon_{q/p_A}\right|
 \]
 Le prix est donc plus faible pour le groupe où l’élasticité prix de la demande est plus élevée.
+Le prix est plus élevé pour le groupe avec l'élasticité la plus faible, les moins réactifs au prix.
+
+:::{.example}
+Les tarifs "professionnels" dans les transports (avion, train, etc).
+Les professionnels sont moins sensibles au prix car leurs dates de voyage sont moins flexibles que celles des particuliers.
+Leur élasticité prix est donc plus faible et leurs prix plus élevés.
+:::
+
+Des fonctions de demande inverse différentes associées à des élasticités prix de la demande différente aboutissent à des prix différents.
