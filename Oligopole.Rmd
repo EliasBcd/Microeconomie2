@@ -5,8 +5,8 @@ author:
 - Antoine Terracol
 date: "Septembre 2021"
 output:
-  bookdown::pdf_book: default
   bookdown::html_book: default
+  bookdown::pdf_book: default
 ---
 
 
@@ -225,4 +225,80 @@ q_2^* &=&\frac{(a-bq_1^*)}{2(b+c)}\\
 On résout le système et on obtient :
 \[
 q_1^*=q_2^* = \frac{a}{3b+2c}
+\]
+
+# Duopole à la Stackelberg
+
+## Introduction
+
+Il n'y a plus de symétrie des entreprises dans un duopole à la Stackelberg.
+Une entreprise, dite *leader*, prend ses décisions avant l'entreprise dite *follower*.
+L'entreprise leader connaît les caractéristiques de l'entreprise follower et peut ainsi calculer sa fonction de réaction.
+Elle va donc en tenir compte dans ses décisions.
+On considère ici qu'il n'y a que deux périodes de décisions.
+
+## Exemple
+
+### Données du problèmes
+
+Notons les variables et fonctions du leader avec un indice $L$ et celles du follower avec un indice $F$.
+
+Gardons une fonction de demande linéaire.
+
+\[
+P(q_L+q_F) = a - b(q_L+q_F)
+\]
+
+Supposons, afin de simplifier les calculs, que les coûts marginaux sont nuls.
+
+### Profits
+
+On en déduit les  profits :
+
+\[
+\begin{array}{rcl}
+\pi_L(q_L, q_F) &=& \left(a-b(q_L+q_F)\right)q_L\\
+\pi_F(q_L, q_F) &=& \left(a-b(q_L+q_F)\right)q_F
+\end{array}
+\]
+
+### Fonction de réaction de l'entreprise follower
+
+Calculons la fonction de réaction de l'entreprise follower.
+La condition du premier ordre suivant $q_F$ s'écrit (ici $q_L$ est considéré comme une donnée par l'entreprise 1) :
+
+\[
+\begin{array}{crcl}
+&\frac{\partial \pi_F}{\partial q_F}&=&0\\
+\Leftrightarrow & (a-bq_L)-2bq_F^* &=& 0\\
+\Leftrightarrow & q_F^* &=& \frac{a-bq_L}{2b}
+(\#eq:FRFollower)
+\end{array}
+\]
+
+### Maximisation de l'entreprise leader
+
+Comme l'entreprise leader connaît la fonction de réaction de l'entreprise follower (donnée par l'équation \@ref(eq:FRFollower)), elle peut l'intégrer à sa propre fonction de profit :
+
+\[
+\begin{array}{rcl}
+\pi_L(q_L, q_F^*) &=& \left(a-b(q_L+q_F^*(q_L))\right)q_L\\
+ &=& \left(a-b\left(q_L+\frac{a-bq_L}{2b}\right)\right)q_L\\
+ &=& \frac{a}{2}q_L-\frac{b}{2}q_L^2
+\end{array}
+\]
+
+La condition de premier ordre du leader est :
+
+\[
+\begin{array}{crcl}
+&\frac{\partial \pi_L}{\partial q_L}&=&0\\
+\Leftrightarrow & \frac{a}{2}-bq_L^* &=& 0\\
+\Leftrightarrow & q_L^* &=& \frac{a}{2b}
+\end{array}
+\]
+
+On en déduit qu'à l'équilibre de Stackelberg, le follower produit :
+\[
+q_F^*=\frac{a}{4b}
 \]

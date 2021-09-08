@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="2.2 Formalisation du problème | Oligopoles" />
+<meta property="og:title" content="3.2 Exemple | Oligopoles" />
 <meta property="og:type" content="book" />
 
 
@@ -23,9 +23,9 @@ MathJax.Hub.Config({
 </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta name="description" content="2.2 Formalisation du problème | Oligopoles">
+<meta name="description" content="3.2 Exemple | Oligopoles">
 
-<title>2.2 Formalisation du problème | Oligopoles</title>
+<title>3.2 Exemple | Oligopoles</title>
 
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
@@ -117,74 +117,67 @@ details > summary {
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="formalisation-du-problème" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Formalisation du problème</h2>
-<ul>
-<li>2 entreprises 1 et 2, avec chacune une fonction de coût <span class="math inline">\(C_1(q_1)\)</span> et <span class="math inline">\(C_2(q_2)\)</span>.</li>
-<li>Une fonction de demande inverse <span class="math inline">\(P(q_1+q_2)\)</span>.</li>
-</ul>
-<div id="expression-des-profits" class="section level3" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Expression des profits</h3>
-<p>On a des profits :
-<span class="math display">\[
+<div id="exemple-1" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Exemple</h2>
+<div id="données-du-problèmes" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Données du problèmes</h3>
+<p>Notons les variables et fonctions du leader avec un indice <span class="math inline">\(L\)</span> et celles du follower avec un indice <span class="math inline">\(F\)</span>.</p>
+<p>Gardons une fonction de demande linéaire.</p>
+<p><span class="math display">\[
+P(q_L+q_F) = a - b(q_L+q_F)
+\]</span></p>
+<p>Supposons, afin de simplifier les calculs, que les coûts marginaux sont nuls.</p>
+</div>
+<div id="profits-1" class="section level3" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Profits</h3>
+<p>On en déduit les profits :</p>
+<p><span class="math display">\[
 \begin{array}{rcl}
-\pi_1(q_1, q_2) &amp;=&amp; P(q_1+q_2)\cdot q_1-C_1(q_1)\\
-\pi_2(q_1, q_2) &amp;=&amp; P(q_1+q_2)\cdot q_2-C_2(q_2)
+\pi_L(q_L, q_F) &amp;=&amp; \left(a-b(q_L+q_F)\right)q_L\\
+\pi_F(q_L, q_F) &amp;=&amp; \left(a-b(q_L+q_F)\right)q_F
 \end{array}
 \]</span></p>
-<p>Supposons que l’entreprise 1 <em>croit</em> que l’entreprise 2 va produire <span class="math inline">\(q_2^e\)</span>.
-Quelle est sa production optimale ?
-Son problème est :
-<span class="math display">\[
-\max_{q_1} \pi_1(q_1, q_2^e) =  q_1P(q_1+q_2^e)-C_1(q_1)
-\]</span>
-On peut déduire de ce problème d’optimisation la <em>fonction de réaction</em> <span class="math inline">\(q_1(q_2^e)=f_1(q_2^e)\)</span> qui maximise <span class="math inline">\(\pi_1(q_1)\)</span> en fonction de la production anticipée <span class="math inline">\(q_2^e\)</span> de l’entreprise 2.</p>
-<p>De la même manière, l’entreprise 2 cherche à maximiser <span class="math inline">\(\pi_2\)</span> en fonction de la production anticipée <span class="math inline">\(q_1^e\)</span> de l’entreprise 1.
-Son programme est :
-<span class="math display">\[
-\max_{q_2} \pi_2(q_1^e, q_2) =  q_1P(q_1^e+q_2)-C_2(q_2)
-\]</span>
-Elle aura également une fonction de réaction <span class="math inline">\(q_2(q_1^e)=f_2(q_1^e)\)</span>.</p>
 </div>
-<div id="forme-des-fonctions-de-réaction" class="section level3" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> Forme des fonctions de réaction</h3>
-<p>Si l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> ne va rien produire, alors elle se trouve dans une situation de monopole et se comporte comme tel.
-Elle produit de manière à égaliser coût marginal et recette marginale (<span class="math inline">\(R_{im}=C_{im}\)</span>).</p>
-<p>Si l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> va produire <span class="math inline">\(q_j^e&gt;0\)</span>, alors elle est en monopole sur le <strong>reste</strong> de la demande.
-Cette dernière correspond à la demande totale décalée de <span class="math inline">\(q_j^e&gt;0\)</span> vers la gauche.
-Le croisement entre recette marginale et coût marginal se fait donc à un niveau plus faible qu’auparavant.</p>
-<p>Plus l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> va produire une grande quantité, plus elle aura intérêt à réduire son offre.
-<span class="math inline">\(q_i\)</span> est décroissante en <span class="math inline">\(q_j^e\)</span></p>
-<p>GRAPH avec la fonction de demande translatée.</p>
-</div>
-<div id="caractérisation-de-léquilibre" class="section level3" number="2.2.3">
-<h3><span class="header-section-number">2.2.3</span> Caractérisation de l’équilibre</h3>
-<p>Un équilibre <span class="math inline">\((q_1^e, q_2^e)\)</span> doit être tel qu’aucune des deux entreprises n’ait intérêt à dévier unilatéralement :
-<span class="math display">\[
-\begin{array}{rcl}
-\pi_1(q_1^e, q_2^e) &amp;\geq&amp; \pi_1(q_1, q_2^e)\quad \forall q_1\\
-\pi_2(q_1^e, q_2^e) &amp;\geq&amp; \pi_2(q_1^e, q_2)\quad \forall q_2
+<div id="fonction-de-réaction-de-lentreprise-follower" class="section level3" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Fonction de réaction de l’entreprise follower</h3>
+<p>Calculons la fonction de réaction de l’entreprise follower.
+La condition du premier ordre suivant <span class="math inline">\(q_F\)</span> s’écrit (ici <span class="math inline">\(q_L\)</span> est considéré comme une donnée par l’entreprise 1) :</p>
+<p><span class="math display" id="eq:FRFollower">\[
+\begin{array}{crcl}
+&amp;\frac{\partial \pi_F}{\partial q_F}&amp;=&amp;0\\
+\Leftrightarrow &amp; (a-bq_L)-2bq_F^* &amp;=&amp; 0\\
+\Leftrightarrow &amp; q_F^* &amp;=&amp; \frac{a-bq_L}{2b}
+\tag{3.1}
 \end{array}
 \]</span></p>
-<p>Les décisions de productions des entreprises doivent être compatibles entre elles.
-Chacun doit prendre en compte les réactions de l’autre.
-C’est ce qu’on appelle un <strong>équilibre de Nash</strong> : un équilibre où personne n’a intérêt à dévier unilatéralement.</p>
-<p>Dans le cas du duopole à la Cournot, cela correspond à l’intersection des fonctions de réactions des deux entreprises :
-<span class="math display">\[
+</div>
+<div id="maximisation-de-lentreprise-leader" class="section level3" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Maximisation de l’entreprise leader</h3>
+<p>Comme l’entreprise leader connaît la fonction de réaction de l’entreprise follower (donnée par l’équation <a href="3.2-exemple-1.html#eq:FRFollower">(3.1)</a>), elle peut l’intégrer à sa propre fonction de profit :</p>
+<p><span class="math display">\[
 \begin{array}{rcl}
-q_1^e&amp;=&amp;f_1(q_2^e)\\
-q_2^e&amp;=&amp;f_2(q_1^e)
+\pi_L(q_L, q_F^*) &amp;=&amp; \left(a-b(q_L+q_F^*(q_L))\right)q_L\\
+ &amp;=&amp; \left(a-b\left(q_L+\frac{a-bq_L}{2b}\right)\right)q_L\\
+ &amp;=&amp; \frac{a}{2}q_L-\frac{b}{2}q_L^2
 \end{array}
 \]</span></p>
-<p>GRAPH avec une situation d’équilibre.</p>
-<p>L’équilibre n’est pas nécessairement stable.
-La stabilité dépend de la pente des fonctions de réactions.</p>
-<p>GRAPH avec équilibre instable</p>
+<p>La condition de premier ordre du leader est :</p>
+<p><span class="math display">\[
+\begin{array}{crcl}
+&amp;\frac{\partial \pi_L}{\partial q_L}&amp;=&amp;0\\
+\Leftrightarrow &amp; \frac{a}{2}-bq_L^* &amp;=&amp; 0\\
+\Leftrightarrow &amp; q_L^* &amp;=&amp; \frac{a}{2b}
+\end{array}
+\]</span></p>
+<p>On en déduit qu’à l’équilibre de Stackelberg, le follower produit :
+<span class="math display">\[
+q_F^*=\frac{a}{4b}
+\]</span></p>
 </div>
 </div>
+<!-- </div> -->
 <p style="text-align: center;">
-<a href="2.1-introduction-1.html"><button class="btn btn-default">Previous</button></a>
-<a href="2.3-exemple.html"><button class="btn btn-default">Next</button></a>
+<a href="3.1-introduction-2.html"><button class="btn btn-default">Previous</button></a>
 </p>
 </div>
 </div>
