@@ -5,8 +5,8 @@ author:
 - Antoine Terracol
 date: "Septembre 2021"
 output:
-  bookdown::html_book: default
   bookdown::pdf_book: default
+  bookdown::html_book: default
 ---
 
 
@@ -645,7 +645,7 @@ L'équation \@ref(eq:cpo3e) nous dit que le monopole réparti la quantité total
 
 Intuitivement, si la recette marginale issue du groupe A est supérieure à celle issue du groupe B ($R_{mA}(q_A) > R_{mB}(q_B)$), alors en diminuant  la quantité $q_B$ dans le groupe B et en la transférant au groupe A, le monopole perd $R_{mB}(q_B)$ et gagne $R_{mA}(q_A)$, donc la recette totale augmente et le profit aussi.
 Inversement dans le cas opposé.
-Il n'est donc pas intéressant de transférer la production d'un groupe vers un autre lorsque $R_{mA}(q_A) = R_{mB}(q_B) $ (et seulement dans ce cas).
+Il n'est donc pas intéressant de transférer la production d'un groupe vers un autre lorsque $R_{mA}(q_A) = R_{mB}(q_B)$ (et seulement dans ce cas).
 
 Maintenant que la répartition est résolue, il faut trouver la quantité totale produite.
 Le problème devient maintenant :
@@ -655,8 +655,8 @@ Le problème devient maintenant :
 La condition du premier ordre s'obtient maintenant en dérivant suivant $q_A$ et $q_B$ séparément :
 \[
 \begin{array}{rcl}
-\frac{\partial\pi(q_A, q_B)}{\partial q_A} = 0&\Leftrightarrow& R_{mA}(q_A) = C_m(q_A+q_B)\\
-\frac{\partial\pi(q_A, q_B)}{\partial q_B} = 0&\Leftrightarrow& R_{mB}(q_B) = C_m(q_A+q_B)\\
+\frac{\partial\pi(q_A, q_B)}{\partial q_A} = 0&\Leftrightarrow& R_{mA}(q_A^*) = C_m(q_A^*+q_B^*)\\
+\frac{\partial\pi(q_A, q_B)}{\partial q_B} = 0&\Leftrightarrow& R_{mB}(q_B^*) = C_m(q_A^*+q_B^*)\\
 \end{array}
 \]
 Le monopole doit faire en sorte que le coût marginal de sa production totale soit égale à la recette marginale sur chacun des marchés.
@@ -669,6 +669,7 @@ Inversement, si $C_m(q)>R_{mA}(q_A)$, alors le monopole fait des pertes.
 
 NB: On utilise bien $C_m(q_A+q_B)$ et non $C_m(q_A)$ ou $C_m(q_B)$ car c'est bien la variation du coût total lorsqu'on augmente "un peu" $q_A$ et $q_B$ reste fixe.
 
+D'après l'équation \@ref(eq:rm), on peut écrire :
 \[
 \begin{array}{crcl}
 &R_{mA}(q_A^*) &=& R_{mB}(q_B^*)\\

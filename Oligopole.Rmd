@@ -5,8 +5,8 @@ author:
 - Antoine Terracol
 date: "Septembre 2021"
 output:
-  bookdown::html_book: default
   bookdown::pdf_book: default
+  bookdown::html_book: default
 ---
 
 
@@ -183,7 +183,7 @@ GRAPH avec équilibre instable
 Prenons les fonctions suivantes :
 
 \[
-\begin{array}{r}
+\begin{array}{l}
 P(q_1+q_2) = a - b(q_1+q_2)\\
 C_1(q_1) = cq^2_1 \\
 C_2(q_2) = cq^2_2 \\
@@ -334,8 +334,8 @@ On retrouve qinsi le résultat $P(q)=C_m(q)$.
 
 <!--Pas sûr d'avoir tout compris ici-->
 
-:::{.definition #HHI name="Indice de Hirschmqnn-Herfindal (HHI)"}
-L'indice de Hirschmann-Herfindal est la somme des carrés des part de marchés.
+:::{.definition #HHI name="Indice de Hirschman-Herfindahl (HHI)"}
+L'indice de Hirschman-Herfindahl est la somme des carrés des part de marchés.
 \[HHI = \sum_{i=1}^NS_i^2\]
 C'est aussi la différence moyenne entre le coût marginal de production et le prix.
 Autrement dit, la moyenne des $L_i$ pondéré par les parts de marché.
@@ -444,3 +444,99 @@ On en déduit qu'à l'équilibre de Stackelberg, le follower produit :
 \[
 q_F^*=\frac{a}{4b}
 \]
+
+L'entreprise leader produit plus que l'entreprise follower.
+Elle profite de son pouvoir sur la seconde entreprise pour cela.
+Si on calcule le profit, on verra que le profit de l'entreprise leader est plus important que celui de l'entreprise follower si elles sont exactement symétriques, en dehors de leur prises de décisions.
+
+# Cartels et collusions
+
+## Introduction
+
+En duopoles / oligopoles de Cournot ou de Stackelberg, les entreprises ne coopèrent pas entre elles :
+
+- Elles sont en concurrence ;
+- Elles agissent indépendamment les unes des autres.
+
+*Question :*  
+Que se passe-t-il si elles peuvent s'entendre ?
+Par exemple, que se passe-t-il si elle peuvent passer un accord sur la quantité à produire.
+
+*Résultats :*  
+Les quantités mises sur le marché vont diminuer, et le prix du marché va augmenter.
+C'est donc néfaste pour les consommateurs.
+La raison est que le cartel se comporte exactement comme un monopole, puis partage les bénéfices.
+
+## Raisonnement graphique
+
+## Résolution analytique
+
+### Idée
+
+L'idée derrière la résolution analytique du problème du cartel est de considérer que le cartel se comporte comme un monopole avec 2 centres de productions.
+Le cartel choisit la quantité globale produite et la répartition entre les entreprises.
+C'est un raisonnement très similaire à un monopole discriminant au troisième degré.
+
+### Profits
+
+Le profit global du cartel s'écrit :
+\[
+\pi_c=qP(q)-C_A(q_A)-C_B(q_B)=(q_A+q_B)P(q_A+q_B)-C_A(q_A)-C_B(q_B)
+\]
+Où $q=q_A+q_B$.
+Le profit est maximisé lorsque les dérivées partielles suivant chacune des quantités sont nulles (condition du premier ordre), c'est-à-dire lorsque $\frac{\partial\pi_C}{\partial q_A}=0$ et $\frac{\partial\pi_C}{\partial q_B}=0$.
+\[
+\frac{\partial\pi_C}{\partial q_A} = P(q) + q\frac{\partial P}{\partial q}(q_A)-\frac{\partial C_A}{\partial q_A}(q_A)
+\]
+On a $P(q) + q\frac{\partial P}{\partial q}=R_m(q)$ est la recette marginale totale du cartel.
+$\frac{\partial C_A}{\partial q_A}=C_{mA}$ est le coût marginal de l'entreprise A.  
+On peut réécrire la dérivée du profit total suivant la quantité produite par l'entreprise A :
+\[
+\frac{\partial\pi_C}{\partial q_A} = R_m(q)  - C_{mA}(q_A)
+\]
+En utilisant le même raisonnement, on a pour l'entreprise B :
+\[
+\frac{\partial\pi_C}{\partial q_B} = R_m(q)  - C_{mB}(q_B)
+\]
+
+### Optimalité pour le cartel
+
+A l'optimum pour le cartel, on a donc :
+\[R_m(q) = C_{mA}(q_A) = C_{mB}(q_B)\]
+Le cartel égalise la recette marginale *totale* aux coûts marginaux de chacune des deux entreprises.
+
+*Remarque :* Le cartel ne va pas forcément donner à produire la même quantité à chaque entreprise.
+La répartition dépend des coûts marginaux respectifs.
+Si les coûts marginaux sont identiques, les productions seront identiques.
+
+*Intuition :* Supposons que la quantité totale produite est fixée.
+Supposons aussi que $C_{mA}(q_A)>C_{mB}(q_B)$.  
+Alors, en transférant la production d'une unité de l'entreprise A vers l'entreprise B, le coût diminue de $C_{mA}(q_A)$ et augmente de $C_{mB}(q_B)$.
+Il diminue donc au total, tout en maintenant la même quantité totale produite.  
+Autrement dit, tant que $C_{mA}(q_A)\neq C_{mB}(q_B)$, il est possible de diminuer le coût total de production d'une quantité donnée en répartissant celle-ci différemment entre les entreprises.
+
+### Optimalité pour une entreprise
+
+*Question :* Prenons l'entreprise A, a-t-elle intérêt à rester dans le cartel (et à respecter la répartition donnée par celui-ci) ?
+
+Le profit de l'entreprise A s'écrit :
+\[
+\pi_A=q_AP(q)-C_A(q_A)=q_AP(q_A+q_B)-C_A(q_A)
+\]
+La dérivée du profit s'écrit donc :
+\[
+\frac{\partial\pi_A}{\partial q_A}(q_A)=P(q_A+q_B)+q_A\frac{\partial P}{\partial q}(q_A)-C_{mA}(q_A)
+\]
+La condition d'optimalité du cartel suivant $q_A$ donne :
+\[
+\begin{array}{crcl}
+& P(q_A^*+q_B^*) + (q_A^*+q_B^*)\frac{\partial P}{\partial q}(q_A^*)-\frac{\partial C_A}{\partial q_A}(q_A^*)& = &0\\
+\Leftrightarrow &  P(q_A^*+q_B^*) + q_A^*\frac{\partial P}{\partial q}(q_A^*)-\frac{\partial C_A}{\partial q_A}(q_A^*)& = &-q_B^*\frac{\partial P}{\partial q}(q_A^*)\\
+\Leftrightarrow & \frac{\partial\pi_A}{\partial q_A}(q_A^*)& =  &-q_B^*\frac{\partial P}{\partial q}(q_A^*)
+ \end{array}
+\]
+Or on sait que la fonction de demande inverse $P(q)$ est décroissante avec les quantités produites, ou  que la fonction de demande est décroissante avec le prix, ce qui revient au même.
+Donc $\frac{\partial P}{\partial q}(q_A)<0$.
+On en déduit donc que $\frac{\partial\pi_A}{\partial q_A}(q_A^*)>0$ : l'entreprise A a intérêt à augmenter sa production si elle pense que l'entreprise B va respecter l'accord du cartel (et réciproquement).
+
+En conclusion, les accords de cartel ne sont pas "naturellement" stable, ils ont besoin d'un mécanisme qui maintient l'accord, par exemple en punissant une entreprise déviant de l'accord.

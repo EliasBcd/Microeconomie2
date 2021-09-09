@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="2.4 Indice de Lerner | Oligopoles" />
+<meta property="og:title" content="4.3 Résolution analytique | Oligopoles" />
 <meta property="og:type" content="book" />
 
 
@@ -23,9 +23,9 @@ MathJax.Hub.Config({
 </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta name="description" content="2.4 Indice de Lerner | Oligopoles">
+<meta name="description" content="4.3 Résolution analytique | Oligopoles">
 
-<title>2.4 Indice de Lerner | Oligopoles</title>
+<title>4.3 Résolution analytique | Oligopoles</title>
 
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
@@ -134,34 +134,85 @@ details > summary {
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="indice-de-lerner" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Indice de Lerner</h2>
-<p><em>Rappel :</em> En monopole, l’indice de Lerner est :
-<span class="math display">\[\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]</span></p>
-<div class="definition">
-<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 2.1  (Indice de Lerner) </strong></span>En oligopole à la Cournot, on définit l’indice de Lerner par :
-<span class="math display">\[L = \sum_iS_iL_i\]</span>
-où <span class="math inline">\(S_i=q_i/q\)</span> est la <em>part de marché</em> de l’entreprise <span class="math inline">\(i\)</span> et <span class="math inline">\(L_i\)</span> est l’indice de Lerner propre à l’entreprise.</p>
+<div id="résolution-analytique" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Résolution analytique</h2>
+<div id="idée" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Idée</h3>
+<p>L’idée derrière la résolution analytique du problème du cartel est de considérer que le cartel se comporte comme un monopole avec 2 centres de productions.
+Le cartel choisit la quantité globale produite et la répartition entre les entreprises.
+C’est un raisonnement très similaire à un monopole discriminant au troisième degré.</p>
 </div>
-<p><span class="math inline">\(q\)</span> est la production totale <span class="math inline">\(q=\sum_iq_i\)</span>.</p>
-<p><span class="math display">\[
-\begin{array}{rcl}
-L_i &amp;=&amp;\frac{1}{\left|\varepsilon_{q/p}(q_1, q_2)\right|}\\
-&amp;=&amp;\frac{1}{\left|\frac{\partial q}{\partial p}(q_i)\frac{p}{q_i}\right|}\\
-&amp;=&amp;\frac{1}{\left|\frac{\partial q}{\partial p}(q_i)\frac{p}{q}\frac{q}{q_i}\right|}\\
-&amp;=&amp;\left[\frac{1}{\left|\frac{\partial q}{\partial p}(q_i)\frac{p}{q_i}\right|}\right]\frac{q_i}{q}\\
-&amp;=&amp;\frac{S_i}{\left|\varepsilon_{q/p}(q_1, q_2)\right|}\\
-\end{array}
-\]</span>
-<!--Something fishy here about where the elasticity is computed.--></p>
-<p>On en déduit que :
+<div id="profits-2" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Profits</h3>
+<p>Le profit global du cartel s’écrit :
 <span class="math display">\[
-L=\sum_i\frac{S_i^2}{\left|\varepsilon_{q/p}(q_1^*, q_2^*)\right|}
+\pi_c=qP(q)-C_A(q_A)-C_B(q_B)=(q_A+q_B)P(q_A+q_B)-C_A(q_A)-C_B(q_B)
+\]</span>
+Où <span class="math inline">\(q=q_A+q_B\)</span>.
+Le profit est maximisé lorsque les dérivées partielles suivant chacune des quantités sont nulles (condition du premier ordre), c’est-à-dire lorsque <span class="math inline">\(\frac{\partial\pi_C}{\partial q_A}=0\)</span> et <span class="math inline">\(\frac{\partial\pi_C}{\partial q_B}=0\)</span>.
+<span class="math display">\[
+\frac{\partial\pi_C}{\partial q_A} = P(q) + q\frac{\partial P}{\partial q}(q_A)-\frac{\partial C_A}{\partial q_A}(q_A)
+\]</span>
+On a <span class="math inline">\(P(q) + q\frac{\partial P}{\partial q}=R_m(q)\)</span> est la recette marginale totale du cartel.
+<span class="math inline">\(\frac{\partial C_A}{\partial q_A}=C_{mA}\)</span> est le coût marginal de l’entreprise A.<br />
+On peut réécrire la dérivée du profit total suivant la quantité produite par l’entreprise A :
+<span class="math display">\[
+\frac{\partial\pi_C}{\partial q_A} = R_m(q)  - C_{mA}(q_A)
+\]</span>
+En utilisant le même raisonnement, on a pour l’entreprise B :
+<span class="math display">\[
+\frac{\partial\pi_C}{\partial q_B} = R_m(q)  - C_{mB}(q_B)
 \]</span></p>
 </div>
+<div id="optimalité-pour-le-cartel" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Optimalité pour le cartel</h3>
+<p>A l’optimum pour le cartel, on a donc :
+<span class="math display">\[R_m(q) = C_{mA}(q_A) = C_{mB}(q_B)\]</span>
+Le cartel égalise la recette marginale <em>totale</em> aux coûts marginaux de chacune des deux entreprises.</p>
+<p><em>Remarque :</em> Le cartel ne va pas forcément donner à produire la même quantité à chaque entreprise.
+La répartition dépend des coûts marginaux respectifs.
+Si les coûts marginaux sont identiques, les productions seront identiques.</p>
+<p><em>Intuition :</em> Supposons que la quantité totale produite est fixée.
+Supposons aussi que <span class="math inline">\(C_{mA}(q_A)&gt;C_{mB}(q_B)\)</span>.<br />
+Alors, en transférant la production d’une unité de l’entreprise A vers l’entreprise B, le coût diminue de <span class="math inline">\(C_{mA}(q_A)\)</span> et augmente de <span class="math inline">\(C_{mB}(q_B)\)</span>.
+Il diminue donc au total, tout en maintenant la même quantité totale produite.<br />
+Autrement dit, tant que <span class="math inline">\(C_{mA}(q_A)\neq C_{mB}(q_B)\)</span>, il est possible de diminuer le coût total de production d’une quantité donnée en répartissant celle-ci différemment entre les entreprises.</p>
+</div>
+<div id="optimalité-pour-une-entreprise" class="section level3" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Optimalité pour une entreprise</h3>
+<p><em>Question :</em> Prenons l’entreprise A, a-t-elle intérêt à rester dans le cartel (et à respecter la répartition donnée par celui-ci) ?</p>
+<p>Le profit de l’entreprise A s’écrit :
+<span class="math display">\[
+\pi_A=q_AP(q)-C_A(q_A)=q_AP(q_A+q_B)-C_A(q_A)
+\]</span>
+La dérivée du profit s’écrit donc :
+<span class="math display">\[
+\frac{\partial\pi_A}{\partial q_A}(q_A)=P(q_A+q_B)+q_A\frac{\partial P}{\partial q}(q_A)-C_{mA}(q_A)
+\]</span>
+La condition d’optimalité du cartel suivant <span class="math inline">\(q_A\)</span> donne :
+<span class="math display">\[
+\begin{array}{crcl}
+&amp; P(q_A^*+q_B^*) + (q_A^*+q_B^*)\frac{\partial P}{\partial q}(q_A^*)-\frac{\partial C_A}{\partial q_A}(q_A^*)&amp; = &amp;0\\
+\Leftrightarrow &amp;  P(q_A^*+q_B^*) + q_A^*\frac{\partial P}{\partial q}(q_A^*)-\frac{\partial C_A}{\partial q_A}(q_A^*)&amp; = &amp;-q_B^*\frac{\partial P}{\partial q}(q_A^*)\\
+\Leftrightarrow &amp; \frac{\partial\pi_A}{\partial q_A}(q_A^*)&amp; =  &amp;-q_B^*\frac{\partial P}{\partial q}(q_A^*)
+ \end{array}
+\]</span>
+Or on sait que la fonction de demande inverse <span class="math inline">\(P(q)\)</span> est décroissante avec les quantités produites, ou que la fonction de demande est décroissante avec le prix, ce qui revient au même.
+Donc <span class="math inline">\(\frac{\partial P}{\partial q}(q_A)&lt;0\)</span>.
+On en déduit donc que $ (q_A^*) &gt; 0$ : l’entreprise A a intérêt à augmenter sa production si elle pense que l’entreprise B va respecter l’accord du cartel (et réciproquement).</p>
+<p>En conclusion, les accords de cartel ne sont pas “naturellement” stable, ils ont besoin d’un mécanisme qui maintient l’accord, par exemple en punissant une entreprise déviant de l’accord.</p>
+</div>
+</div>
+<!-- </div> -->
+
+
+
+
+
+
+
 <p style="text-align: center;">
-<a href="2.3-exemple.html"><button class="btn btn-default">Previous</button></a>
-<a href="2.5-extension-oligopole-à-la-cournot.html"><button class="btn btn-default">Next</button></a>
+<a href="4.2-raisonnement-graphique.html"><button class="btn btn-default">Previous</button></a>
 </p>
 </div>
 </div>
