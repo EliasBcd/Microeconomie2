@@ -5,8 +5,8 @@ author:
 - Antoine Terracol
 date: "Septembre 2021"
 output:
-  bookdown::pdf_book: default
   bookdown::html_book: default
+  bookdown::pdf_book: default
 ---
 
 
@@ -95,7 +95,7 @@ La recette marginale est mesurée en unité monétaire par unité de bien (comme
 
 ## Recette marginale et courbe de demande
 
-Comme la courbe de demande est décroissante (l'élasticité prix de la demande est négative $\varepsilon_{q/P_q} <0$), $P(q)$ et $q$ ont une relation inverse. 
+Comme la courbe de demande est décroissante (l'élasticité prix de la demande est négative $\varepsilon_{q/p} <0$), $P(q)$ et $q$ ont une relation inverse. 
 Autrement dit, si $q$ augmente, alors $p$ baisse, et réciproquement.
 
 Cela implique que la recette totale va augmenter ou baisser suivant les propriétés de la courbe de demande.
@@ -103,13 +103,12 @@ Cela implique que la recette totale va augmenter ou baisser suivant les proprié
 
 ```{r base, include=FALSE}
 
-x=seq(0, 1, length=11)
+x=seq(0, 1, length=21)
 df <- data.frame(x)
 
 D <- function(q){1-q}
 
-lab1 <-expression("P(q+"*Delta*'q)')
-lab2 <-expression("q+"*Delta*'q')
+
 
 S1 = data.frame(x = c(0, 0.1), y = c(0.9, 0.9))
 S2 = data.frame(x = c(0.1, 0.2), y = c(0.8, 0.8))
@@ -118,32 +117,35 @@ S4 = data.frame(x = c(0.8, 0.9), y = c(0.1, 0.1))
 
 p <- ggplot(df, aes(x=x)) +
     stat_function(fun=function(x) D(x), colour = "blue") +
-    scale_y_continuous(expand = c(0, 0), breaks = c(0.1, 0.2, 0.8, 0.9), labels = c(lab1, 'P(q)', lab1, 'P(q)'), limits = c(0, 1.2)) +
-    scale_x_continuous(expand = c(0, 0), breaks = c(0.1, 0.2, 0.8, 0.9),  labels = c('q', lab2, 'q', lab2), limits = c(0, 1.2)) +
-    labs(x="quantité", y = "prix", title="Recette marginale d'un monopole") +
-    annotate("text", x = 0.3, y = 1, label ="courbe de demande", colour = "blue") +
-    geom_segment(x=0.9, y=0, xend = 0.9, yend = 0.1, linetype="dashed") +
+    labs(x="quantité", y = "prix") +
+    annotate("text", x = 0.3, y = 1, label ="courbe de demande", colour = "blue")
+```
+
+```{r recette_marginale, include=T}
+p1 <- p
+
+lab1 <-expression("P(q+"*Delta*'q)')
+lab2 <-expression("q+"*Delta*'q')
+
+p1 +  scale_y_continuous(breaks = c(0.1, 0.2, 0.8, 0.9), labels = c(lab1, 'P(q)', lab1, 'P(q)'), expand = c(0, 0), limits = c(0, 1.2)) +
+    scale_x_continuous(breaks = c(0.1, 0.2, 0.8, 0.9),  labels = c('q', lab2, 'q', lab2), expand = c(0, 0), limits = c(0, 1.2)) +
+  geom_segment(x=0.9, y=0, xend = 0.9, yend = 0.1, linetype="dashed") +
     geom_segment(x=0.8, y=0, xend = 0.8, yend = 0.2, linetype="dashed") +
     geom_segment(x=0.2, y=0, xend = 0.2, yend = 0.8, linetype="dashed") +
     geom_segment(x=0.1, y=0, xend = 0.1, yend = 0.9, linetype="dashed") +
     geom_segment(x=0, y = 0.9, xend = 0.1, yend = 0.9, linetype="dashed") +
     geom_segment(x=0, y = 0.8, xend = 0.2, yend = 0.8, linetype="dashed") +
     geom_segment(x=0, y = 0.2, xend = 0.8, yend = 0.2, linetype="dashed") +
-    geom_segment(x=0, y = 0.1, xend = 0.9, yend = 0.1, linetype="dashed")
-
-```
-
-```{r recette_marginale, include=T}
-p1 <- p
-
-p1 + geom_ribbon(data = S1, aes(x=x, ymin=0.8, ymax = y), fill="green", alpha = 0.5) +
+    geom_segment(x=0, y = 0.1, xend = 0.9, yend = 0.1, linetype="dashed") +
+geom_ribbon(data = S1, aes(x=x, ymin=0.8, ymax = y), fill="green", alpha = 0.5) +
     geom_ribbon(data = S2, aes(x=x, ymin=0, ymax = y), fill="red", alpha = 0.5) +
     geom_ribbon(data = S3, aes(x=x, ymin=0.1, ymax = y), fill="red", alpha = 0.5) +
     geom_ribbon(data = S4, aes(x=x, ymin=0, ymax = y), fill="green", alpha = 0.5) +
   annotate("text", x=0.05, y=0.85, label="+", colour="darkgreen", size = rel(10)) +
   annotate("text", x=0.4, y=0.15, label="-", colour="darkred", size = rel(10)) +
   annotate("text", x=0.15, y=0.4, label="-", colour="darkred", size = rel(10)) +
-  annotate("text", x=0.85, y=0.05, label="+", colour="darkgreen", size = rel(10))
+  annotate("text", x=0.85, y=0.05, label="+", colour="darkgreen", size = rel(10)) +
+  labs(title="Recette marginale d'un monopole")
 ```
 
 Quel est le paramètre important de la courbe de demande qui détermine si le revenu $R$ augmente ou diminue (càd si $R_m$ est positive ou négative) ?
@@ -154,21 +156,21 @@ R_m(q)& = \frac{dR(q)}{dq} \\
 & = \frac{d (qP(q))}{dq} \\
 & = P(q) + q\frac{d P(q)}{dq} \\
 & = P(q)\left(1 + \frac{q}{P(q)}\frac{d P(q)}{dq} \right)\\
-& = P(q)\left(1 + \frac{1}{\varepsilon_{q/P_q}}\right)
+& = P(q)\left(1 + \frac{1}{\varepsilon_{q/p}}\right)
 \end{align*}
 
-Rappel : $\frac{P(q)}{q}\frac{dq}{dP(q)} = \varepsilon_{q/P_q} <0$
+*Rappel :* $\frac{P(q)}{q}\frac{dq}{dP(q)} = \varepsilon_{q/p} <0$
 
 \begin{equation}
-R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/P_q}|}\right)\\
+R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}|}\right)\\
 (\#eq:rm)
 \end{equation}
 
 
 De l'équation \@ref(eq:rm), on voit clairement que le signe de $R_m$ dépend de l'élasticité prix de la demande.
 
-1. Si la demande est élastique ($|\varepsilon_{q/P_q}|>1$), alors $R_m(q)>0$, donc si la quantité augmente, le revenu augmente.
-2. Si la demande est inélastique ($|\varepsilon_{q/P_q}|<1$), alors $R_m(q)<0$, donc si la quantité augmente, le revenu diminue.
+1. Si la demande est élastique ($|\varepsilon_{q/p}|>1$), alors $R_m(q)>0$, donc si la quantité augmente, le revenu augmente.
+2. Si la demande est inélastique ($|\varepsilon_{q/p}|<1$), alors $R_m(q)<0$, donc si la quantité augmente, le revenu diminue.
 
 ```{r elasticite}
 p2 <- p;
@@ -180,11 +182,14 @@ lab3 = expression('|'*epsilon*'|'==1)
 
 p2 + geom_segment(x=0, y=0, xend = 0.5, yend = 0.5, linetype="dashed") +
   geom_segment(x=0, y=1, xend = 0.5, yend = 0.5, colour="green") +
-    geom_segment(x=1, y=0, xend = 0.5, yend = 0.5, colour="red") +
+  geom_segment(x=1, y=0, xend = 0.5, yend = 0.5, colour="red") +
   annotate("text", x=0.35, y=0.75, label=lab1, size = 10, colour="darkgreen") +
   annotate("text", x=0.85, y=0.25, label=lab2, size = 10, colour="darkred") +
   annotate("text", x=0.65, y=0.5, label=lab3, size = 10, colour="darkblue") +
-  annotate("point", x=0.5, y=0.5, label=lab3, size = 4, colour="darkblue")
+  annotate("point", x=0.5, y=0.5, size = 4, colour="darkblue") +
+  labs(title="Elasticité et profit") +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c()) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c())
 ```
 
 ## Représentation graphique
@@ -198,17 +203,54 @@ et $\frac{d P(q)}{dq}$ est négative (la demande est décroissante quand le prix
 ### Exemple avec une courbe de demande linéaire
 
 Prenons maintenant l'exemple d'une courbe de demande linéaire quelconque $P(q) = a-bq$ ($a$ et $b$ sont des paramètres quelconques).
-On obtient alors $R_m(q) = a-2bq$.  
+On obtient alors $R_m(q) = a-2bq$ (et $R(q) = aq-bq^2$).  
 Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus forte que la demande, et ayant la même ordonnée à l'origine.
 La recette marginale divise en deux  tout segment horizontal entre l'axe des ordonnées et la courbe de demande.
 
-GRAPH
+```{r recettemarginale}
+Rm <- function(q)(1-2*q)
+R <- function(q)(q-q^2)
 
-La recette marginale est atteinte lorsque la valeur absolue de l'élasticité prix de la demande est égale à 1 ($|\varepsilon_{q/P_q}|=1$).
+p3 <- p +
+  stat_function(fun=function(x) Rm(x), colour = "darkgreen") +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c()) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.5, 1), labels = c(expression(x[0]/2), expression(x[0]))) +
+  annotate("text", x=0.15, y=0.8, colour="darkgreen", label="recette marginale") +
+  stat_function(fun=function(x) R(x), colour = "red") +
+  annotate("text", x=0.1, y = 0.2, colour="red", label="Recette") +
+  annotate("text", x=0.65, y=0.5, label=lab3, size = 10, colour="darkblue") +
+  annotate("point", x=0.5, y=0.5, size = 4, colour="darkblue") +
+  annotate("point", x=0.5, y=0.25, size = 4, colour="red") +
+  annotate("text", x=0.65, y=0.3, size = 5, colour="red", label="Recette maximale") +
+  labs(title="Recette et élasticité")
+p3
+```
 
-GRAPH 
+La recette maximale est atteinte lorsque la valeur absolue de l'élasticité prix de la demande est égale à 1 ($|\varepsilon_{q/p}|=1$).
 
-GRAPH mesure de la recette totale.
+```{r profit}
+
+profit <- data.frame(x=c(0, 0.4), y=c(1, 0.2))
+
+p4 <- p +
+  stat_function(fun=function(x) Rm(x), colour = "darkgreen") +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.6), labels=c("p*")) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.4), labels = c("q*")) +
+  annotate("text", x=0.15, y=0.8, colour="darkgreen", label="recette marginale") +
+  annotate("text", x=0.1, y = 0.2, colour="red", label="Recette") +
+  labs(title="Profit") +
+  geom_ribbon(data = profit, aes(x=x, ymin=0, ymax = y), fill="green", alpha = 0.5) +
+  geom_ribbon(data = profit, aes(x=x, ymin=0, ymax = 0.6), fill="red", alpha = 0.5)
+
+p4
+```
+
+On peut calculer le profit de deux manières :
+
+1. En utilisant l'aire du trapèze vert (intégrale de la recette marginale entre 0 et la quantité produite $p^*$) ;
+2. En utilisant l'aire du rectangle rouge ($\pi=p^* q^*$).
+
+Le résultat provient de l'égalité d'aire entre le triangle vert et le triangle rouge.
 
 # Décision de production du monopole
 
@@ -287,29 +329,29 @@ On a donc un profit de **150**, qui est bien positif.
 
 On avait dans l'équation \@ref(eq:rm) :
 \[
-R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/P_q}|}\right)\\
+R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}|}\right)\\
 \]
 Comme à l'optimum, d'après l'équation \@ref(eq:cpo), on doit avoir $R_m(q^*)=C_m(q^*)$, on a :
 \[
-R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/P_q}(q^*)|}\right) = C_m(q^*) (\#eq:rmcm)
+R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) (\#eq:rmcm)
 \]
 On observe ici un lien avec la solution en CPP.
 En effet, en CPP, l'élasticité de la demande au prix est perçue comme infinie, on aura donc bien $P(q^*) = C_m(q^*)$, la solution obtenue en CPP.
 Dès lors que l'élasticité de la demande au prix n'est plus infinie en revanche, on obtient :
 \[
- P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/P_q}(q^*)\right|}} > C_m(q^*)
+ P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}} > C_m(q^*)
 \]
 
 *Question :* Dans quelle zone d'élasticité le monopole va-t-il opérer ?
 
-On voit que si $\left|\varepsilon_{q/P_q}(q^*)\right|<1$, c'est-à-dire que si la demande est inélastique, alors $1 - \frac{1}{\left|\varepsilon_{q/P_q}(q^*)\right|} <0$, ce qui implique que la recette marginale $R_m$ est négative, et donc impossible à égaliser avec le coût marginal $C_m$.  
+On voit que si $\left|\varepsilon_{q/p}(q^*)\right|<1$, c'est-à-dire que si la demande est inélastique, alors $1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} <0$, ce qui implique que la recette marginale $R_m$ est négative, et donc impossible à égaliser avec le coût marginal $C_m$.  
 On peut voir la réponse d'une autre façon.
 Si la pente est inélastique, alors le revenu $R$ augmente quand la quantité $q$ baisse. 
 Le coût total $C$ baisse aussi quand la quantité baisse. 
 Le monopole aurait donc tout intérêt à réduire sa production lorsque la demande est inélastique.
 
 ::: {.corollary}
-Le monopole opère donc nécessairement dans la zone élastique de la courbe de demande : $\left|\varepsilon_{q/P_q}(q^*)\right|>1$ .
+Le monopole opère donc nécessairement dans la zone élastique de la courbe de demande : $\left|\varepsilon_{q/p}(q^*)\right|>1$ .
 ::: 
 
 ## Indice de pouvoir du monopole
@@ -318,20 +360,20 @@ La capacité du monopole à vendre à un prix supérieur au coût marginal dépe
 Cela permet de construire un indice du *pouvoir de monopole* à partir de l'élasticité du prix à la demande à l'équilibre.
 On a d'après l'équation \@ref(eq:rmcm) :
 \[
-R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/P_q}(q^*)|}\right) = C_m(q^*) 
+R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) 
 \]
 On en déduit :
 
 \[\begin{array}{rl}
-& C_m(q^*) = P(q^*) - \frac{P(q^*)}{|\varepsilon_{q/P_q}(q^*)|}\\
-\Leftrightarrow & P(q^*) - C_m(q^*) = \frac{P(q^*)}{|\varepsilon_{q/P_q}(q^*)|}
+& C_m(q^*) = P(q^*) - \frac{P(q^*)}{|\varepsilon_{q/p}(q^*)|}\\
+\Leftrightarrow & P(q^*) - C_m(q^*) = \frac{P(q^*)}{|\varepsilon_{q/p}(q^*)|}
 \end{array}
 \]
 
 ::: {.definition #Lerner name="Indice de Lerner"}
 On définit l'indice de Lerner par :
 \[
-\frac{1}{|\varepsilon_{q/P_q}(q^*)|} = \frac{P(q^*) - C_m(q^*)}{P(q^*)} (\#eq:Lerner)
+\frac{1}{|\varepsilon_{q/p}(q^*)|} = \frac{P(q^*) - C_m(q^*)}{P(q^*)} (\#eq:Lerner)
 \]
 La partie gauche de l'équation est l'indice de Lerner, et la partie droite indique la capacité du monopole à vendre au-dessus de son coût marginal, en pourcentage du prix total.
 :::
@@ -340,7 +382,7 @@ On peut construire à partir de l'équation précédente le *markup pricing*.
 
 :::{.definition name="Markup pricing"}
 \[
-P(q^*) =\frac{|\varepsilon_{q/P_q}(q^*)|}{|\varepsilon_{q/P_q}(q^*)|-1} C_m(q^*)
+P(q^*) =\frac{|\varepsilon_{q/p}(q^*)|}{|\varepsilon_{q/p}(q^*)|-1} C_m(q^*)
 \]
 :::
 

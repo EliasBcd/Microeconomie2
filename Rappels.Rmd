@@ -47,7 +47,7 @@ theme_set(theme_perso())
 1. Atomicité des agents
 2. Information parfaite
 3. Mobilité parfaite des facteurs de production
-4. Homogénéïté des biens
+4. Homogénéité des biens
 5. Libre entrées et sorties des marchés
 
 L'hypothèse 1 implique que personne n'a d'influence *individuellement* sur les prix.
@@ -57,7 +57,7 @@ C'est l'hypothèse dite aussi de *price-taker*.
 L'hypothèse 2 signifie que tous les acteurs disposent de toutes les informations pertinentes.
 Il n'y a, par exemple, pas de coût pour de recherche d'information.
 
-L'hypothèse 3 garantit l'homogénéïté spatiale du prix des facteurs.
+L'hypothèse 3 garantit l’homogénéité spatiale du prix des facteurs.
 Les différences de coûts entre producteurs ne peuvent donc être dus qu'au différence technologique entre ceux-ci, et non à une différence de coût des facteurs de production.
 
 L'hypothèse 4 qu'il n'y notamment pas d'effet des marques.
@@ -122,7 +122,7 @@ p + geom_ribbon(data = Sc, aes(x=x, ymin=0.5, ymax = y), fill="blue") +
 - L'équilibre en CPP est celui qui **maximise** le *surplus total*.
 Tout autre couple prix/quantité abouti à un surplus total plus faible.
 - L'équilibre de CPP est *Pareto-optimal*, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
-(C'est ce qu'on appelle le 1er théorème du bien-être)
+C'est ce qu'on appelle le *premier théorème du bien-être^*.
 
 Ces propriétés font de la CPP une "référence" par rapport à laquelle on peut comparer les résultats des autres structures de marché.
 
@@ -159,4 +159,4 @@ p <- ggplot(df, aes(x=x)) +
 p
 ```
 
-Dans ce graphique, $q^*$ rerpésente la production optimale de ce producteur quand il est seul.
+Dans ce graphique, $q^*$ représente la production optimale de ce producteur quand il est seul.
