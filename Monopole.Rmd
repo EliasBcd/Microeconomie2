@@ -17,6 +17,7 @@ knitr::opts_chunk$set(echo = F, warning = F)
 
 ```{r theme}
 library(ggplot2)
+library(latex2exp)
 theme_perso <- function(base_size = 14) {
     theme_bw(base_size = base_size) %+replace%
         theme(
@@ -285,8 +286,28 @@ Cette condition est en particulier vérifiée si la recette marginale est décro
 Finalement, il faut vérifier que le profit à l'optimum est positif ($\pi(q^*)>0$).
 Dans le cas contraire, le marché n'existerait tout simplement pas, car le monopole ne voudrait pas produire le bien.
 
-GRAPH avec recette marginale et coût marginal.
-On tarifie sur  la courbe de **demande**.
+```{r}
+p5 <- p
+
+Cm <- function(x){2*x}
+perte1 <- data.frame(x = c(0.15, 0.25), y = c(0.7, 0.5), z = c(0.3, 0.5))
+perte2 <- data.frame(x = c(0.25, 0.35), y = c(0.5, 0.7), z = c(0.5, 0.3))
+
+p5 +   stat_function(fun=function(x) Rm(x), colour = "darkgreen") +
+  stat_function(fun=function(x) Cm(x), colour = "red") +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.75), labels=c(TeX("$p_m^*$"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.25), labels = c(TeX("$q_m^*$"))) +
+  geom_ribbon(data = perte1, aes(x=x, ymin=z, ymax = y), fill="red", alpha = 0.5) +
+  geom_ribbon(data = perte2, aes(x=x, ymin=z, ymax = y), fill="red", alpha = 0.5) +
+  annotate("text", x=0.15, y=0.6, label=TeX("perte si $q<q_m^*$"), color="darkred") +
+  annotate("text", x=0.4, y=0.4, label=TeX("perte si q>q_m^*"), color="darkred") +
+  annotate("text", x=0.5, y=0.1, colour="darkgreen", label="recette marginale") +
+  annotate("text", x=0.55, y=0.8, colour="darkred", label="coût marginal") +
+  labs(title="Optimalité du monopole")
+```
+
+
+Le prix est lu et obtenu sur  la courbe de **demande**.
 
 ::: {.example name="Maximisation du monopole"}
 Prenons un monopole avec une fonction de coût $C(q)=50+q^2$.
@@ -324,6 +345,54 @@ Le prix de vente vaut :
 La recette vaut 300, le coût 150. 
 On a donc un profit de **150**, qui est bien positif.
 :::
+
+```{r}
+x2 <- seq(0, 20, length=100)
+df2 <- data.frame(x2)
+
+C <- function(q){ 50+q^2 }
+Cm <- function(q){ 2*q }
+CM <- function(q){ C(q)/q }
+P <- function(q){ 40-q }
+
+
+R <- function(q){ P(q)*q }
+Rm <- function(q){ P(q) - q }
+pi <- function(q){ R(q) - C(q)}
+
+p6 <- ggplot(df2, aes(x=x2)) +
+  stat_function(fun=function(x) R(x), colour = "blue") +
+  labs(x="quantité", y = "prix") +
+  stat_function(fun=function(x) C(x), colour="red") +
+  stat_function(fun=function(x) pi(x), colour="darkgreen") +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 420), breaks = seq(0, 400, by=50), labels=c(0, 50, 100, TeX("$\\pi_m^*=150$"), 200, 250, 300, 350, 400)) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 22), breaks = seq(0, 20, by=5), labels = c(0, 5, TeX("$q_m^*=10$"), 15, 20)) +
+  annotate("text", x=18, y=10, label=TeX("$\\pi$"), color="darkgreen") +
+  annotate("text", x=18, y=350, label=TeX("C_m"), color="darkred") +
+    annotate("text", x=18, y=400, label=TeX("R"), color="blue") +
+  labs(y="Euros", title="Reccette, coût et profit")
+
+profit <- data.frame(x=c(0, 10), ymax=c(30, 30), ymin=c(15, 15))
+
+p7 <- ggplot(df2, aes(x=x2)) +
+  stat_function(fun=function(x) P(x), colour = "blue") +
+  stat_function(fun=function(x) Rm(x), colour = "lightblue") +
+  labs(x="quantité", y = "prix") +
+  stat_function(fun=function(x) Cm(x), colour="red") +
+  stat_function(fun=function(x) CM(x), colour="pink") +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 45), breaks = seq(0, 40, by=5), labels=seq(0, 40, by=5)) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 22), breaks = seq(0, 20, by=5), labels=c(0, 5, TeX("$q_m^*=10$"), 15, 20)) +
+  annotate("text", x=18, y=20, label="demande", color="blue") +
+  annotate("text", x=18, y=1, label=TeX("$R_m$"), color="lightblue") +
+  annotate("text", x=18, y=40, label=TeX("$C_m$"), color="red") +
+  annotate("text", x=18, y=25, label=TeX("$C_M$"), color="pink") +
+  geom_ribbon(data = profit, aes(x=x, ymin=ymin, ymax = ymax), fill="green", alpha = 0.5) +
+  annotate("text", x=5, y=25, label=TeX("$\\pi$"), color="darkgreen")
+
+p6
+
+p7  
+```
 
 ## Propriétés de la solution de la maximisation du monopole
 
