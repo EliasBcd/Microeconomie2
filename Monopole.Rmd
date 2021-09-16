@@ -5,8 +5,8 @@ author:
 - Antoine Terracol
 date: "Septembre 2021"
 output:
-  bookdown::html_book: default
   bookdown::pdf_book: default
+  bookdown::html_book: default
 ---
 
 
@@ -122,7 +122,7 @@ p <- ggplot(df, aes(x=x)) +
     annotate("text", x = 0.3, y = 1, label ="courbe de demande", colour = "blue")
 ```
 
-```{r recette_marginale, include=T}
+```{r recette_marginale, include=T, fig.cap="Recette marginale d'un monopole."}
 p1 <- p
 
 lab1 <-expression("P(q+"*Delta*'q)')
@@ -145,8 +145,7 @@ geom_ribbon(data = S1, aes(x=x, ymin=0.8, ymax = y), fill="green", alpha = 0.5) 
   annotate("text", x=0.05, y=0.85, label="+", colour="darkgreen", size = rel(10)) +
   annotate("text", x=0.4, y=0.15, label="-", colour="darkred", size = rel(10)) +
   annotate("text", x=0.15, y=0.4, label="-", colour="darkred", size = rel(10)) +
-  annotate("text", x=0.85, y=0.05, label="+", colour="darkgreen", size = rel(10)) +
-  labs(title="Recette marginale d'un monopole")
+  annotate("text", x=0.85, y=0.05, label="+", colour="darkgreen", size = rel(10))
 ```
 
 Quel est le paramètre important de la courbe de demande qui détermine si le revenu $R$ augmente ou diminue (càd si $R_m$ est positive ou négative) ?
@@ -173,7 +172,7 @@ De l'équation \@ref(eq:rm), on voit clairement que le signe de $R_m$ dépend de
 1. Si la demande est élastique ($|\varepsilon_{q/p}|>1$), alors $R_m(q)>0$, donc si la quantité augmente, le revenu augmente.
 2. Si la demande est inélastique ($|\varepsilon_{q/p}|<1$), alors $R_m(q)<0$, donc si la quantité augmente, le revenu diminue.
 
-```{r elasticite}
+```{r elasticite, fig.cap="Elasticité et profit."}
 p2 <- p;
 
 lab1 = expression('|'*epsilon*'|'>1)
@@ -188,7 +187,6 @@ p2 + geom_segment(x=0, y=0, xend = 0.5, yend = 0.5, linetype="dashed") +
   annotate("text", x=0.85, y=0.25, label=lab2, size = 10, colour="darkred") +
   annotate("text", x=0.65, y=0.5, label=lab3, size = 10, colour="darkblue") +
   annotate("point", x=0.5, y=0.5, size = 4, colour="darkblue") +
-  labs(title="Elasticité et profit") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c()) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c())
 ```
@@ -208,7 +206,7 @@ On obtient alors $R_m(q) = a-2bq$ (et $R(q) = aq-bq^2$).
 Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus forte que la demande, et ayant la même ordonnée à l'origine.
 La recette marginale divise en deux  tout segment horizontal entre l'axe des ordonnées et la courbe de demande.
 
-```{r recettemarginale}
+```{r recettemarginale, fig.cap="Elasticité et recette."}
 Rm <- function(q)(1-2*q)
 R <- function(q)(q-q^2)
 
@@ -222,14 +220,14 @@ p3 <- p +
   annotate("text", x=0.65, y=0.5, label=lab3, size = 10, colour="darkblue") +
   annotate("point", x=0.5, y=0.5, size = 4, colour="darkblue") +
   annotate("point", x=0.5, y=0.25, size = 4, colour="red") +
-  annotate("text", x=0.65, y=0.3, size = 5, colour="red", label="Recette maximale") +
-  labs(title="Recette et élasticité")
+  annotate("text", x=0.65, y=0.3, size = 5, colour="red", label="Recette maximale")
+
 p3
 ```
 
 La recette maximale est atteinte lorsque la valeur absolue de l'élasticité prix de la demande est égale à 1 ($|\varepsilon_{q/p}|=1$).
 
-```{r profit}
+```{r profit, fig.cap="Recette maximale."}
 
 profit <- data.frame(x=c(0, 0.4), y=c(1, 0.2))
 
@@ -239,7 +237,6 @@ p4 <- p +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.4), labels = c("q*")) +
   annotate("text", x=0.15, y=0.8, colour="darkgreen", label="recette marginale") +
   annotate("text", x=0.1, y = 0.2, colour="red", label="Recette") +
-  labs(title="Profit") +
   geom_ribbon(data = profit, aes(x=x, ymin=0, ymax = y), fill="green", alpha = 0.5) +
   geom_ribbon(data = profit, aes(x=x, ymin=0, ymax = 0.6), fill="red", alpha = 0.5)
 
@@ -286,7 +283,7 @@ Cette condition est en particulier vérifiée si la recette marginale est décro
 Finalement, il faut vérifier que le profit à l'optimum est positif ($\pi(q^*)>0$).
 Dans le cas contraire, le marché n'existerait tout simplement pas, car le monopole ne voudrait pas produire le bien.
 
-```{r}
+```{r monopoleoptimale, fig.cap="Production optimale du monopole."}
 p5 <- p
 
 Cm <- function(x){2*x}
@@ -302,8 +299,7 @@ p5 +   stat_function(fun=function(x) Rm(x), colour = "darkgreen") +
   annotate("text", x=0.15, y=0.6, label=TeX("perte si $q<q_m^*$"), color="darkred") +
   annotate("text", x=0.4, y=0.4, label=TeX("perte si q>q_m^*"), color="darkred") +
   annotate("text", x=0.5, y=0.1, colour="darkgreen", label="recette marginale") +
-  annotate("text", x=0.55, y=0.8, colour="darkred", label="coût marginal") +
-  labs(title="Optimalité du monopole")
+  annotate("text", x=0.55, y=0.8, colour="darkred", label="coût marginal")
 ```
 
 
@@ -346,7 +342,7 @@ La recette vaut 300, le coût 150.
 On a donc un profit de **150**, qui est bien positif.
 :::
 
-```{r}
+```{r monopolerecette, fig.cap="Recette, coût et profit."}
 x2 <- seq(0, 20, length=100)
 df2 <- data.frame(x2)
 
@@ -369,9 +365,12 @@ p6 <- ggplot(df2, aes(x=x2)) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 22), breaks = seq(0, 20, by=5), labels = c(0, 5, TeX("$q_m^*=10$"), 15, 20)) +
   annotate("text", x=18, y=10, label=TeX("$\\pi$"), color="darkgreen") +
   annotate("text", x=18, y=350, label=TeX("C_m"), color="darkred") +
-    annotate("text", x=18, y=400, label=TeX("R"), color="blue") +
-  labs(y="Euros", title="Reccette, coût et profit")
+  annotate("text", x=18, y=400, label=TeX("R"), color="blue")
 
+p6
+```
+
+```{r monopoleprofit, fig.cap="Demande, prix, coûts et profits."}
 profit <- data.frame(x=c(0, 10), ymax=c(30, 30), ymin=c(15, 15))
 
 p7 <- ggplot(df2, aes(x=x2)) +
@@ -389,7 +388,6 @@ p7 <- ggplot(df2, aes(x=x2)) +
   geom_ribbon(data = profit, aes(x=x, ymin=ymin, ymax = ymax), fill="green", alpha = 0.5) +
   annotate("text", x=5, y=25, label=TeX("$\\pi$"), color="darkgreen")
 
-p6
 
 p7  
 ```
@@ -463,6 +461,42 @@ Les décisions de production du monopole et la fixation de son prix dépendent d
 Le monopole n'a **pas de courbe d'offre** au sens où il n'y a pas de relation univoque entre prix et quantité produite, à la différence des producteurs en CPP.
 En monopole, si la demande change, le monopole s'adapte, soit en changeant sa production, mais pas son prix, ou l'inverse.
 
+```{r monopolechangementdemande1, fig.cap="Exemple de réaction du monopole à un changement de demande: changement de prix."}
+D2 <- function(q){(1-q)/2}
+R2 <- function(q){D2(q)*q}
+Rm2 <- function(q){1/2-q}
+Rm <- function(q){1-2*q}
+Cm <- function(q){q}
+
+p_changement <- ggplot() +
+  geom_function(fun=D, colour = "blue") +
+  geom_function(fun=Rm, colour = "lightblue") +
+  geom_function(fun=D2, colour = "darkgreen") +
+  geom_function(fun=Rm2, colour = "green") +
+  geom_function(fun=Cm, colour="red") +
+  labs(x="quantité", y = "prix") +
+  annotate("text", x=0.1, y=1, label=TeX("demande 2 ($R_2$)"), color="blue") +
+  annotate("text", x=0.4, y=0.2, label=TeX("$R_{2m}$"), color="lightblue") +
+  annotate("text", x=0.5, y=1, label=TeX("$C_m$"), color="red") +
+  annotate("text", x=0.4, y=0.1, label=TeX("$R_{1m}$"), color="green") +
+  annotate("text", x=0.5, y=0.4, label=TeX("demande 1 ($R_1$)"), color="darkgreen")
+
+
+p_prix <- p_changement +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(5/12, 5/6), labels=c(TeX("p_1^*"), TeX("p_2^*"))) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(1/6), labels=c(TeX("$q_1^*=q_2^2$")))
+
+p_prix
+```
+
+```{r monopolechangementdemande2, fig.cap="Exemple de réaction du monopole à un changement de demande: changement de quantité."}
+
+p_quantité <- p_changement +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(5/12), labels=c(TeX("p_1^*"))) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(1/6), labels=c(TeX("$q_1^*")))
+
+p_quantité
+```
 GRAPH avec changement de demandes
 
 En CPP, un changement de demande, si elle implique une changement du prix d'équilibre, entraîne forcément un changement dans la quantité produite par un producteur individuel.
