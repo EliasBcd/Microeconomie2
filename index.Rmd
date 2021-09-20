@@ -1,0 +1,78 @@
+--- 
+title: "Microéconomie 2"
+author:
+    - Elias Bouacida
+    - Antoine Terracol
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib, bibliographie.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  Cours de microéconomie en licence 2 à l'université Paris 8.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+library(ggplot2)
+library(latex2exp)
+```
+
+# Microéconomie 2
+
+Cours de microéconomie 2 en licence 2 à l'université Paris 8, donné par Antoine Terracol et Elias Bouacida.  
+Ce dépôt contient les notes de cours ainsi que les corrigés des exercices.
+
+## Thèmes
+
+Les principaux thèmes abordés dans ce cours sont les suivants :
+
+-  structures de marché
+- pouvoir de marché
+- principes de tarification
+- comportements stratégiques
+- problèmes d'information
+
+L'idée générale est de dépasser le cadre de la concurrence pure et parfaite et de se rapprocher un peu du *monde réel* en levant certaines hypothèses de la concurrence pure et parfaite.
+
+## Bibliographie
+
+Le cours ne nécessite pas de se référer à un manuel. 
+Néanmoins, pour ceux qui souhaitent des éclairages différents sur les notions abordés, voici quelques références utiles:
+
+- @varian2015 *Introduction à la microéconomie*
+- @varian2008 *Analyse Microéconomique*
+- @pindyck2012 *Microéconomie*
+- @jeleva2014 *Microéconomie*
+
+Et enfin une référence avancée, pour ceux qui cherchent les fondements mathématiques (en anglais):
+
+- @mas1995 *Microeconomic Theory*
+
+## Plan du cours
+
+1. Rappels sur la concurrence pure et parfaite
+2. Monopoles
+    - Monopoles simples
+    - Monopoles discriminants
+    - Pouvoir de marché et principes de tarification
+3. Oligopoles
+    - Duopoles à la Cournot
+    - Duopoles à la Stackelberg
+    - Collusion
+
+
+```{r eval=FALSE, include=FALSE}
+bookdown::serve_book()
+```
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
