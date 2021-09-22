@@ -1,6 +1,12 @@
 fig:marche
 fig:surplus
 fig:elasticite
+fig:cppexo11
+fig:cppexo13
+fig:cppexo22
+fig:cppexo23
+fig:cppexo24prixhaut
+fig:cppexo24prixbas
 eq:rm
 fig:monopoleelasticite
 fig:recettemarginale
@@ -23,6 +29,7 @@ rappels-le-marché-en-concurrence-pure-et-parfaite
 les-hypothèses-de-la-concurrence-pure-et-parfaite-cpp
 léquilibre-de-marché
 perception-par-les-agents-isolés
+exercices
 le-monopole
 recette-et-recette-marginale
 définition

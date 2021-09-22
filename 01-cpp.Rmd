@@ -1,9 +1,13 @@
 # Rappels : le marché en concurrence pure et parfaite
 
+```{r setupcpp, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+```
+
 ## Les hypothèses de la concurrence pure et parfaite (CPP)
 
 
-```{r theme, echo=FALSE}
+```{r theme}
 theme_perso <- function(base_size = 14) {
     theme_bw(base_size = base_size) %+replace%
         theme(
@@ -37,35 +41,51 @@ Il y a 5 hypothèses qui définissent la concurrence pure et parfaite :
 2. Information parfaite
 3. Mobilité parfaite des facteurs de production
 4. Homogénéité des biens
-5. Libre entrées et sorties des marchés
+5. Libre entrée et sortie du marché
 
-L'hypothèse 1 implique que personne n'a d'influence *individuellement* sur les prix.
+:::{.hypothesis name="Atomicité des agents"}
+L'hypothèse d'atomicité des agents implique que personne n'a d'influence *individuellement* sur les prix.
 En d'autres termes, chaque acteur est petit face au marché et considère le prix du marché comme une *donnée* qu'il ne peut pas influencer.
 On dit que les agents sont *price-taker* sur le marché.
+:::
 
-L'hypothèse 2 signifie que tous les acteurs disposent de toutes les informations pertinentes pour prendre leurs décisions.
+:::{.hypothesis name="Information parfaite"}
+L'hypothèse d'information parfaite signifie que tous les acteurs disposent de toutes les informations pertinentes pour prendre leurs décisions.
 Il n'y a, par exemple, pas de coût de recherche d'information.
+:::
 
-L'hypothèse 3 garantit l’homogénéité spatiale du prix des facteurs.
+:::{.hypothesis name="Mobilité parfaite des facteurs de production"}
+L'hypothèse de mobilité parfaite des facteurs de production garantit l’homogénéité spatiale du prix des facteurs.
 Les différences de coûts entre producteurs ne peuvent donc être dus qu'au différence technologique entre ceux-ci, et non à une différence de coût des facteurs de production.
+:::
 
-L'hypothèse 4 qu'il n'y notamment pas d'effet des marques.
+:::{.hypothesis name="Homogénéïté des biens"}
+L'homogénéïté des biens signifie que tous les biens vendu sur un marché sont parfaitement substituables.
+Sur un marché donné, tous les biens ont la même qualité.
+Il n'y aussi pas d'effet des marques.
+:::
 
-L'hypothèse 5 qu'il n'y pas de barrière à l'entrée dans le marché.
+:::{.hypothesis name="Libre entrée et sortie du marché"}
+L'hypothèse de libre entrée et sortie du marché signifie qu'il n'y pas de barrière à l'entrée dans le marché.
 Concrètement, cela implique qu'il est impossible de faire du bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.
+:::
 
 La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un *pouvoir de marché* aux entreprises en place.
 
 ## L'équilibre de marché
 
-*Demande agrégée (D)* : Somme des demandes individuelles pour chaque niveau de prix.
+:::{.definition name="Demande agrégée (D)"}
+La *demande agrégée (D)* est la somme des demandes individuelles pour chaque niveau de prix.
+:::
 
-*Offre agrégée (S)* : Somme des offres individuelles pour chaque niveau de prix.
+:::{.definition name="Offre agrégée (S)"}
+L'*offre agrégée (S)* est la omme des offres individuelles pour chaque niveau de prix.
+:::
 
 L'équilibre de marché se fait à l'intersection entre S et D (quand S=D).
 
 
-```{r marche, echo=FALSE, warning=FALSE, fig.cap="Equilibre de marché."}
+```{r marche, fig.cap="Equilibre de marché."}
 
 x=seq(0, 1, length=11)
 df <- data.frame(x)
@@ -96,7 +116,23 @@ La courbe d'offre correspond à la série des coûts marginaux de production, c'
 
 La vente de toutes les unités jusqu'à la quantité d'équilibre $q^*$ au prix $p^*$ procure un *surplus* aux agents économiques.
 
-```{r surplus, echo=FALSE, warning=FALSE, fig.cap="Surplus des consommateurs et des producteurs."}
+:::{.definition name="Surplus des consommateurs"}
+Le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix payé par le consommateur pour obtenir les biens.
+Sur le graphique quantité prix $(q, p)$, c'est l'aire compris entre la courbe de demande est la droite horizontale dont l'ordonnée est le prix d'échange.
+Formellement :
+\[S_c=\int_0^{q^*}P(q)-p^* dq\]
+:::
+
+:::{.definition name="Surplus des producteurs"}
+Le surplus des producteurs est la somme des différences entre le prix auquel les producteurs vendent le bien et la courbe de coût marginal, qui représente le coût d'une unité supplémentaire produite.
+Sur le graphique quantité prix $(q, p)$, c'est l'aire compris entre le prix de vente et la courbe de coût marginal.
+Formellement :
+\[S_p=\int_0^{q^*}p^*-S(q) dq\]
+:::
+
+En pratique, on utilisera jamais la formule avec des intégrales, mais on calculera l'aire du triangle (ou trapèze) concerné.
+
+```{r surplus, fig.cap="Surplus des consommateurs et des producteurs."}
 
 Sc = data.frame(x = c(0, 0.5), y = c(1, 0.5))
 Sp = data.frame(x = c(0, 0.5), y = c(0, 0.5))
@@ -105,12 +141,12 @@ p + geom_ribbon(data = Sc, aes(x=x, ymin=0.5, ymax = y), fill="blue") +
     geom_ribbon(data = Sp, aes(x=x, ymin=y, ymax = 0.5), fill="red")
 ```
 
-**Propriétés :**
-
-- L'équilibre en CPP est celui qui **maximise** le *surplus total*.
-Tout autre couple prix/quantité abouti à un surplus total plus faible.
-- L'équilibre de CPP est *Pareto-optimal*, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
+:::{ .proposition #cppprop name="Propriétés de l'équilibre en concurrence pure et parfaite"}
+L'équilibre en CPP est celui qui **maximise** le *surplus total*.
+Tout autre couple prix/quantité abouti à un surplus total plus faible.  
+L'équilibre de CPP est *Pareto-optimal*, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
 C'est ce qu'on appelle le *premier théorème du bien-être*.
+:::
 
 Ces propriétés font de la CPP une "référence" par rapport à laquelle on peut comparer les résultats des autres structures de marché.
 
@@ -123,7 +159,7 @@ C'est-à-dire qu'un producteur sait qu'au prix de marché, il pourra vendre tout
 Il perçoit ainsi une demande infiniment élastique au prix,  au niveau du prix $p^*$.
 
 
-```{r elasticite, echo=FALSE, warning=FALSE, fig.align='center', fig.cap="Perception de la demande globale par un producteur isolé."}
+```{r elasticite, fig.align='center', fig.cap="Perception de la demande globale par un producteur isolé."}
 
 x=seq(0, 1, length=11)
 df <- data.frame(x)
@@ -148,3 +184,224 @@ p
 ```
 
 Dans ce graphique, $q^*$ représente la production optimale de ce producteur quand il est seul.
+
+## Exercices
+
+:::{ .exercise #cppexo1}
+
+On considère un consommateur dont la fonction de demande optimale pour un bien est donnée par :
+\[
+Q(p)=10-p
+\]
+où $p$ est le prix du bien.
+
+
+1. Donnez la fonction de demande inverse correspondante. Représentez la graphiquement.
+2. Quel est le prix maximum que le consommateur est prêt à payer pour la première unité de bien ? Et pour la cinquième ?
+3. Calculez le surplus du consommateur lorsque le prix est de $p=2$. Interprétez la valeur obtenue. 
+:::
+
+:::{.solution name="Exercice \@ref(exr:cppexo1)"}
+La fonction de demande inverse est la fonction inverse de la fonction de demande.
+Autrement dit, elle exprime le prix $P$ en fonction de la quantité $q$ plutôt que la quantité $Q$ en fonction du prix $p$.
+Ici on $q=10-p$, ce qui équivaut à $p=10-q$.
+La fonction de demande inverse est donc $P(q)=10-q$.
+Graphiquement, on obtient :
+
+```{r cppexo11, fig.cap="Représentation graphique de la demande inverse."}
+P <- function(q){10-q}
+
+p <- ggplot() +
+  geom_function(fun=P, color="blue") +
+  labs(x="quantité", y = "prix") +
+  annotate("text", x= 6, y=6, label="Demande inverse", color="blue")
+
+p + scale_x_continuous(expand = c(0, 0), limits=c(0, 12), breaks=c(10), labels=c(10)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 12), breaks=c(10), labels=c(10))
+
+```
+
+2. Pour la première unité de bien, on utilise la fonction de demande inverse.
+Le prix que le consommateur est prêt à payer pour la première unité est $P(q=1)=9$.
+Pour la cinquième unité, c'est $P(q=5)=5$.
+Dans les deux cas, ce sont le prix maximal que les consommateurs sont prêts à payer pour l'unité supplémentaire du bien.
+Rappelez-vous que la courbe de demande inverse représente l'ensemble des prix maximaux que les consommateurs sont prêts à payer pour une unité supplémentaire du bien.
+
+3. Le surplus du consommateur est la somme des différences entre le prix maximal que chaque individu est prêt à payer et le prix auquel il paie effectivement le bien.
+Mathématiquement, le surplus du consommateur s'exprime toujours ainsi :
+\[
+S_c=\int_0^{q^*}P(q)-p^*dq
+\]
+Où $p^*$ et $q^*$ représente le prix sur le marché, et $q^*$ la quantité échangée.
+
+
+```{r cppexo13, fig.cap="Représentation graphique du surplus du consommateur."}
+Sc=data.frame(x=c(0, 8), ymin=c(2, 2), ymax=c(10, 2))
+
+p + geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 12), breaks=c(8, 10), labels=c(TeX("$q^*=8$"), 10)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 12), breaks=c(2, 10), labels=c(TeX("$p^*=2$"), 10)) +
+  geom_segment(data=Sc, aes(x=x), x=0, y=2, xend=8, yend=2, linetype="dashed") +
+  annotate("text", x=2, y=5, label="Surplus du consommateur", color="blue") +
+  geom_segment(data=Sc, aes(x=x), x=8, y=0, xend=8, yend=2, linetype="dashed")
+```
+
+En général, comme on peut le voir sur la figure \@ref(fig:cppexo13), il est possible de calculer le surplus en utiliser la formule donnant l'aire d'un triangle.
+Ici, on obtient :
+\[S_c=\frac{1}{2}(10-2)\cdot(8-0)=32\]
+Les consommateurs "gagnent" donc 32 par rapport à la situation où ils devraient payer chacun leur prix de réserve.
+:::
+
+
+:::{ .exercise #cppexo2}
+On considère une firme faisant face à la contrainte technologique donnée par la fonction de coût total :
+\[C(q)=q^2+10q\]
+
+1. Donnez la fonction de coût marginal correspondant.
+2. Déterminez la fonction d'offre de cette firme. Représentez la graphiquement.
+3. On suppose que la fonction de demande inverse du marché est donnée par :
+\[P(q)=100-q\]
+Déterminez le prix d'équilibre sur le marché, le surplus du producteur, le surplus du consommateur ainsi que le surplus total.
+4. Supposons que l'État impose un prix $p=80$. Quelle va être la quantité échangée ? Quel sera le surplus total ? Et si l'état impose un prix $p=20$ ? Représentez graphiquement ces deux situations. En déduire que l'équilibre concurrentiel maximise le surplus total.
+:::
+
+:::{.solution name="Exercice \@ref(exr:cppexo2)"}
+La fonction de coût marginal est la dérivée de la fonction de coût total.
+La fonction de coût marginal donne le coût de production d'une unité de bien supplémentaire.
+\[C_m(q)=C'(q)=2q+10\]
+
+2. La fonction d'offre des entreprises en concurrence pure et parfaite est égale à la fonction de coût marginal.
+Si on la note $S$, $S(q)=C_m(q) = 2q+10$.
+C'est le prix minimal auquel elle est prête à vendre une unité de bien supplémentaire.
+
+```{r cppexo22, fig.cap="Représentation graphique de la demande inverse."}
+S <- function(q){10+2*q}
+
+p <- ggplot() +
+  geom_function(fun=S, color="red") +
+  labs(x="quantité", y = "prix") +
+  annotate("text", x=50, y=75, label="Offre", color="red")
+
+p + scale_x_continuous(expand = c(0, 0), limits=c(0, 100)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 100))
+
+```
+
+3. A l'équilibre sur le marché, une quantité $q^*$ de biens est échangée au prix $p^*$.
+Le marché vérifie alors les équations suivantes :
+\begin{equation}
+p^*=S(q^*)=P(q^*)
+(\#eq:cppequilibre)
+\end{equation}
+Commençons par la deuxième partie de l'équation \@ref(eq:cppequilibre) :
+\begin{align*}{crcl}
+&2q^*+10&=&100-q^*\\
+\Leftrightarrow&3q^*&=&90\\
+\Leftrightarrow & q^*&=&30
+\end{align*}
+La quantité échangée à l'équilibre est donc de $q^*=30$.
+A l'aide de la quantité échangée est de la première partie de l'équation \@ref(eq:cppequilibre), on obtient
+\[
+p^*=P(q^*=30) = 100-30=70 
+\]
+Sur le marché, 30 unités de bien sont donc échangés au prix de 70.
+On peut alors représenter les surplus sur le marché, comme dans la figure \@ref(fig:cppexo23).
+Le surplus des consommateurs est l'aire du triangle bleu, il vaut 
+\[S_c=\frac{1}{2}(100-70)\times(30-0)=450\]
+Le surplus des producteurs est l'aire du triangle rouge :
+\[
+S_p=\frac{1}{2}(70-10)\times(30-0) = 900
+\]
+
+```{r cppexo23, fig.cap="Surplus en CPP."}
+P <- function(q){100 - q}
+Sc <- data.frame(x=c(0, 30), ymin=c(70, 70), ymax=c(100, 70))
+Sp <- data.frame(x=c(0, 30), ymin=c(10, 70), ymax=c(70, 70))
+
+p + geom_function(fun=P, color="blue") +
+  annotate("text", x=80, y=20, label="Demande globale", color="blue") +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, 30, 100), labels=c(0, TeX("$q^*=30$"), 100)) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(10, 70, 100), labels=c(10, TeX("$p^*=70$"), 100)) +
+  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=20, y=80, label="Surplus du consommateur", color="blue") +
+  annotate("text", x=20, y=50, label="Surplus du producteur", color="red") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=30, y=70, yend=70, linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=30, xend=30, y=0, yend=70, linetype="dashed") 
+```
+
+Le surplus total est la somme des surplus des producteurs et des consommateurs :
+\[
+S_t^{CPP}=S_c+S_p=1350
+\]
+
+4. On regarde maintenant le cas l'état impose un prix $p^E=80$.
+La demande globale vaut alors de $Q(p^E)=100-p^E=20$, que l'on l'obtient en inversant la demande inverse, autrement dit en trouvant la quantité $q$ telle que $P(q)=p^E=80$.
+L'offre globale vaut $S(p^E)=\frac{p^E-10}{2}=35$, que l'on obtient en inversant la fonction d'offre, autrement dit en trouvant la quantité $q$ telle que $S(q)=p^E=80$.
+La demande globale est plus faible que l'offre globale, c'est donc la demande globale qui fixera les quantités échangées. 
+La quantité échangée vaut donc 20.
+Graphiquement, on obtient la figure \@ref(fig:cppexo24prixhaut).
+
+```{r cppexo24prixhaut, fig.cap="Surplus en quand l'Etat impose un prix $p^E=80$."}
+Sc <- data.frame(x=c(0, 20), ymin=c(80, 80), ymax=c(100, 80))
+Sp <- data.frame(x=c(0, 20), ymin=c(10, 50), ymax=c(80, 80))
+
+p + geom_function(fun=P, color="blue") +
+  annotate("text", x=80, y=20, label="Demande globale", color="blue") +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, 20, 100), labels=c(0, TeX("$q^E=20$"), 100)) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(10, 50, 80, 100), labels=c(10, 50, TeX("$p^E=80$"), 100)) +
+  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=20, y=90, label="Surplus du consommateur", color="blue") +
+  annotate("text", x=20, y=60, label="Surplus du producteur", color="red") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=20, y=80, yend=80, linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=20, xend=20, y=0, yend=80, linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=20, y=50, yend=50, linetype="dashed")
+```
+Le surplus total est dans ce cas l'aire du trapèze bleu et rouge.
+Il nous faut obtenir le point sur la courbe d'offre pour la quantité $q^E$.
+En ce point, le prix est $S(q^E)=50$.
+\[
+S_t=\frac{1}{2}(100-10+80-50)\times(20-0)=1200 < S_t^{CPP}
+\]
+Le surplus total est dans ce cas plus faible qu'en CPP.
+
+On s'intéresse finalement au cas où l'état impose un prix $p^E=20$.
+La demande globale vaut alors de $Q(p^E)=100-p^E=80$, que l'on l'obtient en inversant la demande inverse, autrement dit en trouvant la quantité $q$ telle que $P(q)=p^E=20$.
+L'offre globale vaut $S(p^E)=\frac{p^E-10}{2}=5$, que l'on obtient en inversant la fonction d'offre, autrement dit en trouvant la quantité $q$ telle que $S(q)=p^E=20$.
+L'offre globale est plus faible que la demande globale, c'est donc l'offre globale qui fixera les quantités échangées. 
+La quantité échangée vaut donc 20.
+Graphiquement, on obtient la figure \@ref(fig:cppexo24prixbas).
+
+```{r cppexo24prixbas, fig.cap="Surplus en quand l'Etat impose un prix $p^E=20$."}
+Sc <- data.frame(x=c(0, 5), ymin=c(95, 95), ymax=c(100, 95))
+Sp <- data.frame(x=c(0, 5), ymin=c(10, 20), ymax=c(95, 95))
+
+p + geom_function(fun=P, color="blue") +
+  annotate("text", x=80, y=20, label="Demande globale", color="blue") +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, 5, 100), labels=c(0, TeX("$q^E=5$"), 100)) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(10, 20, 95, 100), labels=c(10, 20, TeX("$p^E=95$"), 100)) +
+  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=15, y=100, label="Surplus du consommateur", color="blue") +
+  annotate("text", x=15, y=60, label="Surplus du producteur", color="red") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=5, y=95, yend=95, linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=5, xend=5, y=0, yend=95, linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=5, y=20, yend=20, linetype="dashed")
+```
+Le surplus total est dans ce cas l'aire du trapèze bleu et rouge.
+Il nous faut obtenir le point sur la courbe d'offre pour la quantité $q^E$.
+En ce point, le prix est $S(q^E)=20$.
+\[
+S_t=\frac{1}{2}(100-10+95-20)\times(5-0)=\frac{825}{2}=412.5 < S_t^{CPP}
+\]
+Le surplus total est dans ce cas aussi plus faible qu'en CPP.
+
+Ces deux situations illustrent les deux cas qui s'écartent de la CPP : un prix plus élevé ou un prix plus faible.
+Dans les deux cas, on voit que le surplus total est plus faible.
+Ce serait vrai pour n'importe quel prix différent du prix de la concurrence pure et parfaite.
+On illustre ainsi le fait que l'équilibre de CPP maximise le surplus total.
+:::
+
+
+ 

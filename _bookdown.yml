@@ -11,7 +11,7 @@ language:
     eq: 'Equation '
     thm: 'Théorème '
     lem: 'Lemme '
-    prp: 'Proposition '
+    prp: 'Propriétés '
     cnj: 'Conjecture '
     exr: 'Exercice '
     hyp: 'Hypothèse '

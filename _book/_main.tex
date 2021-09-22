@@ -78,13 +78,13 @@
 
 \title{Microéconomie 2}
 \author{Elias Bouacida \and Antoine Terracol}
-\date{2021-09-20}
+\date{2021-09-22}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Théorème}[chapter]
 \newtheorem{lemma}{Lemme}[chapter]
 \newtheorem{corollary}{Corollaire}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{proposition}{Propriétés}[chapter]
 \newtheorem{conjecture}{Conjecture}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}{Définition}[chapter]
@@ -211,32 +211,48 @@ Il y a 5 hypothèses qui définissent la concurrence pure et parfaite :
 \item
   Homogénéité des biens
 \item
-  Libre entrées et sorties des marchés
+  Libre entrée et sortie du marché
 \end{enumerate}
 
-L'hypothèse 1 implique que personne n'a d'influence \emph{individuellement} sur les prix.
+\begin{hypothesis}[Atomicité des agents]
+L'hypothèse d'atomicité des agents implique que personne n'a d'influence \emph{individuellement} sur les prix.
 En d'autres termes, chaque acteur est petit face au marché et considère le prix du marché comme une \emph{donnée} qu'il ne peut pas influencer.
 On dit que les agents sont \emph{price-taker} sur le marché.
+\end{hypothesis}
 
-L'hypothèse 2 signifie que tous les acteurs disposent de toutes les informations pertinentes pour prendre leurs décisions.
+\begin{hypothesis}[Information parfaite]
+L'hypothèse d'information parfaite signifie que tous les acteurs disposent de toutes les informations pertinentes pour prendre leurs décisions.
 Il n'y a, par exemple, pas de coût de recherche d'information.
+\end{hypothesis}
 
-L'hypothèse 3 garantit l'homogénéité spatiale du prix des facteurs.
+\begin{hypothesis}[Mobilité parfaite des facteurs de production]
+L'hypothèse de mobilité parfaite des facteurs de production garantit l'homogénéité spatiale du prix des facteurs.
 Les différences de coûts entre producteurs ne peuvent donc être dus qu'au différence technologique entre ceux-ci, et non à une différence de coût des facteurs de production.
+\end{hypothesis}
 
-L'hypothèse 4 qu'il n'y notamment pas d'effet des marques.
+\begin{hypothesis}[Homogénéïté des biens]
+L'homogénéïté des biens signifie que tous les biens vendu sur un marché sont parfaitement substituables.
+Sur un marché donné, tous les biens ont la même qualité.
+Il n'y aussi pas d'effet des marques.
+\end{hypothesis}
 
-L'hypothèse 5 qu'il n'y pas de barrière à l'entrée dans le marché.
+\begin{hypothesis}[Libre entrée et sortie du marché]
+L'hypothèse de libre entrée et sortie du marché signifie qu'il n'y pas de barrière à l'entrée dans le marché.
 Concrètement, cela implique qu'il est impossible de faire du bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.
+\end{hypothesis}
 
 La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un \emph{pouvoir de marché} aux entreprises en place.
 
 \hypertarget{luxe9quilibre-de-marchuxe9}{%
 \section{L'équilibre de marché}\label{luxe9quilibre-de-marchuxe9}}
 
-\emph{Demande agrégée (D)} : Somme des demandes individuelles pour chaque niveau de prix.
+\begin{definition}[Demande agrégée (D)]
+La \emph{demande agrégée (D)} est la somme des demandes individuelles pour chaque niveau de prix.
+\end{definition}
 
-\emph{Offre agrégée (S)} : Somme des offres individuelles pour chaque niveau de prix.
+\begin{definition}[Offre agrégée (S)]
+L'\emph{offre agrégée (S)} est la omme des offres individuelles pour chaque niveau de prix.
+\end{definition}
 
 L'équilibre de marché se fait à l'intersection entre S et D (quand S=D).
 
@@ -252,23 +268,34 @@ La courbe d'offre correspond à la série des coûts marginaux de production, c'
 
 La vente de toutes les unités jusqu'à la quantité d'équilibre \(q^*\) au prix \(p^*\) procure un \emph{surplus} aux agents économiques.
 
+\begin{definition}[Surplus des consommateurs]
+Le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix payé par le consommateur pour obtenir les biens.
+Sur le graphique quantité prix \((q, p)\), c'est l'aire compris entre la courbe de demande est la droite horizontale dont l'ordonnée est le prix d'échange.
+Formellement :
+\[S_c=\int_0^{q^*}P(q)-p^* dq\]
+\end{definition}
+
+\begin{definition}[Surplus des producteurs]
+Le surplus des producteurs est la somme des différences entre le prix auquel les producteurs vendent le bien et la courbe de coût marginal, qui représente le coût d'une unité supplémentaire produite.
+Sur le graphique quantité prix \((q, p)\), c'est l'aire compris entre le prix de vente et la courbe de coût marginal.
+Formellement :
+\[S_p=\int_0^{q^*}p^*-S(q) dq\]
+\end{definition}
+
+En pratique, on utilisera jamais la formule avec des intégrales, mais on calculera l'aire du triangle (ou trapèze) concerné.
+
 \begin{figure}
 \centering
 \includegraphics{_main_files/figure-latex/surplus-1.pdf}
 \caption{\label{fig:surplus}Surplus des consommateurs et des producteurs.}
 \end{figure}
 
-\textbf{Propriétés :}
-
-\begin{itemize}
-\tightlist
-\item
-  L'équilibre en CPP est celui qui \textbf{maximise} le \emph{surplus total}.
-  Tout autre couple prix/quantité abouti à un surplus total plus faible.
-\item
-  L'équilibre de CPP est \emph{Pareto-optimal}, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
-  C'est ce qu'on appelle le \emph{premier théorème du bien-être}.
-\end{itemize}
+\begin{proposition}[Propriétés de l'équilibre en concurrence pure et parfaite]
+\protect\hypertarget{prp:cppprop}{}\label{prp:cppprop}L'équilibre en CPP est celui qui \textbf{maximise} le \emph{surplus total}.
+Tout autre couple prix/quantité abouti à un surplus total plus faible.\\
+L'équilibre de CPP est \emph{Pareto-optimal}, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
+C'est ce qu'on appelle le \emph{premier théorème du bien-être}.
+\end{proposition}
 
 Ces propriétés font de la CPP une ``référence'' par rapport à laquelle on peut comparer les résultats des autres structures de marché.
 
@@ -291,6 +318,205 @@ Il perçoit ainsi une demande infiniment élastique au prix, au niveau du prix \
 \end{figure}
 
 Dans ce graphique, \(q^*\) représente la production optimale de ce producteur quand il est seul.
+
+\hypertarget{exercices}{%
+\section{Exercices}\label{exercices}}
+
+\begin{exercise}
+\protect\hypertarget{exr:cppexo1}{}\label{exr:cppexo1}
+
+On considère un consommateur dont la fonction de demande optimale pour un bien est donnée par :
+\[
+Q(p)=10-p
+\]
+où \(p\) est le prix du bien.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Donnez la fonction de demande inverse correspondante. Représentez la graphiquement.
+\item
+  Quel est le prix maximum que le consommateur est prêt à payer pour la première unité de bien ? Et pour la cinquième ?
+\item
+  Calculez le surplus du consommateur lorsque le prix est de \(p=2\). Interprétez la valeur obtenue.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{solution}[Exercice \ref{exr:cppexo1}]
+La fonction de demande inverse est la fonction inverse de la fonction de demande.
+Autrement dit, elle exprime le prix \(P\) en fonction de la quantité \(q\) plutôt que la quantité \(Q\) en fonction du prix \(p\).
+Ici on \(q=10-p\), ce qui équivaut à \(p=10-q\).
+La fonction de demande inverse est donc \(P(q)=10-q\).
+Graphiquement, on obtient :
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/cppexo11-1.pdf}
+\caption{\label{fig:cppexo11}Représentation graphique de la demande inverse.}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Pour la première unité de bien, on utilise la fonction de demande inverse.
+  Le prix que le consommateur est prêt à payer pour la première unité est \(P(q=1)=9\).
+  Pour la cinquième unité, c'est \(P(q=5)=5\).
+  Dans les deux cas, ce sont le prix maximal que les consommateurs sont prêts à payer pour l'unité supplémentaire du bien.
+  Rappelez-vous que la courbe de demande inverse représente l'ensemble des prix maximaux que les consommateurs sont prêts à payer pour une unité supplémentaire du bien.
+\item
+  Le surplus du consommateur est la somme des différences entre le prix maximal que chaque individu est prêt à payer et le prix auquel il paie effectivement le bien.
+  Mathématiquement, le surplus du consommateur s'exprime toujours ainsi :
+  \[
+  S_c=\int_0^{q^*}P(q)-p^*dq
+  \]
+  Où \(p^*\) et \(q^*\) représente le prix sur le marché, et \(q^*\) la quantité échangée.
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/cppexo13-1.pdf}
+\caption{\label{fig:cppexo13}Représentation graphique du surplus du consommateur.}
+\end{figure}
+
+En général, comme on peut le voir sur la figure \ref{fig:cppexo13}, il est possible de calculer le surplus en utiliser la formule donnant l'aire d'un triangle.
+Ici, on obtient :
+\[S_c=\frac{1}{2}(10-2)\cdot(8-0)=32\]
+Les consommateurs ``gagnent'' donc 32 par rapport à la situation où ils devraient payer chacun leur prix de réserve.
+\end{solution}
+
+\begin{exercise}
+\protect\hypertarget{exr:cppexo2}{}\label{exr:cppexo2}
+
+On considère une firme faisant face à la contrainte technologique donnée par la fonction de coût total :
+\[C(q)=q^2+10q\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Donnez la fonction de coût marginal correspondant.
+\item
+  Déterminez la fonction d'offre de cette firme. Représentez la graphiquement.
+\item
+  On suppose que la fonction de demande inverse du marché est donnée par :
+  \[P(q)=100-q\]
+  Déterminez le prix d'équilibre sur le marché, le surplus du producteur, le surplus du consommateur ainsi que le surplus total.
+\item
+  Supposons que l'État impose un prix \(p=80\). Quelle va être la quantité échangée ? Quel sera le surplus total ? Et si l'état impose un prix \(p=20\) ? Représentez graphiquement ces deux situations. En déduire que l'équilibre concurrentiel maximise le surplus total.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{solution}[Exercice \ref{exr:cppexo2}]
+La fonction de coût marginal est la dérivée de la fonction de coût total.
+La fonction de coût marginal donne le coût de production d'une unité de bien supplémentaire.
+\[C_m(q)=C'(q)=2q+10\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  La fonction d'offre des entreprises en concurrence pure et parfaite est égale à la fonction de coût marginal.
+  Si on la note \(S\), \(S(q)=C_m(q) = 2q+10\).
+  C'est le prix minimal auquel elle est prête à vendre une unité de bien supplémentaire.
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/cppexo22-1.pdf}
+\caption{\label{fig:cppexo22}Représentation graphique de la demande inverse.}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  A l'équilibre sur le marché, une quantité \(q^*\) de biens est échangée au prix \(p^*\).
+  Le marché vérifie alors les équations suivantes :
+  \begin{equation}
+  p^*=S(q^*)=P(q^*)
+  \label{eq:cppequilibre}
+  \end{equation}
+  Commençons par la deuxième partie de l'équation \eqref{eq:cppequilibre} :
+  \begin{align*}{crcl}
+  &2q^*+10&=&100-q^*\\
+  \Leftrightarrow&3q^*&=&90\\
+  \Leftrightarrow & q^*&=&30
+  \end{align*}
+  La quantité échangée à l'équilibre est donc de \(q^*=30\).
+  A l'aide de la quantité échangée est de la première partie de l'équation \eqref{eq:cppequilibre}, on obtient
+  \[
+  p^*=P(q^*=30) = 100-30=70 
+  \]
+  Sur le marché, 30 unités de bien sont donc échangés au prix de 70.
+  On peut alors représenter les surplus sur le marché, comme dans la figure \ref{fig:cppexo23}.
+  Le surplus des consommateurs est l'aire du triangle bleu, il vaut
+  \[S_c=\frac{1}{2}(100-70)\times(30-0)=450\]
+  Le surplus des producteurs est l'aire du triangle rouge :
+  \[
+  S_p=\frac{1}{2}(70-10)\times(30-0) = 900
+  \]
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/cppexo23-1.pdf}
+\caption{\label{fig:cppexo23}Surplus en CPP.}
+\end{figure}
+
+Le surplus total est la somme des surplus des producteurs et des consommateurs :
+\[
+S_t^{CPP}=S_c+S_p=1350
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  On regarde maintenant le cas l'état impose un prix \(p^E=80\).
+  La demande globale vaut alors de \(Q(p^E)=100-p^E=20\), que l'on l'obtient en inversant la demande inverse, autrement dit en trouvant la quantité \(q\) telle que \(P(q)=p^E=80\).
+  L'offre globale vaut \(S(p^E)=\frac{p^E-10}{2}=35\), que l'on obtient en inversant la fonction d'offre, autrement dit en trouvant la quantité \(q\) telle que \(S(q)=p^E=80\).
+  La demande globale est plus faible que l'offre globale, c'est donc la demande globale qui fixera les quantités échangées.
+  La quantité échangée vaut donc 20.
+  Graphiquement, on obtient la figure \ref{fig:cppexo24prixhaut}.
+\end{enumerate}
+
+\includegraphics{_main_files/figure-latex/cppexo24prixhaut-1.pdf}
+Le surplus total est dans ce cas l'aire du trapèze bleu et rouge.
+Il nous faut obtenir le point sur la courbe d'offre pour la quantité \(q^E\).
+En ce point, le prix est \(S(q^E)=50\).
+\[
+S_t=\frac{1}{2}(100-10+80-50)\times(20-0)=1200 < S_t^{CPP}
+\]
+Le surplus total est dans ce cas plus faible qu'en CPP.
+
+On s'intéresse finalement au cas où l'état impose un prix \(p^E=20\).
+La demande globale vaut alors de \(Q(p^E)=100-p^E=80\), que l'on l'obtient en inversant la demande inverse, autrement dit en trouvant la quantité \(q\) telle que \(P(q)=p^E=20\).
+L'offre globale vaut \(S(p^E)=\frac{p^E-10}{2}=5\), que l'on obtient en inversant la fonction d'offre, autrement dit en trouvant la quantité \(q\) telle que \(S(q)=p^E=20\).
+L'offre globale est plus faible que la demande globale, c'est donc l'offre globale qui fixera les quantités échangées.
+La quantité échangée vaut donc 20.
+Graphiquement, on obtient la figure \ref{fig:cppexo24prixbas}.
+
+\includegraphics{_main_files/figure-latex/cppexo24prixbas-1.pdf}
+Le surplus total est dans ce cas l'aire du trapèze bleu et rouge.
+Il nous faut obtenir le point sur la courbe d'offre pour la quantité \(q^E\).
+En ce point, le prix est \(S(q^E)=20\).
+\[
+S_t=\frac{1}{2}(100-10+95-20)\times(5-0)=\frac{825}{2}=412.5 < S_t^{CPP}
+\]
+Le surplus total est dans ce cas aussi plus faible qu'en CPP.
+
+Ces deux situations illustrent les deux cas qui s'écartent de la CPP : un prix plus élevé ou un prix plus faible.
+Dans les deux cas, on voit que le surplus total est plus faible.
+Ce serait vrai pour n'importe quel prix différent du prix de la concurrence pure et parfaite.
+On illustre ainsi le fait que l'équilibre de CPP maximise le surplus total.
+\end{solution}
 
 \hypertarget{le-monopole}{%
 \chapter{Le monopole}\label{le-monopole}}
