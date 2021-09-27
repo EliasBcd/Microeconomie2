@@ -17,6 +17,7 @@ fig:monopolerecette
 fig:monopoleprofit
 fig:monopolechangementdemande1
 fig:monopolechangementdemande2
+fig:monosurplus
 eq:FR1
 fig:isoprofit1
 fig:isoprofitCournot

@@ -74,7 +74,7 @@ Concrètement, cela implique qu'il est impossible de faire du bénéfice sur la 
 
 La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un *pouvoir de marché* aux producteurs en place.
 
-## Le Producteur
+## Le producteur
 
 ### Fonctions de coût
 
@@ -149,10 +149,10 @@ CQFD.
 :::
 
 ```{r cppcout, fig.cap="Exemples de fonctions de coût (ici $C_m$ est tout le croissante)"}
-CV <- function(q){1/(1+q)+q^2/2+q}
+CV <- function(q){log(1+q)+q^2/4}
 CF <- function(q){1}
 CT <- function(q){CV(q)+CF(q)}
-Cm <- function(q){-1/(1+q)^2+q+1}
+Cm <- function(q){1/(1+q)+q/2}
 CM <- function(q){CT(q)/q}
 CVM <- function(q){CV(q)/q}
 
@@ -161,12 +161,12 @@ p_cppcout <- ggplot() +
   geom_function(fun=CM, color="red") +
   geom_function(fun=CVM, color="darkgreen") +
   labs(x="quantité", y="coût") +
-  annotate("text", x=8, y=4.5, label=TeX("$CVM$"), color="darkgreen") +
-  annotate("text", x=8, y=5.5, label=TeX("$CM$"), color="red") +
-  annotate("text", x=8, y=9, label=TeX("$C_m$"), color="blue")
+  annotate("text", x=4.5, y=1.3, label=TeX("$CVM$"), color="darkgreen") +
+  annotate("text", x=4.5, y=2, label=TeX("$CM$"), color="red") +
+  annotate("text", x=4.5, y=2.5, label=TeX("$C_m$"), color="blue")
   
-p_cppcout + scale_y_continuous(expand=c(0, 0), limits=c(0, 10), breaks=c(), labels=c()) +
-  scale_x_continuous(expand=c(0, 0), limits=c(0, 10), breaks=c(), labels=c())
+p_cppcout + scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(), labels=c()) +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(), labels=c())
 ```
 
 ### L'offre du producteur
@@ -235,15 +235,16 @@ Autrement dit, le profit d'un producteur en concurrence pure et parfaite et la d
 Si ce prix est inférieur au coût moyen de toutes les unités vendues, le profit sera négatif.
 
 ```{r cpp_profit, fig.cap="Profit d'un producteur en concurrence pure et parfaite"}
-pi <- data.frame(x=c(0, 5), ymin=c(CM(5), CM(5)), ymax=c(Cm(5), Cm(5)))
+q <- 4
+pi <- data.frame(x=c(0, q), ymin=c(CM(q), CM(q)), ymax=c(Cm(q), Cm(q)))
 
 p_cppcout + geom_ribbon(data=pi, aes(x=x, ymin=ymin, ymax=ymax), fill="green", alpha=0.5) +
-  annotate("text", x=2, y=5, label=TeX("$\\pi$"), color="darkgreen") +
-  geom_segment(data=pi, x=5, y=0, xend=5, yend=Cm(5), linetype="dashed") +
-  geom_segment(data=pi, x=0, y=CM(5), xend=5, yend=CM(5), linetype="dashed") +
-  geom_segment(data=pi, x=0, y=Cm(5), xend=5, yend=Cm(5), linetype="dashed") +
-  scale_y_continuous(expand=c(0, 0), limits=c(0, 10), breaks=c(CM(5), Cm(5)), labels=c(TeX("$CM(q^*)$"), TeX("p"))) +
-  scale_x_continuous(expand=c(0, 0), limits=c(0, 10), breaks=c(5), labels=c(TeX("$q^*$")))
+  annotate("text", x=2, y=2, label=TeX("$\\pi$"), color="darkgreen") +
+  geom_segment(data=pi, x=q, y=0, xend=q, yend=Cm(q), linetype="dashed") +
+  geom_segment(data=pi, x=0, y=CM(q), xend=q, yend=CM(q), linetype="dashed") +
+  geom_segment(data=pi, x=0, y=Cm(q), xend=q, yend=Cm(q), linetype="dashed") +
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(CM(q), Cm(q)), labels=c(TeX("$CM(q^*)$"), TeX("p"))) +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(q), labels=c(TeX("$q^*$")))
 
 ```
 
