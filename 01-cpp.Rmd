@@ -56,12 +56,14 @@ Il n'y a, par exemple, pas de coût de recherche d'information.
 
 :::{.hypothesis name="Mobilité parfaite des facteurs de production"}
 L'hypothèse de mobilité parfaite des facteurs de production garantit l’homogénéité spatiale du prix des facteurs.
+Les facteurs de production se déplacent où ils sont le mieux rémunérés.
 Les différences de coûts entre producteurs ne peuvent donc être dus qu'au différence technologique entre ceux-ci, et non à une différence de coût des facteurs de production.
 :::
 
 :::{.hypothesis name="Homogénéïté des biens"}
-L'homogénéïté des biens signifie que tous les biens vendu sur un marché sont parfaitement substituables.
+L’homogénéité des biens signifie que tous les biens vendu sur un marché sont parfaitement substituables.
 Sur un marché donné, tous les biens ont la même qualité.
+Le consommateur est donc indifférent entre tous les biens vendus.
 Il n'y aussi pas d'effet des marques.
 :::
 
@@ -70,7 +72,7 @@ L'hypothèse de libre entrée et sortie du marché signifie qu'il n'y pas de bar
 Concrètement, cela implique qu'il est impossible de faire du bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.
 :::
 
-La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un *pouvoir de marché* aux entreprises en place.
+La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un *pouvoir de marché* aux producteurs en place.
 
 ## Le Producteur
 
@@ -146,26 +148,104 @@ En son minimum, le coût moyen est tel que $CM'(q)=0$.
 CQFD.
 :::
 
-```{r cppcout, fig.cap="Fonctions de coût"}
-CT <- function(q){log(1+q)+q^2+2}
-Cm <- function(q){1/(1+q)+2*q}
+```{r cppcout, fig.cap="Exemples de fonctions de coût (ici $C_m$ est tout le croissante)"}
+CV <- function(q){1/(1+q)+q^2/2+q}
+CF <- function(q){1}
+CT <- function(q){CV(q)+CF(q)}
+Cm <- function(q){-1/(1+q)^2+q+1}
 CM <- function(q){CT(q)/q}
-CVM <- function(q){(log(1+q)+q^2)/q}
+CVM <- function(q){CV(q)/q}
 
-p <- ggplot() +
-  scale_y_continuous(expand=c(0, 0), limits=c(0, 10)) +
-  scale_x_continuous(expand=c(0, 0), limits=c(0, 10)) +
+p_cppcout <- ggplot() +
   geom_function(fun=Cm, color="blue") +
   geom_function(fun=CM, color="red") +
   geom_function(fun=CVM, color="darkgreen") +
   labs(x="quantité", y="coût") +
-  annotate("text", x=5, y=5, label=TeX("$CVM$"), color="darkgreen") +
-  annotate("text", x=5, y=7, label=TeX("$CM$"), color="red") +
-  annotate("text", x=5, y=9, label=TeX("$C_m$"), color="blue")
+  annotate("text", x=8, y=4.5, label=TeX("$CVM$"), color="darkgreen") +
+  annotate("text", x=8, y=5.5, label=TeX("$CM$"), color="red") +
+  annotate("text", x=8, y=9, label=TeX("$C_m$"), color="blue")
   
-p
+p_cppcout + scale_y_continuous(expand=c(0, 0), limits=c(0, 10), breaks=c(), labels=c()) +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 10), breaks=c(), labels=c())
 ```
 
+### L'offre du producteur
+
+::: {.definition name="Recette totale"}
+La recette totale, notée $RT$, est le produit de la vente des unités de biens.
+Pour $q$ unités de bien vendus, le producteur gagne $RT(q)$, autrement dit, c'est le chiffre d'affaire du producteur (pour ce bien).
+:::
+
+::: {.definition name="Recette marginale"}
+La recette marginale, notée $R_m$ est la recette rapportée par une unité supplémentaire de bien.
+\[R_m(q)=RT'(q)\]
+:::
+
+::: {.definition name="Profit"}
+Le profit, noté $\pi$ est la différence entre la recette totale est le coût total de production :
+\[\pi(q)=RT(q)-CT(q)\]
+:::
+
+Le producteur choisit la quantité produite de manière à maximiser son profit.
+
+::: {.definition name="Programme du producteur"}
+Le programme du producteur est :
+\[\max_q\pi(q)=\max_q RT(q)-CT(q)\]
+:::
+
+::: {.theorem name="Offre du producteur"}
+En concurrence pure et parfaite, le programme du producteur est tel que la quantité produite $q$ égalise coût marginal et recette marginale.
+À l'optimum :
+\begin{equation}
+R_m(q) =c_m(q)
+(\#eq:cppopti)
+\end{equation}
+:::
+
+::: {.proof}
+Le programme du producteur est de maximiser son profit :
+\[\max_q\pi(q)=\max_q RT(q)-CT(q)\]
+À l'optimum, et à condition que les fonctions de coût et de recette soient dérivables (ce qui sera toujours le cas ici), cela signifie que l'on doit avoir la condition du premier ordre :
+\[\pi'(q)=0\Leftrightarrow RT'(q)-CT'(q)=0\Leftrightarrow R_m(q)=C_m(q)\]
+On obtient donc bien l'équation \@ref(eq:cppopti)
+:::
+
+L'intuition pour ce résultat est assez simple.
+Si on a $R_m(q)>C_m(q)$, alors augmenter la quantité produite rapporte plus que cela ne coûte, et donc augmente le profit.
+À l'inverse, si $R_m(q)<C_m(q)$, diminuer la quantité produite diminue plus le coût que la recette du producteur, et donc augmente le profit. 
+La situation s'équilibre donc pour $R_m(q)=C_m(q)$.
+Si cette égalité n'est pas vérifiée, le producteur peut en effet augmenter son profit en jouant sur la quantité produite.
+
+En concurrence pure et parfaite, le producteur est *price-taker*.
+Le prix sur le marché est unique et donné , il vaut $p$ et ne dépend pas des quantités produites par *un* producteur.
+Le producteur vend son bien au prix défini par le marché.
+La recette totale devient donc $RT(q)=p\times q$, avec $p$ fixé.
+La recette marginale est donc $R_m(q)=RT'(q)=p$.
+En réécrivant l'équation \@ref(eq:cppopti), on obtient en concurrence pure et parfaite :
+\[p=C_m(q)\]
+
+::: {.proposition name="Courbe d'offre en CPP"}
+En concurrence pure et parfaite, la courbe d'offre du producteur est la courbe de coût marginal.
+\[p=C_m(q)\]
+:::
+
+Le profit du producteur s'écrit alors :
+\[\pi(q)=RT(q)-CT(q)=pq-CT(q)=pq-CM(q)q=q(p-CM(q))\]
+Autrement dit, le profit d'un producteur en concurrence pure et parfaite et la différence entre le prix de vente et le coût moyen de production multiplié par le nombre d'unités vendues.
+Si ce prix est inférieur au coût moyen de toutes les unités vendues, le profit sera négatif.
+
+```{r cpp_profit, fig.cap="Profit d'un producteur en concurrence pure et parfaite"}
+pi <- data.frame(x=c(0, 5), ymin=c(CM(5), CM(5)), ymax=c(Cm(5), Cm(5)))
+
+p_cppcout + geom_ribbon(data=pi, aes(x=x, ymin=ymin, ymax=ymax), fill="green", alpha=0.5) +
+  annotate("text", x=2, y=5, label=TeX("$\\pi$"), color="darkgreen") +
+  geom_segment(data=pi, x=5, y=0, xend=5, yend=Cm(5), linetype="dashed") +
+  geom_segment(data=pi, x=0, y=CM(5), xend=5, yend=CM(5), linetype="dashed") +
+  geom_segment(data=pi, x=0, y=Cm(5), xend=5, yend=Cm(5), linetype="dashed") +
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 10), breaks=c(CM(5), Cm(5)), labels=c(TeX("$CM(q^*)$"), TeX("p"))) +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 10), breaks=c(5), labels=c(TeX("$q^*$")))
+
+```
 
 ## L'équilibre de marché
 
@@ -216,6 +296,11 @@ Le surplus des consommateurs est la somme des différences entre le prix de rés
 Sur le graphique quantité prix $(q, p)$, c'est l'aire compris entre la courbe de demande est la droite horizontale dont l'ordonnée est le prix d'échange.
 Formellement :
 \[S_c=\int_0^{q^*}P(q)-p^* dq\]
+:::
+
+::: {.remark}
+Seule la dernière unité de bien achetée par les consommateur l'est au prix de réserve.
+Il n'y a pas de gain à l'échange pour cette unité, mais pour toutes les autres, il y en a, ce qui explique pourquoi il y a un surplus à l'échange, et pourquoi celui-ci à lieu.
 :::
 
 :::{.definition name="Surplus des producteurs"}
@@ -365,7 +450,7 @@ La fonction de coût marginal est la dérivée de la fonction de coût total.
 La fonction de coût marginal donne le coût de production d'une unité de bien supplémentaire.
 \[C_m(q)=C'(q)=2q+10\]
 
-2. La fonction d'offre des entreprises en concurrence pure et parfaite est égale à la fonction de coût marginal.
+2. La fonction d'offre des producteurs en concurrence pure et parfaite est égale à la fonction de coût marginal.
 Si on la note $S$, $S(q)=C_m(q) = 2q+10$.
 C'est le prix minimal auquel elle est prête à vendre une unité de bien supplémentaire.
 

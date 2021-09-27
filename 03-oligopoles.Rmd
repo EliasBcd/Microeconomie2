@@ -1,6 +1,7 @@
 # Oligopoles
 
 ```{r oligobase, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
 
 x=seq(0, 0.5, length=101)
 df <- data.frame(x)
