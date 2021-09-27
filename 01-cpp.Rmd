@@ -72,6 +72,101 @@ Concrètement, cela implique qu'il est impossible de faire du bénéfice sur la 
 
 La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un *pouvoir de marché* aux entreprises en place.
 
+## Le Producteur
+
+### Fonctions de coût
+
+En général, un producteur est caractérisé par une fonction de production, c'est-à-dire une fonction qui donne  les quantités produites de biens en fonction des facteurs de productions.
+À l'aide de cette fonction de production, il est possible de construire une fonction de coût.
+
+:::{.definition name="Fonction de coût total"}
+La fonction de coût total, notée $C$ ou $CT$ donne le coût total de production de $q$ unités de bien.
+Elle peut se décomposer en un *coût fixe* $CF$ (qui ne dépend pas de $q$) et un *coût variable* $CV$ qui dépend de $q$ :
+\[CT(q)=CF+ CV(q)\]
+:::
+
+:::{.definition name="Coût moyen"}
+Le coût moyen est le coût de production moyen d'une unité, noté $CM$ :
+\[CM(q) = \frac{CT(q)}{q}\]
+:::
+On peut décomposer le coût moyen en un *coût fixe moyen* $CFM$ :
+\[CFM(q)=\frac{CF}{q}\]
+Et un *coût variable moyen* $CVM$ :
+\[CVM(q)=\frac{CV(q)}{q}\]
+On a alors :
+\begin{equation}
+CM(q)=CFM(q) +CVM(q)
+(\#eq:CM)
+\end{equation}
+
+::: {.proof}
+\[
+\begin{array}{rcl}
+CM(q) &=& \frac{CT(q)}{q}\\
+ &=& \frac{CF + CV(q)}{q}\\
+ &=& \frac{CF}{q}+\frac{CV(q)}{q}\\
+ &=& CFM(q) + CVM(q)
+\end{array}
+\]
+:::
+
+::: {.definition name="Coût marginal"}
+Le coût marginal, noté $C_m$, est l'augmentation du coût lié à la production d'une unité supplémentaire :
+\[C_m(q)=\lim_{\Delta q\to 0}\frac{CT(q+\Delta q)-CT(q)}{\Delta q}=CT'(q)\]
+:::
+Autrement dit, le coût marginal est la variation de coût total quand la production varie "un tout petit peu" (infiniment peu en fait).
+
+::: {.proposition name="Forme de courbes de coût"}
+Le coût marginal diminue d'abord, puis augmente par la suite, car la productivité marginale est d'abord croissante, puis décroissante, en général.  
+Le coût variable moyen est d'abord décroissant, puis croissant, pour la même raison.  
+Le coût fixe moyen est toujours décroissant, car le coût fixe ne dépend pas des quantités produites et $CFM=CF/q$ est donc une fonction inverse.  
+La décomposition donnée par l'équation \@ref(eq:CM) implique que le coût moyen est d'abord décroissant, puis croissant.
+:::
+
+::: {.proposition name="Relation entre les coûts"}
+Lorsque le coût marginal est inférieur au coût (variable) moyen ($C_m(q)<CM(q)$), le coût moyen diminue.
+Lorsque le coût marginal est supérieur au coût (variable) moyen ($C_m(q)>CM(q)$), le coût moyen augmente.
+La courbe de coût marginal coupe donc la courbe de coût (variable) moyen à son minimum.
+:::
+L'intuition de ce résultat est simple : si le coût marginal d'une unité supplémentaire est supérieur au coût moyen, alors l'unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen.
+
+:::{ .proof }
+En son minimum, le coût moyen est tel que $CM'(q)=0$.
+\[
+\begin{array}{crcl}
+&CM'(q)&=&0\\
+\Leftrightarrow & \left(\frac{CT(q)}{q}\right)'&=& 0\\
+\Leftrightarrow & \frac{CT'(q)q-CT(q)}{q^2}&=& 0\\
+\Leftrightarrow & \frac{C_m(q)}{q}-\frac{CT(q)}{q^2}&=& 0\\
+\Leftrightarrow & C_m(q)q-CT(q)&=& 0\\
+\Leftrightarrow & C_m(q)&=& \frac{CT(q)}{q}\\
+\Leftrightarrow & C_m(q)&=& CM(q)
+\end{array}
+\]
+CQFD.
+:::
+
+```{r cppcout, fig.cap="Fonctions de coût"}
+CT <- function(q){log(1+q)+q^2+2}
+Cm <- function(q){1/(1+q)+2*q}
+CM <- function(q){CT(q)/q}
+CVM <- function(q){(log(1+q)+q^2)/q}
+
+p <- ggplot() +
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 10)) +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 10)) +
+  geom_function(fun=Cm, color="blue") +
+  geom_function(fun=CM, color="red") +
+  geom_function(fun=CVM, color="darkgreen") +
+  labs(x="quantité", y="coût") +
+  annotate("text", x=5, y=5, label=TeX("$CVM$"), color="darkgreen") +
+  annotate("text", x=5, y=7, label=TeX("$CM$"), color="red") +
+  annotate("text", x=5, y=9, label=TeX("$C_m$"), color="blue")
+  
+p
+```
+
+
 ## L'équilibre de marché
 
 :::{.definition name="Demande agrégée (D)"}
@@ -79,7 +174,7 @@ La *demande agrégée (D)* est la somme des demandes individuelles pour chaque n
 :::
 
 :::{.definition name="Offre agrégée (S)"}
-L'*offre agrégée (S)* est la omme des offres individuelles pour chaque niveau de prix.
+L'*offre agrégée (S)* est la somme des offres individuelles pour chaque niveau de prix.
 :::
 
 L'équilibre de marché se fait à l'intersection entre S et D (quand S=D).

@@ -25,7 +25,7 @@
 <meta name="author" content="Antoine Terracol" />
 
 
-<meta name="date" content="2021-09-22" />
+<meta name="date" content="2021-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -57,28 +57,6 @@
 
 
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -96,7 +74,7 @@ div.csl-indent {
 <li><a href="./">Microéconomie 2</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Microéconomie 2</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#thèmes"><i class="fa fa-check"></i><b>1.1</b> Thèmes</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#bibliographie"><i class="fa fa-check"></i><b>1.2</b> Bibliographie</a></li>
@@ -105,9 +83,13 @@ div.csl-indent {
 <li class="chapter" data-level="2" data-path="rappels-le-marché-en-concurrence-pure-et-parfaite.html"><a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html"><i class="fa fa-check"></i><b>2</b> Rappels : le marché en concurrence pure et parfaite</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="rappels-le-marché-en-concurrence-pure-et-parfaite.html"><a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#les-hypothèses-de-la-concurrence-pure-et-parfaite-cpp"><i class="fa fa-check"></i><b>2.1</b> Les hypothèses de la concurrence pure et parfaite (CPP)</a></li>
-<li class="chapter" data-level="2.2" data-path="rappels-le-marché-en-concurrence-pure-et-parfaite.html"><a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#léquilibre-de-marché"><i class="fa fa-check"></i><b>2.2</b> L’équilibre de marché</a></li>
-<li class="chapter" data-level="2.3" data-path="rappels-le-marché-en-concurrence-pure-et-parfaite.html"><a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#perception-par-les-agents-isolés"><i class="fa fa-check"></i><b>2.3</b> Perception par les agents isolés</a></li>
-<li class="chapter" data-level="2.4" data-path="rappels-le-marché-en-concurrence-pure-et-parfaite.html"><a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#exercices"><i class="fa fa-check"></i><b>2.4</b> Exercices</a></li>
+<li class="chapter" data-level="2.2" data-path="rappels-le-marché-en-concurrence-pure-et-parfaite.html"><a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#le-producteur"><i class="fa fa-check"></i><b>2.2</b> Le Producteur</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="rappels-le-marché-en-concurrence-pure-et-parfaite.html"><a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#fonctions-de-coût"><i class="fa fa-check"></i><b>2.2.1</b> Fonctions de coût</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="rappels-le-marché-en-concurrence-pure-et-parfaite.html"><a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#léquilibre-de-marché"><i class="fa fa-check"></i><b>2.3</b> L’équilibre de marché</a></li>
+<li class="chapter" data-level="2.4" data-path="rappels-le-marché-en-concurrence-pure-et-parfaite.html"><a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#perception-par-les-agents-isolés"><i class="fa fa-check"></i><b>2.4</b> Perception par les agents isolés</a></li>
+<li class="chapter" data-level="2.5" data-path="rappels-le-marché-en-concurrence-pure-et-parfaite.html"><a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#exercices"><i class="fa fa-check"></i><b>2.5</b> Exercices</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="le-monopole.html"><a href="le-monopole.html"><i class="fa fa-check"></i><b>3</b> Le monopole</a>
 <ul>
@@ -222,32 +204,106 @@ Concrètement, cela implique qu’il est impossible de faire du bénéfice sur l
 </div>
 <p>La violation d’une de ces hypothèses nous fait sortir du cadre de la CPP et confère un <em>pouvoir de marché</em> aux entreprises en place.</p>
 </div>
-<div id="léquilibre-de-marché" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> L’équilibre de marché</h2>
+<div id="le-producteur" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Le Producteur</h2>
+<div id="fonctions-de-coût" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Fonctions de coût</h3>
+<p>En général, un producteur est caractérisé par une fonction de production, c’est-à-dire une fonction qui donne les quantités produites de biens en fonction des facteurs de productions.
+À l’aide de cette fonction de production, il est possible de construire une fonction de coût.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-6" class="definition"><strong>Définition 2.1  (Demande agrégée (D)) </strong></span>La <em>demande agrégée (D)</em> est la somme des demandes individuelles pour chaque niveau de prix.</p>
+<p><span id="def:unlabeled-div-6" class="definition"><strong>Définition 2.1  (Fonction de coût total) </strong></span>La fonction de coût total, notée <span class="math inline">\(C\)</span> ou <span class="math inline">\(CT\)</span> donne le coût total de production de <span class="math inline">\(q\)</span> unités de bien.
+Elle peut se décomposer en un <em>coût fixe</em> <span class="math inline">\(CF\)</span> (qui ne dépend pas de <span class="math inline">\(q\)</span>) et un <em>coût variable</em> <span class="math inline">\(CV\)</span> qui dépend de <span class="math inline">\(q\)</span> :
+<span class="math display">\[CT(q)=CF+ CV(q)\]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-7" class="definition"><strong>Définition 2.2  (Offre agrégée (S)) </strong></span>L’<em>offre agrégée (S)</em> est la omme des offres individuelles pour chaque niveau de prix.</p>
+<p><span id="def:unlabeled-div-7" class="definition"><strong>Définition 2.2  (Coût moyen) </strong></span>Le coût moyen est le coût de production moyen d’une unité, noté <span class="math inline">\(CM\)</span> :
+<span class="math display">\[CM(q) = \frac{CT(q)}{q}\]</span></p>
+</div>
+<p>On peut décomposer le coût moyen en un <em>coût fixe moyen</em> <span class="math inline">\(CFM\)</span> :
+<span class="math display">\[CFM(q)=\frac{CF}{q}\]</span>
+Et un <em>coût variable moyen</em> <span class="math inline">\(CVM\)</span> :
+<span class="math display">\[CVM(q)=\frac{CV(q)}{q}\]</span>
+On a alors :
+<span class="math display" id="eq:CM">\[\begin{equation}
+CM(q)=CFM(q) +CVM(q)
+\tag{2.1}
+\end{equation}\]</span></p>
+<div class="proof">
+<p><span id="unlabeled-div-8" class="proof"><em>Démonstration</em>. </span><span class="math display">\[
+\begin{array}{rcl}
+CM(q) &amp;=&amp; \frac{CT(q)}{q}\\
+ &amp;=&amp; \frac{CF + CV(q)}{q}\\
+ &amp;=&amp; \frac{CF}{q}+\frac{CV(q)}{q}\\
+ &amp;=&amp; CFM(q) + CVM(q)
+\end{array}
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-9" class="definition"><strong>Définition 2.3  (Coût marginal) </strong></span>Le coût marginal, noté <span class="math inline">\(C_m\)</span>, est l’augmentation du coût lié à la production d’une unité supplémentaire :
+<span class="math display">\[C_m(q)=\lim_{\Delta q\to 0}\frac{CT(q+\Delta q)-CT(q)}{\Delta q}=CT&#39;(q)\]</span></p>
+</div>
+<p>Autrement dit, le coût marginal est la variation de coût total quand la production varie “un tout petit peu” (infiniment peu en fait).</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-10" class="proposition"><strong>Propriétés 2.1  (Forme de courbes de coût) </strong></span>Le coût marginal diminue d’abord, puis augmente par la suite, car la productivité marginale est d’abord croissante, puis décroissante, en général.<br />
+Le coût variable moyen est d’abord décroissant, puis croissant, pour la même raison.<br />
+Le coût fixe moyen est toujours décroissant, car le coût fixe ne dépend pas des quantités produites et <span class="math inline">\(CFM=CF/q\)</span> est donc une fonction inverse.<br />
+La décomposition donnée par l’équation <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#eq:CM">(2.1)</a> implique que le coût moyen est d’abord décroissant, puis croissant.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-11" class="proposition"><strong>Propriétés 2.2  (Relation entre les coûts) </strong></span>Lorsque le coût marginal est inférieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&lt;CM(q)\)</span>), le coût moyen diminue.
+Lorsque le coût marginal est supérieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&gt;CM(q)\)</span>), le coût moyen augmente.
+La courbe de coût marginal coupe donc la courbe de coût (variable) moyen à son minimum.</p>
+</div>
+<p>L’intuition de ce résultat est simple : si le coût marginal d’une unité supplémentaire est supérieur au coût moyen, alors l’unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen.</p>
+<div class="proof">
+<p><span id="unlabeled-div-12" class="proof"><em>Démonstration</em>. </span>En son minimum, le coût moyen est tel que <span class="math inline">\(CM&#39;(q)=0\)</span>.
+<span class="math display">\[
+\begin{array}{crcl}
+&amp;CM&#39;(q)&amp;=&amp;0\\
+\Leftrightarrow &amp; \left(\frac{CT(q)}{q}\right)&#39;&amp;=&amp; 0\\
+\Leftrightarrow &amp; \frac{CT&#39;(q)q-CT(q)}{q^2}&amp;=&amp; 0\\
+\Leftrightarrow &amp; \frac{C_m(q)}{q}-\frac{CT(q)}{q^2}&amp;=&amp; 0\\
+\Leftrightarrow &amp; C_m(q)q-CT(q)&amp;=&amp; 0\\
+\Leftrightarrow &amp; C_m(q)&amp;=&amp; \frac{CT(q)}{q}\\
+\Leftrightarrow &amp; C_m(q)&amp;=&amp; CM(q)
+\end{array}
+\]</span>
+CQFD.</p>
+</div>
+<div class="figure"><span style="display:block;" id="fig:cppcout"></span>
+<img src="_main_files/figure-html/cppcout-1.png" alt="Fonctions de coût" width="672" />
+<p class="caption">
+Figure 2.1: Fonctions de coût
+</p>
+</div>
+</div>
+</div>
+<div id="léquilibre-de-marché" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> L’équilibre de marché</h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-13" class="definition"><strong>Définition 2.4  (Demande agrégée (D)) </strong></span>La <em>demande agrégée (D)</em> est la somme des demandes individuelles pour chaque niveau de prix.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-14" class="definition"><strong>Définition 2.5  (Offre agrégée (S)) </strong></span>L’<em>offre agrégée (S)</em> est la somme des offres individuelles pour chaque niveau de prix.</p>
 </div>
 <p>L’équilibre de marché se fait à l’intersection entre S et D (quand S=D).</p>
 <div class="figure"><span style="display:block;" id="fig:marche"></span>
 <img src="_main_files/figure-html/marche-1.png" alt="Equilibre de marché." width="672" />
 <p class="caption">
-Figure 2.1: Equilibre de marché.
+Figure 2.2: Equilibre de marché.
 </p>
 </div>
 <p>La courbe de demande correspond à la suite des prix de réserve des individus, c’est-à-dire aux prix maximal que chaque individu est prêt à payer pour obtenir une unité <em>supplémentaire</em> du bien.</p>
 <p>La courbe d’offre correspond à la série des coûts marginaux de production, c’est-à-dire les prix minimaux auxquels les producteurs souhaitent vendre une unité supplémentaire du bien.</p>
 <p>La vente de toutes les unités jusqu’à la quantité d’équilibre <span class="math inline">\(q^*\)</span> au prix <span class="math inline">\(p^*\)</span> procure un <em>surplus</em> aux agents économiques.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-8" class="definition"><strong>Définition 2.3  (Surplus des consommateurs) </strong></span>Le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix payé par le consommateur pour obtenir les biens.
+<p><span id="def:unlabeled-div-15" class="definition"><strong>Définition 2.6  (Surplus des consommateurs) </strong></span>Le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix payé par le consommateur pour obtenir les biens.
 Sur le graphique quantité prix <span class="math inline">\((q, p)\)</span>, c’est l’aire compris entre la courbe de demande est la droite horizontale dont l’ordonnée est le prix d’échange.
 Formellement :
 <span class="math display">\[S_c=\int_0^{q^*}P(q)-p^* dq\]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-9" class="definition"><strong>Définition 2.4  (Surplus des producteurs) </strong></span>Le surplus des producteurs est la somme des différences entre le prix auquel les producteurs vendent le bien et la courbe de coût marginal, qui représente le coût d’une unité supplémentaire produite.
+<p><span id="def:unlabeled-div-16" class="definition"><strong>Définition 2.7  (Surplus des producteurs) </strong></span>Le surplus des producteurs est la somme des différences entre le prix auquel les producteurs vendent le bien et la courbe de coût marginal, qui représente le coût d’une unité supplémentaire produite.
 Sur le graphique quantité prix <span class="math inline">\((q, p)\)</span>, c’est l’aire compris entre le prix de vente et la courbe de coût marginal.
 Formellement :
 <span class="math display">\[S_p=\int_0^{q^*}p^*-S(q) dq\]</span></p>
@@ -256,19 +312,19 @@ Formellement :
 <div class="figure"><span style="display:block;" id="fig:surplus"></span>
 <img src="_main_files/figure-html/surplus-1.png" alt="Surplus des consommateurs et des producteurs." width="672" />
 <p class="caption">
-Figure 2.2: Surplus des consommateurs et des producteurs.
+Figure 2.3: Surplus des consommateurs et des producteurs.
 </p>
 </div>
 <div class="proposition">
-<p><span id="prp:cppprop" class="proposition"><strong>Propriétés 2.1  (Propriétés de l'équilibre en concurrence pure et parfaite) </strong></span>L’équilibre en CPP est celui qui <strong>maximise</strong> le <em>surplus total</em>.
+<p><span id="prp:cppprop" class="proposition"><strong>Propriétés 2.3  (Propriétés de l'équilibre en concurrence pure et parfaite) </strong></span>L’équilibre en CPP est celui qui <strong>maximise</strong> le <em>surplus total</em>.
 Tout autre couple prix/quantité abouti à un surplus total plus faible.<br />
 L’équilibre de CPP est <em>Pareto-optimal</em>, i.e., il est impossible d’améliorer la situation d’un agent sans détériorer celle d’un autre.
 C’est ce qu’on appelle le <em>premier théorème du bien-être</em>.</p>
 </div>
 <p>Ces propriétés font de la CPP une “référence” par rapport à laquelle on peut comparer les résultats des autres structures de marché.</p>
 </div>
-<div id="perception-par-les-agents-isolés" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Perception par les agents isolés</h2>
+<div id="perception-par-les-agents-isolés" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Perception par les agents isolés</h2>
 <p>L’hypothèse d’atomicité indique que les agents individuels sont isolés au sein d’un très grand nombre d’autres agents.
 Ainsi, aucun agent n’a d’influence sur le prix s’il modifie son comportement.
 Une conséquence directe est que le comportement des autres agents est perçu comme étant infiniment élastique.
@@ -277,13 +333,13 @@ Il perçoit ainsi une demande infiniment élastique au prix, au niveau du prix <
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:elasticite"></span>
 <img src="_main_files/figure-html/elasticite-1.png" alt="Perception de la demande globale par un producteur isolé." width="672" />
 <p class="caption">
-Figure 2.3: Perception de la demande globale par un producteur isolé.
+Figure 2.4: Perception de la demande globale par un producteur isolé.
 </p>
 </div>
 <p>Dans ce graphique, <span class="math inline">\(q^*\)</span> représente la production optimale de ce producteur quand il est seul.</p>
 </div>
-<div id="exercices" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Exercices</h2>
+<div id="exercices" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Exercices</h2>
 <div class="exercise">
 <p><span id="exr:cppexo1" class="exercise"><strong>Exercice 2.1  </strong></span>On considère un consommateur dont la fonction de demande optimale pour un bien est donnée par :
 <span class="math display">\[
@@ -297,7 +353,7 @@ où <span class="math inline">\(p\)</span> est le prix du bien.</p>
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-10" class="solution"><em>Solution</em> (Exercice <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#exr:cppexo1">2.1</a>). </span>La fonction de demande inverse est la fonction inverse de la fonction de demande.
+<p><span id="unlabeled-div-17" class="solution"><em>Solution</em> (Exercice <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#exr:cppexo1">2.1</a>). </span>La fonction de demande inverse est la fonction inverse de la fonction de demande.
 Autrement dit, elle exprime le prix <span class="math inline">\(P\)</span> en fonction de la quantité <span class="math inline">\(q\)</span> plutôt que la quantité <span class="math inline">\(Q\)</span> en fonction du prix <span class="math inline">\(p\)</span>.
 Ici on <span class="math inline">\(q=10-p\)</span>, ce qui équivaut à <span class="math inline">\(p=10-q\)</span>.
 La fonction de demande inverse est donc <span class="math inline">\(P(q)=10-q\)</span>.
@@ -305,7 +361,7 @@ Graphiquement, on obtient :</p>
 <div class="figure"><span style="display:block;" id="fig:cppexo11"></span>
 <img src="_main_files/figure-html/cppexo11-1.png" alt="Représentation graphique de la demande inverse." width="672" />
 <p class="caption">
-Figure 2.4: Représentation graphique de la demande inverse.
+Figure 2.5: Représentation graphique de la demande inverse.
 </p>
 </div>
 <ol start="2" style="list-style-type: decimal">
@@ -324,10 +380,10 @@ Où <span class="math inline">\(p^*\)</span> et <span class="math inline">\(q^*\
 <div class="figure"><span style="display:block;" id="fig:cppexo13"></span>
 <img src="_main_files/figure-html/cppexo13-1.png" alt="Représentation graphique du surplus du consommateur." width="672" />
 <p class="caption">
-Figure 2.5: Représentation graphique du surplus du consommateur.
+Figure 2.6: Représentation graphique du surplus du consommateur.
 </p>
 </div>
-<p>En général, comme on peut le voir sur la figure <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#fig:cppexo13">2.5</a>, il est possible de calculer le surplus en utiliser la formule donnant l’aire d’un triangle.
+<p>En général, comme on peut le voir sur la figure <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#fig:cppexo13">2.6</a>, il est possible de calculer le surplus en utiliser la formule donnant l’aire d’un triangle.
 Ici, on obtient :
 <span class="math display">\[S_c=\frac{1}{2}(10-2)\cdot(8-0)=32\]</span>
 Les consommateurs “gagnent” donc 32 par rapport à la situation où ils devraient payer chacun leur prix de réserve.</p>
@@ -345,7 +401,7 @@ Déterminez le prix d’équilibre sur le marché, le surplus du producteur, le 
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-11" class="solution"><em>Solution</em> (Exercice <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#exr:cppexo2">2.2</a>). </span>La fonction de coût marginal est la dérivée de la fonction de coût total.
+<p><span id="unlabeled-div-18" class="solution"><em>Solution</em> (Exercice <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#exr:cppexo2">2.2</a>). </span>La fonction de coût marginal est la dérivée de la fonction de coût total.
 La fonction de coût marginal donne le coût de production d’une unité de bien supplémentaire.
 <span class="math display">\[C_m(q)=C&#39;(q)=2q+10\]</span></p>
 <ol start="2" style="list-style-type: decimal">
@@ -356,7 +412,7 @@ C’est le prix minimal auquel elle est prête à vendre une unité de bien supp
 <div class="figure"><span style="display:block;" id="fig:cppexo22"></span>
 <img src="_main_files/figure-html/cppexo22-1.png" alt="Représentation graphique de la demande inverse." width="672" />
 <p class="caption">
-Figure 2.6: Représentation graphique de la demande inverse.
+Figure 2.7: Représentation graphique de la demande inverse.
 </p>
 </div>
 <ol start="3" style="list-style-type: decimal">
@@ -364,21 +420,21 @@ Figure 2.6: Représentation graphique de la demande inverse.
 Le marché vérifie alors les équations suivantes :
 <span class="math display" id="eq:cppequilibre">\[\begin{equation}
 p^*=S(q^*)=P(q^*)
-\tag{2.1}
+\tag{2.2}
 \end{equation}\]</span>
-Commençons par la deuxième partie de l’équation <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#eq:cppequilibre">(2.1)</a> :
+Commençons par la deuxième partie de l’équation <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#eq:cppequilibre">(2.2)</a> :
 <span class="math display">\[\begin{align*}{crcl}
 &amp;2q^*+10&amp;=&amp;100-q^*\\
 \Leftrightarrow&amp;3q^*&amp;=&amp;90\\
 \Leftrightarrow &amp; q^*&amp;=&amp;30
 \end{align*}\]</span>
 La quantité échangée à l’équilibre est donc de <span class="math inline">\(q^*=30\)</span>.
-A l’aide de la quantité échangée est de la première partie de l’équation <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#eq:cppequilibre">(2.1)</a>, on obtient
+A l’aide de la quantité échangée est de la première partie de l’équation <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#eq:cppequilibre">(2.2)</a>, on obtient
 <span class="math display">\[
 p^*=P(q^*=30) = 100-30=70 
 \]</span>
 Sur le marché, 30 unités de bien sont donc échangés au prix de 70.
-On peut alors représenter les surplus sur le marché, comme dans la figure <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#fig:cppexo23">2.7</a>.
+On peut alors représenter les surplus sur le marché, comme dans la figure <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#fig:cppexo23">2.8</a>.
 Le surplus des consommateurs est l’aire du triangle bleu, il vaut
 <span class="math display">\[S_c=\frac{1}{2}(100-70)\times(30-0)=450\]</span>
 Le surplus des producteurs est l’aire du triangle rouge :
@@ -389,7 +445,7 @@ S_p=\frac{1}{2}(70-10)\times(30-0) = 900
 <div class="figure"><span style="display:block;" id="fig:cppexo23"></span>
 <img src="_main_files/figure-html/cppexo23-1.png" alt="Surplus en CPP." width="672" />
 <p class="caption">
-Figure 2.7: Surplus en CPP.
+Figure 2.8: Surplus en CPP.
 </p>
 </div>
 <p>Le surplus total est la somme des surplus des producteurs et des consommateurs :
@@ -402,12 +458,12 @@ La demande globale vaut alors de <span class="math inline">\(Q(p^E)=100-p^E=20\)
 L’offre globale vaut <span class="math inline">\(S(p^E)=\frac{p^E-10}{2}=35\)</span>, que l’on obtient en inversant la fonction d’offre, autrement dit en trouvant la quantité <span class="math inline">\(q\)</span> telle que <span class="math inline">\(S(q)=p^E=80\)</span>.
 La demande globale est plus faible que l’offre globale, c’est donc la demande globale qui fixera les quantités échangées.
 La quantité échangée vaut donc 20.
-Graphiquement, on obtient la figure <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#fig:cppexo24prixhaut">2.8</a>.</li>
+Graphiquement, on obtient la figure <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#fig:cppexo24prixhaut">2.9</a>.</li>
 </ol>
 <div class="figure"><span style="display:block;" id="fig:cppexo24prixhaut"></span>
 <img src="_main_files/figure-html/cppexo24prixhaut-1.png" alt="Surplus en quand l'Etat impose un prix $p^E=80$." width="672" />
 <p class="caption">
-Figure 2.8: Surplus en quand l’Etat impose un prix <span class="math inline">\(p^E=80\)</span>.
+Figure 2.9: Surplus en quand l’Etat impose un prix <span class="math inline">\(p^E=80\)</span>.
 </p>
 </div>
 <p>Le surplus total est dans ce cas l’aire du trapèze bleu et rouge.
@@ -422,11 +478,11 @@ La demande globale vaut alors de <span class="math inline">\(Q(p^E)=100-p^E=80\)
 L’offre globale vaut <span class="math inline">\(S(p^E)=\frac{p^E-10}{2}=5\)</span>, que l’on obtient en inversant la fonction d’offre, autrement dit en trouvant la quantité <span class="math inline">\(q\)</span> telle que <span class="math inline">\(S(q)=p^E=20\)</span>.
 L’offre globale est plus faible que la demande globale, c’est donc l’offre globale qui fixera les quantités échangées.
 La quantité échangée vaut donc 20.
-Graphiquement, on obtient la figure <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#fig:cppexo24prixbas">2.9</a>.</p>
+Graphiquement, on obtient la figure <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#fig:cppexo24prixbas">2.10</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:cppexo24prixbas"></span>
 <img src="_main_files/figure-html/cppexo24prixbas-1.png" alt="Surplus en quand l'Etat impose un prix $p^E=20$." width="672" />
 <p class="caption">
-Figure 2.9: Surplus en quand l’Etat impose un prix <span class="math inline">\(p^E=20\)</span>.
+Figure 2.10: Surplus en quand l’Etat impose un prix <span class="math inline">\(p^E=20\)</span>.
 </p>
 </div>
 <p>Le surplus total est dans ce cas l’aire du trapèze bleu et rouge.

@@ -78,7 +78,7 @@
 
 \title{Microéconomie 2}
 \author{Elias Bouacida \and Antoine Terracol}
-\date{2021-09-22}
+\date{2021-09-27}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Théorème}[chapter]
@@ -243,6 +243,91 @@ Concrètement, cela implique qu'il est impossible de faire du bénéfice sur la 
 
 La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un \emph{pouvoir de marché} aux entreprises en place.
 
+\hypertarget{le-producteur}{%
+\section{Le Producteur}\label{le-producteur}}
+
+\hypertarget{fonctions-de-couxfbt}{%
+\subsection{Fonctions de coût}\label{fonctions-de-couxfbt}}
+
+En général, un producteur est caractérisé par une fonction de production, c'est-à-dire une fonction qui donne les quantités produites de biens en fonction des facteurs de productions.
+À l'aide de cette fonction de production, il est possible de construire une fonction de coût.
+
+\begin{definition}[Fonction de coût total]
+La fonction de coût total, notée \(C\) ou \(CT\) donne le coût total de production de \(q\) unités de bien.
+Elle peut se décomposer en un \emph{coût fixe} \(CF\) (qui ne dépend pas de \(q\)) et un \emph{coût variable} \(CV\) qui dépend de \(q\) :
+\[CT(q)=CF+ CV(q)\]
+\end{definition}
+
+\begin{definition}[Coût moyen]
+Le coût moyen est le coût de production moyen d'une unité, noté \(CM\) :
+\[CM(q) = \frac{CT(q)}{q}\]
+\end{definition}
+
+On peut décomposer le coût moyen en un \emph{coût fixe moyen} \(CFM\) :
+\[CFM(q)=\frac{CF}{q}\]
+Et un \emph{coût variable moyen} \(CVM\) :
+\[CVM(q)=\frac{CV(q)}{q}\]
+On a alors :
+\begin{equation}
+CM(q)=CFM(q) +CVM(q)
+\label{eq:CM}
+\end{equation}
+
+\begin{proof}
+\[
+\begin{array}{rcl}
+CM(q) &=& \frac{CT(q)}{q}\\
+ &=& \frac{CF + CV(q)}{q}\\
+ &=& \frac{CF}{q}+\frac{CV(q)}{q}\\
+ &=& CFM(q) + CVM(q)
+\end{array}
+\]
+\end{proof}
+
+\begin{definition}[Coût marginal]
+Le coût marginal, noté \(C_m\), est l'augmentation du coût lié à la production d'une unité supplémentaire :
+\[C_m(q)=\lim_{\Delta q\to 0}\frac{CT(q+\Delta q)-CT(q)}{\Delta q}=CT'(q)\]
+\end{definition}
+
+Autrement dit, le coût marginal est la variation de coût total quand la production varie ``un tout petit peu'' (infiniment peu en fait).
+
+\begin{proposition}[Forme de courbes de coût]
+Le coût marginal diminue d'abord, puis augmente par la suite, car la productivité marginale est d'abord croissante, puis décroissante, en général.\\
+Le coût variable moyen est d'abord décroissant, puis croissant, pour la même raison.\\
+Le coût fixe moyen est toujours décroissant, car le coût fixe ne dépend pas des quantités produites et \(CFM=CF/q\) est donc une fonction inverse.\\
+La décomposition donnée par l'équation \eqref{eq:CM} implique que le coût moyen est d'abord décroissant, puis croissant.
+\end{proposition}
+
+\begin{proposition}[Relation entre les coûts]
+Lorsque le coût marginal est inférieur au coût (variable) moyen (\(C_m(q)<CM(q)\)), le coût moyen diminue.
+Lorsque le coût marginal est supérieur au coût (variable) moyen (\(C_m(q)>CM(q)\)), le coût moyen augmente.
+La courbe de coût marginal coupe donc la courbe de coût (variable) moyen à son minimum.
+\end{proposition}
+
+L'intuition de ce résultat est simple : si le coût marginal d'une unité supplémentaire est supérieur au coût moyen, alors l'unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen.
+
+\begin{proof}
+En son minimum, le coût moyen est tel que \(CM'(q)=0\).
+\[
+\begin{array}{crcl}
+&CM'(q)&=&0\\
+\Leftrightarrow & \left(\frac{CT(q)}{q}\right)'&=& 0\\
+\Leftrightarrow & \frac{CT'(q)q-CT(q)}{q^2}&=& 0\\
+\Leftrightarrow & \frac{C_m(q)}{q}-\frac{CT(q)}{q^2}&=& 0\\
+\Leftrightarrow & C_m(q)q-CT(q)&=& 0\\
+\Leftrightarrow & C_m(q)&=& \frac{CT(q)}{q}\\
+\Leftrightarrow & C_m(q)&=& CM(q)
+\end{array}
+\]
+CQFD.
+\end{proof}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/cppcout-1.pdf}
+\caption{\label{fig:cppcout}Fonctions de coût}
+\end{figure}
+
 \hypertarget{luxe9quilibre-de-marchuxe9}{%
 \section{L'équilibre de marché}\label{luxe9quilibre-de-marchuxe9}}
 
@@ -251,7 +336,7 @@ La \emph{demande agrégée (D)} est la somme des demandes individuelles pour cha
 \end{definition}
 
 \begin{definition}[Offre agrégée (S)]
-L'\emph{offre agrégée (S)} est la omme des offres individuelles pour chaque niveau de prix.
+L'\emph{offre agrégée (S)} est la somme des offres individuelles pour chaque niveau de prix.
 \end{definition}
 
 L'équilibre de marché se fait à l'intersection entre S et D (quand S=D).

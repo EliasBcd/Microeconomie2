@@ -1,3 +1,4 @@
+fig:cppcout
 fig:marche
 fig:surplus
 fig:elasticite
@@ -27,6 +28,8 @@ bibliographie
 plan-du-cours
 rappels-le-marché-en-concurrence-pure-et-parfaite
 les-hypothèses-de-la-concurrence-pure-et-parfaite-cpp
+le-producteur
+fonctions-de-coût
 léquilibre-de-marché
 perception-par-les-agents-isolés
 exercices
@@ -85,3 +88,23 @@ idée
 profits-2
 optimalité-pour-le-cartel
 optimalité-pour-une-entreprise
+hyp:unlabeled-div-1
+hyp:unlabeled-div-2
+hyp:unlabeled-div-3
+hyp:unlabeled-div-4
+hyp:unlabeled-div-5
+def:unlabeled-div-6
+def:unlabeled-div-7
+eq:CM
+def:unlabeled-div-9
+prp:unlabeled-div-10
+prp:unlabeled-div-11
+def:unlabeled-div-13
+def:unlabeled-div-14
+def:unlabeled-div-15
+def:unlabeled-div-16
+prp:cppprop
+exr:cppexo1
+exr:cppexo2
+eq:cppequilibre
+url-your-book-url-like-httpsbookdown.orgyihuibookdown
