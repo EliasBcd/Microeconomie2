@@ -57,6 +57,28 @@
 
 
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -74,7 +96,7 @@
 <li><a href="./">Microéconomie 2</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Microéconomie 2</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#thèmes"><i class="fa fa-check"></i><b>1.1</b> Thèmes</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#bibliographie"><i class="fa fa-check"></i><b>1.2</b> Bibliographie</a></li>
@@ -107,6 +129,7 @@
 <li class="chapter" data-level="3.2.3" data-path="le-monopole.html"><a href="le-monopole.html#indice-de-pouvoir-du-monopole"><i class="fa fa-check"></i><b>3.2.3</b> Indice de pouvoir du monopole</a></li>
 <li class="chapter" data-level="3.2.4" data-path="le-monopole.html"><a href="le-monopole.html#variation-de-la-demande"><i class="fa fa-check"></i><b>3.2.4</b> Variation de la demande</a></li>
 <li class="chapter" data-level="3.2.5" data-path="le-monopole.html"><a href="le-monopole.html#linefficience-du-monopole"><i class="fa fa-check"></i><b>3.2.5</b> L’inefficience du monopole</a></li>
+<li class="chapter" data-level="3.2.6" data-path="le-monopole.html"><a href="le-monopole.html#exercices-sur-le-comportement-monopole"><i class="fa fa-check"></i><b>3.2.6</b> Exercices sur le comportement monopole</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="le-monopole.html"><a href="le-monopole.html#régulation-des-monopole"><i class="fa fa-check"></i><b>3.3</b> Régulation des monopole</a>
 <ul>
@@ -365,7 +388,7 @@ q_1^*=q_2^* = \frac{a}{3b+2c}
 <p>On peut aussi aborder le problème à l’aide d’une intuition graphique.
 Il s’agit de tracer les courbes d’<em>isoprofit</em> des entreprises.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-1" class="definition"><strong>Définition 4.1  (Courbe d'isoprofit) </strong></span>Les courbes d’isoprofit est l’ensemble des couples de quantités <span class="math inline">\((q_1, q_2)\)</span> qui permettent à une entreprise d’atteindre un niveau de profit donné.</p>
+<p><span id="def:unlabeled-div-39" class="definition"><strong>Définition 4.1  (Courbe d'isoprofit) </strong></span>Les courbes d’isoprofit est l’ensemble des couples de quantités <span class="math inline">\((q_1, q_2)\)</span> qui permettent à une entreprise d’atteindre un niveau de profit donné.</p>
 </div>
 <p>Reprenons l’expression générale des profits de l’équation <a href="oligopoles.html#eq:profitcournot">(4.1)</a>.
 <span class="math display">\[
@@ -431,7 +454,7 @@ Autrement dit <span class="math inline">\(q=q_i+q_{-i}\)</span>.</p>
 <span class="math display">\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]</span>
 La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l’entreprise.</p>
 <div class="remark">
-<p><span id="unlabeled-div-2" class="remark"><em>Remarque</em>. </span>En monopole, <span class="math inline">\(S_i=1\)</span>, on retrouve alors bien :
+<p><span id="unlabeled-div-40" class="remark"><em>Remarque</em>. </span>En monopole, <span class="math inline">\(S_i=1\)</span>, on retrouve alors bien :
 <span class="math display">\[\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}\]</span></p>
 <p>En concurrence pure et parfaite <span class="math inline">\(S_i\to 0\)</span>, donc <span class="math inline">\(\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0\)</span>, ce qui implique bien que <span class="math inline">\(C_{mi}(q_i)\to P(q)\)</span>.
 On retrouve ainsi le résultat <span class="math inline">\(P(q^*)=C_m(q^*)\)</span>.</p>
@@ -442,7 +465,7 @@ On retrouve ainsi le résultat <span class="math inline">\(P(q^*)=C_m(q^*)\)</sp
 <p><em>Rappel :</em> En monopole, l’indice de Lerner est :
 <span class="math display">\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-3" class="definition"><strong>Définition 4.2  (Indice de Lerner) </strong></span>En oligopole à la Cournot avec <span class="math inline">\(n\)</span> producteurs, on définit l’indice de Lerner par :
+<p><span id="def:unlabeled-div-41" class="definition"><strong>Définition 4.2  (Indice de Lerner) </strong></span>En oligopole à la Cournot avec <span class="math inline">\(n\)</span> producteurs, on définit l’indice de Lerner par :
 <span class="math display">\[L = \sum_{i=1}^nS_iL_i\]</span>
 où <span class="math inline">\(S_i=q_i/q\)</span> est la <em>part de marché</em> de l’entreprise <span class="math inline">\(i\)</span> et <span class="math inline">\(L_i\)</span> est l’indice de Lerner propre à un producteur.</p>
 </div>

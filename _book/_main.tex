@@ -996,9 +996,9 @@ On en déduit :
 \]
 
 \begin{definition}[Indice de Lerner]
-\protect\hypertarget{def:Lerner}{}\label{def:Lerner}On définit l'indice de Lerner par :
+\protect\hypertarget{def:Lerner}{}\label{def:Lerner}On définit l'indice de Lerner \(L\) par :
 \[
-\frac{1}{|\varepsilon_{q/p}(q^*)|} = \frac{P(q^*) - C_m(q^*)}{P(q^*)} \label{eq:Lerner}
+L=\frac{1}{|\varepsilon_{q/p}(q^*)|} = \frac{P(q^*) - C_m(q^*)}{P(q^*)} \label{eq:Lerner}
 \]
 La partie gauche de l'équation est l'indice de Lerner, et la partie droite indique la capacité du monopole à vendre au-dessus de son coût marginal, en pourcentage du prix total.
 \end{definition}
@@ -1049,6 +1049,189 @@ Il y a globalement une perte sèche de surplus total.
 Il existe des consommateurs prêt à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche).
 Il est donc possible d'avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole.
 Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d'autre pour obtenir cette amélioration.
+
+\hypertarget{exercices-sur-le-comportement-monopole}{%
+\subsection{Exercices sur le comportement monopole}\label{exercices-sur-le-comportement-monopole}}
+
+\begin{exercise}[Questions de cours]
+\protect\hypertarget{exr:monoexo1}{}\label{exr:monoexo1}
+
+Questions de cours :
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Quand la demande de bien est inélastique, la recette
+  marginale est-elle positive ?
+\item
+  Un monopole maximise son profit dans la zone où les
+  quantités demandées sont élastiques au prix. Vrai ou faux ?
+\item
+  Dans quel cas un monopole se comportera-t-il comme
+  s'il était en situation de concurrence pure et parfaite (sans
+  intervention de l'État) ?
+\item
+  Une entreprise a un taux de marge (indice de Lerner) de 45\%.
+  Quelle est l'élasticité de la demande à laquelle
+  elle fait face ?
+\end{enumerate}
+
+\end{exercise}
+
+\begin{solution}[Solution de l'exercice \ref{exr:monoexo1}]
+
+Réponses :
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Non, cf cours.
+\item
+  Vrai, cf cours.
+\item
+  Si l'élasticité prix de la demande est infini.
+\item
+  On a d'après la définition de l'indice de Lerner \eqref{eq:Lerner} :
+  \[L=\frac{P(q^*)-C_m(q^*)}{P(q^*)}=\frac{1}{\left|\varepsilon_{p/q}(q^*)\right|}=0.45\]
+  Donc \(\left|\varepsilon_{p/q}(q^*)\right| =1/0.45=20/9\).
+\end{enumerate}
+
+\end{solution}
+
+\begin{exercise}
+\protect\hypertarget{exr:monoexo2}{}\label{exr:monoexo2}
+
+On considère une entreprise en monopole sur son marché dont la fonction de coût est :
+\[C(q)=\frac{1}{20} q^2+15q+500\]
+et qui fait face à la fonction de demande inverse : \[P(q)=45-0,2q\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Déterminer le prix \(p_m^*\) et la quantité \(q_m^*\) d'équilibre du monopole.
+\item
+  Les représenter graphiquement.
+\item
+  Calculer l'élasticité prix de la demande au point d'équilibre. Interpréter le résultat.
+\item
+  Calculer le surplus des consommateurs et le profit du monopole.
+\item
+  Déterminer le prix et la quantité correspondant à l'optimum de Pareto (concurrence pure et parfaite). Montrer que dans cette situation le surplus des consommateurs et le surplus social sont plus élevés, et que le profit du producteur est plus faible.
+\item
+  Calculer la charge morte du monopole.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{solution}[Solution de l'exercice \ref{exr:monoexo2}]
+
+Réponses.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  À l'optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
+  \[R_m(q^*)=C_m(q^*)\]
+  Ici, on a :
+  \[C_m(q^*)=\frac{1}{10}q+15\]
+  Et :
+  \[R(q) =qP(q)=45q-\frac{1}{5}q^2\]
+  Donc :
+  \[R_m(q)=45-\frac{2}{5}q\]
+  À l'optimum, on doit donc avoir :
+  \[
+  \begin{array}{crcl}
+  &45-\frac{2}{5}q^*&=&\frac{1}{10}q^*+15\\
+  \Leftrightarrow & 30&=&\frac{1}{2}q^*\\
+  \Leftrightarrow & q^*&=&60
+  \end{array}
+  \]
+  On vérifie aussi la condition de second ordre \eqref{eq:cso} :
+  \[R_m'(q^*)<C_m'(q^*)\]
+  \[R'_m(q)=-\frac{2}{5}\]
+  \[C'_m(q)=\frac{1}{10}<C_m'(q)\]
+  La condition du second est bien vérifiée, nous avons bien un maximum ici.
+  Finalement, le prix est \(p^*=P(q^*)=33\).
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/monoexo21-1.pdf}
+\caption{\label{fig:monoexo21}Représentation graphique}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  On a l'élasticité prix de la demande à l'équilibre :
+  \[\varepsilon_{q/p}(q^*)=\frac{p^*}{q^*}\frac{1}{P'(q^*)}=\frac{33}{60}\frac{1}{-0.2}=-\frac{11}{4}\]
+  La valeur absolue est bien plus grande que 1, nous sommes bien dans la zone où la demande est élastique.
+  On peut aussi la calculer à l'aide de :
+  \[\frac{p^*-C_m(q^*)}{p^*}=\frac{33-6-15}{33}=\frac{4}{11}=\frac{1}{|\varepsilon_{q/p}(q^*)|}\]
+  On calcule ainsi le pouvoir du monopole : sa capacité à imposer au consommateur un prix à l'équilibre supérieur à son coût marginal.
+\item
+  Commençons par la représentation graphique.
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/monoexo22-1.pdf}
+\caption{\label{fig:monoexo22}Avec les surplus en monopole.}
+\end{figure}
+
+Le surplus des consommateurs se calcule en calculant l'aire du triangle vert dans la figure \ref{fig:monoexo22}.
+On obtient :
+\[S_c=\frac{(45-33)(60-0)}{2}=360\]
+Le surplus du producteur s'obtient en calculant l'aire du trapèze rouge :
+\[S_p=\frac{(33-15+33-21)(60-0)}{2}=900\]
+Le profit du producteur est le surplus diminué du coût fixe, qui vaut ici 500. Le profit vaut donc 400.
+Le surplus total est la somme des surplus des consommateurs et du producteur, soit \(S_T=1260\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  En CPP, le prix est fixé par le marché et le prix est égal au coût marginal.
+  On a (ici \(q^*\) et \(p^*\) sont différents des parties précédentes) :
+  \[C_m(q^*)=P(q^*)=p^*\]
+  Soit :
+  \[\frac{1}{10}q^*+15=45-\frac{1}{5}q^*\]
+  En résolvant l'équation, on obtient \(q^*=100\) et on peut en déduire \(p^*=25\).
+  Pour calculer les surplus, on commence par la représentation graphique.
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/monoexo23-1.pdf}
+\caption{\label{fig:monoexo23}Avec les surplus en CPP.}
+\end{figure}
+
+On calcule l'aire du triangle vert pour obtenir le surplus total des consommateurs.
+Il vaut 1000, ce qui est supérieur au surplus obtenu en monopole.
+
+On calcule l'aire du triangle rouge pour obtenir le surplus total du producteur.
+Il vaut 500.
+Si maintenant on enlève le coût fixe pour obtenir le profit, on obtient un profit nul.
+Il est donc plus faible qu'en monopole.
+
+Le surplus total en CPP vaudrait donc 1500, ce qui est supérieur au surplus total obtenu en monopole.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  La charge morte du monopole est la différence entre le surplus total en CPP et en monopole, soit \(1500-1260=240\).
+  On peut aussi la calculer en utilisant l'aire du triangle noir sur la figure \ref{fig:monoexo22}.
+\end{enumerate}
+
+\end{solution}
 
 \hypertarget{ruxe9gulation-des-monopole}{%
 \section{Régulation des monopole}\label{ruxe9gulation-des-monopole}}
@@ -1374,17 +1557,17 @@ D'après l'équation \eqref{eq:rm}, on peut écrire :
 \[
 \begin{array}{crcl}
 &R_{mA}(q_A^*) &=& R_{mB}(q_B^*)\\
-\Leftrightarrow & P_A(q_A^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_A}\right|}\right) & = & P_B(q_B^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_B}\right|}\right)
+\Leftrightarrow & P_A(q_A^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_A}(q^*_A)\right|}\right) & = & P_B(q_B^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_B}(q_B^*)\right|}\right)
 \end{array}
 \]
 Sans perte de généralité, on peut supposer que \(P_A(q_A^*)> P_B(q_B^*)\).
 On obtient alors que :
 \[
-1-\frac{1}{\left|\varepsilon_{q/p_A}\right|} <1-\frac{1}{\left|\varepsilon_{q/p_B}\right|}
+1-\frac{1}{\left|\varepsilon_{q/p_A}(q_A^*)\right|} <1-\frac{1}{\left|\varepsilon_{q/p_B}(q_B^*)\right|}
 \]
 Autrement dit
 \[
-\left|\varepsilon_{q/p_B}\right|>\left|\varepsilon_{q/p_A}\right|
+\left|\varepsilon_{q/p_B}(q_B^*)\right|>\left|\varepsilon_{q/p_A}(q^*_A)\right|
 \]
 Le prix est donc plus faible pour le groupe où l'élasticité prix de la demande est plus élevée.
 Le prix est plus élevé pour le groupe avec l'élasticité la plus faible, les moins réactifs au prix.
@@ -1392,7 +1575,7 @@ Le prix est plus élevé pour le groupe avec l'élasticité la plus faible, les 
 \begin{example}
 Les tarifs ``professionnels'' dans les transports (avion, train, etc).
 Les professionnels sont moins sensibles au prix car leurs dates de voyage sont moins flexibles que celles des particuliers.
-Leur élasticité prix est donc plus faible et leurs prix plus élevés.
+Leur élasticité prix est donc plus faible et leur prix plus élevés.
 \end{example}
 
 Des fonctions de demande inverse différentes associées à des élasticités prix de la demande différente aboutissent à des prix différents.
@@ -1662,11 +1845,6 @@ La courbe d'isoprofit pour une valeur \(\pi_1\) \textbf{donnée et fixe} est :
 L'équation ci-dessus définit implicitement une fonction \(q_1=I_\pi(q_1, \pi_1)\) qui permet de représenter la courbe d'isoprofit dans un graphique \((q_1,q_2)\), tout comme la fonction de réaction définit une fonction courbe \(q_2(q_1)\) pour l'entreprise 1.
 La courbe de la fonction de réaction de 1 coupe la courbe d'isoprofit de 1 en son maximum.
 
-\begin{verbatim}
-## Scale for 'x' is already present. Adding another scale for 'x', which will
-## replace the existing scale.
-\end{verbatim}
-
 \begin{figure}
 \centering
 \includegraphics{_main_files/figure-latex/isoprofit1-1.pdf}
@@ -1677,45 +1855,11 @@ Sur la figure \ref{fig:isoprofit1}, le profit est croissant en descendant vers l
 Le maximum du profit est atteint lorsque l'entreprise 1 est en monopole.
 La quantité produite est alors \(q_m^*\) est le profit \(\pi_m^*\).
 
-\begin{verbatim}
-## Scale for 'x' is already present. Adding another scale for 'x', which will
-## replace the existing scale.
-\end{verbatim}
-
 \begin{figure}
 \centering
 \includegraphics{_main_files/figure-latex/isoprofitCournot-1.pdf}
 \caption{\label{fig:isoprofitCournot}Courbes d'isoprofits et fonctions de réactions des entreprises en équilibre de Cournot Nash.}
 \end{figure}
-
-\hypertarget{indice-de-lerner}{%
-\subsection{Indice de Lerner}\label{indice-de-lerner}}
-
-\emph{Rappel :} En monopole, l'indice de Lerner est :
-\[\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]
-
-\begin{definition}[Indice de Lerner]
-En oligopole à la Cournot, on définit l'indice de Lerner par :
-\[L = \sum_iS_iL_i\]
-où \(S_i=q_i/q\) est la \emph{part de marché} de l'entreprise \(i\) et \(L_i\) est l'indice de Lerner propre à l'entreprise.
-\end{definition}
-
-\(q\) est la production totale \(q=\sum_iq_i\).
-
-\[
-\begin{array}{rcl}
-L_i &=&\frac{1}{\left|\varepsilon_{q/p}(q_1, q_2)\right|}\\
-&=&\frac{1}{\left|\frac{\partial q}{\partial p}(q_i)\frac{p}{q_i}\right|}\\
-&=&\frac{1}{\left|\frac{\partial q}{\partial p}(q_i)\frac{p}{q}\frac{q}{q_i}\right|}\\
-&=&\left[\frac{1}{\left|\frac{\partial q}{\partial p}(q_i)\frac{p}{q_i}\right|}\right]\frac{q_i}{q}\\
-&=&\frac{S_i}{\left|\varepsilon_{q/p}(q_1, q_2)\right|}\\
-\end{array}
-\]
-
-On en déduit que :
-\[
-L=\sum_i\frac{S_i^2}{\left|\varepsilon_{q/p}(q_1^*, q_2^*)\right|}
-\]
 
 \hypertarget{extension-oligopole-uxe0-la-cournot}{%
 \subsection{Extension : oligopole à la Cournot}\label{extension-oligopole-uxe0-la-cournot}}
@@ -1742,49 +1886,76 @@ La condition du premier ordre est telle que :
 
 \[
 \begin{array}{crcl}
-&\frac{\partial \pi_i}{\partial q_i} &=& 0\\
-\Leftrightarrow & \frac{\partial  q_iP(q_i+q_{-i}) -C_i(q_i)}{\partial q_i} &= &0\\
-\Leftrightarrow & P(q) + q_i\frac{\partial  P(q)}{\partial q_i} -C_{im}(q_i)&= &0\\
-\Leftrightarrow & P(q) - C_{im}(q_i)&= &-q_i\frac{\partial  P(q)}{\partial q_i} \\
-\Leftrightarrow & \frac{P(q)-C_{im}(q_i)}{P(q)}&= &-\frac{q_i}{P(q)}\frac{\partial  P(q)}{\partial q_i} \\
-\Leftrightarrow & \frac{P(q) -C_{im}(q_i)}{P(q)}&= &-\frac{q}{P(q)}\frac{\partial  P(q)}{\partial q_i}\frac{q_i}{q} \\
-\Leftrightarrow & \frac{P(q) - C_{im}(q_i)}{P(q)}&= &S_i\frac{1}{\left|\varepsilon_{q/p}\right|}
+&\frac{\partial \pi_i}{\partial q_i}(q^*) &=& 0\\
+\Leftrightarrow & \frac{\partial  \left(q_iP(q_i+q_{-i}) -C_i(q_i)\right)}{\partial q_i}(q^*) &= &0\\
+\Leftrightarrow & P(q^*) + q_i\frac{\partial  P}{\partial q}(q^*) -C_{im}(q_i^*)&= &0\\
+\Leftrightarrow & P(q^*) - C_{im}(q_i^*)&= &-q_i^*\frac{\partial  P}{\partial q}(q^*) \\
+\Leftrightarrow & \frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}&= &-\frac{q_i^*}{P(q^*)}\frac{\partial  P}{\partial q}(q^*) \\
+\Leftrightarrow & \frac{P(q^*) -C_{im}(q_i)^*}{P(q^*)}&= &-\frac{q^*}{P(q^*)}\frac{\partial  P}{\partial q}(q^*)\frac{q_i^*}{q^*} \\
+\Leftrightarrow & \frac{P(q^*) - C_{im}(q_i^*)}{P(q^*)}&= &S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
 \end{array}
 \]
 (La dérivée de la fonction de demande suivant le prix est négative).
 
-\[\frac{P(q) -C_{im}(q_i)}{P(q)}= \frac{S_i}{\left|\varepsilon_{q/p}\right|}\]
-Ce résultat est la markup-pricing que peut appliquer chaque entreprise en situation d'oligopole à la Cournot.
+On obtient le \emph{markup-pricing} que peut appliquer un producteur en situation d'oligopole à la Cournot.
+\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]
 La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l'entreprise.
 
-\emph{Remarques :}
+\begin{remark}
+En monopole, \(S_i=1\), on retrouve alors bien :
+\[\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}\]
 
-\begin{itemize}
-\tightlist
-\item
-  En monopole, \(S_i=1\) pour le monopole.
-  On retrouve alors bien :
-  \[\frac{P(q) -C_{im}(q_i)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}\right|}\]
-\item
-  En concurrence pure et parfaite \(S_i\to 0\), donc \(\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0\), ce qui implique bien que \(C_{mi}(q_i)\to P(q)\).
-  On retrouve qinsi le résultat \(P(q)=C_m(q)\).
-\end{itemize}
+En concurrence pure et parfaite \(S_i\to 0\), donc \(\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0\), ce qui implique bien que \(C_{mi}(q_i)\to P(q)\).
+On retrouve ainsi le résultat \(P(q^*)=C_m(q^*)\).
+\end{remark}
+
+\hypertarget{indice-de-lerner}{%
+\subsection{Indice de Lerner}\label{indice-de-lerner}}
+
+\emph{Rappel :} En monopole, l'indice de Lerner est :
+\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]
+
+\begin{definition}[Indice de Lerner]
+En oligopole à la Cournot avec \(n\) producteurs, on définit l'indice de Lerner par :
+\[L = \sum_{i=1}^nS_iL_i\]
+où \(S_i=q_i/q\) est la \emph{part de marché} de l'entreprise \(i\) et \(L_i\) est l'indice de Lerner propre à un producteur.
+\end{definition}
+
+\(q\) est la production totale \(q=\sum_{i=1}^N q_i\).
+Notons \(q=(q_i, q_{-i})\) le vecteur donnant les quantités produites par chaque producteur.
+\(q_i\) est la quantité produite par le producteur \(i\), \(q_{-i}=(q_1,\dots,q_{i-1}, q_{i+1}, \dots,q_N)\) est le vecteur de toutes les unités produites par les autres producteurs.
+
+Exprimons maintenant l'indice de Lerner d'un producteur.
+\[
+\begin{array}{rcl}
+L_i &=&\frac{1}{\left|\varepsilon_{q/p}(q_i, q_{-i})\right|}=\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\\
+&=&\frac{1}{\left|\frac{1}{\frac{\partial P}{\partial q}(q)}\frac{P(q)}{q_i}\right|}\\
+&=&\frac{1}{\left|\frac{1}{\frac{\partial P}{\partial q}(q)}\frac{P(q)}{q}\frac{q}{q_i}\right|}\\
+&=&\frac{1}{\left|\frac{1}{\frac{\partial P}{\partial q}(q)}\frac{p}{q}\right|}\frac{q_i}{q}\\
+&=&\frac{S_i}{\left|\varepsilon_{q/p}(q)\right|}\\
+\end{array}
+\]
+
+On peut donc réécrire l'indice de Lerner uniquement en fonction de l'élasticité de la demande à l'équilibre et des parts de marchés de chaque producteur :
+\[
+L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
+\]
 
 \hypertarget{indice-de-concentration-du-marchuxe9}{%
-\subsubsection{Indice de concentration du marché}\label{indice-de-concentration-du-marchuxe9}}
+\subsection{Indice de concentration du marché}\label{indice-de-concentration-du-marchuxe9}}
 
 \begin{definition}[Indice de Hirschman-Herfindahl (HHI)]
 \protect\hypertarget{def:HHI}{}\label{def:HHI}L'indice de Hirschman-Herfindahl est la somme des carrés des part de marchés.
 \[HHI = \sum_{i=1}^NS_i^2\]
-C'est aussi la différence moyenne entre le coût marginal de production et le prix.
+C'est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l'élasticité prix de la demande à l'optimum.
 Autrement dit, la moyenne des \(L_i\) pondéré par les parts de marché.
 \end{definition}
 
 \[
  \begin{array}{rcl}
- \sum_{i=1}^{N}\frac{P(q) -C_{im}(q_i)}{P(q)}S_i &=&\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}\right|}S_i \\
- &=&\frac{1}{\left|\varepsilon_{q/p}\right|}\sum_{i=1}^NS_i^2\\
- &=&\frac{HHI}{\left|\varepsilon_{q/p}\right|}
+ \sum_{i=1}^{N}\frac{P(q) -C_{im}(q_i)}{P(q)}S_i &=&\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}S_i \\
+ &=&\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2\\
+ &=&\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
  \end{array}
  \]
 
@@ -1824,11 +1995,6 @@ On considère ici qu'il n'y a que deux périodes de décisions.
 
 Le leader doit choisir sa quantité \(q_1\) de façon à être sur la courbe d'isoprofit la plus basse possible compatible avec la fonction de réaction de la firme follower.
 Il va donc se placer sur la courbe d'isoprofit tangente à la fonction de réaction du follower.
-
-\begin{verbatim}
-## Scale for 'x' is already present. Adding another scale for 'x', which will
-## replace the existing scale.
-\end{verbatim}
 
 \begin{figure}
 \centering
