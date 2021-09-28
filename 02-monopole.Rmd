@@ -14,7 +14,7 @@ Il est intéressant à étudier car il nous renseigne sur les principaux aspects
 
 
 Il y a de nombreuses raisons qui aboutissent à l'existence de monopoles.
-Les principales sont:
+Les principales sont :
 
 - Légales, à cause de réglementation particulières.
 C'est ce qu'on appelle en général des professions réglementées, comme les avocats, les bureaux de tabac, les taxis...
@@ -101,37 +101,46 @@ Quel est le paramètre important de la courbe de demande qui détermine si le re
 
 \begin{align*}
 R(q) & = qP(q)\\
-R_m(q)& = \frac{dR(q)}{dq} \\
-& = \frac{d (qP(q))}{dq} \\
-& = P(q) + q\frac{d P(q)}{dq} \\
-& = P(q)\left(1 + \frac{q}{P(q)}\frac{d P(q)}{dq} \right)\\
-& = P(q)\left(1 + \frac{1}{\varepsilon_{q/p}}\right)
+R_m(q)& = R'(q) \\
+& = \left(qP(q)\right)' \\
+& = P(q) + qP'(q) \\
+& = P(q)\left(1 + \frac{q}{P(q)}P'(q) \right)\\
+& = P(q)\left(1 + \frac{1}{\varepsilon_{q/p}(q)}\right)
 \end{align*}
 
 ::: {.remark name="Élasticité prix de la demande"}
 L'élasticité prix de la demande $\varepsilon_{q/p}$ s'écrit :
-\[\varepsilon_{q/p}=\frac{p}{q}\frac{dq}{dp} <0\]
+\[\varepsilon_{q/p}(p)=\frac{p}{D(p)}D'(p) <0\]
+Où $D$ est la fonction de demande.
 Elle est toujours négative, car la demande diminue quand le prix augmente.
+On peut la réécrire à l'aide de la fonction de demande inverse $P$.
+Comme $D$ et $P$ sont les fonctions réciproques l'une de l'autre, on a $D(P(q)) = q$.
+En dérivant à gauche et à droite, on obtient :
+\[P'(q)D'(P(q)) = 1\]
+On obtient donc :
+\[P'(q)=\frac{1}{D'(p)}\]
+Et l'élasticité prix de la demande peut aussi s'écrire :
+\[\varepsilon_{q/p}(q)=\frac{P(q)}{q}\frac{1}{P'(q)}\]
 :::
 
 On peut donc écrire :
 \begin{equation}
-R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}|}\right)
+R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
 (\#eq:rm)
 \end{equation}
 
 
 De l'équation \@ref(eq:rm), on observe que le signe de la recette margianale $R_m$ dépend de l'élasticité prix de la demande.
 
-1. Si la demande est élastique ($|\varepsilon_{q/p}|>1$), alors $R_m(q)>0$, donc si la quantité augmente, le revenu augmente.
-2. Si la demande est inélastique ($|\varepsilon_{q/p}|<1$), alors $R_m(q)<0$, donc si la quantité augmente, le revenu diminue.
+1. Si la demande est élastique ($|\varepsilon_{q/p}(q)|>1$), alors $R_m(q)>0$, donc si la quantité augmente, le revenu augmente.
+2. Si la demande est inélastique ($|\varepsilon_{q/p}(q)|<1$), alors $R_m(q)<0$, donc si la quantité augmente, le revenu diminue.
 
 ```{r monopoleelasticite, fig.cap="La recette marginale est maximale lorsque l'élasticité prix de la demande est égale à -1."}
 p2 <- p;
 
-lab1 = expression('|'*epsilon*'|'>1)
-lab2 = expression('|'*epsilon*'|'<1)
-lab3 = expression('|'*epsilon*'|'==1)
+lab1 = TeX("$\\left| \\epsilon_{q/p}\\right|>1$")
+lab2 = TeX("$\\left| \\epsilon_{q/p}\\right|<1$")
+lab3 = TeX("$\\left| \\epsilon_{q/p}\\right|=1$")
 
 
 p2 + geom_segment(x=0, y=0, xend = 0.5, yend = 0.5, linetype="dashed") +
@@ -149,16 +158,16 @@ p2 + geom_segment(x=0, y=0, xend = 0.5, yend = 0.5, linetype="dashed") +
 
 La courbe de recette marginale est toujours située en-dessous de la courbe de demande :
 \[
-R_m(q) = P(q) + q\frac{d P(q)}{dq} < P(q)
+R_m(q) = P(q) + qP'(q) < P(q)
 \]
-et $\frac{d P(q)}{dq}$ est négative (la demande est décroissante quand le prix augmente).
+et $P'(q)$ est négative (la demande inverse est décroissante).
 
 #### Exemple avec une courbe de demande linéaire
 
-Prenons maintenant l'exemple d'une courbe de demande linéaire quelconque $P(q) = a-bq$ ($a$ et $b$ sont des paramètres quelconques).
+Prenons maintenant l'exemple d'une courbe de demande inverse linéaire quelconque $P(q) = a-bq$ ($a$ et $b$ sont des paramètres quelconques).
 On obtient alors $R_m(q) = a-2bq$ (et $R(q) = aq-bq^2$).  
 Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus forte que la demande, et ayant la même ordonnée à l'origine.
-La recette marginale divise en deux  tout segment horizontal entre l'axe des ordonnées et la courbe de demande.
+La recette marginale divise en deux  tout segment horizontal entre l'axe des ordonnées et la courbe de demande inverse.
 
 ```{r recettemarginale, fig.cap="Elasticité et recette."}
 Rm <- function(q)(1-2*q)
@@ -179,7 +188,7 @@ p3 <- p +
 p3
 ```
 
-La recette maximale est atteinte lorsque la valeur absolue de l'élasticité prix de la demande est égale à 1 ($|\varepsilon_{q/p}|=1$).
+La recette maximale est atteinte lorsque la valeur absolue de l'élasticité prix de la demande est égale à 1 ($|\varepsilon_{q/p}(q)|=1$).
 
 ```{r profit, fig.cap="Recette maximale."}
 
@@ -214,8 +223,8 @@ Il y a 2 conditions d'optimalités, les conditions de premier (la dérivée du p
 La condition de premier ordre s'exprime ainsi :
 \[
 \begin{array}{rcl}
-\frac{d\pi(q^*)}{dq} &=&0\\
-\Leftrightarrow \frac{dR(q^*)}{dq} - \frac{dC(q^*)}{dq} &=& 0\\
+\pi'(q^*) &=&0\\
+\Leftrightarrow R'(q^*) - C'(q^*) &=& 0\\
 \Leftrightarrow R_m(q^*) &=&C_m(q^*) 
 \end{array}
 \]
@@ -224,9 +233,9 @@ La condition de premier ordre s'exprime ainsi :
 La condition du second ordre s'exprime ainsi :
 \[
 \begin{array}{rcl}
-\frac{d^2\pi(q^*)}{dq^2} &<&0\\
-\Leftrightarrow \frac{dR_m(q^*)}{dq} - \frac{dC_m(q^*)}{dq} &<& 0\\
-\Leftrightarrow \frac{dR_m(q^*)}{dq} &<&\frac{dC_m(q^*)}{dq}
+\pi''(q^*) &<&0\\
+\Leftrightarrow R_m'(q^*) - C_m'(q^*) &<& 0\\
+\Leftrightarrow R_m'(q^*) &<& C_m'(q^*)
 \end{array}
 \]
 
@@ -367,7 +376,7 @@ p7
 
 On avait dans l'équation \@ref(eq:rm) :
 \[
-R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}|}\right)
+R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
 \]
 Comme à l'optimum, d'après l'équation \@ref(eq:cpo), on doit avoir $R_m(q^*)=C_m(q^*)$, on a :
 \[
@@ -410,9 +419,9 @@ On en déduit :
 \]
 
 ::: {.definition #Lerner name="Indice de Lerner"}
-On définit l'indice de Lerner par :
+On définit l'indice de Lerner $L$ par :
 \[
-\frac{1}{|\varepsilon_{q/p}(q^*)|} = \frac{P(q^*) - C_m(q^*)}{P(q^*)} (\#eq:Lerner)
+L=\frac{1}{|\varepsilon_{q/p}(q^*)|} = \frac{P(q^*) - C_m(q^*)}{P(q^*)} (\#eq:Lerner)
 \]
 La partie gauche de l'équation est l'indice de Lerner, et la partie droite indique la capacité du monopole à vendre au-dessus de son coût marginal, en pourcentage du prix total.
 :::
@@ -498,7 +507,7 @@ p_surplus <- ggplot() +
   geom_function(fun=Rm, colour = "lightblue") +
   geom_function(fun=Cm, colour="red") +
   labs(x="quantité", y = "prix") +
-  annotate("text", x=0.8, y=P(0.8), label=TeX("demande 1 ($P_1$)"), color="blue") +
+  annotate("text", x=0.8, y=P(0.8), label=TeX("demande ($P$)"), color="blue") +
   annotate("text", x=0.4, y=0.2, label=TeX("$R_{m}$"), color="lightblue") +
   annotate("text", x=1, y=Cm(1), label=TeX("Coût marginal ($C_m$)"), color="red") +
   geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
@@ -520,6 +529,157 @@ Il existe des consommateurs prêt à acheter à un prix supérieur au coût marg
 Il est donc possible d'avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole.
 Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d'autre pour obtenir cette amélioration.
 
+### Exercices sur le comportement monopole
+
+::: {.exercise #monoexo1 name="Questions de cours"}
+Questions de cours :
+
+1. Quand la demande de bien est inélastique, la recette
+marginale est-elle positive ?
+2. Un monopole maximise son profit dans la zone où les
+quantités demandées sont élastiques au prix. Vrai ou faux ?
+3. Dans quel cas un monopole se comportera-t-il comme
+s'il était en situation de concurrence pure et parfaite (sans
+intervention de l'État) ?
+4. Une entreprise a un taux de marge (indice de Lerner) de 45%.
+Quelle est l'élasticité de la demande à laquelle
+elle fait face ?
+:::
+
+::: {.solution name="Solution de l'exercice \@ref(exr:monoexo1)"}
+Réponses :
+
+1. Non, cf cours.
+2. Vrai, cf cours.
+3. Si l'élasticité prix de la demande est infini.
+4. On a d'après la définition de l'indice de Lerner \@ref(eq:Lerner) :
+\[L=\frac{P(q^*)-C_m(q^*)}{P(q^*)}=\frac{1}{\left|\varepsilon_{p/q}(q^*)\right|}=0.45\]
+Donc $\left|\varepsilon_{p/q}(q^*)\right| =1/0.45=20/9$.
+:::
+
+::: {.exercise #monoexo2}
+On considère une entreprise en monopole sur son marché dont la fonction de coût est :
+\[C(q)=\frac{1}{20} q^2+15q+500\] 
+et qui fait face à la fonction de demande inverse : \[P(q)=45-0,2q\]
+
+1. Déterminer le prix $p_m^*$ et la quantité $q_m^*$ d'équilibre du monopole.
+2. Les représenter graphiquement.
+3. Calculer l'élasticité prix de la demande au point d'équilibre. Interpréter le résultat.
+4. Calculer le surplus des consommateurs et le profit du monopole.
+5. Déterminer le prix et la quantité correspondant à l'optimum de Pareto (concurrence pure et parfaite). Montrer que dans cette situation le surplus des consommateurs et le surplus social sont plus élevés, et que le profit du producteur est plus faible.
+6. Calculer la charge morte du monopole.
+:::
+
+::: {.solution name="Solution de l'exercice \@ref(exr:monoexo2)"}
+Réponses.
+
+1. À l'optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
+\[R_m(q^*)=C_m(q^*)\]
+Ici, on a :
+\[C_m(q^*)=\frac{1}{10}q+15\]
+Et :
+\[R(q) =qP(q)=45q-\frac{1}{5}q^2\]
+Donc :
+\[R_m(q)=45-\frac{2}{5}q\]
+À l'optimum, on doit donc avoir :
+\[
+\begin{array}{crcl}
+&45-\frac{2}{5}q^*&=&\frac{1}{10}q^*+15\\
+\Leftrightarrow & 30&=&\frac{1}{2}q^*\\
+\Leftrightarrow & q^*&=&60
+\end{array}
+\]
+On vérifie aussi la condition de second ordre \@ref(eq:cso) :
+\[R_m'(q^*)<C_m'(q^*)\]
+\[R'_m(q)=-\frac{2}{5}\]
+\[C'_m(q)=\frac{1}{10}<C_m'(q)\]
+La condition du second est bien vérifiée, nous avons bien un maximum ici.
+Finalement, le prix est $p^*=P(q^*)=33$.
+
+```{r monoexo21, fig.cap="Représentation graphique"}
+P <- function(q){45-0.2*q}
+Rm <- function(q){45-0.4*q}
+Cm <- function(q){0.1*q+15}
+q1 <- 60
+q2 <- 100
+
+p_exo2 <- ggplot() +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 50), breaks=c(15, Cm(q1), Cm(q2), P(q1), 45), labels=c(15, 21,TeX("p^*_{CPP}=25"), TeX("p^*_m=33"), 45)) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 250), breaks=c(q1, q2), labels=c(TeX("$q^*_m=60"), TeX("$q^*_{CPP}=100"))) +
+  labs(x="quantité", y="prix") +
+  geom_function(fun=P, color="darkgreen") +
+  geom_function(fun=Rm, color="blue") +
+  geom_function(fun=Cm, color="red") +
+  annotate("text", x=200, y=P(200), label=TeX("demande ($P$)"), color="darkgreen") +
+  annotate("text", x=120, y=Rm(100), label=TeX("$R_{m}$"), color="blue") +
+  annotate("text", x=200, y=Cm(200), label=TeX("Coût marginal ($C_m$)"), color="red")
+
+p_exo2
+```
+
+3. On a l'élasticité prix de la demande à l'équilibre :
+\[\varepsilon_{q/p}(q^*)=\frac{p^*}{q^*}\frac{1}{P'(q^*)}=\frac{33}{60}\frac{1}{-0.2}=-\frac{11}{4}\]
+La valeur absolue est bien plus grande que 1, nous sommes bien dans la zone où la demande est élastique.
+On peut aussi la calculer à l'aide de :
+\[\frac{p^*-C_m(q^*)}{p^*}=\frac{33-6-15}{33}=\frac{4}{11}=\frac{1}{|\varepsilon_{q/p}(q^*)|}\]
+On calcule ainsi le pouvoir du monopole : sa capacité à imposer au consommateur un prix à l'équilibre supérieur à son coût marginal.
+
+4. Commençons par la représentation graphique.
+
+```{r monoexo22, fig.cap="Avec les surplus en monopole."}
+Sc <- data.frame(x=c(0, q1), ymin=c(P(q1), P(q1)), ymax=c(P(0), P(q1)))
+Sp <- data.frame(x=c(0, q1), ymin=c(Cm(0), Cm(q1)), ymax=c(P(q1), P(q1)))
+perte <- data.frame(x=c(q1, q2), ymin=c(Cm(q1), Cm(q2)), ymax=c(P(q1), P(q2)))
+
+p_exo2 +  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="darkgreen", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=q1/2, y=35, label="Sc", color="darkgreen") +
+  annotate("text", x=q1/2, y=25, label="Sp", color="red") +
+  geom_ribbon(data=perte, aes(x=x, ymin=ymin, ymax=ymax), fill="black", alpha=0.5) +
+  annotate("text", x=q1/2+q2/2, y=25, label="Perte sèche", color="black")
+  
+```
+
+Le surplus des consommateurs se calcule en calculant l'aire du triangle vert dans la figure \@ref(fig:monoexo22).
+On obtient :
+\[S_c=\frac{(45-33)(60-0)}{2}=360\]
+Le surplus du producteur s'obtient en calculant l'aire du trapèze rouge :
+\[S_p=\frac{(33-15+33-21)(60-0)}{2}=900\]
+Le profit du producteur est le surplus diminué du coût fixe, qui vaut ici 500. Le profit vaut  donc 400.
+Le surplus total est la somme des surplus des consommateurs et du producteur, soit $S_T=1260$.
+
+5. En CPP, le prix est fixé par le marché et le prix est égal au coût marginal.
+On a (ici $q^*$ et $p^*$ sont différents des parties précédentes) :
+\[C_m(q^*)=P(q^*)=p^*\]
+Soit : 
+\[\frac{1}{10}q^*+15=45-\frac{1}{5}q^*\]
+En résolvant l'équation, on obtient $q^*=100$ et on peut en déduire $p^*=25$.
+Pour calculer les surplus, on commence par la représentation graphique.
+
+```{r monoexo23, fig.cap="Avec les surplus en CPP."}
+Sc <- data.frame(x=c(0, q2), ymin=c(P(q2), P(q2)), ymax=c(P(0), P(q2)))
+Sp <- data.frame(x=c(0, q2), ymin=c(Cm(0), Cm(q2)), ymax=c(P(q2), P(q2)))
+
+p_exo2 +  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="darkgreen", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=q1/2, y=35, label="Sc", color="darkgreen") +
+  annotate("text", x=q1/2, y=20, label="Sp", color="red") 
+```
+
+On calcule l'aire du triangle vert pour obtenir le surplus total des consommateurs.
+Il vaut 1000, ce qui est supérieur au surplus obtenu en monopole.
+
+On calcule l'aire du triangle rouge pour obtenir le surplus total du producteur.
+Il vaut 500.
+Si maintenant on enlève le coût fixe pour obtenir le profit, on obtient un profit nul.
+Il est donc plus faible qu'en monopole.
+
+Le surplus total en CPP vaudrait donc 1500, ce qui est supérieur au surplus total obtenu en monopole.
+
+6. La charge morte du monopole est la différence entre le surplus total en CPP et en monopole, soit $1500-1260=240$.
+On peut aussi la calculer en utilisant l'aire du triangle noir sur la figure \@ref(fig:monoexo22).
+:::
+
 ## Régulation des monopole
 
 Cette partie va traiter de la manière dont un gouvernement peut inciter un monopole à modifier son comportement.
@@ -535,7 +695,7 @@ On a donc :
 La condition de première ordre de la maximisation du producteur de l'équation \@ref(eq:cpo) devient alors :
 \[
 \begin{array}{rl}
-&\frac{d(R(q)-C(q) -tq)}{dq}(q^*) = 0\\
+&(R(q)-C(q) -tq)'(q^*) = 0\\
 \Leftrightarrow & R_m(q^*)-C_m(q*) -t = 0\\
 \Leftrightarrow & R_m(q^*) = C_m(q^*) + t
 \end{array}
@@ -566,7 +726,7 @@ Avec une taxe forfaitaire, l'état prélève un montant $T$ indépendant de la q
 La condition du premier ordre de l'équation \@ref(eq:cpo) devient alors :
 \[
 \begin{array}{rl}
-& \frac{d(R(q)-C(q) -T)}{dq}(q^*) = 0\\
+& (R(q)-C(q) -T)'(q^*) = 0\\
 \Leftrightarrow & R_m(q^*)-C_m(q*) = 0\\
 \Leftrightarrow & R_m(q^*) = C_m(q^*)
 \end{array}
@@ -587,7 +747,7 @@ Le profit devient alors
 La condition du premier ordre de l'équation \@ref(eq:cpo) devient alors :
 \[
 \begin{array}{rl}
-&\frac{d((1-t)(R(q)-C(q)))}{dq}(q^*) = 0\\
+&((1-t)(R(q)-C(q)))'(q^*) = 0\\
 \Leftrightarrow & (1-t)(R_m(q^*)-C_m(q*)) = 0\\
 \Leftrightarrow & R_m(q^*) = C_m(q^*)
 \end{array}
@@ -648,12 +808,12 @@ GRAPH avec zone d'économie d'échelle.
 
 *Rappel :* Lorsque le coût moyen est décroissant, c'est que le coût marginal est inférieur au coût moyen.
 \[
-CM(q) = \frac{C(q)}{q}
+C_M(q) = \frac{C(q)}{q}
 \]
 \[
-CM'(q) =\frac{C'(q)q-C(q)}{q^2} = \frac{C_m(q)-C_M(q)}{q}
+C_M'(q) =\frac{C'(q)q-C(q)}{q^2} = \frac{C_m(q)-C_M(q)}{q}
 \]
-Or $CM'(q)<0$, comme le coût marginal est décroissant.
+Or $C_M'(q)<0$, comme le coût marginal est décroissant.
 On en déduit donc que 
 \[
 C_m(q)-C_M(q)< 0 \Leftrightarrow C_m(q)<C_M(q)
@@ -824,17 +984,17 @@ D'après l'équation \@ref(eq:rm), on peut écrire :
 \[
 \begin{array}{crcl}
 &R_{mA}(q_A^*) &=& R_{mB}(q_B^*)\\
-\Leftrightarrow & P_A(q_A^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_A}\right|}\right) & = & P_B(q_B^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_B}\right|}\right)
+\Leftrightarrow & P_A(q_A^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_A}(q^*_A)\right|}\right) & = & P_B(q_B^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_B}(q_B^*)\right|}\right)
 \end{array}
 \]
 Sans perte de généralité, on peut supposer que $P_A(q_A^*)> P_B(q_B^*)$.
 On obtient alors que :
 \[
-1-\frac{1}{\left|\varepsilon_{q/p_A}\right|} <1-\frac{1}{\left|\varepsilon_{q/p_B}\right|}
+1-\frac{1}{\left|\varepsilon_{q/p_A}(q_A^*)\right|} <1-\frac{1}{\left|\varepsilon_{q/p_B}(q_B^*)\right|}
 \]
 Autrement dit 
 \[
-\left|\varepsilon_{q/p_B}\right|>\left|\varepsilon_{q/p_A}\right|
+\left|\varepsilon_{q/p_B}(q_B^*)\right|>\left|\varepsilon_{q/p_A}(q^*_A)\right|
 \]
 Le prix est donc plus faible pour le groupe où l’élasticité prix de la demande est plus élevée.
 Le prix est plus élevé pour le groupe avec l'élasticité la plus faible, les moins réactifs au prix.
@@ -842,7 +1002,7 @@ Le prix est plus élevé pour le groupe avec l'élasticité la plus faible, les 
 :::{.example}
 Les tarifs "professionnels" dans les transports (avion, train, etc).
 Les professionnels sont moins sensibles au prix car leurs dates de voyage sont moins flexibles que celles des particuliers.
-Leur élasticité prix est donc plus faible et leurs prix plus élevés.
+Leur élasticité prix est donc plus faible et leur prix plus élevés.
 :::
 
 Des fonctions de demande inverse différentes associées à des élasticités prix de la demande différente aboutissent à des prix différents.

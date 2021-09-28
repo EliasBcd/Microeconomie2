@@ -25,7 +25,7 @@
 <meta name="author" content="Antoine Terracol" />
 
 
-<meta name="date" content="2021-09-27" />
+<meta name="date" content="2021-09-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -241,8 +241,8 @@ Elle peut se décomposer en un <em>coût fixe</em> <span class="math inline">\(C
 <span class="math display">\[CT(q)=CF+ CV(q)\]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-7" class="definition"><strong>Définition 2.2  (Coût moyen) </strong></span>Le coût moyen est le coût de production moyen d’une unité, noté <span class="math inline">\(CM\)</span> :
-<span class="math display">\[CM(q) = \frac{CT(q)}{q}\]</span></p>
+<p><span id="def:unlabeled-div-7" class="definition"><strong>Définition 2.2  (Coût moyen) </strong></span>Le coût moyen est le coût de production moyen d’une unité, noté <span class="math inline">\(C_M\)</span> :
+<span class="math display">\[C_M(q) = \frac{CT(q)}{q}\]</span></p>
 </div>
 <p>On peut décomposer le coût moyen en un <em>coût fixe moyen</em> <span class="math inline">\(CFM\)</span> :
 <span class="math display">\[CFM(q)=\frac{CF}{q}\]</span>
@@ -250,13 +250,13 @@ Et un <em>coût variable moyen</em> <span class="math inline">\(CVM\)</span> :
 <span class="math display">\[CVM(q)=\frac{CV(q)}{q}\]</span>
 On a alors :
 <span class="math display" id="eq:CM">\[\begin{equation}
-CM(q)=CFM(q) +CVM(q)
+C_M(q)=CFM(q) +CVM(q)
 \tag{2.1}
 \end{equation}\]</span></p>
 <div class="proof">
 <p><span id="unlabeled-div-8" class="proof"><em>Démonstration</em>. </span><span class="math display">\[
 \begin{array}{rcl}
-CM(q) &amp;=&amp; \frac{CT(q)}{q}\\
+C_M(q) &amp;=&amp; \frac{CT(q)}{q}\\
  &amp;=&amp; \frac{CF + CV(q)}{q}\\
  &amp;=&amp; \frac{CF}{q}+\frac{CV(q)}{q}\\
  &amp;=&amp; CFM(q) + CVM(q)
@@ -275,22 +275,22 @@ Le coût fixe moyen est toujours décroissant, car le coût fixe ne dépend pas 
 La décomposition donnée par l’équation <a href="rappels-le-marché-en-concurrence-pure-et-parfaite.html#eq:CM">(2.1)</a> implique que le coût moyen est d’abord décroissant, puis croissant.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-11" class="proposition"><strong>Propriétés 2.2  (Relation entre les coûts) </strong></span>Lorsque le coût marginal est inférieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&lt;CM(q)\)</span>), le coût moyen diminue.
-Lorsque le coût marginal est supérieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&gt;CM(q)\)</span>), le coût moyen augmente.
+<p><span id="prp:unlabeled-div-11" class="proposition"><strong>Propriétés 2.2  (Relation entre les coûts) </strong></span>Lorsque le coût marginal est inférieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&lt;C_M(q)\)</span>), le coût moyen diminue.
+Lorsque le coût marginal est supérieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&gt;C_M(q)\)</span>), le coût moyen augmente.
 La courbe de coût marginal coupe donc la courbe de coût (variable) moyen à son minimum.</p>
 </div>
 <p>L’intuition de ce résultat est simple : si le coût marginal d’une unité supplémentaire est supérieur au coût moyen, alors l’unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen.</p>
 <div class="proof">
-<p><span id="unlabeled-div-12" class="proof"><em>Démonstration</em>. </span>En son minimum, le coût moyen est tel que <span class="math inline">\(CM&#39;(q)=0\)</span>.
+<p><span id="unlabeled-div-12" class="proof"><em>Démonstration</em>. </span>En son minimum, le coût moyen est tel que <span class="math inline">\(C_M&#39;(q)=0\)</span>.
 <span class="math display">\[
 \begin{array}{crcl}
-&amp;CM&#39;(q)&amp;=&amp;0\\
+&amp;C_M&#39;(q)&amp;=&amp;0\\
 \Leftrightarrow &amp; \left(\frac{CT(q)}{q}\right)&#39;&amp;=&amp; 0\\
 \Leftrightarrow &amp; \frac{CT&#39;(q)q-CT(q)}{q^2}&amp;=&amp; 0\\
 \Leftrightarrow &amp; \frac{C_m(q)}{q}-\frac{CT(q)}{q^2}&amp;=&amp; 0\\
 \Leftrightarrow &amp; C_m(q)q-CT(q)&amp;=&amp; 0\\
 \Leftrightarrow &amp; C_m(q)&amp;=&amp; \frac{CT(q)}{q}\\
-\Leftrightarrow &amp; C_m(q)&amp;=&amp; CM(q)
+\Leftrightarrow &amp; C_m(q)&amp;=&amp; C_M(q)
 \end{array}
 \]</span>
 CQFD.</p>
@@ -353,7 +353,7 @@ En réécrivant l’équation <a href="rappels-le-marché-en-concurrence-pure-et
 <span class="math display">\[p=C_m(q)\]</span></p>
 </div>
 <p>Le profit du producteur s’écrit alors :
-<span class="math display">\[\pi(q)=RT(q)-CT(q)=pq-CT(q)=pq-CM(q)q=q(p-CM(q))\]</span>
+<span class="math display">\[\pi(q)=RT(q)-CT(q)=pq-CT(q)=pq-C_M(q)q=q(p-C_M(q))\]</span>
 Autrement dit, le profit d’un producteur en concurrence pure et parfaite et la différence entre le prix de vente et le coût moyen de production multiplié par le nombre d’unités vendues.
 Si ce prix est inférieur au coût moyen de toutes les unités vendues, le profit sera négatif.</p>
 <div class="figure">

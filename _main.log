@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.27)  27 SEP 2021 20:35
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.27)  28 SEP 2021 12:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1049,19 +1049,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: _main_files/figure-latex/monorecettemarginale-1.pdf Graphic file (type pd
 f)
 <use _main_files/figure-latex/monorecettemarginale-1.pdf>
-[24]
+[24] [25]
 File: _main_files/figure-latex/monopoleelasticite-1.pdf Graphic file (type pdf)
 
 <use _main_files/figure-latex/monopoleelasticite-1.pdf>
-[25]
+[26]
 File: _main_files/figure-latex/recettemarginale-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/recettemarginale-1.pdf>
 File: _main_files/figure-latex/profit-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/profit-1.pdf>
-[26] [27]
+[27] [28]
 File: _main_files/figure-latex/monopoleoptimale-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/monopoleoptimale-1.pdf>
-[28] [29]
+[29]
 File: _main_files/figure-latex/monopolerecette-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/monopolerecette-1.pdf>
 File: _main_files/figure-latex/monopoleprofit-1.pdf Graphic file (type pdf)
@@ -1083,7 +1083,7 @@ Underfull \vbox (badness 5077) has occurred while \output is active []
 ]
 Chapitre 4.
 [43] [44] [45] [46]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 1659--1659
+Overfull \hbox (59.25pt too wide) in paragraph at lines 1668--1668
 []\TU/lmtt/m/n/10 ## Scale for 'x' is already present. Adding another scale for
  'x', which will[] 
  []
@@ -1091,7 +1091,7 @@ Overfull \hbox (59.25pt too wide) in paragraph at lines 1659--1659
 File: _main_files/figure-latex/isoprofit1-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/isoprofit1-1.pdf>
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 1674--1674
+Overfull \hbox (59.25pt too wide) in paragraph at lines 1683--1683
 []\TU/lmtt/m/n/10 ## Scale for 'x' is already present. Adding another scale for
  'x', which will[] 
  []
@@ -1099,13 +1099,13 @@ Overfull \hbox (59.25pt too wide) in paragraph at lines 1674--1674
 File: _main_files/figure-latex/isoprofitCournot-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/isoprofitCournot-1.pdf>
 [47] [48] [49]
-Underfull \hbox (badness 4266) in paragraph at lines 1768--1769
+Underfull \hbox (badness 4266) in paragraph at lines 1777--1778
 [][]\TU/lmr/bx/n/10 Définition 4.3 \TU/lmr/m/n/10 (Indice de Hirschman-Herfinda
 hl (HHI))\TU/lmr/bx/n/10 . []\TU/lmr/m/n/10 L’indice de
  []
 
 [50]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 1822--1822
+Overfull \hbox (59.25pt too wide) in paragraph at lines 1831--1831
 []\TU/lmtt/m/n/10 ## Scale for 'x' is already present. Adding another scale for
  'x', which will[] 
  []
@@ -1128,7 +1128,7 @@ Package rerunfilecheck Info: File `_main.out' has not changed.
 Here is how much of TeX's memory you used:
  18378 strings out of 478472
  331100 string characters out of 5859464
- 820704 words of memory out of 5000000
+ 821704 words of memory out of 5000000
  38395 multiletter control sequences out of 15000+600000
  409937 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191

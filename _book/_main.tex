@@ -78,7 +78,7 @@
 
 \title{Microéconomie 2}
 \author{Elias Bouacida \and Antoine Terracol}
-\date{2021-09-27}
+\date{2021-09-28}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Théorème}[chapter]
@@ -261,8 +261,8 @@ Elle peut se décomposer en un \emph{coût fixe} \(CF\) (qui ne dépend pas de \
 \end{definition}
 
 \begin{definition}[Coût moyen]
-Le coût moyen est le coût de production moyen d'une unité, noté \(CM\) :
-\[CM(q) = \frac{CT(q)}{q}\]
+Le coût moyen est le coût de production moyen d'une unité, noté \(C_M\) :
+\[C_M(q) = \frac{CT(q)}{q}\]
 \end{definition}
 
 On peut décomposer le coût moyen en un \emph{coût fixe moyen} \(CFM\) :
@@ -271,14 +271,14 @@ Et un \emph{coût variable moyen} \(CVM\) :
 \[CVM(q)=\frac{CV(q)}{q}\]
 On a alors :
 \begin{equation}
-CM(q)=CFM(q) +CVM(q)
+C_M(q)=CFM(q) +CVM(q)
 \label{eq:CM}
 \end{equation}
 
 \begin{proof}
 \[
 \begin{array}{rcl}
-CM(q) &=& \frac{CT(q)}{q}\\
+C_M(q) &=& \frac{CT(q)}{q}\\
  &=& \frac{CF + CV(q)}{q}\\
  &=& \frac{CF}{q}+\frac{CV(q)}{q}\\
  &=& CFM(q) + CVM(q)
@@ -301,24 +301,24 @@ La décomposition donnée par l'équation \eqref{eq:CM} implique que le coût mo
 \end{proposition}
 
 \begin{proposition}[Relation entre les coûts]
-Lorsque le coût marginal est inférieur au coût (variable) moyen (\(C_m(q)<CM(q)\)), le coût moyen diminue.
-Lorsque le coût marginal est supérieur au coût (variable) moyen (\(C_m(q)>CM(q)\)), le coût moyen augmente.
+Lorsque le coût marginal est inférieur au coût (variable) moyen (\(C_m(q)<C_M(q)\)), le coût moyen diminue.
+Lorsque le coût marginal est supérieur au coût (variable) moyen (\(C_m(q)>C_M(q)\)), le coût moyen augmente.
 La courbe de coût marginal coupe donc la courbe de coût (variable) moyen à son minimum.
 \end{proposition}
 
 L'intuition de ce résultat est simple : si le coût marginal d'une unité supplémentaire est supérieur au coût moyen, alors l'unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen.
 
 \begin{proof}
-En son minimum, le coût moyen est tel que \(CM'(q)=0\).
+En son minimum, le coût moyen est tel que \(C_M'(q)=0\).
 \[
 \begin{array}{crcl}
-&CM'(q)&=&0\\
+&C_M'(q)&=&0\\
 \Leftrightarrow & \left(\frac{CT(q)}{q}\right)'&=& 0\\
 \Leftrightarrow & \frac{CT'(q)q-CT(q)}{q^2}&=& 0\\
 \Leftrightarrow & \frac{C_m(q)}{q}-\frac{CT(q)}{q^2}&=& 0\\
 \Leftrightarrow & C_m(q)q-CT(q)&=& 0\\
 \Leftrightarrow & C_m(q)&=& \frac{CT(q)}{q}\\
-\Leftrightarrow & C_m(q)&=& CM(q)
+\Leftrightarrow & C_m(q)&=& C_M(q)
 \end{array}
 \]
 CQFD.
@@ -392,7 +392,7 @@ En concurrence pure et parfaite, la courbe d'offre du producteur est la courbe d
 \end{proposition}
 
 Le profit du producteur s'écrit alors :
-\[\pi(q)=RT(q)-CT(q)=pq-CT(q)=pq-CM(q)q=q(p-CM(q))\]
+\[\pi(q)=RT(q)-CT(q)=pq-CT(q)=pq-C_M(q)q=q(p-C_M(q))\]
 Autrement dit, le profit d'un producteur en concurrence pure et parfaite et la différence entre le prix de vente et le coût moyen de production multiplié par le nombre d'unités vendues.
 Si ce prix est inférieur au coût moyen de toutes les unités vendues, le profit sera négatif.
 
@@ -693,7 +693,7 @@ C'est le cas extrême opposé à la concurrence pure et parfaite, du côté du p
 Il est intéressant à étudier car il nous renseigne sur les principaux aspects du comportement des entreprises dans les cas intermédiaires.
 
 Il y a de nombreuses raisons qui aboutissent à l'existence de monopoles.
-Les principales sont:
+Les principales sont :
 
 \begin{itemize}
 \tightlist
@@ -751,22 +751,31 @@ Quel est le paramètre important de la courbe de demande qui détermine si le re
 
 \begin{align*}
 R(q) & = qP(q)\\
-R_m(q)& = \frac{dR(q)}{dq} \\
-& = \frac{d (qP(q))}{dq} \\
-& = P(q) + q\frac{d P(q)}{dq} \\
-& = P(q)\left(1 + \frac{q}{P(q)}\frac{d P(q)}{dq} \right)\\
-& = P(q)\left(1 + \frac{1}{\varepsilon_{q/p}}\right)
+R_m(q)& = R'(q) \\
+& = \left(qP(q)\right)' \\
+& = P(q) + qP'(q) \\
+& = P(q)\left(1 + \frac{q}{P(q)}P'(q) \right)\\
+& = P(q)\left(1 + \frac{1}{\varepsilon_{q/p}(q)}\right)
 \end{align*}
 
 \begin{remark}[Élasticité prix de la demande]
 L'élasticité prix de la demande \(\varepsilon_{q/p}\) s'écrit :
-\[\varepsilon_{q/p}=\frac{p}{q}\frac{dq}{dp} <0\]
+\[\varepsilon_{q/p}(p)=\frac{p}{D(p)}D'(p) <0\]
+Où \(D\) est la fonction de demande.
 Elle est toujours négative, car la demande diminue quand le prix augmente.
+On peut la réécrire à l'aide de la fonction de demande inverse \(P\).
+Comme \(D\) et \(P\) sont les fonctions réciproques l'une de l'autre, on a \(D(P(q)) = q\).
+En dérivant à gauche et à droite, on obtient :
+\[P'(q)D'(P(q)) = 1\]
+On obtient donc :
+\[P'(q)=\frac{1}{D'(p)}\]
+Et l'élasticité prix de la demande peut aussi s'écrire :
+\[\varepsilon_{q/p}(q)=\frac{P(q)}{q}\frac{1}{P'(q)}\]
 \end{remark}
 
 On peut donc écrire :
 \begin{equation}
-R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}|}\right)
+R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
 \label{eq:rm}
 \end{equation}
 
@@ -776,9 +785,9 @@ De l'équation \eqref{eq:rm}, on observe que le signe de la recette margianale \
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Si la demande est élastique (\(|\varepsilon_{q/p}|>1\)), alors \(R_m(q)>0\), donc si la quantité augmente, le revenu augmente.
+  Si la demande est élastique (\(|\varepsilon_{q/p}(q)|>1\)), alors \(R_m(q)>0\), donc si la quantité augmente, le revenu augmente.
 \item
-  Si la demande est inélastique (\(|\varepsilon_{q/p}|<1\)), alors \(R_m(q)<0\), donc si la quantité augmente, le revenu diminue.
+  Si la demande est inélastique (\(|\varepsilon_{q/p}(q)|<1\)), alors \(R_m(q)<0\), donc si la quantité augmente, le revenu diminue.
 \end{enumerate}
 
 \begin{figure}
@@ -792,17 +801,17 @@ De l'équation \eqref{eq:rm}, on observe que le signe de la recette margianale \
 
 La courbe de recette marginale est toujours située en-dessous de la courbe de demande :
 \[
-R_m(q) = P(q) + q\frac{d P(q)}{dq} < P(q)
+R_m(q) = P(q) + qP'(q) < P(q)
 \]
-et \(\frac{d P(q)}{dq}\) est négative (la demande est décroissante quand le prix augmente).
+et \(P'(q)\) est négative (la demande inverse est décroissante).
 
 \hypertarget{exemple-avec-une-courbe-de-demande-linuxe9aire}{%
 \subsubsection{Exemple avec une courbe de demande linéaire}\label{exemple-avec-une-courbe-de-demande-linuxe9aire}}
 
-Prenons maintenant l'exemple d'une courbe de demande linéaire quelconque \(P(q) = a-bq\) (\(a\) et \(b\) sont des paramètres quelconques).
+Prenons maintenant l'exemple d'une courbe de demande inverse linéaire quelconque \(P(q) = a-bq\) (\(a\) et \(b\) sont des paramètres quelconques).
 On obtient alors \(R_m(q) = a-2bq\) (et \(R(q) = aq-bq^2\)).\\
 Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus forte que la demande, et ayant la même ordonnée à l'origine.
-La recette marginale divise en deux tout segment horizontal entre l'axe des ordonnées et la courbe de demande.
+La recette marginale divise en deux tout segment horizontal entre l'axe des ordonnées et la courbe de demande inverse.
 
 \begin{figure}
 \centering
@@ -810,7 +819,7 @@ La recette marginale divise en deux tout segment horizontal entre l'axe des ordo
 \caption{\label{fig:recettemarginale}Elasticité et recette.}
 \end{figure}
 
-La recette maximale est atteinte lorsque la valeur absolue de l'élasticité prix de la demande est égale à 1 (\(|\varepsilon_{q/p}|=1\)).
+La recette maximale est atteinte lorsque la valeur absolue de l'élasticité prix de la demande est égale à 1 (\(|\varepsilon_{q/p}(q)|=1\)).
 
 \begin{figure}
 \centering
@@ -843,8 +852,8 @@ Il y a 2 conditions d'optimalités, les conditions de premier (la dérivée du p
 La condition de premier ordre s'exprime ainsi :
 \[
 \begin{array}{rcl}
-\frac{d\pi(q^*)}{dq} &=&0\\
-\Leftrightarrow \frac{dR(q^*)}{dq} - \frac{dC(q^*)}{dq} &=& 0\\
+\pi'(q^*) &=&0\\
+\Leftrightarrow R'(q^*) - C'(q^*) &=& 0\\
 \Leftrightarrow R_m(q^*) &=&C_m(q^*) 
 \end{array}
 \]
@@ -853,9 +862,9 @@ La condition de premier ordre s'exprime ainsi :
 La condition du second ordre s'exprime ainsi :
 \[
 \begin{array}{rcl}
-\frac{d^2\pi(q^*)}{dq^2} &<&0\\
-\Leftrightarrow \frac{dR_m(q^*)}{dq} - \frac{dC_m(q^*)}{dq} &<& 0\\
-\Leftrightarrow \frac{dR_m(q^*)}{dq} &<&\frac{dC_m(q^*)}{dq}
+\pi''(q^*) &<&0\\
+\Leftrightarrow R_m'(q^*) - C_m'(q^*) &<& 0\\
+\Leftrightarrow R_m'(q^*) &<& C_m'(q^*)
 \end{array}
 \]
 
@@ -943,7 +952,7 @@ On a donc un profit de \textbf{150}, qui est bien positif (condition de l'équat
 
 On avait dans l'équation \eqref{eq:rm} :
 \[
-R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}|}\right)
+R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
 \]
 Comme à l'optimum, d'après l'équation \eqref{eq:cpo}, on doit avoir \(R_m(q^*)=C_m(q^*)\), on a :
 \[
@@ -1058,7 +1067,7 @@ On a donc :
 La condition de première ordre de la maximisation du producteur de l'équation \eqref{eq:cpo} devient alors :
 \[
 \begin{array}{rl}
-&\frac{d(R(q)-C(q) -tq)}{dq}(q^*) = 0\\
+&(R(q)-C(q) -tq)'(q^*) = 0\\
 \Leftrightarrow & R_m(q^*)-C_m(q*) -t = 0\\
 \Leftrightarrow & R_m(q^*) = C_m(q^*) + t
 \end{array}
@@ -1090,7 +1099,7 @@ Avec une taxe forfaitaire, l'état prélève un montant \(T\) indépendant de la
 La condition du premier ordre de l'équation \eqref{eq:cpo} devient alors :
 \[
 \begin{array}{rl}
-& \frac{d(R(q)-C(q) -T)}{dq}(q^*) = 0\\
+& (R(q)-C(q) -T)'(q^*) = 0\\
 \Leftrightarrow & R_m(q^*)-C_m(q*) = 0\\
 \Leftrightarrow & R_m(q^*) = C_m(q^*)
 \end{array}
@@ -1112,7 +1121,7 @@ Le profit devient alors
 La condition du premier ordre de l'équation \eqref{eq:cpo} devient alors :
 \[
 \begin{array}{rl}
-&\frac{d((1-t)(R(q)-C(q)))}{dq}(q^*) = 0\\
+&((1-t)(R(q)-C(q)))'(q^*) = 0\\
 \Leftrightarrow & (1-t)(R_m(q^*)-C_m(q*)) = 0\\
 \Leftrightarrow & R_m(q^*) = C_m(q^*)
 \end{array}
@@ -1174,12 +1183,12 @@ GRAPH avec zone d'économie d'échelle.
 
 \emph{Rappel :} Lorsque le coût moyen est décroissant, c'est que le coût marginal est inférieur au coût moyen.
 \[
-CM(q) = \frac{C(q)}{q}
+C_M(q) = \frac{C(q)}{q}
 \]
 \[
-CM'(q) =\frac{C'(q)q-C(q)}{q^2} = \frac{C_m(q)-C_M(q)}{q}
+C_M'(q) =\frac{C'(q)q-C(q)}{q^2} = \frac{C_m(q)-C_M(q)}{q}
 \]
-Or \(CM'(q)<0\), comme le coût marginal est décroissant.
+Or \(C_M'(q)<0\), comme le coût marginal est décroissant.
 On en déduit donc que
 \[
 C_m(q)-C_M(q)< 0 \Leftrightarrow C_m(q)<C_M(q)

@@ -7,7 +7,6 @@ x=seq(0, 0.5, length=101)
 df <- data.frame(x)
 
 p_isoprofit <- ggplot() +
-  xlim(0, 1) +
   labs(x="quantité 1", y = "quantité 2")
 ```
 
@@ -247,7 +246,7 @@ L'équation ci-dessus définit implicitement une fonction $q_1=I_\pi(q_1, \pi_1)
 La courbe de la fonction de réaction de 1 coupe la courbe d'isoprofit de 1 en son maximum. 
 <!-- Implicitiment, le maximum sur la courbe d'isoprofit est obtenu en dérivant suivant $q_1$, tout comme on obtient la fonction de réaction. -->
 
-```{r isoprofit1, fig.cap="Courbes d'isoprofit et fonction de réaction de l'entreprise 1"}
+```{r isoprofit1, fig.cap="Courbes d'isoprofit et fonction de réaction de l'entreprise 1", warning=FALSE}
 I1 <- function(q, pi){1-pi/q-2*q}
 f1 <- function(q)(1-4*q)
 
@@ -291,33 +290,7 @@ p + geom_function(fun=f2, colour="darkgreen") +
 
 ```
 
-### Indice de Lerner
 
-*Rappel :* En monopole, l'indice de Lerner est :
-\[\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]
-
-:::{.definition name="Indice de Lerner"}
-En oligopole à la Cournot, on définit l'indice de Lerner par :
-\[L = \sum_iS_iL_i\]
-où $S_i=q_i/q$ est la *part de marché* de l'entreprise $i$ et $L_i$ est l'indice de Lerner propre à l'entreprise.
-:::
-$q$ est la production totale $q=\sum_iq_i$.
-
-\[
-\begin{array}{rcl}
-L_i &=&\frac{1}{\left|\varepsilon_{q/p}(q_1, q_2)\right|}\\
-&=&\frac{1}{\left|\frac{\partial q}{\partial p}(q_i)\frac{p}{q_i}\right|}\\
-&=&\frac{1}{\left|\frac{\partial q}{\partial p}(q_i)\frac{p}{q}\frac{q}{q_i}\right|}\\
-&=&\left[\frac{1}{\left|\frac{\partial q}{\partial p}(q_i)\frac{p}{q_i}\right|}\right]\frac{q_i}{q}\\
-&=&\frac{S_i}{\left|\varepsilon_{q/p}(q_1, q_2)\right|}\\
-\end{array}
-\]
-<!--Something fishy here about where the elasticity is computed.-->
-
-On en déduit que :
-\[
-L=\sum_i\frac{S_i^2}{\left|\varepsilon_{q/p}(q_1^*, q_2^*)\right|}
-\]
 
 ### Extension : oligopole à la Cournot
 
@@ -343,45 +316,75 @@ La condition du premier ordre est telle que :
 
 \[
 \begin{array}{crcl}
-&\frac{\partial \pi_i}{\partial q_i} &=& 0\\
-\Leftrightarrow & \frac{\partial  q_iP(q_i+q_{-i}) -C_i(q_i)}{\partial q_i} &= &0\\
-\Leftrightarrow & P(q) + q_i\frac{\partial  P(q)}{\partial q_i} -C_{im}(q_i)&= &0\\
-\Leftrightarrow & P(q) - C_{im}(q_i)&= &-q_i\frac{\partial  P(q)}{\partial q_i} \\
-\Leftrightarrow & \frac{P(q)-C_{im}(q_i)}{P(q)}&= &-\frac{q_i}{P(q)}\frac{\partial  P(q)}{\partial q_i} \\
-\Leftrightarrow & \frac{P(q) -C_{im}(q_i)}{P(q)}&= &-\frac{q}{P(q)}\frac{\partial  P(q)}{\partial q_i}\frac{q_i}{q} \\
-\Leftrightarrow & \frac{P(q) - C_{im}(q_i)}{P(q)}&= &S_i\frac{1}{\left|\varepsilon_{q/p}\right|}
+&\frac{\partial \pi_i}{\partial q_i}(q^*) &=& 0\\
+\Leftrightarrow & \frac{\partial  \left(q_iP(q_i+q_{-i}) -C_i(q_i)\right)}{\partial q_i}(q^*) &= &0\\
+\Leftrightarrow & P(q^*) + q_i\frac{\partial  P}{\partial q}(q^*) -C_{im}(q_i^*)&= &0\\
+\Leftrightarrow & P(q^*) - C_{im}(q_i^*)&= &-q_i^*\frac{\partial  P}{\partial q}(q^*) \\
+\Leftrightarrow & \frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}&= &-\frac{q_i^*}{P(q^*)}\frac{\partial  P}{\partial q}(q^*) \\
+\Leftrightarrow & \frac{P(q^*) -C_{im}(q_i)^*}{P(q^*)}&= &-\frac{q^*}{P(q^*)}\frac{\partial  P}{\partial q}(q^*)\frac{q_i^*}{q^*} \\
+\Leftrightarrow & \frac{P(q^*) - C_{im}(q_i^*)}{P(q^*)}&= &S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
 \end{array}
 \]
 (La dérivée de la fonction de demande suivant le prix est négative).
 
-\[\frac{P(q) -C_{im}(q_i)}{P(q)}= \frac{S_i}{\left|\varepsilon_{q/p}\right|}\]
-Ce résultat est la markup-pricing que peut appliquer chaque entreprise en situation d'oligopole à la Cournot.
+On obtient le *markup-pricing* que peut appliquer un producteur en situation d'oligopole à la Cournot.
+\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]
 La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l'entreprise.
 
-*Remarques :*  
 
-- En monopole, $S_i=1$ pour le monopole.
-On retrouve alors bien :
-\[\frac{P(q) -C_{im}(q_i)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}\right|}\]
-- En concurrence pure et parfaite $S_i\to 0$, donc $\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0$, ce qui implique bien que $C_{mi}(q_i)\to P(q)$.
-On retrouve qinsi le résultat $P(q)=C_m(q)$.
+::: {.remark}
+En monopole, $S_i=1$, on retrouve alors bien :
+\[\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}\]
 
-#### Indice de concentration du marché
+En concurrence pure et parfaite $S_i\to 0$, donc $\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0$, ce qui implique bien que $C_{mi}(q_i)\to P(q)$.
+On retrouve ainsi le résultat $P(q^*)=C_m(q^*)$.
+:::
 
-<!--Pas sûr d'avoir tout compris ici-->
+### Indice de Lerner
+
+*Rappel :* En monopole, l'indice de Lerner est :
+\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]
+
+:::{.definition name="Indice de Lerner"}
+En oligopole à la Cournot avec $n$ producteurs, on définit l'indice de Lerner par :
+\[L = \sum_{i=1}^nS_iL_i\]
+où $S_i=q_i/q$ est la *part de marché* de l'entreprise $i$ et $L_i$ est l'indice de Lerner propre à un producteur.
+:::
+$q$ est la production totale $q=\sum_{i=1}^N q_i$.
+Notons $q=(q_i, q_{-i})$ le vecteur donnant les quantités produites par chaque producteur. 
+$q_i$ est la quantité produite par le producteur $i$, $q_{-i}=(q_1,\dots,q_{i-1}, q_{i+1}, \dots,q_N)$ est le vecteur de toutes les unités produites par les autres producteurs.
+
+Exprimons maintenant l'indice de Lerner d'un producteur.
+\[
+\begin{array}{rcl}
+L_i &=&\frac{1}{\left|\varepsilon_{q/p}(q_i, q_{-i})\right|}=\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\\
+&=&\frac{1}{\left|\frac{1}{\frac{\partial P}{\partial q}(q)}\frac{P(q)}{q_i}\right|}\\
+&=&\frac{1}{\left|\frac{1}{\frac{\partial P}{\partial q}(q)}\frac{P(q)}{q}\frac{q}{q_i}\right|}\\
+&=&\frac{1}{\left|\frac{1}{\frac{\partial P}{\partial q}(q)}\frac{p}{q}\right|}\frac{q_i}{q}\\
+&=&\frac{S_i}{\left|\varepsilon_{q/p}(q)\right|}\\
+\end{array}
+\]
+
+On peut donc réécrire l'indice de Lerner uniquement en fonction de l'élasticité de la demande à l'équilibre et des parts de marchés de chaque producteur :
+\[
+L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
+\]
+
+### Indice de concentration du marché
+
 
 :::{.definition #HHI name="Indice de Hirschman-Herfindahl (HHI)"}
 L'indice de Hirschman-Herfindahl est la somme des carrés des part de marchés.
 \[HHI = \sum_{i=1}^NS_i^2\]
-C'est aussi la différence moyenne entre le coût marginal de production et le prix.
+C'est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l'élasticité prix de la demande à l'optimum.
 Autrement dit, la moyenne des $L_i$ pondéré par les parts de marché.
 :::
 
  \[
  \begin{array}{rcl}
- \sum_{i=1}^{N}\frac{P(q) -C_{im}(q_i)}{P(q)}S_i &=&\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}\right|}S_i \\
- &=&\frac{1}{\left|\varepsilon_{q/p}\right|}\sum_{i=1}^NS_i^2\\
- &=&\frac{HHI}{\left|\varepsilon_{q/p}\right|}
+ \sum_{i=1}^{N}\frac{P(q) -C_{im}(q_i)}{P(q)}S_i &=&\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}S_i \\
+ &=&\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2\\
+ &=&\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
  \end{array}
  \]
 
