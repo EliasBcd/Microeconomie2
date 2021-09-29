@@ -206,7 +206,7 @@ p4 <- p +
 p4
 ```
 
-On peut calculer le profit de deux manières :
+On peut calculer la recette totale de deux manières :
 
 1. En utilisant l'aire du trapèze vert (intégrale de la recette marginale entre 0 et la quantité produite $p^*$) ;
 2. En utilisant l'aire du rectangle rouge ($\pi=p^* q^*$).
