@@ -148,7 +148,7 @@ En son minimum, le coût moyen est tel que $C_M'(q)=0$.
 CQFD.
 :::
 
-```{r cppcout, fig.cap="Exemples de fonctions de coût (ici $C_m$ est tout le croissante)"}
+```{r cppcout, fig.cap="Exemples de fonctions de coût."}
 CV <- function(q){log(1+q)+q^2/4}
 CF <- function(q){1}
 CT <- function(q){CV(q)+CF(q)}
@@ -234,7 +234,7 @@ Le profit du producteur s'écrit alors :
 Autrement dit, le profit d'un producteur en concurrence pure et parfaite et la différence entre le prix de vente et le coût moyen de production multiplié par le nombre d'unités vendues.
 Si ce prix est inférieur au coût moyen de toutes les unités vendues, le profit sera négatif.
 
-```{r cpp_profit, fig.cap="Profit d'un producteur en concurrence pure et parfaite"}
+```{r cppprofit, fig.cap="Profit d'un producteur en concurrence pure et parfaite."}
 q <- 4
 pi <- data.frame(x=c(0, q), ymin=c(CM(q), CM(q)), ymax=c(Cm(q), Cm(q)))
 

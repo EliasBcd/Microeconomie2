@@ -1,4 +1,5 @@
 fig:cppcout
+fig:cppprofit
 fig:marche
 fig:surplus
 fig:elasticite
