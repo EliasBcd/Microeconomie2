@@ -539,7 +539,7 @@ Il est donc possible d'avoir une amélioration parétienne qui améliore à la f
 Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d'autre pour obtenir cette amélioration.
 
 
-## Régulation des monopole
+## Régulation du monopole
 
 Cette partie va traiter de la manière dont un gouvernement peut inciter un monopole à modifier son comportement.
 
