@@ -1,0 +1,373 @@
+# Exercices
+
+## Concurrence pure et parfaite
+
+:::{ .exercise #cppexo1}
+
+On considère un consommateur dont la fonction de demande optimale pour un bien est donnée par :
+\[
+Q(p)=10-p
+\]
+où $p$ est le prix du bien.
+
+
+1. Donnez la fonction de demande inverse correspondante. Représentez la graphiquement.
+2. Quel est le prix maximum que le consommateur est prêt à payer pour la première unité de bien ? Et pour la cinquième ?
+3. Calculez le surplus du consommateur lorsque le prix est de $p=2$. Interprétez la valeur obtenue. 
+:::
+
+:::{.solution name="Exercice \@ref(exr:cppexo1)"}
+La fonction de demande inverse est la fonction inverse de la fonction de demande.
+Autrement dit, elle exprime le prix $P$ en fonction de la quantité $q$ plutôt que la quantité $Q$ en fonction du prix $p$.
+Ici on $q=10-p$, ce qui équivaut à $p=10-q$.
+La fonction de demande inverse est donc $P(q)=10-q$.
+Graphiquement, on obtient :
+
+```{r cppexo11, fig.cap="Représentation graphique de la demande inverse."}
+P <- function(q){10-q}
+
+p <- ggplot() +
+  geom_function(fun=P, color="blue") +
+  labs(x="quantité", y = "prix") +
+  annotate("text", x= 6, y=6, label="Demande inverse", color="blue")
+
+p + scale_x_continuous(expand = c(0, 0), limits=c(0, 12), breaks=c(10), labels=c(10)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 12), breaks=c(10), labels=c(10))
+
+```
+
+2. Pour la première unité de bien, on utilise la fonction de demande inverse.
+Le prix que le consommateur est prêt à payer pour la première unité est $P(q=1)=9$.
+Pour la cinquième unité, c'est $P(q=5)=5$.
+Dans les deux cas, ce sont le prix maximal que les consommateurs sont prêts à payer pour l'unité supplémentaire du bien.
+Rappelez-vous que la courbe de demande inverse représente l'ensemble des prix maximaux que les consommateurs sont prêts à payer pour une unité supplémentaire du bien.
+
+3. Le surplus du consommateur est la somme des différences entre le prix maximal que chaque individu est prêt à payer et le prix auquel il paie effectivement le bien.
+Mathématiquement, le surplus du consommateur s'exprime toujours ainsi :
+\[
+S_c=\int_0^{q^*}P(q)-p^*dq
+\]
+Où $p^*$ et $q^*$ représente le prix sur le marché, et $q^*$ la quantité échangée.
+
+
+```{r cppexo13, fig.cap="Représentation graphique du surplus du consommateur."}
+Sc=data.frame(x=c(0, 8), ymin=c(2, 2), ymax=c(10, 2))
+
+p + geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 12), breaks=c(8, 10), labels=c(TeX("$q^*=8$"), 10)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 12), breaks=c(2, 10), labels=c(TeX("$p^*=2$"), 10)) +
+  geom_segment(data=Sc, aes(x=x), x=0, y=2, xend=8, yend=2, linetype="dashed") +
+  annotate("text", x=2, y=5, label="Surplus du consommateur", color="blue") +
+  geom_segment(data=Sc, aes(x=x), x=8, y=0, xend=8, yend=2, linetype="dashed")
+```
+
+En général, comme on peut le voir sur la figure \@ref(fig:cppexo13), il est possible de calculer le surplus en utiliser la formule donnant l'aire d'un triangle.
+Ici, on obtient :
+\[S_c=\frac{1}{2}(10-2)\cdot(8-0)=32\]
+Les consommateurs "gagnent" donc 32 par rapport à la situation où ils devraient payer chacun leur prix de réserve.
+:::
+
+
+:::{ .exercise #cppexo2}
+On considère une firme faisant face à la contrainte technologique donnée par la fonction de coût total :
+\[C(q)=q^2+10q\]
+
+1. Donnez la fonction de coût marginal correspondant.
+2. Déterminez la fonction d'offre de cette firme. Représentez la graphiquement.
+3. On suppose que la fonction de demande inverse du marché est donnée par :
+\[P(q)=100-q\]
+Déterminez le prix d'équilibre sur le marché, le surplus du producteur, le surplus du consommateur ainsi que le surplus total.
+4. Supposons que l'État impose un prix $p=80$. Quelle va être la quantité échangée ? Quel sera le surplus total ? Et si l'état impose un prix $p=20$ ? Représentez graphiquement ces deux situations. En déduire que l'équilibre concurrentiel maximise le surplus total.
+:::
+
+:::{.solution name="Exercice \@ref(exr:cppexo2)"}
+La fonction de coût marginal est la dérivée de la fonction de coût total.
+La fonction de coût marginal donne le coût de production d'une unité de bien supplémentaire.
+\[C_m(q)=C'(q)=2q+10\]
+
+2. La fonction d'offre des producteurs en concurrence pure et parfaite est égale à la fonction de coût marginal.
+Si on la note $S$, $S(q)=C_m(q) = 2q+10$.
+C'est le prix minimal auquel elle est prête à vendre une unité de bien supplémentaire.
+
+```{r cppexo22, fig.cap="Représentation graphique de la demande inverse."}
+S <- function(q){10+2*q}
+
+p <- ggplot() +
+  geom_function(fun=S, color="red") +
+  labs(x="quantité", y = "prix") +
+  annotate("text", x=50, y=75, label="Offre", color="red")
+
+p + scale_x_continuous(expand = c(0, 0), limits=c(0, 100)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 100))
+
+```
+
+3. A l'équilibre sur le marché, une quantité $q^*$ de biens est échangée au prix $p^*$.
+Le marché vérifie alors les équations suivantes :
+\begin{equation}
+p^*=S(q^*)=P(q^*)
+(\#eq:cppequilibre)
+\end{equation}
+Commençons par la deuxième partie de l'équation \@ref(eq:cppequilibre) :
+\begin{align*}{crcl}
+&2q^*+10&=&100-q^*\\
+\Leftrightarrow&3q^*&=&90\\
+\Leftrightarrow & q^*&=&30
+\end{align*}
+La quantité échangée à l'équilibre est donc de $q^*=30$.
+A l'aide de la quantité échangée est de la première partie de l'équation \@ref(eq:cppequilibre), on obtient
+\[
+p^*=P(q^*=30) = 100-30=70 
+\]
+Sur le marché, 30 unités de bien sont donc échangés au prix de 70.
+On peut alors représenter les surplus sur le marché, comme dans la figure \@ref(fig:cppexo23).
+Le surplus des consommateurs est l'aire du triangle bleu, il vaut 
+\[S_c=\frac{1}{2}(100-70)\times(30-0)=450\]
+Le surplus des producteurs est l'aire du triangle rouge :
+\[
+S_p=\frac{1}{2}(70-10)\times(30-0) = 900
+\]
+
+```{r cppexo23, fig.cap="Surplus en CPP."}
+P <- function(q){100 - q}
+Sc <- data.frame(x=c(0, 30), ymin=c(70, 70), ymax=c(100, 70))
+Sp <- data.frame(x=c(0, 30), ymin=c(10, 70), ymax=c(70, 70))
+
+p + geom_function(fun=P, color="blue") +
+  annotate("text", x=80, y=20, label="Demande globale", color="blue") +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, 30, 100), labels=c(0, TeX("$q^*=30$"), 100)) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(10, 70, 100), labels=c(10, TeX("$p^*=70$"), 100)) +
+  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=20, y=80, label="Surplus du consommateur", color="blue") +
+  annotate("text", x=20, y=50, label="Surplus du producteur", color="red") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=30, y=70, yend=70, linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=30, xend=30, y=0, yend=70, linetype="dashed") 
+```
+
+Le surplus total est la somme des surplus des producteurs et des consommateurs :
+\[
+S_t^{CPP}=S_c+S_p=1350
+\]
+
+4. On regarde maintenant le cas l'état impose un prix $p^E=80$.
+La demande globale vaut alors de $Q(p^E)=100-p^E=20$, que l'on l'obtient en inversant la demande inverse, autrement dit en trouvant la quantité $q$ telle que $P(q)=p^E=80$.
+L'offre globale vaut $S(p^E)=\frac{p^E-10}{2}=35$, que l'on obtient en inversant la fonction d'offre, autrement dit en trouvant la quantité $q$ telle que $S(q)=p^E=80$.
+La demande globale est plus faible que l'offre globale, c'est donc la demande globale qui fixera les quantités échangées. 
+La quantité échangée vaut donc 20.
+Graphiquement, on obtient la figure \@ref(fig:cppexo24prixhaut).
+
+```{r cppexo24prixhaut, fig.cap="Surplus en quand l'Etat impose un prix $p^E=80$."}
+Sc <- data.frame(x=c(0, 20), ymin=c(80, 80), ymax=c(100, 80))
+Sp <- data.frame(x=c(0, 20), ymin=c(10, 50), ymax=c(80, 80))
+
+p + geom_function(fun=P, color="blue") +
+  annotate("text", x=80, y=20, label="Demande globale", color="blue") +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, 20, 100), labels=c(0, TeX("$q^E=20$"), 100)) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(10, 50, 80, 100), labels=c(10, 50, TeX("$p^E=80$"), 100)) +
+  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=20, y=90, label="Surplus du consommateur", color="blue") +
+  annotate("text", x=20, y=60, label="Surplus du producteur", color="red") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=20, y=80, yend=80, linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=20, xend=20, y=0, yend=80, linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=20, y=50, yend=50, linetype="dashed")
+```
+Le surplus total est dans ce cas l'aire du trapèze bleu et rouge.
+Il nous faut obtenir le point sur la courbe d'offre pour la quantité $q^E$.
+En ce point, le prix est $S(q^E)=50$.
+\[
+S_t=\frac{1}{2}(100-10+80-50)\times(20-0)=1200 < S_t^{CPP}
+\]
+Le surplus total est dans ce cas plus faible qu'en CPP.
+
+On s'intéresse finalement au cas où l'état impose un prix $p^E=20$.
+La demande globale vaut alors de $Q(p^E)=100-p^E=80$, que l'on l'obtient en inversant la demande inverse, autrement dit en trouvant la quantité $q$ telle que $P(q)=p^E=20$.
+L'offre globale vaut $S(p^E)=\frac{p^E-10}{2}=5$, que l'on obtient en inversant la fonction d'offre, autrement dit en trouvant la quantité $q$ telle que $S(q)=p^E=20$.
+L'offre globale est plus faible que la demande globale, c'est donc l'offre globale qui fixera les quantités échangées. 
+La quantité échangée vaut donc 20.
+Graphiquement, on obtient la figure \@ref(fig:cppexo24prixbas).
+
+```{r cppexo24prixbas, fig.cap="Surplus en quand l'Etat impose un prix $p^E=20$."}
+Sc <- data.frame(x=c(0, 5), ymin=c(20, 20), ymax=c(100, 95))
+Sp <- data.frame(x=c(0, 5), ymin=c(10, 20), ymax=c(20, 20))
+
+p + geom_function(fun=P, color="blue") +
+  annotate("text", x=80, y=20, label="Demande globale", color="blue") +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, 5, 100), labels=c(0, TeX("$q^E=5$"), 100)) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(10, 20, 95, 100), labels=c(10, 20, TeX("$p^E=95$"), 100)) +
+  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=15, y=100, label="Surplus du consommateur", color="blue") +
+  annotate("text", x=15, y=15, label="Surplus du producteur", color="red") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=5, y=95, yend=95, linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=5, xend=5, y=0, yend=95, linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=5, y=20, yend=20, linetype="dashed")
+```
+Le surplus total est dans ce cas l'aire du trapèze bleu et rouge.
+Il nous faut obtenir le point sur la courbe d'offre pour la quantité $q^E$.
+En ce point, le prix est $S(q^E)=20$.
+\[
+S_t=\frac{1}{2}(100-10+95-20)\times(5-0)=\frac{825}{2}=412.5 < S_t^{CPP}
+\]
+Le surplus total est dans ce cas aussi plus faible qu'en CPP.
+
+Ces deux situations illustrent les deux cas qui s'écartent de la CPP : un prix plus élevé ou un prix plus faible.
+Dans les deux cas, on voit que le surplus total est plus faible.
+Ce serait vrai pour n'importe quel prix différent du prix de la concurrence pure et parfaite.
+On illustre ainsi le fait que l'équilibre de CPP maximise le surplus total.
+:::
+
+## Exercices sur le comportement monopole
+
+::: {.exercise #monoexo1 name="Questions de cours"}
+Questions de cours :
+
+1. Quand la demande de bien est inélastique, la recette
+marginale est-elle positive ?
+2. Un monopole maximise son profit dans la zone où les
+quantités demandées sont élastiques au prix. Vrai ou faux ?
+3. Dans quel cas un monopole se comportera-t-il comme
+s'il était en situation de concurrence pure et parfaite (sans
+intervention de l'État) ?
+4. Une entreprise a un taux de marge (indice de Lerner) de 45%.
+Quelle est l'élasticité de la demande à laquelle
+elle fait face ?
+:::
+
+::: {.solution name="Solution de l'exercice \@ref(exr:monoexo1)"}
+Réponses :
+
+1. Non, cf cours.
+2. Vrai, cf cours.
+3. Si l'élasticité prix de la demande est infini.
+4. On a d'après la définition de l'indice de Lerner \@ref(eq:Lerner) :
+\[L=\frac{P(q^*)-C_m(q^*)}{P(q^*)}=\frac{1}{\left|\varepsilon_{p/q}(q^*)\right|}=0.45\]
+Donc $\left|\varepsilon_{p/q}(q^*)\right| =1/0.45=20/9$.
+:::
+
+::: {.exercise #monoexo2}
+On considère une entreprise en monopole sur son marché dont la fonction de coût est :
+\[C(q)=\frac{1}{20} q^2+15q+500\] 
+et qui fait face à la fonction de demande inverse : \[P(q)=45-0,2q\]
+
+1. Déterminer le prix $p_m^*$ et la quantité $q_m^*$ d'équilibre du monopole.
+2. Les représenter graphiquement.
+3. Calculer l'élasticité prix de la demande au point d'équilibre. Interpréter le résultat.
+4. Calculer le surplus des consommateurs et le profit du monopole.
+5. Déterminer le prix et la quantité correspondant à l'optimum de Pareto (concurrence pure et parfaite). Montrer que dans cette situation le surplus des consommateurs et le surplus social sont plus élevés, et que le profit du producteur est plus faible.
+6. Calculer la charge morte du monopole.
+:::
+
+::: {.solution name="Solution de l'exercice \@ref(exr:monoexo2)"}
+Réponses.
+
+1. À l'optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
+\[R_m(q^*)=C_m(q^*)\]
+Ici, on a :
+\[C_m(q^*)=\frac{1}{10}q+15\]
+Et :
+\[R(q) =qP(q)=45q-\frac{1}{5}q^2\]
+Donc :
+\[R_m(q)=45-\frac{2}{5}q\]
+À l'optimum, on doit donc avoir :
+\[
+\begin{array}{crcl}
+&45-\frac{2}{5}q^*&=&\frac{1}{10}q^*+15\\
+\Leftrightarrow & 30&=&\frac{1}{2}q^*\\
+\Leftrightarrow & q^*&=&60
+\end{array}
+\]
+On vérifie aussi la condition de second ordre \@ref(eq:cso) :
+\[R_m'(q^*)<C_m'(q^*)\]
+\[R'_m(q)=-\frac{2}{5}\]
+\[C'_m(q)=\frac{1}{10}<C_m'(q)\]
+La condition du second est bien vérifiée, nous avons bien un maximum ici.
+Finalement, le prix est $p^*=P(q^*)=33$.
+
+```{r monoexo21, fig.cap="Représentation graphique"}
+P <- function(q){45-0.2*q}
+Rm <- function(q){45-0.4*q}
+Cm <- function(q){0.1*q+15}
+q1 <- 60
+q2 <- 100
+
+p_exo2 <- ggplot() +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 50), breaks=c(15, Cm(q1), Cm(q2), P(q1), 45), labels=c(15, 21,TeX("p^*_{CPP}=25"), TeX("p^*_m=33"), 45)) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 250), breaks=c(q1, q2), labels=c(TeX("$q^*_m=60"), TeX("$q^*_{CPP}=100"))) +
+  labs(x="quantité", y="prix") +
+  geom_function(fun=P, color="darkgreen") +
+  geom_function(fun=Rm, color="blue") +
+  geom_function(fun=Cm, color="red") +
+  annotate("text", x=200, y=P(200), label=TeX("demande ($P$)"), color="darkgreen") +
+  annotate("text", x=120, y=Rm(100), label=TeX("$R_{m}$"), color="blue") +
+  annotate("text", x=200, y=Cm(200), label=TeX("Coût marginal ($C_m$)"), color="red")
+
+p_exo2
+```
+
+3. On a l'élasticité prix de la demande à l'équilibre :
+\[\varepsilon_{q/p}(q^*)=\frac{p^*}{q^*}\frac{1}{P'(q^*)}=\frac{33}{60}\frac{1}{-0.2}=-\frac{11}{4}\]
+La valeur absolue est bien plus grande que 1, nous sommes bien dans la zone où la demande est élastique.
+On peut aussi la calculer à l'aide de :
+\[\frac{p^*-C_m(q^*)}{p^*}=\frac{33-6-15}{33}=\frac{4}{11}=\frac{1}{|\varepsilon_{q/p}(q^*)|}\]
+On calcule ainsi le pouvoir du monopole : sa capacité à imposer au consommateur un prix à l'équilibre supérieur à son coût marginal.
+
+4. Commençons par la représentation graphique.
+
+```{r monoexo22, fig.cap="Avec les surplus en monopole."}
+Sc <- data.frame(x=c(0, q1), ymin=c(P(q1), P(q1)), ymax=c(P(0), P(q1)))
+Sp <- data.frame(x=c(0, q1), ymin=c(Cm(0), Cm(q1)), ymax=c(P(q1), P(q1)))
+perte <- data.frame(x=c(q1, q2), ymin=c(Cm(q1), Cm(q2)), ymax=c(P(q1), P(q2)))
+
+p_exo2 +  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="darkgreen", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=q1/2, y=35, label="Sc", color="darkgreen") +
+  annotate("text", x=q1/2, y=25, label="Sp", color="red") +
+  geom_ribbon(data=perte, aes(x=x, ymin=ymin, ymax=ymax), fill="black", alpha=0.5) +
+  annotate("text", x=q1/2+q2/2, y=25, label="Perte sèche", color="black")
+  
+```
+
+Le surplus des consommateurs se calcule en calculant l'aire du triangle vert dans la figure \@ref(fig:monoexo22).
+On obtient :
+\[S_c=\frac{(45-33)(60-0)}{2}=360\]
+Le surplus du producteur s'obtient en calculant l'aire du trapèze rouge :
+\[S_p=\frac{(33-15+33-21)(60-0)}{2}=900\]
+Le profit du producteur est le surplus diminué du coût fixe, qui vaut ici 500. Le profit vaut  donc 400.
+Le surplus total est la somme des surplus des consommateurs et du producteur, soit $S_T=1260$.
+
+5. En CPP, le prix est fixé par le marché et le prix est égal au coût marginal.
+On a (ici $q^*$ et $p^*$ sont différents des parties précédentes) :
+\[C_m(q^*)=P(q^*)=p^*\]
+Soit : 
+\[\frac{1}{10}q^*+15=45-\frac{1}{5}q^*\]
+En résolvant l'équation, on obtient $q^*=100$ et on peut en déduire $p^*=25$.
+Pour calculer les surplus, on commence par la représentation graphique.
+
+```{r monoexo23, fig.cap="Avec les surplus en CPP."}
+Sc <- data.frame(x=c(0, q2), ymin=c(P(q2), P(q2)), ymax=c(P(0), P(q2)))
+Sp <- data.frame(x=c(0, q2), ymin=c(Cm(0), Cm(q2)), ymax=c(P(q2), P(q2)))
+
+p_exo2 +  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="darkgreen", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=q1/2, y=35, label="Sc", color="darkgreen") +
+  annotate("text", x=q1/2, y=20, label="Sp", color="red") 
+```
+
+On calcule l'aire du triangle vert pour obtenir le surplus total des consommateurs.
+Il vaut 1000, ce qui est supérieur au surplus obtenu en monopole.
+
+On calcule l'aire du triangle rouge pour obtenir le surplus total du producteur.
+Il vaut 500.
+Si maintenant on enlève le coût fixe pour obtenir le profit, on obtient un profit nul.
+Il est donc plus faible qu'en monopole.
+
+Le surplus total en CPP vaudrait donc 1500, ce qui est supérieur au surplus total obtenu en monopole.
+
+6. La charge morte du monopole est la différence entre le surplus total en CPP et en monopole, soit $1500-1260=240$.
+On peut aussi la calculer en utilisant l'aire du triangle noir sur la figure \@ref(fig:monoexo22).
+:::
+
+
+ 

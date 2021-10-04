@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.27)  29 SEP 2021 14:08
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.27)  4 OCT 2021 16:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -986,87 +986,49 @@ Overfull \hbox (47.95337pt too wide) has occurred while \output is active
 CE PURE ET PARFAITE
  []
 
-[14]
-File: _main_files/figure-latex/cppexo11-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/cppexo11-1.pdf>
-[15]
-File: _main_files/figure-latex/cppexo13-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/cppexo13-1.pdf>
-
+[14] [15]
 Overfull \hbox (47.95337pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 16 \TU/lmr/m/sl/10 CHAPITRE 2.  RAPPELS : LE MARCHÉ EN CONCURREN
 CE PURE ET PARFAITE
  []
 
-[16] [17]
-File: _main_files/figure-latex/cppexo22-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/cppexo22-1.pdf>
-
-Overfull \hbox (47.95337pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 18 \TU/lmr/m/sl/10 CHAPITRE 2.  RAPPELS : LE MARCHÉ EN CONCURREN
-CE PURE ET PARFAITE
- []
-
-[18]
-File: _main_files/figure-latex/cppexo23-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/cppexo23-1.pdf>
-
-LaTeX Warning: Reference `fig:cppexo24prixhaut' on page 19 undefined on input l
-ine 651.
-
-File: _main_files/figure-latex/cppexo24prixhaut-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/cppexo24prixhaut-1.pdf>
-[19]
-
-LaTeX Warning: Reference `fig:cppexo24prixbas' on page 20 undefined on input li
-ne 668.
-
-File: _main_files/figure-latex/cppexo24prixbas-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/cppexo24prixbas-1.pdf>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (47.95337pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 20 \TU/lmr/m/sl/10 CHAPITRE 2.  RAPPELS : LE MARCHÉ EN CONCURREN
-CE PURE ET PARFAITE
- []
-
-[20] [21]
-Overfull \hbox (47.95337pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 22 \TU/lmr/m/sl/10 CHAPITRE 2.  RAPPELS : LE MARCHÉ EN CONCURREN
-CE PURE ET PARFAITE
- []
-
-[22
+[16
 
 ]
 Chapitre 3.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[23]
+[17]
 File: _main_files/figure-latex/monorecettemarginale-1.pdf Graphic file (type pd
 f)
 <use _main_files/figure-latex/monorecettemarginale-1.pdf>
-[24] [25]
+[18] [19]
 File: _main_files/figure-latex/monopoleelasticite-1.pdf Graphic file (type pdf)
 
 <use _main_files/figure-latex/monopoleelasticite-1.pdf>
-[26]
+
+LaTeX Warning: Reference `fig:recettermarginale' on page 20 undefined on input 
+line 620.
+
+[20]
 File: _main_files/figure-latex/recettemarginale-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/recettemarginale-1.pdf>
-File: _main_files/figure-latex/profit-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/profit-1.pdf>
-[27] [28]
-File: _main_files/figure-latex/monopoleoptimale-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/monopoleoptimale-1.pdf>
-[29]
-File: _main_files/figure-latex/monopolerecette-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/monopolerecette-1.pdf>
 File: _main_files/figure-latex/monopoleprofit-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/monopoleprofit-1.pdf>
-[30] [31]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[21] [22]
+File: _main_files/figure-latex/monopoleoptimale-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/monopoleoptimale-1.pdf>
+[23]
+File: _main_files/figure-latex/monopolerecette-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/monopolerecette-1.pdf>
+File: _main_files/figure-latex/monopoleprofitexemple-1.pdf Graphic file (type p
+df)
+<use _main_files/figure-latex/monopoleprofitexemple-1.pdf>
+[24] [25] [26]
 File: _main_files/figure-latex/monopolechangementdemande1-1.pdf Graphic file (t
 ype pdf)
 <use _main_files/figure-latex/monopolechangementdemande1-1.pdf>
@@ -1075,50 +1037,127 @@ ype pdf)
 <use _main_files/figure-latex/monopolechangementdemande2-1.pdf>
 File: _main_files/figure-latex/monosurplus-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/monosurplus-1.pdf>
-[32] [33] [34] [35]
-File: _main_files/figure-latex/monoexo21-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/monoexo21-1.pdf>
-[36]
-File: _main_files/figure-latex/monoexo22-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/monoexo22-1.pdf>
-[37]
-File: _main_files/figure-latex/monoexo23-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/monoexo23-1.pdf>
-[38] [39] [40] [41] [42] [43] [44] [45] [46]
-Chapitre 4.
-[47
+[27] [28]
+File: _main_files/figure-latex/monopoletaxeunitaire-1.pdf Graphic file (type pd
+f)
+<use _main_files/figure-latex/monopoletaxeunitaire-1.pdf>
+File: _main_files/figure-latex/monopoletaxeunitaire2-1.pdf Graphic file (type p
+df)
+<use _main_files/figure-latex/monopoletaxeunitaire2-1.pdf>
+[29] [30]
+File: _main_files/figure-latex/monopoleprixmaximal-1.pdf Graphic file (type pdf
+)
+<use _main_files/figure-latex/monopoleprixmaximal-1.pdf>
+File: _main_files/figure-latex/monopoleprixmaximal2-1.pdf Graphic file (type pd
+f)
+<use _main_files/figure-latex/monopoleprixmaximal2-1.pdf>
+File: _main_files/figure-latex/monopoleprixmaximalCPP-1.pdf Graphic file (type 
+pdf)
+<use _main_files/figure-latex/monopoleprixmaximalCPP-1.pdf>
+[31] [32] [33]
+File: _main_files/figure-latex/monopolenaturelcout-1.pdf Graphic file (type pdf
+)
+<use _main_files/figure-latex/monopolenaturelcout-1.pdf>
+[34]
+File: _main_files/figure-latex/monopolenaturel-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/monopolenaturel-1.pdf>
 
-] [48] [49] [50]
+Underfull \hbox (badness 10000) in paragraph at lines 1038--1042
+[][]
+ []
+
+
+Underfull \vbox (badness 6364) has occurred while \output is active []
+
+[35] [36] [37] [38] [39] [40
+
+]
+Chapitre 4.
+[41] [42] [43] [44]
 File: _main_files/figure-latex/isoprofit1-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/isoprofit1-1.pdf>
 File: _main_files/figure-latex/isoprofitCournot-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/isoprofitCournot-1.pdf>
-[51] [52] [53]
-Underfull \hbox (badness 4266) in paragraph at lines 1948--1949
+[45] [46] [47]
+Underfull \hbox (badness 4266) in paragraph at lines 1603--1604
 [][]\TU/lmr/bx/n/10 Définition 4.3 \TU/lmr/m/n/10 (Indice de Hirschman-Herfinda
 hl (HHI))\TU/lmr/bx/n/10 . []\TU/lmr/m/n/10 L’indice de
  []
 
-[54]
+[48]
 File: _main_files/figure-latex/equilibreStackelberg-1.pdf Graphic file (type pd
 f)
 <use _main_files/figure-latex/equilibreStackelberg-1.pdf>
-[55] [56] [57] [58] (./_main.bbl [59] [60
+[49] [50] [51] [52] [53] [54
 
-]) [61] (./_main.aux)
+]
+Chapitre 5.
+File: _main_files/figure-latex/cppexo11-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/cppexo11-1.pdf>
+[55]
+File: _main_files/figure-latex/cppexo13-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/cppexo13-1.pdf>
+[56]
+File: _main_files/figure-latex/cppexo22-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/cppexo22-1.pdf>
+[57]
+File: _main_files/figure-latex/cppexo23-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/cppexo23-1.pdf>
+[58]
+
+LaTeX Warning: Reference `fig:cppexo24prixhaut' on page 59 undefined on input l
+ine 2013.
+
+File: _main_files/figure-latex/cppexo24prixhaut-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/cppexo24prixhaut-1.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 2016--2020
+[][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[59]
+
+LaTeX Warning: Reference `fig:cppexo24prixbas' on page 60 undefined on input li
+ne 2030.
+
+File: _main_files/figure-latex/cppexo24prixbas-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/cppexo24prixbas-1.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 2032--2036
+[][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[60] [61] [62]
+File: _main_files/figure-latex/monoexo21-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/monoexo21-1.pdf>
+[63]
+File: _main_files/figure-latex/monoexo22-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/monoexo22-1.pdf>
+[64]
+File: _main_files/figure-latex/monoexo23-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/monoexo23-1.pdf>
+(./_main.bbl [65] [66
+
+]) [67] (./_main.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 9523D5086645AA64B5BEAECA690AFC0D;3555.
+(rerunfilecheck)             Checksum: 61034D3E1B98856D5B997E68422BFBFB;4005.
  ) 
 Here is how much of TeX's memory you used:
- 18404 strings out of 478472
- 332190 string characters out of 5859464
- 822008 words of memory out of 5000000
- 38420 multiletter control sequences out of 15000+600000
+ 18470 strings out of 478472
+ 335573 string characters out of 5859464
+ 821675 words of memory out of 5000000
+ 38479 multiletter control sequences out of 15000+600000
  409929 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,10n,120p,510b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,10n,120p,510b,537s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on _main.pdf (61 pages).
+Output written on _main.pdf (67 pages).
