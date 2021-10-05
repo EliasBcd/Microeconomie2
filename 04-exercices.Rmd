@@ -281,7 +281,7 @@ Donc :
 On vérifie aussi la condition de second ordre \@ref(eq:cso) :
 \[R_m'(q^*)<C_m'(q^*)\]
 \[R'_m(q)=-\frac{2}{5}\]
-\[C'_m(q)=\frac{1}{10}<C_m'(q)\]
+\[C'_m(q)=\frac{1}{10}>R_m'(q)\]
 La condition du second est bien vérifiée, nous avons bien un maximum ici.
 Finalement, le prix est $p^*=P(q^*)=33$.
 
@@ -369,5 +369,155 @@ Le surplus total en CPP vaudrait donc 1500, ce qui est supérieur au surplus tot
 On peut aussi la calculer en utilisant l'aire du triangle noir sur la figure \@ref(fig:monoexo22).
 :::
 
+::: { .exercise #monoexo3}
+Sur un marché dominé par un producteur unique, la fonction de demande inverse pour une quantité $q$ de bien est :
+\[P(q)=250-q\] 
+La fonction de coût total du monopole est :
+\[C(q)=4q^2+10q+400\]
 
+
+1. Quelle est la production d'équilibre du monopole ? Quel est le
+prix de vente ainsi que le profit du producteur ?
+2. Comparez la solution précédente avec l'équilibre qui serait
+réalisé si l'entreprise se comportait comme en situation de
+concurrence pure et parfaite.
+3. Dans chacun des cas ci-dessus, calculez le surplus du
+producteur, du consommateur, ainsi que le surplus total. Concluez
+sur l'impact de la présence d'un monopole sur le niveau de bien-être
+social.
+4. Supposez que le producteur détienne un stock très important du bien
+(son coût marginal de production est nul). Donnez la solution du
+monopole dans une telle situation.
+:::
+
+::: { .solution name="Solution de l'exercice  \@ref(exr:monoexo3)."}
+Réponses:
+
+1. À l'optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
+\[R_m(q^*)=C_m(q^*)\]
+Ici, on a :
+\[C_m(q^*)=C'(a)=8q+10\]
+Et :
+\[R(q) =qP(q)=250q-q^2\]
+Donc :
+\[R_m(q)=R'(q)=250-2q\]
+À l'optimum, on doit donc avoir :
+\[
+\begin{array}{crcl}
+&250-2q^*&=&8q^*+10\\
+\Leftrightarrow & 240&=&10q^*\\
+\Leftrightarrow & q^*&=&24
+\end{array}
+\]
+On vérifie aussi la condition de second ordre \@ref(eq:cso) :
+\[R_m'(q^*)<C_m'(q^*)\]
+\[R'_m(q)=-2\]
+\[C'_m(q)=8>R_m'(q)\]
+La condition du second est bien vérifiée, nous avons bien un maximum ici.
+Le prix est $p^*_M=P(q^*)=33$.
+Finalement, on peut calculer le profit :
+\[
+\pi^M(q^*)=R(q^*)-C(q^*)=p^*q^*-C(q^*)=24\times226-(4\times24^2+10\times24+400)=2480>0
+\]
+Le profit est bien positif, ce qui est la dernière condition à vérifier pour l'optimum.
+
+A l'optimum, il y a 24 unités de bien échangées sur le marché, au prix de 226.
+Cela permet au monopole de faire un profit de 2480.
+
+On représente graphiquement la situation obtenue sur la figure \@ref(fig:monoexo31).
+
+
+
+2. En CPP, le prix est fixé par le marché, le producteur le considère comme une donnée dans son optimisation.
+La courbe d'offre est égal à la courbe de coût marginal.
+À l'équilibre en CPP, l'offre est égale à la demande.
+On obtient (ici $q^*$ et $p^*$ sont différents des parties précédentes) :
+\[C_m(q^*)=P(q^*)=p^*\]
+Soit : 
+\[8q^*+10=250-2q^*\]
+En résolvant l'équation, on obtient $q^*_{CPP}=80/3$ et on peut en déduire $p^*_{CPP}=670/3$.
+On peut maintenant calculer le profit de la même manière que dans la question précédente, et on obtient $\pi^{CPP}(q^*_{CPP})=22000/9<\pi^M$.
+Le profit du producteur en concurrence pure et parfaite est inférieur au profit en monpole.
+La quantité produite est supérieure et le prix du bien échangé inférieur.
+
+
+```{r monoexo31, fig.cap="Représentation graphique"}
+P <- function(q){250-q}
+Rm <- function(q){250-2*q}
+Cm <- function(q){8*q+10}
+qm <- 24
+pm <- P(qm)
+qcpp <- 80/3
+pcpp <- P(qcpp)
+
+p_exo3 <- ggplot() +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 260), breaks=c(10,pcpp, Rm(qm), pm,250), labels=c(10, TeX("$p^*_{CPP}$"), TeX("$R_m(q_m)$"), TeX("$p^*_m$"), 250)) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 260), breaks=c(qm, qcpp,125, 250), labels=c(TeX("$q^*_m$"), TeX("$q^*_{CPP}$"), 125, 250)) +
+  labs(x="quantité", y="prix") +
+  geom_function(fun=P, color="darkgreen") +
+  geom_function(fun=Rm, color="blue") +
+  geom_function(fun=Cm, color="red") +
+  annotate("text", x=200, y=P(200), label=TeX("demande ($P$)"), color="darkgreen") +
+  annotate("text", x=120, y=Rm(100), label=TeX("$R_{m}$"), color="blue") +
+  annotate("text", x=20, y=Cm(10), label=TeX("$C_m$"), color="red")
+
+p_exo3
+```
+
+3. Pour calculer les surplus en monopole, commençons par la représentation graphique (figure \@ref(fig:monoexo32)).
+
+```{r monoexo32, fig.cap="Avec les surplus en monopole."}
+Sc <- data.frame(x=c(0, qm), ymin=c(P(qm), P(qm)), ymax=c(P(0), P(qm)))
+Sp <- data.frame(x=c(0, qm), ymin=c(Cm(0), Cm(qm)), ymax=c(P(qm), P(qm)))
+perte <- data.frame(x=c(qm, qcpp), ymin=c(Cm(qm), Cm(qcpp)), ymax=c(P(qm), P(qcpp)))
+
+p_exo3 +  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="darkgreen", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=qm/2, y=pm+10, label="Sc", color="darkgreen") +
+  annotate("text", x=qm/2, y=pm-50, label="Sp", color="red") +
+  geom_ribbon(data=perte, aes(x=x, ymin=ymin, ymax=ymax), fill="black", alpha=0.5) +
+  annotate("text", x=qm/2+qcpp/2, y=pcpp-5, label="Perte sèche", color="black")
+  
+```
+
+Le surplus des consommateurs se calcule en calculant l'aire du triangle vert dans la figure \@ref(fig:monoexo32).
+On obtient :
+\[S_c=\frac{(250-226)(24-0)}{2}=288\]
+Le surplus du producteur s'obtient en calculant l'aire du trapèze rouge, ou bien en ajoutant le coût fixe (400 ici) au profit calculé à la question 1 :
+\[S_p=\pi^M+CF=2480+400=2880\]
+Le surplus total est la somme des surplus des consommateurs et du producteur, soit $S_t^M=3168$.
+
+
+Pour calculer les surplus en concurrence pure et parfaite, on commence par la représentation graphique (figure \@ref(fig:monoexo33)).
+
+```{r monoexo33, fig.cap="Avec les surplus en CPP."}
+Sc <- data.frame(x=c(0, qcpp), ymin=c(P(qcpp), P(qcpp)), ymax=c(P(0), P(qcpp)))
+Sp <- data.frame(x=c(0, qcpp), ymin=c(Cm(0), Cm(qcpp)), ymax=c(P(qcpp), P(qcpp)))
+
+p_exo3 +  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="darkgreen", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=qcpp/2, y=pcpp+10, label="Sc", color="darkgreen") +
+  annotate("text", x=qcpp/2, y=pcpp-50, label="Sp", color="red") 
+```
+
+On calcule l'aire du triangle vert pour obtenir le surplus total des consommateurs.
+Il vaut 3200/9, ce qui est supérieur au surplus obtenu en monopole.  
+On calcule l'aire du triangle rouge pour obtenir le surplus total du producteur, ou bien on ajoute le coût fixe (400 ici) au profit calculé à la question 2. 
+Il vaut ici 25600/9.
+Il est donc plus faible qu'en monopole.  
+Le surplus total en CPP vaudrait donc 3200, ce qui est supérieur au surplus total obtenu en monopole.
+Le monopole a un impact négatif sur le niveau de bien-être social.
+Il introduit une charge morte de 32.
+
+4. À l'optimum, le monopole égalise recette marginale et coût marginal.
+Ici le coût marginal est nul, la recette marginale doit donc être nulle.
+On obtient donc l'équation :
+\[
+0=R_m(q^*)=250-2q^*
+\]
+On en déduit donc que $q^*=125$.
+On peut alors calculer $p^*=P(q^*)=125$.
+Quand le coût marginal du monopole est nul, il produit 125 unités de bien, vendues au prix 125.
+
+:::
  

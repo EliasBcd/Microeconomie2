@@ -78,7 +78,7 @@
 
 \title{Microéconomie 2}
 \author{Elias Bouacida \and Antoine Terracol}
-\date{2021-10-04}
+\date{2021-10-05}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Théorème}[chapter]
@@ -861,8 +861,8 @@ Il existe des consommateurs prêt à acheter à un prix supérieur au coût marg
 Il est donc possible d'avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole.
 Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d'autre pour obtenir cette amélioration.
 
-\hypertarget{ruxe9gulation-des-monopole}{%
-\section{Régulation des monopole}\label{ruxe9gulation-des-monopole}}
+\hypertarget{ruxe9gulation-du-monopole}{%
+\section{Régulation du monopole}\label{ruxe9gulation-du-monopole}}
 
 Cette partie va traiter de la manière dont un gouvernement peut inciter un monopole à modifier son comportement.
 
@@ -2147,7 +2147,7 @@ Réponses.
   On vérifie aussi la condition de second ordre \eqref{eq:cso} :
   \[R_m'(q^*)<C_m'(q^*)\]
   \[R'_m(q)=-\frac{2}{5}\]
-  \[C'_m(q)=\frac{1}{10}<C_m'(q)\]
+  \[C'_m(q)=\frac{1}{10}>R_m'(q)\]
   La condition du second est bien vérifiée, nous avons bien un maximum ici.
   Finalement, le prix est \(p^*=P(q^*)=33\).
 \end{enumerate}
@@ -2204,6 +2204,154 @@ Le surplus total est la somme des surplus des consommateurs et du producteur, so
 \centering
 \includegraphics{_main_files/figure-latex/monoexo23-1.pdf}
 \caption{\label{fig:monoexo23}Avec les surplus en CPP.}
+\end{figure}
+
+On calcule l'aire du triangle vert pour obtenir le surplus total des consommateurs.
+Il vaut 1000, ce qui est supérieur au surplus obtenu en monopole.
+
+On calcule l'aire du triangle rouge pour obtenir le surplus total du producteur.
+Il vaut 500.
+Si maintenant on enlève le coût fixe pour obtenir le profit, on obtient un profit nul.
+Il est donc plus faible qu'en monopole.
+
+Le surplus total en CPP vaudrait donc 1500, ce qui est supérieur au surplus total obtenu en monopole.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  La charge morte du monopole est la différence entre le surplus total en CPP et en monopole, soit \(1500-1260=240\).
+  On peut aussi la calculer en utilisant l'aire du triangle noir sur la figure \ref{fig:monoexo22}.
+\end{enumerate}
+
+\end{solution}
+
+\begin{exercise}
+\protect\hypertarget{exr:monoexo3}{}\label{exr:monoexo3}
+
+Sur un marché dominé par un producteur unique, la fonction de demande inverse pour une quantité \(q\) de bien est :
+\[P(q)=250-q\]
+La fonction de coût total du monopole est :
+\[C(q)=4q^2+10q+400\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Quelle est la production d'équilibre du monopole ? Quel est le
+  prix de vente ainsi que le profit du producteur ?
+\item
+  Comparez la solution précédente avec l'équilibre qui serait
+  réalisé si l'entreprise se comportait comme en situation de
+  concurrence pure et parfaite.
+\item
+  Dans chacun des cas ci-dessus, calculez le surplus du
+  producteur, du consommateur, ainsi que le surplus total. Concluez
+  sur l'impact de la présence d'un monopole sur le niveau de bien-être
+  social.
+\item
+  Supposez que le producteur détienne un stock très important du bien
+  (son coût marginal de production est nul). Donnez la solution du
+  monopole dans une telle situation.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{solution}[Solution de l'exercice  \ref{exr:monoexo3}.]
+
+Réponses:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  À l'optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
+  \[R_m(q^*)=C_m(q^*)\]
+  Ici, on a :
+  \[C_m(q^*)=C'(a)=8q+10\]
+  Et :
+  \[R(q) =qP(q)=250q-q^2\]
+  Donc :
+  \[R_m(q)=R'(q)=250-2q\]
+  À l'optimum, on doit donc avoir :
+  \[
+  \begin{array}{crcl}
+  &250-2q^*&=&8q^*+10\\
+  \Leftrightarrow & 240&=&10q^*\\
+  \Leftrightarrow & q^*&=&24
+  \end{array}
+  \]
+  On vérifie aussi la condition de second ordre \eqref{eq:cso} :
+  \[R_m'(q^*)<C_m'(q^*)\]
+  \[R'_m(q)=-2\]
+  \[C'_m(q)=8>R_m'(q)\]
+  La condition du second est bien vérifiée, nous avons bien un maximum ici.
+  Le prix est \(p^*=P(q^*)=33\).
+  Finalement, on peut calculer le profit :
+  \[
+  \pi(q^*)=R(q^*)-C(q^*)=p^*q^*-C(q^*)=24\times226-(4\times24^2+10\times24+400)=2480>0
+  \]
+  Le profit est bien positif, ce qui est la dernière condition à vérifier pour l'optimum.
+\end{enumerate}
+
+A l'optimum, il y a 24 unités de bien échangées sur le marché, au prix de 226.
+Cela permet au monopole de faire un profit de 2480.
+
+On représente graphiquement la situation obtenue sur la figure \ref{fig:monoexo31}.
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/monoexo3-1.pdf}
+\caption{\label{fig:monoexo3}Représentation graphique}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  On a l'élasticité prix de la demande à l'équilibre :
+  \[\varepsilon_{q/p}(q^*)=\frac{p^*}{q^*}\frac{1}{P'(q^*)}=\frac{33}{60}\frac{1}{-0.2}=-\frac{11}{4}\]
+  La valeur absolue est bien plus grande que 1, nous sommes bien dans la zone où la demande est élastique.
+  On peut aussi la calculer à l'aide de :
+  \[\frac{p^*-C_m(q^*)}{p^*}=\frac{33-6-15}{33}=\frac{4}{11}=\frac{1}{|\varepsilon_{q/p}(q^*)|}\]
+  On calcule ainsi le pouvoir du monopole : sa capacité à imposer au consommateur un prix à l'équilibre supérieur à son coût marginal.
+\item
+  Commençons par la représentation graphique.
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/monoexo32-1.pdf}
+\caption{\label{fig:monoexo32}Avec les surplus en monopole.}
+\end{figure}
+
+Le surplus des consommateurs se calcule en calculant l'aire du triangle vert dans la figure \ref{fig:monoexo22}.
+On obtient :
+\[S_c=\frac{(45-33)(60-0)}{2}=360\]
+Le surplus du producteur s'obtient en calculant l'aire du trapèze rouge :
+\[S_p=\frac{(33-15+33-21)(60-0)}{2}=900\]
+Le profit du producteur est le surplus diminué du coût fixe, qui vaut ici 500. Le profit vaut donc 400.
+Le surplus total est la somme des surplus des consommateurs et du producteur, soit \(S_T=1260\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  En CPP, le prix est fixé par le marché et le prix est égal au coût marginal.
+  On a (ici \(q^*\) et \(p^*\) sont différents des parties précédentes) :
+  \[C_m(q^*)=P(q^*)=p^*\]
+  Soit :
+  \[\frac{1}{10}q^*+15=45-\frac{1}{5}q^*\]
+  En résolvant l'équation, on obtient \(q^*=100\) et on peut en déduire \(p^*=25\).
+  Pour calculer les surplus, on commence par la représentation graphique.
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/monoexo33-1.pdf}
+\caption{\label{fig:monoexo33}Avec les surplus en CPP.}
 \end{figure}
 
 On calcule l'aire du triangle vert pour obtenir le surplus total des consommateurs.
