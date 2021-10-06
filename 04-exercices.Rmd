@@ -109,11 +109,13 @@ p^*=S(q^*)=P(q^*)
 (\#eq:cppequilibre)
 \end{equation}
 Commençons par la deuxième partie de l'équation \@ref(eq:cppequilibre) :
-\begin{align*}{crcl}
+\[
+\begin{array}{crcl}
 &2q^*+10&=&100-q^*\\
 \Leftrightarrow&3q^*&=&90\\
 \Leftrightarrow & q^*&=&30
-\end{align*}
+\end{array}
+\]
 La quantité échangée à l'équilibre est donc de $q^*=30$.
 A l'aide de la quantité échangée est de la première partie de l'équation \@ref(eq:cppequilibre), on obtient
 \[
