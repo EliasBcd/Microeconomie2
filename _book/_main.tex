@@ -4,6 +4,10 @@
 %
 \documentclass[
 ]{book}
+\title{Microéconomie 2}
+\author{Elias Bouacida \and Antoine Terracol}
+\date{2021-10-11}
+
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -75,10 +79,6 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
-
-\title{Microéconomie 2}
-\author{Elias Bouacida \and Antoine Terracol}
-\date{2021-10-06}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Théorème}[chapter]
@@ -582,7 +582,7 @@ R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
 \label{eq:rm}
 \end{equation}
 
-De l'équation \eqref{eq:rm}, on observe que le signe de la recette margianale \(R_m\) dépend de l'élasticité prix de la demande.
+De l'équation \eqref{eq:rm}, on observe que le signe de la recette marginale \(R_m\) dépend de l'élasticité prix de la demande.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -617,7 +617,7 @@ Prenons maintenant l'exemple d'une courbe de demande inverse linéaire quelconqu
 On obtient alors \(R_m(q) = a-2bq\) (et \(R(q) = aq-bq^2\)).\\
 Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus élevée que la demande, et ayant la même ordonnée à l'origine.
 La recette marginale divise en deux tout segment horizontal entre l'axe des ordonnées et la courbe de demande inverse.
-On peut ainsi représenter graphiquement, comme dans la figure \ref{fig:recettermarginale} la demande, la recetter marginale et la recette totale.
+On peut ainsi représenter graphiquement, comme dans la figure \ref{fig:recettemarginale} la demande, la recette marginale et la recette totale.
 
 \begin{figure}
 \centering
@@ -696,8 +696,8 @@ R_m'(q^*) <C_m'(q^*) \label{eq:cso}
 \end{equation}
 \end{theorem}
 
-On peut comprendre graphiquement pourquoi il faut que le coût marginal et la recette marginale soit égale (figure \ref{fig:monopoleoptimale}).
-Si le monopole produit plus que \(q_m^*\), alors chaque unité produite en plus lui coûte plus cher qu'elle ne lui rapporte.
+On peut comprendre graphiquement pourquoi il faut que le coût marginal et la recette marginale soient égaux (figure \ref{fig:monopoleoptimale}).
+Si le monopole produit plus que \(q_m^*\), alors chaque unité produite en plus lui coûte plus chère qu'elle ne lui rapporte.
 A l'inverse, s'il produit moins, produire des unités en plus lui rapporterait plus que cela ne lui coûte.
 
 \begin{figure}
@@ -884,7 +884,7 @@ La condition de première ordre de la maximisation du producteur de l'équation 
 \end{array}
 \]
 Le problème est exactement le même que précédemment, en intégrant la taxe dans le coût marginal.
-Pour le monopole, c'est comme si l'état ajoutait un coût \(t\) à chaque unité produite, ce qui est effectivement ce que l'état fait.
+Pour le monopole, c'est comme si l'état ajoutait un coût \(t\) à chaque unité produite, ce qui est effectivement ce que l'État fait.
 
 \begin{figure}
 \centering
@@ -979,9 +979,9 @@ L'équilibre a lieu quand le coût marginal et la demande se croisent.
 \caption{\label{fig:monopoleprixmaximalCPP}Fixation d'un prix maximal égal au prix de CPP.}
 \end{figure}
 
-Avec un prix maximum égal au prix de concurrence pure et parfaite, le revenu marginal comme la courbe de coût marginal au point d'équilibre de la concurrence pure et parfaite.
+Avec un prix maximum égal au prix de concurrence pure et parfaite, le revenu marginal coupe la courbe de coût marginal au point d'équilibre de la concurrence pure et parfaite.
 
-Globalement, si le prix maximal est entre le prix de monopole et le prix de concurrence pure et parfaite, alors la quantité produite augment quand le prix maximal diminue.
+Globalement, si le prix maximal est entre le prix de monopole et le prix de concurrence pure et parfaite, alors la quantité produite augmente quand le prix maximal diminue.
 Si au contraire le prix maximal est inférieur au prix de CPP (et donc de monopole), alors la quantité produite diminue quand le prix maximal augmente.
 
 \hypertarget{le-monopole-naturel}{%
@@ -1085,7 +1085,11 @@ C'est la même condition qu'en CPP.
 Le monopole parfaitement discriminant produit donc la quantité de concurrence pure et parfaite.
 Le prix de la dernière unité vendue par le monopole est égal au prix de la concurrence pure et parfaite, même si les prix des autres unités vendues sont supérieur au prix de la CPP.
 
-GRAPH avec discrimination parfaite
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/monopolediscriparfaite-1.pdf}
+\caption{\label{fig:monopolediscriparfaite}Surplus du monopole en discrimination parfaite (aire rouge et bleue).}
+\end{figure}
 
 La situation de discrimination parfaite est un optimum de Pareto.
 En effet, le surplus social est maximal (mais capturé entièrement par le monopole).
@@ -1115,8 +1119,6 @@ Plus il y a de seuils, plus on s'approche d'un situation de discrimination parfa
 
 \hypertarget{discrimination-du-troisiuxe8me-degruxe9}{%
 \subsection{Discrimination du troisième degré}\label{discrimination-du-troisiuxe8me-degruxe9}}
-
-A faire si le temps le permet.
 
 Il s'agit de faire payer un prix différent à chaque groupe de consommateur, en fonction des caractéristiques de leurs fonctions de demande.
 Tous les membres d'un groupe payent donc le même prix, contrairement à la discrimination au premier degré.

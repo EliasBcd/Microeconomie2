@@ -131,7 +131,7 @@ R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
 \end{equation}
 
 
-De l'équation \@ref(eq:rm), on observe que le signe de la recette margianale $R_m$ dépend de l'élasticité prix de la demande.
+De l'équation \@ref(eq:rm), on observe que le signe de la recette marginale $R_m$ dépend de l'élasticité prix de la demande.
 
 1. Si la demande est élastique ($|\varepsilon_{q/p}(q)|>1$), alors $R_m(q)>0$, donc si la quantité augmente, le revenu augmente.
 2. Si la demande est inélastique ($|\varepsilon_{q/p}(q)|<1$), alors $R_m(q)<0$, donc si la quantité augmente, le revenu diminue.
@@ -171,7 +171,7 @@ Prenons maintenant l'exemple d'une courbe de demande inverse linéaire quelconqu
 On obtient alors $R_m(q) = a-2bq$ (et $R(q) = aq-bq^2$).  
 Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus élevée que la demande, et ayant la même ordonnée à l'origine.
 La recette marginale divise en deux  tout segment horizontal entre l'axe des ordonnées et la courbe de demande inverse.
-On peut ainsi représenter graphiquement, comme dans la figure \@ref(fig:recettermarginale) la demande, la recetter marginale et la recette totale.
+On peut ainsi représenter graphiquement, comme dans la figure \@ref(fig:recettemarginale) la demande, la recette marginale et la recette totale.
 
 ```{r recettemarginale, fig.cap="Elasticité et recette."}
 Rm <- function(q)(1-2*q)
@@ -265,8 +265,8 @@ R_m'(q^*) <C_m'(q^*) (\#eq:cso)
 \end{equation}
 :::
 
-On peut comprendre graphiquement pourquoi il faut que le coût marginal et la recette marginale soit égale (figure \@ref(fig:monopoleoptimale)).
-Si le monopole produit plus que $q_m^*$, alors chaque unité produite en plus lui coûte plus cher qu'elle ne lui rapporte.
+On peut comprendre graphiquement pourquoi il faut que le coût marginal et la recette marginale soient égaux (figure \@ref(fig:monopoleoptimale)).
+Si le monopole produit plus que $q_m^*$, alors chaque unité produite en plus lui coûte plus chère qu'elle ne lui rapporte.
 A l'inverse, s'il produit moins, produire des unités en plus lui rapporterait plus que cela ne lui coûte.
  
 ```{r monopoleoptimale, fig.cap="Production optimale du monopole."}
@@ -285,7 +285,7 @@ p5 +   stat_function(fun=function(x) Rm(x), colour = "darkgreen") +
   annotate("text", x=0.15, y=0.5, label=TeX("perte si $q<q_m^*$"), color="darkred") +
   annotate("text", x=0.4, y=0.5, label=TeX("perte si q>q_m^*"), color="darkred") +
   annotate("text", x=0.5, y=0.1, colour="darkgreen", label="recette marginale") +
-  annotate("text", x=0.55, y=0.8, colour="darkred", label="coût marginal") +
+  annotate("text", x=0.55, y=0.8, colour="red", label="coût marginal") +
   geom_segment(x=0.25, y=0, xend=0.25, yend=0.75, linetype="dashed") +
   geom_segment(x=0, y=0.75, xend=0.25, yend=0.75, linetype="dashed")
 ```
@@ -560,7 +560,7 @@ La condition de première ordre de la maximisation du producteur de l'équation 
 \end{array}
 \]
 Le problème est exactement le même que précédemment, en intégrant la taxe dans le coût marginal.
-Pour le monopole, c'est comme si l'état ajoutait un coût $t$ à chaque unité produite, ce qui est effectivement ce que l'état fait.
+Pour le monopole, c'est comme si l'état ajoutait un coût $t$ à chaque unité produite, ce qui est effectivement ce que l'État fait.
 
 ```{r monopoletaxeunitaire, fig.cap="Impact d'une taxe unitaire : augmentation du coût marginal."}
 t = 0.2
@@ -708,9 +708,9 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkre
   annotate("text", x=0.5, y=0.1, label="Recette marginale avec un prix max", color="darkgreen")
 ```
 
-Avec un prix maximum égal au prix de concurrence pure et parfaite, le revenu marginal comme la courbe de coût marginal au point d'équilibre de la concurrence pure et parfaite.
+Avec un prix maximum égal au prix de concurrence pure et parfaite, le revenu marginal coupe la courbe de coût marginal au point d'équilibre de la concurrence pure et parfaite.
 
-Globalement, si le prix maximal est entre le prix de monopole et le prix de concurrence pure et parfaite, alors la quantité produite augment quand le prix maximal diminue.
+Globalement, si le prix maximal est entre le prix de monopole et le prix de concurrence pure et parfaite, alors la quantité produite augmente quand le prix maximal diminue.
 Si au contraire le prix maximal est inférieur au prix de CPP (et donc de monopole), alors la quantité produite diminue quand le prix maximal augmente.
 
 ## Le monopole naturel
