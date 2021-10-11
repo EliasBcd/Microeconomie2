@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.27)  11 OCT 2021 15:40
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.27)  11 OCT 2021 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1052,7 +1052,7 @@ File: _main_files/figure-latex/monopolenaturelcout-1.pdf Graphic file (type pdf
 )
 <use _main_files/figure-latex/monopolenaturelcout-1.pdf>
 [34]
-Underfull \hbox (badness 1038) in paragraph at lines 1044--1045
+Underfull \hbox (badness 1038) in paragraph at lines 1045--1046
 []\TU/lmr/m/it/10 Remarque \TU/lmr/m/n/10 (Rendements d’échelle et économies d’
 échelle)\TU/lmr/m/it/10 . []\TU/lmr/m/n/10 Il ne faut pas
  []
@@ -1060,7 +1060,7 @@ Underfull \hbox (badness 1038) in paragraph at lines 1044--1045
 File: _main_files/figure-latex/monopolenaturel-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/monopolenaturel-1.pdf>
 
-Underfull \vbox (badness 1571) has occurred while \output is active []
+Underfull \vbox (badness 3612) has occurred while \output is active []
 
 [35]
 File: _main_files/figure-latex/monopolediscriparfaite-1.pdf Graphic file (type 
@@ -1076,7 +1076,7 @@ File: _main_files/figure-latex/isoprofit1-1.pdf Graphic file (type pdf)
 File: _main_files/figure-latex/isoprofitCournot-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/isoprofitCournot-1.pdf>
 [45] [46] [47]
-Underfull \hbox (badness 4266) in paragraph at lines 1616--1617
+Underfull \hbox (badness 4266) in paragraph at lines 1617--1618
 [][]\TU/lmr/bx/n/10 Définition 4.3 \TU/lmr/m/n/10 (Indice de Hirschman-Herfinda
 hl (HHI))\TU/lmr/bx/n/10 . []\TU/lmr/m/n/10 L’indice de
  []
@@ -1103,7 +1103,7 @@ File: _main_files/figure-latex/cppexo23-1.pdf Graphic file (type pdf)
 [58]
 
 LaTeX Warning: Reference `fig:cppexo24prixhaut' on page 59 undefined on input l
-ine 2028.
+ine 2029.
 
 File: _main_files/figure-latex/cppexo24prixhaut-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/cppexo24prixhaut-1.pdf>
@@ -1113,7 +1113,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [59]
 
 LaTeX Warning: Reference `fig:cppexo24prixbas' on page 60 undefined on input li
-ne 2045.
+ne 2046.
 
 File: _main_files/figure-latex/cppexo24prixbas-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/cppexo24prixbas-1.pdf>
@@ -1130,7 +1130,7 @@ File: _main_files/figure-latex/monoexo22-1.pdf Graphic file (type pdf)
 File: _main_files/figure-latex/monoexo23-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/monoexo23-1.pdf>
 [65]
-Overfull \hbox (48.69911pt too wide) detected at line 2309
+Overfull \hbox (48.69911pt too wide) detected at line 2310
 [][][][][][] [] [][][][][] [] [][][][][] [] [][][][] [] [][][][][] [] [][] [] [
 ][][] [] [][] [] [][][] [] [][] [] [][] [] [][][][] [] [][][][] [] []
  []

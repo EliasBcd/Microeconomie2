@@ -777,7 +777,9 @@ p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 10), breaks=c(q2,
 
 ```
 
-::: { .remark name="Lien entre coût marginal et coût moyen en monopole naturel."} Lorsque le coût moyen est décroissant, c'est que le coût marginal est inférieur au coût moyen.
+
+::: { .remark name="Lien entre coût marginal et coût moyen en monopole naturel."} 
+Lorsque le coût moyen est décroissant, c'est que le coût marginal est inférieur au coût moyen.
 \[
 C_M(q) = \frac{C(q)}{q}
 \]
