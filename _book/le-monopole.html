@@ -25,7 +25,7 @@
 <meta name="author" content="Antoine Terracol" />
 
 
-<meta name="date" content="2021-10-11" />
+<meta name="date" content="2021-10-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -683,11 +683,11 @@ Le monopole fait alors un profit nul.</p>
 </div>
 <div id="le-monopole-discriminant" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> Le monopole discriminant</h2>
-<p>Un monopole discriminant pratique un prix différent pour chaque (groupe de) consommateur.
+<p>Un monopole discriminant pratique un prix différent pour chaque (groupe de) consommateurs.
 Pour cela, il doit pouvoir identifier l’appartenance de chaque consommateur à un groupe et les marchés entre les consommateurs doivent être hermétiques.
-En particulier, il ne faut pas qu’un consommateur puisse revendre son unité de produit à un autre consommateur.</p>
+En particulier, il ne faut pas qu’un consommateur puisse revendre son unité de bien à un autre consommateur.</p>
 <p>Il existe 3 types de discriminations par les prix, les discrimination du premier, deuxième et troisième degrés.
-On ne traitera que les discriminations du premier et troisième degré.</p>
+On ne traitera que les discriminations du premier et troisième degrés dans ce cours.</p>
 <div id="discrimination-au-premier-degré-discrimination-parfaite" class="section level3" number="3.5.1">
 <h3><span class="header-section-number">3.5.1</span> Discrimination au premier degré (discrimination parfaite)</h3>
 <p>Dans une discrimination parfaite, le monopole connaît la valorisation (prix de réserve) de chaque individu et lui fait payer le prix maximum qu’il est prêt à payer (son prix de réserve donc).
@@ -716,7 +716,7 @@ La recette marginale est ici confondue avec la courbe de demande.
 L’optimum se trouve donc au point où la courbe de coût marginal coupe la courbe de demande (inverse).
 C’est la même condition qu’en CPP.
 Le monopole parfaitement discriminant produit donc la quantité de concurrence pure et parfaite.
-Le prix de la dernière unité vendue par le monopole est égal au prix de la concurrence pure et parfaite, même si les prix des autres unités vendues sont supérieur au prix de la CPP.</p>
+Le prix de la dernière unité vendue par le monopole est égal au prix de la concurrence pure et parfaite, même si les prix des autres unités vendues sont supérieurs au prix de la CPP.</p>
 <div class="figure"><span style="display:block;" id="fig:monopolediscriparfaite"></span>
 <img src="_main_files/figure-html/monopolediscriparfaite-1.png" alt="Surplus du monopole en discrimination parfaite (aire rouge et bleue)." width="672" />
 <p class="caption">
@@ -738,8 +738,13 @@ Le gouvernement triait les offres par ordre décroissant de prix et les satisfai
 </div>
 <p>Par exemple, si les 10 premières unités vendues le sont à 5€, et les suivantes à 2€.
 Les prix de ventes sont nécessairement <em>décroissants</em> avec la quantité vendue.</p>
-<p>GRAPH avec 3 seuils de quantité.</p>
-<p>Le monopole ajuste les quantités seuil afin de maximiser son profit.
+<div class="figure"><span style="display:block;" id="fig:monopolediscri2degre"></span>
+<img src="_main_files/figure-html/monopolediscri2degre-1.png" alt="Graphique avec une discrimination du deuxième degré. Les quantités inférieures à $q_1$ sont vendues au prix $p_1$, les suivantes au prix $p_2$." width="672" />
+<p class="caption">
+Figure 3.19: Graphique avec une discrimination du deuxième degré. Les quantités inférieures à <span class="math inline">\(q_1\)</span> sont vendues au prix <span class="math inline">\(p_1\)</span>, les suivantes au prix <span class="math inline">\(p_2\)</span>.
+</p>
+</div>
+<p>Le monopole ajuste les quantités seuils afin de maximiser son profit.
 Il y a un nombre fini de seuils de dégressivité.
 Plus il y a de seuils, plus on s’approche d’un situation de discrimination parfaite.</p>
 </div>
@@ -815,7 +820,9 @@ Le monopole doit égaliser la recette marginale sur les deux marchés.
 Or le coût marginal dépend de la quantité <em>totale</em> produite, pas de la répartition entre les marchés.
 Si on est dans la situation telle que <span class="math inline">\(C_m(q)&lt;R_{mA}(q_A)\)</span>, alors il y a la possibilité de faire du profit sur le marché A (et le marché B par conséquent).
 Inversement, si <span class="math inline">\(C_m(q)&gt;R_{mA}(q_A)\)</span>, alors le monopole fait des pertes.</p>
-<p>NB: On utilise bien <span class="math inline">\(C_m(q_A+q_B)\)</span> et non <span class="math inline">\(C_m(q_A)\)</span> ou <span class="math inline">\(C_m(q_B)\)</span> car c’est bien la variation du coût total lorsqu’on augmente “un peu” <span class="math inline">\(q_A\)</span> et <span class="math inline">\(q_B\)</span> reste fixe.</p>
+<div class="remark">
+<p><span id="unlabeled-div-36" class="remark"><em>Remarque</em>. </span>On utilise bien <span class="math inline">\(C_m(q_A+q_B)\)</span> et non <span class="math inline">\(C_m(q_A)\)</span> ou <span class="math inline">\(C_m(q_B)\)</span> car c’est bien la variation du coût total lorsqu’on augmente “un peu” <span class="math inline">\(q_A\)</span> et <span class="math inline">\(q_B\)</span> reste fixe.</p>
+</div>
 <p>D’après l’équation <a href="le-monopole.html#eq:rm">(3.1)</a>, on peut écrire :
 <span class="math display">\[
 \begin{array}{crcl}
@@ -835,7 +842,7 @@ Autrement dit
 Le prix est donc plus faible pour le groupe où l’élasticité prix de la demande est plus élevée.
 Le prix est plus élevé pour le groupe avec l’élasticité la plus faible, les moins réactifs au prix.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-36" class="example"><strong>Exemple 3.3  </strong></span>Les tarifs “professionnels” dans les transports (avion, train, etc).
+<p><span id="exm:unlabeled-div-37" class="example"><strong>Exemple 3.3  </strong></span>Les tarifs “professionnels” dans les transports (avion, train, etc).
 Les professionnels sont moins sensibles au prix car leurs dates de voyage sont moins flexibles que celles des particuliers.
 Leur élasticité prix est donc plus faible et leur prix plus élevés.</p>
 </div>

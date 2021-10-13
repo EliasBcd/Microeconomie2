@@ -21,11 +21,16 @@ fig:monopoleprixmaximalCPP
 fig:monopolenaturelcout
 fig:monopolenaturel
 fig:monopolediscriparfaite
+fig:monopolediscri2degre
+fig:oligodemande
+fig:oligoreaction
+fig:oligoreactioninstable
 eq:FR1
 fig:isoprofit1
 fig:isoprofitCournot
 fig:equilibreStackelberg
 eq:FRFollower
+fig:cartel
 fig:cppexo11
 fig:cppexo13
 fig:cppexo22

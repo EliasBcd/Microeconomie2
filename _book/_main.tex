@@ -6,7 +6,7 @@
 ]{book}
 \title{Microéconomie 2}
 \author{Elias Bouacida \and Antoine Terracol}
-\date{2021-10-11}
+\date{2021-10-13}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -1057,12 +1057,12 @@ Une solution alternative est un prix égal au coût moyen assorti de subventions
 \hypertarget{le-monopole-discriminant}{%
 \section{Le monopole discriminant}\label{le-monopole-discriminant}}
 
-Un monopole discriminant pratique un prix différent pour chaque (groupe de) consommateur.
+Un monopole discriminant pratique un prix différent pour chaque (groupe de) consommateurs.
 Pour cela, il doit pouvoir identifier l'appartenance de chaque consommateur à un groupe et les marchés entre les consommateurs doivent être hermétiques.
-En particulier, il ne faut pas qu'un consommateur puisse revendre son unité de produit à un autre consommateur.
+En particulier, il ne faut pas qu'un consommateur puisse revendre son unité de bien à un autre consommateur.
 
 Il existe 3 types de discriminations par les prix, les discrimination du premier, deuxième et troisième degrés.
-On ne traitera que les discriminations du premier et troisième degré.
+On ne traitera que les discriminations du premier et troisième degrés dans ce cours.
 
 \hypertarget{discrimination-au-premier-degruxe9-discrimination-parfaite}{%
 \subsection{Discrimination au premier degré (discrimination parfaite)}\label{discrimination-au-premier-degruxe9-discrimination-parfaite}}
@@ -1095,7 +1095,7 @@ La recette marginale est ici confondue avec la courbe de demande.
 L'optimum se trouve donc au point où la courbe de coût marginal coupe la courbe de demande (inverse).
 C'est la même condition qu'en CPP.
 Le monopole parfaitement discriminant produit donc la quantité de concurrence pure et parfaite.
-Le prix de la dernière unité vendue par le monopole est égal au prix de la concurrence pure et parfaite, même si les prix des autres unités vendues sont supérieur au prix de la CPP.
+Le prix de la dernière unité vendue par le monopole est égal au prix de la concurrence pure et parfaite, même si les prix des autres unités vendues sont supérieurs au prix de la CPP.
 
 \begin{figure}
 \centering
@@ -1123,9 +1123,13 @@ La discrimination du deuxième degré a lieu lorsque les prix de ventes dépende
 Par exemple, si les 10 premières unités vendues le sont à 5€, et les suivantes à 2€.
 Les prix de ventes sont nécessairement \emph{décroissants} avec la quantité vendue.
 
-GRAPH avec 3 seuils de quantité.
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/monopolediscri2degre-1.pdf}
+\caption{\label{fig:monopolediscri2degre}Graphique avec une discrimination du deuxième degré. Les quantités inférieures à \(q_1\) sont vendues au prix \(p_1\), les suivantes au prix \(p_2\).}
+\end{figure}
 
-Le monopole ajuste les quantités seuil afin de maximiser son profit.
+Le monopole ajuste les quantités seuils afin de maximiser son profit.
 Il y a un nombre fini de seuils de dégressivité.
 Plus il y a de seuils, plus on s'approche d'un situation de discrimination parfaite.
 
@@ -1220,7 +1224,9 @@ Or le coût marginal dépend de la quantité \emph{totale} produite, pas de la r
 Si on est dans la situation telle que \(C_m(q)<R_{mA}(q_A)\), alors il y a la possibilité de faire du profit sur le marché A (et le marché B par conséquent).
 Inversement, si \(C_m(q)>R_{mA}(q_A)\), alors le monopole fait des pertes.
 
-NB: On utilise bien \(C_m(q_A+q_B)\) et non \(C_m(q_A)\) ou \(C_m(q_B)\) car c'est bien la variation du coût total lorsqu'on augmente ``un peu'' \(q_A\) et \(q_B\) reste fixe.
+\begin{remark}
+On utilise bien \(C_m(q_A+q_B)\) et non \(C_m(q_A)\) ou \(C_m(q_B)\) car c'est bien la variation du coût total lorsqu'on augmente ``un peu'' \(q_A\) et \(q_B\) reste fixe.
+\end{remark}
 
 D'après l'équation \eqref{eq:rm}, on peut écrire :
 \[
@@ -1301,17 +1307,17 @@ Nous verrons dans ce cours les concurrences à la Cournot et à la Stackelberg, 
 On considère deux entreprises sur le même marché qui doivent choisir les quantités à produire, sans connaître la quantité choisie par l'autre (= décision simultanée).\footnote{Même marché : bien unique et prix unique.}
 Le prix est déterminé par la quantité \emph{totale} produite par les deux entreprises et la fonction de demande sur le marché.
 
-Chaque entreprise est caractérisée par :
+Chaque entreprise est caractérisée par une quantité produite et un coût :
 
 \begin{itemize}
 \tightlist
 \item
-  Entreprise 1 : quantité \(q_1\) produite avec un coût \(C_1(q_1)\) ;
+  Entreprise 1 : quantité \(q_1\) produite au coût \(C_1(q_1)\) ;
 \item
-  Entreprise 2 : quantité \(q_2\) produite avec un coût \(C_2(q_2)\).
+  Entreprise 2 : quantité \(q_2\) produite au coût \(C_2(q_2)\).
 \end{itemize}
 
-Les fonctions de coût sont \textbf{différentes} entre les deux entreprises, contrairement au cas du monopole discriminant au troisème degré, où l'on considérait \(C(q_1+q_2)\).
+Les fonctions de coût sont \textbf{différentes} entre les deux entreprises, contrairement au cas du monopole discriminant au troisième degré, où l'on considérait \(C(q_1+q_2)\).
 
 La fonction de demande inverse sur le marché est \(P(q_1+q_2)\).
 C'est différent du monopole discriminant où il y avait une fonction de demande par segment.
@@ -1324,7 +1330,7 @@ On a donc les fonctions de profit:
 \end{array}
 \]
 L'action d'une entreprise a des conséquences sur le profit réalisé par l'autre entreprise, même si celle-ci ne fait rien.
-En particulier, si \(q_1\) augmente, alors le prix du marché diminue, au travers de la fonction de demande inverse \(P\), et donc le profit de l'entreprise 2 \(\pi_2\) diminue, et réciproquement si \(q_2\) augmente.
+En particulier, si \(q_1\) augmente, alors le prix du marché diminue, au travers de la fonction de demande inverse \(P\), et donc le profit de l'entreprise 2, \(\pi_2\), diminue, et réciproquement si \(q_2\) augmente.
 Il y a donc un conflit d'intérêt entre les producteurs.
 Chaque entreprise doit anticiper l'action de l'autre et réagir à cette anticipation le mieux possible.
 
@@ -1347,7 +1353,7 @@ On a des profits :
 
 Supposons que l'entreprise 1 \emph{croit} que l'entreprise 2 va produire \(q_2^a\).
 Quelle est sa production optimale ?
-Son problème est :
+Son problème de maximisation est :
 \[
 \max_{q_1} \pi_1(q_1, q_2^a) =  q_1P(q_1+q_2^a)-C_1(q_1)
 \]
@@ -1374,7 +1380,11 @@ Le croisement entre recette marginale et coût marginal se fait donc à un nivea
 Plus l'entreprise \(i\) pense que l'entreprise \(j\) va produire une grande quantité, plus elle aura intérêt à réduire son offre.
 \(q_i\) est décroissante en \(q_j^a\)
 
-GRAPH avec la fonction de demande translatée.
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/oligodemande-1.pdf}
+\caption{\label{fig:oligodemande}Représentation de la demande perçue par l'entreprise 2 anticipant une offre \(q_1^a\) par l'entreprise 1.}
+\end{figure}
 
 \hypertarget{caractuxe9risation-de-luxe9quilibre}{%
 \subsubsection{Caractérisation de l'équilibre}\label{caractuxe9risation-de-luxe9quilibre}}
@@ -1386,8 +1396,8 @@ Un équilibre \((q_1^a, q_2^a)\) doit être tel qu'aucune des deux entreprises n
 \pi_2(q_1^a, q_2^a) &\geq& \pi_2(q_1^a, q_2)\quad \forall q_2
 \end{array}
 \]
-Aux points \(q_1^a\) et \(q_2^a\), aucune entreprise n'a intérêt à dévier unilatéralement de l'équilibre.
-Les décisions prises sont alors mutuellement compatibles.
+Au point \(q_1^a\) et \(q_2^a\), aucune entreprise n'a intérêt à dévier unilatéralement de l'équilibre.
+Les décisions prises sont mutuellement compatibles.
 Chaque entreprise donne sa meilleure réponse à la meilleure réponse de l'autre.
 C'est ce qu'on appelle un \textbf{équilibre de Nash} : un équilibre où personne n'a intérêt à dévier unilatéralement.
 
@@ -1401,12 +1411,20 @@ q_2^a&=&f_2(q_1^a)
 \end{array}
 \]
 
-GRAPH avec une situation d'équilibre.
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/oligoreaction-1.pdf}
+\caption{\label{fig:oligoreaction}Représentation d'un équilibre de Cournot où les fonctions de réaction convergent vers le point d'équilibre.}
+\end{figure}
 
 L'équilibre n'est pas nécessairement stable.
 La stabilité dépend de la pente des fonctions de réactions.
 
-GRAPH avec équilibre instable
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/oligoreactioninstable-1.pdf}
+\caption{\label{fig:oligoreactioninstable}Représentation d'un équilibre de Cournot où les fonctions de réaction divergent du point d'équilibre. Equilibre instable}
+\end{figure}
 
 \hypertarget{exemple}{%
 \subsection{Exemple}\label{exemple}}
@@ -1489,6 +1507,8 @@ On résout le système et on obtient :
 \[
 q_1^*=q_2^* = \frac{a}{3b+2c}
 \]
+
+Quand le problème est symétrique, les deux entreprises en compétition à la Cournot produisent la même quantité de bien.
 
 \hypertarget{une-intuition-graphique-les-courbes-disoprofit}{%
 \subsection{Une intuition graphique : les courbes d'isoprofit}\label{une-intuition-graphique-les-courbes-disoprofit}}
@@ -1628,8 +1648,8 @@ Autrement dit, la moyenne des \(L_i\) pondéré par les parts de marché.
  \end{array}
  \]
 
-Interprétation :\\
-Imaginons que tout les \(N\) entreprises sont identiques (même fonction de coût).
+\emph{Interprétation :}\\
+Imaginons que toutes les \(N\) entreprises sont identiques (elles ont la même fonction de coût).
 Elles produisent alors la même quantité optimale à l'équilibre.
 Leur part de marché est donc \(S_i=1/N\).
 Le HHI vaut :
@@ -1662,17 +1682,17 @@ On considère ici qu'il n'y a que deux périodes de décisions.
 \hypertarget{ruxe9solution-graphique}{%
 \subsection{Résolution graphique}\label{ruxe9solution-graphique}}
 
-Le leader doit choisir sa quantité \(q_1\) de façon à être sur la courbe d'isoprofit la plus basse possible compatible avec la fonction de réaction de la firme follower.
+Le leader doit choisir sa quantité \(q_1\) de façon à être sur la courbe d'isoprofit la plus basse possible compatible avec la fonction de réaction de l'entreprise follower.
 Il va donc se placer sur la courbe d'isoprofit tangente à la fonction de réaction du follower.
 
 \begin{figure}
 \centering
 \includegraphics{_main_files/figure-latex/equilibreStackelberg-1.pdf}
-\caption{\label{fig:equilibreStackelberg}Courbes d'isoprofits et fonctions de réactions des entreprises en équilibre de Stackelberg.}
+\caption{\label{fig:equilibreStackelberg}Courbes d'isoprofits du leader et fonctions de réactions des entreprises en équilibre de Stackelberg.}
 \end{figure}
 
 Sur la figure \ref{fig:equilibreStackelberg}, on voit que le profit du leader est plus important en Stackelberg qu'en Cournot (et l'inverse pour le follower).
-Les quantités produites par l'entreprise leader sont plus importantes en Stackelberg qu'en Cournot, mais celle du follower sont plus faible.
+Les quantités produites par l'entreprise leader sont plus importantes en Stackelberg qu'en Cournot, mais celles du follower sont plus faibles.
 La somme des deux est plus importante (\(q_{1C}^*+q_{2C}^*<q_{L}^*+q_{F}^*\)).
 Le prix sera donc plus faible pour les consommateurs.
 
@@ -1778,6 +1798,12 @@ La raison est que le cartel se comporte exactement comme un monopole, puis parta
 
 \hypertarget{raisonnement-graphique}{%
 \subsection{Raisonnement graphique}\label{raisonnement-graphique}}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/cartel-1.pdf}
+\caption{\label{fig:cartel}Zone d'amélioration mutuellement bénéfique.}
+\end{figure}
 
 \hypertarget{ruxe9solution-analytique}{%
 \subsection{Résolution analytique}\label{ruxe9solution-analytique}}

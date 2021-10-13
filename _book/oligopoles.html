@@ -25,7 +25,7 @@
 <meta name="author" content="Antoine Terracol" />
 
 
-<meta name="date" content="2021-10-11" />
+<meta name="date" content="2021-10-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -229,12 +229,12 @@ Les entreprises peuvent se faire concurrence de différentes manières :</p>
 <h3><span class="header-section-number">4.2.1</span> Introduction</h3>
 <p>On considère deux entreprises sur le même marché qui doivent choisir les quantités à produire, sans connaître la quantité choisie par l’autre (= décision simultanée).<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
 Le prix est déterminé par la quantité <em>totale</em> produite par les deux entreprises et la fonction de demande sur le marché.</p>
-<p>Chaque entreprise est caractérisée par :</p>
+<p>Chaque entreprise est caractérisée par une quantité produite et un coût :</p>
 <ul>
-<li>Entreprise 1 : quantité <span class="math inline">\(q_1\)</span> produite avec un coût <span class="math inline">\(C_1(q_1)\)</span> ;</li>
-<li>Entreprise 2 : quantité <span class="math inline">\(q_2\)</span> produite avec un coût <span class="math inline">\(C_2(q_2)\)</span>.</li>
+<li>Entreprise 1 : quantité <span class="math inline">\(q_1\)</span> produite au coût <span class="math inline">\(C_1(q_1)\)</span> ;</li>
+<li>Entreprise 2 : quantité <span class="math inline">\(q_2\)</span> produite au coût <span class="math inline">\(C_2(q_2)\)</span>.</li>
 </ul>
-<p>Les fonctions de coût sont <strong>différentes</strong> entre les deux entreprises, contrairement au cas du monopole discriminant au troisème degré, où l’on considérait <span class="math inline">\(C(q_1+q_2)\)</span>.</p>
+<p>Les fonctions de coût sont <strong>différentes</strong> entre les deux entreprises, contrairement au cas du monopole discriminant au troisième degré, où l’on considérait <span class="math inline">\(C(q_1+q_2)\)</span>.</p>
 <p>La fonction de demande inverse sur le marché est <span class="math inline">\(P(q_1+q_2)\)</span>.
 C’est différent du monopole discriminant où il y avait une fonction de demande par segment.</p>
 <p>On a donc les fonctions de profit:
@@ -245,7 +245,7 @@ C’est différent du monopole discriminant où il y avait une fonction de deman
 \end{array}
 \]</span>
 L’action d’une entreprise a des conséquences sur le profit réalisé par l’autre entreprise, même si celle-ci ne fait rien.
-En particulier, si <span class="math inline">\(q_1\)</span> augmente, alors le prix du marché diminue, au travers de la fonction de demande inverse <span class="math inline">\(P\)</span>, et donc le profit de l’entreprise 2 <span class="math inline">\(\pi_2\)</span> diminue, et réciproquement si <span class="math inline">\(q_2\)</span> augmente.
+En particulier, si <span class="math inline">\(q_1\)</span> augmente, alors le prix du marché diminue, au travers de la fonction de demande inverse <span class="math inline">\(P\)</span>, et donc le profit de l’entreprise 2, <span class="math inline">\(\pi_2\)</span>, diminue, et réciproquement si <span class="math inline">\(q_2\)</span> augmente.
 Il y a donc un conflit d’intérêt entre les producteurs.
 Chaque entreprise doit anticiper l’action de l’autre et réagir à cette anticipation le mieux possible.</p>
 <p><em>Question :</em> Peut-il y avoir un équilibre dans cette situation ?</p>
@@ -264,7 +264,7 @@ Chaque entreprise doit anticiper l’action de l’autre et réagir à cette ant
 \]</span></p>
 <p>Supposons que l’entreprise 1 <em>croit</em> que l’entreprise 2 va produire <span class="math inline">\(q_2^a\)</span>.
 Quelle est sa production optimale ?
-Son problème est :
+Son problème de maximisation est :
 <span class="math display">\[
 \max_{q_1} \pi_1(q_1, q_2^a) =  q_1P(q_1+q_2^a)-C_1(q_1)
 \]</span>
@@ -286,7 +286,12 @@ Cette dernière correspond à la demande totale décalée de <span class="math i
 Le croisement entre recette marginale et coût marginal se fait donc à un niveau plus faible qu’auparavant.</p>
 <p>Plus l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> va produire une grande quantité, plus elle aura intérêt à réduire son offre.
 <span class="math inline">\(q_i\)</span> est décroissante en <span class="math inline">\(q_j^a\)</span></p>
-<p>GRAPH avec la fonction de demande translatée.</p>
+<div class="figure"><span style="display:block;" id="fig:oligodemande"></span>
+<img src="_main_files/figure-html/oligodemande-1.png" alt="Représentation de la demande perçue par l'entreprise 2 anticipant une offre $q_1^a$ par l'entreprise 1." width="672" />
+<p class="caption">
+Figure 4.1: Représentation de la demande perçue par l’entreprise 2 anticipant une offre <span class="math inline">\(q_1^a\)</span> par l’entreprise 1.
+</p>
+</div>
 </div>
 <div id="caractérisation-de-léquilibre" class="section level4" number="4.2.2.3">
 <h4><span class="header-section-number">4.2.2.3</span> Caractérisation de l’équilibre</h4>
@@ -297,8 +302,8 @@ Le croisement entre recette marginale et coût marginal se fait donc à un nivea
 \pi_2(q_1^a, q_2^a) &amp;\geq&amp; \pi_2(q_1^a, q_2)\quad \forall q_2
 \end{array}
 \]</span>
-Aux points <span class="math inline">\(q_1^a\)</span> et <span class="math inline">\(q_2^a\)</span>, aucune entreprise n’a intérêt à dévier unilatéralement de l’équilibre.
-Les décisions prises sont alors mutuellement compatibles.
+Au point <span class="math inline">\(q_1^a\)</span> et <span class="math inline">\(q_2^a\)</span>, aucune entreprise n’a intérêt à dévier unilatéralement de l’équilibre.
+Les décisions prises sont mutuellement compatibles.
 Chaque entreprise donne sa meilleure réponse à la meilleure réponse de l’autre.
 C’est ce qu’on appelle un <strong>équilibre de Nash</strong> : un équilibre où personne n’a intérêt à dévier unilatéralement.</p>
 <p>Dans le cas du duopole à la Cournot, chaque entreprise doit choisir la quantité qui maximise son profit étant donné le choix de l’autre entreprise.
@@ -310,10 +315,20 @@ q_1^a&amp;=&amp;f_1(q_2^a)\\
 q_2^a&amp;=&amp;f_2(q_1^a)
 \end{array}
 \]</span></p>
-<p>GRAPH avec une situation d’équilibre.</p>
+<div class="figure"><span style="display:block;" id="fig:oligoreaction"></span>
+<img src="_main_files/figure-html/oligoreaction-1.png" alt="Représentation d'un équilibre de Cournot où les fonctions de réaction convergent vers le point d'équilibre." width="672" />
+<p class="caption">
+Figure 4.2: Représentation d’un équilibre de Cournot où les fonctions de réaction convergent vers le point d’équilibre.
+</p>
+</div>
 <p>L’équilibre n’est pas nécessairement stable.
 La stabilité dépend de la pente des fonctions de réactions.</p>
-<p>GRAPH avec équilibre instable</p>
+<div class="figure"><span style="display:block;" id="fig:oligoreactioninstable"></span>
+<img src="_main_files/figure-html/oligoreactioninstable-1.png" alt="Représentation d'un équilibre de Cournot où les fonctions de réaction divergent du point d'équilibre. Equilibre instable" width="672" />
+<p class="caption">
+Figure 4.3: Représentation d’un équilibre de Cournot où les fonctions de réaction divergent du point d’équilibre. Equilibre instable
+</p>
+</div>
 </div>
 </div>
 <div id="exemple" class="section level3" number="4.2.3">
@@ -384,6 +399,7 @@ On résout le système et on obtient :
 <span class="math display">\[
 q_1^*=q_2^* = \frac{a}{3b+2c}
 \]</span></p>
+<p>Quand le problème est symétrique, les deux entreprises en compétition à la Cournot produisent la même quantité de bien.</p>
 </div>
 </div>
 <div id="une-intuition-graphique-les-courbes-disoprofit" class="section level3" number="4.2.4">
@@ -391,7 +407,7 @@ q_1^*=q_2^* = \frac{a}{3b+2c}
 <p>On peut aussi aborder le problème à l’aide d’une intuition graphique.
 Il s’agit de tracer les courbes d’<em>isoprofit</em> des entreprises.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-37" class="definition"><strong>Définition 4.1  (Courbe d'isoprofit) </strong></span>Les courbes d’isoprofit est l’ensemble des couples de quantités <span class="math inline">\((q_1, q_2)\)</span> qui permettent à une entreprise d’atteindre un niveau de profit donné.</p>
+<p><span id="def:unlabeled-div-38" class="definition"><strong>Définition 4.1  (Courbe d'isoprofit) </strong></span>Les courbes d’isoprofit est l’ensemble des couples de quantités <span class="math inline">\((q_1, q_2)\)</span> qui permettent à une entreprise d’atteindre un niveau de profit donné.</p>
 </div>
 <p>Reprenons l’expression générale des profits de l’équation <a href="oligopoles.html#eq:profitcournot">(4.1)</a>.
 <span class="math display">\[
@@ -410,16 +426,16 @@ La courbe de la fonction de réaction de 1 coupe la courbe d’isoprofit de 1 en
 <div class="figure"><span style="display:block;" id="fig:isoprofit1"></span>
 <img src="_main_files/figure-html/isoprofit1-1.png" alt="Courbes d'isoprofit et fonction de réaction de l'entreprise 1" width="672" />
 <p class="caption">
-Figure 4.1: Courbes d’isoprofit et fonction de réaction de l’entreprise 1
+Figure 4.4: Courbes d’isoprofit et fonction de réaction de l’entreprise 1
 </p>
 </div>
-<p>Sur la figure <a href="oligopoles.html#fig:isoprofit1">4.1</a>, le profit est croissant en descendant vers le bas sur les courbes d’isoprofit, autrement dit, les courbes d’isoprofit les plus basses représentent les profits les plus élevés.
+<p>Sur la figure <a href="oligopoles.html#fig:isoprofit1">4.4</a>, le profit est croissant en descendant vers le bas sur les courbes d’isoprofit, autrement dit, les courbes d’isoprofit les plus basses représentent les profits les plus élevés.
 Le maximum du profit est atteint lorsque l’entreprise 1 est en monopole.
 La quantité produite est alors <span class="math inline">\(q_m^*\)</span> est le profit <span class="math inline">\(\pi_m^*\)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:isoprofitCournot"></span>
 <img src="_main_files/figure-html/isoprofitCournot-1.png" alt="Courbes d'isoprofits et fonctions de réactions des entreprises en équilibre de Cournot Nash." width="672" />
 <p class="caption">
-Figure 4.2: Courbes d’isoprofits et fonctions de réactions des entreprises en équilibre de Cournot Nash.
+Figure 4.5: Courbes d’isoprofits et fonctions de réactions des entreprises en équilibre de Cournot Nash.
 </p>
 </div>
 </div>
@@ -457,7 +473,7 @@ Autrement dit <span class="math inline">\(q=q_i+q_{-i}\)</span>.</p>
 <span class="math display">\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]</span>
 La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l’entreprise.</p>
 <div class="remark">
-<p><span id="unlabeled-div-38" class="remark"><em>Remarque</em>. </span>En monopole, <span class="math inline">\(S_i=1\)</span>, on retrouve alors bien :
+<p><span id="unlabeled-div-39" class="remark"><em>Remarque</em>. </span>En monopole, <span class="math inline">\(S_i=1\)</span>, on retrouve alors bien :
 <span class="math display">\[\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}\]</span></p>
 <p>En concurrence pure et parfaite <span class="math inline">\(S_i\to 0\)</span>, donc <span class="math inline">\(\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0\)</span>, ce qui implique bien que <span class="math inline">\(C_{mi}(q_i)\to P(q)\)</span>.
 On retrouve ainsi le résultat <span class="math inline">\(P(q^*)=C_m(q^*)\)</span>.</p>
@@ -468,7 +484,7 @@ On retrouve ainsi le résultat <span class="math inline">\(P(q^*)=C_m(q^*)\)</sp
 <p><em>Rappel :</em> En monopole, l’indice de Lerner est :
 <span class="math display">\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-39" class="definition"><strong>Définition 4.2  (Indice de Lerner) </strong></span>En oligopole à la Cournot avec <span class="math inline">\(n\)</span> producteurs, on définit l’indice de Lerner par :
+<p><span id="def:unlabeled-div-40" class="definition"><strong>Définition 4.2  (Indice de Lerner) </strong></span>En oligopole à la Cournot avec <span class="math inline">\(n\)</span> producteurs, on définit l’indice de Lerner par :
 <span class="math display">\[L = \sum_{i=1}^nS_iL_i\]</span>
 où <span class="math inline">\(S_i=q_i/q\)</span> est la <em>part de marché</em> de l’entreprise <span class="math inline">\(i\)</span> et <span class="math inline">\(L_i\)</span> est l’indice de Lerner propre à un producteur.</p>
 </div>
@@ -505,8 +521,8 @@ Autrement dit, la moyenne des <span class="math inline">\(L_i\)</span> pondéré
  &amp;=&amp;\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
  \end{array}
  \]</span></p>
-<p>Interprétation :<br />
-Imaginons que tout les <span class="math inline">\(N\)</span> entreprises sont identiques (même fonction de coût).
+<p><em>Interprétation :</em><br />
+Imaginons que toutes les <span class="math inline">\(N\)</span> entreprises sont identiques (elles ont la même fonction de coût).
 Elles produisent alors la même quantité optimale à l’équilibre.
 Leur part de marché est donc <span class="math inline">\(S_i=1/N\)</span>.
 Le HHI vaut :
@@ -536,16 +552,16 @@ On considère ici qu’il n’y a que deux périodes de décisions.</p>
 </div>
 <div id="résolution-graphique" class="section level3" number="4.3.2">
 <h3><span class="header-section-number">4.3.2</span> Résolution graphique</h3>
-<p>Le leader doit choisir sa quantité <span class="math inline">\(q_1\)</span> de façon à être sur la courbe d’isoprofit la plus basse possible compatible avec la fonction de réaction de la firme follower.
+<p>Le leader doit choisir sa quantité <span class="math inline">\(q_1\)</span> de façon à être sur la courbe d’isoprofit la plus basse possible compatible avec la fonction de réaction de l’entreprise follower.
 Il va donc se placer sur la courbe d’isoprofit tangente à la fonction de réaction du follower.</p>
 <div class="figure"><span style="display:block;" id="fig:equilibreStackelberg"></span>
-<img src="_main_files/figure-html/equilibreStackelberg-1.png" alt="Courbes d'isoprofits et fonctions de réactions des entreprises en équilibre de Stackelberg." width="672" />
+<img src="_main_files/figure-html/equilibreStackelberg-1.png" alt="Courbes d'isoprofits du leader et fonctions de réactions des entreprises en équilibre de Stackelberg." width="672" />
 <p class="caption">
-Figure 4.3: Courbes d’isoprofits et fonctions de réactions des entreprises en équilibre de Stackelberg.
+Figure 4.6: Courbes d’isoprofits du leader et fonctions de réactions des entreprises en équilibre de Stackelberg.
 </p>
 </div>
-<p>Sur la figure <a href="oligopoles.html#fig:equilibreStackelberg">4.3</a>, on voit que le profit du leader est plus important en Stackelberg qu’en Cournot (et l’inverse pour le follower).
-Les quantités produites par l’entreprise leader sont plus importantes en Stackelberg qu’en Cournot, mais celle du follower sont plus faible.
+<p>Sur la figure <a href="oligopoles.html#fig:equilibreStackelberg">4.6</a>, on voit que le profit du leader est plus important en Stackelberg qu’en Cournot (et l’inverse pour le follower).
+Les quantités produites par l’entreprise leader sont plus importantes en Stackelberg qu’en Cournot, mais celles du follower sont plus faibles.
 La somme des deux est plus importante (<span class="math inline">\(q_{1C}^*+q_{2C}^*&lt;q_{L}^*+q_{F}^*\)</span>).
 Le prix sera donc plus faible pour les consommateurs.</p>
 </div>
@@ -630,6 +646,12 @@ La raison est que le cartel se comporte exactement comme un monopole, puis parta
 </div>
 <div id="raisonnement-graphique" class="section level3" number="4.4.2">
 <h3><span class="header-section-number">4.4.2</span> Raisonnement graphique</h3>
+<div class="figure"><span style="display:block;" id="fig:cartel"></span>
+<img src="_main_files/figure-html/cartel-1.png" alt="Zone d'amélioration mutuellement bénéfique." width="672" />
+<p class="caption">
+Figure 4.7: Zone d’amélioration mutuellement bénéfique.
+</p>
+</div>
 </div>
 <div id="résolution-analytique" class="section level3" number="4.4.3">
 <h3><span class="header-section-number">4.4.3</span> Résolution analytique</h3>
