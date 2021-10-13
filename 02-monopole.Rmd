@@ -821,12 +821,12 @@ Une solution alternative est un prix égal au coût moyen assorti de subventions
 
 ## Le monopole discriminant
 
-Un monopole discriminant pratique un prix différent pour chaque (groupe de) consommateur.
+Un monopole discriminant pratique un prix différent pour chaque (groupe de) consommateurs.
 Pour cela, il doit pouvoir identifier l'appartenance de chaque consommateur à un groupe et les marchés entre les consommateurs doivent être hermétiques.
-En particulier, il ne faut pas qu'un consommateur puisse revendre son unité de produit à un autre consommateur.
+En particulier, il ne faut pas qu'un consommateur puisse revendre son unité de bien à un autre consommateur.
 
 Il existe 3 types de discriminations par les prix, les discrimination du premier, deuxième et troisième degrés. 
-On ne traitera que les discriminations du premier et troisième degré.
+On ne traitera que les discriminations du premier et troisième degrés dans ce cours.
 
 ### Discrimination au premier degré (discrimination parfaite)
 
@@ -858,7 +858,7 @@ La recette marginale est ici confondue avec la courbe de demande.
 L'optimum se trouve donc au point où la courbe de coût marginal coupe la courbe de demande (inverse).
 C'est la même condition qu'en CPP.
 Le monopole parfaitement discriminant produit donc la quantité de concurrence pure et parfaite.
-Le prix de la dernière unité vendue par le monopole est égal au prix de la concurrence pure et parfaite, même si les prix des autres unités vendues sont supérieur au prix de la CPP.
+Le prix de la dernière unité vendue par le monopole est égal au prix de la concurrence pure et parfaite, même si les prix des autres unités vendues sont supérieurs au prix de la CPP.
 
 ```{r monopolediscriparfaite, fig.cap="Surplus du monopole en discrimination parfaite (aire rouge et bleue)."}
 p_discriparfaite <- p
@@ -905,9 +905,30 @@ La discrimination du deuxième degré a lieu lorsque les prix de ventes dépende
 Par exemple, si les 10 premières unités vendues le sont à 5€, et les suivantes à 2€.
 Les prix de ventes sont nécessairement *décroissants* avec la quantité vendue.
 
-GRAPH avec 3 seuils de quantité.
+```{r monopolediscri2degre, fig.cap="Graphique avec une discrimination du deuxième degré. Les quantités inférieures à $q_1$ sont vendues au prix $p_1$, les suivantes au prix $p_2$."}
+p_discri2degre <- p
 
-Le monopole ajuste les quantités seuil afin de maximiser son profit.
+q1 <- qm/2
+q2 <- qm
+p1 <- D(q1)
+p2 <- D(q2)
+
+Sp <- data.frame(x=c(0, q1, q1, q2), ymin=c(Cm(0), Cm(q1), Cm(q1), Cm(q2)), ymax=c(p1, p1, p2, p2))
+Sc <- data.frame(x=c(0, q1, q1, q2), ymax=c(P(0), P(q1), P(q1), P(q2)), ymin=c(p1, p1, p2, p2) )
+
+p_discri2degre + geom_segment(x=0, y=p1, xend=q1, yend=p1, color='black', linetype='dashed') +
+  geom_function(fun=function(x) Cm(x), colour = "red") +
+  geom_segment(x=q1,y=p2, xend=q2, yend=p2, color='black', linetype='dashed') +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill='red', alpha=0.5) +
+  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill='blue', alpha=0.5) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(p1, p2), labels=c(TeX("$p_1$"), TeX("$p_2$"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(q1, q2), labels = c(TeX("$q_1$"), TeX("$q_2$"))) +
+  annotate("text", x=q1, y=p1/2, label="Surplus du monopole", color='red') +
+  annotate("text", x=q1+0.1, y=p1, label="Surplus des consommateurs", color='blue') +
+  annotate("text", x=0.7, y=Cm(0.7), label="Courbe d'offre", color='red')
+```
+
+Le monopole ajuste les quantités seuils afin de maximiser son profit.
 Il y a un nombre fini de seuils de dégressivité.
 Plus il y a de seuils, plus on s'approche d'un situation de discrimination parfaite.
 
@@ -992,7 +1013,9 @@ Or le coût marginal dépend de la quantité *totale* produite, pas de la répar
 Si on est dans la situation telle que $C_m(q)<R_{mA}(q_A)$, alors il y a la possibilité de faire du profit sur le marché A (et le marché B par conséquent).
 Inversement, si $C_m(q)>R_{mA}(q_A)$, alors le monopole fait des pertes.
 
-NB: On utilise bien $C_m(q_A+q_B)$ et non $C_m(q_A)$ ou $C_m(q_B)$ car c'est bien la variation du coût total lorsqu'on augmente "un peu" $q_A$ et $q_B$ reste fixe.
+::: { .remark}
+On utilise bien $C_m(q_A+q_B)$ et non $C_m(q_A)$ ou $C_m(q_B)$ car c'est bien la variation du coût total lorsqu'on augmente "un peu" $q_A$ et $q_B$ reste fixe.
+:::
 
 D'après l'équation \@ref(eq:rm), on peut écrire :
 \[
