@@ -636,14 +636,14 @@ La raison est que le cartel se comporte exactement comme un monopole, puis parta
 qmin <- 2/15
 qmax <- 1/5
 
-I2inv <- function(q, pi){-pi/(3*q-1)}
+I2inv <- function(q, pi){(1-q-sqrt((1-q)^2-8*pi))/4}
 
 x <- seq(qmin, qmax, length=100)
 zone <- data.frame(x=x, ymin=I2inv(x, 2/25), ymax <- I1(x, 2/25))
 
 
 p_cournot + geom_ribbon(data=zone, aes(x=x, ymin=ymin, ymax=ymax), fill='blue', alpha=0.5) +
-  annotate("text", x=0.5, y=qc, label="zone d'augmentation des profits individuels", color="blue")
+  annotate("text", x=0.5, y=qc, label="zone d'augmentation des profits individuels", color="blue") 
 ```
 
 ### Résolution analytique
