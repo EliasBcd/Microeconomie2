@@ -77,9 +77,8 @@ discrimination-au-premier-degré-discrimination-parfaite
 discrimination-du-deuxième-degré
 discrimination-du-troisième-degré
 oligopoles
-introduction
 duopole-à-la-cournot
-introduction-1
+introduction
 formalisation-du-problème
 expression-des-profits
 forme-des-fonctions-de-réaction
@@ -94,7 +93,7 @@ extension-oligopole-à-la-cournot
 indice-de-lerner
 indice-de-concentration-du-marché
 duopole-à-la-stackelberg
-introduction-2
+introduction-1
 résolution-graphique
 exemple-1
 données-du-problèmes
@@ -102,7 +101,7 @@ profits-1
 fonction-de-réaction-de-lentreprise-follower
 maximisation-de-lentreprise-leader
 cartels-et-collusions
-introduction-3
+introduction-2
 raisonnement-graphique
 résolution-analytique
 idée

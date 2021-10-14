@@ -23,7 +23,6 @@ p <- ggplot(data=df, aes(x=x)) +
   annotate("text", x=0.2, y=Rm(0.2), label='Recette marginale', colour='darkblue')
 ```
 
-## Introduction
 
 On a vu jusqu'à présent deux cas extrêmes :
 

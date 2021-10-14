@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.27)  13 OCT 2021 17:29
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.27)  14 OCT 2021 10:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1072,6 +1072,9 @@ f)
 <use _main_files/figure-latex/monopolediscri2degre-1.pdf>
 [37] [38] [39] [40]
 Chapitre 4.
+
+Underfull \vbox (badness 3039) has occurred while \output is active []
+
 [41
 
 ] [42]
@@ -1088,7 +1091,7 @@ File: _main_files/figure-latex/isoprofit1-1.pdf Graphic file (type pdf)
 File: _main_files/figure-latex/isoprofitCournot-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/isoprofitCournot-1.pdf>
 [47] [48] [49]
-Underfull \hbox (badness 4266) in paragraph at lines 1637--1638
+Underfull \hbox (badness 4266) in paragraph at lines 1634--1635
 [][]\TU/lmr/bx/n/10 Définition 4.3 \TU/lmr/m/n/10 (Indice de Hirschman-Herfinda
 hl (HHI))\TU/lmr/bx/n/10 . []\TU/lmr/m/n/10 L’indice de
  []
@@ -1118,7 +1121,7 @@ File: _main_files/figure-latex/cppexo23-1.pdf Graphic file (type pdf)
 [60]
 
 LaTeX Warning: Reference `fig:cppexo24prixhaut' on page 61 undefined on input l
-ine 2055.
+ine 2052.
 
 File: _main_files/figure-latex/cppexo24prixhaut-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/cppexo24prixhaut-1.pdf>
@@ -1128,7 +1131,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [61]
 
 LaTeX Warning: Reference `fig:cppexo24prixbas' on page 62 undefined on input li
-ne 2072.
+ne 2069.
 
 File: _main_files/figure-latex/cppexo24prixbas-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/cppexo24prixbas-1.pdf>
@@ -1145,7 +1148,7 @@ File: _main_files/figure-latex/monoexo22-1.pdf Graphic file (type pdf)
 File: _main_files/figure-latex/monoexo23-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/monoexo23-1.pdf>
 [67]
-Overfull \hbox (48.69911pt too wide) detected at line 2336
+Overfull \hbox (48.69911pt too wide) detected at line 2333
 [][][][][][] [] [][][][][] [] [][][][][] [] [][][][] [] [][][][][] [] [][] [] [
 ][][] [] [][] [] [][][] [] [][] [] [][] [] [][][][] [] [][][][] [] []
  []
@@ -1164,13 +1167,13 @@ File: _main_files/figure-latex/monoexo33-1.pdf Graphic file (type pdf)
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 3FA80F13FA2A57BE62D98EF0BCADB3E3;4000.
+(rerunfilecheck)             Checksum: 5776AD5F2D7D830C69C9D0467FDA96A3;3885.
  ) 
 Here is how much of TeX's memory you used:
- 18552 strings out of 478472
- 339179 string characters out of 5859464
- 825663 words of memory out of 5000000
- 38552 multiletter control sequences out of 15000+600000
+ 18551 strings out of 478472
+ 339163 string characters out of 5859464
+ 825623 words of memory out of 5000000
+ 38551 multiletter control sequences out of 15000+600000
  409929 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,10n,120p,510b,537s stack positions out of 5000i,500n,10000p,200000b,80000s
