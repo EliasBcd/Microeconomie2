@@ -1,0 +1,153 @@
+# (APPENDIX) Annexes {-} 
+
+# Résolution des problèmes
+
+
+
+Table: (\#tab:Annexe1) Tableau comparatif concurrence pure et parfaite et monopole, résolution des problèmes
+
+|  Rubrique |  CPP    | Monopole
+|:----------|:-------:|:----------:|
+| Consommateurs | une infinité (atomiques) |  une infinité (atomiques) |
+| Producteurs | une infinité (atomiques)| un (*le* monopole) |
+| Prix | fixé par le marché $p$ | fixé par le producteur $p$ |
+| Demande | agrégée $P(q)$ | agrégée $P(q)$ |
+| Recette | $R(q)=pq$ | $R(q)=P(q)q$ | 
+| Coût  | $C(q)$ | $C(q)$ |
+| Offre | coût marginal ($C_m(q)$) | coût marginal ($C_m(q)$)|
+| Profit | $\pi(q)=qp-C(q)$ | $\pi(q)=qP(q)-C(q)$ |
+| Conditions d'équilibre | Offre égale demande | Coût marginal égal recette marginale |
+| Formellement | $p^*=P(q^*)=C_m(q^*)$  | $C_m(q^*)=R_m(q^*)$, $p^*=P(q^*)$ | 
+| Méthode | On résout d'abord $P(q^*)=C_m(q^*)$ puis on calcule $p^*$ | On calcule $C_m(q^*)=R_m(q^*)$ puis on obtient $p^*$ |
+| Conditions supplémentaires |  | $C_m'(q^*)>R_m'(q^*)$ et $\pi(q^*) \geq 0$ |
+
+La différence entre la concurrence pure et parfaite et le monopole est qu'en monopole il n'y a qu'un seul producteur, qui dispose du pouvoir de fixé les prix.
+Cela lui permet de connaître la demande agrégée des consommateurs $P$ et de l'utiliser dans sa maximisation du profit.
+Cela modifie ainsi la condition d'équilibre en monopole.
+
+# Calcul des surplus
+
+
+```{r  annexessurplus1, fig.cap="Représentation graphique de la demande inverse.", include=F}
+P <- function(q){100-q}
+Cm <- function(q){10+2*q}
+
+p <- ggplot() +
+  geom_function(fun=P, color="blue") +
+  labs(x="quantité", y = "prix") +
+  annotate("text", x= 60, y=P(60), label=TeX("Demande inverse ($P$)"), color="blue") +
+  geom_function(fun=Cm, colour="red") +
+  annotate("text", x=45, y=Cm(45), label=TeX("Coût marginal ($C_m$)"), color="red")
+
+```
+
+
+::: {.definition name="Surplus des consommateurs."}
+Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêt à payer et le prix effectivement payé.
+Mathématiquement, c'est l'intégrale suivante :
+\[
+S_c(q)=\int_0^qP(x)-pdx=\int_0^qP(x)dx-pq
+\]
+Où $p$ est le prix payé, $q$ la quantité échangée  et $P$ la demande inverse.
+:::
+
+L'intégrale signifie que c'est l'aire comprise entre la demande inverse (la fonction $P$), le prix payé par les consommateurs (le prix $p$), l'axe des ordonnées et la quantité échangée ($q$).
+Dans notre cours, ce sera l'aire d'un triangle ou d'un trapèze.
+
+::: { .definition name="Surplus des producteurs"}
+Le surplus des producteurs est la somme de la différence entre le prix reçu par les producteurs et le coût marginal de production.
+Mathématiquement, c'est l'intégrale suivante :
+\[
+S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx (\#eq:sp)
+\]
+Où $p$ est le prix reçu par le producteur, $q$ la quantité vendue et $C_m$ la coût marginal.
+:::
+L'intégrale signifie que c'est l'aire comprise entre le prix reçu par les producteurs ($p$), le coût marginal ($C_m$),  l'axe des ordonnées et la quantité échangée ($q$).
+Dans notre cours, ce sera l'aire d'un triangle ou d'un trapèze.
+
+::: {.remark name="Lien entre surplus et profit"}
+Si on continue l'expression donnée par l'équation \@ref(eq:sp), on obtient :
+\[S_p(q)=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)\]
+Cela prouve la relation donnée informellement dans le cours entre surplus et profit.
+Le surplus est la somme du profit réalisé par les producteurs et des coûts fixes (des coût qui ne dépendent pas de la quantité).
+:::
+
+::: {.remark name="Aire d'un triangle"}
+L'aire d'un triangle est donnée par la formule suivante :
+\[\text{aire triangle}=\frac{1}{2}\times\text{base}\times\text{hauteur}\]
+:::
+
+::: {.remark name="Aire d'un trapèze"}
+L'aire d'un trapèze est donnée par la formule suivante :
+\[\text{aire trapèze}=\frac{1}{2}\times(\text{petite base}+\text{grande base})\times\text{hauteur}\]
+:::
+
+On peut illustrer ces formules avec deux cas pratiques (sur les graphiques \@ref(fig:annexesurplus2) et \@ref(fig:annexesurplus3)).
+
+Les valeurs sur les graphiques sont obtenues de la manière suivante :
+
+- $q$ est connu ou $p$ est connu ;
+- Si $q$ est connu, on obtient $p$ grâce à la fonction de demande inverse : $p=P(q)$. 
+Si $p$ est connu, on obtient $q$ avec la fonction de demande $q=Q(p)$ ou en résolvant l'équation $p=P(q)$.
+- $p_3=P(0)$ ;
+- $p_1=C_m(0)$ ;
+- $p_2$ dépendra du cas.
+
+Le premier cas est illustré sur le graphique \@ref(fig:annexesurplus2).
+Le prix de l'échange $p$ est tel que le surplus des consommateurs est un triangle, et le surplus des producteurs est un trapèze.
+Dans ce cas, on obtient $p_2= C_m(q)$.
+Le surplus des consommateurs est donné par :
+\[
+S_c=\frac{1}{2}\times(p_3-p)\times q
+\]
+Et le surplus des producteurs par :
+\[
+S_p=\frac{1}{2}\times(p-p_2+p-p_1)\times q
+\]
+
+
+
+```{r annexesurplus2, fig.cap="Surplus avec un prix de l'échange $p$.", echo=F, warning=F}
+q  <- 20 
+
+Sc <- data.frame(x=c(0, q), ymin=c(P(q), P(q)), ymax=c(P(0), P(q)))
+Sp <- data.frame(x=c(0, q), ymin=c(Cm(0), Cm(q)), ymax=c(P(q), P(q)))
+
+p + scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, q), labels=c(0, TeX("$q$"))) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(Cm(0), Cm(q), P(q), P(0)), labels=c(TeX("$p_1$"), TeX("$p_2$"), TeX("$p$"), TeX("$p_3$"))) +
+  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=20, y=90, label="Surplus des consommateurs", color="blue") +
+  annotate("text", x=20, y=60, label="Surplus des producteurs", color="red") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=q, y=P(q), yend=P(q), linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=q, xend=q, y=0, yend=P(q), linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=q, y=Cm(q), yend=Cm(q), linetype="dashed")
+```
+
+
+Le second cas est illustré sur le graphique \@ref(fig:annexesurplus3).
+Le prix de l'échange $p$ est tel que le surplus des consommateurs est un trapèze, et le surplus des producteurs est un triangle.
+Dans ce cas, on obtient $p_2= P(q)$.
+Le surplus des consommateurs est donné par :
+\[
+S_c=\frac{1}{2}\times(p_3-p+p_2-p)\times q
+\]
+Et le surplus des producteurs par :
+\[
+S_p=\frac{1}{2}\times(p-p_1)\times q
+\]
+
+```{r annexesurplus3, fig.cap="Surplus avec un prix de l'échange $p$.", echo=F, warning=F}
+Sc <- data.frame(x=c(0, q), ymin=c(Cm(q), Cm(q)), ymax=c(P(0), P(q)))
+Sp <- data.frame(x=c(0, q), ymin=c(Cm(0), Cm(q)), ymax=c(Cm(q), Cm(q)))
+
+p +  scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, q), labels=c(0, TeX("$q$"))) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(Cm(0), Cm(q), P(q), P(0)), labels=c(TeX("$p_1$"), TeX("$p$"), TeX("$p_2$"), TeX("$p_3$"))) +
+  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
+  annotate("text", x=20, y=60, label="Surplus des consommateurs", color="blue") +
+  annotate("text", x=15, y=30, label="Surplus des producteurs", color="red") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=q, y=P(q), yend=P(q), linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=q, xend=q, y=0, yend=P(q), linetype="dashed") +
+  geom_segment(data=Sc, aes(x=x), x=0, xend=q, y=Cm(q), yend=Cm(q), linetype="dashed")
+```

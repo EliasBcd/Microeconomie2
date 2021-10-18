@@ -43,6 +43,9 @@ fig:monoexo23
 fig:monoexo31
 fig:monoexo32
 fig:monoexo33
+tab:Annexe1
+fig:annexesurplus2
+fig:annexesurplus3
 microéconomie-2
 thèmes
 bibliographie
@@ -111,3 +114,5 @@ optimalité-pour-une-entreprise
 exercices
 concurrence-pure-et-parfaite
 exercices-sur-le-comportement-monopole
+résolution-des-problèmes
+calcul-des-surplus

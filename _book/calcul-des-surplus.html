@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Microéconomie 2</title>
+  <title>B Calcul des surplus | Microéconomie 2</title>
   <meta name="description" content="Cours de microéconomie en licence 2 à l’université Paris 8." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Microéconomie 2" />
+  <meta property="og:title" content="B Calcul des surplus | Microéconomie 2" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Microéconomie 2" />
+  <meta name="twitter:title" content="B Calcul des surplus | Microéconomie 2" />
   
   <meta name="twitter:description" content="Cours de microéconomie en licence 2 à l’université Paris 8." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="résolution-des-problèmes.html"/>
+<link rel="next" href="bibliographie-1.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -198,19 +198,95 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="calcul-des-surplus" class="section level1" number="7">
+<h1><span class="header-section-number">B</span> Calcul des surplus</h1>
+<div class="definition">
+<p><span id="def:unlabeled-div-46" class="definition"><strong>Définition B.1  (Surplus des consommateurs.) </strong></span>Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêt à payer et le prix effectivement payé.
+Mathématiquement, c’est l’intégrale suivante :
+<span class="math display">\[
+S_c(q)=\int_0^qP(x)-pdx=\int_0^qP(x)dx-pq
+\]</span>
+Où <span class="math inline">\(p\)</span> est le prix payé, <span class="math inline">\(q\)</span> la quantité échangée et <span class="math inline">\(P\)</span> la demande inverse.</p>
+</div>
+<p>L’intégrale signifie que c’est l’aire comprise entre la demande inverse (la fonction <span class="math inline">\(P\)</span>), le prix payé par les consommateurs (le prix <span class="math inline">\(p\)</span>), l’axe des ordonnées et la quantité échangée (<span class="math inline">\(q\)</span>).
+Dans notre cours, ce sera l’aire d’un triangle ou d’un trapèze.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-47" class="definition"><strong>Définition B.2  (Surplus des producteurs) </strong></span>Le surplus des producteurs est la somme de la différence entre le prix reçu par les producteurs et le coût marginal de production.
+Mathématiquement, c’est l’intégrale suivante :
+<span class="math display" id="eq:sp">\[
+S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx \tag{B.1}
+\]</span>
+Où <span class="math inline">\(p\)</span> est le prix reçu par le producteur, <span class="math inline">\(q\)</span> la quantité vendue et <span class="math inline">\(C_m\)</span> la coût marginal.</p>
+</div>
+<p>L’intégrale signifie que c’est l’aire comprise entre le prix reçu par les producteurs (<span class="math inline">\(p\)</span>), le coût marginal (<span class="math inline">\(C_m\)</span>), l’axe des ordonnées et la quantité échangée (<span class="math inline">\(q\)</span>).
+Dans notre cours, ce sera l’aire d’un triangle ou d’un trapèze.</p>
+<div class="remark">
+<p><span id="unlabeled-div-48" class="remark"><em>Remarque</em> (Lien entre surplus et profit). </span>Si on continue l’expression donnée par l’équation <a href="calcul-des-surplus.html#eq:sp">(B.1)</a>, on obtient :
+<span class="math display">\[S_p(q)=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)\]</span>
+Cela prouve la relation donnée informellement dans le cours entre surplus et profit.
+Le surplus est la somme du profit réalisé par les producteurs et des coûts fixes (des coût qui ne dépendent pas de la quantité).</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-49" class="remark"><em>Remarque</em> (Aire d'un triangle). </span>L’aire d’un triangle est donnée par la formule suivante :
+<span class="math display">\[\text{aire triangle}=\frac{1}{2}\times\text{base}\times\text{hauteur}\]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-50" class="remark"><em>Remarque</em> (Aire d'un trapèze). </span>L’aire d’un trapèze est donnée par la formule suivante :
+<span class="math display">\[\text{aire trapèze}=\frac{1}{2}\times(\text{petite base}+\text{grande base})\times\text{hauteur}\]</span></p>
+</div>
+<p>On peut illustrer ces formules avec deux cas pratiques (sur les graphiques <a href="calcul-des-surplus.html#fig:annexesurplus2">B.1</a> et <a href="calcul-des-surplus.html#fig:annexesurplus3">B.2</a>).</p>
+<p>Les valeurs sur les graphiques sont obtenues de la manière suivante :</p>
+<ul>
+<li><span class="math inline">\(q\)</span> est connu ou <span class="math inline">\(p\)</span> est connu ;</li>
+<li>Si <span class="math inline">\(q\)</span> est connu, on obtient <span class="math inline">\(p\)</span> grâce à la fonction de demande inverse : <span class="math inline">\(p=P(q)\)</span>.
+Si <span class="math inline">\(p\)</span> est connu, on obtient <span class="math inline">\(q\)</span> avec la fonction de demande <span class="math inline">\(q=Q(p)\)</span> ou en résolvant l’équation <span class="math inline">\(p=P(q)\)</span>.</li>
+<li><span class="math inline">\(p_3=P(0)\)</span> ;</li>
+<li><span class="math inline">\(p_1=C_m(0)\)</span> ;</li>
+<li><span class="math inline">\(p_2\)</span> dépendra du cas.</li>
+</ul>
+<p>Le premier cas est illustré sur le graphique <a href="calcul-des-surplus.html#fig:annexesurplus2">B.1</a>.
+Le prix de l’échange <span class="math inline">\(p\)</span> est tel que le surplus des consommateurs est un triangle, et le surplus des producteurs est un trapèze.
+Dans ce cas, on obtient <span class="math inline">\(p_2= C_m(q)\)</span>.
+Le surplus des consommateurs est donné par :
+<span class="math display">\[
+S_c=\frac{1}{2}\times(p_3-p)\times q
+\]</span>
+Et le surplus des producteurs par :
+<span class="math display">\[
+S_p=\frac{1}{2}\times(p-p_2+p-p_1)\times q
+\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:annexesurplus2"></span>
+<img src="_main_files/figure-html/annexesurplus2-1.png" alt="Surplus avec un prix de l'échange $p$." width="672" />
+<p class="caption">
+Figure B.1: Surplus avec un prix de l’échange <span class="math inline">\(p\)</span>.
+</p>
+</div>
+<p>Le second cas est illustré sur le graphique <a href="calcul-des-surplus.html#fig:annexesurplus3">B.2</a>.
+Le prix de l’échange <span class="math inline">\(p\)</span> est tel que le surplus des consommateurs est un trapèze, et le surplus des producteurs est un triangle.
+Dans ce cas, on obtient <span class="math inline">\(p_2= P(q)\)</span>.
+Le surplus des consommateurs est donné par :
+<span class="math display">\[
+S_c=\frac{1}{2}\times(p_3-p+p_2-p)\times q
+\]</span>
+Et le surplus des producteurs par :
+<span class="math display">\[
+S_p=\frac{1}{2}\times(p-p_1)\times q
+\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:annexesurplus3"></span>
+<img src="_main_files/figure-html/annexesurplus3-1.png" alt="Surplus avec un prix de l'échange $p$." width="672" />
+<p class="caption">
+Figure B.2: Surplus avec un prix de l’échange <span class="math inline">\(p\)</span>.
+</p>
+</div>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="résolution-des-problèmes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bibliographie-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -241,7 +317,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/%s",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-annexes.Rmd",
 "text": "Edit"
 },
 "history": {

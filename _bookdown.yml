@@ -7,7 +7,7 @@ language:
     cor: 'Corollaire '
     exm: 'Exemple '
     fig: 'Figure '
-    tab: 'Table '
+    tab: 'Tableau '
     eq: 'Equation '
     thm: 'Théorème '
     lem: 'Lemme '

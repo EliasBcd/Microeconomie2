@@ -6,7 +6,7 @@
 ]{book}
 \title{Microéconomie 2}
 \author{Elias Bouacida \and Antoine Terracol}
-\date{2021-10-14}
+\date{2021-10-18}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -2418,6 +2418,156 @@ Il introduit une charge morte de 32.
 \end{enumerate}
 
 \end{solution}
+
+\hypertarget{appendix-annexes}{%
+\appendix}
+
+
+\hypertarget{ruxe9solution-des-probluxe8mes}{%
+\chapter{Résolution des problèmes}\label{ruxe9solution-des-probluxe8mes}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.34}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.28}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.38}}@{}}
+\caption{\label{tab:Annexe1} Tableau comparatif concurrence pure et parfaite et monopole, résolution des problèmes}\tabularnewline
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Rubrique
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+CPP
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Monopole
+\end{minipage} \\
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Rubrique
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+CPP
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Monopole
+\end{minipage} \\
+\midrule
+\endhead
+Consommateurs & une infinité (atomiques) & une infinité (atomiques) \\
+Producteurs & une infinité (atomiques) & un (\emph{le} monopole) \\
+Prix & fixé par le marché \(p\) & fixé par le producteur \(p\) \\
+Demande & agrégée \(P(q)\) & agrégée \(P(q)\) \\
+Recette & \(R(q)=pq\) & \(R(q)=P(q)q\) \\
+Coût & \(C(q)\) & \(C(q)\) \\
+Offre & coût marginal (\(C_m(q)\)) & coût marginal (\(C_m(q)\)) \\
+Profit & \(\pi(q)=qp-C(q)\) & \(\pi(q)=qP(q)-C(q)\) \\
+Conditions d'équilibre & Offre égale demande & Coût marginal égal recette marginale \\
+Formellement & \(p^*=P(q^*)=C_m(q^*)\) & \(C_m(q^*)=R_m(q^*)\), \(p^*=P(q^*)\) \\
+Méthode & On résout d'abord \(P(q^*)=C_m(q^*)\) puis on calcule \(p^*\) & On calcule \(C_m(q^*)=R_m(q^*)\) puis on obtient \(p^*\) \\
+Conditions supplémentaires & & \(C_m'(q^*)>R_m'(q^*)\) et \(\pi(q^*) \geq 0\) \\
+\bottomrule
+\end{longtable}
+
+La différence entre la concurrence pure et parfaite et le monopole est qu'en monopole il n'y a qu'un seul producteur, qui dispose du pouvoir de fixé les prix.
+Cela lui permet de connaître la demande agrégée des consommateurs \(P\) et de l'utiliser dans sa maximisation du profit.
+Cela modifie ainsi la condition d'équilibre en monopole.
+
+\hypertarget{calcul-des-surplus}{%
+\chapter{Calcul des surplus}\label{calcul-des-surplus}}
+
+\begin{definition}[Surplus des consommateurs.]
+Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêt à payer et le prix effectivement payé.
+Mathématiquement, c'est l'intégrale suivante :
+\[
+S_c(q)=\int_0^qP(x)-pdx=\int_0^qP(x)dx-pq
+\]
+Où \(p\) est le prix payé, \(q\) la quantité échangée et \(P\) la demande inverse.
+\end{definition}
+
+L'intégrale signifie que c'est l'aire comprise entre la demande inverse (la fonction \(P\)), le prix payé par les consommateurs (le prix \(p\)), l'axe des ordonnées et la quantité échangée (\(q\)).
+Dans notre cours, ce sera l'aire d'un triangle ou d'un trapèze.
+
+\begin{definition}[Surplus des producteurs]
+Le surplus des producteurs est la somme de la différence entre le prix reçu par les producteurs et le coût marginal de production.
+Mathématiquement, c'est l'intégrale suivante :
+\[
+S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx \label{eq:sp}
+\]
+Où \(p\) est le prix reçu par le producteur, \(q\) la quantité vendue et \(C_m\) la coût marginal.
+\end{definition}
+
+L'intégrale signifie que c'est l'aire comprise entre le prix reçu par les producteurs (\(p\)), le coût marginal (\(C_m\)), l'axe des ordonnées et la quantité échangée (\(q\)).
+Dans notre cours, ce sera l'aire d'un triangle ou d'un trapèze.
+
+\begin{remark}[Lien entre surplus et profit]
+Si on continue l'expression donnée par l'équation \eqref{eq:sp}, on obtient :
+\[S_p(q)=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)\]
+Cela prouve la relation donnée informellement dans le cours entre surplus et profit.
+Le surplus est la somme du profit réalisé par les producteurs et des coûts fixes (des coût qui ne dépendent pas de la quantité).
+\end{remark}
+
+\begin{remark}[Aire d'un triangle]
+L'aire d'un triangle est donnée par la formule suivante :
+\[\text{aire triangle}=\frac{1}{2}\times\text{base}\times\text{hauteur}\]
+\end{remark}
+
+\begin{remark}[Aire d'un trapèze]
+L'aire d'un trapèze est donnée par la formule suivante :
+\[\text{aire trapèze}=\frac{1}{2}\times(\text{petite base}+\text{grande base})\times\text{hauteur}\]
+\end{remark}
+
+On peut illustrer ces formules avec deux cas pratiques (sur les graphiques \ref{fig:annexesurplus2} et \ref{fig:annexesurplus3}).
+
+Les valeurs sur les graphiques sont obtenues de la manière suivante :
+
+\begin{itemize}
+\tightlist
+\item
+  \(q\) est connu ou \(p\) est connu ;
+\item
+  Si \(q\) est connu, on obtient \(p\) grâce à la fonction de demande inverse : \(p=P(q)\).
+  Si \(p\) est connu, on obtient \(q\) avec la fonction de demande \(q=Q(p)\) ou en résolvant l'équation \(p=P(q)\).
+\item
+  \(p_3=P(0)\) ;
+\item
+  \(p_1=C_m(0)\) ;
+\item
+  \(p_2\) dépendra du cas.
+\end{itemize}
+
+Le premier cas est illustré sur le graphique \ref{fig:annexesurplus2}.
+Le prix de l'échange \(p\) est tel que le surplus des consommateurs est un triangle, et le surplus des producteurs est un trapèze.
+Dans ce cas, on obtient \(p_2= C_m(q)\).
+Le surplus des consommateurs est donné par :
+\[
+S_c=\frac{1}{2}\times(p_3-p)\times q
+\]
+Et le surplus des producteurs par :
+\[
+S_p=\frac{1}{2}\times(p-p_2+p-p_1)\times q
+\]
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/annexesurplus2-1.pdf}
+\caption{\label{fig:annexesurplus2}Surplus avec un prix de l'échange \(p\).}
+\end{figure}
+
+Le second cas est illustré sur le graphique \ref{fig:annexesurplus3}.
+Le prix de l'échange \(p\) est tel que le surplus des consommateurs est un trapèze, et le surplus des producteurs est un triangle.
+Dans ce cas, on obtient \(p_2= P(q)\).
+Le surplus des consommateurs est donné par :
+\[
+S_c=\frac{1}{2}\times(p_3-p+p_2-p)\times q
+\]
+Et le surplus des producteurs par :
+\[
+S_p=\frac{1}{2}\times(p-p_1)\times q
+\]
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/annexesurplus3-1.pdf}
+\caption{\label{fig:annexesurplus3}Surplus avec un prix de l'échange \(p\).}
+\end{figure}
 
   \bibliography{book.bib,packages.bib,bibliographie.bib}
 
