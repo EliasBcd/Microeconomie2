@@ -1,5 +1,10 @@
 # Exercices
 
+```{r exercisebase, include=F}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+```
+
+
 ## Concurrence pure et parfaite
 
 :::{ .exercise #cppexo1}
@@ -89,7 +94,7 @@ La fonction de coût marginal donne le coût de production d'une unité de bien 
 Si on la note $S$, $S(q)=C_m(q) = 2q+10$.
 C'est le prix minimal auquel elle est prête à vendre une unité de bien supplémentaire.
 
-```{r cppexo22, fig.cap="Représentation graphique de la demande inverse."}
+```{r cppexo22, fig.cap="Représentation graphique de la fonction d'offre."}
 S <- function(q){10+2*q}
 
 p <- ggplot() +
@@ -398,7 +403,7 @@ Réponses:
 1. À l'optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
 \[R_m(q^*)=C_m(q^*)\]
 Ici, on a :
-\[C_m(q^*)=C'(a)=8q+10\]
+\[C_m(q^*)=C'(q)=8q+10\]
 Et :
 \[R(q) =qP(q)=250q-q^2\]
 Donc :
@@ -416,7 +421,7 @@ On vérifie aussi la condition de second ordre \@ref(eq:cso) :
 \[R'_m(q)=-2\]
 \[C'_m(q)=8>R_m'(q)\]
 La condition du second est bien vérifiée, nous avons bien un maximum ici.
-Le prix est $p^*_M=P(q^*)=33$.
+Le prix est $p^*_M=P(q^*)=226$.
 Finalement, on peut calculer le profit :
 \[
 \pi^M(q^*)=R(q^*)-C(q^*)=p^*q^*-C(q^*)=24\times226-(4\times24^2+10\times24+400)=2480>0
@@ -439,7 +444,7 @@ Soit :
 \[8q^*+10=250-2q^*\]
 En résolvant l'équation, on obtient $q^*_{CPP}=80/3$ et on peut en déduire $p^*_{CPP}=670/3$.
 On peut maintenant calculer le profit de la même manière que dans la question précédente, et on obtient $\pi^{CPP}(q^*_{CPP})=22000/9<\pi^M$.
-Le profit du producteur en concurrence pure et parfaite est inférieur au profit en monpole.
+Le profit du producteur en concurrence pure et parfaite est inférieur au profit en monopole.
 La quantité produite est supérieure et le prix du bien échangé inférieur.
 
 
@@ -521,5 +526,562 @@ On en déduit donc que $q^*=125$.
 On peut alors calculer $p^*=P(q^*)=125$.
 Quand le coût marginal du monopole est nul, il produit 125 unités de bien, vendues au prix 125.
 
+:::
+
+
+## Le monopole naturel
+
+::: { .exercise #naturelexo1 }
+On considère une entreprise en monopole sur son marché dont la fonction de coût est : 
+$$C(q)=\frac{5}{3}q^3-40q^2+340q$$ 
+et qui fait face à la fonction de demande inverse : 
+$$P(q)=500-50q$$
+
+1. Calculer les grandeurs d'équilibre du monopole $(p^*_m,q^*_m)$.
+2. Calculer le prix et la quantité d'équilibre de la concurrence pure et parfaite $(p^*_{cpp},q^*_{cpp}).$
+3. Calculer le profit du monopole dans ces deux situations. Interpréter le résultat.
+4. Représenter graphiquement le coût marginal, le coût moyen, la demande et la recette marginale. Représenter la variation du profit du monopole entre ces deux situations.
+5. Calculer le prix et la quantité assurant l'équilibre des finances du monopole, $(p_{B},q_{B})$.  Comparer cette situation à l'optimum de Pareto de la concurrence pure et parfaite. Conclure.
+:::
+
+::: {.solution name="Solutions de l'exercice \@ref(exr:naturelexo1)"}
+Réponses :
+
+1. À l'optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
+\[R_m(q^*)=C_m(q^*)\]
+Ici, on a :
+\[C_m(q^*)=C'(q)=5q^2-80q+340\]
+Et :
+\[R(q) =qP(q)=500q-50q^2\]
+Donc :
+\[R_m(q)=R'(q)=500-100q\]
+À l'optimum, on doit donc avoir :
+\[
+\begin{array}{crcl}
+&500-100q^*&=&5q^{*2}-80q^*+340\\
+\Leftrightarrow & 5q^{*2}+20q^*-160&=&0\\
+\Leftrightarrow & q^{*2}+4q^*-32&=&0
+\end{array}
+\]
+On doit donc résoudre une équation du second degré pour obtenir le résultat.
+On commence par calculer le discriminant :
+\[\Delta=b^2-4ac=4^2-4\times(-32)=16+128=144=12^2\]
+On en déduit que :
+\[q^8=\frac{-4\pm12}{2}=4\text{ ou } -8\]
+La solution $q^*=-8$ est impossible, car les quantités sont forcément positives. 
+La seule solution est donc $q^*_m=4$. 
+Remarquez qu'il est possible de "voir" sur l'équation du second degré que 4 était une racine et de se passer du calcul du discriminant.
+On vérifie aussi la condition de second ordre \@ref(eq:cso) :
+\[R_m'(q^*)<C_m'(q^*)\]
+\[R'_m(q)=-100\]
+\[C'_m(q)=10q-80\]
+En évaluant la dérivée du coût marginal en $q^*$, on a $C_m(q^*)=10\times4-80=-40>R_m(q^*)$
+La condition du second est bien vérifiée, nous avons bien un maximum ici.
+Nous calculerons le profit à la question 3, nous n'allons donc pas le faire ici.
+Le prix est $p^*_m=P(q^*_m)=300$.
+
+2. En CPP, le prix est fixé par le marché, le producteur le considère comme une donnée dans son optimisation.
+La courbe d'offre est égal à la courbe de coût marginal.
+À l'équilibre en CPP, l'offre est égale à la demande.
+On obtient (ici $q^*$ et $p^*$ sont différents de la  partie précédente) :
+\[C_m(q^*)=P(q^*)=p^*\]
+Soit : 
+\[
+\begin{array}{crcl}
+&500-50q^*&=&5q^{*2}-80q^*+340\\
+\Leftrightarrow & 5q^{*2}-30q^*-160&=&0q^*\\
+\Leftrightarrow & q^{*2}-6q^*-32&=&0q^*
+\end{array}
+\]
+On doit donc résoudre une équation du second degré pour obtenir le résultat.
+On commence par calculer le discriminant :
+\[\Delta=(-6)^2+4\times32=36+128=164=4\times41\]
+On en déduit que :
+\[q^*=\frac{6\pm\sqrt{41}}{2}=3+\sqrt{41}\text{ ou } 3-\sqrt{41}\]
+La solution $q^*=3-\sqrt{41}<0$ est impossible, car les quantités sont forcément positives. 
+La seule solution est donc $q^*_{CPP}=3+\sqrt{41}\approx$ `r round(3+sqrt(41), digits=2)`. 
+On peut en déduire $p^*_{CPP}=50(7-\sqrt{41})\approx$ `r round(50*(7-sqrt(41)), digits=2)`.
+
+3. On calcule maintenant les profits.
+En monopole :
+\[\pi(p^*_m, q^*_m)=p^*_mq^*_m-C(q^*_m)=4\times300-\frac{5}{3}4^3+40\times4^2-340\times4=\frac{1120}{3}\approx 373,33\]
+En concurrence pure et parfaite :
+\[\pi(p^*_{CPP}, q^*_{CPP})=p^*_{CPP}q^*_{CPP}-C(q^*_{CPP})\approx-765\]
+Le profit des entreprises en concurrence pure et parfaite serait négatif.
+Le marché n'existerait donc pas, aucune entreprise ne souhaiterait produire pour faire des pertes.
+Cela signifie aussi qu'il ne serait pas possible pour l'État d'imposer au monopole une tarification au coût marginal. 
+On est en fait dans une situation de monopole naturel, avec des coûts moyens décroissants.
+La tarification peut donc se faire au coût marginal, ce qu'on verra à la question 5.
+
+4. Nous allons maintenant représenter graphiquement cette situation.
+
+```{r naturelexo1, fig.cap="Représentation graphique  des équilibres"}
+C <- function(q){5/3*q^3-40*q^2+340*q}
+Cm <- function(q){5*q^2-80*q+340}
+P <- function(q){500-50*q}
+Rm <- function(q){500-100*q}
+CM <- function(q){C(q)/q}
+qm <- 4
+pm <- P(qm)
+qcpp <- uniroot(function(q){Cm(q)-P(q)}, c(0,10))$root
+pcpp <- P(qcpp)
+profitcpp <- data.frame(x=c(0, qcpp), ymin=c(pcpp, pcpp), ymax=c(CM(qcpp), CM(qcpp)))
+profitm <- data.frame(x=c(0, qm), ymax=c(pm, pm), ymin=c(CM(qm), CM(qm)))
+qb <- -3+sqrt(105)
+pb <- 50*(13-sqrt(105))
+
+
+p_naturel1 <- ggplot() +
+  geom_function(fun=P, color='darkgreen') +
+  geom_function(fun=Cm, color='red') +
+  geom_function(fun=Rm, color='blue') +
+  geom_function(fun=CM, color='darkred') +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 12.5), breaks=c(0, qm, qcpp, qb, 12), labels=c(0, TeX("$q_m^*$"), TeX("$q_{CPP}^*$"), TeX("$q_B$"), 12)) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 510), breaks=c(0, pm, pcpp, 500, 340, CM(qcpp), CM(qm), pb), labels=c(0, TeX("$p_m^*$"), TeX("$p_{CPP}^*$"), 500, 340, TeX("$C_M(q_{CPP}^*)$"), TeX("$C_M(q_m^*)$"), TeX("$p_B$"))) +
+  labs(x="quantité", y="prix") +
+  geom_ribbon(data=profitcpp, aes(x=x, ymin=ymin, ymax=ymax), fill='red', alpha=0.5) +
+  geom_ribbon(data=profitm, aes(x=x, ymin=ymin, ymax=ymax), fill='green', alpha=0.5) +
+  annotate("text", x=6, y=P(6), label=TeX("demande ($P$)"), color="darkgreen") +
+  annotate("text", x=2, y=Rm(2), label=TeX("$R_{m}$"), color="blue") +
+  annotate("text", x=11, y=Cm(11), label=TeX("$C_m$"), color="red") +
+  annotate("text", x=11, y=CM(11), label=TeX("$C_M$"), color="darkred") +
+  annotate("text", x=6, y=60, label=TeX("$-\\pi_{CPP}$"), color="red") +
+  annotate("text", x=2, y=250, label=TeX("$\\pi_{m}$"), color="darkgreen")
+  
+  
+p_naturel1
+
+```
+
+5. Assurer l'équilibre des finances du monopole signifie faire en sorte qu'il ne fasse ni profits, ni pertes.
+Autrement dit, $\pi(p_B, q_B)=0$.
+Cela se traduit par :
+\[
+\begin{array}{crcl}
+&p_Bq_B-C(q_B)&=&0 \\
+\Leftrightarrow & p_B&=&\frac{C(q_B)}{q_B}\\
+\Leftrightarrow & P(q_B)&=&C_M(q_B)
+\end{array}
+\]
+On oblige ainsi le monopole à fixer le prix à son coût moyen, ce qui est une manière de réguler un monopole naturel.
+On a $C_M(q)=\frac{5}{3}q^2-40q+340$
+On résout ainsi le problème :
+\[
+\begin{array}{crcl}
+&500-50q_B&=&\frac{5}{3}q_B^2-40q_B+340\\
+\Leftrightarrow & \frac{5}{3}q_B^2+10q_B-160&=&0\\
+\Leftrightarrow & q_B^2+6q_B-96&=&0
+\end{array}
+\]
+On doit donc résoudre une équation du second degré pour obtenir le résultat.
+On commence par calculer le discriminant :
+\[\Delta=6^2+4\times96=36+384=164=4\times105\]
+On en déduit que :
+\[q_B=\frac{-6\pm2\sqrt{105}}{2}=-3+\sqrt{105}\text{ ou } -3-\sqrt{105}\]
+La solution $q_B=-3-\sqrt{105}<0$ est impossible, car les quantités sont forcément positives. 
+La seule solution est donc $q_{B}=-3+\sqrt{105}\approx$ `r round(-3+sqrt(105), digits=2)`. 
+On peut en déduire $p_{B}=50(13-\sqrt{105})\approx$ `r round(50*(13-sqrt(105)), digits=2)`.  
+On observe que $p_B>p_{CPP}^*$ et $q_B<q_{CPP}^*$, mais en échange, le monopole est à l'équilibre financier et produira.
+La situation n'est pas optimale au sens de Pareto, et il y aura une charge morte, mais l'optimum de Pareto est inatteignable sans subventionner le monopole.
+Il est impossible de le forcer à tarifer au coût marginal, en utilisant par exemple un prix maximal, car il ferait alors des pertes et ne produirait simplement pas.
+La solution de la tarification au cût moyen est en quelques sorte la deuxième meilleure solution possible, mais c'est la seule faisable.
+:::
+
+::: {.exercise #naturelexo2}
+ Un entreprise est en monopole sur un marché où la fonction de
+demande est : 
+\[Q\left(p\right)=30-p\] 
+La fonction de coût total du monopole est :
+\[C(q)=100+\frac{q^2}{2}\]
+
+
+1. Calculez le prix, la quantité d'équilibre et le profit. Représentez graphiquement cet équilibre et le surplus collectif.
+2. L'État décide d'imposer au monopole une tarification au coût marginal. Expliquez cette décision. Représentez le nouvel équilibre et les surplus sur le précédent graphique. Commentez.
+3. Calculez le surplus du consommateur et le surplus collectif sans et avec tarification au coût marginal.  
+Après une innovation technologique, la fonction de coût devient :
+\[C(q)=100+\frac{q}{2}\]
+
+4. L'État peut-il continuer à imposer une tarification au coût marginal ?
+5. Quelle situation peut-il retenir ? Pourquoi ? Calculez et représentez le nouveau surplus collectif.
+:::
+
+
+::: { .solution name="Solution de l'exercice \@ref(exr:naturelexo2)"}
+1. À l'optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
+\[R_m(q^*)=C_m(q^*)\]
+Ici, on a :
+\[C_m(q^*)=C'(q)=q\]
+Et :
+\[R(q) =qP(q)=30q-q^2\]
+La fonction qui nous est donnée est la demande $Q$ et non la demande inverse $P$.
+On doit donc trouver la demande inverse, c'est à dire la fonction $P$ telle que $Q(P(q))=q$ :
+\[30-P(q)=q \Leftrightarrow P(q) = 30-q\]
+La fonction de demande inverse $P$ est donc $P(q)=30-q$.
+Donc :
+\[R_m(q)=R'(q)=30-2q\]
+À l'optimum, on doit donc avoir :
+\[
+\begin{array}{crcl}
+&30-2q^*&=&q^*\\
+\Leftrightarrow & q^*&=&10
+\end{array}
+\]
+On vérifie aussi la condition de second ordre \@ref(eq:cso) :
+\[R_m'(q^*)<C_m'(q^*)\]
+\[R'_m(q)=-2\]
+\[C'_m(q)=1>R_m'(q)\]
+La condition du second est bien vérifiée, nous avons bien un maximum ici.
+Le prix est $p^*_m=P(q^*_m)=20$.
+Le profit est :
+\[\pi(q_m^*, p_m^*)=p_m^*q_m^*-C(q_m^*)=20\times10-\left(100+\frac{10^2}{2}\right)=50>0\]
+Le profit est bien positif.
+À l'optimum, 10 unités sont échangées sur ce marché, au prix de 20. 
+Le monopole réalise alors un profit de 50.
+
+```{r naturelexo21, fig.cap="Représentation graphique  des équilibres"}
+C <- function(q){100+q^2/2}
+Cm <- function(q){q}
+P <- function(q){30-q}
+Rm <- function(q){30-2*q}
+CM <- function(q){C(q)/q}
+qm <- 10
+pm <- P(qm)
+qcpp <- uniroot(function(q){Cm(q)-P(q)}, c(0,30))$root
+pcpp <- P(qcpp)
+Stm <- data.frame(x=c(0, qm), ymin=c(Cm(0), Cm(qm)), ymax=c(P(0), P(qm)))
+Stcpp <- data.frame(x=c(0, qcpp), ymin=c(Cm(0), Cm(qcpp)), ymax=c(P(0), P(qcpp)))
+
+
+p_naturel2 <- ggplot() +
+  geom_function(fun=P, color='darkgreen') +
+  geom_function(fun=Cm, color='red') +
+  geom_function(fun=Rm, color='blue') +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 32), breaks=c(0, qm, qcpp), labels=c(0, TeX("$q_m^*$"), TeX("$q_{CPP}^*$"))) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 32), breaks=c(0, pm, pcpp, 30), labels=c(0, TeX("$p_m^*$"), TeX("$p_{CPP}^*$"), 30)) +
+  labs(x="quantité", y="prix") +
+  geom_ribbon(data=Stm, aes(x=x, ymin=ymin, ymax=ymax), fill='red', alpha=0.5) +
+  geom_ribbon(data=Stcpp, aes(x=x, ymin=ymin, ymax=ymax), fill='blue', alpha=0.5) +
+  annotate("text", x=6, y=P(6), label=TeX("demande ($P$)"), color="darkgreen") +
+  annotate("text", x=13, y=Rm(13), label=TeX("$R_{m}$"), color="blue") +
+  annotate("text", x=11, y=Cm(11), label=TeX("$C_m$"), color="red") +
+  annotate("text", x=5, y=10, label=TeX("$S_t^m$"), color="red") +
+  annotate("text", x=12, y=15, label=TeX("$S_t^{CPP}$"), color="blue")
+  
+p_naturel2
+
+```
+
+2. La tarification au coût marginal du monopole a pour but d'obtenir l'équilibre de concurrence pure et parfaite, qui est un optimum de Pareto.
+L'État cherche en fait a augmenter le surplus collectif.
+Nous allons représenter ce nouvel équilibre comme étant l'équilibre de concurrence pure et parfaite.
+
+3. Le surplus des consommateurs dans la situation de monopole (question 1) est donné par :
+\[S_c^m=\frac{1}{2}(30-p_m^*)\times q_m^*=\frac{1}{2}(30-20)\times 10=50\]
+Le surplus du monopole est donné par :
+\[S_p^m=\pi^m+CF=50+100=150\]
+Car le coût fixe vaut 50.
+Le surplus collectif est donc de :
+\[S_t^m=S_c^m+S_p^m=150+50=200\]
+Pour calculer les surplus avec la tarification au coût marginal, nous devons commencer par calculer les quantités et prix de l'échange.
+Nous avons l'équation suivante dans cette configuration :
+\[C_m(q^*)=P(q^*)=p^*\]
+Soit :
+\[q^*=30-q^*\Leftrightarrow q^*_{CPP}=15\]
+Et :
+\[p^*_{CPP}=P(q^*)=q^*=15\]
+En tarifiant au coût marginal, il y a donc 15 unités de biens échangées sur le marché, au prix de 15.
+Le surplus des consommateurs est alors :
+\[S_c^{CPP}=\frac{1}{2}(30-p_{CPP}^*)\times q_{CPP}^*=\frac{1}{2}(30-15)\times 15=\frac{225}{2}>S_c^m\]
+Le surplus du producteur est :
+\[S_p^{CPP}=\frac{1}{2}(p_{CPP}^*-0)\times q_{CPP}^*=\frac{1}{2}(30-15)\times 15=\frac{225}{2}<S_p^m\]
+On en déduit que le surplus total est :
+\[S_t^{CPP}=S_c^{CPP}+S_p^{CPP}=\frac{225}{2}+\frac{225}{2}=225>S_t^m\]
+Le surplus collectif est plus important quand l'Etat impose une tarification au coût marginal que quand il le laisse choisir sa quantité ou son prix.
+
+4. Avec cette nouvelle fonction de coût, le coût marginal devient :
+\[C_m(q)=\frac{1}{2}\]
+La tarification au coût marginal donnerait donc un prix de l'échange de $p^*=1/2$.
+On peut calculer le coût moyen d'une unité produite :
+\[C_M(q)=\frac{C(q)}{q}=\frac{100}{q}+\frac{1}{2}>\frac{1}{2}=p^*\]
+Le coût moyen d'une unité produite serait donc supérieur au prix de l'échange, et ce, quelque soit le nombre d'unités produites.
+Le producteur ferait donc systématiquement des pertes, à cause de ces coûts fixes, ce qui n'est pas une situation soutenable.
+Il se retirerait donc du marché.
+
+Rappel : $\pi(q)=pq-C(q)=q(p-C(q)/q)=q(p-C_M(q))$.
+
+5. L'Etat peut forcer le monopole à tarifer au coût moyen et à répondre à toute la demande.
+En l'obligeant à vendre à son coût moyen de production, il s'assure que le monopole ne fait ni bénéfices, ni pertes.
+On a alors la condition d'équilibre :
+\[C_M(q^*)=P(q^*)=p^*\]
+On résout l'équation de gauche :
+\[
+\begin{array}{crcl}
+&C_M(q^*)&=&P(q^*)\\
+\Leftrightarrow&\frac{100}{q^*}+\frac{1}{2}&=&30-q^*\\
+\Leftrightarrow&200+q^*&=&60q^*-2q^{*2}\\
+\Leftrightarrow&2q^{*2}-59q^*+200&=&0\\
+\end{array}
+\]
+Pour trouver la solution, on doit donc résoudre une équation du second degré.
+On commence par calculer le discriminant :
+\[\Delta=(-59)^2-4\times200\times2=3481-1600=1881=9\times209\]
+On en déduit que :
+\[q^*=\frac{59\pm3\sqrt{209}}{4}\]
+Les deux racines sont positives, l'obligation de satisfaire toute la demande font que l'on prend la racine la plus grande.
+La solution est donc $q^*=\frac{59+3\sqrt{209}}{4}\approx$ `r round(59/4+sqrt(209)*3/4, digits=2)`. 
+On peut en déduire $p^*=\frac{61-3\sqrt{209}}{4}\approx$ `r round(61/4-3*sqrt(209)/4, digits=2)`.  
+
+
+```{r naturelexo25, fig.cap="Représentation graphique avec un coût marginal constant."}
+C <- function(q){100+q/2}
+Cm <- function(q){1/2}
+P <- function(q){30-q}
+CM <- function(q){C(q)/q}
+q <- uniroot(function(q){CM(q)-P(q)}, c(10,30))$root
+p <- P(q)
+St <- data.frame(x=c(0, q), ymin=c(Cm(0), Cm(q)), ymax=c(P(0), P(q)))
+
+
+p_naturel3 <- ggplot() +
+  geom_function(fun=P, color='darkgreen') +
+  geom_function(fun=Cm, color='red') +
+  geom_function(fun=CM, color='darkred') +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 32), breaks=c(0, q), labels=c(0, TeX("$q^*$"))) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 32), breaks=c(0, 0.5, p, 30), labels=c(0, 1/2, TeX("$p^*$"), 30)) +
+  labs(x="quantité", y="prix") +
+  geom_ribbon(data=St, aes(x=x, ymin=ymin, ymax=ymax), fill='red', alpha=0.5) +
+  annotate("text", x=6, y=P(6), label=TeX("demande ($P$)"), color="darkgreen") +
+  annotate("text", x=13, y=CM(13), label=TeX("$C_{M}$"), color="darkred") +
+  annotate("text", x=11, y=Cm(11), label=TeX("$C_m$"), color="red") +
+  annotate("text", x=5, y=10, label=TeX("$S_t$"), color="red")
+
+p_naturel3
+
+```
+On représente graphiquement le surplus collectif sur la figure \@ref(fig:naturelexo25). 
+On voit que le surplus collectif est un trapèze : \[S_t=\left(30−\frac{1}{2}+p^*−\frac{1}{2}\right)×\frac{q^*}{2}=(29−p^*)\times \frac{q^*}{2}\]
+En calculant (à la calculatrice), on obtient $S_t\approx$ `r round((29-p)*q/2, digits=2)`.
+
+:::
+
+::: { .exercise #naturelexo3 }
+La demande d'un bien est donnée par : \[Q\left(p\right)=1000-50p\] Le coût
+marginal et le coût moyen sont fixes à 10€ l'unité.
+
+
+1. Quels sont les prix et les quantités d'équilibre en concurrence
+et en monopole ?
+2. L'État impose une taxe de 2 euros par unité. Quels sont les nouveaux prix et quantités en concurrence et en monopole ?
+3. Quelle est la part de l'augmentation des prix supportée par les consommateurs en monopole et en concurrence ?
+:::
+
+::: { .solution name="Solution de l'exercice \@ref(exr:naturelexo2)"}
+En lisant les données, nous pouvons écrire les fonctions de coût marginal et de coût moyen :
+\[C_m(q)=10\qquad C_M(q)=10\]
+On peut en déduire que la fonction de coût total est $C(q)=10q$.  
+La fonction qui nous est donnée est la demande $Q$ et non la demande inverse $P$.
+Pour résoudre l'exercice, nous avons besoin de la fonction de demande inverse, c'est à dire la fonction $P$ telle que $Q(P(q))=q$ :
+\[1000-50P(q)=q \Leftrightarrow P(q) = 20-\frac{q}{50}\]
+
+
+1. Nous allons commencer par résoudre le problème du monopole.
+À l'optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
+\[R_m(q^*)=C_m(q^*)\]
+Ici, on a :
+\[R(q) =qP(q)=20q-\frac{1}{50}q^2\]
+Donc :
+\[R_m(q)=R'(q)=20-\frac{1}{25}q\]
+À l'optimum, on doit donc avoir :
+\[
+\begin{array}{crcl}
+&20-\frac{1}{25}q^*_m&=&10\\
+\Leftrightarrow & q^*_m&=&250
+\end{array}
+\]
+On vérifie aussi la condition de second ordre \@ref(eq:cso) :
+\[R_m'(q^*)<C_m'(q^*)\]
+\[R'_m(q)=-1/25\]
+\[C'_m(q)=10>R_m'(q)\]
+La condition du second est bien vérifiée, nous avons bien un maximum ici.
+Le prix est $p^*_m=P(q^*_m)=15>10=C_M(q)$.
+Le prix est supérieur au coût moyen, donc les profits seront positifs.
+À l'optimum, 250 unités sont échangées sur ce marché, au prix de 15€.  
+Résolvons maintenant le problème en concurrence pure et parfaite.
+La condition d'équilibre en concurrence pure et parfaite est :
+\[C_m(q^*)=P(q^*)=p^*\]
+Soit :
+\[10=20-\frac{1}{50}q^*_{CPP}\Leftrightarrow q^*_{CPP}=500>q_m^*\]
+Et :
+\[p^*_{CPP}=P(q^*)=10<p_m^*\]
+En concurrence pure et parfaite, 500 unités de biens sont échangées sur le marché à un prix de 10€.
+Les quantités échangées sont plus importantes et le prix plus faible qu'en monopole.  
+*Remarque :* On peut procéder à une résolution alternative en CPP, sans utiliser la demande inverse.
+On a en effet la condition d'équilibre du marché : $C_m(q^*)=P(q^*)=p^*$.
+Ici, $C_m(q^*)$ est constant et égal à 10, on a donc immédiatement $p^*=C_m(q^*)=10$.
+On peut alors utiliser la fonction de demande $Q$ : $q^*=Q(p^*)=1000-50\times10=500$.
+On obtient bien les mêmes résultats qu'en utilisant la demande inverse.
+Dans cette exercice, on a néanmoins besoin de la demande inverse pour le monopole, s'en passer n'est donc pas possible.
+2. L'imposition d'une taxe unitaire (une taxe sur chaque unité produite) revient à augmenter le coût marginal et le coût moyen du producteur de 2€.
+On a donc maintenant $C_m(q)=C_M(q)=10+2=12$ (et $C(q)=12q$).
+On résout maintenant le problème comme précédemment.  
+Nous allons commencer par résoudre le problème du monopole.
+À l'optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
+\[R_m(q^*)=C_m(q^*)\]
+Ici, on a :
+\[R(q) =qP(q)=20q-\frac{1}{50}q^2\]
+Donc :
+\[R_m(q)=R'(q)=20-\frac{1}{25}q\]
+À l'optimum, on doit donc avoir :
+\[
+\begin{array}{crcl}
+&20-\frac{1}{25}q^*_m&=&12\\
+\Leftrightarrow & q^*_m&=&200
+\end{array}
+\]
+On vérifie aussi la condition de second ordre \@ref(eq:cso) :
+\[R_m'(q^*)<C_m'(q^*)\]
+\[R'_m(q)=-1/25\]
+\[C'_m(q)=12>R_m'(q)\]
+La condition du second est bien vérifiée, nous avons bien un maximum ici.
+Le prix est $p^*_m=P(q^*_m)=16>12=C_M(q)$.
+Le prix est supérieur au coût moyen, donc les profits seront positifs.
+À l'optimum, 200 unités sont échangées sur ce marché, au prix de 16€.  
+Résolvons maintenant le problème en concurrence pure et parfaite.
+La condition d'équilibre en concurrence pure et parfaite est :
+\[C_m(q^*)=P(q^*)=p^*\]
+Soit :
+\[12=20-\frac{1}{50}q^*_{CPP}\Leftrightarrow q^*_{CPP}=400>q_m^*\]
+Et :
+\[p^*_{CPP}=P(q^*)=12<p_m^*\]
+En concurrence pure et parfaite, 400 unités de biens sont échangées sur le marché à un prix de 12€.
+Les quantités échangées sont plus importantes et le prix plus faible qu'en monopole.
+3. En concurrence pure et parfaite, l'augmentation du prix lié à la taxe est entièrement supportée par les consommateurs, puisque le nouveau prix est supérieur de 2€ au précédent.
+En monopole, le nouveau prix est supérieur de 1€ au précédent.
+Les consommateurs absorbent donc la moitié de l'augmentation du prix, et le monopole en absorbe l'autre moitié.
+
+```{r naturelexo3, fig.cap="Représentation graphique  des équilibres avec et sans taxe. Les flèches noires représentent le changement d'équilibre suite à la taxe."}
+Cmt <- function(q){12}
+Cm <- function(q){10}
+P <- function(q){20-q/50}
+Rm <- function(q){20-q/25}
+qm <- 250
+pm <- P(qm)
+qmt <- 200
+pmt <- P(qmt)
+qcpp <- 500
+pcpp <- P(qcpp)
+qcppt <- 400
+pcppt <- P(qcppt)
+
+x=seq(0, 1000, length=1001)
+df <- data.frame(x)
+
+p_naturel1 <- ggplot() +
+  geom_function(fun=P, color='darkgreen') +
+  geom_function(fun=Cm, color='red') +
+  geom_function(fun=Rm, color='blue') +
+  geom_function(fun=Cmt, color='darkred') +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 600), breaks=c(0, qm, qcpp, qmt, qcppt), labels=c(0, TeX("$q_m^*$"), TeX("$q_{CPP}^*$"), TeX("$q_{mt}^*$"), TeX("$q_{CPPt}^*$"))) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 30), breaks=c(0, pm, pcpp, pmt, pcppt, 20), labels=c(0, TeX("$p_m^*$"), TeX("$p_{CPP}^*$"), TeX("$p_{mt}^*$"), TeX("$p_{CPPt}^*$"), 20)) +
+  labs(x="quantité", y="prix") +
+  geom_ribbon(data=profitcpp, aes(x=x, ymin=ymin, ymax=ymax), fill='red', alpha=0.5) +
+  geom_ribbon(data=profitm, aes(x=x, ymin=ymin, ymax=ymax), fill='green', alpha=0.5) +
+  annotate("text", x=100, y=P(100), label=TeX("demande ($P$)"), color="darkgreen") +
+  annotate("text", x=100, y=Rm(100), label=TeX("$R_{m}$"), color="blue") +
+  annotate("text", x=100, y=Cm(100), label=TeX("$C_m$"), color="red") +
+  annotate("text", x=100, y=Cmt(100), label=TeX("$C_m^t$"), color="darkred") +
+  geom_segment(data=df, x=qm, y=pm, xend=qmt, yend=pmt, colour='black', arrow=arrow(length=unit(0.3, 'cm'), ends='last'), size=1) +
+    geom_segment(data=df, x=qcpp, y=pcpp, xend=qcppt, yend=pcppt, colour='black', arrow=arrow(length=unit(0.3, 'cm'), ends='last'), size=1)
+  
+  
+p_naturel1
+
+```
+:::
+
+
+::: { .exercise #naturelexo4 } 
+Une entreprise en monopole a une fonction de coût total de :
+\[C(q)=3q^2\]
+La fonction de demande sur son marché est :
+\[P(q)=1200-q\]
+
+
+1. Donnez la quantité produite, le prix de vente ainsi que le
+profit à la solution du monopole.
+2. Que fera l'entreprise si elle est confrontée à une taxe
+forfaitaire de 50 000€ ? Et si la taxe est de 100 000€ ?
+3. L'État souhaite maximiser le surplus total en instaurant un
+prix plafond. À quel niveau doit-il le fixer ?
+4. Que fera le monopole s'il doit payer une taxe de 40€
+par unité ? Quels seront alors ses profits ?
+:::
+
+::: {.solution name="Solutions de l'exercice \@ref(exr:naturelexo4)"}
+Réponses
+
+1. À l'optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
+\[R_m(q^*)=C_m(q^*)\]
+Ici, on a :
+\[R(q) =qP(q)=1200q-q^2\]
+Et :
+\[C_m(q)=C'(q)=6q\]
+Donc :
+\[R_m(q)=R'(q)=1200-2q\]
+À l'optimum, on doit donc avoir :
+\[
+\begin{array}{crcl}
+&1200-2q^*_m&=&6q^*_m\\
+\Leftrightarrow & q^*_m&=&150
+\end{array}
+\]
+On vérifie aussi la condition de second ordre \@ref(eq:cso) :
+\[R_m'(q^*)<C_m'(q^*)\]
+\[R'_m(q)=-2\]
+\[C'_m(q)=6>R_m'(q)\]
+La condition du second est bien vérifiée, nous avons bien un maximum ici.
+Le prix est $p^*_m=P(q^*_m)=1050$.
+On calcule le profit :
+\[\pi_m=p_m^*q_m^*-C(q^*_m)=1050\times150-3\times150^2=90000>0\]
+À l'optimum, 150 unités sont échangées sur ce marché, au prix de 1050€.
+Le monopole réalise alors un profit de 90 000€.
+2. Une taxe forfaitaire ne change pas le comportement du monopole, sauf si la taxe forfaitaire transforme le profit du monopole en pertes.
+Le profit réalisé par le monopole devient avec la taxe forfaitaire $T$ :
+\[\pi_m=p_m^*q_m^*-C(q^*_m)-T=1050\times150-3\times150^2-T=90000-T\]
+On en conclut que si la taxe forfaitaire est de 50 000€, le monopole continuera de produire normalement, mais si la taxe est de 100 000€, il arrêtera de produire et fermera.
+3. L'Etat doit fixer un prix plafond qui est égal au prix de la concurrence pure et parfaite pour maximiser le surplus total.
+Cherchons donc l'équilibre de concurrence pure et parfaite.
+La condition d'équilibre en concurrence pure et parfaite est :
+\[C_m(q^*)=P(q^*)=p^* (=p_{max})\]
+Soit :
+\[6q^*_{CPP}=1200-q^*_{CPP}\Leftrightarrow q^*_{CPP}=\frac{1200}{7}>150=q_m^*\]
+Et :
+\[p_{max}=P(q^*)=\frac{7200}{7}<1050=p_m^*\]
+L'Etat doit donc fixer un prix plafond de $\frac{7200}{7}\approx$ `r round(7200/2, digits=2)`€ pour maximiser le surplus total.
+4.  Une taxe unitaire de 40€ revient donc à augmenter le coût de production par unité de 40€ pour le monopole.
+Le coût marginal du monopole devient donc $C_m(q)=6q+40$.
+À l'optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
+\[R_m(q^*)=C_m(q^*)\]
+Avec :
+\[R_m(q)=1200-2q\]
+À l'optimum, on doit donc avoir :
+\[
+\begin{array}{crcl}
+&1200-2q^*_m&=&6q^*_m+40\\
+\Leftrightarrow & q^*_m&=&145
+\end{array}
+\]
+On vérifie aussi la condition de second ordre \@ref(eq:cso) :
+\[R_m'(q^*)<C_m'(q^*)\]
+\[R'_m(q)=-2\]
+\[C'_m(q)=6>R_m'(q)\]
+La condition du second est bien vérifiée, nous avons bien un maximum ici.
+Le prix est $p^*_m=P(q^*_m)=1055$.
+On calcule le profit :
+\[\pi_m=p_m^*q_m^*-C(q^*_m)=1055\times145-3\times145^2=89900>0\]
+À l'optimum avec une taxe unitaire de 40€, 145 unités sont échangées sur ce marché, au prix de 1055€.
+Le monopole réalise alors un profit de 89 900€.
+L'augmentation du prix est de 5€, cela signifie que 35€ de la taxe sera payée par le monopole. 
+Nous sommes ici dans un cas où le monopole supportera l'essentiel du prix de la taxe.
 :::
  
