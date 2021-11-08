@@ -441,7 +441,7 @@ La courbe d'offre est égal à la courbe de coût marginal.
 On obtient (ici $q^*$ et $p^*$ sont différents des parties précédentes) :
 \[C_m(q^*)=P(q^*)=p^*\]
 Soit : 
-\[8q^*+10=250-2q^*\]
+\[8q^*+10=250-q^*\]
 En résolvant l'équation, on obtient $q^*_{CPP}=80/3$ et on peut en déduire $p^*_{CPP}=670/3$.
 On peut maintenant calculer le profit de la même manière que dans la question précédente, et on obtient $\pi^{CPP}(q^*_{CPP})=22000/9<\pi^M$.
 Le profit du producteur en concurrence pure et parfaite est inférieur au profit en monopole.
