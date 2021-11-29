@@ -494,6 +494,7 @@ HHI&=&\sum_{i=1}^NS_i^2\\
 \]
 Le HHI correspond à l'inverse du nombre du nombre d'entreprise qui serait identique sur le marché et donnerait le même écart moyen entre coût marginal et prix.
 Plus le HHI est proche de 1, plus on se rapproche du monopole.
+Plus le HHI est proche de 0, plus on se rapproche de la concurrence pure et parfaite.
 
 Le HHI est utilisé par les autorités de la concurrence pour évaluer les effets sur les prix de fusions d'entreprises.
 Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.

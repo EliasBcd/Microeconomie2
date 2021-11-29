@@ -6,7 +6,7 @@
 ]{book}
 \title{Microéconomie 2}
 \author{Elias Bouacida \and Antoine Terracol}
-\date{2021-11-08}
+\date{2021-11-29}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -1660,6 +1660,7 @@ HHI&=&\sum_{i=1}^NS_i^2\\
 \]
 Le HHI correspond à l'inverse du nombre du nombre d'entreprise qui serait identique sur le marché et donnerait le même écart moyen entre coût marginal et prix.
 Plus le HHI est proche de 1, plus on se rapproche du monopole.
+Plus le HHI est proche de 0, plus on se rapproche de la concurrence pure et parfaite.
 
 Le HHI est utilisé par les autorités de la concurrence pour évaluer les effets sur les prix de fusions d'entreprises.
 Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.
@@ -2936,6 +2937,167 @@ Réponses
 \end{enumerate}
 
 \end{solution}
+
+\hypertarget{politique-tarifaire-du-monopole}{%
+\section{Politique tarifaire du monopole}\label{politique-tarifaire-du-monopole}}
+
+\begin{exercise}
+\protect\hypertarget{exr:discriminationquestions}{}\label{exr:discriminationquestions}
+
+Pour chacune des pratiques ci-dessous, dites s'il s'agit de discrimination au deuxième ou au troisième degré.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Un professeur de tennis fait payer les leçons 15 euros de l'heure pour un enfant de moins de 14 ans et 30 euros au-delà.
+\item
+  Un supermarché propose la promotion suivante sur des soupes: la deuxième achetée et toutes les suivantes sont à moitié prix.
+\item
+  Un médecin de campagne accepte d'être payé en nature par les paysans mais exige d'être payé en monnaie par les commerçants et les châtelains.
+\item
+  Pour trois articles achetés, le moins cher est offert.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{solution}[Réponses aux questions]
+
+Discrimination du \emph{deuxième degré} : discrimination sur les quantités achetées.
+Le prix unitaire des biens est décroissant avec la quantitée achetée par le consommateur.\\
+Discrimination du \emph{troisième degré} : le monopole est capable de différencier les consommateurs et de vendre à des prix différents pour différents groupes de consommateurs.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  3\textsuperscript{e} degré
+\item
+  2\textsuperscript{e} degré
+\item
+  3\textsuperscript{e} degré
+\item
+  2\textsuperscript{e} degré
+\end{enumerate}
+
+\end{solution}
+
+\begin{exercise}[Discrimination au deuxième degré]
+\protect\hypertarget{exr:discriminationexo1}{}\label{exr:discriminationexo1}
+
+Un monopole fait face à la fonction de demande :
+\[Q(p)=100-p\] et à la fonction de coût :
+\[C(q)=25+10q.\]
+
+Le monopole pratique la discrimination au deuxième degré : les \(q_1\) premières unités sont vendues au prix \(p_1=P(q_1)\), où \(P\left(.\right)\) est la fonction de demande inverse. Les suivantes sont vendues au prix \(p_2\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Déterminez le prix auquel les premières unités sont vendues et le prix auxquelles les suivantes sont vendues, la quantité \(q_1\) et la quantité totale vendue.
+\item
+  Calculez le surplus du consommateur et le profit du producteur.
+\item
+  (facultatif) L'État impose au monopole une taxe de 6 euros par unité produite. Le revenu de la taxe est reversé aux consommateurs. Refaites les calculs précédents dans ce cas. Comparez aux résultats précédents et commentez.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{solution}[Solution de l'exercice \ref{exr:discriminationexo1}]
+On note dans la correction \(q_2\) la quantité de bien vendue au prix \(p_2\).
+Ainsi, la quantité totale \(q\) est égale à \(q_1+q_2\).
+On remarque que l'énoncé nous donnes ici la fonction de demande \(Q(p)=100-p\), alors que nous avons besoin de la fonction de demande inverse \(P(q)\).
+En résolvant \(Q(P(q))=q\), on obtient \(P(q)=100-q\).
+1. On commence par écrire le profit du monopole discriminant :
+\[\pi(q_1, q_2)=q_1\times P(q_1)+p_2\times q_2-C(q_1+q_2)\]
+On commence par dériver suivant \(q_1\) pour obtenir la condition du premier sur les premières unités vendues.
+\[\frac{\partial \pi}{\partial q_1}=P'(q_1)\times q_1+P(q_1)-C_m(q_1+q_2)\]
+On par ailleurs :
+\[P'(q)=-1\]
+\[C_m(q)=C'(q)=10\]
+On réécrit donc la dérivée partielle suivant \(q_1\) :
+\[\frac{\partial \pi}{\partial q_1}=-q_1+(100-q_1)-10\]
+En utilisant condition du premier ordre \(\frac{\partial \pi}{\partial q_1}(q_1^*)=0\), cela donne donc :
+\[-2q_1^*+90=0\Leftrightarrow q_1^*=45\]
+Et \(p_1^*=P(q_1^*)=100-45=55\).
+On peut maintenant étudier la maximisation sur le groupe 2, en calculant la dérivée partielle du profit suivant q\_2 :
+\[\frac{\partial \pi}{\partial q_2}=p_2-C_m(q_1+q_2)\]
+En utilisant la condition du premier ordre, \(\frac{\partial \pi}{\partial q_2}(q_2^*)=0\), on obtient :
+\[p_2^*=10\]
+On peut en déduire la quantité \emph{totale} achetée par les consommateurs :
+\(q=Q(p_2^*)=100-p_2^*=90\), et donc \(q_2^*=45\).
+Attention, \(Q(p_2^*)\) nous donne bien la quantité totale achetée sur le marché, et pas la quantité achetée au prix \(p_2^*\).
+En effet, les premières unités sont vendues au prix \(p_1^*=P(q_1^*)\), et ensuite la deuxième partie des unités est vendue au prix \(p_2^*\).
+2. Représentons d'abord la situation.
+
+\includegraphics{_main_files/figure-latex/discriminationexo2-1.pdf}
+Les quantités vendues au prix \(p_2^*\) par le producteur sont produites au coût marginal.
+Il n'en retire donc aucun surplus.
+Le seul surplus obtenu par le monopole discriminant l'est quand il vend les unités vendues au prix \(p_1^*\).
+On remarque alors que le surplus obtenu est donné par un rectangle :
+\[S_P=(p_1^*-p_2^*)\times(q_1^*-0)=45^2=2025\]
+Le profit du producteur est donc \(\pi=S_p-CF=2000\), où CF est le coût fixe du monopole.
+Le surplus des consommateurs est divisé en deux.
+Le surplus obtenu grâce aux unités vendues au prix \(p_1^*\) et le surplus obtenu grâce aux unités vendues au prix \(p_2^*\).
+On obtient ainsi l'aire de deux triangles :
+\[S_c=\frac{1}{2}\left((100-p_1^*)\times(q_1^*-0)+(q_2^*-q_1^*)(p_1^*-p_2^*)\right)=\frac{1}{2}(45^2+45^2)=45^2=2025\]
+\end{solution}
+
+\begin{exercise}
+\protect\hypertarget{exr:discriminationexo2}{}\label{exr:discriminationexo2}
+
+L'entreprise de surgelés Equus vend des lasagnes au cheval sur deux marchés: le marché standard et le marché du hard discount. Sur le premier marché les lasagnes sont directement vendues sous la marque Equus; sur le second elles sont vendues moins chères sous la marque Fer-à-Cheval.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Question préliminaire. Soit une fonction de demande donnée par:
+  \[Q(p)=\frac{A}{p^\varepsilon},\] avec \(A>0\) et \(\varepsilon >0\). Montrez que la valeur absolue de l'élasticité de \(Q\) par rapport au prix vaut \(\varepsilon\). Ce résultat pourra être utilisé directement dans la suite.
+  2.Le prix de vente optimal des lasagnes de la marque Equus est de \(p_E=42\) euros le kg. D'après les recherches du département marketing, la demande pour les lasagnes de marque Equus est donnée par \(Q_E(p_E)=\frac{10000}{p_E^2}\) et pour la marque Fer-à-Cheval par \(Q_F(p_F)=\frac{10000}{p_F^4}\).
+  a. Donnez la formule qui, à la solution du monopole discriminant, relie le rapport des prix \(\frac{p_E}{p_F}\) aux élasticités-prix \(\varepsilon_E\) et \(\varepsilon_F\) sur les deux marchés.
+  b. Déduisez-en le prix \(p_F\) qui maximise le profit du monopole discriminant.
+  c.~Déduisez-en également le coût marginal de production de la quantité totale \(q_E+q_F\) maximisant le profit du monopole.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+\protect\hypertarget{exr:discriminationexo3}{}\label{exr:discriminationexo3}
+
+La fonction de coût d'un monopole est donnée par :
+\[C(q)=30-q+\frac{q^2}{2}\] Il existe deux types de consommateurs (A et
+B) dont les fonctions de demande sont respectivement :
+\[P_{A}(q_{A})=64-4q_{A}\] et : \[P_{B}(q_{B})=32-2q_{B}\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Calculez la solution du monopole discriminant.
+\item
+  Répondez à nouveau à la question ci-dessus lorsque la
+  demande de la population B devient \[P_{B}(q_{B})=64-2q_{B}\] et que
+  la demande du marché A ne change pas.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+\protect\hypertarget{exr:discriminationexo4}{}\label{exr:discriminationexo4}Une entreprise en situation de monopole a réussi à percevoir
+une différence parmi les consommateurs. Elle est alors capable de
+séparer les consommateurs qui s'adressent à lui en deux marchés
+distincts. Sur le premier marché, la fonction de demande
+inverse est de : \[P_{1}(q_{1})=60-5q_{1}\] Sur le second marché,
+elle est de : \[P_{2}(q_{2})=180-20q_{2}\]
+
+1.Calculez les prix, les quantités d'équilibre et le profit sachant que la fonction de coût du monopole est la suivante : \[C(q)=50+20q\]
+avec \(q=q_1+q_2\) la quantité totale produite.
+2. Calculez \(\left.\frac{p_{i}-C_m(q)}{p_i}\right|_{i=1,2}\), et
+montrez que
+\(\frac{p_{i}-Cm(q)}{p_{i}}=\frac{1}{\left|\varepsilon_{q_i/p_i}\right|}\) à l'optimum du monopole.
+\end{exercise}
 
 \hypertarget{appendix-annexes}{%
 \appendix}

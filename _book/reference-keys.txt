@@ -47,6 +47,7 @@ fig:naturelexo1
 fig:naturelexo21
 fig:naturelexo25
 fig:naturelexo3
+fig:discriminationexo2
 tab:Annexe1
 fig:annexesurplus2
 fig:annexesurplus3
@@ -119,5 +120,6 @@ exercices
 concurrence-pure-et-parfaite
 exercices-sur-le-comportement-monopole
 le-monopole-naturel-1
+politique-tarifaire-du-monopole
 résolution-des-problèmes
 calcul-des-surplus
