@@ -383,121 +383,7 @@ p_cournot + geom_segment(data=df, x=qc2-0.05, xend=qc2+0.05, y=qc2, yend=qc2, ar
 
 
 
-### Extension : oligopole à la Cournot
 
-On étend l'analyse à $N$ entreprises qui produisent un bien *homogène*.
-Comme ce bien est homogène, le prix est unique sur le marché.
-Chaque entreprise $i$ choisit une quantité $q_i\geq 0$ et les produit à un coût de production $C_i(q_i)$.
-La production totale sur le marché est $q=\sum_i q_i$.
-La fonction de demande inverse sur le marché $P(q)$ dépend de la production *globable* $q$.
-
-Le profit de chaque entreprise s'écrit :
-\[
-\pi(q_i, q_{-i}) = q_iP(q) -C_i(q_i)
-\]
-Où $q_{-i}$ est la somme de la production de toute les entreprises autres que l'entreprise $i$.
-Autrement dit $q=q_i+q_{-i}$.
-
-Le programme de maximisation d'une entreprise $i$ s'écrit :
-\[
-\max_{q_i}\pi(q_i, q_{-i}) = q_iP(q) -C_i(q_i)
-\]
-
-La condition du premier ordre est telle que :
-
-\[
-\begin{array}{crcl}
-&\frac{\partial \pi_i}{\partial q_i}(q^*) &=& 0\\
-\Leftrightarrow & \frac{\partial  \left(q_iP(q_i+q_{-i}) -C_i(q_i)\right)}{\partial q_i}(q^*) &= &0\\
-\Leftrightarrow & P(q^*) + q_i\frac{\partial  P}{\partial q}(q^*) -C_{im}(q_i^*)&= &0\\
-\Leftrightarrow & P(q^*) - C_{im}(q_i^*)&= &-q_i^*\frac{\partial  P}{\partial q}(q^*) \\
-\Leftrightarrow & \frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}&= &-\frac{q_i^*}{P(q^*)}\frac{\partial  P}{\partial q}(q^*) \\
-\Leftrightarrow & \frac{P(q^*) -C_{im}(q_i)^*}{P(q^*)}&= &-\frac{q^*}{P(q^*)}\frac{\partial  P}{\partial q}(q^*)\frac{q_i^*}{q^*} \\
-\Leftrightarrow & \frac{P(q^*) - C_{im}(q_i^*)}{P(q^*)}&= &S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
-\end{array}
-\]
-(La dérivée de la fonction de demande suivant le prix est négative).
-
-On obtient le *markup-pricing* que peut appliquer un producteur en situation d'oligopole à la Cournot.
-\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]
-La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l'entreprise.
-
-
-::: {.remark}
-En monopole, $S_i=1$, on retrouve alors bien :
-\[\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}\]
-
-En concurrence pure et parfaite $S_i\to 0$, donc $\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0$, ce qui implique bien que $C_{mi}(q_i)\to P(q)$.
-On retrouve ainsi le résultat $P(q^*)=C_m(q^*)$.
-:::
-
-### Indice de Lerner
-
-*Rappel :* En monopole, l'indice de Lerner est :
-\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]
-
-:::{.definition name="Indice de Lerner"}
-En oligopole à la Cournot avec $n$ producteurs, on définit l'indice de Lerner par :
-\[L = \sum_{i=1}^nS_iL_i\]
-où $S_i=q_i/q$ est la *part de marché* de l'entreprise $i$ et $L_i$ est l'indice de Lerner propre à un producteur.
-:::
-$q$ est la production totale $q=\sum_{i=1}^N q_i$.
-Notons $q=(q_i, q_{-i})$ le vecteur donnant les quantités produites par chaque producteur. 
-$q_i$ est la quantité produite par le producteur $i$, $q_{-i}=(q_1,\dots,q_{i-1}, q_{i+1}, \dots,q_N)$ est le vecteur de toutes les unités produites par les autres producteurs.
-
-Exprimons maintenant l'indice de Lerner d'un producteur.
-\[
-\begin{array}{rcl}
-L_i &=&\frac{1}{\left|\varepsilon_{q/p}(q_i, q_{-i})\right|}=\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\\
-&=&\frac{1}{\left|\frac{1}{\frac{\partial P}{\partial q}(q)}\frac{P(q)}{q_i}\right|}\\
-&=&\frac{1}{\left|\frac{1}{\frac{\partial P}{\partial q}(q)}\frac{P(q)}{q}\frac{q}{q_i}\right|}\\
-&=&\frac{1}{\left|\frac{1}{\frac{\partial P}{\partial q}(q)}\frac{p}{q}\right|}\frac{q_i}{q}\\
-&=&\frac{S_i}{\left|\varepsilon_{q/p}(q)\right|}\\
-\end{array}
-\]
-
-On peut donc réécrire l'indice de Lerner uniquement en fonction de l'élasticité de la demande à l'équilibre et des parts de marchés de chaque producteur :
-\[
-L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
-\]
-
-### Indice de concentration du marché
-
-
-:::{.definition #HHI name="Indice de Hirschman-Herfindahl (HHI)"}
-L'indice de Hirschman-Herfindahl est la somme des carrés des part de marchés.
-\[HHI = \sum_{i=1}^NS_i^2\]
-C'est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l'élasticité prix de la demande à l'optimum.
-Autrement dit, la moyenne des $L_i$ pondéré par les parts de marché.
-:::
-
- \[
- \begin{array}{rcl}
- \sum_{i=1}^{N}\frac{P(q) -C_{im}(q_i)}{P(q)}S_i &=&\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}S_i \\
- &=&\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2\\
- &=&\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
- \end{array}
- \]
-
-*Interprétation :*  
-Imaginons que toutes les $N$ entreprises sont identiques (elles ont la même fonction de coût).
-Elles produisent alors la même quantité optimale à l'équilibre.
-Leur part de marché est donc $S_i=1/N$.
-Le HHI vaut :
-\[
-\begin{array}{rcl}
-HHI&=&\sum_{i=1}^NS_i^2\\
-&=&\sum_{i=1}^N\frac{1}{N^2}\\
-&=&\frac{N}{N^2} \\
-&=&\frac{1}{N}
-\end{array}
-\]
-Le HHI correspond à l'inverse du nombre du nombre d'entreprise qui serait identique sur le marché et donnerait le même écart moyen entre coût marginal et prix.
-Plus le HHI est proche de 1, plus on se rapproche du monopole.
-Plus le HHI est proche de 0, plus on se rapproche de la concurrence pure et parfaite.
-
-Le HHI est utilisé par les autorités de la concurrence pour évaluer les effets sur les prix de fusions d'entreprises.
-Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.
 
 
 ## Duopole à la Stackelberg
@@ -523,7 +409,9 @@ fF <- function(q)(1/2-1/2*q)
 fL <- function(q)(1-2*q)
 
 
-p + geom_function(fun=fF, colour="darkgreen") +
+p_stackelberg <- ggplot() +
+  labs(x="quantité leader", y = "quantité follower") +
+  geom_function(fun=fF, colour="darkgreen") +
   geom_function(fun=fL, colour="red", linetype="dashed" ) +
   stat_function(fun=function(x) IL(x, 1/9), colour="blue") +
   stat_function(fun=function(x) IL(x, 1/8), colour="red") +
@@ -535,6 +423,8 @@ p + geom_function(fun=fF, colour="darkgreen") +
   annotate("text", x=0.4, y=0.4, colour="blue", label="Cournot") +
   annotate("point", x=1/2, y=1/4, colour="red", size=3) +
   annotate("text", x=0.5, y=0.3, colour="red", label="Stackelberg") 
+
+p_stackelberg
 ```
 
 Sur la figure \@ref(fig:equilibreStackelberg), on voit que le profit du leader est plus important en Stackelberg qu'en Cournot (et l'inverse pour le follower).
@@ -718,3 +608,129 @@ Donc $\frac{\partial P}{\partial q}(q_A)<0$.
 On en déduit donc que $\frac{\partial\pi_A}{\partial q_A}(q_A^*)>0$ : l'entreprise A a intérêt à augmenter sa production si elle pense que l'entreprise B va respecter l'accord du cartel (et réciproquement).
 
 En conclusion, les accords de cartel ne sont pas "naturellement" stable, ils ont besoin d'un mécanisme qui maintient l'accord, par exemple en punissant une entreprise déviant de l'accord.
+
+
+## Oligopoles
+
+On étend l'analyse à $N$ entreprises qui produisent un bien *homogène*.
+Comme ce bien est homogène, le prix est unique sur le marché.
+Chaque entreprise $i$ choisit une quantité $q_i\geq 0$ et les produit à un coût de production $C_i(q_i)$.
+La production totale sur le marché est $q=\sum_i q_i$.
+La fonction de demande inverse sur le marché $P(q)$ dépend de la production *globable* $q$.
+
+Le profit de chaque entreprise s'écrit :
+\[
+\pi(q_i, q) = q_iP(q) -C_i(q_i)
+\]
+
+::: { .remark name="Quantité globale" }
+Attention, ici $q$, la quantité globale, dépend de la quantité $q_i$ produite par $i$.
+Implicitement, on a ainsi définit une fonction $q(q_i)$, ce qui est important dans la dérivation des résultats.
+:::
+
+Le programme de maximisation d'une entreprise $i$ s'écrit :
+\[
+\max_{q_i}\pi(q_i, q) = q_iP(q) -C_i(q_i)
+\]
+
+La condition du premier ordre est telle que :
+
+\[
+\begin{array}{crcl}
+&\frac{\partial \pi_i}{\partial q_i}(q_i^*, q(q_i^*)) &=& 0\\
+\Leftrightarrow & \frac{\partial  \left(q_iP(q) -C_i(q_i)\right)}{\partial q_i}(q_i^*, q(q_i^*)) &= &0\\
+\Leftrightarrow & P(q^*) + q_iP'(q^*) -C_{im}(q_i^*)&= &0\\
+\Leftrightarrow & P(q^*) - C_{im}(q_i^*)&= &-q_i^*P'(q^*) \\
+\Leftrightarrow & \frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}&= &-\frac{q_i^*}{P(q^*)}P'(q^*) \\
+\Leftrightarrow & \frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}&= &-\frac{q^*}{P(q^*)}P'(q^*)\frac{q_i^*}{q^*} \\
+\Leftrightarrow & \frac{P(q^*) - C_{im}(q_i^*)}{P(q^*)}&= &S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
+\end{array}
+\]
+(La dérivée de la fonction de demande suivant le prix est négative).
+
+::: {.definition name="Part de marché"}
+La part de marché détenue par une entreprise $i$ est la part de la quantité totale produite qui l'est par cette entreprise.
+On la note $S_i$ :
+\[S_i=\frac{q_i}{q}\]
+:::
+
+On obtient le *markup-pricing* que peut appliquer un producteur en situation d'oligopole à la Cournot.
+\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]
+La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l'entreprise.
+
+
+::: {.remark}
+En monopole, $S_i=1$, on retrouve alors bien :
+\[\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}\]
+
+En concurrence pure et parfaite $S_i\to 0$, donc $\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0$, ce qui implique bien que $C_{mi}(q_i)\to P(q)$.
+On retrouve ainsi le résultat $P(q^*)=C_m(q^*)$.
+:::
+
+### Indice de Lerner
+
+*Rappel :* En monopole, l'indice de Lerner est :
+\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]
+
+::: {.definition name="Indice de Lerner d'un producteur $i$"}
+On définit l'indice de Lerner pour un producteur $i$, noté $L_i$, comme son taux de marge :
+\[L_i=\frac{P(q^*) -C_{im}(q^*_i)}{P(q^*)}\]
+:::
+
+On peut exprimer cette indice de Lerner ainsi, grâce à la condition du premier ordre trouvée plus haut :
+\begin{equation}
+\begin{array}{rcl}
+L_i &=&\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\frac{1}{\left|\varepsilon_{q/p}(q_i, q_{-i})\right|}\\
+&=&S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
+\end{array}
+(\#eq:li)
+\end{equation}
+
+:::{.definition name="Indice de Lerner du marché"}
+En oligopole à la Cournot avec $N$ producteurs, on définit l'indice de Lerner du marché par :
+\[L = \sum_{i=1}^NS_iL_i\]
+où $S_i=q_i/q$ est la *part de marché* du producteur $i$ et $L_i$ est l'indice de Lerner d'un producteur $i$.
+:::
+
+En utilisant l'expression obtenue pour l'indice de Lerner d'un producteur à l'équation \@ref(eq:li), on peut réécrire l'indice de Lerner du marché uniquement en fonction de l'élasticité de la demande à l'équilibre et des parts de marchés de chaque producteur :
+\[
+L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
+\]
+
+### Indice de concentration du marché
+
+
+::: {.definition #HHI name="Indice de Hirschman-Herfindahl (HHI)"}
+L'indice de Hirschman-Herfindahl est la somme des carrés des part de marchés.
+\[HHI = \sum_{i=1}^NS_i^2\]
+C'est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l'élasticité prix de la demande à l'optimum.
+Autrement dit, la moyenne des $L_i$ pondéré par les parts de marché.
+:::
+
+ \[
+ \begin{array}{rcl}
+ \sum_{i=1}^{N}\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}S_i &=&\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}S_i \\
+ &=&\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2\\
+ &=&\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
+ \end{array}
+ \]
+
+*Interprétation :*  
+Imaginons que toutes les $N$ producteurs sont identiques (ils ont la même fonction de coût).
+Ils produisent alors la même quantité optimale à l'équilibre.
+Leur part de marché est donc $S_i=1/N$.
+Le HHI vaut :
+\[
+\begin{array}{rcl}
+HHI&=&\sum_{i=1}^NS_i^2\\
+&=&\sum_{i=1}^N\frac{1}{N^2}\\
+&=&\frac{N}{N^2} \\
+&=&\frac{1}{N}
+\end{array}
+\]
+Le HHI correspond à l'inverse du nombre de producteurs qui seraient identiques sur le marché et donneraient le même écart moyen entre coût marginal et prix.
+Plus le HHI est proche de 1, plus on se rapproche du monopole.
+Plus le HHI est proche de 0, plus on se rapproche de la concurrence pure et parfaite.
+
+Le HHI est utilisé par les autorités de la concurrence pour évaluer les effets sur les prix de fusions d'entreprises.
+Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.

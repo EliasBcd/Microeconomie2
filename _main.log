@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.11.29)  29 NOV 2021 19:33
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.11.29)  30 NOV 2021 19:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1187,39 +1187,27 @@ File: _main_files/figure-latex/discriminationexo2-1.pdf Graphic file (type pdf)
 
 <use _main_files/figure-latex/discriminationexo2-1.pdf>
 [86]
-Overfull \hbox (1.72787pt too wide) detected at line 3044
+Overfull \hbox (1.72787pt too wide) detected at line 3045
 [][] [] [] [] [] [][][][][] [] [][][][] [] [][][] [] [][][][]
  []
 
-[87] [88]
+[87] [88] [89] [90] [91] [92]
+Overfull \hbox (62.9121pt too wide) detected at line 3377
+[] [] [][][][][][][] [] [][][] [] [][][][] [] [][][] [] [][][] [] [][][] [] [][
+][][] [] [][][][] [] [][][][][][] [] [][][] [] [][]
+ []
+
+[93]
+File: _main_files/figure-latex/cournotexo2-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/cournotexo2-1.pdf>
+[94]
+File: _main_files/figure-latex/cournotexo21f-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/cournotexo21f-1.pdf>
+
+Overfull \hbox (108.24492pt too wide) in paragraph at lines 3423--3427
+\TU/lmr/m/n/10 la situation pour le reste. []
+ []
+
+[95] [96] [97] [98]
 Annexe A.
-[89
-
-] [90]
-Annexe B.
-[91
-
-]
-File: _main_files/figure-latex/annexesurplus2-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/annexesurplus2-1.pdf>
-File: _main_files/figure-latex/annexesurplus3-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/annexesurplus3-1.pdf>
-(./_main.bbl [92] [93] [94
-
-]) [95] (./_main.aux)
-
-LaTeX Warning: There were undefined references.
-
-Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 49843402648D2276F8DA65EF88C4ECC0;4578.
- ) 
-Here is how much of TeX's memory you used:
- 19223 strings out of 478236
- 364196 string characters out of 5853488
- 834948 words of memory out of 5000000
- 39454 multiletter control sequences out of 15000+600000
- 409929 words of font info for 86 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 86i,10n,121p,510b,541s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-Output written on _main.pdf (95 pages).
+[9
