@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="oligopoles.html"/>
-<link rel="next" href="bibliographie-1.html"/>
+<link rel="next" href="résolution-des-problèmes.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -57,6 +57,28 @@
 
 
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -74,7 +96,7 @@
 <li><a href="./">Microéconomie 2</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Microéconomie 2</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#thèmes"><i class="fa fa-check"></i><b>1.1</b> Thèmes</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#bibliographie"><i class="fa fa-check"></i><b>1.2</b> Bibliographie</a></li>
@@ -163,6 +185,8 @@
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Annexes</b></span></li>
+<li class="chapter" data-level="A" data-path="résolution-des-problèmes.html"><a href="résolution-des-problèmes.html"><i class="fa fa-check"></i><b>A</b> Résolution des problèmes</a></li>
+<li class="chapter" data-level="B" data-path="calcul-des-surplus.html"><a href="calcul-des-surplus.html"><i class="fa fa-check"></i><b>B</b> Calcul des surplus</a></li>
 <li class="chapter" data-level="" data-path="bibliographie-1.html"><a href="bibliographie-1.html"><i class="fa fa-check"></i>Bibliographie</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -201,7 +225,7 @@ où <span class="math inline">\(p\)</span> est le prix du bien.</p>
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-1" class="solution"><em>Solution</em> (Exercice <a href="exercices.html#exr:cppexo1">5.1</a>). </span>La fonction de demande inverse est la fonction inverse de la fonction de demande.
+<p><span id="unlabeled-div-44" class="solution"><em>Solution</em> (Exercice <a href="exercices.html#exr:cppexo1">5.1</a>). </span>La fonction de demande inverse est la fonction inverse de la fonction de demande.
 Autrement dit, elle exprime le prix <span class="math inline">\(P\)</span> en fonction de la quantité <span class="math inline">\(q\)</span> plutôt que la quantité <span class="math inline">\(Q\)</span> en fonction du prix <span class="math inline">\(p\)</span>.
 Ici on <span class="math inline">\(q=10-p\)</span>, ce qui équivaut à <span class="math inline">\(p=10-q\)</span>.
 La fonction de demande inverse est donc <span class="math inline">\(P(q)=10-q\)</span>.
@@ -249,7 +273,7 @@ Déterminez le prix d’équilibre sur le marché, le surplus du producteur, le 
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-2" class="solution"><em>Solution</em> (Exercice <a href="exercices.html#exr:cppexo2">5.2</a>). </span>La fonction de coût marginal est la dérivée de la fonction de coût total.
+<p><span id="unlabeled-div-45" class="solution"><em>Solution</em> (Exercice <a href="exercices.html#exr:cppexo2">5.2</a>). </span>La fonction de coût marginal est la dérivée de la fonction de coût total.
 La fonction de coût marginal donne le coût de production d’une unité de bien supplémentaire.
 <span class="math display">\[C_m(q)=C&#39;(q)=2q+10\]</span></p>
 <ol start="2" style="list-style-type: decimal">
@@ -366,12 +390,12 @@ elle fait face ?</li>
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-3" class="solution"><em>Solution</em> (Solution de l'exercice <a href="exercices.html#exr:monoexo1">5.3</a>). </span>Réponses :</p>
+<p><span id="unlabeled-div-46" class="solution"><em>Solution</em> (Solution de l'exercice <a href="exercices.html#exr:monoexo1">5.3</a>). </span>Réponses :</p>
 <ol style="list-style-type: decimal">
 <li>Non, cf cours.</li>
 <li>Vrai, cf cours.</li>
 <li>Si l’élasticité prix de la demande est infini.</li>
-<li>On a d’après la définition de l’indice de Lerner <a href="#eq:Lerner">(<strong>??</strong>)</a> :
+<li>On a d’après la définition de l’indice de Lerner <a href="le-monopole.html#eq:Lerner">(3.6)</a> :
 <span class="math display">\[L=\frac{P(q^*)-C_m(q^*)}{P(q^*)}=\frac{1}{\left|\varepsilon_{p/q}(q^*)\right|}=0.45\]</span>
 Donc <span class="math inline">\(\left|\varepsilon_{p/q}(q^*)\right| =1/0.45=20/9\)</span>.</li>
 </ol>
@@ -390,7 +414,7 @@ et qui fait face à la fonction de demande inverse : <span class="math display">
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-4" class="solution"><em>Solution</em> (Solution de l'exercice <a href="exercices.html#exr:monoexo2">5.4</a>). </span>Réponses.</p>
+<p><span id="unlabeled-div-47" class="solution"><em>Solution</em> (Solution de l'exercice <a href="exercices.html#exr:monoexo2">5.4</a>). </span>Réponses.</p>
 <ol style="list-style-type: decimal">
 <li>À l’optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
 <span class="math display">\[R_m(q^*)=C_m(q^*)\]</span>
@@ -408,7 +432,7 @@ Donc :
 \Leftrightarrow &amp; q^*&amp;=&amp;60
 \end{array}
 \]</span>
-On vérifie aussi la condition de second ordre <a href="#eq:cso">(<strong>??</strong>)</a> :
+On vérifie aussi la condition de second ordre <a href="le-monopole.html#eq:cso">(3.3)</a> :
 <span class="math display">\[R_m&#39;(q^*)&lt;C_m&#39;(q^*)\]</span>
 <span class="math display">\[R&#39;_m(q)=-\frac{2}{5}\]</span>
 <span class="math display">\[C&#39;_m(q)=\frac{1}{10}&gt;R_m&#39;(q)\]</span>
@@ -491,7 +515,7 @@ monopole dans une telle situation.</li>
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-5" class="solution"><em>Solution</em> (Solution de l'exercice  <a href="exercices.html#exr:monoexo3">5.5</a>.). </span>Réponses:</p>
+<p><span id="unlabeled-div-48" class="solution"><em>Solution</em> (Solution de l'exercice  <a href="exercices.html#exr:monoexo3">5.5</a>.). </span>Réponses:</p>
 <ol style="list-style-type: decimal">
 <li>À l’optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
 <span class="math display">\[R_m(q^*)=C_m(q^*)\]</span>
@@ -509,7 +533,7 @@ Donc :
 \Leftrightarrow &amp; q^*&amp;=&amp;24
 \end{array}
 \]</span>
-On vérifie aussi la condition de second ordre <a href="#eq:cso">(<strong>??</strong>)</a> :
+On vérifie aussi la condition de second ordre <a href="le-monopole.html#eq:cso">(3.3)</a> :
 <span class="math display">\[R_m&#39;(q^*)&lt;C_m&#39;(q^*)\]</span>
 <span class="math display">\[R&#39;_m(q)=-2\]</span>
 <span class="math display">\[C&#39;_m(q)=8&gt;R_m&#39;(q)\]</span>
@@ -602,7 +626,7 @@ et qui fait face à la fonction de demande inverse :
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-6" class="solution"><em>Solution</em> (Solutions de l'exercice <a href="exercices.html#exr:naturelexo1">5.6</a>). </span>Réponses :</p>
+<p><span id="unlabeled-div-49" class="solution"><em>Solution</em> (Solutions de l'exercice <a href="exercices.html#exr:naturelexo1">5.6</a>). </span>Réponses :</p>
 <ol style="list-style-type: decimal">
 <li><p>À l’optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
 <span class="math display">\[R_m(q^*)=C_m(q^*)\]</span>
@@ -628,7 +652,7 @@ On en déduit que :
 La solution <span class="math inline">\(q^*=-8\)</span> est impossible, car les quantités sont forcément positives.
 La seule solution est donc <span class="math inline">\(q^*_m=4\)</span>.
 Remarquez qu’il est possible de “voir” sur l’équation du second degré que 4 était une racine et de se passer du calcul du discriminant.
-On vérifie aussi la condition de second ordre <a href="#eq:cso">(<strong>??</strong>)</a> :
+On vérifie aussi la condition de second ordre <a href="le-monopole.html#eq:cso">(3.3)</a> :
 <span class="math display">\[R_m&#39;(q^*)&lt;C_m&#39;(q^*)\]</span>
 <span class="math display">\[R&#39;_m(q)=-100\]</span>
 <span class="math display">\[C&#39;_m(q)=10q-80\]</span>
@@ -748,7 +772,7 @@ Donc :
 \Leftrightarrow &amp; q^*&amp;=&amp;10
 \end{array}
 \]</span>
-On vérifie aussi la condition de second ordre <a href="#eq:cso">(<strong>??</strong>)</a> :
+On vérifie aussi la condition de second ordre <a href="le-monopole.html#eq:cso">(3.3)</a> :
 <span class="math display">\[R_m&#39;(q^*)&lt;C_m&#39;(q^*)\]</span>
 <span class="math display">\[R&#39;_m(q)=-2\]</span>
 <span class="math display">\[C&#39;_m(q)=1&gt;R_m&#39;(q)\]</span>
@@ -846,7 +870,7 @@ et en monopole ?</li>
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-8" class="solution"><em>Solution</em> (Solution de l'exercice <a href="exercices.html#exr:naturelexo2">5.7</a>). </span>En lisant les données, nous pouvons écrire les fonctions de coût marginal et de coût moyen :
+<p><span id="unlabeled-div-51" class="solution"><em>Solution</em> (Solution de l'exercice <a href="exercices.html#exr:naturelexo2">5.7</a>). </span>En lisant les données, nous pouvons écrire les fonctions de coût marginal et de coût moyen :
 <span class="math display">\[C_m(q)=10\qquad C_M(q)=10\]</span>
 On peut en déduire que la fonction de coût total est <span class="math inline">\(C(q)=10q\)</span>.<br />
 La fonction qui nous est donnée est la demande <span class="math inline">\(Q\)</span> et non la demande inverse <span class="math inline">\(P\)</span>.
@@ -867,7 +891,7 @@ Donc :
 \Leftrightarrow &amp; q^*_m&amp;=&amp;250
 \end{array}
 \]</span>
-On vérifie aussi la condition de second ordre <a href="#eq:cso">(<strong>??</strong>)</a> :
+On vérifie aussi la condition de second ordre <a href="le-monopole.html#eq:cso">(3.3)</a> :
 <span class="math display">\[R_m&#39;(q^*)&lt;C_m&#39;(q^*)\]</span>
 <span class="math display">\[R&#39;_m(q)=-1/25\]</span>
 <span class="math display">\[C&#39;_m(q)=10&gt;R_m&#39;(q)\]</span>
@@ -907,7 +931,7 @@ Donc :
 \Leftrightarrow &amp; q^*_m&amp;=&amp;200
 \end{array}
 \]</span>
-On vérifie aussi la condition de second ordre <a href="#eq:cso">(<strong>??</strong>)</a> :
+On vérifie aussi la condition de second ordre <a href="le-monopole.html#eq:cso">(3.3)</a> :
 <span class="math display">\[R_m&#39;(q^*)&lt;C_m&#39;(q^*)\]</span>
 <span class="math display">\[R&#39;_m(q)=-1/25\]</span>
 <span class="math display">\[C&#39;_m(q)=12&gt;R_m&#39;(q)\]</span>
@@ -952,7 +976,7 @@ par unité ? Quels seront alors ses profits ?</li>
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-9" class="solution"><em>Solution</em> (Solutions de l'exercice <a href="exercices.html#exr:naturelexo4">5.9</a>). </span>Réponses</p>
+<p><span id="unlabeled-div-52" class="solution"><em>Solution</em> (Solutions de l'exercice <a href="exercices.html#exr:naturelexo4">5.9</a>). </span>Réponses</p>
 <ol style="list-style-type: decimal">
 <li>À l’optimum, un monopole choisit la quantité telle que son coût marginal est égale à son revenu marginal :
 <span class="math display">\[R_m(q^*)=C_m(q^*)\]</span>
@@ -969,7 +993,7 @@ Donc :
 \Leftrightarrow &amp; q^*_m&amp;=&amp;150
 \end{array}
 \]</span>
-On vérifie aussi la condition de second ordre <a href="#eq:cso">(<strong>??</strong>)</a> :
+On vérifie aussi la condition de second ordre <a href="le-monopole.html#eq:cso">(3.3)</a> :
 <span class="math display">\[R_m&#39;(q^*)&lt;C_m&#39;(q^*)\]</span>
 <span class="math display">\[R&#39;_m(q)=-2\]</span>
 <span class="math display">\[C&#39;_m(q)=6&gt;R_m&#39;(q)\]</span>
@@ -1005,7 +1029,7 @@ Avec :
 \Leftrightarrow &amp; q^*_m&amp;=&amp;145
 \end{array}
 \]</span>
-On vérifie aussi la condition de second ordre <a href="#eq:cso">(<strong>??</strong>)</a> :
+On vérifie aussi la condition de second ordre <a href="le-monopole.html#eq:cso">(3.3)</a> :
 <span class="math display">\[R_m&#39;(q^*)&lt;C_m&#39;(q^*)\]</span>
 <span class="math display">\[R&#39;_m(q)=-2\]</span>
 <span class="math display">\[C&#39;_m(q)=6&gt;R_m&#39;(q)\]</span>
@@ -1032,7 +1056,7 @@ Nous sommes ici dans un cas où le monopole supportera l’essentiel du prix de 
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-10" class="solution"><em>Solution</em> (Réponses aux questions). </span>Discrimination du <em>deuxième degré</em> : discrimination sur les quantités achetées.
+<p><span id="unlabeled-div-53" class="solution"><em>Solution</em> (Réponses aux questions). </span>Discrimination du <em>deuxième degré</em> : discrimination sur les quantités achetées.
 Le prix unitaire des biens est décroissant avec la quantité achetée par le consommateur.<br />
 Discrimination du <em>troisième degré</em> : le monopole est capable de différencier les consommateurs et de vendre à des prix différents pour différents groupes de consommateurs.</p>
 <ol style="list-style-type: decimal">
@@ -1054,11 +1078,12 @@ Discrimination du <em>troisième degré</em> : le monopole est capable de diffé
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-11" class="solution"><em>Solution</em> (Solution de l'exercice <a href="exercices.html#exr:discriminationexo1">5.11</a>). </span>On note dans la correction <span class="math inline">\(q_2\)</span> la quantité de bien vendue au prix <span class="math inline">\(p_2\)</span>.
+<p><span id="unlabeled-div-54" class="solution"><em>Solution</em> (Solution de l'exercice <a href="exercices.html#exr:discriminationexo1">5.11</a>). </span>On note dans la correction <span class="math inline">\(q_2\)</span> la quantité de bien vendue au prix <span class="math inline">\(p_2\)</span>.
 Ainsi, la quantité totale <span class="math inline">\(q\)</span> est égale à <span class="math inline">\(q_1+q_2\)</span>.
 On remarque que l’énoncé nous donnes ici la fonction de demande <span class="math inline">\(Q(p)=100-p\)</span>, alors que nous avons besoin de la fonction de demande inverse <span class="math inline">\(P(q)\)</span>.
-En résolvant <span class="math inline">\(Q(P(q))=q\)</span>, on obtient <span class="math inline">\(P(q)=100-q\)</span>.
-1. On commence par écrire le profit du monopole discriminant :
+En résolvant <span class="math inline">\(Q(P(q))=q\)</span>, on obtient <span class="math inline">\(P(q)=100-q\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>On commence par écrire le profit du monopole discriminant :
 <span class="math display">\[\pi(q_1, q_2)=q_1\times P(q_1)+p_2\times q_2-C(q_1+q_2)\]</span>
 On commence par dériver suivant <span class="math inline">\(q_1\)</span> pour obtenir la condition du premier sur les premières unités vendues.
 <span class="math display">\[\frac{\partial \pi}{\partial q_1}=P&#39;(q_1)\times q_1+P(q_1)-C_m(q_1+q_2)\]</span>
@@ -1077,8 +1102,9 @@ En utilisant la condition du premier ordre, <span class="math inline">\(\frac{\p
 On peut en déduire la quantité <em>totale</em> achetée par les consommateurs :
 <span class="math inline">\(q=Q(p_2^*)=100-p_2^*=90\)</span>, et donc <span class="math inline">\(q_2^*=45\)</span>.
 Attention, <span class="math inline">\(Q(p_2^*)\)</span> nous donne bien la quantité totale achetée sur le marché, et pas la quantité achetée au prix <span class="math inline">\(p_2^*\)</span>.
-En effet, les premières unités sont vendues au prix <span class="math inline">\(p_1^*=P(q_1^*)\)</span>, et ensuite la deuxième partie des unités est vendue au prix <span class="math inline">\(p_2^*\)</span>.
-2. Représentons d’abord la situation.</p>
+En effet, les premières unités sont vendues au prix <span class="math inline">\(p_1^*=P(q_1^*)\)</span>, et ensuite la deuxième partie des unités est vendue au prix <span class="math inline">\(p_2^*\)</span>.</li>
+<li>Représentons d’abord la situation.</li>
+</ol>
 <div class="figure"><span style="display:block;" id="fig:discriminationexo2"></span><span style="display:block;" id="fig:cournotexo2"></span>
 <img src="_main_files/figure-html/discriminationexo2-1.png" alt="Représentation graphique de la discrimination du second degré." width="672" />
 <p class="caption">
@@ -1109,14 +1135,57 @@ La taxe et sa redistribution n’ont donc aucun effet.</li>
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:discriminationexo2" class="exercise"><strong>Exercice 5.12  </strong></span>L’entreprise de surgelés Equus vend des lasagnes au cheval sur deux marchés: le marché standard et le marché du hard discount. Sur le premier marché les lasagnes sont directement vendues sous la marque Equus; sur le second elles sont vendues moins chères sous la marque Fer-à-Cheval.</p>
+<p><span id="exr:discriminationexo2" class="exercise"><strong>Exercice 5.12  </strong></span>L’entreprise de surgelés Equus vend des lasagnes au cheval sur deux marchés : le marché standard et le marché du hard discount.
+Sur le premier marché les lasagnes sont directement vendues sous la marque Equus ; sur le second elles sont vendues moins chères sous la marque Fer-à-Cheval.</p>
 <ol style="list-style-type: decimal">
-<li>Question préliminaire. Soit une fonction de demande donnée par:
-<span class="math display">\[Q(p)=\frac{A}{p^\varepsilon},\]</span> avec <span class="math inline">\(A&gt;0\)</span> et <span class="math inline">\(\varepsilon &gt;0\)</span>. Montrez que la valeur absolue de l’élasticité de <span class="math inline">\(Q\)</span> par rapport au prix vaut <span class="math inline">\(\varepsilon\)</span>. Ce résultat pourra être utilisé directement dans la suite.
-2.Le prix de vente optimal des lasagnes de la marque Equus est de <span class="math inline">\(p_E=42\)</span> euros le kg. D’après les recherches du département marketing, la demande pour les lasagnes de marque Equus est donnée par <span class="math inline">\(Q_E(p_E)=\frac{10000}{p_E^2}\)</span> et pour la marque Fer-à-Cheval par <span class="math inline">\(Q_F(p_F)=\frac{10000}{p_F^4}\)</span>.
+<li>Question préliminaire.
+Soit une fonction de demande donnée par:
+<span class="math display">\[Q(p)=\frac{A}{p^\varepsilon},\]</span>
+avec <span class="math inline">\(A&gt;0\)</span> et <span class="math inline">\(\varepsilon &gt;0\)</span>.
+Montrez que la valeur absolue de l’élasticité de <span class="math inline">\(Q\)</span> par rapport au prix vaut <span class="math inline">\(\varepsilon\)</span>.
+Ce résultat pourra être utilisé directement dans la suite.
+2.Le prix de vente optimal des lasagnes de la marque Equus est de <span class="math inline">\(p_E=42\)</span> euros le kg.
+D’après les recherches du département marketing, la demande pour les lasagnes de marque Equus est donnée par <span class="math inline">\(Q_E(p_E)=\frac{10000}{p_E^2}\)</span> et pour la marque Fer-à-Cheval par <span class="math inline">\(Q_F(p_F)=\frac{10000}{p_F^4}\)</span>.
 a. Donnez la formule qui, à la solution du monopole discriminant, relie le rapport des prix <span class="math inline">\(\frac{p_E}{p_F}\)</span> aux élasticités-prix <span class="math inline">\(\varepsilon_E\)</span> et <span class="math inline">\(\varepsilon_F\)</span> sur les deux marchés.
 b. Déduisez-en le prix <span class="math inline">\(p_F\)</span> qui maximise le profit du monopole discriminant.
 c. Déduisez-en également le coût marginal de production de la quantité totale <span class="math inline">\(q_E+q_F\)</span> maximisant le profit du monopole.</li>
+</ol>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-55" class="solution"><em>Solution</em> (Réponses de l'exercice <a href="exercices.html#exr:discriminationexo2">5.12</a>). </span><em>Rappel :</em> Élasticité prix de la demande</p>
+<p><span class="math display">\[\varepsilon_{q/p}=\frac{p}{Q(p)}\frac{1}{Q&#39;(p)}\]</span></p>
+<ol style="list-style-type: decimal">
+<li>Pour répondre à cette question, on doit donc dériver la fonction de demande (qui est une fonction puissance).
+<span class="math display">\[Q&#39;(p)=\frac{A\varepsilon}{p^{\varepsilon+1}}\]</span>
+On a donc :
+<span class="math display">\[\varepsilon_{q/p} =\frac{p}{\frac{A}{p^\varepsilon}}\times\frac{A\varepsilon}{p^{\varepsilon+1}}=\varepsilon\]</span>
+Les puissances et les A se simplifiant.
+On a donc bien le résultat demandé.</li>
+<li>On remarque que les fonctions de demande donnée pour les consommateurs des deux marques ont la forme donnée dans la question 1., avec <span class="math inline">\(A=10000\)</span> et <span class="math inline">\(\varepsilon_E=2\)</span> et <span class="math inline">\(\varepsilon_F=4\)</span>.
+<ol style="list-style-type: lower-alpha">
+<li>On a ici une discrimination du 3<sup>e</sup> degré.
+Le producteur répartit la production entre les deux groupes de manières à égaliser les revenus marginaux des deux groupes :
+<span class="math display">\[R_{mE}(q^*_E)=R_{mF}(q^*_F)\]</span>
+Or par définition :
+<span class="math display">\[R_{mi}(q_i)=P_i(q_i)-q_iP_i&#39;(q_i)=P_i(q_i)\left(1+\frac{q_i}{P_i(q_i)}P_i&#39;(q_i)\right)\]</span>
+On reconnaît à gauche l’expression de l’élasticité prix de la demande du groupe <span class="math inline">\(i\)</span>, on a donc :
+<span class="math display">\[R_{mi}(q_i)=P_i(q_i)\left(1-\frac{1}{|\varepsilon_{q_i/p}(q_i)|}\right)\]</span>
+On peut donc en déduire qu’à l’équilibre :
+<span class="math display">\[\begin{gather*}
+R_{mE}(q^*_E)=R_{mF}(q^*_F)\\
+\Leftrightarrow p_E\left(1-\frac{1}{\varepsilon_E}\right) = p_F\left(1-\frac{1}{\varepsilon_F}\right) \\
+\Leftrightarrow \frac{p_E}{p_F}=\frac{1-\frac{1}{\varepsilon_F}}{1-\frac{1}{\varepsilon_E}}
+\end{gather*}\]</span></li>
+<li>Dans l’expression précédente, on connaît le prix <span class="math inline">\(p_E\)</span> et les élasticité prix de la demande.
+On peut donc les remplacer, on a alors :
+<span class="math display">\[\frac{42}{p_F}=\frac{1-\frac{1}{4}}{1-\frac{1}{2}}=\frac{\frac{3}{4}}{\frac{1}{2}}=\frac{3}{4}\frac{2}{1}=\frac{3}{2}\]</span>
+On en déduit donc <span class="math inline">\(p_F=\frac{2}{3}42=28\)</span>€/kg.</li>
+<li>À l’équilibre du monopole discriminant, on a, en plus de l’égalité entre les revenu marginaux, que ceux-ci sont égaux au coût marginal total :
+<span class="math display">\[R_{mE}(q^*_E)=R_{mF}(q^*_F)=C_m(q_E^*+q_F^*)\]</span>
+Donc :
+<span class="math display">\[C_m(q^*)=R_{mE}(q^*_E)=p_E\left(1-\frac{1}{\varepsilon_E}\right)=42\frac{1}{2}=21\]</span>
+Le coût marginal total à l’équilibre est de 21€/kg.</li>
+</ol></li>
 </ol>
 </div>
 <div class="exercise">
@@ -1132,7 +1201,7 @@ la demande du marché A ne change pas.</li>
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-12" class="solution"><em>Solution</em> (Réponses de l'exercice <a href="exercices.html#exr:discriminationexo3">5.13</a>). </span>La propriété fondamentale à utiliser dans ce problème est l’égalité entre le revenu marginal sur chacun des marchés et le coût marginal total du monopole discriminant :
+<p><span id="unlabeled-div-56" class="solution"><em>Solution</em> (Réponses de l'exercice <a href="exercices.html#exr:discriminationexo3">5.13</a>). </span>La propriété fondamentale à utiliser dans ce problème est l’égalité entre le revenu marginal sur chacun des marchés et le coût marginal total du monopole discriminant :
 <span class="math display" id="eq:discriminant3e">\[\begin{equation}
 R_{mA}(q_A)=R_{mB}(q_B)=C_m(q_A+q_B) 
 \tag{5.2}
@@ -1226,7 +1295,7 @@ montrez que
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-13" class="solution"><em>Solution</em> (Réponses à l'exercice <a href="exercices.html#exr:discriminationexo4">5.14</a>). </span>Nous sommes dans une situation de discrimination au troisième degré.
+<p><span id="unlabeled-div-57" class="solution"><em>Solution</em> (Réponses à l'exercice <a href="exercices.html#exr:discriminationexo4">5.14</a>). </span>Nous sommes dans une situation de discrimination au troisième degré.
 1. On veut utiliser l’équation <a href="exercices.html#eq:discriminant3e">(5.2)</a> : à l’équilibre du monopole discriminant au 3<sup>e</sup> degré, le coût marginal total est égal au revenu marginal obtenu de chacun des groupes.
 Le coût marginal total :
 <span class="math display">\[C_m(q)=C&#39;(q)=20\]</span>
@@ -1289,7 +1358,7 @@ partie des objectifs de nombreux gouvernements.</li>
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-14" class="solution"><em>Solution</em>. </span>Réponses :</p>
+<p><span id="unlabeled-div-58" class="solution"><em>Solution</em>. </span>Réponses :</p>
 <ol style="list-style-type: decimal">
 <li>Faux, une situation de cartel est une situation où les deux entreprises peuvent améliorer leur profit par rapport au duopole de Cournot.</li>
 <li>Il est plus avantageux d’être en Stackelberg, en effet la quantité échangée sur le marché sera plus importante et le prix plus faible.
@@ -1305,7 +1374,56 @@ Cela diminue le surplus collectif.</li>
 <span class="math display">\[P(q)=1200-q\]</span>
 On suppose également que le coût marginal de production d’une bouteille d’eau est égal à 300. Deux entreprises se partagent le marché de l’eau et se font concurrence en quantité.
 1. Déterminez les quantités produites et le prix de vente à l’équilibre de Cournot-Nash.
-2. Déterminez la marge de chaque firme et l’indice de Lerner du marché.</p>
+2. Déterminez le taux de marge de chaque firme et l’indice de Lerner du marché.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-59" class="solution"><em>Solution</em> (Réponses à l'exercice <a href="exercices.html#exr:cournotexo1">5.16</a>). </span>On peut lire ici que le coût marginal de production des deux entreprises est identiques et vaut 300.
+Elles sont donc parfaitement symétriques.
+On peut supposer le coût fixe constant, on a alors que le coût de production pour une entreprise est donné par <span class="math inline">\(C(q)=300q\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>Chaque entreprise cherche à maximiser son profit en prenant la quantité produite par l’autre entreprise comme une donnée.
+On cherche d’abord à calculer les fonctions de réaction (qui seront identiques entre les deux entreprises, puisqu’elles sont symétriques).
+On commence par écrire le profit de l’entreprise A :
+<span class="math display">\[\pi_A(q_A, q_B)=q_AP(q_A+q_B)-C_A(q_A)=q_A(1200-q_A-q_B)-300q_A=(900-q_B)q_A-q_A^2\]</span>
+L’entreprise A va maintenant anticiper que l’entreprise B va produire une quantité <span class="math inline">\(q_B^a\)</span> et maximiser son profit.
+On obtient la dérivée partielle suivant <span class="math inline">\(q_A\)</span> :
+<span class="math display">\[\frac{\partial\pi_A}{\partial q_A}=900-q_B^a-2q_A\]</span>
+En utilisant la condition du premier ordre :
+<span class="math display">\[\frac{\partial_A\pi}{\partial q_A}(q_A^*+q_B^a)=0\]</span>
+On obtient la fonction de réaction de A :
+<span class="math display">\[2q_A^*+q_B^a=900\Leftrightarrow q_A^*=450-\frac{1}{2}q_B^a\]</span>
+Comme le problème est symétrique, on peut en déduire la fonction de réaction de B :
+<span class="math display">\[q_B^*=450-\frac{1}{2}q_A^a\]</span>
+Pour calculer l’équilibre de Cournot, les anticipations de chacune des entreprises doit correspondre à ce que fait réellement l’autre entreprise.
+Autrement dit <span class="math inline">\(q_A^a=q_A^*\)</span> et <span class="math inline">\(q_B^a=q_B^*\)</span>.
+On obtient donc :
+<span class="math display">\[\begin{gather*}
+q_A^*=450-\frac{1}{2}q_B^*\\
+q_B^*=450-\frac{1}{2}q_A^*
+\end{gather*}\]</span>
+Pour résoudre ce système, on peut, par exemple, remplacer dans la première expression <span class="math inline">\(q_B^*\)</span> par son expression dans la deuxième.
+On obtient :
+<span class="math display">\[\begin{gather*}
+q_A^*=450-\frac{1}{2}\left(450-\frac{1}{2}q_A^*\right) \\
+\Leftrightarrow \frac{3}{4}q_A^*=450-225\\
+\Leftrightarrow q_A^*=300
+\end{gather*}\]</span>
+Par symétrie des entreprises A et B, on obtient immédiatement que <span class="math inline">\(q_B^*=300\)</span>.
+On peut en déduire le prix sur le marché :
+<span class="math display">\[p^*=P(q_A^*+q_B^*)=1200-(q_A^*+q_B^*)=600\]</span>
+À l’équilibre de Cournot, chaque entreprise produit donc 300 bouteilles, qui sont vendues à 600.</li>
+<li>Le taux de marge d’une entreprise est aussi son indice de Lerner :
+<span class="math display">\[L_i=\frac{p^*-C_{mi}(q_i^*)}{p^*}=\frac{S_i}{|\varepsilon_{q/p}{q^*}|}\]</span>
+Les entreprises sont symétriques, elles auront donc le même indice de Lerner :
+<span class="math display">\[L_A=L_B=\frac{600-300}{600}=\frac{1}{2}\]</span>
+On peut trouver le même résultat en utilisant la propriété liant indice de Lerner et élasticité prix de la demande.<br />
+On calcule maintenant l’indice de Lerner du marché :
+<span class="math display">\[L=S_AL_A+S_BL_B\]</span>
+Ici, les parts de marché de chaque entreprise sont identiques et valent : <span class="math inline">\(S_A=S_B=q_A^*/q^*=1/2\)</span>.
+On a donc :
+<span class="math display">\[L=\frac{1}{2}\frac{1}{2}+\frac{1}{2}\frac{1}{2}=\frac{1}{2}\]</span>
+L’indice de Lerner du marché est de <span class="math inline">\(\frac{1}{2}\)</span>.</li>
+</ol>
 </div>
 <div class="exercise">
 <p><span id="exr:cournotexo2" class="exercise"><strong>Exercice 5.17  </strong></span>Supposons un marché sur lequel il n’y a que deux entreprises, A et B, qui vendent une marchandise homogène produite sans coûts. La demande sur ce marché est donnée par la fonction :
@@ -1326,7 +1444,7 @@ Calculez à nouveau les quantités et le prix d’équilibre lorsqu’on se plac
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-15" class="solution"><em>Solution</em> (Réponse à l'exercice <a href="exercices.html#exr:cournotexo2">5.17</a>). </span>L’énoncé nous donne la fonction de demande, mais nous allons utiliser la fonction de demande inverse.
+<p><span id="unlabeled-div-60" class="solution"><em>Solution</em> (Réponse à l'exercice <a href="exercices.html#exr:cournotexo2">5.17</a>). </span>L’énoncé nous donne la fonction de demande, mais nous allons utiliser la fonction de demande inverse.
 On résout <span class="math inline">\(Q(P(q))=q\)</span>, soit :
 <span class="math display">\[240-10P(q)=q\Leftrightarrow P(q)=24-\frac{q}{10}\]</span></p>
 <ol style="list-style-type: decimal">
@@ -1337,13 +1455,13 @@ La production de l’autre entreprise est considérée comme donnée.
 <ol style="list-style-type: lower-alpha">
 <li>Les deux entreprises se trouvent en duopole de Cournot : elles se font concurrence en quantité et ne connaissent pas la quantité produite par l’autre entreprise.
 Comme leur coût de production est identique, ces deux entreprises sont symétriques, tout ce qu’on écrira pour l’une peut s’écrire pour l’autre en changeant ce qu’il faut changer.</li>
-<li>On commence par écrire le profit de l’entreprise 1 :
+<li>On commence par écrire le profit de l’entreprise A :
 <span class="math display">\[\pi_A(q_A, q_B)=q_AP(q_A+q_B)-C_A(q_A)=q_AP(q_A+q_B)\]</span>
 L’entreprise A va maintenant anticiper que l’entreprise B va produire une quantité <span class="math inline">\(q_B^a\)</span> et maximiser son profit.
 On obtient la dérivée partielle suivant <span class="math inline">\(q_A\)</span> :
-<span class="math display">\[\frac{\partial_A\pi}{\partial q_A}=q_AP&#39;(q_A+q_B^a)+P(q_A+q_B^a)=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))=-\frac{1}{10}(2q_A+q_B^a)+24\]</span>
+<span class="math display">\[\frac{\partial\pi_A}{\partial q_A}=q_AP&#39;(q_A+q_B^a)+P(q_A+q_B^a)=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))=-\frac{1}{10}(2q_A+q_B^a)+24\]</span>
 En utilisant la condition du premier ordre :
-<span class="math display">\[\frac{\partial_A\pi}{\partial q_A}(q_A^*+q_B^a)=0\]</span>
+<span class="math display">\[\frac{\partial\pi_A}{\partial q_A}(q_A^*+q_B^a)=0\]</span>
 On obtient la fonction de réaction de A :
 <span class="math display">\[2q_A^*+q_B^a=240\Leftrightarrow q_A^*=120-\frac{1}{2}q_B^a\]</span>
 Comme le problème est symétrique, on peut en déduire la fonction de réaction de B :
@@ -1397,9 +1515,9 @@ Figure 5.19: Représentation graphique des différentes situations.
 </p>
 </div>
 À l’aide du graphique, on peut calculer les différents surplus des consommateurs :
-<span class="math display">\[S_c^m=\frac{1}{2}(24-p_m^)\times q_m^*=\frac{1}{2}(24-12)120=720\]</span>
-<span class="math display">\[S_c^c=\frac{1}{2}(24-p_c^)\times q_c^*=\frac{1}{2}(24-8)160=1280\]</span>
-<span class="math display">\[S_c^{cpp}=\frac{1}{2}(24-p_{cpp}^)\times q_{cpp}^*=\frac{1}{2}(24-0)240=2880\]</span>
+<span class="math display">\[S_c^m=\frac{1}{2}(24-p_m^*)\times q_m^*=\frac{1}{2}(24-12)120=720\]</span>
+<span class="math display">\[S_c^c=\frac{1}{2}(24-p_c^*)\times q_c^*=\frac{1}{2}(24-8)160=1280\]</span>
+<span class="math display">\[S_c^{cpp}=\frac{1}{2}(24-p_{cpp}^*)\times q_{cpp}^*=\frac{1}{2}(24-0)240=2880\]</span>
 On peut donc en déduire le surplus total dans chacun des cas :
 <span class="math display">\[S_t^m=S_c^m+S_p^m=720+1440=2160\]</span>
 <span class="math display">\[S_t^c=S_c^c+S_p^c=1280+1280=2560\]</span>
@@ -1487,13 +1605,15 @@ Calculez à nouveau les quantités et le prix d’équilibre lorsqu’on se plac
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-16" class="solution"><em>Solution</em> (Solution de l'exercice <a href="exercices.html#exr:stackexo1">5.18</a>). </span>On va pouvoir reprendre une partie des calculs de l’exercice <a href="exercices.html#exr:cournotexo2">5.17</a>.
-1. Ici, cela signifie donc que <span class="math inline">\(A\)</span> est leader et <span class="math inline">\(B\)</span> follower.
-a. Duopole de Stackelberg.
-b. La meilleure réponse a déjà été calculé à la question 1.B de l’exercice <a href="exercices.html#exr:cournotexo2">5.17</a>.
+<p><span id="unlabeled-div-61" class="solution"><em>Solution</em> (Solution de l'exercice <a href="exercices.html#exr:stackexo1">5.18</a>). </span>On va pouvoir reprendre une partie des calculs de l’exercice <a href="exercices.html#exr:cournotexo2">5.17</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Ici, cela signifie donc que <span class="math inline">\(A\)</span> est leader et <span class="math inline">\(B\)</span> follower.
+<ol style="list-style-type: lower-alpha">
+<li>Duopole de Stackelberg.</li>
+<li>La meilleure réponse a déjà été calculé à la question 1.B de l’exercice <a href="exercices.html#exr:cournotexo2">5.17</a>.
 Elle vaut :
-<span class="math display">\[q_B^*=120-\frac{1}{2}q_A^a\]</span>
-c. La résolution est maintenant différente de la résolution de Cournot.
+<span class="math display">\[q_B^*=120-\frac{1}{2}q_A^a\]</span></li>
+<li>La résolution est maintenant différente de la résolution de Cournot.
 Le producteur A peut <em>internaliser</em> la fonction de réaction du producteur B.
 Il sait comment B va réagir à sa production et en plus est le premier à entrer sur le marché et peut donc imposer sa quantité à B.
 On a donc le profit de A :
@@ -1515,9 +1635,35 @@ Les profits sont donc :
 <span class="math display">\[\begin{gather*}
 \pi_A=120\times6=720\\
 \pi_B=60\times 6 = 360
+\end{gather*}\]</span></li>
+<li>Le profit est plus élevé en Stackelberg pour A, mais plus faible pour B, malgré la totale symétrie de A et B en dehors de leur position sur le marché.
+Cette seule asymétrie profite à A, qui exploite son avantage afin d’augmenter son profit.</li>
+</ol></li>
+<li>On peut reprendre une partie des calculs précédents.
+Comme la structure de coût de B n’a pas changé, sa fonction de réaction n’a pas non plus changé :
+<span class="math display">\[q_B^*=120-\frac{1}{2}q_A^a\]</span>
+Le programme de maximisation de A est le même, à un changement prêt :
+<span class="math display">\[\pi_A(q_A, q_B(q_A))=q_AP(q_A+q_B(q_A))-C_A(q_A)\]</span>
+Si on reprend les calculs de la question précédente :
+<span class="math display">\[\begin{align*}
+\frac{\partial \pi_A}{\partial q_A}&amp;=P(q_A + q_B(q_A))+q_A(1+q&#39;_B(q_A))P&#39;(q_A+q_B(q_A))-C&#39;_A(q_A)\\
+&amp;=24-\frac{1}{10}(q_A+q_B(q_A))+\frac{1}{2}q_A\frac{-1}{10}-c_A\\
+&amp;=24-\frac{1}{10}\left(q_A+120-\frac{1}{2}q_A\right)+\frac{1}{2}q_A\frac{-1}{10}-4\\
+&amp;=8-\frac{1}{10}q_A
+\end{align*}\]</span>
+En utilisant la condition du premier ordre, on a donc :
+<span class="math display">\[8-\frac{1}{10}q_A^*=0\Leftrightarrow q_A^*=80\]</span>
+On en déduit que <span class="math inline">\(q_B^*=80\)</span> et <span class="math inline">\(q^*=160\)</span>, donc <span class="math inline">\(p^*=8\)</span>.
+On en déduit les profits :
+<span class="math display">\[\begin{gather*}
+\pi_A=80\times 8-4\times 80=320\\
+\pi_B=80\times 8 = 640
 \end{gather*}\]</span>
-c. Le profit est plus élevé en Stackelberg pour A, mais plus faible pour B.
-Malgré la totale symétrie de A et B en dehors de leur entrée sur le marché, ce seul fait profite à A, qui exploite son avantage afin d’augmenter son profit.</p>
+L’entreprise B, qui est follower sur ce marché en Stackelberg, fait maintenant plus de profits que l’entreprise A.
+Elle produit en effet la même quantité, mais a un coût plus faible.
+Conclusion, ce n’est pas parce qu’une entreprise est leader qu’elle fera plus de profit.
+Cela dépend aussi de la structure de coût respective des deux entreprises.</li>
+</ol>
 </div>
 <div class="exercise">
 <p><span id="exr:stackexo2" class="exercise"><strong>Exercice 5.19  (Stackelberg, coûts fixes) </strong></span>Soit deux firmes seules sur un marché produisant un bien homogène pour lequel la demande est :
@@ -1528,14 +1674,74 @@ a. L’existence de coûts fixes a-t-elle un impact sur les fonctions de meilleu
 b. L’existence de coûts fixes a-t-elle un impact sur la décision de produire?
 2. La firme <span class="math inline">\(A\)</span> est leader dans un duopole de Stackelberg, avec <span class="math inline">\(c=0\)</span> et <span class="math inline">\(F&gt;0\)</span>. La firme <span class="math inline">\(B\)</span> est suiveuse avec <span class="math inline">\(c=F=0\)</span>. Quel est l’impact de <span class="math inline">\(F\)</span> sur l’avantage de <span class="math inline">\(A\)</span>?</p>
 </div>
+<div class="solution">
+<p><span id="unlabeled-div-62" class="solution"><em>Solution</em> (Réponses à l'exercice <a href="exercices.html#exr:stackexo1">5.18</a>). </span>Réponses.</p>
+<ol style="list-style-type: decimal">
+<li>On a ici une fonction de coût affine.
+<ol style="list-style-type: lower-alpha">
+<li>Intuitivement, la réponse est non.
+En effet, tous nos raisonnements sont marginaux, et le coût fixe disparaît dans ces cas-là.
+Nous pouvons vérifier cela.
+Commençons par écrire le profit de l’entreprise <span class="math inline">\(i\)</span> :
+<span class="math display">\[\pi_i(q_i, q)=q_iP(q)-C_i(q_i)(=q_i(a-bq)-cq_i-F=q_i(a-c)-bq_iq-F)\]</span>
+Pour maximiser son profit, l’entreprise <span class="math inline">\(i\)</span> doit vérifier la condition du premier ordre :
+<span class="math display">\[\frac{\partial\pi_i}{\partial q_i}=0\quad \Leftrightarrow \quad q_iP&#39;(q)+P(q)-C&#39;_i(q_i)=0\]</span>
+Le coût n’entre qu’au travers de sa dérivée dans le calcul, donc le coût fixe disparaît : <span class="math inline">\(C&#39;_i(q_i)=c\)</span>.
+Un coût fixe ne modifie donc pas la fonction de meilleure réponse dans un oligopole.</li>
+<li>La réponse est oui : en effet, dans le cas où les coût fixes seraient trop élevée, alors l’entreprise ferait des pertes et préfèrerait ne pas produire.</li>
+</ol></li>
+<li>Calculons maintenant la fonction de meilleure réponse de B avec les paramètres qui nous sont donnés.
+On a <span class="math inline">\(P&#39;(q)=-b\)</span>, et <span class="math inline">\(C&#39;_B(q_B)=0\)</span>.
+Donc on a d’après la CPO :
+<span class="math display">\[-bq_B+a-b(q_A+q_B)=0\Leftrightarrow b(q_A+2q_B)=a\Leftrightarrow q_B=\frac{1}{2}\left(\frac{a}{b}-q_A\right)\]</span>
+On peut maintenant résoudre le problème de maximisation de A, en utilisant la fonction de réaction de B :
+<span class="math display">\[\pi_A(q_A, q_B)=aq_A-bq_A(q_A+q_B)-F=-bq_A^2+q_A\left(a-b\frac{1}{2}\left(\frac{a}{b}-q_A\right)\right)=\frac{1}{2}(a-bq_A)q_A-F\]</span>
+On peut maintenant calculer la condition du premier ordre de A en dérivant le profit :
+<span class="math display">\[\pi_A&#39;(q_A)=0 \Leftrightarrow  a-bq_A^*-bq_A^*=0\Leftrightarrow q_A^*=\frac{a}{2b}\]</span>
+<span class="math inline">\(F\)</span> n’est pas présent dans la quantité optimale produite par A.
+Néanmoins, le profit total de A à l’optimum est :
+<span class="math display">\[\pi_A(q_A^*)=\frac{1}{2}(a-bq_A^*)q_A^*-F=\frac{a^2}{8b}-F\]</span>
+Si <span class="math inline">\(F\)</span> est trop grand (ici, supérieur à <span class="math inline">\(\frac{a^2}{8b}\)</span>), alors l’entreprise A ne produira pas.
+Plus <span class="math inline">\(F\)</span> est grand, plus le profit de A est faible.
+En revanche, <span class="math inline">\(F\)</span> n’influence pas les quantités produites par <span class="math inline">\(A\)</span> et en ce sens n’impacte pas son avantage informationnel.</li>
+</ol>
+</div>
 </div>
 <div id="cartels" class="section level3" number="5.5.3">
 <h3><span class="header-section-number">5.5.3</span> Cartels</h3>
 <div class="exercise">
 <p><span id="exr:cartelexo1" class="exercise"><strong>Exercice 5.20  </strong></span>On se place à nouveau dans le cadre de l’exercice <a href="exercices.html#exr:cournotexo2">5.17</a>.</p>
 <ol style="list-style-type: decimal">
-<li>Supposons que les entreprises signent un accord de cartel pour produire conjointement la quantité correspondant à la situation de monopole. Quelle est la quantité que devrait produire chaque firme si elle respectait cet accord et quel serait alors le prix d’équilibre?</li>
+<li>Supposons que les entreprises signent un accord de cartel pour produire conjointement la quantité correspondant à la situation de monopole.
+Quelle est la quantité que devrait produire chaque firme si elle respectait cet accord et quel serait alors le prix d’équilibre?</li>
 <li>Si la première firme respecte l’accord, la seconde a-t-elle intérêt à le respecter? Si non, combien produira-t-elle? Quel conséquence cela a-t-il?</li>
+</ol>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-63" class="solution"><em>Solution</em> (Solution de l'exercice <a href="exercices.html#exr:cartelexo1">5.20</a>). </span>On reprend dans cet exercice une partie des calculs de l’exercice <a href="exercices.html#exr:cournotexo2">5.17</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Le cartel cherche à maximiser le profit joint des deux entreprises.
+On écrit ce profit :
+<span class="math display">\[\pi(q)=qP(q)-C_A(q_A)-c_B(q_B)\text{ avec }q=q_A+q_B\]</span>
+On a vu en cours à l’équilibre, le cartel cherche à égaliser la recette marginale totale avec le coût marginal de chacune des entreprises :
+<span class="math display">\[R_m(q^*)=C_{mA}(q_A^*)=C_{mB}(q_B^*)\]</span>
+Ici, les coûts, et donc les coûts marginaux, sont nuls.
+On a donc directement <span class="math inline">\(R_m(q^*)=0\)</span>.
+On avait trouvé que la demande inverse est <span class="math inline">\(P(q)=24-\frac{1}{10}q\)</span>.
+Donc <span class="math inline">\(R_m(q)=24-\frac{1}{5}q\)</span>.
+On obtient donc l’équation suivante pour l’optimum du cartel :
+<span class="math display">\[24-\frac{1}{5}q^*=0\quad\Leftrightarrow\quad q^*=120\]</span>
+On peut en déduire <span class="math inline">\(p^*=12\)</span>.
+On retrouve bien la solution du monopole qu’on avait trouvé à la question 1.e de l’exercice <a href="exercices.html#exr:cournotexo2">5.17</a>.
+Ici, les coûts de production sont nuls dans les deux entreprises, la répartition entre les deux n’importe donc pas.</li>
+<li>L’accord entre les deux entreprises doit être tel que <span class="math inline">\(q_A+q_B=120\)</span>.
+Or, on a la fonction de réaction trouvée en 1.b de l’exercie <a href="exercices.html#exr:cournotexo2">5.17</a> :
+<span class="math display">\[q_A=120-\frac{q_B}{2}\Leftrightarrow q_A+\frac{1}{2}q_B=120\]</span>
+Or la fonction de réaction représente la quantité optimale que produirait A pour une quantité <span class="math inline">\(q_B\)</span> donnée.
+L’accord n’est <em>pas</em> sur la fonction de réaction (sauf si <span class="math inline">\(q_B=0\)</span>), donc A aurait intérêt à ne pas respecter l’accord.
+On voit avec la fonction de réaction que A souhaiterait produire plus que ce que l’accord de cartel lui dit de produire.
+En effet, l’accord lui dit de produire <span class="math inline">\(q_A=120-q_B\)</span>, alors que A aurait envie de produire <span class="math inline">\(120-\frac{1}{1}q_B\)</span>.
+Cela entraînera une quantité plus importante sur le marché et un prix plus faible que ce que le cartel ferait.</li>
 </ol>
 </div>
 <div class="exercise">
@@ -1583,15 +1789,13 @@ entreprises ?</li>
 
 
 
-
-</div>
             </section>
 
           </div>
         </div>
       </div>
 <a href="oligopoles.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bibliographie-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="résolution-des-problèmes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

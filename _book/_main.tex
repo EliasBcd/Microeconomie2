@@ -6,7 +6,7 @@
 ]{book}
 \title{Microéconomie 2}
 \author{Elias Bouacida \and Antoine Terracol}
-\date{2021-11-30}
+\date{2021-12-01}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -1547,124 +1547,6 @@ La quantité produite est alors \(q_m^*\) est le profit \(\pi_m^*\).
 \caption{\label{fig:isoprofitCournot}Courbes d'isoprofits et fonctions de réactions des entreprises en équilibre de Cournot Nash.}
 \end{figure}
 
-\hypertarget{extension-oligopole-uxe0-la-cournot}{%
-\subsection{Extension : oligopole à la Cournot}\label{extension-oligopole-uxe0-la-cournot}}
-
-On étend l'analyse à \(N\) entreprises qui produisent un bien \emph{homogène}.
-Comme ce bien est homogène, le prix est unique sur le marché.
-Chaque entreprise \(i\) choisit une quantité \(q_i\geq 0\) et les produit à un coût de production \(C_i(q_i)\).
-La production totale sur le marché est \(q=\sum_i q_i\).
-La fonction de demande inverse sur le marché \(P(q)\) dépend de la production \emph{globable} \(q\).
-
-Le profit de chaque entreprise s'écrit :
-\[
-\pi(q_i, q_{-i}) = q_iP(q) -C_i(q_i)
-\]
-Où \(q_{-i}\) est la somme de la production de toute les entreprises autres que l'entreprise \(i\).
-Autrement dit \(q=q_i+q_{-i}\).
-
-Le programme de maximisation d'une entreprise \(i\) s'écrit :
-\[
-\max_{q_i}\pi(q_i, q_{-i}) = q_iP(q) -C_i(q_i)
-\]
-
-La condition du premier ordre est telle que :
-
-\[
-\begin{array}{crcl}
-&\frac{\partial \pi_i}{\partial q_i}(q^*) &=& 0\\
-\Leftrightarrow & \frac{\partial  \left(q_iP(q_i+q_{-i}) -C_i(q_i)\right)}{\partial q_i}(q^*) &= &0\\
-\Leftrightarrow & P(q^*) + q_i\frac{\partial  P}{\partial q}(q^*) -C_{im}(q_i^*)&= &0\\
-\Leftrightarrow & P(q^*) - C_{im}(q_i^*)&= &-q_i^*\frac{\partial  P}{\partial q}(q^*) \\
-\Leftrightarrow & \frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}&= &-\frac{q_i^*}{P(q^*)}\frac{\partial  P}{\partial q}(q^*) \\
-\Leftrightarrow & \frac{P(q^*) -C_{im}(q_i)^*}{P(q^*)}&= &-\frac{q^*}{P(q^*)}\frac{\partial  P}{\partial q}(q^*)\frac{q_i^*}{q^*} \\
-\Leftrightarrow & \frac{P(q^*) - C_{im}(q_i^*)}{P(q^*)}&= &S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
-\end{array}
-\]
-(La dérivée de la fonction de demande suivant le prix est négative).
-
-On obtient le \emph{markup-pricing} que peut appliquer un producteur en situation d'oligopole à la Cournot.
-\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]
-La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l'entreprise.
-
-\begin{remark}
-En monopole, \(S_i=1\), on retrouve alors bien :
-\[\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}\]
-
-En concurrence pure et parfaite \(S_i\to 0\), donc \(\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0\), ce qui implique bien que \(C_{mi}(q_i)\to P(q)\).
-On retrouve ainsi le résultat \(P(q^*)=C_m(q^*)\).
-\end{remark}
-
-\hypertarget{indice-de-lerner}{%
-\subsection{Indice de Lerner}\label{indice-de-lerner}}
-
-\emph{Rappel :} En monopole, l'indice de Lerner est :
-\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]
-
-\begin{definition}[Indice de Lerner]
-En oligopole à la Cournot avec \(n\) producteurs, on définit l'indice de Lerner par :
-\[L = \sum_{i=1}^nS_iL_i\]
-où \(S_i=q_i/q\) est la \emph{part de marché} de l'entreprise \(i\) et \(L_i\) est l'indice de Lerner propre à un producteur.
-\end{definition}
-
-\(q\) est la production totale \(q=\sum_{i=1}^N q_i\).
-Notons \(q=(q_i, q_{-i})\) le vecteur donnant les quantités produites par chaque producteur.
-\(q_i\) est la quantité produite par le producteur \(i\), \(q_{-i}=(q_1,\dots,q_{i-1}, q_{i+1}, \dots,q_N)\) est le vecteur de toutes les unités produites par les autres producteurs.
-
-Exprimons maintenant l'indice de Lerner d'un producteur.
-\[
-\begin{array}{rcl}
-L_i &=&\frac{1}{\left|\varepsilon_{q/p}(q_i, q_{-i})\right|}=\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\\
-&=&\frac{1}{\left|\frac{1}{\frac{\partial P}{\partial q}(q)}\frac{P(q)}{q_i}\right|}\\
-&=&\frac{1}{\left|\frac{1}{\frac{\partial P}{\partial q}(q)}\frac{P(q)}{q}\frac{q}{q_i}\right|}\\
-&=&\frac{1}{\left|\frac{1}{\frac{\partial P}{\partial q}(q)}\frac{p}{q}\right|}\frac{q_i}{q}\\
-&=&\frac{S_i}{\left|\varepsilon_{q/p}(q)\right|}\\
-\end{array}
-\]
-
-On peut donc réécrire l'indice de Lerner uniquement en fonction de l'élasticité de la demande à l'équilibre et des parts de marchés de chaque producteur :
-\[
-L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
-\]
-
-\hypertarget{indice-de-concentration-du-marchuxe9}{%
-\subsection{Indice de concentration du marché}\label{indice-de-concentration-du-marchuxe9}}
-
-\begin{definition}[Indice de Hirschman-Herfindahl (HHI)]
-\protect\hypertarget{def:HHI}{}\label{def:HHI}L'indice de Hirschman-Herfindahl est la somme des carrés des part de marchés.
-\[HHI = \sum_{i=1}^NS_i^2\]
-C'est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l'élasticité prix de la demande à l'optimum.
-Autrement dit, la moyenne des \(L_i\) pondéré par les parts de marché.
-\end{definition}
-
-\[
- \begin{array}{rcl}
- \sum_{i=1}^{N}\frac{P(q) -C_{im}(q_i)}{P(q)}S_i &=&\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}S_i \\
- &=&\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2\\
- &=&\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
- \end{array}
- \]
-
-\emph{Interprétation :}\\
-Imaginons que toutes les \(N\) entreprises sont identiques (elles ont la même fonction de coût).
-Elles produisent alors la même quantité optimale à l'équilibre.
-Leur part de marché est donc \(S_i=1/N\).
-Le HHI vaut :
-\[
-\begin{array}{rcl}
-HHI&=&\sum_{i=1}^NS_i^2\\
-&=&\sum_{i=1}^N\frac{1}{N^2}\\
-&=&\frac{N}{N^2} \\
-&=&\frac{1}{N}
-\end{array}
-\]
-Le HHI correspond à l'inverse du nombre du nombre d'entreprise qui serait identique sur le marché et donnerait le même écart moyen entre coût marginal et prix.
-Plus le HHI est proche de 1, plus on se rapproche du monopole.
-Plus le HHI est proche de 0, plus on se rapproche de la concurrence pure et parfaite.
-
-Le HHI est utilisé par les autorités de la concurrence pour évaluer les effets sur les prix de fusions d'entreprises.
-Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.
-
 \hypertarget{duopole-uxe0-la-stackelberg}{%
 \section{Duopole à la Stackelberg}\label{duopole-uxe0-la-stackelberg}}
 
@@ -1879,6 +1761,132 @@ Donc \(\frac{\partial P}{\partial q}(q_A)<0\).
 On en déduit donc que \(\frac{\partial\pi_A}{\partial q_A}(q_A^*)>0\) : l'entreprise A a intérêt à augmenter sa production si elle pense que l'entreprise B va respecter l'accord du cartel (et réciproquement).
 
 En conclusion, les accords de cartel ne sont pas ``naturellement'' stable, ils ont besoin d'un mécanisme qui maintient l'accord, par exemple en punissant une entreprise déviant de l'accord.
+
+\hypertarget{oligopoles-1}{%
+\section{Oligopoles}\label{oligopoles-1}}
+
+On étend l'analyse à \(N\) entreprises qui produisent un bien \emph{homogène}.
+Comme ce bien est homogène, le prix est unique sur le marché.
+Chaque entreprise \(i\) choisit une quantité \(q_i\geq 0\) et les produit à un coût de production \(C_i(q_i)\).
+La production totale sur le marché est \(q=\sum_i q_i\).
+La fonction de demande inverse sur le marché \(P(q)\) dépend de la production \emph{globable} \(q\).
+
+Le profit de chaque entreprise s'écrit :
+\[
+\pi(q_i, q) = q_iP(q) -C_i(q_i)
+\]
+
+\begin{remark}[Quantité globale]
+Attention, ici \(q\), la quantité globale, dépend de la quantité \(q_i\) produite par \(i\).
+Implicitement, on a ainsi définit une fonction \(q(q_i)\), ce qui est important dans la dérivation des résultats.
+\end{remark}
+
+Le programme de maximisation d'une entreprise \(i\) s'écrit :
+\[
+\max_{q_i}\pi(q_i, q) = q_iP(q) -C_i(q_i)
+\]
+
+La condition du premier ordre est telle que :
+
+\[
+\begin{array}{crcl}
+&\frac{\partial \pi_i}{\partial q_i}(q_i^*, q(q_i^*)) &=& 0\\
+\Leftrightarrow & \frac{\partial  \left(q_iP(q) -C_i(q_i)\right)}{\partial q_i}(q_i^*, q(q_i^*)) &= &0\\
+\Leftrightarrow & P(q^*) + q_iP'(q^*) -C_{im}(q_i^*)&= &0\\
+\Leftrightarrow & P(q^*) - C_{im}(q_i^*)&= &-q_i^*P'(q^*) \\
+\Leftrightarrow & \frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}&= &-\frac{q_i^*}{P(q^*)}P'(q^*) \\
+\Leftrightarrow & \frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}&= &-\frac{q^*}{P(q^*)}P'(q^*)\frac{q_i^*}{q^*} \\
+\Leftrightarrow & \frac{P(q^*) - C_{im}(q_i^*)}{P(q^*)}&= &S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
+\end{array}
+\]
+(La dérivée de la fonction de demande suivant le prix est négative).
+
+\begin{definition}[Part de marché]
+La part de marché détenue par une entreprise \(i\) est la part de la quantité totale produite qui l'est par cette entreprise.
+On la note \(S_i\) :
+\[S_i=\frac{q_i}{q}\]
+\end{definition}
+
+On obtient le \emph{markup-pricing} que peut appliquer un producteur en situation d'oligopole à la Cournot.
+\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]
+La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l'entreprise.
+
+\begin{remark}
+En monopole, \(S_i=1\), on retrouve alors bien :
+\[\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}\]
+
+En concurrence pure et parfaite \(S_i\to 0\), donc \(\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0\), ce qui implique bien que \(C_{mi}(q_i)\to P(q)\).
+On retrouve ainsi le résultat \(P(q^*)=C_m(q^*)\).
+\end{remark}
+
+\hypertarget{indice-de-lerner}{%
+\subsection{Indice de Lerner}\label{indice-de-lerner}}
+
+\emph{Rappel :} En monopole, l'indice de Lerner est :
+\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]
+
+\begin{definition}[Indice de Lerner d'un producteur $i$]
+On définit l'indice de Lerner pour un producteur \(i\), noté \(L_i\), comme son taux de marge :
+\[L_i=\frac{P(q^*) -C_{im}(q^*_i)}{P(q^*)}\]
+\end{definition}
+
+On peut exprimer cette indice de Lerner ainsi, grâce à la condition du premier ordre trouvée plus haut :
+\begin{equation}
+\begin{array}{rcl}
+L_i &=&\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\frac{1}{\left|\varepsilon_{q/p}(q_i, q_{-i})\right|}\\
+&=&S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
+\end{array}
+\label{eq:li}
+\end{equation}
+
+\begin{definition}[Indice de Lerner du marché]
+En oligopole à la Cournot avec \(N\) producteurs, on définit l'indice de Lerner du marché par :
+\[L = \sum_{i=1}^NS_iL_i\]
+où \(S_i=q_i/q\) est la \emph{part de marché} du producteur \(i\) et \(L_i\) est l'indice de Lerner d'un producteur \(i\).
+\end{definition}
+
+En utilisant l'expression obtenue pour l'indice de Lerner d'un producteur à l'équation \eqref{eq:li}, on peut réécrire l'indice de Lerner du marché uniquement en fonction de l'élasticité de la demande à l'équilibre et des parts de marchés de chaque producteur :
+\[
+L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
+\]
+
+\hypertarget{indice-de-concentration-du-marchuxe9}{%
+\subsection{Indice de concentration du marché}\label{indice-de-concentration-du-marchuxe9}}
+
+\begin{definition}[Indice de Hirschman-Herfindahl (HHI)]
+\protect\hypertarget{def:HHI}{}\label{def:HHI}L'indice de Hirschman-Herfindahl est la somme des carrés des part de marchés.
+\[HHI = \sum_{i=1}^NS_i^2\]
+C'est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l'élasticité prix de la demande à l'optimum.
+Autrement dit, la moyenne des \(L_i\) pondéré par les parts de marché.
+\end{definition}
+
+\[
+ \begin{array}{rcl}
+ \sum_{i=1}^{N}\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}S_i &=&\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}S_i \\
+ &=&\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2\\
+ &=&\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
+ \end{array}
+ \]
+
+\emph{Interprétation :}\\
+Imaginons que toutes les \(N\) producteurs sont identiques (ils ont la même fonction de coût).
+Ils produisent alors la même quantité optimale à l'équilibre.
+Leur part de marché est donc \(S_i=1/N\).
+Le HHI vaut :
+\[
+\begin{array}{rcl}
+HHI&=&\sum_{i=1}^NS_i^2\\
+&=&\sum_{i=1}^N\frac{1}{N^2}\\
+&=&\frac{N}{N^2} \\
+&=&\frac{1}{N}
+\end{array}
+\]
+Le HHI correspond à l'inverse du nombre de producteurs qui seraient identiques sur le marché et donneraient le même écart moyen entre coût marginal et prix.
+Plus le HHI est proche de 1, plus on se rapproche du monopole.
+Plus le HHI est proche de 0, plus on se rapproche de la concurrence pure et parfaite.
+
+Le HHI est utilisé par les autorités de la concurrence pour évaluer les effets sur les prix de fusions d'entreprises.
+Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.
 
 \hypertarget{exercices}{%
 \chapter{Exercices}\label{exercices}}
@@ -3010,27 +3018,34 @@ On note dans la correction \(q_2\) la quantité de bien vendue au prix \(p_2\).
 Ainsi, la quantité totale \(q\) est égale à \(q_1+q_2\).
 On remarque que l'énoncé nous donnes ici la fonction de demande \(Q(p)=100-p\), alors que nous avons besoin de la fonction de demande inverse \(P(q)\).
 En résolvant \(Q(P(q))=q\), on obtient \(P(q)=100-q\).
-1. On commence par écrire le profit du monopole discriminant :
-\[\pi(q_1, q_2)=q_1\times P(q_1)+p_2\times q_2-C(q_1+q_2)\]
-On commence par dériver suivant \(q_1\) pour obtenir la condition du premier sur les premières unités vendues.
-\[\frac{\partial \pi}{\partial q_1}=P'(q_1)\times q_1+P(q_1)-C_m(q_1+q_2)\]
-On par ailleurs :
-\[P'(q)=-1\]
-\[C_m(q)=C'(q)=10\]
-On réécrit donc la dérivée partielle suivant \(q_1\) :
-\[\frac{\partial \pi}{\partial q_1}=-q_1+(100-q_1)-10\]
-En utilisant condition du premier ordre \(\frac{\partial \pi}{\partial q_1}(q_1^*)=0\), cela donne donc :
-\[-2q_1^*+90=0\Leftrightarrow q_1^*=45\]
-Et \(p_1^*=P(q_1^*)=100-45=55\).
-On peut maintenant étudier la maximisation sur le groupe 2, en calculant la dérivée partielle du profit suivant q\_2 :
-\[\frac{\partial \pi}{\partial q_2}=p_2-C_m(q_1+q_2)\]
-En utilisant la condition du premier ordre, \(\frac{\partial \pi}{\partial q_2}(q_2^*)=0\), on obtient :
-\[p_2^*=10\]
-On peut en déduire la quantité \emph{totale} achetée par les consommateurs :
-\(q=Q(p_2^*)=100-p_2^*=90\), et donc \(q_2^*=45\).
-Attention, \(Q(p_2^*)\) nous donne bien la quantité totale achetée sur le marché, et pas la quantité achetée au prix \(p_2^*\).
-En effet, les premières unités sont vendues au prix \(p_1^*=P(q_1^*)\), et ensuite la deuxième partie des unités est vendue au prix \(p_2^*\).
-2. Représentons d'abord la situation.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  On commence par écrire le profit du monopole discriminant :
+  \[\pi(q_1, q_2)=q_1\times P(q_1)+p_2\times q_2-C(q_1+q_2)\]
+  On commence par dériver suivant \(q_1\) pour obtenir la condition du premier sur les premières unités vendues.
+  \[\frac{\partial \pi}{\partial q_1}=P'(q_1)\times q_1+P(q_1)-C_m(q_1+q_2)\]
+  On par ailleurs :
+  \[P'(q)=-1\]
+  \[C_m(q)=C'(q)=10\]
+  On réécrit donc la dérivée partielle suivant \(q_1\) :
+  \[\frac{\partial \pi}{\partial q_1}=-q_1+(100-q_1)-10\]
+  En utilisant condition du premier ordre \(\frac{\partial \pi}{\partial q_1}(q_1^*)=0\), cela donne donc :
+  \[-2q_1^*+90=0\Leftrightarrow q_1^*=45\]
+  Et \(p_1^*=P(q_1^*)=100-45=55\).
+  On peut maintenant étudier la maximisation sur le groupe 2, en calculant la dérivée partielle du profit suivant q\_2 :
+  \[\frac{\partial \pi}{\partial q_2}=p_2-C_m(q_1+q_2)\]
+  En utilisant la condition du premier ordre, \(\frac{\partial \pi}{\partial q_2}(q_2^*)=0\), on obtient :
+  \[p_2^*=10\]
+  On peut en déduire la quantité \emph{totale} achetée par les consommateurs :
+  \(q=Q(p_2^*)=100-p_2^*=90\), et donc \(q_2^*=45\).
+  Attention, \(Q(p_2^*)\) nous donne bien la quantité totale achetée sur le marché, et pas la quantité achetée au prix \(p_2^*\).
+  En effet, les premières unités sont vendues au prix \(p_1^*=P(q_1^*)\), et ensuite la deuxième partie des unités est vendue au prix \(p_2^*\).
+\item
+  Représentons d'abord la situation.
+\end{enumerate}
 
 \includegraphics{_main_files/figure-latex/discriminationexo2-1.pdf}
 Les quantités vendues au prix \(p_2^*\) par le producteur sont produites au coût marginal.
@@ -3066,21 +3081,79 @@ On obtient ainsi l'aire de deux triangles :
 \begin{exercise}
 \protect\hypertarget{exr:discriminationexo2}{}\label{exr:discriminationexo2}
 
-L'entreprise de surgelés Equus vend des lasagnes au cheval sur deux marchés: le marché standard et le marché du hard discount. Sur le premier marché les lasagnes sont directement vendues sous la marque Equus; sur le second elles sont vendues moins chères sous la marque Fer-à-Cheval.
+L'entreprise de surgelés Equus vend des lasagnes au cheval sur deux marchés : le marché standard et le marché du hard discount.
+Sur le premier marché les lasagnes sont directement vendues sous la marque Equus ; sur le second elles sont vendues moins chères sous la marque Fer-à-Cheval.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Question préliminaire. Soit une fonction de demande donnée par:
-  \[Q(p)=\frac{A}{p^\varepsilon},\] avec \(A>0\) et \(\varepsilon >0\). Montrez que la valeur absolue de l'élasticité de \(Q\) par rapport au prix vaut \(\varepsilon\). Ce résultat pourra être utilisé directement dans la suite.
-  2.Le prix de vente optimal des lasagnes de la marque Equus est de \(p_E=42\) euros le kg. D'après les recherches du département marketing, la demande pour les lasagnes de marque Equus est donnée par \(Q_E(p_E)=\frac{10000}{p_E^2}\) et pour la marque Fer-à-Cheval par \(Q_F(p_F)=\frac{10000}{p_F^4}\).
+  Question préliminaire.
+  Soit une fonction de demande donnée par:
+  \[Q(p)=\frac{A}{p^\varepsilon},\]
+  avec \(A>0\) et \(\varepsilon >0\).
+  Montrez que la valeur absolue de l'élasticité de \(Q\) par rapport au prix vaut \(\varepsilon\).
+  Ce résultat pourra être utilisé directement dans la suite.
+  2.Le prix de vente optimal des lasagnes de la marque Equus est de \(p_E=42\) euros le kg.
+  D'après les recherches du département marketing, la demande pour les lasagnes de marque Equus est donnée par \(Q_E(p_E)=\frac{10000}{p_E^2}\) et pour la marque Fer-à-Cheval par \(Q_F(p_F)=\frac{10000}{p_F^4}\).
   a. Donnez la formule qui, à la solution du monopole discriminant, relie le rapport des prix \(\frac{p_E}{p_F}\) aux élasticités-prix \(\varepsilon_E\) et \(\varepsilon_F\) sur les deux marchés.
   b. Déduisez-en le prix \(p_F\) qui maximise le profit du monopole discriminant.
   c.~Déduisez-en également le coût marginal de production de la quantité totale \(q_E+q_F\) maximisant le profit du monopole.
 \end{enumerate}
 
 \end{exercise}
+
+\begin{solution}[Réponses de l'exercice \ref{exr:discriminationexo2}]
+
+\emph{Rappel :} Élasticité prix de la demande
+
+\[\varepsilon_{q/p}=\frac{p}{Q(p)}\frac{1}{Q'(p)}\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Pour répondre à cette question, on doit donc dériver la fonction de demande (qui est une fonction puissance).
+  \[Q'(p)=\frac{A\varepsilon}{p^{\varepsilon+1}}\]
+  On a donc :
+  \[\varepsilon_{q/p} =\frac{p}{\frac{A}{p^\varepsilon}}\times\frac{A\varepsilon}{p^{\varepsilon+1}}=\varepsilon\]
+  Les puissances et les A se simplifiant.
+  On a donc bien le résultat demandé.
+\item
+  On remarque que les fonctions de demande donnée pour les consommateurs des deux marques ont la forme donnée dans la question 1., avec \(A=10000\) et \(\varepsilon_E=2\) et \(\varepsilon_F=4\).
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    On a ici une discrimination du 3\textsuperscript{e} degré.
+    Le producteur répartit la production entre les deux groupes de manières à égaliser les revenus marginaux des deux groupes :
+    \[R_{mE}(q^*_E)=R_{mF}(q^*_F)\]
+    Or par définition :
+    \[R_{mi}(q_i)=P_i(q_i)-q_iP_i'(q_i)=P_i(q_i)\left(1+\frac{q_i}{P_i(q_i)}P_i'(q_i)\right)\]
+    On reconnaît à gauche l'expression de l'élasticité prix de la demande du groupe \(i\), on a donc :
+    \[R_{mi}(q_i)=P_i(q_i)\left(1-\frac{1}{|\varepsilon_{q_i/p}(q_i)|}\right)\]
+    On peut donc en déduire qu'à l'équilibre :
+    \begin{gather*}
+    R_{mE}(q^*_E)=R_{mF}(q^*_F)\\
+    \Leftrightarrow p_E\left(1-\frac{1}{\varepsilon_E}\right) = p_F\left(1-\frac{1}{\varepsilon_F}\right) \\
+    \Leftrightarrow \frac{p_E}{p_F}=\frac{1-\frac{1}{\varepsilon_F}}{1-\frac{1}{\varepsilon_E}}
+    \end{gather*}
+  \item
+    Dans l'expression précédente, on connaît le prix \(p_E\) et les élasticité prix de la demande.
+    On peut donc les remplacer, on a alors :
+    \[\frac{42}{p_F}=\frac{1-\frac{1}{4}}{1-\frac{1}{2}}=\frac{\frac{3}{4}}{\frac{1}{2}}=\frac{3}{4}\frac{2}{1}=\frac{3}{2}\]
+    On en déduit donc \(p_F=\frac{2}{3}42=28\)€/kg.
+  \item
+    À l'équilibre du monopole discriminant, on a, en plus de l'égalité entre les revenu marginaux, que ceux-ci sont égaux au coût marginal total :
+    \[R_{mE}(q^*_E)=R_{mF}(q^*_F)=C_m(q_E^*+q_F^*)\]
+    Donc :
+    \[C_m(q^*)=R_{mE}(q^*_E)=p_E\left(1-\frac{1}{\varepsilon_E}\right)=42\frac{1}{2}=21\]
+    Le coût marginal total à l'équilibre est de 21€/kg.
+  \end{enumerate}
+\end{enumerate}
+
+\end{solution}
 
 \begin{exercise}
 \protect\hypertarget{exr:discriminationexo3}{}\label{exr:discriminationexo3}
@@ -3254,8 +3327,8 @@ On a donc bien :
 \[\frac{p_2^*-C_m(q_1^*+q_2^*)}{p_2^*}=\frac{1}{|\varepsilon_{q_2/p_2}|}\]
 \end{solution}
 
-\hypertarget{oligopoles-1}{%
-\section{Oligopoles}\label{oligopoles-1}}
+\hypertarget{oligopoles-2}{%
+\section{Oligopoles}\label{oligopoles-2}}
 
 \begin{exercise}[Questions de cours]
 \protect\hypertarget{exr:oligopolequestions}{}\label{exr:oligopolequestions}
@@ -3308,8 +3381,65 @@ Réponses :
 \[P(q)=1200-q\]
 On suppose également que le coût marginal de production d'une bouteille d'eau est égal à 300. Deux entreprises se partagent le marché de l'eau et se font concurrence en quantité.
 1. Déterminez les quantités produites et le prix de vente à l'équilibre de Cournot-Nash.
-2. Déterminez la marge de chaque firme et l'indice de Lerner du marché.
+2. Déterminez le taux de marge de chaque firme et l'indice de Lerner du marché.
 \end{exercise}
+
+\begin{solution}[Réponses à l'exercice \ref{exr:cournotexo1}]
+
+On peut lire ici que le coût marginal de production des deux entreprises est identiques et vaut 300.
+Elles sont donc parfaitement symétriques.
+On peut supposer le coût fixe constant, on a alors que le coût de production pour une entreprise est donné par \(C(q)=300q\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Chaque entreprise cherche à maximiser son profit en prenant la quantité produite par l'autre entreprise comme une donnée.
+  On cherche d'abord à calculer les fonctions de réaction (qui seront identiques entre les deux entreprises, puisqu'elles sont symétriques).
+  On commence par écrire le profit de l'entreprise A :
+  \[\pi_A(q_A, q_B)=q_AP(q_A+q_B)-C_A(q_A)=q_A(1200-q_A-q_B)-300q_A=(900-q_B)q_A-q_A^2\]
+  L'entreprise A va maintenant anticiper que l'entreprise B va produire une quantité \(q_B^a\) et maximiser son profit.
+  On obtient la dérivée partielle suivant \(q_A\) :
+  \[\frac{\partial\pi_A}{\partial q_A}=900-q_B^a-2q_A\]
+  En utilisant la condition du premier ordre :
+  \[\frac{\partial_A\pi}{\partial q_A}(q_A^*+q_B^a)=0\]
+  On obtient la fonction de réaction de A :
+  \[2q_A^*+q_B^a=900\Leftrightarrow q_A^*=450-\frac{1}{2}q_B^a\]
+  Comme le problème est symétrique, on peut en déduire la fonction de réaction de B :
+  \[q_B^*=450-\frac{1}{2}q_A^a\]
+  Pour calculer l'équilibre de Cournot, les anticipations de chacune des entreprises doit correspondre à ce que fait réellement l'autre entreprise.
+  Autrement dit \(q_A^a=q_A^*\) et \(q_B^a=q_B^*\).
+  On obtient donc :
+  \begin{gather*}
+  q_A^*=450-\frac{1}{2}q_B^*\\
+  q_B^*=450-\frac{1}{2}q_A^*
+  \end{gather*}
+  Pour résoudre ce système, on peut, par exemple, remplacer dans la première expression \(q_B^*\) par son expression dans la deuxième.
+  On obtient :
+  \begin{gather*}
+  q_A^*=450-\frac{1}{2}\left(450-\frac{1}{2}q_A^*\right) \\
+  \Leftrightarrow \frac{3}{4}q_A^*=450-225\\
+  \Leftrightarrow q_A^*=300
+  \end{gather*}
+  Par symétrie des entreprises A et B, on obtient immédiatement que \(q_B^*=300\).
+  On peut en déduire le prix sur le marché :
+  \[p^*=P(q_A^*+q_B^*)=1200-(q_A^*+q_B^*)=600\]
+  À l'équilibre de Cournot, chaque entreprise produit donc 300 bouteilles, qui sont vendues à 600.
+\item
+  Le taux de marge d'une entreprise est aussi son indice de Lerner :
+  \[L_i=\frac{p^*-C_{mi}(q_i^*)}{p^*}=\frac{S_i}{|\varepsilon_{q/p}{q^*}|}\]
+  Les entreprises sont symétriques, elles auront donc le même indice de Lerner :
+  \[L_A=L_B=\frac{600-300}{600}=\frac{1}{2}\]
+  On peut trouver le même résultat en utilisant la propriété liant indice de Lerner et élasticité prix de la demande.\\
+  On calcule maintenant l'indice de Lerner du marché :
+  \[L=S_AL_A+S_BL_B\]
+  Ici, les parts de marché de chaque entreprise sont identiques et valent : \(S_A=S_B=q_A^*/q^*=1/2\).
+  On a donc :
+  \[L=\frac{1}{2}\frac{1}{2}+\frac{1}{2}\frac{1}{2}=\frac{1}{2}\]
+  L'indice de Lerner du marché est de \(\frac{1}{2}\).
+\end{enumerate}
+
+\end{solution}
 
 \begin{exercise}
 \protect\hypertarget{exr:cournotexo2}{}\label{exr:cournotexo2}
@@ -3370,13 +3500,13 @@ On résout \(Q(P(q))=q\), soit :
     Les deux entreprises se trouvent en duopole de Cournot : elles se font concurrence en quantité et ne connaissent pas la quantité produite par l'autre entreprise.
     Comme leur coût de production est identique, ces deux entreprises sont symétriques, tout ce qu'on écrira pour l'une peut s'écrire pour l'autre en changeant ce qu'il faut changer.
   \item
-    On commence par écrire le profit de l'entreprise 1 :
+    On commence par écrire le profit de l'entreprise A :
     \[\pi_A(q_A, q_B)=q_AP(q_A+q_B)-C_A(q_A)=q_AP(q_A+q_B)\]
     L'entreprise A va maintenant anticiper que l'entreprise B va produire une quantité \(q_B^a\) et maximiser son profit.
     On obtient la dérivée partielle suivant \(q_A\) :
-    \[\frac{\partial_A\pi}{\partial q_A}=q_AP'(q_A+q_B^a)+P(q_A+q_B^a)=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))=-\frac{1}{10}(2q_A+q_B^a)+24\]
+    \[\frac{\partial\pi_A}{\partial q_A}=q_AP'(q_A+q_B^a)+P(q_A+q_B^a)=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))=-\frac{1}{10}(2q_A+q_B^a)+24\]
     En utilisant la condition du premier ordre :
-    \[\frac{\partial_A\pi}{\partial q_A}(q_A^*+q_B^a)=0\]
+    \[\frac{\partial\pi_A}{\partial q_A}(q_A^*+q_B^a)=0\]
     On obtient la fonction de réaction de A :
     \[2q_A^*+q_B^a=240\Leftrightarrow q_A^*=120-\frac{1}{2}q_B^a\]
     Comme le problème est symétrique, on peut en déduire la fonction de réaction de B :
@@ -3424,16 +3554,78 @@ On résout \(Q(P(q))=q\), soit :
     Représentons graphiquement la situation pour le reste.
     \includegraphics{_main_files/figure-latex/cournotexo21f-1.pdf}
     À l'aide du graphique, on peut calculer les différents surplus des consommateurs :
-    \[S_c^m=\frac{1}{2}(24-p_m^)\times q_m^*=\frac{1}{2}(24-12)120=720\]
-    \[S_c^c=\frac{1}{2}(24-p_c^)\times q_c^*=\frac{1}{2}(24-8)160=1280\]
-    \[S_c^{cpp}=\frac{1}{2}(24-p_{cpp}^)\times q_{cpp}^*=\frac{1}{2}(24-0)240=2880\]
+    \[S_c^m=\frac{1}{2}(24-p_m^*)\times q_m^*=\frac{1}{2}(24-12)120=720\]
+    \[S_c^c=\frac{1}{2}(24-p_c^*)\times q_c^*=\frac{1}{2}(24-8)160=1280\]
+    \[S_c^{cpp}=\frac{1}{2}(24-p_{cpp}^*)\times q_{cpp}^*=\frac{1}{2}(24-0)240=2880\]
     On peut donc en déduire le surplus total dans chacun des cas :
     \[S_t^m=S_c^m+S_p^m=720+1440=2160\]
     \[S_t^c=S_c^c+S_p^c=1280+1280=2560\]
     \[S_t^{CPP}=S_c^{CPP}+S_p^{CPP}=2880+0=2880\]
     Le surplus social est donc le plus élevé en situation de concurrence pure et parfaite.
     Dans les deux autres cas, il est possible d'améliorer la situation des producteurs et des consommateurs simultanément.
+  \item
+    Nous allons directement poser le problème comme si le marché contenait \(n\) entreprises (autrement dit, comme si \(n-2\) entreprises entraient sur le marché).
+    On peut écrire le profit de l'entreprise \(i\) :
+    \[\pi_i(q_i, q)=P(q)q_i-C_i(q_i)\]
+    Où \(q=\sum_{i=1}^nq_i\) est la quantité totale produite, et \(C_i(q_i)=0\) ici.
+    On cherche d'abord la fonction de réaction de l'entreprise \(i\), en maximisant son profit et considérant les productions des autres entreprises comme données.
+    Attention, dans cette maximisation, \(q\) dépend de \(q_i\).
+    On calcule donc la dérivée partielle suivant \(q_i\) :
+    \[\frac{\partial \pi_i}{\partial q_i}=q_iP'(q)+P(q)\]
+    Avec la condition du premier ordre de l'entreprise \(i\) :
+    \[\frac{\partial \pi_i}{\partial q_i}=0 \Leftrightarrow q_iP'(q)+P(q)=0\]
+    On peut remplacer \(P(q)\) et \(P'(q)\) par leur expression.
+    \[q_i^*\times\left(-\frac{1}{10}\right)+24-\frac{1}{10}q^*=0\]
+    Les entreprises sont toutes identiques, elles produiront donc la même quantité à l'équilibre de Cournot.
+    On peut en déduire que \(q_i^*=\frac{q^*}{n}\).
+    On peut alors réécrire l'équation d'équilibre :
+    \[-\frac{1}{10}\frac{q^*}{n}+24-\frac{1}{10}q^*=0\quad\Leftrightarrow \quad \frac{1}{10}q^*\left(1+\frac{1}{n}\right)=24\]
+    Autrement dit :
+    \[q^*\frac{n+1}{n}=240\quad\Leftrightarrow\quad q^*=\frac{n}{n+1}240\]
+    On en déduit le prix :
+    \[p^*=P(q^*)=24-\frac{1}{10}q^*=\frac{24}{n+1}\]
+    On constate que plus le nombre d'entreprise est élevée, plus la quantité échangée sur le marché est grande et se rapproche de celle de la concurrence pure et parfaite.
+    A l'inverse, le prix diminue et se rapproche lui aussi du prix de la CPP.
   \end{enumerate}
+\item
+  Les deux entreprises ont maintenant des coût marginaux de production non nuls.
+  On peut refaire les raisonnements de b. et d.~avec des nouveaux profits :
+  On commence par écrire le profit de l'entreprise A :
+  \[\pi_A(q_A, q_B)=q_AP(q_A+q_B)-C_A(q_A)\]
+  L'entreprise A va maintenant anticiper que l'entreprise B va produire une quantité \(q_B^a\) et maximiser son profit.
+  On obtient la dérivée partielle suivant \(q_A\) :
+  \[\frac{\partial_A\pi}{\partial q_A}=q_AP'(q_A+q_B^a)+P(q_A+q_B^a)-C'_A(q_A)=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))-c_A=-\frac{1}{10}(2q_A+q_B^a)+24-c_A\]
+  En utilisant la condition du premier ordre :
+  \[\frac{\partial_A\pi}{\partial q_A}(q_A^*+q_B^a)=0\]
+  On obtient la fonction de réaction de A :
+  \[2q_A^*+q_B^a=240-10c_A\Leftrightarrow q_A^*=120-5c_A-\frac{1}{2}q_B^a\]
+  Comme le problème est presque symétrique, on peut en déduire la fonction de réaction de B :
+  \[q_B^*=120-5c_B-\frac{1}{2}q_A^a\]
+  Pour calculer l'équilibre de Cournot, les anticipations de chacune des entreprises doit correspondre à ce que fait réellement l'autre entreprise.
+  Autrement dit \(q_A^a=q_A^*\) et \(q_B^a=q_B^*\).
+  On obtient donc :
+  \begin{gather*}
+  q_A^*=120-5c_A-\frac{1}{2}q_B^*\\
+  q_B^*=120-5c_B-\frac{1}{2}q_A^*
+  \end{gather*}
+  Pour résoudre ce système, on peut, par exemple, remplacer dans la première expression \(q_B^*\) par son expression dans la deuxième.
+  On obtient :
+  \begin{gather*}
+  q_A^*=120-5c_A-\frac{1}{2}\left(120-c_B-\frac{1}{2}q_A^*\right) \\
+  \Leftrightarrow \frac{3}{4}q_A^*=120-60-5c_A+\frac{5}{2}c_B\\
+  \Leftrightarrow q_A^*=80-\frac{20}{3}c_A+\frac{10}{3}c_B
+  \end{gather*}
+  Par symétrie des entreprises A et B, on obtient immédiatement que \(q_B^*=80-\frac{20}{3}c_B+\frac{10}{3}c_A\).
+  On peut en déduire le prix sur le marché :
+  \[p^*=P(q_A^*+q_B^*)=24-\frac{1}{10}(q_A^*+q_B^*)=8+\frac{1}{3}(c_A+c_B)\]
+  Le profit de la firme A est alors :
+  \[\pi_A(q_A^*, q_B^*)=q_A^*\times p^*-C_A(q_A^*)=10\left(8+\frac{1}{3}\left(c_B-2c_A\right)\right)^2\]
+  On en déduit le profit de l'entreprise B :
+  \[\pi_B(q_A^*, q_B^*)=10\left(8+\frac{1}{3}\left(c_A-2c_B\right)\right)^2\]
+  On constate que les quantités augmentent avec le coût marginal de l'autre entreprise et diminue avec son propre coût marginal.
+  Il en est de même pour les profits.
+  Plus cela coûte cher de produire pour l'autre entreprise, plus je ferai de profits.
+  On remarque que dans tous les cas, si on prend \(c_A=c_B=0\), on retombe sur les résultats de la question 1, ce qui est rassurant pour nos calculs.
 \end{enumerate}
 
 \end{solution}
@@ -3456,7 +3648,7 @@ On se place dans le cadre de l'exercice \ref{exr:cournotexo2}, mais on suppose q
   \def\labelenumii{\alph{enumii}.}
   \tightlist
   \item
-    Dans quel type de duopole sommes-nous? A priori laquelle des deux firmes va être favorisée par la situation?
+    Dans quel type de duopole sommes-nous ? A priori laquelle des deux firmes va être favorisée par la situation ?
   \item
     Calculez la meilleure réponse de la firme \(B\) à la production de la firme \(A\).
   \item
@@ -3471,6 +3663,82 @@ On se place dans le cadre de l'exercice \ref{exr:cournotexo2}, mais on suppose q
 
 \end{exercise}
 
+\begin{solution}[Solution de l'exercice \ref{exr:stackexo1}]
+
+On va pouvoir reprendre une partie des calculs de l'exercice \ref{exr:cournotexo2}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ici, cela signifie donc que \(A\) est leader et \(B\) follower.
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Duopole de Stackelberg.
+  \item
+    La meilleure réponse a déjà été calculé à la question 1.B de l'exercice \ref{exr:cournotexo2}.
+    Elle vaut :
+    \[q_B^*=120-\frac{1}{2}q_A^a\]
+  \item
+    La résolution est maintenant différente de la résolution de Cournot.
+    Le producteur A peut \emph{internaliser} la fonction de réaction du producteur B.
+    Il sait comment B va réagir à sa production et en plus est le premier à entrer sur le marché et peut donc imposer sa quantité à B.
+    On a donc le profit de A :
+    \[\pi_A(q_A, q_B(q_A))=q_AP(q_A+q_B(q_A))-C_A(q_A)=q_AP(q_A+q_B(q_A))\]
+    La maximisation du producteur A aboutit à la condition du premier ordre :
+    \[\frac{\partial \pi_A}{\partial q_A}=0\]
+    Ici, contrairement à précédemment, \(q_B\) dépend de \(q_A\) et B le sait, il va donc prendre en compte cette dépendance :
+    \begin{align*}
+    \frac{\partial \pi_A}{\partial q_A}&=P(q_A + q_B(q_A))+q_A(1+q'_B(q_A))P'(q_A+q_B(q_A))\\
+    &=24-\frac{1}{10}(q_A+q_B(q_A))+\frac{1}{2}q_A\frac{-1}{10}\\
+    &=24-\frac{1}{10}\left(q_A+120-\frac{1}{2}q_A\right)+\frac{1}{2}q_A\frac{-1}{10}\\
+    &=24-12-\frac{1}{20}q_A-\frac{1}{20}q_A\\
+    &=12-\frac{1}{10}q_A
+    \end{align*}
+    En utilisant la condition du premier ordre, on a donc :
+    \[12-\frac{1}{10}q_A^*=0\Leftrightarrow q_A^*=120\]
+    On en déduit \(q_B^*=120-\frac{120}{2}=60\), donc \(q^*=180\) et \(p^*=6\).
+    Les profits sont donc :
+    \begin{gather*}
+    \pi_A=120\times6=720\\
+    \pi_B=60\times 6 = 360
+    \end{gather*}
+  \item
+    Le profit est plus élevé en Stackelberg pour A, mais plus faible pour B, malgré la totale symétrie de A et B en dehors de leur position sur le marché.
+    Cette seule asymétrie profite à A, qui exploite son avantage afin d'augmenter son profit.
+  \end{enumerate}
+\item
+  On peut reprendre une partie des calculs précédents.
+  Comme la structure de coût de B n'a pas changé, sa fonction de réaction n'a pas non plus changé :
+  \[q_B^*=120-\frac{1}{2}q_A^a\]
+  Le programme de maximisation de A est le même, à un changement prêt :
+  \[\pi_A(q_A, q_B(q_A))=q_AP(q_A+q_B(q_A))-C_A(q_A)\]
+  Si on reprend les calculs de la question précédente :
+  \begin{align*}
+  \frac{\partial \pi_A}{\partial q_A}&=P(q_A + q_B(q_A))+q_A(1+q'_B(q_A))P'(q_A+q_B(q_A))-C'_A(q_A)\\
+  &=24-\frac{1}{10}(q_A+q_B(q_A))+\frac{1}{2}q_A\frac{-1}{10}-c_A\\
+  &=24-\frac{1}{10}\left(q_A+120-\frac{1}{2}q_A\right)+\frac{1}{2}q_A\frac{-1}{10}-4\\
+  &=8-\frac{1}{10}q_A
+  \end{align*}
+  En utilisant la condition du premier ordre, on a donc :
+  \[8-\frac{1}{10}q_A^*=0\Leftrightarrow q_A^*=80\]
+  On en déduit que \(q_B^*=80\) et \(q^*=160\), donc \(p^*=8\).
+  On en déduit les profits :
+  \begin{gather*}
+  \pi_A=80\times 8-4\times 80=320\\
+  \pi_B=80\times 8 = 640
+  \end{gather*}
+  L'entreprise B, qui est follower sur ce marché en Stackelberg, fait maintenant plus de profits que l'entreprise A.
+  Elle produit en effet la même quantité, mais a un coût plus faible.
+  Conclusion, ce n'est pas parce qu'une entreprise est leader qu'elle fera plus de profit.
+  Cela dépend aussi de la structure de coût respective des deux entreprises.
+\end{enumerate}
+
+\end{solution}
+
 \begin{exercise}[Stackelberg, coûts fixes]
 \protect\hypertarget{exr:stackexo2}{}\label{exr:stackexo2}Soit deux firmes seules sur un marché produisant un bien homogène pour lequel la demande est :
 \[P\left(q\right)=a-bq\]
@@ -3480,6 +3748,51 @@ a. L'existence de coûts fixes a-t-elle un impact sur les fonctions de meilleure
 b. L'existence de coûts fixes a-t-elle un impact sur la décision de produire?
 2. La firme \(A\) est leader dans un duopole de Stackelberg, avec \(c=0\) et \(F>0\). La firme \(B\) est suiveuse avec \(c=F=0\). Quel est l'impact de \(F\) sur l'avantage de \(A\)?
 \end{exercise}
+
+\begin{solution}[Réponses à l'exercice \ref{exr:stackexo1}]
+
+Réponses.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  On a ici une fonction de coût affine.
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Intuitivement, la réponse est non.
+    En effet, tous nos raisonnements sont marginaux, et le coût fixe disparaît dans ces cas-là.
+    Nous pouvons vérifier cela.
+    Commençons par écrire le profit de l'entreprise \(i\) :
+    \[\pi_i(q_i, q)=q_iP(q)-C_i(q_i)(=q_i(a-bq)-cq_i-F=q_i(a-c)-bq_iq-F)\]
+    Pour maximiser son profit, l'entreprise \(i\) doit vérifier la condition du premier ordre :
+    \[\frac{\partial\pi_i}{\partial q_i}=0\quad \Leftrightarrow \quad q_iP'(q)+P(q)-C'_i(q_i)=0\]
+    Le coût n'entre qu'au travers de sa dérivée dans le calcul, donc le coût fixe disparaît : \(C'_i(q_i)=c\).
+    Un coût fixe ne modifie donc pas la fonction de meilleure réponse dans un oligopole.
+  \item
+    La réponse est oui : en effet, dans le cas où les coût fixes seraient trop élevée, alors l'entreprise ferait des pertes et préfèrerait ne pas produire.
+  \end{enumerate}
+\item
+  Calculons maintenant la fonction de meilleure réponse de B avec les paramètres qui nous sont donnés.
+  On a \(P'(q)=-b\), et \(C'_B(q_B)=0\).
+  Donc on a d'après la CPO :
+  \[-bq_B+a-b(q_A+q_B)=0\Leftrightarrow b(q_A+2q_B)=a\Leftrightarrow q_B=\frac{1}{2}\left(\frac{a}{b}-q_A\right)\]
+  On peut maintenant résoudre le problème de maximisation de A, en utilisant la fonction de réaction de B :
+  \[\pi_A(q_A, q_B)=aq_A-bq_A(q_A+q_B)-F=-bq_A^2+q_A\left(a-b\frac{1}{2}\left(\frac{a}{b}-q_A\right)\right)=\frac{1}{2}(a-bq_A)q_A-F\]
+  On peut maintenant calculer la condition du premier ordre de A en dérivant le profit :
+  \[\pi_A'(q_A)=0 \Leftrightarrow  a-bq_A^*-bq_A^*=0\Leftrightarrow q_A^*=\frac{a}{2b}\]
+  \(F\) n'est pas présent dans la quantité optimale produite par A.
+  Néanmoins, le profit total de A à l'optimum est :
+  \[\pi_A(q_A^*)=\frac{1}{2}(a-bq_A^*)q_A^*-F=\frac{a^2}{8b}-F\]
+  Si \(F\) est trop grand (ici, supérieur à \(\frac{a^2}{8b}\)), alors l'entreprise A ne produira pas.
+  Plus \(F\) est grand, plus le profit de A est faible.
+  En revanche, \(F\) n'influence pas les quantités produites par \(A\) et en ce sens n'impacte pas son avantage informationnel.
+\end{enumerate}
+
+\end{solution}
 
 \hypertarget{cartels}{%
 \subsection{Cartels}\label{cartels}}
@@ -3493,12 +3806,48 @@ On se place à nouveau dans le cadre de l'exercice \ref{exr:cournotexo2}.
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Supposons que les entreprises signent un accord de cartel pour produire conjointement la quantité correspondant à la situation de monopole. Quelle est la quantité que devrait produire chaque firme si elle respectait cet accord et quel serait alors le prix d'équilibre?
+  Supposons que les entreprises signent un accord de cartel pour produire conjointement la quantité correspondant à la situation de monopole.
+  Quelle est la quantité que devrait produire chaque firme si elle respectait cet accord et quel serait alors le prix d'équilibre?
 \item
   Si la première firme respecte l'accord, la seconde a-t-elle intérêt à le respecter? Si non, combien produira-t-elle? Quel conséquence cela a-t-il?
 \end{enumerate}
 
 \end{exercise}
+
+\begin{solution}[Solution de l'exercice \ref{exr:cartelexo1}]
+
+On reprend dans cet exercice une partie des calculs de l'exercice \ref{exr:cournotexo2}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Le cartel cherche à maximiser le profit joint des deux entreprises.
+  On écrit ce profit :
+  \[\pi(q)=qP(q)-C_A(q_A)-c_B(q_B)\text{ avec }q=q_A+q_B\]
+  On a vu en cours à l'équilibre, le cartel cherche à égaliser la recette marginale totale avec le coût marginal de chacune des entreprises :
+  \[R_m(q^*)=C_{mA}(q_A^*)=C_{mB}(q_B^*)\]
+  Ici, les coûts, et donc les coûts marginaux, sont nuls.
+  On a donc directement \(R_m(q^*)=0\).
+  On avait trouvé que la demande inverse est \(P(q)=24-\frac{1}{10}q\).
+  Donc \(R_m(q)=24-\frac{1}{5}q\).
+  On obtient donc l'équation suivante pour l'optimum du cartel :
+  \[24-\frac{1}{5}q^*=0\quad\Leftrightarrow\quad q^*=120\]
+  On peut en déduire \(p^*=12\).
+  On retrouve bien la solution du monopole qu'on avait trouvé à la question 1.e de l'exercice \ref{exr:cournotexo2}.
+  Ici, les coûts de production sont nuls dans les deux entreprises, la répartition entre les deux n'importe donc pas.
+\item
+  L'accord entre les deux entreprises doit être tel que \(q_A+q_B=120\).
+  Or, on a la fonction de réaction trouvée en 1.b de l'exercie \ref{exr:cournotexo2} :
+  \[q_A=120-\frac{q_B}{2}\Leftrightarrow q_A+\frac{1}{2}q_B=120\]
+  Or la fonction de réaction représente la quantité optimale que produirait A pour une quantité \(q_B\) donnée.
+  L'accord n'est \emph{pas} sur la fonction de réaction (sauf si \(q_B=0\)), donc A aurait intérêt à ne pas respecter l'accord.
+  On voit avec la fonction de réaction que A souhaiterait produire plus que ce que l'accord de cartel lui dit de produire.
+  En effet, l'accord lui dit de produire \(q_A=120-q_B\), alors que A aurait envie de produire \(120-\frac{1}{1}q_B\).
+  Cela entraînera une quantité plus importante sur le marché et un prix plus faible que ce que le cartel ferait.
+\end{enumerate}
+
+\end{solution}
 
 \begin{exercise}[Duopole et cartel]
 \protect\hypertarget{exr:cartelexo2}{}\label{exr:cartelexo2}
