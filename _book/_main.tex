@@ -6,7 +6,7 @@
 ]{book}
 \title{Microéconomie 2}
 \author{Elias Bouacida \and Antoine Terracol}
-\date{2021-12-01}
+\date{2021-12-02}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -2534,8 +2534,8 @@ Réponses :
 
 \begin{figure}
 \centering
-\includegraphics{_main_files/figure-latex/naturelexo1-1.pdf}
-\caption{\label{fig:naturelexo1}Représentation graphique des équilibres}
+\includegraphics{_main_files/figure-latex/naturelexo14-1.pdf}
+\caption{\label{fig:naturelexo14}Représentation graphique des équilibres}
 \end{figure}
 
 \begin{enumerate}
@@ -3479,7 +3479,6 @@ Supposons un marché sur lequel il n'y a que deux entreprises, A et B, qui vende
 \end{exercise}
 
 \begin{solution}[Réponse à l'exercice \ref{exr:cournotexo2}]
-
 L'énoncé nous donne la fonction de demande, mais nous allons utiliser la fonction de demande inverse.
 On résout \(Q(P(q))=q\), soit :
 \[240-10P(q)=q\Leftrightarrow P(q)=24-\frac{q}{10}\]
@@ -3512,122 +3511,118 @@ On résout \(Q(P(q))=q\), soit :
     Comme le problème est symétrique, on peut en déduire la fonction de réaction de B :
     \[q_B^*=120-\frac{1}{2}q_A^a\]
   \item
-    \includegraphics{_main_files/figure-latex/cournotexo2-1.pdf}
-  \item
-    Pour calculer l'équilibre de Cournot, les anticipations de chacune des entreprises doit correspondre à ce que fait réellement l'autre entreprise.
-    Autrement dit \(q_A^a=q_A^*\) et \(q_B^a=q_B^*\).
-    On obtient donc :
-    \begin{gather*}
-    q_A^*=120-\frac{1}{2}q_B^*\\
-    q_B^*=120-\frac{1}{2}q_A^*
-    \end{gather*}
-    Pour résoudre ce système, on peut, par exemple, remplacer dans la première expression \(q_B^*\) par son expression dans la deuxième.
-    On obtient :
-    \begin{gather*}
-    q_A^*=120-\frac{1}{2}\left(120-\frac{1}{2}q_A^*\right) \\
-    \Leftrightarrow \frac{3}{4}q_A^*=120-60\\
-    \Leftrightarrow q_A^*=80
-    \end{gather*}
-    Par symétrie des entreprises A et B, on obtient immédiatement que \(q_B^*=80\).
-    On peut en déduire le prix sur le marché :
-    \[p^*=P(q_A^*+q_B^*)=24-\frac{1}{10}(q_A^*+q_B^*)=24-\frac{160}{10}=8\]
-    Le profit de la firme A est alors :
-    \[\pi_A(q_A^*, q_B^*)=q_A^*\times p^*=8*80=640\]
-    Il en est de même pour l'entreprise B.
-    Le profit total en duopole est donc \(1280\).
-  \item
-    En monopole, on aurait égalité de la recette marginale avec le coût marginal (\(R_m(q)=C_m(q)\)).
-    Ici, le coût marginal est nul, on a donc \(R_m(q)=0\) sur ce marché.
-    Avec \(R(q)=qP(q)=24q-\frac{1}{10}q^2\), donc \(R_m(q)=24-\frac{1}{5}q\).
-    On a donc à l'optimum du monopole :
-    \[24-\frac{1}{5}q^*_m=0\Leftrightarrow q_m^*=120\]
-    On en déduit le prix en monopole \(p_m^*=24-\frac{1}{10}120=12\).\\
-    Et le profit en monopole \(\pi_m=12\times 120=1440\).\\
-    En concurrence pure et parfaite, l'offre est égale à la demande et l'offre est donnée par le coût marginal.
-    Celui-ci est nul ici.
-    On a donc \(P(q^*_{CPP})=0\), soit \(24-\frac{1}{10}q^*_{CPP}=0\), donc \(q_{CPP}^*=240\), et \(p_{CPP}^*=0\).
-    Le profit en CPP est donc nul.\\
-    On constate que la situation de duopole de Cournot est intermédiaire entre la concurrence pure et parfaite et le monopole.
-    La quantité échangée est entre celle de monopole et de CPP, de même que le prix et le profit des producteurs.
-  \item
-    Il n'y a ici pas de coût fixe, on a donc déjà calculé le surplus des producteurs : ce sont exactement les profits.
-    Représentons graphiquement la situation pour le reste.
-    \includegraphics{_main_files/figure-latex/cournotexo21f-1.pdf}
-    À l'aide du graphique, on peut calculer les différents surplus des consommateurs :
-    \[S_c^m=\frac{1}{2}(24-p_m^*)\times q_m^*=\frac{1}{2}(24-12)120=720\]
-    \[S_c^c=\frac{1}{2}(24-p_c^*)\times q_c^*=\frac{1}{2}(24-8)160=1280\]
-    \[S_c^{cpp}=\frac{1}{2}(24-p_{cpp}^*)\times q_{cpp}^*=\frac{1}{2}(24-0)240=2880\]
-    On peut donc en déduire le surplus total dans chacun des cas :
-    \[S_t^m=S_c^m+S_p^m=720+1440=2160\]
-    \[S_t^c=S_c^c+S_p^c=1280+1280=2560\]
-    \[S_t^{CPP}=S_c^{CPP}+S_p^{CPP}=2880+0=2880\]
-    Le surplus social est donc le plus élevé en situation de concurrence pure et parfaite.
-    Dans les deux autres cas, il est possible d'améliorer la situation des producteurs et des consommateurs simultanément.
-  \item
-    Nous allons directement poser le problème comme si le marché contenait \(n\) entreprises (autrement dit, comme si \(n-2\) entreprises entraient sur le marché).
-    On peut écrire le profit de l'entreprise \(i\) :
-    \[\pi_i(q_i, q)=P(q)q_i-C_i(q_i)\]
-    Où \(q=\sum_{i=1}^nq_i\) est la quantité totale produite, et \(C_i(q_i)=0\) ici.
-    On cherche d'abord la fonction de réaction de l'entreprise \(i\), en maximisant son profit et considérant les productions des autres entreprises comme données.
-    Attention, dans cette maximisation, \(q\) dépend de \(q_i\).
-    On calcule donc la dérivée partielle suivant \(q_i\) :
-    \[\frac{\partial \pi_i}{\partial q_i}=q_iP'(q)+P(q)\]
-    Avec la condition du premier ordre de l'entreprise \(i\) :
-    \[\frac{\partial \pi_i}{\partial q_i}=0 \Leftrightarrow q_iP'(q)+P(q)=0\]
-    On peut remplacer \(P(q)\) et \(P'(q)\) par leur expression.
-    \[q_i^*\times\left(-\frac{1}{10}\right)+24-\frac{1}{10}q^*=0\]
-    Les entreprises sont toutes identiques, elles produiront donc la même quantité à l'équilibre de Cournot.
-    On peut en déduire que \(q_i^*=\frac{q^*}{n}\).
-    On peut alors réécrire l'équation d'équilibre :
-    \[-\frac{1}{10}\frac{q^*}{n}+24-\frac{1}{10}q^*=0\quad\Leftrightarrow \quad \frac{1}{10}q^*\left(1+\frac{1}{n}\right)=24\]
-    Autrement dit :
-    \[q^*\frac{n+1}{n}=240\quad\Leftrightarrow\quad q^*=\frac{n}{n+1}240\]
-    On en déduit le prix :
-    \[p^*=P(q^*)=24-\frac{1}{10}q^*=\frac{24}{n+1}\]
-    On constate que plus le nombre d'entreprise est élevée, plus la quantité échangée sur le marché est grande et se rapproche de celle de la concurrence pure et parfaite.
-    A l'inverse, le prix diminue et se rapproche lui aussi du prix de la CPP.
   \end{enumerate}
-\item
-  Les deux entreprises ont maintenant des coût marginaux de production non nuls.
-  On peut refaire les raisonnements de b. et d.~avec des nouveaux profits :
-  On commence par écrire le profit de l'entreprise A :
-  \[\pi_A(q_A, q_B)=q_AP(q_A+q_B)-C_A(q_A)\]
-  L'entreprise A va maintenant anticiper que l'entreprise B va produire une quantité \(q_B^a\) et maximiser son profit.
-  On obtient la dérivée partielle suivant \(q_A\) :
-  \[\frac{\partial_A\pi}{\partial q_A}=q_AP'(q_A+q_B^a)+P(q_A+q_B^a)-C'_A(q_A)=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))-c_A=-\frac{1}{10}(2q_A+q_B^a)+24-c_A\]
-  En utilisant la condition du premier ordre :
-  \[\frac{\partial_A\pi}{\partial q_A}(q_A^*+q_B^a)=0\]
-  On obtient la fonction de réaction de A :
-  \[2q_A^*+q_B^a=240-10c_A\Leftrightarrow q_A^*=120-5c_A-\frac{1}{2}q_B^a\]
-  Comme le problème est presque symétrique, on peut en déduire la fonction de réaction de B :
-  \[q_B^*=120-5c_B-\frac{1}{2}q_A^a\]
-  Pour calculer l'équilibre de Cournot, les anticipations de chacune des entreprises doit correspondre à ce que fait réellement l'autre entreprise.
-  Autrement dit \(q_A^a=q_A^*\) et \(q_B^a=q_B^*\).
-  On obtient donc :
-  \begin{gather*}
-  q_A^*=120-5c_A-\frac{1}{2}q_B^*\\
-  q_B^*=120-5c_B-\frac{1}{2}q_A^*
-  \end{gather*}
-  Pour résoudre ce système, on peut, par exemple, remplacer dans la première expression \(q_B^*\) par son expression dans la deuxième.
-  On obtient :
-  \begin{gather*}
-  q_A^*=120-5c_A-\frac{1}{2}\left(120-c_B-\frac{1}{2}q_A^*\right) \\
-  \Leftrightarrow \frac{3}{4}q_A^*=120-60-5c_A+\frac{5}{2}c_B\\
-  \Leftrightarrow q_A^*=80-\frac{20}{3}c_A+\frac{10}{3}c_B
-  \end{gather*}
-  Par symétrie des entreprises A et B, on obtient immédiatement que \(q_B^*=80-\frac{20}{3}c_B+\frac{10}{3}c_A\).
-  On peut en déduire le prix sur le marché :
-  \[p^*=P(q_A^*+q_B^*)=24-\frac{1}{10}(q_A^*+q_B^*)=8+\frac{1}{3}(c_A+c_B)\]
-  Le profit de la firme A est alors :
-  \[\pi_A(q_A^*, q_B^*)=q_A^*\times p^*-C_A(q_A^*)=10\left(8+\frac{1}{3}\left(c_B-2c_A\right)\right)^2\]
-  On en déduit le profit de l'entreprise B :
-  \[\pi_B(q_A^*, q_B^*)=10\left(8+\frac{1}{3}\left(c_A-2c_B\right)\right)^2\]
-  On constate que les quantités augmentent avec le coût marginal de l'autre entreprise et diminue avec son propre coût marginal.
-  Il en est de même pour les profits.
-  Plus cela coûte cher de produire pour l'autre entreprise, plus je ferai de profits.
-  On remarque que dans tous les cas, si on prend \(c_A=c_B=0\), on retombe sur les résultats de la question 1, ce qui est rassurant pour nos calculs.
 \end{enumerate}
 
+\includegraphics{_main_files/figure-latex/cournotexo2-1.pdf}
+d.~Pour calculer l'équilibre de Cournot, les anticipations de chacune des entreprises doit correspondre à ce que fait réellement l'autre entreprise.
+Autrement dit \(q_A^a=q_A^*\) et \(q_B^a=q_B^*\).
+On obtient donc :
+\begin{gather*}
+q_A^*=120-\frac{1}{2}q_B^*\\
+q_B^*=120-\frac{1}{2}q_A^*
+\end{gather*}
+Pour résoudre ce système, on peut, par exemple, remplacer dans la première expression \(q_B^*\) par son expression dans la deuxième.
+On obtient :
+\begin{gather*}
+q_A^*=120-\frac{1}{2}\left(120-\frac{1}{2}q_A^*\right) \\
+\Leftrightarrow \frac{3}{4}q_A^*=120-60\\
+\Leftrightarrow q_A^*=80
+\end{gather*}
+Par symétrie des entreprises A et B, on obtient immédiatement que \(q_B^*=80\).
+On peut en déduire le prix sur le marché :
+\[p^*=P(q_A^*+q_B^*)=24-\frac{1}{10}(q_A^*+q_B^*)=24-\frac{160}{10}=8\]
+Le profit de la firme A est alors :
+\[\pi_A(q_A^*, q_B^*)=q_A^*\times p^*=8*80=640\]
+Il en est de même pour l'entreprise B.
+Le profit total en duopole est donc \(1280\).
+e. En monopole, on aurait égalité de la recette marginale avec le coût marginal (\(R_m(q)=C_m(q)\)).
+Ici, le coût marginal est nul, on a donc \(R_m(q)=0\) sur ce marché.
+Avec \(R(q)=qP(q)=24q-\frac{1}{10}q^2\), donc \(R_m(q)=24-\frac{1}{5}q\).
+On a donc à l'optimum du monopole :
+\[24-\frac{1}{5}q^*_m=0\Leftrightarrow q_m^*=120\]
+On en déduit le prix en monopole \(p_m^*=24-\frac{1}{10}120=12\).\\
+Et le profit en monopole \(\pi_m=12\times 120=1440\).\\
+En concurrence pure et parfaite, l'offre est égale à la demande et l'offre est donnée par le coût marginal.
+Celui-ci est nul ici.
+On a donc \(P(q^*_{CPP})=0\), soit \(24-\frac{1}{10}q^*_{CPP}=0\), donc \(q_{CPP}^*=240\), et \(p_{CPP}^*=0\).
+Le profit en CPP est donc nul.\\
+On constate que la situation de duopole de Cournot est intermédiaire entre la concurrence pure et parfaite et le monopole.
+La quantité échangée est entre celle de monopole et de CPP, de même que le prix et le profit des producteurs.
+f.~Il n'y a ici pas de coût fixe, on a donc déjà calculé le surplus des producteurs : ce sont exactement les profits.
+Représentons graphiquement la situation pour le reste.
+
+\includegraphics{_main_files/figure-latex/cournotexo21f-1.pdf}
+À l'aide du graphique, on peut calculer les différents surplus des consommateurs :
+\[S_c^m=\frac{1}{2}(24-p_m^*)\times q_m^*=\frac{1}{2}(24-12)120=720\]
+\[S_c^c=\frac{1}{2}(24-p_c^*)\times q_c^*=\frac{1}{2}(24-8)160=1280\]
+\[S_c^{cpp}=\frac{1}{2}(24-p_{cpp}^*)\times q_{cpp}^*=\frac{1}{2}(24-0)240=2880\]
+On peut donc en déduire le surplus total dans chacun des cas :
+\[S_t^m=S_c^m+S_p^m=720+1440=2160\]
+\[S_t^c=S_c^c+S_p^c=1280+1280=2560\]
+\[S_t^{CPP}=S_c^{CPP}+S_p^{CPP}=2880+0=2880\]
+Le surplus social est donc le plus élevé en situation de concurrence pure et parfaite.
+Dans les deux autres cas, il est possible d'améliorer la situation des producteurs et des consommateurs simultanément.
+g. Nous allons directement poser le problème comme si le marché contenait \(n\) entreprises (autrement dit, comme si \(n-2\) entreprises entraient sur le marché).
+On peut écrire le profit de l'entreprise \(i\) :
+\[\pi_i(q_i, q)=P(q)q_i-C_i(q_i)\]
+Où \(q=\sum_{i=1}^nq_i\) est la quantité totale produite, et \(C_i(q_i)=0\) ici.
+On cherche d'abord la fonction de réaction de l'entreprise \(i\), en maximisant son profit et considérant les productions des autres entreprises comme données.
+Attention, dans cette maximisation, \(q\) dépend de \(q_i\).
+On calcule donc la dérivée partielle suivant \(q_i\) :
+\[\frac{\partial \pi_i}{\partial q_i}=q_iP'(q)+P(q)\]
+Avec la condition du premier ordre de l'entreprise \(i\) :
+\[\frac{\partial \pi_i}{\partial q_i}=0 \Leftrightarrow q_iP'(q)+P(q)=0\]
+On peut remplacer \(P(q)\) et \(P'(q)\) par leur expression.
+\[q_i^*\times\left(-\frac{1}{10}\right)+24-\frac{1}{10}q^*=0\]
+Les entreprises sont toutes identiques, elles produiront donc la même quantité à l'équilibre de Cournot.
+On peut en déduire que \(q_i^*=\frac{q^*}{n}\).
+On peut alors réécrire l'équation d'équilibre :
+\[-\frac{1}{10}\frac{q^*}{n}+24-\frac{1}{10}q^*=0\quad\Leftrightarrow \quad \frac{1}{10}q^*\left(1+\frac{1}{n}\right)=24\]
+Autrement dit :
+\[q^*\frac{n+1}{n}=240\quad\Leftrightarrow\quad q^*=\frac{n}{n+1}240\]
+On en déduit le prix :
+\[p^*=P(q^*)=24-\frac{1}{10}q^*=\frac{24}{n+1}\]
+On constate que plus le nombre d'entreprise est élevée, plus la quantité échangée sur le marché est grande et se rapproche de celle de la concurrence pure et parfaite.
+A l'inverse, le prix diminue et se rapproche lui aussi du prix de la CPP.
+2. Les deux entreprises ont maintenant des coût marginaux de production non nuls.
+On peut refaire les raisonnements de b. et d.~avec des nouveaux profits :
+On commence par écrire le profit de l'entreprise A :
+\[\pi_A(q_A, q_B)=q_AP(q_A+q_B)-C_A(q_A)\]
+L'entreprise A va maintenant anticiper que l'entreprise B va produire une quantité \(q_B^a\) et maximiser son profit.
+On obtient la dérivée partielle suivant \(q_A\) :
+\[\frac{\partial_A\pi}{\partial q_A}=q_AP'(q_A+q_B^a)+P(q_A+q_B^a)-C'_A(q_A)=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))-c_A=-\frac{1}{10}(2q_A+q_B^a)+24-c_A\]
+En utilisant la condition du premier ordre :
+\[\frac{\partial_A\pi}{\partial q_A}(q_A^*+q_B^a)=0\]
+On obtient la fonction de réaction de A :
+\[2q_A^*+q_B^a=240-10c_A\Leftrightarrow q_A^*=120-5c_A-\frac{1}{2}q_B^a\]
+Comme le problème est presque symétrique, on peut en déduire la fonction de réaction de B :
+\[q_B^*=120-5c_B-\frac{1}{2}q_A^a\]
+Pour calculer l'équilibre de Cournot, les anticipations de chacune des entreprises doit correspondre à ce que fait réellement l'autre entreprise.
+Autrement dit \(q_A^a=q_A^*\) et \(q_B^a=q_B^*\).
+On obtient donc :
+\begin{gather*}
+q_A^*=120-5c_A-\frac{1}{2}q_B^*\\
+q_B^*=120-5c_B-\frac{1}{2}q_A^*
+\end{gather*}
+Pour résoudre ce système, on peut, par exemple, remplacer dans la première expression \(q_B^*\) par son expression dans la deuxième.
+On obtient :
+\begin{gather*}
+q_A^*=120-5c_A-\frac{1}{2}\left(120-c_B-\frac{1}{2}q_A^*\right) \\
+\Leftrightarrow \frac{3}{4}q_A^*=120-60-5c_A+\frac{5}{2}c_B\\
+\Leftrightarrow q_A^*=80-\frac{20}{3}c_A+\frac{10}{3}c_B
+\end{gather*}
+Par symétrie des entreprises A et B, on obtient immédiatement que \(q_B^*=80-\frac{20}{3}c_B+\frac{10}{3}c_A\).
+On peut en déduire le prix sur le marché :
+\[p^*=P(q_A^*+q_B^*)=24-\frac{1}{10}(q_A^*+q_B^*)=8+\frac{1}{3}(c_A+c_B)\]
+Le profit de la firme A est alors :
+\[\pi_A(q_A^*, q_B^*)=q_A^*\times p^*-C_A(q_A^*)=10\left(8+\frac{1}{3}\left(c_B-2c_A\right)\right)^2\]
+On en déduit le profit de l'entreprise B :
+\[\pi_B(q_A^*, q_B^*)=10\left(8+\frac{1}{3}\left(c_A-2c_B\right)\right)^2\]
+On constate que les quantités augmentent avec le coût marginal de l'autre entreprise et diminue avec son propre coût marginal.
+Il en est de même pour les profits.
+Plus cela coûte cher de produire pour l'autre entreprise, plus je ferai de profits.
+On remarque que dans tous les cas, si on prend \(c_A=c_B=0\), on retombe sur les résultats de la question 1, ce qui est rassurant pour nos calculs.
 \end{solution}
 
 \hypertarget{stackelberg}{%
@@ -3690,7 +3685,7 @@ On va pouvoir reprendre une partie des calculs de l'exercice \ref{exr:cournotexo
     \[\pi_A(q_A, q_B(q_A))=q_AP(q_A+q_B(q_A))-C_A(q_A)=q_AP(q_A+q_B(q_A))\]
     La maximisation du producteur A aboutit à la condition du premier ordre :
     \[\frac{\partial \pi_A}{\partial q_A}=0\]
-    Ici, contrairement à précédemment, \(q_B\) dépend de \(q_A\) et B le sait, il va donc prendre en compte cette dépendance :
+    Ici, contrairement à précédemment, \(q_B\) dépend de \(q_A\) et A le sait, il va donc prendre en compte cette dépendance :
     \begin{align*}
     \frac{\partial \pi_A}{\partial q_A}&=P(q_A + q_B(q_A))+q_A(1+q'_B(q_A))P'(q_A+q_B(q_A))\\
     &=24-\frac{1}{10}(q_A+q_B(q_A))+\frac{1}{2}q_A\frac{-1}{10}\\
@@ -3773,7 +3768,7 @@ Réponses.
     Le coût n'entre qu'au travers de sa dérivée dans le calcul, donc le coût fixe disparaît : \(C'_i(q_i)=c\).
     Un coût fixe ne modifie donc pas la fonction de meilleure réponse dans un oligopole.
   \item
-    La réponse est oui : en effet, dans le cas où les coût fixes seraient trop élevée, alors l'entreprise ferait des pertes et préfèrerait ne pas produire.
+    La réponse est oui : en effet, dans le cas où les coût fixes seraient trop élevée, alors l'entreprise ferait des pertes et préférerait ne pas produire.
   \end{enumerate}
 \item
   Calculons maintenant la fonction de meilleure réponse de B avec les paramètres qui nous sont donnés.
@@ -3838,7 +3833,7 @@ On reprend dans cet exercice une partie des calculs de l'exercice \ref{exr:courn
   Ici, les coûts de production sont nuls dans les deux entreprises, la répartition entre les deux n'importe donc pas.
 \item
   L'accord entre les deux entreprises doit être tel que \(q_A+q_B=120\).
-  Or, on a la fonction de réaction trouvée en 1.b de l'exercie \ref{exr:cournotexo2} :
+  Or, on a la fonction de réaction trouvée en 1.b de l'exercice \ref{exr:cournotexo2} :
   \[q_A=120-\frac{q_B}{2}\Leftrightarrow q_A+\frac{1}{2}q_B=120\]
   Or la fonction de réaction représente la quantité optimale que produirait A pour une quantité \(q_B\) donnée.
   L'accord n'est \emph{pas} sur la fonction de réaction (sauf si \(q_B=0\)), donc A aurait intérêt à ne pas respecter l'accord.
@@ -3852,11 +3847,11 @@ On reprend dans cet exercice une partie des calculs de l'exercice \ref{exr:courn
 \begin{exercise}[Duopole et cartel]
 \protect\hypertarget{exr:cartelexo2}{}\label{exr:cartelexo2}
 
-La demande pour le bien \(q\) est donnée par : \[P(q)=180-2q\]
-Seules 2 firmes identiques produisent le bien, leur fonction de coût
-individuelle est : \[C(q_{i})=100+q_{i}^2\] Dans chacun des cas
-suivants, donnez les quantités produites, les prix et les profits
-des deux firmes :
+La demande pour le bien \(q\) est donnée par :
+\[P(q)=180-2q\]
+Seules 2 firmes identiques produisent le bien, leur fonction de coût individuelle est :
+\[C(q_{i})=100+q_{i}^2\]
+Dans chacun des cas suivants, donnez les quantités produites, les prix et les profits des deux firmes :
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3870,6 +3865,100 @@ des deux firmes :
 \end{enumerate}
 
 \end{exercise}
+
+\begin{solution}[Solution de l'exercice \ref{exr:cartelexo2}]
+
+Cet exercice résume une grande partie du chapitre sur les duopoles et propose de résoudre les principales situations vu dans ce chapitre.\\
+Les deux entreprises sont symétriques en termes de coût : elles ont la même fonction de coût.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Dans la concurrence à la Cournot, les deux entreprises sont exactement identiques.
+  Elles entrent simultanément sur le marché et ont la même fonction de coût.
+  Elles auront donc la même production et le même profit.
+  On commence par écrire le profit de l'entreprise 1 :
+  \begin{align*}
+  \pi_1(q_1, q)&=q_1P(q)-C(q_1)\\
+  &=q_1(180-2q_1-2q_2)-100-q_1^2\\
+  &=-3q_1^2+(180-2q_2)q_1-100
+  \end{align*}
+  On cherche maintenant la fonction de réaction de l'entreprise 1.
+  L'entreprise 1, pour prendre sa décision, anticipe que l'entreprise 2 produira \(q_2^a\).
+  Elle maximise ensuite son profit, ce qui aboutit à la condition du premier ordre \(\frac{\partial\pi_1}{\partial q_1}(q_1^*, q_2^a)=0\).
+  On a :
+  \[\frac{\partial\pi_1}{\partial q_1}(q_1, q_2)=-6q_1+180-2q_2\]
+  Grâce à la condition du premier ordre, on obtient la fonction de réaction de 1 :
+  \[6q_1^*=180-2q_2^a\quad \Leftrightarrow \quad q_1^*=30-\frac{1}{3}q_2^a\]
+  Par symétrie, on a la fonction de réaction de 2 :
+  \[ q_2^*=30-\frac{1}{3}q_1^a\]
+  On cherche maintenant à résoudre l'équilibre de Cournot en utilisant que \(q_2^a=q_2^*\) et \(q_1^a=q_1^*\).
+  On peut le faire par exemple en remplaçant dans la fonction de réaction de 1 la valeur obtenue pour \(q_2\) :
+  \begin{align*}
+  &q_1^*=30-\frac{1}{3}\left(30-\frac{1}{3}q_1^*\right)\\
+  \Leftrightarrow & q_1^*=20+ \frac{1}{9}q_1^* \\
+  \Leftrightarrow & \frac{8}{9}q_1^*=20\\
+  \Leftrightarrow & q_1^*=\frac{45}{2}
+  \end{align*}
+  Par symétrie, on obtient aussi que \(q^*_2=\frac{45}{2}\).
+  La quantité totale échangée sur le marché est donc 45.
+  On en déduit le prix \(p^*=P(q^*)=180-2\times45=90\).
+  Le profit de l'entreprise 1 est alors :
+  \[\pi_1(q_1^*, q_2^*)=-3q_1^{*2}+(180-2q_2^*)q_1^*-100=\frac{5675}{4}\]
+  Par symétrie, \(\pi_2(q_1^*, q_2^*)=\frac{5675}{4}\)=1418.75.
+\item
+  On se place maintenant dans une situation de concurrence à la Stackelberg.
+  On va faire l'hypothèse que l'entreprise 1 est leader et l'entreprise 2 follower.
+  La résolution est maintenant différente de la résolution de Cournot.
+  Le producteur 1 peut \emph{internaliser} la fonction de réaction du producteur 2 (que nous avons déjà calculé à la question 1).
+  Il sait comment 2 va réagir à sa production et en plus est le premier à entrer sur le marché et peut donc imposer sa quantité à 1.
+  On a donc le profit de 1 :
+  \[\pi_1(q_1, q_2(q_1))=q_1P(q_1+q_2(q_1))-C(q_1)=-3q_1^2+(180-2q_2(q_1))q_1-100\]
+  La maximisation du producteur 1 aboutit à la condition du premier ordre :
+  \[\frac{\partial \pi_1}{\partial q_1}=0\]
+  Ici, contrairement à précédemment, \(q_2\) dépend de \(q_1\) et 1 le sait, il va donc prendre en compte cette dépendance :
+  \begin{align*}
+  \frac{\partial \pi_1}{\partial q_1}&=P(q_1+ q_2(q_1))+q_1(1+q'_2(q_1))P'(q_1+q_2(q_1))-C'(q_1)\\
+  &=-6q_1+180-2q_2(q_1)-2q_2'(q_1)q_1\\
+  &=-6q_1+180-2\left(30-\frac{1}{3}q_1\right)-2\times-\frac{1}{3}q_1\\
+  &=q_1\left(-6+\frac{2}{3}+\frac{2}{3}\right)+180-60\\
+  &=-\frac{14}{3}q_1+120
+  \end{align*}
+  En utilisant la condition du premier ordre, on a donc :
+  \[-\frac{14}{3}q_1^*+120=0\Leftrightarrow q_1^*=\frac{180}{7}\]
+  On en déduit \(q_2^*=30-\frac{60}{7}=\frac{150}{7}\), donc \(q^*=\frac{330}{7}\) et \(p^*=\frac{600}{7}\).
+  Les profits sont donc :
+  \begin{gather*}
+  \pi_1=\frac{180}{7}\times\frac{600}{7}-100-\left(\frac{180}{7}\right)^2=\frac{10100}{7}\approx 1443\\
+  \pi_B=\frac{150}{7}\times\frac{600}{7}-100-\left(\frac{150}{7}\right)^2=\frac{62600}{49}\approx 1278\\
+  \end{gather*}
+  Le profit en Stackelberg est supérieur au profit en Cournot pour l'entreprise leader, mais inférieur pour l'entreprise follower.
+\item
+  On étudie maintenant une situation de cartel.
+  Les deux entreprises se mettent d'accord entre elles sur les quantités à produire.
+  Le cartel cherche à maximiser le profit joint des deux entreprises.
+  On écrit ce profit :
+  \[\pi(q)=qP(q)-C(q_1)-C(q_2)\text{ avec }q=q_1+q_2\]
+  On a vu en cours à l'équilibre, le cartel cherche à égaliser la recette marginale totale avec le coût marginal de chacune des entreprises :
+  \[R_m(q^*)=C_m(q_1^*)=C_{m}(q_2^*)\]
+  Ici, les coûts, et donc les coûts marginaux, sont identiques.
+  Le coût marginal est \(C_m(q_1)=2q_1\)
+  On a la demande inverse \(P(q)=180-2q\).
+  Donc \(R_m(q)=180-4q\).
+  On obtient donc l'équation suivante pour l'optimum du cartel :
+  \[180-4q^*=2q_1^*\quad\Leftrightarrow\quad 6q_1^*+4q_2^*=180\Leftrightarrow 3q_1^*+2q_2^*=90\]
+  Par symétrie, en utilisant l'égalité entre le coût marginal de 2 et le revenu marginal total, on a :
+  \[2q_1^*+3q_2^*=90\]
+  Par symétrie entre les deux entreprises, on a \(q_1^*=q_2^*\), donc \(q_1^*=q_2^*=18\), et \(q^*=36\).
+  On en déduit \(p^*=108\).
+  Le profit du cartel est alors :
+  \[\pi(q^*, p^*)=108\times36-100-100-18^2-18^2=3040\]
+  Le profit de chaque membre du cartel est donc \(1520\).
+  On constate que le profit en cartel est supérieur au profit en Stackelberg (même pour l'entreprise leader) et en Cournot.
+\end{enumerate}
+
+\end{solution}
 
 \begin{exercise}[Duopole et cartel bis (exercice de révision)]
 \protect\hypertarget{exr:cartelexo3}{}\label{exr:cartelexo3}
@@ -3911,6 +4000,134 @@ de coût des deux entreprises sont : \[C\left(q_{1}\right)=5q_{1}\]
 \end{enumerate}
 
 \end{exercise}
+
+\begin{solution}[Réponse à l'exercice \ref{exr:cartelexo3}]
+
+Cet exercice pourrait être un exercice d'examen.
+Il réunit les principales questions sur les oligopoles qui pourraient être posées.
+Ici, les fonctions de coût ne sont pas symétriques, ce qui veut dire que le problème ne peut plus être simplifier grâce à la symétrie.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Commençons par écrire le profit de chacune des entreprises :
+  \begin{gather*}
+  \pi_1(q_1, q_2)=q_1P(q)-C_1(q_1)=\left(95-\frac{1}{2}q_2\right)q_1-\frac{1}{2}q_1^2\\
+  \pi_2(q_1, q_2)=q_2P(q)-C_2(q_2)=\left(100-\frac{1}{2}q_1\right)q_2-q_2^2
+  \end{gather*}
+  Afin de trouver les fonctions de réactions de chacune des entreprises, nous allons maximiser leur profit en considérant que la quantité produite par l'autre entreprise est fixée.
+  On utilise les conditions du premier ordre :
+  \begin{gather*}
+  \frac{\partial \pi_1}{\partial q_1}(q_1, q_2)=0\\
+  \frac{\partial \pi_2}{\partial q_2}(q_1, q_2)=0
+  \end{gather*}
+  On commence par calculer les dérivées partielles du profit :
+  \begin{gather*}
+  \frac{\partial \pi_1}{\partial q_1}(q_1, q_2)=95-\frac{1}{2}q_2-q_1\\
+  \frac{\partial \pi_2}{\partial q_2}(q_1, q_2)=100-\frac{1}{2}q_1-2q_2
+  \end{gather*}
+  On obtient les fonctions de réaction en égalisant ces dérivées avec 0 :
+  \begin{gather*}
+  q_1^*=95-\frac{1}{2}q_2^a\\
+  q_2^*=50-\frac{1}{4}q_1^a
+  \end{gather*}
+  \includegraphics{_main_files/figure-latex/cartelexo31-1.pdf}
+  On cherche maintenant à résoudre l'équilibre de Cournot en utilisant que \(q_2^a=q_2^*\) et \(q_1^a=q_1^*\).
+  On peut résoudre pour cela un système de deux équations à deux inconnues en réécrivant les fonctions de réaction :
+  \begin{align*}
+  2q_1^*+q_2^*&=95 &\Leftrightarrow &-7q_2^*&=190-400=-210&\Leftrightarrow &q_2^*&=30\\
+  q_1^*+4q_2^*&=200 & &7q_1^*&=4\times 190-200=560& &q_1^*&=80
+  \end{align*}
+  La quantité totale échangée sur le marché est donc \(q^*=110\).
+  On en déduit que le prix est \(p^*=45\).
+  On calcule aussi les profits (cela sera utile plus tard dans l'exercice).
+  \begin{align*}
+  \pi_1&=80\times 45-5\times 80=3200\\
+  \pi_2&=30\times 45-\frac{1}{2}30^2=900
+  \end{align*}
+\item
+  On se place maintenant en Stackelberg dans le cas où l'entreprise 1 est leader.
+  On a obtenu la fonction de réaction de 2 à la question 1 :
+  \[
+  q_2^*=50-\frac{1}{4}q_1^a
+  \]
+  On peut l'introduire dans le profit de 1
+  \[\pi_1(q_1, q_2(q_1))=q_1P(q_1+q_2(q_1))-C_1(q_1)=-\frac{3}{8}q_1^2+70q_1\]
+  La maximisation du producteur 1 aboutit à la condition du premier ordre :
+  \[\frac{\partial \pi_1}{\partial q_1}=0\]
+  Ici, contrairement à précédemment, \(q_2\) dépend de \(q_1\) et 1 le sait, il va donc prendre en compte cette dépendance :
+  \begin{align*}
+  \frac{\partial \pi_1}{\partial q_1}&=P(q_1+ q_2(q_1))+q_1(1+q'_2(q_1))P'(q_1+q_2(q_1))-C_1'(q_1)\\
+  &=-\frac{3}{4}q_1+70
+  \end{align*}
+  En utilisant la condition du premier ordre, on a donc :
+  \[-\frac{3}{4}q_1^*+70=0\Leftrightarrow q_1^*=\frac{280}{3}\]
+  On en déduit \(q_2^*=50-\frac{70}{3}=\frac{80}{3}\), donc \(q^*=120\) et \(p^*=40\).
+  Les profits sont donc :
+  \begin{gather*}
+  \pi_1=\frac{280}{3}\times 40-5\times\frac{280}{3}=\frac{9800}{3}\approx 3267\\
+  \pi_2=\frac{80}{3}\times 40-\frac{1}{2}\left(\frac{80}{3}\right)^2=\frac{6400}{9}\approx 711\\
+  \end{gather*}
+  Inversons maintenant les rôles de 1 (follower) et 2 (leader).
+  On a obtenu la fonction de réaction de 1 à la question 1 :
+  \[
+  q_1^*=95-\frac{1}{2}q_2^a
+  \]
+  On peut l'introduire dans le profit de 1
+  \[\pi_2(q_1(q_2), q_2)=q_2P(q_1(q_2)+q_2)-C_2(q_2)=-\frac{3}{4}q_2^2+\frac{105}{2}q_2\]
+  La maximisation du producteur 2 aboutit à la condition du premier ordre :
+  \[\frac{\partial \pi_2}{\partial q_2}=0\]
+  Ici, \(q_1\) dépend de \(q_2\) et 2 le sait, il va donc prendre en compte cette dépendance :
+  \begin{align*}
+  \frac{\partial \pi_2}{\partial q_2}&=P(q_1(q_2)+ q_2)+q_2(1+q'_1(q_2))P'(q_1(q_2)+q_2)-C_2'(q_2)\\
+  &=-\frac{3}{2}q_2+\frac{105}{2}
+  \end{align*}
+  En utilisant la condition du premier ordre, on a donc :
+  \[-\frac{3}{2}q_2^*+\frac{105}{2}=0\Leftrightarrow q_2^*=35\]
+  On en déduit \(q_1^*=95-\frac{1}{2}35=\frac{155}{2}\), donc \(q^*=\frac{225}{2}\) et \(p^*=\frac{175}{4}\).
+  Les profits sont donc :
+  \begin{gather*}
+  \pi_1=\frac{155}{2}\times \frac{175}{4}-5\times\frac{155}{2}=\frac{155^2}{8}\approx 3003\\
+  \pi_2=\frac{175}{4}\times 35-\frac{1}{2}35^2=918,75
+  \end{gather*}
+  Si on regarde les profits dans les deux cas, on constate qu'il est plus intéressant pour chaque entreprise d'être leader.
+  Dans ce cas, l'entreprise 1 choisit de produire \(q_1=\frac{280}{3}\) et l'entreprise 2 choisit \(q_2=35\).
+  Cette situation est instable, en effet, si 2 choisit la quantité \(q_2=35\), alors la meilleure réponse de 1 est de choisir suivant sa fonction de réaction \(q_1=95-\frac{1}{2}\times35=\frac{165}{2}\neq\frac{280}{3}\).
+  En fait, la seule situation stable est la situation de Cournot.
+\item
+  Les deux entreprises se mettent d'accord entre elles sur les quantités à produire.
+  Le cartel cherche à maximiser le profit joint des deux entreprises.
+  On écrit ce profit :
+  \[\pi(q)=qP(q)-C_1(q_1)-C_2(q_2)\text{ avec }q=q_1+q_2\]
+  On a vu en cours à l'équilibre, le cartel cherche à égaliser la recette marginale totale avec le coût marginal de chacune des entreprises :
+  \[R_m(q^*)=C_{m1}(q_1^*)=C_{m2}(q_2^*)\]
+  Le coût marginal de 1 est \(C_{m1}(q_1)=5\).
+  Le coût marginal de 2 est \(C_{m2}(q_2)=q_2\).
+  On a la demande inverse \(P(q)=100-\frac{1}{2}q\).
+  Donc \(R_m(q)=100-q\).
+  On obtient donc le système d'équations suivante pour l'optimum du cartel :
+  \begin{align*}
+  100-q_1^*-q_2^*&=5&\Leftrightarrow& q_2^*&=5\\
+  100-q_1^*-q_2^*&=q_2^*&&q_1^*&=100-5-q_2^*=90
+  \end{align*}
+  On en déduit \(p^*=\frac{105}{2}\).
+  Le profit du cartel est alors :
+  \[\pi(q^*, p^*)=95\times \frac{105}{2}-5\times 95-\frac{1}{2}5^2=4525\]
+  Le coût marginal doit être égal entre les deux entreprises car autrement, il est possible d'augmenter le profit du cartel en transférant une partie de la production de l'entreprise au coût marginal le plus élevé vers l'entreprise au coût marginal le plus faible.
+\item
+  On va chercher à représenter le profit du cartel \(\pi\) dans un graphique \((\pi_1, \pi_2)\).
+  Le profit du cartel est la somme des profits des deux entreprises, donc \(\pi=\pi_1+ \pi_2\).
+  On a donc dans le graphique l'équation de droite \(\pi_2=\pi- \pi_1\).
+  \includegraphics{_main_files/figure-latex/cartelexo34-1.pdf}
+  Le profit total obtenu en Cournot est de \(3200+900=4100\) (voir question 1).
+  Le profit du cartel est de 4525 (voir question 3).
+  On a donc un surplus de profit de 425 avec le cartel.
+  Une répartition égalitaire de ce surplus entre les deux entreprises serait donc de \(\frac{425}{2}\) pour chaque entreprise.
+  Cela aboutirait à un surplus total de \(6825/2\) pour l'entreprise 1 et de \(2225/2\) pour l'entreprise 2.
+\end{enumerate}
+
+\end{solution}
 
 \hypertarget{appendix-annexes}{%
 \appendix}

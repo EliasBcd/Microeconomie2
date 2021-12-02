@@ -43,13 +43,15 @@ fig:monoexo23
 fig:monoexo31
 fig:monoexo32
 fig:monoexo33
-fig:naturelexo1
+fig:naturelexo14
 fig:naturelexo21
 fig:naturelexo25
 fig:naturelexo3
 fig:discriminationexo2
 fig:cournotexo2
 fig:cournotexo21f
+fig:cartelexo31
+fig:cartelexo34
 tab:Annexe1
 fig:annexesurplus2
 fig:annexesurplus3
