@@ -1462,7 +1462,11 @@ On peut supposer le coût fixe constant, on a alors que le coût de production p
 1. Chaque entreprise cherche à maximiser son profit en prenant la quantité produite par l'autre entreprise comme une donnée.
 On cherche d'abord à calculer les fonctions de réaction (qui seront identiques entre les deux entreprises, puisqu'elles sont symétriques).
 On commence par écrire le profit de l'entreprise A :
-\[\pi_A(q_A, q_B)=q_AP(q_A+q_B)-C_A(q_A)=q_A(1200-q_A-q_B)-300q_A=(900-q_B)q_A-q_A^2\]
+\begin{align*}
+\pi_A(q_A, q_B)&=q_AP(q_A+q_B)-C_A(q_A)\\
+&=q_A(1200-q_A-q_B)-300q_A\\
+&=(900-q_B)q_A-q_A^2
+\end{align*}
 L'entreprise A va maintenant anticiper que l'entreprise B va produire une quantité $q_B^a$ et maximiser son profit.
 On obtient la dérivée partielle suivant $q_A$ :
 \[\frac{\partial\pi_A}{\partial q_A}=900-q_B^a-2q_A\]
@@ -1534,14 +1538,18 @@ Comme leur coût de production est identique, ces deux entreprises sont symétri
 \[\pi_A(q_A, q_B)=q_AP(q_A+q_B)-C_A(q_A)=q_AP(q_A+q_B)\]
 L'entreprise A va maintenant anticiper que l'entreprise B va produire une quantité $q_B^a$ et maximiser son profit.
 On obtient la dérivée partielle suivant $q_A$ :
-\[\frac{\partial\pi_A}{\partial q_A}=q_AP'(q_A+q_B^a)+P(q_A+q_B^a)=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))=-\frac{1}{10}(2q_A+q_B^a)+24\]
+\begin{align*}
+\frac{\partial\pi_A}{\partial q_A}&=q_AP'(q_A+q_B^a)+P(q_A+q_B^a)\\
+&=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))\\
+&=-\frac{1}{10}(2q_A+q_B^a)+24
+\end{align*}
 En utilisant la condition du premier ordre :
 \[\frac{\partial\pi_A}{\partial q_A}(q_A^*+q_B^a)=0\]
 On obtient la fonction de réaction de A :
 \[2q_A^*+q_B^a=240\Leftrightarrow q_A^*=120-\frac{1}{2}q_B^a\]
 Comme le problème est symétrique, on peut en déduire la fonction de réaction de B :
 \[q_B^*=120-\frac{1}{2}q_A^a\]
-    c.
+    c. On représente graphiquement l'équilibre.
     
 ```{r cournotexo2, fig.cap="Représentation des fonctions de réaction d'un équilibre de Cournot."}
 
@@ -1563,7 +1571,8 @@ p_equilibre <- ggplot() +
 
 p_equilibre
 ```
-    d. Pour calculer l'équilibre de Cournot, les anticipations de chacune des entreprises doit correspondre à ce que fait réellement l'autre entreprise.
+    
+d. Pour calculer l'équilibre de Cournot, les anticipations de chacune des entreprises doit correspondre à ce que fait réellement l'autre entreprise.
 Autrement dit $q_A^a=q_A^*$ et  $q_B^a=q_B^*$.
 On obtient donc :
 \begin{gather*}
@@ -1668,7 +1677,11 @@ On commence par écrire le profit de l'entreprise A :
 \[\pi_A(q_A, q_B)=q_AP(q_A+q_B)-C_A(q_A)\]
 L'entreprise A va maintenant anticiper que l'entreprise B va produire une quantité $q_B^a$ et maximiser son profit.
 On obtient la dérivée partielle suivant $q_A$ :
-\[\frac{\partial_A\pi}{\partial q_A}=q_AP'(q_A+q_B^a)+P(q_A+q_B^a)-C'_A(q_A)=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))-c_A=-\frac{1}{10}(2q_A+q_B^a)+24-c_A\]
+\begin{align*}
+\frac{\partial_A\pi}{\partial q_A}&=q_AP'(q_A+q_B^a)+P(q_A+q_B^a)-C'_A(q_A)\\
+&=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))-c_A\\
+&=-\frac{1}{10}(2q_A+q_B^a)+24-c_A
+\end{align*}
 En utilisant la condition du premier ordre :
 \[\frac{\partial_A\pi}{\partial q_A}(q_A^*+q_B^a)=0\]
 On obtient la fonction de réaction de A :
@@ -1805,7 +1818,11 @@ On a $P'(q)=-b$, et $C'_B(q_B)=0$.
 Donc on a d'après la CPO :
 \[-bq_B+a-b(q_A+q_B)=0\Leftrightarrow b(q_A+2q_B)=a\Leftrightarrow q_B=\frac{1}{2}\left(\frac{a}{b}-q_A\right)\]
 On peut maintenant résoudre le problème de maximisation de A, en utilisant la fonction de réaction de B :
-\[\pi_A(q_A, q_B)=aq_A-bq_A(q_A+q_B)-F=-bq_A^2+q_A\left(a-b\frac{1}{2}\left(\frac{a}{b}-q_A\right)\right)=\frac{1}{2}(a-bq_A)q_A-F\]
+\begin{align*}
+\pi_A(q_A, q_B)&=aq_A-bq_A(q_A+q_B)-F\\
+&=-bq_A^2+q_A\left(a-b\frac{1}{2}\left(\frac{a}{b}-q_A\right)\right)\\
+&=\frac{1}{2}(a-bq_A)q_A-F
+\end{align*}
 On peut maintenant calculer la condition du premier ordre de A en dérivant le profit :
 \[\pi_A'(q_A)=0 \Leftrightarrow  a-bq_A^*-bq_A^*=0\Leftrightarrow q_A^*=\frac{a}{2b}\]
 $F$ n'est pas présent dans la quantité optimale produite par A.
@@ -2014,12 +2031,12 @@ p_reaction <- ggplot() +
   labs(x="quantité 1", y = "quantité 2") +
   geom_function(fun=f1, colour="red") +
   geom_function(fun=f2, colour="blue") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 200), breaks=c(qc, 50, 190), labels=c(TeX("$q_{2}^*$"), 50, 190)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 200), breaks=c(f1(qc), 50, 190), labels=c(TeX("$q_{2}^*$"), 50, 190)) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 200), breaks=c(qc), labels=c(TeX("$q_{1}^*$"))) +
-  annotate("point", x=qc, y=qc) +
-  annotate("text", x=qc, y=qc+10, label='Equilibre de Cournot') +
+  annotate("point", x=qc, y=f1(qc)) +
+  annotate("text", x=qc, y=f1(qc)+10, label='Equilibre de Cournot') +
   annotate("text", x=50, y=f1(20), label='Fonction de réaction 1', colour='red') +
-  annotate('text', x=180, y=f2(180), label='Fonction de réaction 2', colour='blue')
+  annotate('text', x=150, y=f2(150), label='Fonction de réaction 2', colour='blue')
 
 p_reaction
 ```

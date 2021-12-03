@@ -6,7 +6,7 @@
 ]{book}
 \title{Microéconomie 2}
 \author{Elias Bouacida \and Antoine Terracol}
-\date{2021-12-02}
+\date{2021-12-03}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -3397,7 +3397,11 @@ On peut supposer le coût fixe constant, on a alors que le coût de production p
   Chaque entreprise cherche à maximiser son profit en prenant la quantité produite par l'autre entreprise comme une donnée.
   On cherche d'abord à calculer les fonctions de réaction (qui seront identiques entre les deux entreprises, puisqu'elles sont symétriques).
   On commence par écrire le profit de l'entreprise A :
-  \[\pi_A(q_A, q_B)=q_AP(q_A+q_B)-C_A(q_A)=q_A(1200-q_A-q_B)-300q_A=(900-q_B)q_A-q_A^2\]
+  \begin{align*}
+  \pi_A(q_A, q_B)&=q_AP(q_A+q_B)-C_A(q_A)\\
+  &=q_A(1200-q_A-q_B)-300q_A\\
+  &=(900-q_B)q_A-q_A^2
+  \end{align*}
   L'entreprise A va maintenant anticiper que l'entreprise B va produire une quantité \(q_B^a\) et maximiser son profit.
   On obtient la dérivée partielle suivant \(q_A\) :
   \[\frac{\partial\pi_A}{\partial q_A}=900-q_B^a-2q_A\]
@@ -3503,7 +3507,11 @@ On résout \(Q(P(q))=q\), soit :
     \[\pi_A(q_A, q_B)=q_AP(q_A+q_B)-C_A(q_A)=q_AP(q_A+q_B)\]
     L'entreprise A va maintenant anticiper que l'entreprise B va produire une quantité \(q_B^a\) et maximiser son profit.
     On obtient la dérivée partielle suivant \(q_A\) :
-    \[\frac{\partial\pi_A}{\partial q_A}=q_AP'(q_A+q_B^a)+P(q_A+q_B^a)=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))=-\frac{1}{10}(2q_A+q_B^a)+24\]
+    \begin{align*}
+    \frac{\partial\pi_A}{\partial q_A}&=q_AP'(q_A+q_B^a)+P(q_A+q_B^a)\\
+    &=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))\\
+    &=-\frac{1}{10}(2q_A+q_B^a)+24
+    \end{align*}
     En utilisant la condition du premier ordre :
     \[\frac{\partial\pi_A}{\partial q_A}(q_A^*+q_B^a)=0\]
     On obtient la fonction de réaction de A :
@@ -3511,46 +3519,66 @@ On résout \(Q(P(q))=q\), soit :
     Comme le problème est symétrique, on peut en déduire la fonction de réaction de B :
     \[q_B^*=120-\frac{1}{2}q_A^a\]
   \item
+    On représente graphiquement l'équilibre.
   \end{enumerate}
 \end{enumerate}
 
+\begin{figure}
+\centering
 \includegraphics{_main_files/figure-latex/cournotexo2-1.pdf}
-d.~Pour calculer l'équilibre de Cournot, les anticipations de chacune des entreprises doit correspondre à ce que fait réellement l'autre entreprise.
-Autrement dit \(q_A^a=q_A^*\) et \(q_B^a=q_B^*\).
-On obtient donc :
-\begin{gather*}
-q_A^*=120-\frac{1}{2}q_B^*\\
-q_B^*=120-\frac{1}{2}q_A^*
-\end{gather*}
-Pour résoudre ce système, on peut, par exemple, remplacer dans la première expression \(q_B^*\) par son expression dans la deuxième.
-On obtient :
-\begin{gather*}
-q_A^*=120-\frac{1}{2}\left(120-\frac{1}{2}q_A^*\right) \\
-\Leftrightarrow \frac{3}{4}q_A^*=120-60\\
-\Leftrightarrow q_A^*=80
-\end{gather*}
-Par symétrie des entreprises A et B, on obtient immédiatement que \(q_B^*=80\).
-On peut en déduire le prix sur le marché :
-\[p^*=P(q_A^*+q_B^*)=24-\frac{1}{10}(q_A^*+q_B^*)=24-\frac{160}{10}=8\]
-Le profit de la firme A est alors :
-\[\pi_A(q_A^*, q_B^*)=q_A^*\times p^*=8*80=640\]
-Il en est de même pour l'entreprise B.
-Le profit total en duopole est donc \(1280\).
-e. En monopole, on aurait égalité de la recette marginale avec le coût marginal (\(R_m(q)=C_m(q)\)).
-Ici, le coût marginal est nul, on a donc \(R_m(q)=0\) sur ce marché.
-Avec \(R(q)=qP(q)=24q-\frac{1}{10}q^2\), donc \(R_m(q)=24-\frac{1}{5}q\).
-On a donc à l'optimum du monopole :
-\[24-\frac{1}{5}q^*_m=0\Leftrightarrow q_m^*=120\]
-On en déduit le prix en monopole \(p_m^*=24-\frac{1}{10}120=12\).\\
-Et le profit en monopole \(\pi_m=12\times 120=1440\).\\
-En concurrence pure et parfaite, l'offre est égale à la demande et l'offre est donnée par le coût marginal.
-Celui-ci est nul ici.
-On a donc \(P(q^*_{CPP})=0\), soit \(24-\frac{1}{10}q^*_{CPP}=0\), donc \(q_{CPP}^*=240\), et \(p_{CPP}^*=0\).
-Le profit en CPP est donc nul.\\
-On constate que la situation de duopole de Cournot est intermédiaire entre la concurrence pure et parfaite et le monopole.
-La quantité échangée est entre celle de monopole et de CPP, de même que le prix et le profit des producteurs.
-f.~Il n'y a ici pas de coût fixe, on a donc déjà calculé le surplus des producteurs : ce sont exactement les profits.
-Représentons graphiquement la situation pour le reste.
+\caption{\label{fig:cournotexo2}Représentation des fonctions de réaction d'un équilibre de Cournot.}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Pour calculer l'équilibre de Cournot, les anticipations de chacune des entreprises doit correspondre à ce que fait réellement l'autre entreprise.
+  Autrement dit \(q_A^a=q_A^*\) et \(q_B^a=q_B^*\).
+  On obtient donc :
+  \begin{gather*}
+  q_A^*=120-\frac{1}{2}q_B^*\\
+  q_B^*=120-\frac{1}{2}q_A^*
+  \end{gather*}
+  Pour résoudre ce système, on peut, par exemple, remplacer dans la première expression \(q_B^*\) par son expression dans la deuxième.
+  On obtient :
+  \begin{gather*}
+  q_A^*=120-\frac{1}{2}\left(120-\frac{1}{2}q_A^*\right) \\
+  \Leftrightarrow \frac{3}{4}q_A^*=120-60\\
+  \Leftrightarrow q_A^*=80
+  \end{gather*}
+  Par symétrie des entreprises A et B, on obtient immédiatement que \(q_B^*=80\).
+  On peut en déduire le prix sur le marché :
+  \[p^*=P(q_A^*+q_B^*)=24-\frac{1}{10}(q_A^*+q_B^*)=24-\frac{160}{10}=8\]
+  Le profit de la firme A est alors :
+  \[\pi_A(q_A^*, q_B^*)=q_A^*\times p^*=8*80=640\]
+  Il en est de même pour l'entreprise B.
+  Le profit total en duopole est donc \(1280\).
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \setcounter{enumii}{4}
+  \tightlist
+  \item
+    En monopole, on aurait égalité de la recette marginale avec le coût marginal (\(R_m(q)=C_m(q)\)).
+    Ici, le coût marginal est nul, on a donc \(R_m(q)=0\) sur ce marché.
+    Avec \(R(q)=qP(q)=24q-\frac{1}{10}q^2\), donc \(R_m(q)=24-\frac{1}{5}q\).
+    On a donc à l'optimum du monopole :
+    \[24-\frac{1}{5}q^*_m=0\Leftrightarrow q_m^*=120\]
+    On en déduit le prix en monopole \(p_m^*=24-\frac{1}{10}120=12\).\\
+    Et le profit en monopole \(\pi_m=12\times 120=1440\).\\
+    En concurrence pure et parfaite, l'offre est égale à la demande et l'offre est donnée par le coût marginal.
+    Celui-ci est nul ici.
+    On a donc \(P(q^*_{CPP})=0\), soit \(24-\frac{1}{10}q^*_{CPP}=0\), donc \(q_{CPP}^*=240\), et \(p_{CPP}^*=0\).
+    Le profit en CPP est donc nul.\\
+    On constate que la situation de duopole de Cournot est intermédiaire entre la concurrence pure et parfaite et le monopole.
+    La quantité échangée est entre celle de monopole et de CPP, de même que le prix et le profit des producteurs.
+  \item
+    Il n'y a ici pas de coût fixe, on a donc déjà calculé le surplus des producteurs : ce sont exactement les profits.
+    Représentons graphiquement la situation pour le reste.
+  \end{enumerate}
+\end{enumerate}
 
 \includegraphics{_main_files/figure-latex/cournotexo21f-1.pdf}
 À l'aide du graphique, on peut calculer les différents surplus des consommateurs :
@@ -3591,7 +3619,11 @@ On commence par écrire le profit de l'entreprise A :
 \[\pi_A(q_A, q_B)=q_AP(q_A+q_B)-C_A(q_A)\]
 L'entreprise A va maintenant anticiper que l'entreprise B va produire une quantité \(q_B^a\) et maximiser son profit.
 On obtient la dérivée partielle suivant \(q_A\) :
-\[\frac{\partial_A\pi}{\partial q_A}=q_AP'(q_A+q_B^a)+P(q_A+q_B^a)-C'_A(q_A)=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))-c_A=-\frac{1}{10}(2q_A+q_B^a)+24-c_A\]
+\begin{align*}
+\frac{\partial_A\pi}{\partial q_A}&=q_AP'(q_A+q_B^a)+P(q_A+q_B^a)-C'_A(q_A)\\
+&=q_A\frac{-1}{10}+(24-\frac{1}{10}(q_A+q_B^a))-c_A\\
+&=-\frac{1}{10}(2q_A+q_B^a)+24-c_A
+\end{align*}
 En utilisant la condition du premier ordre :
 \[\frac{\partial_A\pi}{\partial q_A}(q_A^*+q_B^a)=0\]
 On obtient la fonction de réaction de A :
@@ -3776,7 +3808,11 @@ Réponses.
   Donc on a d'après la CPO :
   \[-bq_B+a-b(q_A+q_B)=0\Leftrightarrow b(q_A+2q_B)=a\Leftrightarrow q_B=\frac{1}{2}\left(\frac{a}{b}-q_A\right)\]
   On peut maintenant résoudre le problème de maximisation de A, en utilisant la fonction de réaction de B :
-  \[\pi_A(q_A, q_B)=aq_A-bq_A(q_A+q_B)-F=-bq_A^2+q_A\left(a-b\frac{1}{2}\left(\frac{a}{b}-q_A\right)\right)=\frac{1}{2}(a-bq_A)q_A-F\]
+  \begin{align*}
+  \pi_A(q_A, q_B)&=aq_A-bq_A(q_A+q_B)-F\\
+  &=-bq_A^2+q_A\left(a-b\frac{1}{2}\left(\frac{a}{b}-q_A\right)\right)\\
+  &=\frac{1}{2}(a-bq_A)q_A-F
+  \end{align*}
   On peut maintenant calculer la condition du premier ordre de A en dérivant le profit :
   \[\pi_A'(q_A)=0 \Leftrightarrow  a-bq_A^*-bq_A^*=0\Leftrightarrow q_A^*=\frac{a}{2b}\]
   \(F\) n'est pas présent dans la quantité optimale produite par A.
@@ -4002,7 +4038,6 @@ de coût des deux entreprises sont : \[C\left(q_{1}\right)=5q_{1}\]
 \end{exercise}
 
 \begin{solution}[Réponse à l'exercice \ref{exr:cartelexo3}]
-
 Cet exercice pourrait être un exercice d'examen.
 Il réunit les principales questions sur les oligopoles qui pourraient être posées.
 Ici, les fonctions de coût ne sont pas symétriques, ce qui veut dire que le problème ne peut plus être simplifier grâce à la symétrie.
@@ -4119,14 +4154,14 @@ Ici, les fonctions de coût ne sont pas symétriques, ce qui veut dire que le pr
   On va chercher à représenter le profit du cartel \(\pi\) dans un graphique \((\pi_1, \pi_2)\).
   Le profit du cartel est la somme des profits des deux entreprises, donc \(\pi=\pi_1+ \pi_2\).
   On a donc dans le graphique l'équation de droite \(\pi_2=\pi- \pi_1\).
-  \includegraphics{_main_files/figure-latex/cartelexo34-1.pdf}
-  Le profit total obtenu en Cournot est de \(3200+900=4100\) (voir question 1).
-  Le profit du cartel est de 4525 (voir question 3).
-  On a donc un surplus de profit de 425 avec le cartel.
-  Une répartition égalitaire de ce surplus entre les deux entreprises serait donc de \(\frac{425}{2}\) pour chaque entreprise.
-  Cela aboutirait à un surplus total de \(6825/2\) pour l'entreprise 1 et de \(2225/2\) pour l'entreprise 2.
 \end{enumerate}
 
+\includegraphics{_main_files/figure-latex/cartelexo34-1.pdf}
+Le profit total obtenu en Cournot est de \(3200+900=4100\) (voir question 1).
+Le profit du cartel est de 4525 (voir question 3).
+On a donc un surplus de profit de 425 avec le cartel.
+Une répartition égalitaire de ce surplus entre les deux entreprises serait donc de \(\frac{425}{2}\) pour chaque entreprise.
+Cela aboutirait à un surplus total de \(6825/2\) pour l'entreprise 1 et de \(2225/2\) pour l'entreprise 2.
 \end{solution}
 
 \hypertarget{appendix-annexes}{%
