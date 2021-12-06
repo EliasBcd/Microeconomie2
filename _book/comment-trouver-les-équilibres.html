@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>C Calcul des surplus | Microéconomie 2</title>
+  <title>B Comment trouver les équilibres ? | Microéconomie 2</title>
   <meta name="description" content="Cours de microéconomie en licence 2 à l’université Paris 8." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="C Calcul des surplus | Microéconomie 2" />
+  <meta property="og:title" content="B Comment trouver les équilibres ? | Microéconomie 2" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="C Calcul des surplus | Microéconomie 2" />
+  <meta name="twitter:title" content="B Comment trouver les équilibres ? | Microéconomie 2" />
   
   <meta name="twitter:description" content="Cours de microéconomie en licence 2 à l’université Paris 8." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="comment-trouver-les-équilibres.html"/>
-<link rel="next" href="bibliographie-1.html"/>
+<link rel="prev" href="résolution-des-problèmes.html"/>
+<link rel="next" href="calcul-des-surplus.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -210,95 +210,71 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="calcul-des-surplus" class="section level1" number="7">
-<h1><span class="header-section-number">C</span> Calcul des surplus</h1>
-<div class="definition">
-<p><span id="def:unlabeled-div-44" class="definition"><strong>Définition C.1  (Surplus des consommateurs.) </strong></span>Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêt à payer et le prix effectivement payé.
-Mathématiquement, c’est l’intégrale suivante :
-<span class="math display">\[
-S_c(q)=\int_0^qP(x)-pdx=\int_0^qP(x)dx-pq
-\]</span>
-Où <span class="math inline">\(p\)</span> est le prix payé, <span class="math inline">\(q\)</span> la quantité échangée et <span class="math inline">\(P\)</span> la demande inverse.</p>
+<div id="comment-trouver-les-équilibres" class="section level1" number="6">
+<h1><span class="header-section-number">B</span> Comment trouver les équilibres ?</h1>
+<p>La méthode générale est toujours de maximiser le profit du ou des producteurs.
+Le profit est maximal quand la dérivée du profit suivant les quantités produite est nulle.</p>
+<p>En plus de ça, dans différents cas particuliers il est possible de sauter quelques étapes en retenant ces identitées fondamentales</p>
+<div id="en-concurrence-pure-et-parfaite" class="section level2" number="6.1">
+<h2><span class="header-section-number">B.1</span> En concurrence pure et parfaite</h2>
+<p>L’offre est égale à la demande, et les deux sont égales au prix sur le marché.
+L’offre est déterminée par le coût marginal.
+Avec les notations du cours :
+<span class="math display">\[C_m(q^*)=P(q^*)=p^*\]</span></p>
 </div>
-<p>L’intégrale signifie que c’est l’aire comprise entre la demande inverse (la fonction <span class="math inline">\(P\)</span>), le prix payé par les consommateurs (le prix <span class="math inline">\(p\)</span>), l’axe des ordonnées et la quantité échangée (<span class="math inline">\(q\)</span>).
-Dans notre cours, ce sera l’aire d’un triangle ou d’un trapèze.</p>
-<div class="definition">
-<p><span id="def:unlabeled-div-45" class="definition"><strong>Définition C.2  (Surplus des producteurs) </strong></span>Le surplus des producteurs est la somme de la différence entre le prix reçu par les producteurs et le coût marginal de production.
-Mathématiquement, c’est l’intégrale suivante :
-<span class="math display" id="eq:sp">\[
-S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx \tag{C.1}
-\]</span>
-Où <span class="math inline">\(p\)</span> est le prix reçu par le producteur, <span class="math inline">\(q\)</span> la quantité vendue et <span class="math inline">\(C_m\)</span> la coût marginal.</p>
+<div id="en-monopole" class="section level2" number="6.2">
+<h2><span class="header-section-number">B.2</span> En monopole</h2>
+<p>Le revenu marginal du monopole est égal au coût marginal.
+Le prix est égal à la demande inverse de la quantité d’équilibre.</p>
+<p><span class="math display">\[R_m(q^*)=C_m(q^*)\text{ et }p^*=P(q^*)\]</span></p>
+<div id="avec-des-régulations" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">B.2.1</span> Avec des régulations</h3>
+<p>Quand l’État oblige un monopole à une tarification au coût moyen ou au coût marginal, cela signifie qu’il doit utiliser cette fonction comme offre, et l’égaliser avec la demande.
+Par exemple, avec une tarification au coût moyen, on doit avoir :</p>
+<p><span class="math display">\[C_M(q^*)=P(q^*)=p^*\]</span></p>
 </div>
-<p>L’intégrale signifie que c’est l’aire comprise entre le prix reçu par les producteurs (<span class="math inline">\(p\)</span>), le coût marginal (<span class="math inline">\(C_m\)</span>), l’axe des ordonnées et la quantité échangée (<span class="math inline">\(q\)</span>).
-Dans notre cours, ce sera l’aire d’un triangle ou d’un trapèze.</p>
-<div class="remark">
-<p><span id="unlabeled-div-46" class="remark"><em>Remarque</em> (Lien entre surplus et profit). </span>Si on continue l’expression donnée par l’équation <a href="calcul-des-surplus.html#eq:sp">(C.1)</a>, on obtient :
-<span class="math display">\[S_p(q)=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)\]</span>
-Cela prouve la relation donnée informellement dans le cours entre surplus et profit.
-Le surplus est la somme du profit réalisé par les producteurs et des coûts fixes (des coût qui ne dépendent pas de la quantité).</p>
+<div id="avec-une-discrimination-du-3e-degré" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">B.2.2</span> Avec une discrimination du 3<sup>e</sup> degré</h3>
+<p>En discrimination du 3<sup>e</sup> degré, le monopole se comporte comme s’il était en monopole sur deux marché différents.
+Le revenu marginal du groupe 1 est égal au revenu marginal du groupe 2 qui est égal au coût marginal total du monopole.</p>
+<p><span class="math display">\[R_{m1}(q_1^*)=R_{m2}(q_2^*)=C_m(q^*)\]</span>
+Avec
+<span class="math display">\[p_1^*=P_1(q_1^*)\text{ et }p_2^*=P_2(q_2^*)\]</span></p>
 </div>
-<div class="remark">
-<p><span id="unlabeled-div-47" class="remark"><em>Remarque</em> (Aire d'un triangle). </span>L’aire d’un triangle est donnée par la formule suivante :
-<span class="math display">\[\text{aire triangle}=\frac{1}{2}\times\text{base}\times\text{hauteur}\]</span></p>
 </div>
-<div class="remark">
-<p><span id="unlabeled-div-48" class="remark"><em>Remarque</em> (Aire d'un trapèze). </span>L’aire d’un trapèze est donnée par la formule suivante :
-<span class="math display">\[\text{aire trapèze}=\frac{1}{2}\times(\text{petite base}+\text{grande base})\times\text{hauteur}\]</span></p>
+<div id="oligopoles-2" class="section level2" number="6.3">
+<h2><span class="header-section-number">B.3</span> Oligopoles</h2>
+<div id="duopole-de-cournot" class="section level3" number="6.3.1">
+<h3><span class="header-section-number">B.3.1</span> Duopole de Cournot</h3>
+<p>D’abord, maximiser le profit de chaque entreprise en considérant la quantité produite par l’autre comme une donnée.
+On obtient alors un système de deux équations à deux inconnues qu’il faut résoudre pour obtenir les quantités optimales.
+Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.</p>
 </div>
-<p>On peut illustrer ces formules avec deux cas pratiques (sur les graphiques <a href="calcul-des-surplus.html#fig:annexesurplus2">C.1</a> et <a href="calcul-des-surplus.html#fig:annexesurplus3">C.2</a>).</p>
-<p>Les valeurs sur les graphiques sont obtenues de la manière suivante :</p>
-<ul>
-<li><span class="math inline">\(q\)</span> est connu ou <span class="math inline">\(p\)</span> est connu ;</li>
-<li>Si <span class="math inline">\(q\)</span> est connu, on obtient <span class="math inline">\(p\)</span> grâce à la fonction de demande inverse : <span class="math inline">\(p=P(q)\)</span>.
-Si <span class="math inline">\(p\)</span> est connu, on obtient <span class="math inline">\(q\)</span> avec la fonction de demande <span class="math inline">\(q=Q(p)\)</span> ou en résolvant l’équation <span class="math inline">\(p=P(q)\)</span>.</li>
-<li><span class="math inline">\(p_3=P(0)\)</span> ;</li>
-<li><span class="math inline">\(p_1=C_m(0)\)</span> ;</li>
-<li><span class="math inline">\(p_2\)</span> dépendra du cas.</li>
-</ul>
-<p>Le premier cas est illustré sur le graphique <a href="calcul-des-surplus.html#fig:annexesurplus2">C.1</a>.
-Le prix de l’échange <span class="math inline">\(p\)</span> est tel que le surplus des consommateurs est un triangle, et le surplus des producteurs est un trapèze.
-Dans ce cas, on obtient <span class="math inline">\(p_2= C_m(q)\)</span>.
-Le surplus des consommateurs est donné par :
-<span class="math display">\[
-S_c=\frac{1}{2}\times(p_3-p)\times q
-\]</span>
-Et le surplus des producteurs par :
-<span class="math display">\[
-S_p=\frac{1}{2}\times(p-p_2+p-p_1)\times q
-\]</span></p>
-<div class="figure"><span style="display:block;" id="fig:annexesurplus2"></span>
-<img src="_main_files/figure-html/annexesurplus2-1.png" alt="Surplus avec un prix de l'échange $p$." width="672" />
-<p class="caption">
-Figure C.1: Surplus avec un prix de l’échange <span class="math inline">\(p\)</span>.
-</p>
+<div id="duopole-de-stackelberg" class="section level3" number="6.3.2">
+<h3><span class="header-section-number">B.3.2</span> Duopole de Stackelberg</h3>
+<p>Maximiser le profit de l’entreprise follower en considérant la quantité produite par le leader comme une donnée.
+On obtient ainsi la fonction de réaction du follower.
+Le leader utilise ensuite la fonction de réaction du follower dans sa propre maximisation du profit.
+Cela permet d’obtenir la quantité produite par le leader.
+A l’aide de la fonction de réaction du follower, on en déduit la quantité du follower.
+Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.</p>
 </div>
-<p>Le second cas est illustré sur le graphique <a href="calcul-des-surplus.html#fig:annexesurplus3">C.2</a>.
-Le prix de l’échange <span class="math inline">\(p\)</span> est tel que le surplus des consommateurs est un trapèze, et le surplus des producteurs est un triangle.
-Dans ce cas, on obtient <span class="math inline">\(p_2= P(q)\)</span>.
-Le surplus des consommateurs est donné par :
-<span class="math display">\[
-S_c=\frac{1}{2}\times(p_3-p+p_2-p)\times q
-\]</span>
-Et le surplus des producteurs par :
-<span class="math display">\[
-S_p=\frac{1}{2}\times(p-p_1)\times q
-\]</span></p>
-<div class="figure"><span style="display:block;" id="fig:annexesurplus3"></span>
-<img src="_main_files/figure-html/annexesurplus3-1.png" alt="Surplus avec un prix de l'échange $p$." width="672" />
-<p class="caption">
-Figure C.2: Surplus avec un prix de l’échange <span class="math inline">\(p\)</span>.
-</p>
+<div id="cartel" class="section level3" number="6.3.3">
+<h3><span class="header-section-number">B.3.3</span> Cartel</h3>
+<p>Quand deux entreprises sont en cartel, elles maximisent leur profit joint.
+On écrit donc le profit du cartel, puis on écrit les conditions du premier suivant chaque quantité.
+On obtient alors un système de deux équations à deux inconnues à résoudre.
+Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.</p>
 </div>
-
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="comment-trouver-les-équilibres.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bibliographie-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="résolution-des-problèmes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="calcul-des-surplus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -29,3 +29,5 @@ vignettes/*.pdf
 *.Rproj
 libs/*
 tmp-pdfcrop-*
+# log files
+*.log

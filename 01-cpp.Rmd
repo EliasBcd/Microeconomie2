@@ -1,10 +1,12 @@
-# Rappels : le marché en concurrence pure et parfaite
+# Rappels : Le marché en concurrence pure et parfaite
+\chaptermark{Le marché en CPP}
 
 ```{r setupcpp, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
 ```
 
 ## Les hypothèses de la concurrence pure et parfaite (CPP)
+\chaptermark{Les hypothèses de la CPP}
 
 
 ```{r theme}
