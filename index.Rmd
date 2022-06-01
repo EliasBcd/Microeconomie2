@@ -30,11 +30,11 @@ Ce dépôt contient les notes de cours ainsi que les corrigés des exercices.
 
 Les principaux thèmes abordés dans ce cours sont les suivants :
 
--  structures de marché
-- pouvoir de marché
-- principes de tarification
-- comportements stratégiques
-- problèmes d'information
+- structures de marché ;
+- pouvoir de marché ;
+- principes de tarification ;
+- comportements stratégiques ;
+- problèmes d'information.
 
 L'idée générale est de dépasser le cadre de la concurrence pure et parfaite et de se rapprocher un peu du *monde réel* en levant certaines hypothèses de la concurrence pure et parfaite.
 
@@ -48,7 +48,7 @@ Néanmoins, pour ceux qui souhaitent des éclairages différents sur les notions
 - @pindyck2012 *Microéconomie*
 - @jeleva2014 *Microéconomie*
 
-Et enfin une référence avancée, pour ceux qui cherchent les fondements mathématiques (en anglais):
+Et enfin une référence avancée, pour ceux qui cherchent les fondements mathématiques (en anglais) :
 
 - @mas1995 *Microeconomic Theory*
 

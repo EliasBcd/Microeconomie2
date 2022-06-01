@@ -27,10 +27,10 @@ p <- ggplot(data=df, aes(x=x)) +
 On a vu jusqu'à présent deux cas extrêmes :
 
 - La concurrence pure et parfaite :
-il y a une infinité d'entreprise infinitésimales sur un marché  donné.
+il y a une infinité d'entreprise infinitésimales sur un marché  donné ;
 - Le monopole : il y a une seule entreprise sur un marché donné.
 
-Dans les deux cas, l'entreprise ou les entreprises n'ont pas à se préoccuper des autres entreprises.
+Dans les deux cas, le ou les entreprises n'ont pas à se préoccuper des autres entreprises.
 Dans le cas du monopole, parce qu'il n'y en a pas.
 Dans le cas de la CPP, l'entreprise observe le prix du marché et prend sa décision en fonction de ce prix, et uniquement de ce prix. 
 Les actions des autres entreprises ne l'influence pas.
@@ -393,7 +393,7 @@ p_cournot + geom_segment(data=df, x=qc2-0.05, xend=qc2+0.05, y=qc2, yend=qc2, ar
 Il n'y a plus de symétrie des entreprises dans un duopole à la Stackelberg.
 Une entreprise, dite *leader*, prend ses décisions avant l'entreprise dite *follower*.
 L'entreprise leader connaît les caractéristiques de l'entreprise follower et peut ainsi calculer sa fonction de réaction.
-Elle va donc en tenir compte dans ses décisions.
+Elle en tiendra compte dans ses décisions.
 On considère ici qu'il n'y a que deux périodes de décisions.
 
 ### Résolution graphique
@@ -569,7 +569,7 @@ En utilisant le même raisonnement, on a pour l'entreprise B :
 
 #### Optimalité pour le cartel
 
-A l'optimum pour le cartel, on a donc :
+À l'optimum pour le cartel, on a donc :
 \[R_m(q) = C_{mA}(q_A) = C_{mB}(q_B)\]
 Le cartel égalise la recette marginale *totale* aux coûts marginaux de chacune des deux entreprises.
 

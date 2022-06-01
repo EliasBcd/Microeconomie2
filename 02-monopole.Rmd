@@ -18,12 +18,12 @@ Les principales sont :
 
 - Légales, à cause de réglementation particulières.
 C'est ce qu'on appelle en général des professions réglementées, comme les avocats, les bureaux de tabac, les taxis...
-- Légales, à cause des brevets sur une technologie données (industrie pharmaceutique...) ;
+- Légales, à cause des brevets sur une technologie données (industrie pharmaceutique, ...) ;
 - Historique, le premier arrivé ;
 - Monopoles *naturels* : en présence d'économies d'échelles, produire une quantité donnée revient moins cher avec un seul producteur qu'avec plusieurs.
-C'est notamment les cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, etc).
-Plus généralement, les industries avec des coûts fixes / coûts d'entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile...) ;
-- Exclusivité sur la production de certaines matières premières (cuivre au Chili, terres rares en Chine,...) ;
+C'est notamment les cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, ...).
+Plus généralement, les industries avec des coûts fixes / coûts d'entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile, ...) ;
+- Exclusivité sur la production de certaines matières premières (cuivre au Chili, terres rares en Chine, ...) ;
 - Coalitions créant un cartel ;
 - ...
 
@@ -32,10 +32,12 @@ Plus généralement, les industries avec des coûts fixes / coûts d'entrées tr
 ### Définition
 
 À la différence du cas de la concurrence pure et parfaite, le monopole perçoit la courbe de demande agrégée, et non plus celle avec une élasticité infinie.
-Le choix de la quantité qu'il met sur le marché modifie le prix auquel il pourra vendre sa production, et il le sait.  
+Le choix de la quantité qu'il met sur le marché modifie le prix auquel il pourra vendre sa production, et il le sait. 
 Il va choisir **un** des paramètres du couple $(q, P(q))$, et l'autre en découlera, à travers la demande inverse $P(q)$.
 Autrement dit, s'il choisit $q$, $P(q)$ sera déterminé par la demande (inverse).
-Si, au contraire, il choisit $P$, $q$ sera déterminé par la demande.
+Si, au contraire, il choisit $P$, $q$ sera déterminé par la demande. 
+
+<!-- Réécrire avec Q plus proprement le paragraphe au-dessus. -->
 
 En CPP, la recette totale du producteur individuel était $R(q) = q\cdot P(q^*)$, où $q$ est sa production individuel, $q^*$ la quantité d'équilibre sur le marché (résultat de la production de *toutes* les entreprises présentes sur le marché) et $P(q^*)=p^*$ est le prix d'équilibre.
 
@@ -49,7 +51,7 @@ R(q) = q\cdot P(q)
 Comme la courbe de demande est décroissante (l'élasticité prix de la demande est négative $\varepsilon_{q/p} <0$), $P(q)$ et $q$ ont une relation inverse. 
 Autrement dit, si $q$ augmente, alors $p$ baisse, et réciproquement.
 
-Cela implique que la recette totale va augmenter ou baisser suivant les propriétés de la courbe de demande.
+Cela implique que la recette totale augmentera ou baissera suivant les propriétés de la courbe de demande.
 
 
 ```{r base, include=FALSE}
@@ -222,7 +224,7 @@ Le résultat donne l'égalité d'aire entre le triangle vert et le triangle roug
 ### Maximisation du profit
 
 Comme dans le cas de la CPP, on suppose que le monopole cherche à maximiser son profit $\pi(q)=R(q)-C(q)$, où $C(q)$ est la fonction de coût (total) du monopole.  
-Il y a 2 conditions d'optimalités, les conditions de premier (la dérivée du profit à l'optimum est nulle: $\pi'(q^*)=0$) et de second ordre (la dérivée seconde du profit à l'optimum est strictement négative $\pi''(q^*)<0$), ainsi qu'une contrainte, que le profit à l'optimum soit positif ($\pi(q^*)>0$).
+Il y a 2 conditions d'optimalités, les conditions de premier ordre (la dérivée du profit à l'optimum est nulle: $\pi'(q^*)=0$) et de second ordre (la dérivée seconde du profit à l'optimum est strictement négative $\pi''(q^*)<0$), ainsi qu'une contrainte, que le profit à l'optimum soit positif ($\pi(q^*)>0$).
 
 La condition de premier ordre s'exprime ainsi :
 \[
@@ -352,7 +354,7 @@ p6 <- ggplot(df2, aes(x=x2)) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 420), breaks = seq(0, 400, by=50), labels=c(0, 50, 100, TeX("$\\pi_m^*=150$"), 200, 250, 300, 350, 400)) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 22), breaks = seq(0, 20, by=5), labels = c(0, 5, TeX("$q_m^*=10$"), 15, 20)) +
   annotate("text", x=18, y=10, label=TeX("$\\pi$"), color="darkgreen") +
-  annotate("text", x=18, y=350, label=TeX("C_m"), color="darkred") +
+  annotate("text", x=18, y=350, label=TeX("$C_m$"), color="darkred") +
   annotate("text", x=18, y=400, label=TeX("R"), color="blue")
 
 p6
@@ -380,7 +382,7 @@ p7 <- ggplot(df2, aes(x=x2)) +
 p7  
 ```
 
-### Propriétés de la solution de la maximisation du monopole
+### Propriétés de la solution du monopole
 
 On avait dans l'équation \@ref(eq:rm) :
 \[
@@ -398,9 +400,9 @@ Dès lors que l'élasticité de la demande au prix n'est plus infinie en revanch
  P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}} > C_m(q^*)
 \]
 
-*Question :* Dans quelle zone d'élasticité le monopole va-t-il opérer ?
+*Question :* Dans quelle zone d'élasticité le monopole opère-t-il ?
 
-On voit que si $\left|\varepsilon_{q/p}(q^*)\right|<1$, c'est-à-dire que si la demande est inélastique, alors $1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} <0$, ce qui implique que la recette marginale $R_m$ est négative, et donc impossible à égaliser avec le coût marginal $C_m$.  
+Si $\left|\varepsilon_{q/p}(q^*)\right|<1$, c'est-à-dire que si la demande est inélastique, alors $1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} <0$, ce qui implique que la recette marginale $R_m$ est négative, et donc impossible à égaliser avec le coût marginal $C_m$.  
 On peut voir la réponse d'une autre façon.
 Si la pente est inélastique, alors le revenu $R$ augmente quand la quantité $q$ baisse. 
 Le coût total $C$ baisse aussi quand la quantité baisse. 
@@ -531,7 +533,7 @@ p_surplus <- ggplot() +
 p_surplus
 ```
 
-Cela signifie que le surplus du producteur (son profit) est plus élevé en monopole qu'en CPP, et que le surplus des consommateur est plus faible.
+Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu'en CPP, et que le surplus des consommateur est plus faible.
 Il y a globalement une perte sèche de surplus total.
 **Le monopole est inefficace au sens de Pareto.**
 Il existe des consommateurs prêt à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche).
@@ -541,9 +543,11 @@ Il suffirait pour cela que le monopole produise une unité supplémentaire du bi
 
 ## Régulation du monopole
 
-Cette partie va traiter de la manière dont un gouvernement peut inciter un monopole à modifier son comportement.
+Cette partie va traiter de la manière dont un gouvernement peut inciter ou contraindre un monopole à modifier son comportement.
 
 ### Taxe unitaire
+
+<!-- Définir pour chaque taxe ce qu'elles font. -->
 
 Un gouvernement impose une taxe de $t$ unités monétaire par unité de bien produite.
 On a donc :
@@ -560,7 +564,7 @@ La condition de première ordre de la maximisation du producteur de l'équation 
 \end{array}
 \]
 Le problème est exactement le même que précédemment, en intégrant la taxe dans le coût marginal.
-Pour le monopole, c'est comme si l'état ajoutait un coût $t$ à chaque unité produite, ce qui est effectivement ce que l'État fait.
+Pour le monopole, c'est comme si l'État ajoutait un coût $t$ à chaque unité produite, ce qui est effectivement ce que l'État fait.
 
 ```{r monopoletaxeunitaire, fig.cap="Impact d'une taxe unitaire : augmentation du coût marginal."}
 t = 0.2
@@ -641,7 +645,7 @@ On peut donc aussi envisager une subvention à la production et une taxe proport
 
 ### Fixation d'un prix maximum
 
-Le gouvernement interdit de vendre au-dessus d'une prix maximum $p^{max}$
+Le gouvernement interdit de vendre au-dessus d'un prix maximum $p^{max}$.
 
 Le gouvernement modifie ainsi la demande perçue par le producteur.
 

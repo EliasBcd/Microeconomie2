@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 3 Le monopole | Microéconomie 2</title>
   <meta name="description" content="Cours de microéconomie en licence 2 à l’université Paris 8." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 3 Le monopole | Microéconomie 2" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Cours de microéconomie en licence 2 à l’université Paris 8." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
@@ -25,7 +24,7 @@
 <meta name="author" content="Antoine Terracol" />
 
 
-<meta name="date" content="2021-12-06" />
+<meta name="date" content="2022-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="rappels-le-marché-en-concurrence-pure-et-parfaite.html"/>
 <link rel="next" href="oligopoles.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,8 +50,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
@@ -124,7 +123,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.2" data-path="le-monopole.html"><a href="le-monopole.html#décision-de-production-du-monopole"><i class="fa fa-check"></i><b>3.2</b> Décision de production du monopole</a>
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="le-monopole.html"><a href="le-monopole.html#maximisation-du-profit"><i class="fa fa-check"></i><b>3.2.1</b> Maximisation du profit</a></li>
-<li class="chapter" data-level="3.2.2" data-path="le-monopole.html"><a href="le-monopole.html#propriétés-de-la-solution-de-la-maximisation-du-monopole"><i class="fa fa-check"></i><b>3.2.2</b> Propriétés de la solution de la maximisation du monopole</a></li>
+<li class="chapter" data-level="3.2.2" data-path="le-monopole.html"><a href="le-monopole.html#propriétés-de-la-solution-du-monopole"><i class="fa fa-check"></i><b>3.2.2</b> Propriétés de la solution du monopole</a></li>
 <li class="chapter" data-level="3.2.3" data-path="le-monopole.html"><a href="le-monopole.html#indice-de-pouvoir-du-monopole"><i class="fa fa-check"></i><b>3.2.3</b> Indice de pouvoir du monopole</a></li>
 <li class="chapter" data-level="3.2.4" data-path="le-monopole.html"><a href="le-monopole.html#variation-de-la-demande"><i class="fa fa-check"></i><b>3.2.4</b> Variation de la demande</a></li>
 <li class="chapter" data-level="3.2.5" data-path="le-monopole.html"><a href="le-monopole.html#linefficience-du-monopole"><i class="fa fa-check"></i><b>3.2.5</b> L’inefficience du monopole</a></li>
@@ -210,8 +209,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="le-monopole" class="section level1" number="3">
-<h1><span class="header-section-number">Chapitre 3</span> Le monopole</h1>
+<div id="le-monopole" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapitre 3</span> Le monopole<a href="le-monopole.html#le-monopole" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="definition">
 <p><span id="def:unlabeled-div-25" class="definition"><strong>Définition 3.1  (Monopole) </strong></span>Un <em>monopole</em> est sur un marché donné l’unique entreprise qui produit le bien.</p>
 </div>
@@ -222,35 +221,36 @@ Les principales sont :</p>
 <ul>
 <li>Légales, à cause de réglementation particulières.
 C’est ce qu’on appelle en général des professions réglementées, comme les avocats, les bureaux de tabac, les taxis…</li>
-<li>Légales, à cause des brevets sur une technologie données (industrie pharmaceutique…) ;</li>
+<li>Légales, à cause des brevets sur une technologie données (industrie pharmaceutique, …) ;</li>
 <li>Historique, le premier arrivé ;</li>
 <li>Monopoles <em>naturels</em> : en présence d’économies d’échelles, produire une quantité donnée revient moins cher avec un seul producteur qu’avec plusieurs.
-C’est notamment les cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, etc).
-Plus généralement, les industries avec des coûts fixes / coûts d’entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile…) ;</li>
-<li>Exclusivité sur la production de certaines matières premières (cuivre au Chili, terres rares en Chine,…) ;</li>
+C’est notamment les cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, …).
+Plus généralement, les industries avec des coûts fixes / coûts d’entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile, …) ;</li>
+<li>Exclusivité sur la production de certaines matières premières (cuivre au Chili, terres rares en Chine, …) ;</li>
 <li>Coalitions créant un cartel ;</li>
 <li>…</li>
 </ul>
-<div id="recette-et-recette-marginale" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Recette et recette marginale</h2>
-<div id="définition" class="section level3" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> Définition</h3>
+<div id="recette-et-recette-marginale" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Recette et recette marginale<a href="le-monopole.html#recette-et-recette-marginale" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="définition" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Définition<a href="le-monopole.html#définition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>À la différence du cas de la concurrence pure et parfaite, le monopole perçoit la courbe de demande agrégée, et non plus celle avec une élasticité infinie.
-Le choix de la quantité qu’il met sur le marché modifie le prix auquel il pourra vendre sa production, et il le sait.<br />
+Le choix de la quantité qu’il met sur le marché modifie le prix auquel il pourra vendre sa production, et il le sait.
 Il va choisir <strong>un</strong> des paramètres du couple <span class="math inline">\((q, P(q))\)</span>, et l’autre en découlera, à travers la demande inverse <span class="math inline">\(P(q)\)</span>.
 Autrement dit, s’il choisit <span class="math inline">\(q\)</span>, <span class="math inline">\(P(q)\)</span> sera déterminé par la demande (inverse).
 Si, au contraire, il choisit <span class="math inline">\(P\)</span>, <span class="math inline">\(q\)</span> sera déterminé par la demande.</p>
+<!-- Réécrire avec Q plus proprement le paragraphe au-dessus. -->
 <p>En CPP, la recette totale du producteur individuel était <span class="math inline">\(R(q) = q\cdot P(q^*)\)</span>, où <span class="math inline">\(q\)</span> est sa production individuel, <span class="math inline">\(q^*\)</span> la quantité d’équilibre sur le marché (résultat de la production de <em>toutes</em> les entreprises présentes sur le marché) et <span class="math inline">\(P(q^*)=p^*\)</span> est le prix d’équilibre.</p>
 <p>En monopole, le prix dépend de la production du monopole (ou l’inverse, peu importe) :
 <span class="math display">\[
 R(q) = q\cdot P(q)
 \]</span></p>
 </div>
-<div id="recette-marginale-et-courbe-de-demande" class="section level3" number="3.1.2">
-<h3><span class="header-section-number">3.1.2</span> Recette marginale et courbe de demande</h3>
+<div id="recette-marginale-et-courbe-de-demande" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Recette marginale et courbe de demande<a href="le-monopole.html#recette-marginale-et-courbe-de-demande" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Comme la courbe de demande est décroissante (l’élasticité prix de la demande est négative <span class="math inline">\(\varepsilon_{q/p} &lt;0\)</span>), <span class="math inline">\(P(q)\)</span> et <span class="math inline">\(q\)</span> ont une relation inverse.
 Autrement dit, si <span class="math inline">\(q\)</span> augmente, alors <span class="math inline">\(p\)</span> baisse, et réciproquement.</p>
-<p>Cela implique que la recette totale va augmenter ou baisser suivant les propriétés de la courbe de demande.</p>
+<p>Cela implique que la recette totale augmentera ou baissera suivant les propriétés de la courbe de demande.</p>
 <div class="figure"><span style="display:block;" id="fig:monorecettemarginale"></span>
 <img src="_main_files/figure-html/monorecettemarginale-1.png" alt="Recette marginale d'un monopole." width="672" />
 <p class="caption">
@@ -298,15 +298,15 @@ Figure 3.2: La recette marginale est maximale lorsque l’élasticité prix de l
 </p>
 </div>
 </div>
-<div id="représentation-graphique" class="section level3" number="3.1.3">
-<h3><span class="header-section-number">3.1.3</span> Représentation graphique</h3>
+<div id="représentation-graphique" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Représentation graphique<a href="le-monopole.html#représentation-graphique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La courbe de recette marginale est toujours située en-dessous de la courbe de demande :
 <span class="math display">\[
 R_m(q) = P(q) + qP&#39;(q) &lt; P(q)
 \]</span>
 et <span class="math inline">\(P&#39;(q)\)</span> est négative (la demande inverse est décroissante).</p>
-<div id="exemple-avec-une-courbe-de-demande-linéaire" class="section level4" number="3.1.3.1">
-<h4><span class="header-section-number">3.1.3.1</span> Exemple avec une courbe de demande linéaire</h4>
+<div id="exemple-avec-une-courbe-de-demande-linéaire" class="section level4 hasAnchor" number="3.1.3.1">
+<h4><span class="header-section-number">3.1.3.1</span> Exemple avec une courbe de demande linéaire<a href="le-monopole.html#exemple-avec-une-courbe-de-demande-linéaire" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Prenons maintenant l’exemple d’une courbe de demande inverse linéaire quelconque <span class="math inline">\(P(q) = a-bq\)</span> (<span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sont des paramètres quelconques).
 On obtient alors <span class="math inline">\(R_m(q) = a-2bq\)</span> (et <span class="math inline">\(R(q) = aq-bq^2\)</span>).<br />
 Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus élevée que la demande, et ayant la même ordonnée à l’origine.
@@ -334,18 +334,18 @@ Figure 3.4: Recette maximale.
 </div>
 </div>
 </div>
-<div id="décision-de-production-du-monopole" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Décision de production du monopole</h2>
-<div id="maximisation-du-profit" class="section level3" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Maximisation du profit</h3>
+<div id="décision-de-production-du-monopole" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Décision de production du monopole<a href="le-monopole.html#décision-de-production-du-monopole" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="maximisation-du-profit" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Maximisation du profit<a href="le-monopole.html#maximisation-du-profit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Comme dans le cas de la CPP, on suppose que le monopole cherche à maximiser son profit <span class="math inline">\(\pi(q)=R(q)-C(q)\)</span>, où <span class="math inline">\(C(q)\)</span> est la fonction de coût (total) du monopole.<br />
-Il y a 2 conditions d’optimalités, les conditions de premier (la dérivée du profit à l’optimum est nulle: <span class="math inline">\(\pi&#39;(q^*)=0\)</span>) et de second ordre (la dérivée seconde du profit à l’optimum est strictement négative <span class="math inline">\(\pi&#39;&#39;(q^*)&lt;0\)</span>), ainsi qu’une contrainte, que le profit à l’optimum soit positif (<span class="math inline">\(\pi(q^*)&gt;0\)</span>).</p>
+Il y a 2 conditions d’optimalités, les conditions de premier ordre (la dérivée du profit à l’optimum est nulle: <span class="math inline">\(\pi&#39;(q^*)=0\)</span>) et de second ordre (la dérivée seconde du profit à l’optimum est strictement négative <span class="math inline">\(\pi&#39;&#39;(q^*)&lt;0\)</span>), ainsi qu’une contrainte, que le profit à l’optimum soit positif (<span class="math inline">\(\pi(q^*)&gt;0\)</span>).</p>
 <p>La condition de premier ordre s’exprime ainsi :
 <span class="math display">\[
 \begin{array}{rcl}
 \pi&#39;(q^*) &amp;=&amp;0\\
 \Leftrightarrow R&#39;(q^*) - C&#39;(q^*) &amp;=&amp; 0\\
-\Leftrightarrow R_m(q^*) &amp;=&amp;C_m(q^*) 
+\Leftrightarrow R_m(q^*) &amp;=&amp;C_m(q^*)
 \end{array}
 \]</span>
 À l’optimum, le monopole égalise le coût marginal et le revenu marginal.</p>
@@ -366,7 +366,7 @@ Dans le cas contraire, le marché n’existerait tout simplement pas, car le mon
 <p><span id="thm:unlabeled-div-27" class="theorem"><strong>Théorème 3.1  (Optimum du du monopole) </strong></span>À l’optimum, le monopole égalise le coût marginal et le revenu marginal.
 Ce n’est un maximum que si la dérivée de la recette marginale est inférieure à la dérivée du coût marginal et que le profit est positif.
 <span class="math display" id="eq:cpo">\[\begin{equation}
-R_m(q^*)=C_m(q^*) 
+R_m(q^*)=C_m(q^*)
 \tag{3.2}
 \end{equation}\]</span>
 <span class="math display" id="eq:cso">\[\begin{equation}
@@ -432,25 +432,25 @@ Figure 3.7: Demande, prix, coûts et profits dans l’exemple <a href="le-monopo
 </p>
 </div>
 </div>
-<div id="propriétés-de-la-solution-de-la-maximisation-du-monopole" class="section level3" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Propriétés de la solution de la maximisation du monopole</h3>
+<div id="propriétés-de-la-solution-du-monopole" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Propriétés de la solution du monopole<a href="le-monopole.html#propriétés-de-la-solution-du-monopole" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>On avait dans l’équation <a href="le-monopole.html#eq:rm">(3.1)</a> :
 <span class="math display">\[
 R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
 \]</span>
 Comme à l’optimum, d’après l’équation <a href="le-monopole.html#eq:cpo">(3.2)</a>, on doit avoir <span class="math inline">\(R_m(q^*)=C_m(q^*)\)</span>, on a :
 <span class="math display" id="eq:rmcm">\[
-R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) 
+R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*)
 \tag{3.5}
 \]</span>
 On observe ici un lien avec la solution en CPP.
 En effet, en CPP, l’élasticité de la demande au prix est perçue comme infinie, on aura donc bien <span class="math inline">\(P(q^*) = C_m(q^*)\)</span>, la solution obtenue en CPP.
 Dès lors que l’élasticité de la demande au prix n’est plus infinie en revanche, on obtient :
 <span class="math display">\[
- P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}} &gt; C_m(q^*)
+P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}} &gt; C_m(q^*)
 \]</span></p>
-<p><em>Question :</em> Dans quelle zone d’élasticité le monopole va-t-il opérer ?</p>
-<p>On voit que si <span class="math inline">\(\left|\varepsilon_{q/p}(q^*)\right|&lt;1\)</span>, c’est-à-dire que si la demande est inélastique, alors <span class="math inline">\(1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} &lt;0\)</span>, ce qui implique que la recette marginale <span class="math inline">\(R_m\)</span> est négative, et donc impossible à égaliser avec le coût marginal <span class="math inline">\(C_m\)</span>.<br />
+<p><em>Question :</em> Dans quelle zone d’élasticité le monopole opère-t-il ?</p>
+<p>Si <span class="math inline">\(\left|\varepsilon_{q/p}(q^*)\right|&lt;1\)</span>, c’est-à-dire que si la demande est inélastique, alors <span class="math inline">\(1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} &lt;0\)</span>, ce qui implique que la recette marginale <span class="math inline">\(R_m\)</span> est négative, et donc impossible à égaliser avec le coût marginal <span class="math inline">\(C_m\)</span>.<br />
 On peut voir la réponse d’une autre façon.
 Si la pente est inélastique, alors le revenu <span class="math inline">\(R\)</span> augmente quand la quantité <span class="math inline">\(q\)</span> baisse.
 Le coût total <span class="math inline">\(C\)</span> baisse aussi quand la quantité baisse.
@@ -459,13 +459,13 @@ Le monopole aurait donc tout intérêt à réduire sa production lorsque la dema
 <p><span id="cor:unlabeled-div-28" class="corollary"><strong>Corollaire 3.1  </strong></span>Le monopole opère donc nécessairement dans la zone élastique de la courbe de demande : <span class="math inline">\(\left|\varepsilon_{q/p}(q^*)\right|&gt;1\)</span> .</p>
 </div>
 </div>
-<div id="indice-de-pouvoir-du-monopole" class="section level3" number="3.2.3">
-<h3><span class="header-section-number">3.2.3</span> Indice de pouvoir du monopole</h3>
+<div id="indice-de-pouvoir-du-monopole" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Indice de pouvoir du monopole<a href="le-monopole.html#indice-de-pouvoir-du-monopole" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La capacité du monopole à vendre à un prix supérieur au coût marginal dépend de la plus ou moins grande élasticité de la demande au prix.
 Cela permet de construire un indice du <em>pouvoir de monopole</em> à partir de l’élasticité du prix à la demande à l’équilibre.
 On a, d’après l’équation <a href="le-monopole.html#eq:rmcm">(3.5)</a> :
 <span class="math display">\[
-R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) 
+R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*)
 \]</span>
 On en déduit :</p>
 <p><span class="math display">\[\begin{array}{rl}
@@ -488,8 +488,8 @@ P(q^*) =\frac{|\varepsilon_{q/p}(q^*)|}{|\varepsilon_{q/p}(q^*)|-1} C_m(q^*)
 \]</span></p>
 </div>
 </div>
-<div id="variation-de-la-demande" class="section level3" number="3.2.4">
-<h3><span class="header-section-number">3.2.4</span> Variation de la demande</h3>
+<div id="variation-de-la-demande" class="section level3 hasAnchor" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Variation de la demande<a href="le-monopole.html#variation-de-la-demande" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Les décisions de production du monopole et la fixation de son prix dépendent de la demande à laquelle il fait face et du coût marginal.
 Le monopole n’a <strong>pas de courbe d’offre</strong> au sens où il n’y a pas de relation univoque entre prix et quantité produite, à la différence des producteurs en CPP.
 En monopole, si la demande change, le monopole s’adapte, soit en changeant sa production, mais pas son prix (figure <a href="le-monopole.html#fig:monopolechangementdemande2">3.9</a>), ou l’inverse (figure<a href="le-monopole.html#fig:monopolechangementdemande1">3.8</a>).</p>
@@ -507,8 +507,8 @@ Figure 3.9: Exemple de réaction du monopole à un changement de demande: change
 </div>
 <p>En CPP, un changement de demande, si elle implique une changement du prix d’équilibre, entraîne forcément un changement dans la quantité produite par un producteur individuel.</p>
 </div>
-<div id="linefficience-du-monopole" class="section level3" number="3.2.5">
-<h3><span class="header-section-number">3.2.5</span> L’inefficience du monopole</h3>
+<div id="linefficience-du-monopole" class="section level3 hasAnchor" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> L’inefficience du monopole<a href="le-monopole.html#linefficience-du-monopole" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La production du monopole est inférieure à la production en CPP et le prix est supérieur au prix de CPP.</p>
 <div class="figure"><span style="display:block;" id="fig:monosurplus"></span>
 <img src="_main_files/figure-html/monosurplus-1.png" alt="Surplus quand le producteur est en monopole." width="672" />
@@ -516,7 +516,7 @@ Figure 3.9: Exemple de réaction du monopole à un changement de demande: change
 Figure 3.10: Surplus quand le producteur est en monopole.
 </p>
 </div>
-<p>Cela signifie que le surplus du producteur (son profit) est plus élevé en monopole qu’en CPP, et que le surplus des consommateur est plus faible.
+<p>Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu’en CPP, et que le surplus des consommateur est plus faible.
 Il y a globalement une perte sèche de surplus total.
 <strong>Le monopole est inefficace au sens de Pareto.</strong>
 Il existe des consommateurs prêt à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche).
@@ -524,11 +524,12 @@ Il est donc possible d’avoir une amélioration parétienne qui améliore à la
 Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d’autre pour obtenir cette amélioration.</p>
 </div>
 </div>
-<div id="régulation-du-monopole" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Régulation du monopole</h2>
-<p>Cette partie va traiter de la manière dont un gouvernement peut inciter un monopole à modifier son comportement.</p>
-<div id="taxe-unitaire" class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Taxe unitaire</h3>
+<div id="régulation-du-monopole" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Régulation du monopole<a href="le-monopole.html#régulation-du-monopole" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Cette partie va traiter de la manière dont un gouvernement peut inciter ou contraindre un monopole à modifier son comportement.</p>
+<div id="taxe-unitaire" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Taxe unitaire<a href="le-monopole.html#taxe-unitaire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<!-- Définir pour chaque taxe ce qu'elles font. -->
 <p>Un gouvernement impose une taxe de <span class="math inline">\(t\)</span> unités monétaire par unité de bien produite.
 On a donc :</p>
 <p><span class="math display">\[
@@ -543,7 +544,7 @@ La condition de première ordre de la maximisation du producteur de l’équatio
 \end{array}
 \]</span>
 Le problème est exactement le même que précédemment, en intégrant la taxe dans le coût marginal.
-Pour le monopole, c’est comme si l’état ajoutait un coût <span class="math inline">\(t\)</span> à chaque unité produite, ce qui est effectivement ce que l’État fait.</p>
+Pour le monopole, c’est comme si l’État ajoutait un coût <span class="math inline">\(t\)</span> à chaque unité produite, ce qui est effectivement ce que l’État fait.</p>
 <div class="figure"><span style="display:block;" id="fig:monopoletaxeunitaire"></span>
 <img src="_main_files/figure-html/monopoletaxeunitaire-1.png" alt="Impact d'une taxe unitaire : augmentation du coût marginal." width="672" />
 <p class="caption">
@@ -554,7 +555,7 @@ Figure 3.11: Impact d’une taxe unitaire : augmentation du coût marginal.
 Le surplus des consommateurs baisse, ainsi que celui du monopole.</p>
 <p>Une vue <strong>alternative</strong> à l’augmentation du coût marginal est de considérer que la taxe diminue la recette marginale de <span class="math inline">\(t\)</span> :
 <span class="math display">\[
- R_m(q^*) -t = C_m(q^*)
+R_m(q^*) -t = C_m(q^*)
 \]</span></p>
 <div class="figure"><span style="display:block;" id="fig:monopoletaxeunitaire2"></span>
 <img src="_main_files/figure-html/monopoletaxeunitaire2-1.png" alt="Impact d'une taxe unitaire : diminution de recette marginale." width="672" />
@@ -564,8 +565,8 @@ Figure 3.12: Impact d’une taxe unitaire : diminution de recette marginale.
 </div>
 <p>Si le gouvernement utilise une taxe négative (= une subvention), alors le gouvernement peut augmenter la production et de diminuer le prix.</p>
 </div>
-<div id="taxe-forfaitaire" class="section level3" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> Taxe forfaitaire</h3>
+<div id="taxe-forfaitaire" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Taxe forfaitaire<a href="le-monopole.html#taxe-forfaitaire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Avec une taxe forfaitaire, l’état prélève un montant <span class="math inline">\(T\)</span> indépendant de la quantité produite sur le profit du producteur.
 <span class="math display">\[
 \pi(q) = R(q) - C(q) -T
@@ -583,8 +584,8 @@ Si elle n’est pas trop élevée, une taxe forfaitaire n’a <em>aucune</em> in
 Si la taxe forfaitaire est très élevée, supérieure au profit <span class="math inline">\(R(q^*) - C(q^*) &lt;T\)</span>, le monopole préfère ne rien produire et le surplus social est nul.</p>
 <p>On peut donc envisager de combiner une subvention unitaire au monopole combinée à une taxe forfaitaire pour augmenter le surplus total.</p>
 </div>
-<div id="impôt-sur-profit" class="section level3" number="3.3.3">
-<h3><span class="header-section-number">3.3.3</span> Impôt sur profit</h3>
+<div id="impôt-sur-profit" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Impôt sur profit<a href="le-monopole.html#impôt-sur-profit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Au lieu de taxer chaque unité produite, on peut taxe le niveau de profit à un taux <span class="math inline">\(t\)</span>.
 Le profit devient alors
 <span class="math display">\[
@@ -601,9 +602,9 @@ La condition du premier ordre de l’équation <a href="le-monopole.html#eq:cpo"
 <p>Comme pour la taxe forfaitaire, le comportement du monopole n’est pas modifié par une taxe sur le profit.
 On peut donc aussi envisager une subvention à la production et une taxe proportionnelle sur le profit.</p>
 </div>
-<div id="fixation-dun-prix-maximum" class="section level3" number="3.3.4">
-<h3><span class="header-section-number">3.3.4</span> Fixation d’un prix maximum</h3>
-<p>Le gouvernement interdit de vendre au-dessus d’une prix maximum <span class="math inline">\(p^{max}\)</span></p>
+<div id="fixation-dun-prix-maximum" class="section level3 hasAnchor" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> Fixation d’un prix maximum<a href="le-monopole.html#fixation-dun-prix-maximum" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Le gouvernement interdit de vendre au-dessus d’un prix maximum <span class="math inline">\(p^{max}\)</span>.</p>
 <p>Le gouvernement modifie ainsi la demande perçue par le producteur.</p>
 <div class="figure"><span style="display:block;" id="fig:monopoleprixmaximal"></span>
 <img src="_main_files/figure-html/monopoleprixmaximal-1.png" alt="Fixation d'un prix maximal supérieur au prix de CPP." width="672" />
@@ -632,8 +633,8 @@ Figure 3.15: Fixation d’un prix maximal égal au prix de CPP.
 Si au contraire le prix maximal est inférieur au prix de CPP (et donc de monopole), alors la quantité produite diminue quand le prix maximal augmente.</p>
 </div>
 </div>
-<div id="le-monopole-naturel" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Le monopole naturel</h2>
+<div id="le-monopole-naturel" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Le monopole naturel<a href="le-monopole.html#le-monopole-naturel" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Une situation de monopole naturel émerge à cause d’une structure particulière de la technologie de production et des coûts, plutôt qu’à cause d’une disposition légale.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-30" class="definition"><strong>Définition 3.4  (Monopole naturel) </strong></span>Un monopole naturel émerge en présence d’une technologie dotée de rendements d’échelles <em>croissants</em> dans la zone de production optimale.</p>
@@ -695,15 +696,15 @@ La régulation “optimale” généralement utilisée impose <em>un prix au co�
 Le monopole fait alors un profit nul.</p>
 <p>Une solution alternative est un prix égal au coût moyen assorti de subventions pour couvrir les pertes.</p>
 </div>
-<div id="le-monopole-discriminant" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Le monopole discriminant</h2>
+<div id="le-monopole-discriminant" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Le monopole discriminant<a href="le-monopole.html#le-monopole-discriminant" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Un monopole discriminant pratique un prix différent pour chaque (groupe de) consommateurs.
 Pour cela, il doit pouvoir identifier l’appartenance de chaque consommateur à un groupe et les marchés entre les consommateurs doivent être hermétiques.
 En particulier, il ne faut pas qu’un consommateur puisse revendre son unité de bien à un autre consommateur.</p>
 <p>Il existe 3 types de discriminations par les prix, les discrimination du premier, deuxième et troisième degrés.
 On ne traitera que les discriminations du premier et troisième degrés dans ce cours.</p>
-<div id="discrimination-au-premier-degré-discrimination-parfaite" class="section level3" number="3.5.1">
-<h3><span class="header-section-number">3.5.1</span> Discrimination au premier degré (discrimination parfaite)</h3>
+<div id="discrimination-au-premier-degré-discrimination-parfaite" class="section level3 hasAnchor" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Discrimination au premier degré (discrimination parfaite)<a href="le-monopole.html#discrimination-au-premier-degré-discrimination-parfaite" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Dans une discrimination parfaite, le monopole connaît la valorisation (prix de réserve) de chaque individu et lui fait payer le prix maximum qu’il est prêt à payer (son prix de réserve donc).
 Le consommateur ne retient alors aucun surplus, la <em>totalité</em> du surplus est capturé par le producteur.</p>
 <p><em>Question :</em> Quel va être le niveau de production du monopole ?</p>
@@ -745,8 +746,8 @@ Les entreprises essaient de s’en approcher le plus possible.</p>
 Chaque ménage intéressé soumettait une offre (prix, quantité) au gouvernement.
 Le gouvernement triait les offres par ordre décroissant de prix et les satisfait jusqu’à épuisement des bons à vendre.</p>
 </div>
-<div id="discrimination-du-deuxième-degré" class="section level3" number="3.5.2">
-<h3><span class="header-section-number">3.5.2</span> Discrimination du deuxième degré</h3>
+<div id="discrimination-du-deuxième-degré" class="section level3 hasAnchor" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Discrimination du deuxième degré<a href="le-monopole.html#discrimination-du-deuxième-degré" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
 <p><span id="def:unlabeled-div-34" class="definition"><strong>Définition 3.6  (Discrimination du deuxième degré) </strong></span>La discrimination du deuxième degré a lieu lorsque les prix de ventes dépendent des quantités achetées.</p>
 </div>
@@ -762,8 +763,8 @@ Figure 3.19: Graphique avec une discrimination du deuxième degré. Les quantit�
 Il y a un nombre fini de seuils de dégressivité.
 Plus il y a de seuils, plus on s’approche d’un situation de discrimination parfaite.</p>
 </div>
-<div id="discrimination-du-troisième-degré" class="section level3" number="3.5.3">
-<h3><span class="header-section-number">3.5.3</span> Discrimination du troisième degré</h3>
+<div id="discrimination-du-troisième-degré" class="section level3 hasAnchor" number="3.5.3">
+<h3><span class="header-section-number">3.5.3</span> Discrimination du troisième degré<a href="le-monopole.html#discrimination-du-troisième-degré" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <!-- A faire si le temps le permet. -->
 <p>Il s’agit de faire payer un prix différent à chaque groupe de consommateur, en fonction des caractéristiques de leurs fonctions de demande.
 Tous les membres d’un groupe payent donc le même prix, contrairement à la discrimination au premier degré.
@@ -794,13 +795,13 @@ Puis ou résout 1 à l’aide de la solution de 2.</p>
 La quantité totale <span class="math inline">\(q\)</span> est fixée, donc le coût total l’est aussi et peut être supprimé du problème de maximisation.
 On cherche donc juste à maximiser la recette totale :
 <span class="math display">\[
-\max_{q_A, q_B} q_AP_A(q_A) + q_BP_B(q_B) 
+\max_{q_A, q_B} q_AP_A(q_A) + q_BP_B(q_B)
 \]</span>
 Avec <span class="math inline">\(q=q_A+q_B\)</span>, donc <span class="math inline">\(q_B=q-q_A\)</span>, le problème devient :
 <span class="math display">\[
 \begin{array}{rl}
 &amp;\max_{q_A, 0\leq q_A\leq q} q_AP_A(q_A) + (q-q_A)P_B(q-q_A) \\
-\Leftrightarrow &amp;\max_{q_A, 0\leq q_A\leq q} R_A(q_A) + R_B(q-q_A) 
+\Leftrightarrow &amp;\max_{q_A, 0\leq q_A\leq q} R_A(q_A) + R_B(q-q_A)
 \end{array}
 \]</span>
 La condition du premier ordre s’écrit :
@@ -808,7 +809,7 @@ La condition du premier ordre s’écrit :
 \begin{array}{rl}
 &amp;\frac{dR_A(q_A) + R_B(q-q_A) }{dq_A} = 0\\
 \Leftrightarrow &amp; R_{mA}(q_A) - R_{mB}(q-q_A) = 0\\
-\Leftrightarrow &amp; R_{mA}(q_A) = R_{mB}(q_B) 
+\Leftrightarrow &amp; R_{mA}(q_A) = R_{mB}(q_B)
 \tag{3.7}
 \end{array}
 \]</span>

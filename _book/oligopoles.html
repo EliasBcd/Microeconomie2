@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 4 Oligopoles | Microéconomie 2</title>
   <meta name="description" content="Cours de microéconomie en licence 2 à l’université Paris 8." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 4 Oligopoles | Microéconomie 2" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Cours de microéconomie en licence 2 à l’université Paris 8." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
@@ -25,7 +24,7 @@
 <meta name="author" content="Antoine Terracol" />
 
 
-<meta name="date" content="2021-12-06" />
+<meta name="date" content="2022-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="le-monopole.html"/>
 <link rel="next" href="résolution-des-problèmes.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,8 +50,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
@@ -124,7 +123,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.2" data-path="le-monopole.html"><a href="le-monopole.html#décision-de-production-du-monopole"><i class="fa fa-check"></i><b>3.2</b> Décision de production du monopole</a>
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="le-monopole.html"><a href="le-monopole.html#maximisation-du-profit"><i class="fa fa-check"></i><b>3.2.1</b> Maximisation du profit</a></li>
-<li class="chapter" data-level="3.2.2" data-path="le-monopole.html"><a href="le-monopole.html#propriétés-de-la-solution-de-la-maximisation-du-monopole"><i class="fa fa-check"></i><b>3.2.2</b> Propriétés de la solution de la maximisation du monopole</a></li>
+<li class="chapter" data-level="3.2.2" data-path="le-monopole.html"><a href="le-monopole.html#propriétés-de-la-solution-du-monopole"><i class="fa fa-check"></i><b>3.2.2</b> Propriétés de la solution du monopole</a></li>
 <li class="chapter" data-level="3.2.3" data-path="le-monopole.html"><a href="le-monopole.html#indice-de-pouvoir-du-monopole"><i class="fa fa-check"></i><b>3.2.3</b> Indice de pouvoir du monopole</a></li>
 <li class="chapter" data-level="3.2.4" data-path="le-monopole.html"><a href="le-monopole.html#variation-de-la-demande"><i class="fa fa-check"></i><b>3.2.4</b> Variation de la demande</a></li>
 <li class="chapter" data-level="3.2.5" data-path="le-monopole.html"><a href="le-monopole.html#linefficience-du-monopole"><i class="fa fa-check"></i><b>3.2.5</b> L’inefficience du monopole</a></li>
@@ -210,15 +209,15 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="oligopoles" class="section level1" number="4">
-<h1><span class="header-section-number">Chapitre 4</span> Oligopoles</h1>
+<div id="oligopoles" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapitre 4</span> Oligopoles<a href="oligopoles.html#oligopoles" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>On a vu jusqu’à présent deux cas extrêmes :</p>
 <ul>
 <li>La concurrence pure et parfaite :
-il y a une infinité d’entreprise infinitésimales sur un marché donné.</li>
+il y a une infinité d’entreprise infinitésimales sur un marché donné ;</li>
 <li>Le monopole : il y a une seule entreprise sur un marché donné.</li>
 </ul>
-<p>Dans les deux cas, l’entreprise ou les entreprises n’ont pas à se préoccuper des autres entreprises.
+<p>Dans les deux cas, le ou les entreprises n’ont pas à se préoccuper des autres entreprises.
 Dans le cas du monopole, parce qu’il n’y en a pas.
 Dans le cas de la CPP, l’entreprise observe le prix du marché et prend sa décision en fonction de ce prix, et uniquement de ce prix.
 Les actions des autres entreprises ne l’influence pas.</p>
@@ -234,10 +233,10 @@ Les entreprises peuvent se faire concurrence de différentes manières :</p>
 <li>Dans une concurrence spatiale, à la <em>Hotelling</em>.</li>
 </ul>
 <p>Nous verrons dans ce cours les concurrences à la Cournot et à la Stackelberg, ainsi que les cartels.</p>
-<div id="duopole-à-la-cournot" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Duopole à la Cournot</h2>
-<div id="introduction" class="section level3" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> Introduction</h3>
+<div id="duopole-à-la-cournot" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Duopole à la Cournot<a href="oligopoles.html#duopole-à-la-cournot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="introduction" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Introduction<a href="oligopoles.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>On considère deux entreprises sur le même marché qui doivent choisir les quantités à produire, sans connaître la quantité choisie par l’autre (= décision simultanée).<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
 Le prix est déterminé par la quantité <em>totale</em> produite par les deux entreprises et la fonction de demande sur le marché.</p>
 <p>Chaque entreprise est caractérisée par une quantité produite et un coût :</p>
@@ -261,10 +260,10 @@ Il y a donc un conflit d’intérêt entre les producteurs.
 Chaque entreprise doit anticiper l’action de l’autre et réagir à cette anticipation le mieux possible.</p>
 <p><em>Question :</em> Peut-il y avoir un équilibre dans cette situation ?</p>
 </div>
-<div id="formalisation-du-problème" class="section level3" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> Formalisation du problème</h3>
-<div id="expression-des-profits" class="section level4" number="4.1.2.1">
-<h4><span class="header-section-number">4.1.2.1</span> Expression des profits</h4>
+<div id="formalisation-du-problème" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Formalisation du problème<a href="oligopoles.html#formalisation-du-problème" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="expression-des-profits" class="section level4 hasAnchor" number="4.1.2.1">
+<h4><span class="header-section-number">4.1.2.1</span> Expression des profits<a href="oligopoles.html#expression-des-profits" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>On a des profits :
 <span class="math display" id="eq:profitcournot">\[
 \begin{array}{rcl}
@@ -288,8 +287,8 @@ Son programme est :
 \]</span>
 Elle aura également une fonction de réaction <span class="math inline">\(q_2(q_1^a)=f_2(q_1^a)\)</span>.</p>
 </div>
-<div id="forme-des-fonctions-de-réaction" class="section level4" number="4.1.2.2">
-<h4><span class="header-section-number">4.1.2.2</span> Forme des fonctions de réaction</h4>
+<div id="forme-des-fonctions-de-réaction" class="section level4 hasAnchor" number="4.1.2.2">
+<h4><span class="header-section-number">4.1.2.2</span> Forme des fonctions de réaction<a href="oligopoles.html#forme-des-fonctions-de-réaction" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Si l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> ne va rien produire, alors elle se trouve dans une situation de monopole et se comporte comme tel.
 Elle produit de manière à égaliser coût marginal et recette marginale (<span class="math inline">\(R_{im}=C_{im}\)</span>).</p>
 <p>Si l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> va produire <span class="math inline">\(q_j^a&gt;0\)</span>, alors elle est en monopole sur le <strong>reste</strong> de la demande.
@@ -304,8 +303,8 @@ Figure 4.1: Représentation de la demande perçue par l’entreprise 2 anticipan
 </p>
 </div>
 </div>
-<div id="caractérisation-de-léquilibre" class="section level4" number="4.1.2.3">
-<h4><span class="header-section-number">4.1.2.3</span> Caractérisation de l’équilibre</h4>
+<div id="caractérisation-de-léquilibre" class="section level4 hasAnchor" number="4.1.2.3">
+<h4><span class="header-section-number">4.1.2.3</span> Caractérisation de l’équilibre<a href="oligopoles.html#caractérisation-de-léquilibre" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Un équilibre <span class="math inline">\((q_1^a, q_2^a)\)</span> doit être tel qu’aucune des deux entreprises n’ait intérêt à dévier unilatéralement :
 <span class="math display">\[
 \begin{array}{rcl}
@@ -342,10 +341,10 @@ Figure 4.3: Représentation d’un équilibre de Cournot où les fonctions de r�
 </div>
 </div>
 </div>
-<div id="exemple" class="section level3" number="4.1.3">
-<h3><span class="header-section-number">4.1.3</span> Exemple</h3>
-<div id="données-du-problème" class="section level4" number="4.1.3.1">
-<h4><span class="header-section-number">4.1.3.1</span> Données du problème</h4>
+<div id="exemple" class="section level3 hasAnchor" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Exemple<a href="oligopoles.html#exemple" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="données-du-problème" class="section level4 hasAnchor" number="4.1.3.1">
+<h4><span class="header-section-number">4.1.3.1</span> Données du problème<a href="oligopoles.html#données-du-problème" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Prenons les fonctions suivantes :</p>
 <p><span class="math display">\[
 \begin{array}{l}
@@ -355,8 +354,8 @@ C_2(q_2) = cq^2_2 \\
 \end{array}
 \]</span></p>
 </div>
-<div id="profits" class="section level4" number="4.1.3.2">
-<h4><span class="header-section-number">4.1.3.2</span> Profits</h4>
+<div id="profits" class="section level4 hasAnchor" number="4.1.3.2">
+<h4><span class="header-section-number">4.1.3.2</span> Profits<a href="oligopoles.html#profits" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>On en déduit les profits :</p>
 <p><span class="math display">\[
 \begin{array}{rcl}
@@ -365,8 +364,8 @@ C_2(q_2) = cq^2_2 \\
 \end{array}
 \]</span></p>
 </div>
-<div id="fonctions-de-réaction" class="section level4" number="4.1.3.3">
-<h4><span class="header-section-number">4.1.3.3</span> Fonctions de réaction</h4>
+<div id="fonctions-de-réaction" class="section level4 hasAnchor" number="4.1.3.3">
+<h4><span class="header-section-number">4.1.3.3</span> Fonctions de réaction<a href="oligopoles.html#fonctions-de-réaction" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Calculons la fonction de réaction de l’entreprise 1.
 Son profit est :
 <span class="math display">\[
@@ -389,8 +388,8 @@ q_2^* = \frac{(a-bq_1^a)}{2(b+c)}
 Ce <em>n’est pas le cas en général</em>.
 Si dans un problème les fonctions de coût sont identiques, alors vous pouvez faire les calculs pour une seule entreprise et déduire simplement les résultats pour la seconde.</p>
 </div>
-<div id="equilibre-de-cournot" class="section level4" number="4.1.3.4">
-<h4><span class="header-section-number">4.1.3.4</span> Equilibre de Cournot</h4>
+<div id="equilibre-de-cournot" class="section level4 hasAnchor" number="4.1.3.4">
+<h4><span class="header-section-number">4.1.3.4</span> Equilibre de Cournot<a href="oligopoles.html#equilibre-de-cournot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Quel est alors l’équilibre de Cournot ?</p>
 <p>On doit avoir :
 <span class="math display">\[
@@ -413,8 +412,8 @@ q_1^*=q_2^* = \frac{a}{3b+2c}
 <p>Quand le problème est symétrique, les deux entreprises en compétition à la Cournot produisent la même quantité de bien.</p>
 </div>
 </div>
-<div id="une-intuition-graphique-les-courbes-disoprofit" class="section level3" number="4.1.4">
-<h3><span class="header-section-number">4.1.4</span> Une intuition graphique : les courbes d’isoprofit</h3>
+<div id="une-intuition-graphique-les-courbes-disoprofit" class="section level3 hasAnchor" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Une intuition graphique : les courbes d’isoprofit<a href="oligopoles.html#une-intuition-graphique-les-courbes-disoprofit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>On peut aussi aborder le problème à l’aide d’une intuition graphique.
 Il s’agit de tracer les courbes d’<em>isoprofit</em> des entreprises.</p>
 <div class="definition">
@@ -451,18 +450,18 @@ Figure 4.5: Courbes d’isoprofits et fonctions de réactions des entreprises en
 </div>
 </div>
 </div>
-<div id="duopole-à-la-stackelberg" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Duopole à la Stackelberg</h2>
-<div id="introduction-1" class="section level3" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> Introduction</h3>
+<div id="duopole-à-la-stackelberg" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Duopole à la Stackelberg<a href="oligopoles.html#duopole-à-la-stackelberg" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="introduction-1" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Introduction<a href="oligopoles.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Il n’y a plus de symétrie des entreprises dans un duopole à la Stackelberg.
 Une entreprise, dite <em>leader</em>, prend ses décisions avant l’entreprise dite <em>follower</em>.
 L’entreprise leader connaît les caractéristiques de l’entreprise follower et peut ainsi calculer sa fonction de réaction.
-Elle va donc en tenir compte dans ses décisions.
+Elle en tiendra compte dans ses décisions.
 On considère ici qu’il n’y a que deux périodes de décisions.</p>
 </div>
-<div id="résolution-graphique" class="section level3" number="4.2.2">
-<h3><span class="header-section-number">4.2.2</span> Résolution graphique</h3>
+<div id="résolution-graphique" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Résolution graphique<a href="oligopoles.html#résolution-graphique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Le leader doit choisir sa quantité <span class="math inline">\(q_1\)</span> de façon à être sur la courbe d’isoprofit la plus basse possible compatible avec la fonction de réaction de l’entreprise follower.
 Il va donc se placer sur la courbe d’isoprofit tangente à la fonction de réaction du follower.</p>
 <div class="figure"><span style="display:block;" id="fig:equilibreStackelberg"></span>
@@ -476,10 +475,10 @@ Les quantités produites par l’entreprise leader sont plus importantes en Stac
 La somme des deux est plus importante (<span class="math inline">\(q_{1C}^*+q_{2C}^*&lt;q_{L}^*+q_{F}^*\)</span>).
 Le prix sera donc plus faible pour les consommateurs.</p>
 </div>
-<div id="exemple-1" class="section level3" number="4.2.3">
-<h3><span class="header-section-number">4.2.3</span> Exemple</h3>
-<div id="données-du-problèmes" class="section level4" number="4.2.3.1">
-<h4><span class="header-section-number">4.2.3.1</span> Données du problèmes</h4>
+<div id="exemple-1" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Exemple<a href="oligopoles.html#exemple-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="données-du-problèmes" class="section level4 hasAnchor" number="4.2.3.1">
+<h4><span class="header-section-number">4.2.3.1</span> Données du problèmes<a href="oligopoles.html#données-du-problèmes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Notons les variables et fonctions du leader avec un indice <span class="math inline">\(L\)</span> et celles du follower avec un indice <span class="math inline">\(F\)</span>.</p>
 <p>Gardons une fonction de demande linéaire.</p>
 <p><span class="math display">\[
@@ -487,8 +486,8 @@ P(q_L+q_F) = a - b(q_L+q_F)
 \]</span></p>
 <p>Supposons, afin de simplifier les calculs, que les coûts marginaux sont nuls.</p>
 </div>
-<div id="profits-1" class="section level4" number="4.2.3.2">
-<h4><span class="header-section-number">4.2.3.2</span> Profits</h4>
+<div id="profits-1" class="section level4 hasAnchor" number="4.2.3.2">
+<h4><span class="header-section-number">4.2.3.2</span> Profits<a href="oligopoles.html#profits-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>On en déduit les profits :</p>
 <p><span class="math display">\[
 \begin{array}{rcl}
@@ -497,8 +496,8 @@ P(q_L+q_F) = a - b(q_L+q_F)
 \end{array}
 \]</span></p>
 </div>
-<div id="fonction-de-réaction-de-lentreprise-follower" class="section level4" number="4.2.3.3">
-<h4><span class="header-section-number">4.2.3.3</span> Fonction de réaction de l’entreprise follower</h4>
+<div id="fonction-de-réaction-de-lentreprise-follower" class="section level4 hasAnchor" number="4.2.3.3">
+<h4><span class="header-section-number">4.2.3.3</span> Fonction de réaction de l’entreprise follower<a href="oligopoles.html#fonction-de-réaction-de-lentreprise-follower" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Calculons la fonction de réaction de l’entreprise follower.
 La condition du premier ordre suivant <span class="math inline">\(q_F\)</span> s’écrit (ici <span class="math inline">\(q_L\)</span> est considéré comme une donnée par l’entreprise 1) :</p>
 <p><span class="math display" id="eq:FRFollower">\[
@@ -510,14 +509,14 @@ La condition du premier ordre suivant <span class="math inline">\(q_F\)</span> s
 \end{array}
 \]</span></p>
 </div>
-<div id="maximisation-de-lentreprise-leader" class="section level4" number="4.2.3.4">
-<h4><span class="header-section-number">4.2.3.4</span> Maximisation de l’entreprise leader</h4>
+<div id="maximisation-de-lentreprise-leader" class="section level4 hasAnchor" number="4.2.3.4">
+<h4><span class="header-section-number">4.2.3.4</span> Maximisation de l’entreprise leader<a href="oligopoles.html#maximisation-de-lentreprise-leader" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Comme l’entreprise leader connaît la fonction de réaction de l’entreprise follower (donnée par l’équation <a href="oligopoles.html#eq:FRFollower">(4.3)</a>), elle peut l’intégrer à sa propre fonction de profit :</p>
 <p><span class="math display">\[
 \begin{array}{rcl}
 \pi_L(q_L, q_F^*) &amp;=&amp; \left(a-b(q_L+q_F^*(q_L))\right)q_L\\
- &amp;=&amp; \left(a-b\left(q_L+\frac{a-bq_L}{2b}\right)\right)q_L\\
- &amp;=&amp; \frac{a}{2}q_L-\frac{b}{2}q_L^2
+&amp;=&amp; \left(a-b\left(q_L+\frac{a-bq_L}{2b}\right)\right)q_L\\
+&amp;=&amp; \frac{a}{2}q_L-\frac{b}{2}q_L^2
 \end{array}
 \]</span></p>
 <p>La condition de premier ordre du leader est :</p>
@@ -538,10 +537,10 @@ Si on calcule le profit, on verra que le profit de l’entreprise leader est plu
 </div>
 </div>
 </div>
-<div id="cartels-et-collusions" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Cartels et collusions</h2>
-<div id="introduction-2" class="section level3" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> Introduction</h3>
+<div id="cartels-et-collusions" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Cartels et collusions<a href="oligopoles.html#cartels-et-collusions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="introduction-2" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Introduction<a href="oligopoles.html#introduction-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>En duopoles / oligopoles de Cournot ou de Stackelberg, les entreprises ne coopèrent pas entre elles :</p>
 <ul>
 <li>Elles sont en concurrence ;</li>
@@ -555,8 +554,8 @@ Les quantités mises sur le marché vont diminuer, et le prix du marché va augm
 C’est donc néfaste pour les consommateurs.
 La raison est que le cartel se comporte exactement comme un monopole, puis partage les bénéfices.</p>
 </div>
-<div id="raisonnement-graphique" class="section level3" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> Raisonnement graphique</h3>
+<div id="raisonnement-graphique" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Raisonnement graphique<a href="oligopoles.html#raisonnement-graphique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="figure"><span style="display:block;" id="fig:cartel"></span>
 <img src="_main_files/figure-html/cartel-1.png" alt="Zone d'amélioration mutuellement bénéfique." width="672" />
 <p class="caption">
@@ -564,16 +563,16 @@ Figure 4.7: Zone d’amélioration mutuellement bénéfique.
 </p>
 </div>
 </div>
-<div id="résolution-analytique" class="section level3" number="4.3.3">
-<h3><span class="header-section-number">4.3.3</span> Résolution analytique</h3>
-<div id="idée" class="section level4" number="4.3.3.1">
-<h4><span class="header-section-number">4.3.3.1</span> Idée</h4>
+<div id="résolution-analytique" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Résolution analytique<a href="oligopoles.html#résolution-analytique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="idée" class="section level4 hasAnchor" number="4.3.3.1">
+<h4><span class="header-section-number">4.3.3.1</span> Idée<a href="oligopoles.html#idée" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>L’idée derrière la résolution analytique du problème du cartel est de considérer que le cartel se comporte comme un monopole avec 2 centres de productions.
 Le cartel choisit la quantité globale produite et la répartition entre les entreprises.
 C’est un raisonnement très similaire à un monopole discriminant au troisième degré.</p>
 </div>
-<div id="profits-2" class="section level4" number="4.3.3.2">
-<h4><span class="header-section-number">4.3.3.2</span> Profits</h4>
+<div id="profits-2" class="section level4 hasAnchor" number="4.3.3.2">
+<h4><span class="header-section-number">4.3.3.2</span> Profits<a href="oligopoles.html#profits-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Le profit global du cartel s’écrit :
 <span class="math display">\[
 \pi_c=qP(q)-C_A(q_A)-C_B(q_B)=(q_A+q_B)P(q_A+q_B)-C_A(q_A)-C_B(q_B)
@@ -594,9 +593,9 @@ En utilisant le même raisonnement, on a pour l’entreprise B :
 \frac{\partial\pi_C}{\partial q_B} = R_m(q)  - C_{mB}(q_B)
 \]</span></p>
 </div>
-<div id="optimalité-pour-le-cartel" class="section level4" number="4.3.3.3">
-<h4><span class="header-section-number">4.3.3.3</span> Optimalité pour le cartel</h4>
-<p>A l’optimum pour le cartel, on a donc :
+<div id="optimalité-pour-le-cartel" class="section level4 hasAnchor" number="4.3.3.3">
+<h4><span class="header-section-number">4.3.3.3</span> Optimalité pour le cartel<a href="oligopoles.html#optimalité-pour-le-cartel" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>À l’optimum pour le cartel, on a donc :
 <span class="math display">\[R_m(q) = C_{mA}(q_A) = C_{mB}(q_B)\]</span>
 Le cartel égalise la recette marginale <em>totale</em> aux coûts marginaux de chacune des deux entreprises.</p>
 <p><em>Remarque :</em> Le cartel ne va pas forcément donner à produire la même quantité à chaque entreprise.
@@ -608,8 +607,8 @@ Alors, en transférant la production d’une unité de l’entreprise A vers l�
 Il diminue donc au total, tout en maintenant la même quantité totale produite.<br />
 Autrement dit, tant que <span class="math inline">\(C_{mA}(q_A)\neq C_{mB}(q_B)\)</span>, il est possible de diminuer le coût total de production d’une quantité donnée en répartissant celle-ci différemment entre les entreprises.</p>
 </div>
-<div id="optimalité-pour-une-entreprise" class="section level4" number="4.3.3.4">
-<h4><span class="header-section-number">4.3.3.4</span> Optimalité pour une entreprise</h4>
+<div id="optimalité-pour-une-entreprise" class="section level4 hasAnchor" number="4.3.3.4">
+<h4><span class="header-section-number">4.3.3.4</span> Optimalité pour une entreprise<a href="oligopoles.html#optimalité-pour-une-entreprise" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><em>Question :</em> Prenons l’entreprise A, a-t-elle intérêt à rester dans le cartel (et à respecter la répartition donnée par celui-ci) ?</p>
 <p>Le profit de l’entreprise A s’écrit :
 <span class="math display">\[
@@ -625,7 +624,7 @@ La condition d’optimalité du cartel suivant <span class="math inline">\(q_A\)
 &amp; P(q_A^*+q_B^*) + (q_A^*+q_B^*)\frac{\partial P}{\partial q}(q_A^*)-\frac{\partial C_A}{\partial q_A}(q_A^*)&amp; = &amp;0\\
 \Leftrightarrow &amp;  P(q_A^*+q_B^*) + q_A^*\frac{\partial P}{\partial q}(q_A^*)-\frac{\partial C_A}{\partial q_A}(q_A^*)&amp; = &amp;-q_B^*\frac{\partial P}{\partial q}(q_A^*)\\
 \Leftrightarrow &amp; \frac{\partial\pi_A}{\partial q_A}(q_A^*)&amp; =  &amp;-q_B^*\frac{\partial P}{\partial q}(q_A^*)
- \end{array}
+\end{array}
 \]</span>
 Or on sait que la fonction de demande inverse <span class="math inline">\(P(q)\)</span> est décroissante avec les quantités produites, ou que la fonction de demande est décroissante avec le prix, ce qui revient au même.
 Donc <span class="math inline">\(\frac{\partial P}{\partial q}(q_A)&lt;0\)</span>.
@@ -634,8 +633,8 @@ On en déduit donc que <span class="math inline">\(\frac{\partial\pi_A}{\partial
 </div>
 </div>
 </div>
-<div id="oligopoles-1" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Oligopoles</h2>
+<div id="oligopoles-1" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Oligopoles<a href="oligopoles.html#oligopoles-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>On étend l’analyse à <span class="math inline">\(N\)</span> entreprises qui produisent un bien <em>homogène</em>.
 Comme ce bien est homogène, le prix est unique sur le marché.
 Chaque entreprise <span class="math inline">\(i\)</span> choisit une quantité <span class="math inline">\(q_i\geq 0\)</span> et les produit à un coût de production <span class="math inline">\(C_i(q_i)\)</span>.
@@ -680,8 +679,8 @@ La possibilité de fixer un prix au-dessus du coût marginal dépend de la part 
 <p>En concurrence pure et parfaite <span class="math inline">\(S_i\to 0\)</span>, donc <span class="math inline">\(\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0\)</span>, ce qui implique bien que <span class="math inline">\(C_{mi}(q_i)\to P(q)\)</span>.
 On retrouve ainsi le résultat <span class="math inline">\(P(q^*)=C_m(q^*)\)</span>.</p>
 </div>
-<div id="indice-de-lerner" class="section level3" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> Indice de Lerner</h3>
+<div id="indice-de-lerner" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Indice de Lerner<a href="oligopoles.html#indice-de-lerner" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Rappel :</em> En monopole, l’indice de Lerner est :
 <span class="math display">\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]</span></p>
 <div class="definition">
@@ -706,8 +705,8 @@ où <span class="math inline">\(S_i=q_i/q\)</span> est la <em>part de marché</e
 L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
 \]</span></p>
 </div>
-<div id="indice-de-concentration-du-marché" class="section level3" number="4.4.2">
-<h3><span class="header-section-number">4.4.2</span> Indice de concentration du marché</h3>
+<div id="indice-de-concentration-du-marché" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Indice de concentration du marché<a href="oligopoles.html#indice-de-concentration-du-marché" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
 <p><span id="def:HHI" class="definition"><strong>Définition 4.5  (Indice de Hirschman-Herfindahl (HHI)) </strong></span>L’indice de Hirschman-Herfindahl est la somme des carrés des part de marchés.
 <span class="math display">\[HHI = \sum_{i=1}^NS_i^2\]</span>
@@ -715,12 +714,12 @@ C’est aussi la différence moyenne entre le coût marginal de production et le
 Autrement dit, la moyenne des <span class="math inline">\(L_i\)</span> pondéré par les parts de marché.</p>
 </div>
 <p><span class="math display">\[
- \begin{array}{rcl}
- \sum_{i=1}^{N}\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}S_i &amp;=&amp;\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}S_i \\
- &amp;=&amp;\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2\\
- &amp;=&amp;\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
- \end{array}
- \]</span></p>
+\begin{array}{rcl}
+\sum_{i=1}^{N}\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}S_i &amp;=&amp;\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}S_i \\
+&amp;=&amp;\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2\\
+&amp;=&amp;\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
+\end{array}
+\]</span></p>
 <p><em>Interprétation :</em><br />
 Imaginons que toutes les <span class="math inline">\(N\)</span> producteurs sont identiques (ils ont la même fonction de coût).
 Ils produisent alors la même quantité optimale à l’équilibre.

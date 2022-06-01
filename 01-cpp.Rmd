@@ -39,11 +39,11 @@ theme_set(theme_perso())
 
 Il y a 5 hypothèses qui définissent la concurrence pure et parfaite :
 
-1. Atomicité des agents
-2. Information parfaite
-3. Mobilité parfaite des facteurs de production
-4. Homogénéité des biens
-5. Libre entrée et sortie du marché
+1. Atomicité des agents ;
+2. Information parfaite ;
+3. Mobilité parfaite des facteurs de production ;
+4. Homogénéité des biens ;
+5. Libre entrée et sortie du marché.
 
 :::{.hypothesis name="Atomicité des agents"}
 L'hypothèse d'atomicité des agents implique que personne n'a d'influence *individuellement* sur les prix.
@@ -63,7 +63,7 @@ Les différences de coûts entre producteurs ne peuvent donc être dus qu'au dif
 :::
 
 :::{.hypothesis name="Homogénéïté des biens"}
-L’homogénéité des biens signifie que tous les biens vendu sur un marché sont parfaitement substituables.
+Inhomogénéité des biens signifie que tous les biens vendu sur un marché sont parfaitement substituables.
 Sur un marché donné, tous les biens ont la même qualité.
 Le consommateur est donc indifférent entre tous les biens vendus.
 Il n'y aussi pas d'effet des marques.
@@ -199,7 +199,7 @@ Le programme du producteur est :
 En concurrence pure et parfaite, le programme du producteur est tel que la quantité produite $q$ égalise coût marginal et recette marginale.
 À l'optimum :
 \begin{equation}
-R_m(q) =c_m(q)
+R_m(q) =C_m(q)
 (\#eq:cppopti)
 \end{equation}
 :::
@@ -325,7 +325,7 @@ p + geom_ribbon(data = Sc, aes(x=x, ymin=0.5, ymax = y), fill="blue") +
 ```
 
 :::{ .proposition #cppprop name="Propriétés de l'équilibre en concurrence pure et parfaite"}
-L'équilibre en CPP est celui qui **maximise** le *surplus total*.
+L'équilibre en CPP **maximise** le *surplus total*.
 Tout autre couple prix/quantité abouti à un surplus total plus faible.  
 L'équilibre de CPP est *Pareto-optimal*, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
 C'est ce qu'on appelle le *premier théorème du bien-être*.

@@ -4,10 +4,6 @@
 %
 \documentclass[
 ]{book}
-\title{Microéconomie 2}
-\author{Elias Bouacida \and Antoine Terracol}
-\date{2021-12-06}
-
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -81,6 +77,10 @@
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
 
+\title{Microéconomie 2}
+\author{Elias Bouacida \and Antoine Terracol}
+\date{2022-06-01}
+
 \usepackage{amsthm}
 \newtheorem{theorem}{Théorème}[chapter]
 \newtheorem{lemma}{Lemme}[chapter]
@@ -119,15 +119,15 @@ Les principaux thèmes abordés dans ce cours sont les suivants :
 \begin{itemize}
 \tightlist
 \item
-  structures de marché
+  structures de marché ;
 \item
-  pouvoir de marché
+  pouvoir de marché ;
 \item
-  principes de tarification
+  principes de tarification ;
 \item
-  comportements stratégiques
+  comportements stratégiques ;
 \item
-  problèmes d'information
+  problèmes d'information.
 \end{itemize}
 
 L'idée générale est de dépasser le cadre de la concurrence pure et parfaite et de se rapprocher un peu du \emph{monde réel} en levant certaines hypothèses de la concurrence pure et parfaite.
@@ -150,7 +150,7 @@ Néanmoins, pour ceux qui souhaitent des éclairages différents sur les notions
   \citet{jeleva2014} \emph{Microéconomie}
 \end{itemize}
 
-Et enfin une référence avancée, pour ceux qui cherchent les fondements mathématiques (en anglais):
+Et enfin une référence avancée, pour ceux qui cherchent les fondements mathématiques (en anglais) :
 
 \begin{itemize}
 \tightlist
@@ -208,15 +208,15 @@ Il y a 5 hypothèses qui définissent la concurrence pure et parfaite :
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Atomicité des agents
+  Atomicité des agents ;
 \item
-  Information parfaite
+  Information parfaite ;
 \item
-  Mobilité parfaite des facteurs de production
+  Mobilité parfaite des facteurs de production ;
 \item
-  Homogénéité des biens
+  Homogénéité des biens ;
 \item
-  Libre entrée et sortie du marché
+  Libre entrée et sortie du marché.
 \end{enumerate}
 
 \begin{hypothesis}[Atomicité des agents]
@@ -237,7 +237,7 @@ Les différences de coûts entre producteurs ne peuvent donc être dus qu'au dif
 \end{hypothesis}
 
 \begin{hypothesis}[Homogénéïté des biens]
-L'homogénéité des biens signifie que tous les biens vendu sur un marché sont parfaitement substituables.
+Inhomogénéité des biens signifie que tous les biens vendu sur un marché sont parfaitement substituables.
 Sur un marché donné, tous les biens ont la même qualité.
 Le consommateur est donc indifférent entre tous les biens vendus.
 Il n'y aussi pas d'effet des marques.
@@ -364,7 +364,7 @@ Le programme du producteur est :
 En concurrence pure et parfaite, le programme du producteur est tel que la quantité produite \(q\) égalise coût marginal et recette marginale.
 À l'optimum :
 \begin{equation}
-R_m(q) =c_m(q)
+R_m(q) =C_m(q)
 \label{eq:cppopti}
 \end{equation}
 \end{theorem}
@@ -460,7 +460,7 @@ En pratique, on utilisera jamais la formule avec des intégrales, mais on calcul
 \end{figure}
 
 \begin{proposition}[Propriétés de l'équilibre en concurrence pure et parfaite]
-\protect\hypertarget{prp:cppprop}{}\label{prp:cppprop}L'équilibre en CPP est celui qui \textbf{maximise} le \emph{surplus total}.
+\protect\hypertarget{prp:cppprop}{}\label{prp:cppprop}L'équilibre en CPP \textbf{maximise} le \emph{surplus total}.
 Tout autre couple prix/quantité abouti à un surplus total plus faible.\\
 L'équilibre de CPP est \emph{Pareto-optimal}, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
 C'est ce qu'on appelle le \emph{premier théorème du bien-être}.
@@ -507,15 +507,15 @@ Les principales sont :
   Légales, à cause de réglementation particulières.
   C'est ce qu'on appelle en général des professions réglementées, comme les avocats, les bureaux de tabac, les taxis\ldots{}
 \item
-  Légales, à cause des brevets sur une technologie données (industrie pharmaceutique\ldots) ;
+  Légales, à cause des brevets sur une technologie données (industrie pharmaceutique, \ldots) ;
 \item
   Historique, le premier arrivé ;
 \item
   Monopoles \emph{naturels} : en présence d'économies d'échelles, produire une quantité donnée revient moins cher avec un seul producteur qu'avec plusieurs.
-  C'est notamment les cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, etc).
-  Plus généralement, les industries avec des coûts fixes / coûts d'entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile\ldots) ;
+  C'est notamment les cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, \ldots).
+  Plus généralement, les industries avec des coûts fixes / coûts d'entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile, \ldots) ;
 \item
-  Exclusivité sur la production de certaines matières premières (cuivre au Chili, terres rares en Chine,\ldots) ;
+  Exclusivité sur la production de certaines matières premières (cuivre au Chili, terres rares en Chine, \ldots) ;
 \item
   Coalitions créant un cartel ;
 \item
@@ -529,7 +529,7 @@ Les principales sont :
 \subsection{Définition}\label{duxe9finition}}
 
 À la différence du cas de la concurrence pure et parfaite, le monopole perçoit la courbe de demande agrégée, et non plus celle avec une élasticité infinie.
-Le choix de la quantité qu'il met sur le marché modifie le prix auquel il pourra vendre sa production, et il le sait.\\
+Le choix de la quantité qu'il met sur le marché modifie le prix auquel il pourra vendre sa production, et il le sait.
 Il va choisir \textbf{un} des paramètres du couple \((q, P(q))\), et l'autre en découlera, à travers la demande inverse \(P(q)\).
 Autrement dit, s'il choisit \(q\), \(P(q)\) sera déterminé par la demande (inverse).
 Si, au contraire, il choisit \(P\), \(q\) sera déterminé par la demande.
@@ -547,7 +547,7 @@ R(q) = q\cdot P(q)
 Comme la courbe de demande est décroissante (l'élasticité prix de la demande est négative \(\varepsilon_{q/p} <0\)), \(P(q)\) et \(q\) ont une relation inverse.
 Autrement dit, si \(q\) augmente, alors \(p\) baisse, et réciproquement.
 
-Cela implique que la recette totale va augmenter ou baisser suivant les propriétés de la courbe de demande.
+Cela implique que la recette totale augmentera ou baissera suivant les propriétés de la courbe de demande.
 
 \begin{figure}
 \centering
@@ -658,7 +658,7 @@ Le résultat donne l'égalité d'aire entre le triangle vert et le triangle roug
 \subsection{Maximisation du profit}\label{maximisation-du-profit}}
 
 Comme dans le cas de la CPP, on suppose que le monopole cherche à maximiser son profit \(\pi(q)=R(q)-C(q)\), où \(C(q)\) est la fonction de coût (total) du monopole.\\
-Il y a 2 conditions d'optimalités, les conditions de premier (la dérivée du profit à l'optimum est nulle: \(\pi'(q^*)=0\)) et de second ordre (la dérivée seconde du profit à l'optimum est strictement négative \(\pi''(q^*)<0\)), ainsi qu'une contrainte, que le profit à l'optimum soit positif (\(\pi(q^*)>0\)).
+Il y a 2 conditions d'optimalités, les conditions de premier ordre (la dérivée du profit à l'optimum est nulle: \(\pi'(q^*)=0\)) et de second ordre (la dérivée seconde du profit à l'optimum est strictement négative \(\pi''(q^*)<0\)), ainsi qu'une contrainte, que le profit à l'optimum soit positif (\(\pi(q^*)>0\)).
 
 La condition de premier ordre s'exprime ainsi :
 \[
@@ -762,8 +762,8 @@ On a donc un profit de \textbf{150}, qui est bien positif (condition de l'équat
 \caption{\label{fig:monopoleprofitexemple}Demande, prix, coûts et profits dans l'exemple \ref{exm:monopoleexemple}.}
 \end{figure}
 
-\hypertarget{propriuxe9tuxe9s-de-la-solution-de-la-maximisation-du-monopole}{%
-\subsection{Propriétés de la solution de la maximisation du monopole}\label{propriuxe9tuxe9s-de-la-solution-de-la-maximisation-du-monopole}}
+\hypertarget{propriuxe9tuxe9s-de-la-solution-du-monopole}{%
+\subsection{Propriétés de la solution du monopole}\label{propriuxe9tuxe9s-de-la-solution-du-monopole}}
 
 On avait dans l'équation \eqref{eq:rm} :
 \[
@@ -781,9 +781,9 @@ Dès lors que l'élasticité de la demande au prix n'est plus infinie en revanch
  P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}} > C_m(q^*)
 \]
 
-\emph{Question :} Dans quelle zone d'élasticité le monopole va-t-il opérer ?
+\emph{Question :} Dans quelle zone d'élasticité le monopole opère-t-il ?
 
-On voit que si \(\left|\varepsilon_{q/p}(q^*)\right|<1\), c'est-à-dire que si la demande est inélastique, alors \(1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} <0\), ce qui implique que la recette marginale \(R_m\) est négative, et donc impossible à égaliser avec le coût marginal \(C_m\).\\
+Si \(\left|\varepsilon_{q/p}(q^*)\right|<1\), c'est-à-dire que si la demande est inélastique, alors \(1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} <0\), ce qui implique que la recette marginale \(R_m\) est négative, et donc impossible à égaliser avec le coût marginal \(C_m\).\\
 On peut voir la réponse d'une autre façon.
 Si la pente est inélastique, alors le revenu \(R\) augmente quand la quantité \(q\) baisse.
 Le coût total \(C\) baisse aussi quand la quantité baisse.
@@ -859,7 +859,7 @@ La production du monopole est inférieure à la production en CPP et le prix est
 \caption{\label{fig:monosurplus}Surplus quand le producteur est en monopole.}
 \end{figure}
 
-Cela signifie que le surplus du producteur (son profit) est plus élevé en monopole qu'en CPP, et que le surplus des consommateur est plus faible.
+Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu'en CPP, et que le surplus des consommateur est plus faible.
 Il y a globalement une perte sèche de surplus total.
 \textbf{Le monopole est inefficace au sens de Pareto.}
 Il existe des consommateurs prêt à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche).
@@ -869,7 +869,7 @@ Il suffirait pour cela que le monopole produise une unité supplémentaire du bi
 \hypertarget{ruxe9gulation-du-monopole}{%
 \section{Régulation du monopole}\label{ruxe9gulation-du-monopole}}
 
-Cette partie va traiter de la manière dont un gouvernement peut inciter un monopole à modifier son comportement.
+Cette partie va traiter de la manière dont un gouvernement peut inciter ou contraindre un monopole à modifier son comportement.
 
 \hypertarget{taxe-unitaire}{%
 \subsection{Taxe unitaire}\label{taxe-unitaire}}
@@ -889,7 +889,7 @@ La condition de première ordre de la maximisation du producteur de l'équation 
 \end{array}
 \]
 Le problème est exactement le même que précédemment, en intégrant la taxe dans le coût marginal.
-Pour le monopole, c'est comme si l'état ajoutait un coût \(t\) à chaque unité produite, ce qui est effectivement ce que l'État fait.
+Pour le monopole, c'est comme si l'État ajoutait un coût \(t\) à chaque unité produite, ce qui est effectivement ce que l'État fait.
 
 \begin{figure}
 \centering
@@ -957,7 +957,7 @@ On peut donc aussi envisager une subvention à la production et une taxe proport
 \hypertarget{fixation-dun-prix-maximum}{%
 \subsection{Fixation d'un prix maximum}\label{fixation-dun-prix-maximum}}
 
-Le gouvernement interdit de vendre au-dessus d'une prix maximum \(p^{max}\)
+Le gouvernement interdit de vendre au-dessus d'un prix maximum \(p^{max}\).
 
 Le gouvernement modifie ainsi la demande perçue par le producteur.
 
@@ -1269,12 +1269,12 @@ On a vu jusqu'à présent deux cas extrêmes :
 \tightlist
 \item
   La concurrence pure et parfaite :
-  il y a une infinité d'entreprise infinitésimales sur un marché donné.
+  il y a une infinité d'entreprise infinitésimales sur un marché donné ;
 \item
   Le monopole : il y a une seule entreprise sur un marché donné.
 \end{itemize}
 
-Dans les deux cas, l'entreprise ou les entreprises n'ont pas à se préoccuper des autres entreprises.
+Dans les deux cas, le ou les entreprises n'ont pas à se préoccuper des autres entreprises.
 Dans le cas du monopole, parce qu'il n'y en a pas.
 Dans le cas de la CPP, l'entreprise observe le prix du marché et prend sa décision en fonction de ce prix, et uniquement de ce prix.
 Les actions des autres entreprises ne l'influence pas.
@@ -1561,7 +1561,7 @@ La quantité produite est alors \(q_m^*\) est le profit \(\pi_m^*\).
 Il n'y a plus de symétrie des entreprises dans un duopole à la Stackelberg.
 Une entreprise, dite \emph{leader}, prend ses décisions avant l'entreprise dite \emph{follower}.
 L'entreprise leader connaît les caractéristiques de l'entreprise follower et peut ainsi calculer sa fonction de réaction.
-Elle va donc en tenir compte dans ses décisions.
+Elle en tiendra compte dans ses décisions.
 On considère ici qu'il n'y a que deux périodes de décisions.
 
 \hypertarget{ruxe9solution-graphique}{%
@@ -1726,7 +1726,7 @@ En utilisant le même raisonnement, on a pour l'entreprise B :
 \hypertarget{optimalituxe9-pour-le-cartel}{%
 \subsubsection{Optimalité pour le cartel}\label{optimalituxe9-pour-le-cartel}}
 
-A l'optimum pour le cartel, on a donc :
+À l'optimum pour le cartel, on a donc :
 \[R_m(q) = C_{mA}(q_A) = C_{mB}(q_B)\]
 Le cartel égalise la recette marginale \emph{totale} aux coûts marginaux de chacune des deux entreprises.
 
@@ -1901,9 +1901,9 @@ Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.
 \chapter{Résolution des problèmes}\label{ruxe9solution-des-probluxe8mes}}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.34}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.28}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.38}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3438}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2812}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3750}}@{}}
 \caption{\label{tab:Annexe1} Tableau comparatif concurrence pure et parfaite et monopole, résolution des problèmes}\tabularnewline
 \toprule
 \begin{minipage}[b]{\linewidth}\raggedright
