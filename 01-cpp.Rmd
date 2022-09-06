@@ -1,4 +1,4 @@
-# Rappels : Le marché en concurrence pure et parfaite
+# Le marché en concurrence pure et parfaite
 \chaptermark{Le marché en CPP}
 
 ```{r setupcpp, include=FALSE}

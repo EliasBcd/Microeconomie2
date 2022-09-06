@@ -33,14 +33,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Microéconomie 2},
-  pdfauthor={Elias Bouacida; Antoine Terracol},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -68,18 +60,35 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{french}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 \usepackage{booktabs}
-\usepackage[french]{babel}
 \usepackage{fancyhdr}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Microéconomie 2},
+  pdfauthor={Elias Bouacida; Hela Maafi; Antoine Terracol},
+  pdflang={FR},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Microéconomie 2}
-\author{Elias Bouacida \and Antoine Terracol}
-\date{2022-06-01}
+\author{Elias Bouacida \and Hela Maafi \and Antoine Terracol}
+\date{06 septembre 2022}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Théorème}[chapter]
@@ -108,7 +117,7 @@
 \hypertarget{microuxe9conomie-2}{%
 \chapter{Microéconomie 2}\label{microuxe9conomie-2}}
 
-Cours de microéconomie 2 en licence 2 à l'université Paris 8, donné par Antoine Terracol et Elias Bouacida.\\
+Cours de microéconomie 2 en licence 2 à l'université Paris 8, donné par Hela Maafi, Antoine Terracol et Elias Bouacida.\\
 Ce dépôt contient les notes de cours ainsi que les corrigés des exercices.
 
 \hypertarget{thuxe8mes}{%
@@ -192,8 +201,8 @@ Et enfin une référence avancée, pour ceux qui cherchent les fondements mathé
   \end{itemize}
 \end{enumerate}
 
-\hypertarget{rappels-le-marchuxe9-en-concurrence-pure-et-parfaite}{%
-\chapter{Rappels : Le marché en concurrence pure et parfaite}\label{rappels-le-marchuxe9-en-concurrence-pure-et-parfaite}}
+\hypertarget{le-marchuxe9-en-concurrence-pure-et-parfaite}{%
+\chapter{Le marché en concurrence pure et parfaite}\label{le-marchuxe9-en-concurrence-pure-et-parfaite}}
 
 \chaptermark{Le marché en CPP}
 
@@ -1905,7 +1914,7 @@ Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2812}}
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3750}}@{}}
 \caption{\label{tab:Annexe1} Tableau comparatif concurrence pure et parfaite et monopole, résolution des problèmes}\tabularnewline
-\toprule
+\toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Rubrique
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1913,9 +1922,9 @@ CPP
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Monopole
 \end{minipage} \\
-\midrule
+\midrule()
 \endfirsthead
-\toprule
+\toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Rubrique
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1923,7 +1932,7 @@ CPP
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Monopole
 \end{minipage} \\
-\midrule
+\midrule()
 \endhead
 Consommateurs & une infinité (atomiques) & une infinité (atomiques) \\
 Producteurs & une infinité (atomiques) & un (\emph{le} monopole) \\
@@ -1937,7 +1946,7 @@ Conditions d'équilibre & Offre égale demande & Coût marginal égal recette ma
 Formellement & \(p^*=P(q^*)=C_m(q^*)\) & \(C_m(q^*)=R_m(q^*)\), \(p^*=P(q^*)\) \\
 Méthode & On résout d'abord \(P(q^*)=C_m(q^*)\) puis on calcule \(p^*\) & On calcule \(C_m(q^*)=R_m(q^*)\) puis on obtient \(p^*\) \\
 Conditions supplémentaires & & \(C_m'(q^*)>R_m'(q^*)\) et \(\pi(q^*) \geq 0\) \\
-\bottomrule
+\bottomrule()
 \end{longtable}
 
 La différence entre la concurrence pure et parfaite et le monopole est qu'en monopole il n'y a qu'un seul producteur, qui dispose du pouvoir de fixé les prix.

@@ -50,7 +50,7 @@ microéconomie-2
 thèmes
 bibliographie
 plan-du-cours
-rappels-le-marché-en-concurrence-pure-et-parfaite
+le-marché-en-concurrence-pure-et-parfaite
 les-hypothèses-de-la-concurrence-pure-et-parfaite-cpp
 le-producteur
 fonctions-de-coût
