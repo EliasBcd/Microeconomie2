@@ -285,7 +285,7 @@ p5 +   stat_function(fun=function(x) Rm(x), colour = "darkgreen") +
   geom_ribbon(data = perte1, aes(x=x, ymin=z, ymax = y), fill="red", alpha = 0.5) +
   geom_ribbon(data = perte2, aes(x=x, ymin=z, ymax = y), fill="red", alpha = 0.5) +
   annotate("text", x=0.15, y=0.5, label=TeX("perte si $q<q_m^*$"), color="darkred") +
-  annotate("text", x=0.4, y=0.5, label=TeX("perte si q>q_m^*"), color="darkred") +
+  annotate("text", x=0.4, y=0.5, label=TeX("perte si $q>q_m^*$"), color="darkred") +
   annotate("text", x=0.5, y=0.1, colour="darkgreen", label="recette marginale") +
   annotate("text", x=0.55, y=0.8, colour="red", label="coût marginal") +
   geom_segment(x=0.25, y=0, xend=0.25, yend=0.75, linetype="dashed") +
@@ -478,7 +478,7 @@ p_changement <- ggplot() +
 
 
 p_prix <- p_changement +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(q1), P2(q1)), labels=c(TeX("p_1^*"), TeX("p_2^*"))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(q1), P2(q1)), labels=c(TeX("$p_1^*$"),TeX("$p_2^*$"))) +
   scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(q1), labels=c(TeX("$q_1^*=q_2^*$")))
 
 p_prix
@@ -487,8 +487,8 @@ p_prix
 ```{r monopolechangementdemande2, fig.cap="Exemple de réaction du monopole à un changement de demande: changement de quantité."}
 
 p_quantité <- p_changement +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(q1)), labels=c(TeX("p_1^*=p_2^*"))) +
-  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(q1, 4/9), labels=c(TeX("$q_1^*"), TeX("$q_2^*")))
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(q1)), labels=c(TeX("$p_1^*=p_2^*$"))) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(q1, 4/9), labels=c(TeX("$q_1^*$"), TeX("$q_2^*$")))
 
 p_quantité
 ```
@@ -527,8 +527,8 @@ p_surplus <- ggplot() +
   annotate("text", x=q1/2, y=3/4, label="Surplus du consommateur", color="blue") +
   annotate("text", x=q1/2, y=1/3, label="Surplus du producteur", color="red") +
   annotate("text", x=q1/2+q2/2, y=1/2, label="Perte sèche", color="black") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(q1)), labels=c(TeX("p_1^*"))) +
-  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(q1, q2), labels=c(TeX("$q_1^*"), TeX("$q_{CPP}^*")))
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(q1)), labels=c(TeX("$p_1^*$"))) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(q1, q2), labels=c(TeX("$q_1^*$"), TeX("$q_{CPP}^*$")))
   
 p_surplus
 ```

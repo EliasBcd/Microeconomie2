@@ -147,7 +147,6 @@ En son minimum, le coût moyen est tel que $C_M'(q)=0$.
 \Leftrightarrow & C_m(q)&=& C_M(q)
 \end{array}
 \]
-CQFD.
 :::
 
 ```{r cppcout, fig.cap="Exemples de fonctions de coût."}
@@ -163,7 +162,7 @@ p_cppcout <- ggplot() +
   geom_function(fun=CM, color="red") +
   geom_function(fun=CVM, color="darkgreen") +
   labs(x="quantité", y="coût") +
-  annotate("text", x=4.5, y=1.3, label=TeX("$CVM$"), color="darkgreen") +
+  annotate("text", x=4.5, y=1.3, label=TeX("$C_{VM}$"), color="darkgreen") +
   annotate("text", x=4.5, y=2, label=TeX("$C_M$"), color="red") +
   annotate("text", x=4.5, y=2.5, label=TeX("$C_m$"), color="blue")
   
