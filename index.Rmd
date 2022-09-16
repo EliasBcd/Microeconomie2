@@ -15,6 +15,7 @@ description: |
 link-citations: yes
 github-repo: EliasBcd/Microeconomie2
 lang: FR
+papersize: a4
 ---
 
 ```{r setup, include=FALSE}

@@ -46,8 +46,8 @@ Il y a 5 hypothèses qui définissent la concurrence pure et parfaite :
 5. Libre entrée et sortie du marché.
 
 :::{.hypothesis name="Atomicité des agents"}
-L'hypothèse d'atomicité des agents implique que personne n'a d'influence *individuellement* sur les prix.
-En d'autres termes, chaque acteur est petit face au marché et considère le prix du marché comme une *donnée* qu'il ne peut pas influencer.
+L'hypothèse d'atomicité des agents implique qu'aucun agent, individu ou entreprise, n'a d'influence *individuellement* sur les prix.
+En d'autres termes, chaque agent est petit face au marché et considère le prix du marché comme une *donnée* qu'il ne peut pas influencer.
 On dit que les agents sont *price-taker* sur le marché.
 :::
 
@@ -57,13 +57,13 @@ Il n'y a, par exemple, pas de coût de recherche d'information.
 :::
 
 :::{.hypothesis name="Mobilité parfaite des facteurs de production"}
-L'hypothèse de mobilité parfaite des facteurs de production garantit l’homogénéité spatiale du prix des facteurs.
+L'hypothèse de mobilité parfaite des facteurs de production garantit l'homogénéité spatiale du prix des facteurs.
 Les facteurs de production se déplacent où ils sont le mieux rémunérés.
 Les différences de coûts entre producteurs ne peuvent donc être dus qu'au différence technologique entre ceux-ci, et non à une différence de coût des facteurs de production.
 :::
 
-:::{.hypothesis name="Homogénéïté des biens"}
-Inhomogénéité des biens signifie que tous les biens vendu sur un marché sont parfaitement substituables.
+:::{.hypothesis name="Homogénéité des biens"}
+L'homogénéité des biens signifie que tous les biens vendus sur un marché sont parfaitement substituables.
 Sur un marché donné, tous les biens ont la même qualité.
 Le consommateur est donc indifférent entre tous les biens vendus.
 Il n'y aussi pas d'effet des marques.
@@ -71,7 +71,7 @@ Il n'y aussi pas d'effet des marques.
 
 :::{.hypothesis name="Libre entrée et sortie du marché"}
 L'hypothèse de libre entrée et sortie du marché signifie qu'il n'y pas de barrière à l'entrée dans le marché.
-Concrètement, cela implique qu'il est impossible de faire du bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.
+Concrètement, il est impossible de faire un bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.
 :::
 
 La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un *pouvoir de marché* aux producteurs en place.
@@ -84,8 +84,8 @@ En général, un producteur est caractérisé par une fonction de production, c'
 À l'aide de cette fonction de production, il est possible de construire une fonction de coût.
 
 :::{.definition name="Fonction de coût total"}
-La fonction de coût total, notée $C$ ou $CT$ donne le coût total de production de $q$ unités de bien.
-Elle peut se décomposer en un *coût fixe* $CF$ (qui ne dépend pas de $q$) et un *coût variable* $CV$ qui dépend de $q$ :
+La fonction de coût total, notée $C$ ou $CT$, donne le coût total de production de $q$ unités de bien.
+Elle se décompose en un *coût fixe* $CF$ (qui ne dépend pas de $q$) et un *coût variable* $CV$ qui dépend de $q$ :
 \[CT(q)=CF+ CV(q)\]
 :::
 
@@ -93,7 +93,7 @@ Elle peut se décomposer en un *coût fixe* $CF$ (qui ne dépend pas de $q$) et 
 Le coût moyen est le coût de production moyen d'une unité, noté $C_M$ :
 \[C_M(q) = \frac{CT(q)}{q}\]
 :::
-On peut décomposer le coût moyen en un *coût fixe moyen* $CFM$ :
+Le coût moyen se décompose en un *coût fixe moyen* $CFM$ :
 \[CFM(q)=\frac{CF}{q}\]
 Et un *coût variable moyen* $CVM$ :
 \[CVM(q)=\frac{CV(q)}{q}\]
@@ -120,19 +120,19 @@ Le coût marginal, noté $C_m$, est l'augmentation du coût lié à la productio
 :::
 Autrement dit, le coût marginal est la variation de coût total quand la production varie "un tout petit peu" (infiniment peu en fait).
 
-::: {.proposition name="Forme de courbes de coût"}
-Le coût marginal diminue d'abord, puis augmente par la suite, car la productivité marginale est d'abord croissante, puis décroissante, en général.  
+::: {.proposition name="Variations des courbes de coût"}
+Le coût marginal diminue d'abord, puis augmente, car la productivité marginale est, en général, d'abord croissante, puis décroissante,.  
 Le coût variable moyen est d'abord décroissant, puis croissant, pour la même raison.  
 Le coût fixe moyen est toujours décroissant, car le coût fixe ne dépend pas des quantités produites et $CFM=CF/q$ est donc une fonction inverse.  
 La décomposition donnée par l'équation \@ref(eq:CM) implique que le coût moyen est d'abord décroissant, puis croissant.
 :::
 
-::: {.proposition name="Relation entre les coûts"}
+::: {.proposition name="Relations entre les coûts"}
 Lorsque le coût marginal est inférieur au coût (variable) moyen ($C_m(q)<C_M(q)$), le coût moyen diminue.
 Lorsque le coût marginal est supérieur au coût (variable) moyen ($C_m(q)>C_M(q)$), le coût moyen augmente.
 La courbe de coût marginal coupe donc la courbe de coût (variable) moyen à son minimum.
 :::
-L'intuition de ce résultat est simple : si le coût marginal d'une unité supplémentaire est supérieur au coût moyen, alors l'unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen.
+L'intuition de ce résultat est la suivante : si le coût d'une unité supplémentaire est supérieur au coût moyen des unités précédentes, alors l'unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen, et vice-versa.
 
 :::{ .proof }
 En son minimum, le coût moyen est tel que $C_M'(q)=0$.
@@ -173,30 +173,28 @@ p_cppcout + scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(), label
 ### L'offre du producteur
 
 ::: {.definition name="Recette totale"}
-La recette totale, notée $RT$, est le produit de la vente des unités de biens.
+La recette totale, notée $RT$, est la recette issue de la vente des biens.
 Pour $q$ unités de bien vendus, le producteur gagne $RT(q)$, autrement dit, c'est le chiffre d'affaire du producteur (pour ce bien).
 :::
 
 ::: {.definition name="Recette marginale"}
-La recette marginale, notée $R_m$ est la recette rapportée par une unité supplémentaire de bien.
+La recette marginale, notée $R_m$ est la recette rapportée par une unité supplémentaire de bien vendue.
 \[R_m(q)=RT'(q)\]
 :::
 
 ::: {.definition name="Profit"}
-Le profit, noté $\pi$ est la différence entre la recette totale est le coût total de production :
+Le profit, noté $\pi$ est la différence entre la recette totale et le coût total de production :
 \[\pi(q)=RT(q)-CT(q)\]
 :::
 
+:::{.hypothesis #programmeproducteur name="Programme du producteur"}
 Le producteur choisit la quantité produite de manière à maximiser son profit.
-
-::: {.definition name="Programme du producteur"}
-Le programme du producteur est :
+Mathématiquement, il résout le programme suivant :
 \[\max_q\pi(q)=\max_q RT(q)-CT(q)\]
 :::
 
 ::: {.theorem name="Offre du producteur"}
-En concurrence pure et parfaite, le programme du producteur est tel que la quantité produite $q$ égalise coût marginal et recette marginale.
-À l'optimum :
+En concurrence pure et parfaite, le programme du producteur est tel que la quantité produite $q$ égalise le coût marginal et la recette marginale :
 \begin{equation}
 R_m(q) =C_m(q)
 (\#eq:cppopti)
@@ -206,14 +204,14 @@ R_m(q) =C_m(q)
 ::: {.proof}
 Le programme du producteur est de maximiser son profit :
 \[\max_q\pi(q)=\max_q RT(q)-CT(q)\]
-À l'optimum, et à condition que les fonctions de coût et de recette soient dérivables (ce qui sera toujours le cas ici), cela signifie que l'on doit avoir la condition du premier ordre :
+À l'optimum, et à condition que les fonctions de coût et de recette soient dérivables (ce qui sera toujours le cas dans ce cours). La condition du premier ordre s'écrit :
 \[\pi'(q)=0\Leftrightarrow RT'(q)-CT'(q)=0\Leftrightarrow R_m(q)=C_m(q)\]
-On obtient donc bien l'équation \@ref(eq:cppopti)
+On obtient donc l'équation \@ref(eq:cppopti).
 :::
 
-L'intuition pour ce résultat est assez simple.
-Si on a $R_m(q)>C_m(q)$, alors augmenter la quantité produite rapporte plus que cela ne coûte, et donc augmente le profit.
-À l'inverse, si $R_m(q)<C_m(q)$, diminuer la quantité produite diminue plus le coût que la recette du producteur, et donc augmente le profit. 
+L'intuition pour ce résultat est la suivante.
+Si la recette marginale est supérieure au coût marginal ($R_m(q)>C_m(q)$), alors augmenter la quantité produite rapporte plus que cela ne coûte et donc augmente le profit.
+À l'inverse, si la recette marginale est inférieure au coût marginal ($R_m(q)<C_m(q)$), diminuer la quantité produite diminue plus le coût que la recette du producteur et donc augmente le profit. 
 La situation s'équilibre donc pour $R_m(q)=C_m(q)$.
 Si cette égalité n'est pas vérifiée, le producteur peut en effet augmenter son profit en jouant sur la quantité produite.
 
@@ -232,7 +230,11 @@ En concurrence pure et parfaite, la courbe d'offre du producteur est la courbe d
 
 Le profit du producteur s'écrit alors :
 \[\pi(q)=RT(q)-CT(q)=pq-CT(q)=pq-C_M(q)q=q(p-C_M(q))\]
-Autrement dit, le profit d'un producteur en concurrence pure et parfaite et la différence entre le prix de vente et le coût moyen de production multiplié par le nombre d'unités vendues.
+\begin{equation}
+\pi(q)=q(p-C_M(q))
+(\#eq:profitCM)
+\end{equation}
+L'équation \@ref(eq:profitCM) nous dit que le profit d'un producteur en concurrence pure et parfaite est la différence entre le prix de vente et le coût moyen de production multiplié par le nombre d'unités vendues.
 Si ce prix est inférieur au coût moyen de toutes les unités vendues, le profit sera négatif.
 
 ```{r cppprofit, fig.cap="Profit d'un producteur en concurrence pure et parfaite."}
@@ -255,11 +257,22 @@ p_cppcout + geom_ribbon(data=pi, aes(x=x, ymin=ymin, ymax=ymax), fill="green", a
 La *demande agrégée (D)* est la somme des demandes individuelles pour chaque niveau de prix.
 :::
 
+La courbe de demande correspond à la suite des prix de réserve des individus, c'est-à-dire aux prix maximaux que chaque individu est prêt à payer pour obtenir une unité *supplémentaire* du bien.
+
+
 :::{.definition name="Offre agrégée (S)"}
 L'*offre agrégée (S)* est la somme des offres individuelles pour chaque niveau de prix.
 :::
 
-L'équilibre de marché se fait à l'intersection entre S et D (quand S=D).
+La courbe d'offre correspond à la série des coûts marginaux de production, c'est-à-dire aux prix minimaux auxquels les producteurs souhaitent vendre une unité supplémentaire du bien.
+
+:::{.definition name="Équilibre de marché"}
+L'équilibre de marché se fait à l'intersection entre l'offre agrégée (S) et la demande agrégée (D) (quand S=D).
+:::
+
+À l'équilibre de marché, on obtient une quantité d'équilibre (notée $q^*$) et un prix d'équilibre (noté $p^*$).
+La vente de toutes les unités jusqu'à la quantité d'équilibre $q^*$ au prix $p^*$ procure un *surplus* aux agents économiques.
+
 
 
 ```{r marche, fig.cap="Equilibre de marché."}
@@ -287,15 +300,12 @@ p
 ```
 
 
-La courbe de demande correspond à la suite des prix de réserve des individus, c'est-à-dire aux prix maximal que chaque individu est prêt à payer pour obtenir une unité *supplémentaire* du bien.
 
-La courbe d'offre correspond à la série des coûts marginaux de production, c'est-à-dire les prix minimaux auxquels les producteurs souhaitent vendre une unité supplémentaire du bien.
 
-La vente de toutes les unités jusqu'à la quantité d'équilibre $q^*$ au prix $p^*$ procure un *surplus* aux agents économiques.
 
 :::{.definition name="Surplus des consommateurs"}
 Le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix payé par le consommateur pour obtenir les biens.
-Sur le graphique quantité prix $(q, p)$, c'est l'aire compris entre la courbe de demande est la droite horizontale dont l'ordonnée est le prix d'échange.
+Sur le graphique quantité prix $(q, p)$, c'est l'aire comprise entre la courbe de demande est la droite horizontale dont l'ordonnée est le prix d'échange.
 Formellement :
 \[S_c=\int_0^{q^*}P(q)-p^* dq\]
 :::
@@ -326,7 +336,7 @@ p + geom_ribbon(data = Sc, aes(x=x, ymin=0.5, ymax = y), fill="blue") +
 :::{ .proposition #cppprop name="Propriétés de l'équilibre en concurrence pure et parfaite"}
 L'équilibre en CPP **maximise** le *surplus total*.
 Tout autre couple prix/quantité abouti à un surplus total plus faible.  
-L'équilibre de CPP est *Pareto-optimal*, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
+L'équilibre en CPP est *Pareto-optimal*, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
 C'est ce qu'on appelle le *premier théorème du bien-être*.
 :::
 
@@ -365,4 +375,4 @@ p <- ggplot(df, aes(x=x)) +
 p
 ```
 
-Dans ce graphique, $q^*$ représente la production optimale de ce producteur quand il est seul.
+Dans la figure \@ref(fig:elasticite), $q^*$ représente la production optimale de ce producteur quand il est seul.
