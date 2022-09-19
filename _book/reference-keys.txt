@@ -1,6 +1,7 @@
 eq:CM
 fig:cppcout
 eq:cppopti
+fig:profixmax
 eq:profitCM
 fig:cppprofit
 fig:marche

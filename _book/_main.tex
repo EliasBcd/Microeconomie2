@@ -89,7 +89,7 @@
 
 \title{Microéconomie 2}
 \author{Elias Bouacida \and Hela Maafi \and Antoine Terracol}
-\date{16 septembre 2022}
+\date{19 septembre 2022}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Théorème}[chapter]
@@ -212,7 +212,7 @@ Et enfin une référence avancée, pour ceux qui cherchent les fondements mathé
 
 \chaptermark{Les hypothèses de la CPP}
 
-Il y a 5 hypothèses qui définissent la concurrence pure et parfaite :
+5 hypothèses garantissent l'existence d'un équilibre en concurrence pure et parfaite :
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -229,21 +229,23 @@ Il y a 5 hypothèses qui définissent la concurrence pure et parfaite :
   Libre entrée et sortie du marché.
 \end{enumerate}
 
+Explicitons ce que signifient chacune de ces hypothèses.
+
 \begin{hypothesis}[Atomicité des agents]
 L'hypothèse d'atomicité des agents implique qu'aucun agent, individu ou entreprise, n'a d'influence \emph{individuellement} sur les prix.
-En d'autres termes, chaque agent est petit face au marché et considère le prix du marché comme une \emph{donnée} qu'il ne peut pas influencer.
+En d'autres termes, chaque agent est ``petit'' face au marché et considère le prix du marché comme une \emph{donnée} qu'il ne peut pas influencer.
 On dit que les agents sont \emph{price-taker} sur le marché.
 \end{hypothesis}
 
 \begin{hypothesis}[Information parfaite]
-L'hypothèse d'information parfaite signifie que tous les acteurs disposent de toutes les informations pertinentes pour prendre leurs décisions.
+L'hypothèse d'information parfaite signifie que tous les acteurs disposent de toutes les informations \textbf{pertinentes} pour prendre leurs décisions.
 Il n'y a, par exemple, pas de coût de recherche d'information.
 \end{hypothesis}
 
 \begin{hypothesis}[Mobilité parfaite des facteurs de production]
 L'hypothèse de mobilité parfaite des facteurs de production garantit l'homogénéité spatiale du prix des facteurs.
 Les facteurs de production se déplacent où ils sont le mieux rémunérés.
-Les différences de coûts entre producteurs ne peuvent donc être dus qu'au différence technologique entre ceux-ci, et non à une différence de coût des facteurs de production.
+Les différences de coûts entre producteurs ne peuvent donc être dues qu'aux différences technologiques entre ceux-ci, et non à une différence de coût des facteurs de production.
 \end{hypothesis}
 
 \begin{hypothesis}[Homogénéité des biens]
@@ -390,6 +392,12 @@ Si la recette marginale est supérieure au coût marginal (\(R_m(q)>C_m(q)\)), a
 La situation s'équilibre donc pour \(R_m(q)=C_m(q)\).
 Si cette égalité n'est pas vérifiée, le producteur peut en effet augmenter son profit en jouant sur la quantité produite.
 
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/profixmax-1.pdf}
+\caption{\label{fig:profixmax}Maximisation du profit du producteur.}
+\end{figure}
+
 En concurrence pure et parfaite, le producteur est \emph{price-taker}.
 Le prix sur le marché est unique et donné , il vaut \(p\) et ne dépend pas des quantités produites par \emph{un} producteur.
 Le producteur vend son bien au prix défini par le marché.
@@ -448,19 +456,19 @@ La vente de toutes les unités jusqu'à la quantité d'équilibre \(q^*\) au pri
 
 \begin{definition}[Surplus des consommateurs]
 Le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix payé par le consommateur pour obtenir les biens.
-Sur le graphique quantité prix \((q, p)\), c'est l'aire comprise entre la courbe de demande est la droite horizontale dont l'ordonnée est le prix d'échange.
+Sur le graphique quantité prix \((q, p)\), c'est l'aire comprise entre la courbe de demande et la droite horizontale dont l'ordonnée est le prix d'échange.
 Formellement :
 \[S_c=\int_0^{q^*}P(q)-p^* dq\]
 \end{definition}
 
 \begin{remark}
 Seule la dernière unité de bien achetée par les consommateur l'est au prix de réserve.
-Il n'y a pas de gain à l'échange pour cette unité, mais pour toutes les autres, il y en a, ce qui explique pourquoi il y a un surplus à l'échange, et pourquoi celui-ci à lieu.
+Il n'y a pas de gain à l'échange pour cette unité, mais pour toutes les autres, il y en a, ce qui explique pourquoi il y a un surplus à l'échange, et pourquoi celui-ci a lieu.
 \end{remark}
 
 \begin{definition}[Surplus des producteurs]
 Le surplus des producteurs est la somme des différences entre le prix auquel les producteurs vendent le bien et la courbe de coût marginal, qui représente le coût d'une unité supplémentaire produite.
-Sur le graphique quantité prix \((q, p)\), c'est l'aire compris entre le prix de vente et la courbe de coût marginal.
+Sur le graphique quantité prix \((q, p)\), c'est l'aire comprise entre le prix de vente et la courbe de coût marginal.
 Formellement :
 \[S_p=\int_0^{q^*}p^*-S(q) dq\]
 \end{definition}
