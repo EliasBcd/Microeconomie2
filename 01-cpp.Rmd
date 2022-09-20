@@ -134,7 +134,9 @@ Lorsque le coût marginal est inférieur au coût (variable) moyen ($C_m(q)<C_M(
 Lorsque le coût marginal est supérieur au coût (variable) moyen ($C_m(q)>C_M(q)$), le coût moyen augmente.
 La courbe de coût marginal coupe donc la courbe de coût (variable) moyen à son minimum.
 :::
+
 L'intuition de ce résultat est la suivante : si le coût d'une unité supplémentaire est supérieur au coût moyen des unités précédentes, alors l'unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen, et vice-versa.
+L'illustration graphique est donnée sur la figure \@ref(fig:cppcout).
 
 :::{ .proof }
 En son minimum, le coût moyen est tel que $C_M'(q)=0$.
