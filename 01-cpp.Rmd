@@ -272,16 +272,42 @@ p_cppcout + geom_ribbon(data=pi, aes(x=x, ymin=ymin, ymax=ymax), fill="green", a
   geom_segment(data=pi, x=0, y=Cm(q), xend=q, yend=Cm(q), linetype="dashed") +
   scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(CM(q), Cm(q)), labels=c(TeX("$C_M(q^*)$"), TeX("p"))) +
   scale_x_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(q), labels=c(TeX("$q^*$")))
-
 ```
 
+
+## Le consommateur
+
+Notre modélisation des consommateurs sera assez simple dans ce cours.
+
+::: {.definition name="Demande individuelle"}
+La fonction de demande d'un consommateur correspond à la suite des prix maximaux qu'un consommateur est prêt à payer pour obtenir une unité *supplémentaire* du bien.
+On la note souvent $Q$.
+:::
+
+On appelle ce prix maximum le *prix de réserve*.
+
+::: {.proposition name="Variation de la fonction de demande"}
+La fonction de demande est décroissante. 
+:::
+
+
+L'intuition est la suivante, un consommateur est prêt à payer plus pour la première unité de biens reçu que pour la suivante.
+Par exemple, la premier litre d'eau dans le désert à beaucoup de valeur que le dixième.
+
+::: {.remark name="Demande et demande inverse"}
+La fonction de demande donne la quantité en fonction du prix ($Q(p)$).
+La plupart du temps, nous auront besoin de la fonction de demande inverse ($P(q)$), qui donne le prix en fonction de la quantité.
+Il faudra donc inverser la fonction de demande pour obtenir la fonction de demande inverse.
+:::
+
+
 ## L'équilibre de marché
+
 
 :::{.definition name="Demande agrégée (D)"}
 La *demande agrégée (D)* est la somme des demandes individuelles pour chaque niveau de prix.
 :::
 
-La courbe de demande correspond à la suite des prix de réserve des individus, c'est-à-dire aux prix maximaux que chaque individu est prêt à payer pour obtenir une unité *supplémentaire* du bien.
 
 
 :::{.definition name="Offre agrégée (S)"}

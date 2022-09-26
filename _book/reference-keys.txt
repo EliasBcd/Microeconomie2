@@ -57,6 +57,7 @@ les-hypothèses-de-la-concurrence-pure-et-parfaite-cpp
 le-producteur
 fonctions-de-coût
 loffre-du-producteur
+le-consommateur
 léquilibre-de-marché
 perception-par-les-agents-isolés
 le-monopole
