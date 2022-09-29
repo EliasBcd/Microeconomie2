@@ -1,0 +1,6 @@
+Package: Microeconomie2
+Type: Book
+Title: Microeconomie 2
+Version: 0.0.1
+Imports: bookdown, ggplot2, latex2exp
+Remotes: EliasBcd/Microeconomie2
