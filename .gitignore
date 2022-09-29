@@ -31,3 +31,6 @@ libs/*
 tmp-pdfcrop-*
 # log files
 *.log
+# Book files
+_book
+_bookdown_files
