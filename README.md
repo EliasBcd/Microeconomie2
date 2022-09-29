@@ -3,20 +3,22 @@ title: Microéconomie 2
 author:
   - Elias Bouacida
   - Antoine Terracol
+  - Hela Maafi
 date: 2 septembre 2021
 bibliography: bibliographie.bib
 ---
 
 # Microéconomie 2
 
-Cours de microéconomie 2 en licence 2 à l'université Paris 8, donné par Antoine Terracol et Elias Bouacida.  
-Ce dépôt contient les notes de cours ainsi que les corrigés des exercices.
+Cours de microéconomie 2 en licence 2 à l'université Paris 8, donné par Antoine Terracol, Hela Maafi et Elias Bouacida.  
+Ce dépôt contient les notes de cours.
+Elles servent de bases à l'enseignement, mais ne sont pas nécessairement exhaustive.
 
 ## Thèmes
 
 Les principaux thèmes abordés dans ce cours sont les suivants :
 
--  structures de marché
+- structures de marché
 - pouvoir de marché
 - principes de tarification
 - comportements stratégiques
