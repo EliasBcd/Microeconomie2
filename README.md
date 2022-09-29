@@ -11,6 +11,7 @@ date: 2 septembre 2021
 
 Cours de microéconomie 2 en licence 2 à l'université Paris 8, donné par Antoine Terracol, Hela Maafi et Elias Bouacida.  
 Ce dépôt contient les notes de cours.
+Elles servent de bases à l'enseignement, mais ne sont pas nécessairement exhaustive.
 
 ## Thèmes
 
