@@ -34,3 +34,5 @@ tmp-pdfcrop-*
 # Book files
 _book
 _bookdown_files
+renv
+.Rprofile
