@@ -22,7 +22,7 @@ C'est ce qu'on appelle en général des professions réglementées, comme les av
 - Historique, le premier arrivé ;
 - Monopoles *naturels* : en présence d'économies d'échelles, produire une quantité donnée revient moins cher avec un seul producteur qu'avec plusieurs.
 C'est notamment les cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, ...).
-Plus généralement, les industries avec des coûts fixes / coûts d'entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile, ...) ;
+Plus généralement, les industries avec des coûts fixes ou des coûts d'entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile, ...) ;
 - Exclusivité sur la production de certaines matières premières (cuivre au Chili, terres rares en Chine, ...) ;
 - Coalitions créant un cartel ;
 - ...
@@ -31,28 +31,30 @@ Plus généralement, les industries avec des coûts fixes / coûts d'entrées tr
 
 ### Définition
 
-À la différence du cas de la concurrence pure et parfaite, le monopole perçoit la courbe de demande agrégée, et non plus celle avec une élasticité infinie.
-Le choix de la quantité qu'il met sur le marché modifie le prix auquel il pourra vendre sa production, et il le sait. 
-Il va choisir **un** des paramètres du couple $(q, P(q))$, et l'autre en découlera, à travers la demande inverse $P(q)$.
-Autrement dit, s'il choisit $q$, $P(q)$ sera déterminé par la demande (inverse).
-Si, au contraire, il choisit $P$, $q$ sera déterminé par la demande. 
-
-<!-- Réécrire avec Q plus proprement le paragraphe au-dessus. -->
+L'avantage du monopole sur des entreprises en concurrence pure et parfaite est qu'il connaît tout le marché. 
+Il peut influencer le prix sur le marché, en modifiant son prix de vente ou la quantité vendue.
+Cela permet au monopole de percevoir la *vraie* courbe de demande agrégée et non plus une courbe de demande avec une élasticité infinie.
+Le choix de la quantité qu'il met sur le marché modifie le prix auquel il pourra vendre sa production et il le sait. 
+Il va choisir **un** des paramètres du couple $(q^*, p^*)$ du prix et de la quantité sur le marché. 
+L'autre en découlera, à travers la demande inverse $P(q)$ ou la demande $Q(p)$.
+Autrement dit, s'il choisit $q^*$, le prix sur le marché $p^*$ sera déterminé par le demande inverse ($p^*=P(q^*)$).
+Si, au contraire, il choisit $p^*$, la quantité échangée $q^*$ sera déterminée par la demande ($q^*=Q(p^*)$. 
 
 En CPP, la recette totale du producteur individuel était $R(q) = q\cdot P(q^*)$, où $q$ est sa production individuel, $q^*$ la quantité d'équilibre sur le marché (résultat de la production de *toutes* les entreprises présentes sur le marché) et $P(q^*)=p^*$ est le prix d'équilibre.
 
-En monopole, le prix dépend de la production du monopole (ou l'inverse, peu importe) :
+En monopole, le prix dépend de la production du monopole (ou l'inverse, peu importe).
+La recette totale du monopole s'écrit donc :
 \[
-R(q) = q\cdot P(q)
+R(q) = q\cdot P(q) = Q(p)\cdot p
 \]
 
 ### Recette marginale et courbe de demande
 
-Comme la courbe de demande est décroissante (l'élasticité prix de la demande est négative $\varepsilon_{q/p} <0$), $P(q)$ et $q$ ont une relation inverse. 
-Autrement dit, si $q$ augmente, alors $p$ baisse, et réciproquement.
-
-Cela implique que la recette totale augmentera ou baissera suivant les propriétés de la courbe de demande.
-
+Comme la demande est décroissante (l'élasticité prix de la demande est négative $\varepsilon_{q/p} <0$), $P(q)$ et $q$ ont une relation inverse. 
+Autrement dit, si $q$ augmente, alors $p$ baisse et inversement.
+On peut constater sur la figure \@ref(fig:monorecettemarginale) que deux phénomènes influencent la variation de la recette totale quand on augmente la production d'une unité (passage de $q$ à $q+\Delta q$ unités vendues).
+Le gain lié à la vente de $\Delta q$ unités supplémentaires.
+La perte due à la baisse du prix de vente total de toutes les unités vendues (passage de $P(q)$ à un prix inférieur $P(q+\Delta q)$)
 
 ```{r base, include=FALSE}
 
@@ -69,38 +71,40 @@ S3 = data.frame(x = c(0, 0.8), y = c(0.2, 0.2))
 S4 = data.frame(x = c(0.8, 0.9), y = c(0.1, 0.1))
 
 p <- ggplot(df, aes(x=x)) +
-    stat_function(fun=function(x) D(x), colour = "blue") +
-    labs(x="quantité", y = "prix") +
-    annotate("text", x = 0.3, y = 1, label ="courbe de demande", colour = "blue")
+  stat_function(fun=function(x) D(x), colour = "blue") +
+  labs(x="quantité", y = "prix") +
+  annotate("text", x=0.1, y=1, label="Demande", colour="blue")
+
 ```
 
-```{r monorecettemarginale, fig.cap="Recette marginale d'un monopole."}
+```{r monorecettemarginale, fig.cap="Recette marginale d'un monopole suite à une variation de quantité."}
 p1 <- p
 
-lab1 <-expression("P(q+"*Delta*'q)')
-lab2 <-expression("q+"*Delta*'q')
+lab1 <- TeX("$P(q+\\Delta q)$")
+lab2 <- TeX("$q+\\Delta q$")
 
 p1 +  scale_y_continuous(breaks = c(0.1, 0.2, 0.8, 0.9), labels = c(lab1, 'P(q)', lab1, 'P(q)'), expand = c(0, 0), limits = c(0, 1.2)) +
     scale_x_continuous(breaks = c(0.1, 0.2, 0.8, 0.9),  labels = c('q', lab2, 'q', lab2), expand = c(0, 0), limits = c(0, 1.2)) +
   geom_segment(x=0.9, y=0, xend = 0.9, yend = 0.1, linetype="dashed") +
-    geom_segment(x=0.8, y=0, xend = 0.8, yend = 0.2, linetype="dashed") +
-    geom_segment(x=0.2, y=0, xend = 0.2, yend = 0.8, linetype="dashed") +
-    geom_segment(x=0.1, y=0, xend = 0.1, yend = 0.9, linetype="dashed") +
-    geom_segment(x=0, y = 0.9, xend = 0.1, yend = 0.9, linetype="dashed") +
-    geom_segment(x=0, y = 0.8, xend = 0.2, yend = 0.8, linetype="dashed") +
-    geom_segment(x=0, y = 0.2, xend = 0.8, yend = 0.2, linetype="dashed") +
-    geom_segment(x=0, y = 0.1, xend = 0.9, yend = 0.1, linetype="dashed") +
+  geom_segment(x=0.8, y=0, xend = 0.8, yend = 0.2, linetype="dashed") +
+  geom_segment(x=0.2, y=0, xend = 0.2, yend = 0.8, linetype="dashed") +
+  geom_segment(x=0.1, y=0, xend = 0.1, yend = 0.9, linetype="dashed") +
+  geom_segment(x=0, y = 0.9, xend = 0.1, yend = 0.9, linetype="dashed") +
+  geom_segment(x=0, y = 0.8, xend = 0.2, yend = 0.8, linetype="dashed") +
+  geom_segment(x=0, y = 0.2, xend = 0.8, yend = 0.2, linetype="dashed") +
+  geom_segment(x=0, y = 0.1, xend = 0.9, yend = 0.1, linetype="dashed") +
 geom_ribbon(data = S1, aes(x=x, ymin=0.8, ymax = y), fill="green", alpha = 0.5) +
-    geom_ribbon(data = S2, aes(x=x, ymin=0, ymax = y), fill="red", alpha = 0.5) +
-    geom_ribbon(data = S3, aes(x=x, ymin=0.1, ymax = y), fill="red", alpha = 0.5) +
-    geom_ribbon(data = S4, aes(x=x, ymin=0, ymax = y), fill="green", alpha = 0.5) +
+  geom_ribbon(data = S2, aes(x=x, ymin=0, ymax = y), fill="red", alpha = 0.5) +
+  geom_ribbon(data = S3, aes(x=x, ymin=0.1, ymax = y), fill="red", alpha = 0.5) +
+  geom_ribbon(data = S4, aes(x=x, ymin=0, ymax = y), fill="green", alpha = 0.5) +
   annotate("text", x=0.05, y=0.85, label="+", colour="darkgreen", size = rel(10)) +
   annotate("text", x=0.4, y=0.15, label="-", colour="darkred", size = rel(10)) +
   annotate("text", x=0.15, y=0.4, label="-", colour="darkred", size = rel(10)) +
   annotate("text", x=0.85, y=0.05, label="+", colour="darkgreen", size = rel(10))
+
 ```
 
-Quel est le paramètre important de la courbe de demande qui détermine si le revenu $R$ augmente ou diminue (c'est-à-dire si $R_m$ est positive ou négative) ?
+*Quel est le paramètre important de la courbe de demande qui détermine si le revenu $R$ augmente ou diminue (c'est-à-dire si la recette marginale $R_m$ est positive ou négative) ?*
 
 \begin{align*}
 R(q) & = qP(q)\\
@@ -118,7 +122,7 @@ Où $D$ est la fonction de demande.
 Elle est toujours négative, car la demande diminue quand le prix augmente.
 On peut la réécrire à l'aide de la fonction de demande inverse $P$.
 Comme $D$ et $P$ sont les fonctions réciproques l'une de l'autre, on a $D(P(q)) = q$.
-En dérivant à gauche et à droite, on obtient :
+En dérivant à gauche et à droite et en utilisant la formule de la dérivation composée, on obtient :
 \[P'(q)D'(P(q)) = 1\]
 On obtient donc :
 \[P'(q)=\frac{1}{D'(p)}\]
@@ -132,11 +136,12 @@ R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
 (\#eq:rm)
 \end{equation}
 
-
-De l'équation \@ref(eq:rm), on observe que le signe de la recette marginale $R_m$ dépend de l'élasticité prix de la demande.
+::: {.proposition name="Elasticité prix de la demande et recette marginale"}
+De l'équation \@ref(eq:rm), on observe que le signe de la recette marginale $R_m$ dépend de l'élasticité prix de la demande $|\varepsilon_{q/p}(q)|$.
 
 1. Si la demande est élastique ($|\varepsilon_{q/p}(q)|>1$), alors $R_m(q)>0$, donc si la quantité augmente, le revenu augmente.
 2. Si la demande est inélastique ($|\varepsilon_{q/p}(q)|<1$), alors $R_m(q)<0$, donc si la quantité augmente, le revenu diminue.
+:::
 
 Une représentation graphique de l'allure générale est donnée dans la figure \@ref(fig:monopoleelasticite)
 
@@ -151,9 +156,9 @@ lab3 = TeX("$\\left| \\epsilon_{q/p}\\right|=1$")
 p2 + geom_segment(x=0, y=0, xend = 0.5, yend = 0.5, linetype="dashed") +
   geom_segment(x=0, y=1, xend = 0.5, yend = 0.5, colour="green") +
   geom_segment(x=1, y=0, xend = 0.5, yend = 0.5, colour="red") +
-  annotate("text", x=0.35, y=0.75, label=lab1, size = 10, colour="darkgreen") +
-  annotate("text", x=0.85, y=0.25, label=lab2, size = 10, colour="darkred") +
-  annotate("text", x=0.65, y=0.5, label=lab3, size = 10, colour="darkblue") +
+  annotate("text", x=0.35, y=0.75, label=lab1, size = 5, colour="darkgreen") +
+  annotate("text", x=0.85, y=0.25, label=lab2, size = 5, colour="darkred") +
+  annotate("text", x=0.65, y=0.5, label=lab3, size = 5, colour="darkblue") +
   annotate("point", x=0.5, y=0.5, size = 4, colour="darkblue") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c()) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c())
@@ -165,11 +170,11 @@ La courbe de recette marginale est toujours située en-dessous de la courbe de d
 \[
 R_m(q) = P(q) + qP'(q) < P(q)
 \]
-et $P'(q)$ est négative (la demande inverse est décroissante).
+var $P'(q)$ est négative (la demande inverse est décroissante).
 
 #### Exemple avec une courbe de demande linéaire
 
-Prenons maintenant l'exemple d'une courbe de demande inverse linéaire quelconque $P(q) = a-bq$ ($a$ et $b$ sont des paramètres quelconques).
+Prenons maintenant l'exemple d'une courbe de demande inverse linéaire quelconque $P(q) = a-bq$ ($a$ et $b$ sont des valeurs numériques quelconques).
 On obtient alors $R_m(q) = a-2bq$ (et $R(q) = aq-bq^2$).  
 Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus élevée que la demande, et ayant la même ordonnée à l'origine.
 La recette marginale divise en deux  tout segment horizontal entre l'axe des ordonnées et la courbe de demande inverse.
@@ -183,13 +188,13 @@ p3 <- p +
   stat_function(fun=function(x) Rm(x), colour = "darkgreen") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c()) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.5, 1), labels = c(expression(x[0]/2), expression(x[0]))) +
-  annotate("text", x=0.15, y=0.8, colour="darkgreen", label="recette marginale") +
   stat_function(fun=function(x) R(x), colour = "red") +
   annotate("text", x=0.1, y = 0.2, colour="red", label="Recette") +
-  annotate("text", x=0.65, y=0.5, label=lab3, size = 10, colour="darkblue") +
+  annotate("text", x=0.65, y=0.5, label=lab3, size=5, colour="darkblue") +
   annotate("point", x=0.5, y=0.5, size = 4, colour="darkblue") +
   annotate("point", x=0.5, y=0.25, size = 4, colour="red") +
-  annotate("text", x=0.65, y=0.3, size = 5, colour="red", label="Recette maximale")
+  annotate("text", x=0.65, y=0.3, size = 5, colour="red", label="Recette maximale") +
+  annotate("text", x=0.5, y=0.1, colour="darkgreen", label="Recette marginale")
 
 p3
 ```
@@ -204,10 +209,11 @@ p4 <- p +
   stat_function(fun=function(x) Rm(x), colour = "darkgreen") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.6), labels=c("p*")) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.4), labels = c("q*")) +
-  annotate("text", x=0.15, y=0.8, colour="darkgreen", label="recette marginale") +
   annotate("text", x=0.1, y = 0.2, colour="red", label="Recette") +
   geom_ribbon(data = profit, aes(x=x, ymin=0, ymax = y), fill="green", alpha = 0.5) +
-  geom_ribbon(data = profit, aes(x=x, ymin=0, ymax = 0.6), fill="red", alpha = 0.5)
+  geom_ribbon(data = profit, aes(x=x, ymin=0, ymax = 0.6), fill="red", alpha = 0.5) +
+  annotate("text", x=0.5, y=0.1, colour="darkgreen", label="Recette marginale")
+
 
 p4
 ```
@@ -217,7 +223,6 @@ Sur la figure \@ref(fig:monopoleprofit), on voit qu'il est possible de calculer 
 1. En utilisant l'aire du trapèze vert (intégrale de la recette marginale entre 0 et la quantité échangée $q^*$) ;
 2. En utilisant l'aire du rectangle rouge ($\pi=p^* q^*$).
 
-Le résultat donne l'égalité d'aire entre le triangle vert et le triangle rouge.
 
 ## Décision de production du monopole
 
@@ -267,9 +272,9 @@ R_m'(q^*) <C_m'(q^*) (\#eq:cso)
 \end{equation}
 :::
 
-On peut comprendre graphiquement pourquoi il faut que le coût marginal et la recette marginale soient égaux (figure \@ref(fig:monopoleoptimale)).
-Si le monopole produit plus que $q_m^*$, alors chaque unité produite en plus lui coûte plus chère qu'elle ne lui rapporte.
-A l'inverse, s'il produit moins, produire des unités en plus lui rapporterait plus que cela ne lui coûte.
+La figure \@ref(fig:monopoleoptimale) donne l'intuition graphique de l'égalité entre le coût marginal et la recette marginale.
+Si le monopole produit plus que $q_m^*$, alors chaque unité produite en plus lui coûte plus chère qu'elle ne lui rapporte, car le coût marginal est *supérieur* à la recette marginale.
+A l'inverse, s'il produit moins, produire des unités en plus lui rapporterait plus que cela ne lui coûte, car le coût marginal est *inférieur* à la recette marginale.
  
 ```{r monopoleoptimale, fig.cap="Production optimale du monopole."}
 p5 <- p
@@ -281,15 +286,16 @@ perte2 <- data.frame(x = c(0.25, 0.35), y = c(0.5, 0.7), z = c(0.5, 0.3))
 p5 +   stat_function(fun=function(x) Rm(x), colour = "darkgreen") +
   stat_function(fun=function(x) Cm(x), colour = "red") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.75), labels=c(TeX("$p_m^*$"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.25), labels = c(TeX("$q_m^*$"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.15, 0.25, 0.35), labels = c("", TeX("$q_m^*$"), "")) +
   geom_ribbon(data = perte1, aes(x=x, ymin=z, ymax = y), fill="red", alpha = 0.5) +
   geom_ribbon(data = perte2, aes(x=x, ymin=z, ymax = y), fill="red", alpha = 0.5) +
   annotate("text", x=0.15, y=0.5, label=TeX("perte si $q<q_m^*$"), color="darkred") +
   annotate("text", x=0.4, y=0.5, label=TeX("perte si $q>q_m^*$"), color="darkred") +
-  annotate("text", x=0.5, y=0.1, colour="darkgreen", label="recette marginale") +
-  annotate("text", x=0.55, y=0.8, colour="red", label="coût marginal") +
+  annotate("text", x=0.55, y=0.8, colour="red", label="Coût marginal") +
   geom_segment(x=0.25, y=0, xend=0.25, yend=0.75, linetype="dashed") +
-  geom_segment(x=0, y=0.75, xend=0.25, yend=0.75, linetype="dashed")
+  geom_segment(x=0, y=0.75, xend=0.25, yend=0.75, linetype="dashed") +
+  annotate("text", x=0.5, y=0.1, colour="darkgreen", label="Recette marginale")
+
 ```
 
 
@@ -353,9 +359,9 @@ p6 <- ggplot(df2, aes(x=x2)) +
   stat_function(fun=function(x) pi(x), colour="darkgreen") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 420), breaks = seq(0, 400, by=50), labels=c(0, 50, 100, TeX("$\\pi_m^*=150$"), 200, 250, 300, 350, 400)) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 22), breaks = seq(0, 20, by=5), labels = c(0, 5, TeX("$q_m^*=10$"), 15, 20)) +
-  annotate("text", x=18, y=10, label=TeX("$\\pi$"), color="darkgreen") +
-  annotate("text", x=18, y=350, label=TeX("$C_m$"), color="darkred") +
-  annotate("text", x=18, y=400, label=TeX("R"), color="blue")
+  annotate("text", x=18, y=10, label=TeX("Profit"), color="darkgreen") +
+  annotate("text", x=18, y=350, label=TeX("Coût"), color="darkred") +
+  annotate("text", x=18, y=400, label=TeX("Recette"), color="blue")
 
 p6
 ```
@@ -369,14 +375,14 @@ p7 <- ggplot(df2, aes(x=x2)) +
   labs(x="quantité", y = "prix") +
   stat_function(fun=function(x) Cm(x), colour="red") +
   stat_function(fun=function(x) CM(x), colour="pink") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 45), breaks = seq(0, 40, by=5), labels=seq(0, 40, by=5)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 45), breaks = seq(0, 40, by=5), labels=c(seq(0, 25, by=5), TeX("$p_m^*=30$"), 35, 40)) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 22), breaks = seq(0, 20, by=5), labels=c(0, 5, TeX("$q_m^*=10$"), 15, 20)) +
-  annotate("text", x=18, y=20, label="demande", color="blue") +
-  annotate("text", x=18, y=1, label=TeX("$R_m$"), color="lightblue") +
-  annotate("text", x=18, y=40, label=TeX("$C_m$"), color="red") +
-  annotate("text", x=18, y=25, label=TeX("$C_M$"), color="pink") +
+  annotate("text", x=18, y=20, label="Demande", color="blue") +
+  annotate("text", x=18, y=1, label="Recette marginale", color="lightblue") +
+  annotate("text", x=18, y=40, label="Coût marginal", color="red") +
+  annotate("text", x=18, y=25, label="Coût moyen", color="pink") +
   geom_ribbon(data = profit, aes(x=x, ymin=ymin, ymax = ymax), fill="green", alpha = 0.5) +
-  annotate("text", x=5, y=25, label=TeX("$\\pi$"), color="darkgreen")
+  annotate("text", x=5, y=25, label="Profit", color="darkgreen")
 
 
 p7  
@@ -402,7 +408,7 @@ Dès lors que l'élasticité de la demande au prix n'est plus infinie en revanch
 
 *Question :* Dans quelle zone d'élasticité le monopole opère-t-il ?
 
-Si $\left|\varepsilon_{q/p}(q^*)\right|<1$, c'est-à-dire que si la demande est inélastique, alors $1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} <0$, ce qui implique que la recette marginale $R_m$ est négative, et donc impossible à égaliser avec le coût marginal $C_m$.  
+Si $\left|\varepsilon_{q/p}(q^*)\right|<1$, c'est-à-dire que si la demande est inélastique, alors $1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} <0$, ce qui implique que la recette marginale $R_m$ est négative et donc impossible à égaliser avec le coût marginal $C_m$.  
 On peut voir la réponse d'une autre façon.
 Si la pente est inélastique, alors le revenu $R$ augmente quand la quantité $q$ baisse. 
 Le coût total $C$ baisse aussi quand la quantité baisse. 
@@ -470,10 +476,10 @@ p_changement <- ggplot() +
   geom_function(fun=Rm2, colour = "green") +
   geom_function(fun=Cm, colour="red") +
   labs(x="quantité", y = "prix") +
-  annotate("text", x=0.8, y=P(0.8), label=TeX("demande 1 ($P_1$)"), color="blue") +
-  annotate("text", x=0.4, y=0.2, label=TeX("$R_{1m}$"), color="lightblue") +
+  annotate("text", x=0.8, y=P(0.8), label=TeX("Demande 1 ($P_1$)"), color="blue") +
+  annotate("text", x=0.4, y=0.2, label=TeX("Recette marginale 1 ($R_{1m})$"), color="lightblue") +
   annotate("text", x=1, y=Cm(1), label=TeX("Coût marginal ($C_m$)"), color="red") +
-  annotate("text", x=0.5, y=Rm2(0.5), label=TeX("$R_{2m}$"), color="green") +
+  annotate("text", x=0.5, y=Rm2(0.5), label=TeX("Recette marginale 1 ($R_{2m}$)"), color="green") +
   annotate("text", x=1, y=P2(1), label=TeX("demande 2 ($P_2$)"), color="darkgreen")
 
 
@@ -518,8 +524,8 @@ p_surplus <- ggplot() +
   geom_function(fun=Rm, colour = "lightblue") +
   geom_function(fun=Cm, colour="red") +
   labs(x="quantité", y = "prix") +
-  annotate("text", x=0.8, y=P(0.8), label=TeX("demande ($P$)"), color="blue") +
-  annotate("text", x=0.4, y=0.2, label=TeX("$R_{m}$"), color="lightblue") +
+  annotate("text", x=0.8, y=P(0.8), label=TeX("Demande ($P$)"), color="blue") +
+  annotate("text", x=0.4, y=0.2, label=TeX("Recette marginale ($R_{m})$"), color="lightblue") +
   annotate("text", x=1, y=Cm(1), label=TeX("Coût marginal ($C_m$)"), color="red") +
   geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
   geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
