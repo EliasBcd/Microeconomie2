@@ -93,13 +93,13 @@ p1 +  scale_y_continuous(breaks = c(0.1, 0.2, 0.8, 0.9), labels = c(lab1, 'P(q)'
   geom_segment(x=0, y = 0.8, xend = 0.2, yend = 0.8, linetype="dashed") +
   geom_segment(x=0, y = 0.2, xend = 0.8, yend = 0.2, linetype="dashed") +
   geom_segment(x=0, y = 0.1, xend = 0.9, yend = 0.1, linetype="dashed") +
-geom_ribbon(data = S1, aes(x=x, ymin=0.8, ymax = y), fill="green", alpha = 0.5) +
-  geom_ribbon(data = S2, aes(x=x, ymin=0, ymax = y), fill="red", alpha = 0.5) +
+geom_ribbon(data = S1, aes(x=x, ymin=0.8, ymax = y), fill="red", alpha = 0.5) +
+  geom_ribbon(data = S2, aes(x=x, ymin=0, ymax = y), fill="green", alpha = 0.5) +
   geom_ribbon(data = S3, aes(x=x, ymin=0.1, ymax = y), fill="red", alpha = 0.5) +
   geom_ribbon(data = S4, aes(x=x, ymin=0, ymax = y), fill="green", alpha = 0.5) +
-  annotate("text", x=0.05, y=0.85, label="+", colour="darkgreen", size = rel(10)) +
+  annotate("text", x=0.05, y=0.85, label="-", colour="darkred", size = rel(10)) +
   annotate("text", x=0.4, y=0.15, label="-", colour="darkred", size = rel(10)) +
-  annotate("text", x=0.15, y=0.4, label="-", colour="darkred", size = rel(10)) +
+  annotate("text", x=0.15, y=0.4, label="+", colour="darkgreen", size = rel(10)) +
   annotate("text", x=0.85, y=0.05, label="+", colour="darkgreen", size = rel(10))
 
 ```
