@@ -467,7 +467,7 @@ P2 <- function(q){1-3*q/4}
 Rm2 <- function(q){1-3*q/2}
 Cm <- function(q){q}
 
-q1=1/3
+qm <- uniroot(function(x){Rm(x) - Cm(x)}, c(0, 1))$root
 
 p_changement <- ggplot() +
   geom_function(fun=P, colour = "blue") +
@@ -484,8 +484,8 @@ p_changement <- ggplot() +
 
 
 p_prix <- p_changement +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(q1), P2(q1)), labels=c(TeX("$p_1^*$"),TeX("$p_2^*$"))) +
-  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(q1), labels=c(TeX("$q_1^*=q_2^*$")))
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm), P2(qm)), labels=c(TeX("$p_1^*$"),TeX("$p_2^*$"))) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm), labels=c(TeX("$q_1^*=q_2^*$")))
 
 p_prix
 ```
@@ -493,8 +493,8 @@ p_prix
 ```{r monopolechangementdemande2, fig.cap="Exemple de réaction du monopole à un changement de demande: changement de quantité."}
 
 p_quantité <- p_changement +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(q1)), labels=c(TeX("$p_1^*=p_2^*$"))) +
-  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(q1, 4/9), labels=c(TeX("$q_1^*$"), TeX("$q_2^*$")))
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm)), labels=c(TeX("$p_1^*=p_2^*$"))) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm, 4/9), labels=c(TeX("$q_1^*$"), TeX("$q_2^*$")))
 
 p_quantité
 ```
@@ -506,17 +506,11 @@ En CPP, un changement de demande, si elle implique une changement du prix d'équ
 La production du monopole est inférieure à la production en CPP et le prix est supérieur au prix de CPP.
 
 ```{r monosurplus, fig.cap="Surplus quand le producteur est en monopole."}
+qcpp <- uniroot(function(x){P(x) - Cm(x)}, c(0, 1))$root
 
-P <- function(q){1-q}
-Rm <- function(q){1-2*q}
-Cm <- function(q){q}
-
-q1 <- 1/3
-q2 <- 1/2
-
-Sc <- data.frame(x=c(0, q1), ymin=c(P(q1), P(q1)), ymax=c(P(0), P(q1)))
-Sp <- data.frame(x=c(0, q1), ymin=c(Cm(0), Cm(q1)), ymax=c(P(q1), P(q1)))
-perte <- data.frame(x=c(q1, q2), ymin=c(Cm(q1), Cm(q2)), ymax=c(P(q1), P(q2)))
+Sc <- data.frame(x=c(0, qm), ymin=c(P(qm), P(qm)), ymax=c(P(0), P(qm)))
+Sp <- data.frame(x=c(0, qm), ymin=c(Cm(0), Cm(qm)), ymax=c(P(qm), P(qm)))
+perte <- data.frame(x=c(qm, qcpp), ymin=c(Cm(qm), Cm(qcpp)), ymax=c(P(qm), P(qcpp)))
 
 
 p_surplus <- ggplot() +
@@ -530,11 +524,11 @@ p_surplus <- ggplot() +
   geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
   geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
   geom_ribbon(data=perte, aes(x=x, ymin=ymin, ymax=ymax), fill="black", alpha=0.5) +
-  annotate("text", x=q1/2, y=3/4, label="Surplus du consommateur", color="blue") +
-  annotate("text", x=q1/2, y=1/3, label="Surplus du producteur", color="red") +
-  annotate("text", x=q1/2+q2/2, y=1/2, label="Perte sèche", color="black") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(q1)), labels=c(TeX("$p_1^*$"))) +
-  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(q1, q2), labels=c(TeX("$q_1^*$"), TeX("$q_{CPP}^*$")))
+  annotate("text", x=qm/2, y=3/4, label="Surplus du consommateur", color="blue") +
+  annotate("text", x=qm/2, y=1/3, label="Surplus du producteur", color="red") +
+  annotate("text", x=qm/2+qcpp/2, y=1/2, label="Perte sèche", color="black") +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm)), labels=c(TeX("$p_m^*$"))) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm, qcpp), labels=c(TeX("$q_m^*$"), TeX("$q_{CPP}^*$")))
   
 p_surplus
 ```
@@ -550,13 +544,21 @@ Il suffirait pour cela que le monopole produise une unité supplémentaire du bi
 ## Régulation du monopole
 
 Cette partie va traiter de la manière dont un gouvernement peut inciter ou contraindre un monopole à modifier son comportement.
+Un premier type de régulation est par la taxation ou la subvention du monopole.
+Un second type de régulation est l'imposition d'un prix maximal.
 
-### Taxe unitaire
 
-<!-- Définir pour chaque taxe ce qu'elles font. -->
+### Taxes et subventions
+
+#### Taxe unitaire
+
+
+::: {.definition name='Taxe unitaire'}
+Une taxe unitaire $t$ est une taxe **par unité de bien produite**.
+:::
 
 Un gouvernement impose une taxe de $t$ unités monétaire par unité de bien produite.
-On a donc :
+Le profit du monopole se réécrit alors :
 
 \[
 \pi(q) = R(q) - C(q) -tq
@@ -570,7 +572,8 @@ La condition de première ordre de la maximisation du producteur de l'équation 
 \end{array}
 \]
 Le problème est exactement le même que précédemment, en intégrant la taxe dans le coût marginal.
-Pour le monopole, c'est comme si l'État ajoutait un coût $t$ à chaque unité produite, ce qui est effectivement ce que l'État fait.
+Pour le monopole, c'est comme si l'État ajoutait un coût $t$ à chaque unité produite.
+C'est effectivement ce que l'État fait si on considère le coût de production au sens large.
 
 ```{r monopoletaxeunitaire, fig.cap="Impact d'une taxe unitaire : augmentation du coût marginal."}
 t = 0.2
@@ -580,15 +583,15 @@ p_taxeunitaire <- ggplot() +
   geom_function(fun=function(x) Rm(x), colour = "green") +
   labs(x="quantité", y = "prix") +
   geom_function(fun=function(x) Cm(x), colour="red") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(4/15), P(1/3)), labels=c(TeX("$p^*_t$"), TeX("$p^*$"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(4/15, 1/3), labels=c(TeX("$q^*_t$"), TeX("$q^*$"))) +
-  annotate("text", x=1, y=0.2, label=TeX("$P$"), color="blue") +
-  annotate("text", x=0.5, y=0.2, label=TeX("$R_m$"), color="green") +
-  annotate("text", x=1, y=Cm(1)-0.1, label=TeX("$C_m$"), color="red")
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(4/15), P(qm)), labels=c(TeX("$p^*_t$"), TeX("$p^*$"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(4/15, qm), labels=c(TeX("$q^*_t$"), TeX("$q^*$"))) +
+  annotate("text", x=0.8, y=0.2, label="demande", color="blue") +
+  annotate("text", x=0.5, y=0.2, label="recette marginale", color="green") +
+  annotate("text", x=1, y=Cm(1)-0.1, label="coût marginal", color="red")
 
 
 p_taxeunitaire  + geom_function(fun=function(x) Cm(x)+t, colour="darkred") +
-  annotate("text", x=0.8, y=Cm(0.8)+t+0.1, label=TeX("$C_m+t$"), color="darkred")
+  annotate("text", x=0.8, y=Cm(0.8)+t+0.1, label="coût marginal + taxe unitaire", color="darkred")
 ```
 
 Cela entraîne une diminution de la quantité produite et une augmentation du prix.
@@ -602,15 +605,19 @@ Une vue **alternative** à l'augmentation du coût marginal est de considérer q
 ```{r monopoletaxeunitaire2, fig.cap="Impact d'une taxe unitaire : diminution de recette marginale."}
 p_taxeunitaire  + geom_function(fun=function(x) P(x)-t, colour="darkblue") +
   geom_function(fun=function(x) Rm(x)-t, colour="darkgreen") +
-  annotate("text", x=0.8, y=P(0.8)-t+0.1, label=TeX("$P-t$"), color="darkblue") +
-  annotate("text", x=0.4, y=Rm(0.4)-t+0.1, label=TeX("$R_m-t$"), color="darkgreen") +
+  annotate("text", x=0.8, y=P(0.8)-t+0.1, label="demande - taxe", color="darkblue") +
+  annotate("text", x=0.4, y=Rm(0.4)-t+0.1, label="recette marginale - taxe", color="darkgreen") +
   geom_segment(aes(x=0, y=P(4/15)-t, xend=4/15, yend=P(4/15)-t), linetype="dashed") +
   annotate("text", x=0.3, y = 0.5, label="Prix perçu par le monopole avec taxe")
 ```
 
 Si le gouvernement utilise une taxe négative (= une subvention), alors le gouvernement peut augmenter la production et de diminuer le prix.
 
-### Taxe forfaitaire
+#### Taxe forfaitaire
+ 
+::: { .definition name="Taxe forfaitaire" }
+Une taxe forfaitaire est une taxe $T$ imposée au monopole directement sur son profit, indépendamment de tout (prix ou quantité produite).
+:::
 
 Avec une taxe forfaitaire, l'état prélève un montant $T$ indépendant de la quantité produite sur le profit du producteur.
 \[
@@ -625,17 +632,24 @@ La condition du premier ordre de l'équation \@ref(eq:cpo) devient alors :
 \end{array}
 \]
 On retrouve exactement la même condition d'optimalité qu'en l'absence de taxe.
-Si elle n'est pas trop élevée, une taxe forfaitaire n'a *aucune* influence sur la quantité produite et prix.
+Si elle n'est pas trop élevée, une taxe forfaitaire n'a *aucune* influence sur la quantité produite et le prix.
 Si la taxe forfaitaire est très élevée, supérieure au profit $R(q^*) - C(q^*) <T$, le monopole préfère ne rien produire et le surplus social est nul.
 
 On peut donc envisager de combiner une subvention unitaire au monopole combinée à une taxe forfaitaire pour augmenter le surplus total.
 
-### Impôt sur profit
+#### Impôt sur les bénéfices (profit)
 
-Au lieu de taxer chaque unité produite, on peut taxe le niveau de profit à un taux $t$.
-Le profit devient alors
+Un autre type d'imposition possible est l'impôt sur les bénéfices.
+
+::: { .definition name="Impôt sur les bénéfices"}
+L'impôt sur les bénéfices consiste à taxer le profit à un taux $t$.
+On impose au monopole de payer un pourcentage de ses profits en impôts.
+:::
+
+Au lieu de taxer chaque unité produite, on taxe le niveau de profit à un taux $t$.
+Le profit s'écrit alors :
 \[
-\pi(q) = R(q) - C(q) -t( R(q) - C(q)) = (1-t)(R(q) - C(q))
+\pi(q) = R(q) - C(q) -t(R(q) - C(q)) = (1-t)(R(q) - C(q))
 \]
 La condition du premier ordre de l'équation \@ref(eq:cpo) devient alors :
 \[
@@ -646,14 +660,14 @@ La condition du premier ordre de l'équation \@ref(eq:cpo) devient alors :
 \end{array}
 \]
 
-Comme pour la taxe forfaitaire, le comportement du monopole n'est pas modifié par une taxe sur le profit.
+Comme pour la taxe forfaitaire, le comportement du monopole n'est pas modifié par un impôt sur les bénéfices.
 On peut donc aussi envisager une subvention à la production et une taxe proportionnelle sur le profit.
 
-### Fixation d'un prix maximum
+### Prix maximal
 
-Le gouvernement interdit de vendre au-dessus d'un prix maximum $p^{max}$.
 
-Le gouvernement modifie ainsi la demande perçue par le producteur.
+L'État fixe un *prix maximal* $p^{max}$ au dessus duquel le monopole ne peut pas vendre.
+Il modifie ainsi la demande perçue par le producteur.
 
 ```{r monopoleprixmaximal, fig.cap="Fixation d'un prix maximal supérieur au prix de CPP."}
 pmax <- 0.6
@@ -672,9 +686,9 @@ p_prixmax <- ggplot() +
   geom_function(fun=function(x) Rm(x), colour = "green") +
   labs(x="quantité", y = "prix") +
   geom_function(fun=function(x) Cm(x), colour="red") +
-  annotate("text", x=1, y=0.2, label=TeX("$P$"), color="blue") +
-  annotate("text", x=0.4, y=0.2, label=TeX("$R_m$"), color="green") +
-  annotate("text", x=1, y=Cm(1)-0.1, label=TeX("$C_m$"), color="red")
+  annotate("text", x=0.2, y=P(0.2), label="demande", color="blue") +
+  annotate("text", x=0.3, y=Rm(0.3), label="recette marginale", color="green") +
+  annotate("text", x=1, y=Cm(1)-0.1, label="coût marginal", color="red")
 
 
 p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkred") +
@@ -682,10 +696,10 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkre
   geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkgreen") +
   geom_segment(aes(x=1-pmax, y=0.2, xend=0.5, yend=0), color="darkgreen") +
   geom_segment(aes(x=1-pmax, y=pmax, xend=0.4, yend=0.2), color="darkgreen") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax, P(1/3)), labels=c(TeX("$p_{max}$"), TeX("$p^*$"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(1/3, pmax), labels=c(TeX("$q^*$"), TeX("$q^*_{max}$"))) +
-  annotate("text", x=1, y=0.1, label="Demande avec un prix maximal", color="darkred") +
-  annotate("text", x=0.5, y=0.1, label="Recette marginale avec un prix max", color="darkgreen")
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax, P(qm)), labels=c(TeX("$p^{max}>p^*_{CPP}$"), TeX("$p^*_m$"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, 1-pmax), labels=c(TeX("$q^*_m$"), TeX("$q^*_{max}$"))) +
+  annotate("text", x=0.9, y=0.1, label="Demande avec un prix maximal", color="darkred") +
+  annotate("text", x=0.5, y=0.3, label="Recette marginale avec un prix max", color="darkgreen")
 ```
 
 ```{r monopoleprixmaximal2, fig.cap="Fixation d'un prix maximal inférieur au prix de CPP."}
@@ -694,10 +708,10 @@ pmax=0.2
 p_prixmax +geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkred") +
   geom_segment(aes(x=1-pmax, y=pmax, xend=1, yend=0), color="darkred") +
   geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkgreen") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax), labels=c(TeX("$p^*_{max}=p^*_{CPP}$"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax), labels=c(TeX("$q^*_{max}=q^*_{CPP}$"))) +
-  annotate("text", x=1, y=0.1, label="Demande avec un prix maximal", color="darkred") +
-  annotate("text", x=0.5, y=0.1, label="Recette marginale avec un prix max", color="darkgreen")
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm), pmax), labels=c(TeX("$p^*_m$"), TeX("$p^{max}<p^*_{CPP}$"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, pmax), labels=c(TeX("$q^*_m$"), TeX("$q^*_{max}$"))) +
+  annotate("text", x=0.9, y=0.1, label="Demande avec un prix maximal", color="darkred") +
+  annotate("text", x=0.5, y=0.3, label="Recette marginale avec un prix max", color="darkgreen")
 ```
 
 Si le prix maximum est inférieur au prix de concurrence pure et parfaite, les quantités produites peuvent devenir sous-optimale.
@@ -706,22 +720,29 @@ Le gouvernement peux maximiser le surplus social en prenant le prix concurrentie
 L'équilibre a lieu quand le coût marginal et la demande se croisent.
 
 ```{r monopoleprixmaximalCPP, fig.cap="Fixation d'un prix maximal égal au prix de CPP."}
-pmax=0.5
+pmax=P(qcpp)
 
 p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkred") +
   geom_segment(aes(x=1-pmax, y=pmax, xend=1, yend=0), color="darkred") +
   geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkgreen") +
   geom_segment(aes(x=1-pmax, y=pmax, xend=pmax, yend=0), color="darkgreen") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax, P(1/3)), labels=c(TeX("$p_{max}$"), TeX("$p^*$"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(1/3, pmax), labels=c(TeX("$q^*$"), TeX("$q^*_{max}$"))) +
-  annotate("text", x=1, y=0.1, label="Demande avec un prix maximal", color="darkred") +
-  annotate("text", x=0.5, y=0.1, label="Recette marginale avec un prix max", color="darkgreen")
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax, P(qm)), labels=c(TeX("$p_{max}=p^*_{CPP}$"), TeX("$p^*_m$"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, qcpp), labels=c(TeX("$q^*_m$"), TeX("$q^*_{max}=q^*_{CPP}$"))) +
+  annotate("text", x=0.9, y=0.1, label="Demande avec un prix maximal", color="darkred") +
+  annotate("text", x=0.5, y=0.2, label="Recette marginale avec un prix max", color="darkgreen")
 ```
 
 Avec un prix maximum égal au prix de concurrence pure et parfaite, le revenu marginal coupe la courbe de coût marginal au point d'équilibre de la concurrence pure et parfaite.
+Le prix maximal génère alors exactement la situation de CPP.
+On est donc dans une situation optimale au sens de Pareto.
 
-Globalement, si le prix maximal est entre le prix de monopole et le prix de concurrence pure et parfaite, alors la quantité produite augmente quand le prix maximal diminue.
-Si au contraire le prix maximal est inférieur au prix de CPP (et donc de monopole), alors la quantité produite diminue quand le prix maximal augmente.
+::: {.proposition name="Evolution des quantités produites avec un prix maximal"}
+Trois situations sont possibles avec un prix maximal  :
+
+1. S'il est supérieur au prix de monopole ($p^{max}>p^*_m$), alors le prix maximal n'a aucune incidence.
+2. S'il est entre le prix de monopole et le prix de concurrence pure et parfaite ($p^*_{CPP}\leq p^{max}\leq p^*_m$), alors la quantité produite augmente quand le prix maximal diminue.
+3. S'il est inférieur au prix de CPP, et donc de monopole ($p^*_{CPP}> p^{max}$), alors la quantité produite diminue quand le prix maximal augmente.
+:::
 
 ## Le monopole naturel
 
@@ -766,8 +787,8 @@ CM_naturel <- function(q){q/32+log(1+q)/q+1/q}
 D1 <- function(q){10-q}
 D2 <- function(q){5-2*q}
 
-q1 <- (143+sqrt(30241))/34
-q2 <- (47+sqrt(10657))/66
+qm <- (143+sqrt(30241))/34
+qcpp <- (47+sqrt(10657))/66
 
 
 
@@ -780,7 +801,7 @@ p_naturel <- ggplot() +
   annotate("text", x=2, y=2, label="Demande 2", color="darkgreen") +
   geom_function(fun=D2, color="darkgreen")
   
-p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 10), breaks=c(q2, q1), labels=c(TeX("$q_2$"), TeX("$q_1$"))) +
+p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 10), breaks=c(qcpp, qm), labels=c(TeX("$q_2$"), TeX("$q_1$"))) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(), labels=c()) +
   annotate("text", x=9, y=2, label="Demande 1", color="green") +
   geom_function(fun=D1, color="green")
@@ -817,8 +838,8 @@ fn <- function(x){CM_naturel(x)-D2(x)}
 qr <- uniroot(fn, c(0.5, 2.5))$root
 qm <- uniroot(fn2, c(0.5, 1.25))$root
 
-p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(q2, qm, qr), labels=c(TeX("$q_{CPP}^*$"), TeX("$q_{m}$"), TeX("$q_R$"))) +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 5), breaks=c(D2(qm), D2(qr), D2(q2)), labels=c(TeX("$p_m$"), TeX("$p_R$"), TeX("$p_{CPP}$"))) +
+p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(qcpp, qm, qr), labels=c(TeX("$q_{CPP}^*$"), TeX("$q_{m}$"), TeX("$q_R$"))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 5), breaks=c(D2(qm), D2(qr), D2(qcpp)), labels=c(TeX("$p_m$"), TeX("$p_R$"), TeX("$p_{CPP}$"))) +
   annotate("text", x=1, y=2, label=TeX("$R_m$"), color="blue") +
   geom_function(fun=Rm2, color="blue")
 
@@ -918,23 +939,23 @@ Les prix de ventes sont nécessairement *décroissants* avec la quantité vendue
 ```{r monopolediscri2degre, fig.cap="Graphique avec une discrimination du deuxième degré. Les quantités inférieures à $q_1$ sont vendues au prix $p_1$, les suivantes au prix $p_2$."}
 p_discri2degre <- p
 
-q1 <- qm/2
-q2 <- qm
-p1 <- D(q1)
-p2 <- D(q2)
+qm <- qm/2
+qcpp <- qm
+p1 <- D(qm)
+p2 <- D(qcpp)
 
-Sp <- data.frame(x=c(0, q1, q1, q2), ymin=c(Cm(0), Cm(q1), Cm(q1), Cm(q2)), ymax=c(p1, p1, p2, p2))
-Sc <- data.frame(x=c(0, q1, q1, q2), ymax=c(P(0), P(q1), P(q1), P(q2)), ymin=c(p1, p1, p2, p2) )
+Sp <- data.frame(x=c(0, qm, qm, qcpp), ymin=c(Cm(0), Cm(qm), Cm(qm), Cm(qcpp)), ymax=c(p1, p1, p2, p2))
+Sc <- data.frame(x=c(0, qm, qm, qcpp), ymax=c(P(0), P(qm), P(qm), P(qcpp)), ymin=c(p1, p1, p2, p2) )
 
-p_discri2degre + geom_segment(x=0, y=p1, xend=q1, yend=p1, color='black', linetype='dashed') +
+p_discri2degre + geom_segment(x=0, y=p1, xend=qm, yend=p1, color='black', linetype='dashed') +
   geom_function(fun=function(x) Cm(x), colour = "red") +
-  geom_segment(x=q1,y=p2, xend=q2, yend=p2, color='black', linetype='dashed') +
+  geom_segment(x=qm,y=p2, xend=qcpp, yend=p2, color='black', linetype='dashed') +
   geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill='red', alpha=0.5) +
   geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill='blue', alpha=0.5) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(p1, p2), labels=c(TeX("$p_1$"), TeX("$p_2$"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(q1, q2), labels = c(TeX("$q_1$"), TeX("$q_2$"))) +
-  annotate("text", x=q1, y=p1/2, label="Surplus du monopole", color='red') +
-  annotate("text", x=q1+0.1, y=p1, label="Surplus des consommateurs", color='blue') +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(qm, qcpp), labels = c(TeX("$q_1$"), TeX("$q_2$"))) +
+  annotate("text", x=qm, y=p1/2, label="Surplus du monopole", color='red') +
+  annotate("text", x=qm+0.1, y=p1, label="Surplus des consommateurs", color='blue') +
   annotate("text", x=0.7, y=Cm(0.7), label="Courbe d'offre", color='red')
 ```
 
@@ -1043,7 +1064,7 @@ Autrement dit
 \[
 \left|\varepsilon_{q/p_B}(q_B^*)\right|>\left|\varepsilon_{q/p_A}(q^*_A)\right|
 \]
-Le prix est donc plus faible pour le groupe où l’élasticité prix de la demande est plus élevée.
+Le prix est donc plus faible pour le groupe où l'élasticité prix de la demande est plus élevée.
 Le prix est plus élevé pour le groupe avec l'élasticité la plus faible, les moins réactifs au prix.
 
 :::{.example}
