@@ -170,7 +170,7 @@ La courbe de recette marginale est toujours située en-dessous de la courbe de d
 \[
 R_m(q) = P(q) + qP'(q) < P(q)
 \]
-var $P'(q)$ est négative (la demande inverse est décroissante).
+car $P'(q)$ est négative (la demande inverse est décroissante).
 
 #### Exemple avec une courbe de demande linéaire
 
