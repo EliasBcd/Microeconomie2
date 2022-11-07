@@ -540,6 +540,90 @@ Il existe des consommateurs prêt à acheter à un prix supérieur au coût marg
 Il est donc possible d'avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole.
 Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d'autre pour obtenir cette amélioration.
 
+## Le monopole naturel
+
+Une situation de monopole est dite *naturelle* si le monopole émerge à cause d'une structure particulière de la technologie de production et des coûts, plutôt qu'à cause d'une disposition légale.
+
+::: {.definition name="Rendements d'échelles"}
+Les *rendements d'échelles* sont croissants lorsque la technologie de production $f$ est telle que :
+\[
+f(\lambda z_1, \lambda z_2, ...\lambda z_n) > \lambda f(z_1,z_2, ..., z_n)
+\]
+où les $z_i$ sont les facteurs de productions.
+En mots : une entreprise utilisant $\lambda$ fois plus de facteurs de productions qu'une petite entreprise produit plus que $\lambda$ petites entreprises réunies.
+:::
+
+Une conséquence des rendements d'échelle croissants est que le coût moyen est décroissant :
+\[
+C_M(f(\lambda z)) =\frac{\lambda z\cdot w_z}{f(\lambda z)} < C_M(\lambda f(z)) = \frac{\lambda z\cdot w_z}{\lambda f(z)}
+\]
+car $f(\lambda z)>\lambda f(z)$
+Cela signifie qu'une seule entreprise qui produit $f(\lambda z)$ est plus efficace que $\lambda$ entreprises qui produisent $\lambda f(z)$.
+Il y a ici des économies d'échelle.
+
+::: { .definition name="Économie d'échelle"}
+Il y a des *économies d'échelle* quand une unité de bien produite en plus revient moins chère que l'unité précédente.
+Cela signifie que le *coût moyen* baisse quand le producteur produit plus d'unités.
+:::
+
+::: {.definition name="Monopole naturel"}
+Un monopole naturel émerge en présence d'économies d'échelles dans la zone de production optimale.
+:::
+
+En général, les économies d'échelles proviennent de coûts fixes élevés.
+Par exemple, lorsqu'il faut investir dans un réseau (ferrés, téléphone, électricité, etc).
+
+Il y a presque toujours une zone où le coût moyen est décroissant, mais elle est rarement très étendue.
+Dans le graphique \@ref(fig:monopolenaturelcout), la demande inverse 1 coupe la courbe de coût marginal à un endroit où les économies d'échelle sont décroissantes.
+La demande 2, en revanche, la coupe à un endroit où les économies d'échelle sont croissantes.
+
+
+```{r monopolenaturelcout, fig.cap="Fonction de coût et demande avec et sans économies d'échelle."}
+Cm_naturel <- function(q){q/16+1/(1+q)}
+CM_naturel <- function(q){q/32+log(1+q)/q+1/q}
+D1 <- function(q){10-q}
+D2 <- function(q){5-2*q}
+
+qm <- (143+sqrt(30241))/34
+qcpp <- (47+sqrt(10657))/66
+
+
+
+p_naturel <- ggplot() +
+  geom_function(fun=Cm_naturel, color="darkred") +
+  geom_function(fun=CM_naturel, color="red") +
+  labs(x="quantité", y = "prix") +
+  annotate("text", x=1, y=1.5, label="coût moyen", color="red") +
+  annotate("text", x=1, y=0.5, label="coût marginal", color="darkred") +
+  annotate("text", x=2, y=2, label="demande 2", color="darkgreen") +
+  geom_function(fun=D2, color="darkgreen")
+  
+p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 10), breaks=c(qcpp, qm), labels=c(TeX("$q_2$"), TeX("$q_1$"))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(), labels=c()) +
+  annotate("text", x=9, y=2, label="demande 1", color="green") +
+  geom_function(fun=D1, color="green")
+
+```
+
+
+::: { .remark name="Lien entre coût marginal et coût moyen en monopole naturel."} 
+Lorsque le coût moyen est décroissant, c'est que le coût marginal est inférieur au coût moyen.
+\[
+C_M(q) = \frac{C(q)}{q}
+\]
+\[
+C_M'(q) =\frac{C'(q)q-C(q)}{q^2} = \frac{C_m(q)-C_M(q)}{q}
+\]
+Or $C_M'(q)<0$, comme le coût marginal est décroissant.
+On en déduit donc que 
+\[
+C_m(q)-C_M(q)< 0 \Leftrightarrow C_m(q)<C_M(q)
+\]
+:::
+
+::: { .remark name="Rendements d'échelle et économies d'échelle"}
+Il ne faut pas confondre les rendements d'échelle, qui mettent en relation les **quantités** de facteurs de productions et les quantités de biens produites et économies d'échelle, qui est une notion lié au **coût** de production des unités de biens produites.
+:::
 
 ## Régulation du monopole
 
@@ -744,91 +828,10 @@ Trois situations sont possibles avec un prix maximal  :
 3. S'il est inférieur au prix de CPP, et donc de monopole ($p^*_{CPP}> p^{max}$), alors la quantité produite diminue quand le prix maximal augmente.
 :::
 
-## Le monopole naturel
-
-Une situation de monopole naturel émerge à cause d'une structure particulière de la technologie de production et des coûts, plutôt qu'à cause d'une disposition légale.
+### Régulation du monopole naturel
 
 
-::: {.definition name="Monopole naturel"}
-Un monopole naturel émerge en présence d'une technologie dotée de rendements d'échelles *croissants* dans la zone de production optimale.
-:::
-
-Les rendements d'échelles sont croissants lorsque la technologie de production $f$ est telle que :
-\[
-f(\lambda z_1, \lambda z_2, ...\lambda z_n) > \lambda f(z_1,z_2, ..., z_n)
-\]
-où les $z_i$ sont les facteurs de productions.
-En mots : une entreprise utilisant $\lambda$ fois plus de facteurs de productions qu'une petite entreprise produit plus que $\lambda$ petites entreprises réunies.
-
-En général, un monopole naturel émerge à cause de coûts fixes élevés.
-Par exemple, lorsqu'il faut investir dans un réseau (ferrés, téléphone, électricité, etc).
-
-Une conséquence des rendements d'échelle croissants est que le coût moyen est décroissant :
-\[
-C_M(f(\lambda z)) =\frac{\lambda z\cdot w_z}{f(\lambda z)} < C_M(\lambda f(z)) = \frac{\lambda z\cdot w_z}{\lambda f(z)}
-\]
-car $f(\lambda z)>\lambda f(z)$
-Cela signifie qu'une seule entreprise qui produit $f(\lambda z)$ est plus efficace que $\lambda$ entreprises qui produisent $\lambda f(z)$.
-Il y a ici des économies d'échelle.
-
-::: { .definition name="Économie d'échelle"}
-Il y a des *économies d'échelle* quand une unité de bien produite en plus revient moins chère que l'unité précédente.
-Cela signifie que le *coût moyen* baisse quand le producteur produit plus d'unités.
-:::
-
-De manière générale, il y a presque toujours une zone où le coût moyen est décroissant, mais elle est rarement très étendue.
-Dans le graphique \@ref(fig:monopolenaturelcout), la demande inverse 1 coupe la courbe de coût marginal à un endroit où les économies d'échelle sont décroissantes.
-La demande 2, en revanche, la coupe à un endroit où les économies d'échelle sont croissantes.
-
-
-```{r monopolenaturelcout, fig.cap="Fonction de coût et demande avec et sans économies d'échelle."}
-Cm_naturel <- function(q){q/16+1/(1+q)}
-CM_naturel <- function(q){q/32+log(1+q)/q+1/q}
-D1 <- function(q){10-q}
-D2 <- function(q){5-2*q}
-
-qm <- (143+sqrt(30241))/34
-qcpp <- (47+sqrt(10657))/66
-
-
-
-p_naturel <- ggplot() +
-  geom_function(fun=Cm_naturel, color="darkred") +
-  geom_function(fun=CM_naturel, color="red") +
-  labs(x="quantité", y = "prix") +
-  annotate("text", x=0.5, y=2, label=TeX("$C_M$"), color="red") +
-  annotate("text", x=1, y=0.5, label=TeX("$C_m$"), color="darkred") +
-  annotate("text", x=2, y=2, label="Demande 2", color="darkgreen") +
-  geom_function(fun=D2, color="darkgreen")
-  
-p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 10), breaks=c(qcpp, qm), labels=c(TeX("$q_2$"), TeX("$q_1$"))) +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(), labels=c()) +
-  annotate("text", x=9, y=2, label="Demande 1", color="green") +
-  geom_function(fun=D1, color="green")
-
-```
-
-
-::: { .remark name="Lien entre coût marginal et coût moyen en monopole naturel."} 
-Lorsque le coût moyen est décroissant, c'est que le coût marginal est inférieur au coût moyen.
-\[
-C_M(q) = \frac{C(q)}{q}
-\]
-\[
-C_M'(q) =\frac{C'(q)q-C(q)}{q^2} = \frac{C_m(q)-C_M(q)}{q}
-\]
-Or $C_M'(q)<0$, comme le coût marginal est décroissant.
-On en déduit donc que 
-\[
-C_m(q)-C_M(q)< 0 \Leftrightarrow C_m(q)<C_M(q)
-\]
-:::
-
-::: { .remark name="Rendements d'échelle et économies d'échelle"}
-Il ne faut pas confondre les rendements d'échelle, qui mettent en relation les **quantités** de facteurs de productions et les quantités de biens produites et économies d'échelle, qui est une notion lié au **coût** de production des unités de biens produites.
-:::
-
-**Question :** Que se passe-t-il quand la fonction de demande inverse coupe la courbe de coût marginal dans la partie où le coût marginal est inférieur au coût moyen (où $C_m<C_M$) ?
+Que se passe-t-il quand la fonction de demande inverse coupe la courbe de coût marginal dans la partie où le coût marginal est inférieur au coût moyen (où $C_m<C_M$) ?
 
 ```{r monopolenaturel, fig.cap="Régulation du monopole naturel."}
 Rm2 <- function(q){5-4*q}
@@ -840,11 +843,11 @@ qm <- uniroot(fn2, c(0.5, 1.25))$root
 
 p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(qcpp, qm, qr), labels=c(TeX("$q_{CPP}^*$"), TeX("$q_{m}$"), TeX("$q_R$"))) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 5), breaks=c(D2(qm), D2(qr), D2(qcpp)), labels=c(TeX("$p_m$"), TeX("$p_R$"), TeX("$p_{CPP}$"))) +
-  annotate("text", x=1, y=2, label=TeX("$R_m$"), color="blue") +
+  annotate("text", x=0.5, y=3, label="recette marginale", color="blue") +
   geom_function(fun=Rm2, color="blue")
 
 ```
-Si on impose une tarification au coût marginal, alors le monopole fait des pertes, car le prix est inférieur au coût moyen.
+Si on impose une tarification au coût marginal, à l'aide d'un prix maximal, par exemple, alors le monopole fait des pertes, car le prix est inférieur au coût moyen.
 La régulation "optimale" généralement utilisée impose *un prix au coût moyen* et une obligation de satisfaire toute la demande.
 Le monopole fait alors un profit nul.
 
@@ -907,7 +910,7 @@ p_discriparfaite +   geom_function(fun=function(x) Rm(x), colour = "darkgreen") 
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(pcpp, pm), labels=c(TeX("$p_{CPP}^*$"), TeX("$p_m^*$"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(qm, qcpp), labels = c(TeX("$q_m^*$"), TeX("$q_{CPP}^*=q_d$"))) +
   annotate("text", x=0.45, y=Rm(0.45), colour="darkgreen", label=TeX("$R_m$ en monopole")) +
-  annotate("text", x=0.7, y=Cm(0.7), colour="darkred", label=TeX("$C_m$")) +
+  annotate("text", x=0.7, y=Cm(0.7), colour="red", label="coût marginal") +
   geom_segment(x=qm, y=0, xend=qm, yend=pm, linetype="dashed") +
   geom_segment(x=0, y=pm, xend=qm, yend=pm, linetype="dashed") +
   geom_ribbon(data=Sp_discri, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
@@ -923,9 +926,11 @@ En effet, le surplus social est maximal (mais capturé entièrement par le monop
 En pratique, il est très difficile de faire de la discrimination parfaite.
 Les entreprises essaient de s'en approcher le plus possible.
 
-Un exemple existe, lors d'une vente de bons du trésors des Etats-Unis.
-Chaque ménage intéressé soumettait une offre (prix, quantité) au gouvernement.
+::: {.example name="Exemple de discrimination parfaite"}
+Lors d'une vente de bons du trésors des Etats-Unis, chaque ménage intéressé soumettait une offre (prix, quantité) au gouvernement.
 Le gouvernement triait les offres par ordre décroissant de prix et les satisfait jusqu'à épuisement des bons à vendre.
+:::
+
 
 ### Discrimination du deuxième degré
 
@@ -939,8 +944,8 @@ Les prix de ventes sont nécessairement *décroissants* avec la quantité vendue
 ```{r monopolediscri2degre, fig.cap="Graphique avec une discrimination du deuxième degré. Les quantités inférieures à $q_1$ sont vendues au prix $p_1$, les suivantes au prix $p_2$."}
 p_discri2degre <- p
 
-qm <- qm/2
-qcpp <- qm
+qm <- 1/4
+qcpp <- 1/2
 p1 <- D(qm)
 p2 <- D(qcpp)
 
@@ -949,7 +954,7 @@ Sc <- data.frame(x=c(0, qm, qm, qcpp), ymax=c(P(0), P(qm), P(qm), P(qcpp)), ymin
 
 p_discri2degre + geom_segment(x=0, y=p1, xend=qm, yend=p1, color='black', linetype='dashed') +
   geom_function(fun=function(x) Cm(x), colour = "red") +
-  geom_segment(x=qm,y=p2, xend=qcpp, yend=p2, color='black', linetype='dashed') +
+  geom_segment(x=0,y=p2, xend=qcpp, yend=p2, color='black', linetype='dashed') +
   geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill='red', alpha=0.5) +
   geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill='blue', alpha=0.5) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(p1, p2), labels=c(TeX("$p_1$"), TeX("$p_2$"))) +
@@ -969,7 +974,7 @@ Plus il y a de seuils, plus on s'approche d'un situation de discrimination parfa
 <!-- A faire si le temps le permet. -->
 
 Il s'agit de faire payer un prix différent à chaque groupe de consommateur, en fonction des caractéristiques de leurs fonctions de demande.
-Tous les membres d'un groupe payent donc le même prix, contrairement à la discrimination au premier degré.
+Tous les membres d'un groupe paient donc le même prix, contrairement à la discrimination au premier degré.
 Les groupes sont en général caractérisés par des propensions à payer différentes.
 Il s'agit d'une segmentation des consommateurs.
 
@@ -989,9 +994,9 @@ Puis ou résout 1 à l'aide de la solution de 2.
 
 On modélise le problème de la manière suivante :
 
-- 2 groupes A et B;
-- Avec des fonctions de demande inverses $P_A(q_A)$ et $P_B(q_B)$;
-- Une quantité $q$ totale a été produite, qu'il faut répartir entre les 2 groupes : $q=q_A+q_B$
+- 2 groupes A et B ;
+- Avec des fonctions de demande inverses $P_A(q_A)$ et $P_B(q_B)$ ;
+- Une quantité $q$ totale a été produite, qu'il faut répartir entre les 2 groupes : $q=q_A+q_B$.
 
 Le problème du monopole s'écrit :
 \[
@@ -1018,7 +1023,7 @@ La condition du premier ordre s'écrit :
 (\#eq:cpo3e)
 \end{array}
 \]
-L'équation \@ref(eq:cpo3e) nous dit que le monopole réparti la quantité totale produite de manière égaliser les recettes marginales entre les deux groupes.
+L'équation \@ref(eq:cpo3e) nous dit que le monopole réparti la quantité totale produite de manière à égaliser les recettes marginales entre les deux groupes.
 
 Intuitivement, si la recette marginale issue du groupe A est supérieure à celle issue du groupe B ($R_{mA}(q_A) > R_{mB}(q_B)$), alors en diminuant  la quantité $q_B$ dans le groupe B et en la transférant au groupe A, le monopole perd $R_{mB}(q_B)$ et gagne $R_{mA}(q_A)$, donc la recette totale augmente et le profit aussi.
 Inversement dans le cas opposé.
