@@ -584,8 +584,8 @@ CM_naturel <- function(q){q/32+log(1+q)/q+1/q}
 D1 <- function(q){10-q}
 D2 <- function(q){5-2*q}
 
-qm <- (143+sqrt(30241))/34
-qcpp <- (47+sqrt(10657))/66
+q1 <- (143+sqrt(30241))/34
+q2 <- (47+sqrt(10657))/66
 
 
 
@@ -598,7 +598,7 @@ p_naturel <- ggplot() +
   annotate("text", x=2, y=2, label="demande 2", color="darkgreen") +
   geom_function(fun=D2, color="darkgreen")
   
-p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 10), breaks=c(qcpp, qm), labels=c(TeX("$q_2$"), TeX("$q_1$"))) +
+p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 10), breaks=c(q2, q1), labels=c(TeX("$q_2$"), TeX("$q_1$"))) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(), labels=c()) +
   annotate("text", x=9, y=2, label="demande 1", color="green") +
   geom_function(fun=D1, color="green")
@@ -660,7 +660,7 @@ Pour le monopole, c'est comme si l'État ajoutait un coût $t$ à chaque unité 
 C'est effectivement ce que l'État fait si on considère le coût de production au sens large.
 
 ```{r monopoletaxeunitaire, fig.cap="Impact d'une taxe unitaire : augmentation du coût marginal."}
-t = 0.2
+t <- 0.2
 
 p_taxeunitaire <- ggplot() +
   geom_function(fun=function(x) P(x), colour = "blue") +
@@ -739,7 +739,7 @@ La condition du premier ordre de l'équation \@ref(eq:cpo) devient alors :
 \[
 \begin{array}{rl}
 &((1-t)(R(q)-C(q)))'(q^*) = 0\\
-\Leftrightarrow & (1-t)(R_m(q^*)-C_m(q*)) = 0\\
+\Leftrightarrow & (1-t)(R_m(q^*)-C_m(q^*)) = 0\\
 \Leftrightarrow & R_m(q^*) = C_m(q^*)
 \end{array}
 \]
@@ -782,29 +782,30 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkre
   geom_segment(aes(x=1-pmax, y=pmax, xend=0.4, yend=0.2), color="darkgreen") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax, P(qm)), labels=c(TeX("$p^{max}>p^*_{CPP}$"), TeX("$p^*_m$"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, 1-pmax), labels=c(TeX("$q^*_m$"), TeX("$q^*_{max}$"))) +
-  annotate("text", x=0.9, y=0.1, label="Demande avec un prix maximal", color="darkred") +
-  annotate("text", x=0.5, y=0.3, label="Recette marginale avec un prix max", color="darkgreen")
+  annotate("text", x=0.9, y=0.1, label="demande avec un prix maximal", color="darkred") +
+  annotate("text", x=0.5, y=0.3, label="recette marginale avec un prix max", color="darkgreen")
 ```
 
 ```{r monopoleprixmaximal2, fig.cap="Fixation d'un prix maximal inférieur au prix de CPP."}
-pmax=0.2
+pmax <- 0.2
 
-p_prixmax +geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkred") +
+p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkred") +
   geom_segment(aes(x=1-pmax, y=pmax, xend=1, yend=0), color="darkred") +
   geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkgreen") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm), pmax), labels=c(TeX("$p^*_m$"), TeX("$p^{max}<p^*_{CPP}$"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, pmax), labels=c(TeX("$q^*_m$"), TeX("$q^*_{max}$"))) +
-  annotate("text", x=0.9, y=0.1, label="Demande avec un prix maximal", color="darkred") +
-  annotate("text", x=0.5, y=0.3, label="Recette marginale avec un prix max", color="darkgreen")
+  annotate("text", x=0.9, y=0.1, label="demande avec un prix maximal", color="darkred") +
+  annotate("text", x=0.5, y=0.3, label="recette marginale avec un prix max", color="darkgreen")
 ```
 
-Si le prix maximum est inférieur au prix de concurrence pure et parfaite, les quantités produites peuvent devenir sous-optimale.
+Si le prix maximum est inférieur au prix de concurrence pure et parfaite, les quantités produites peuvent devenir sous-optimales.
 Le gouvernement peux maximiser le surplus social en prenant le prix concurrentiel comme prix maximum.  
 *Rappel :* En CPP, on obtient le prix à l'aide de la courbe de coût marginal.
 L'équilibre a lieu quand le coût marginal et la demande se croisent.
 
 ```{r monopoleprixmaximalCPP, fig.cap="Fixation d'un prix maximal égal au prix de CPP."}
-pmax=P(qcpp)
+pmax <-  P(qcpp)
+
 
 p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkred") +
   geom_segment(aes(x=1-pmax, y=pmax, xend=1, yend=0), color="darkred") +
@@ -812,8 +813,8 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkre
   geom_segment(aes(x=1-pmax, y=pmax, xend=pmax, yend=0), color="darkgreen") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax, P(qm)), labels=c(TeX("$p_{max}=p^*_{CPP}$"), TeX("$p^*_m$"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, qcpp), labels=c(TeX("$q^*_m$"), TeX("$q^*_{max}=q^*_{CPP}$"))) +
-  annotate("text", x=0.9, y=0.1, label="Demande avec un prix maximal", color="darkred") +
-  annotate("text", x=0.5, y=0.2, label="Recette marginale avec un prix max", color="darkgreen")
+  annotate("text", x=0.9, y=0.1, label="demande avec un prix maximal", color="darkred") +
+  annotate("text", x=0.5, y=0.2, label="recette marginale avec un prix max", color="darkgreen")
 ```
 
 Avec un prix maximum égal au prix de concurrence pure et parfaite, le revenu marginal coupe la courbe de coût marginal au point d'équilibre de la concurrence pure et parfaite.
@@ -825,13 +826,14 @@ Trois situations sont possibles avec un prix maximal  :
 
 1. S'il est supérieur au prix de monopole ($p^{max}>p^*_m$), alors le prix maximal n'a aucune incidence.
 2. S'il est entre le prix de monopole et le prix de concurrence pure et parfaite ($p^*_{CPP}\leq p^{max}\leq p^*_m$), alors la quantité produite augmente quand le prix maximal diminue.
-3. S'il est inférieur au prix de CPP, et donc de monopole ($p^*_{CPP}> p^{max}$), alors la quantité produite diminue quand le prix maximal augmente.
+3. S'il est inférieur au prix de CPP et donc de monopole ($p^*_{CPP}> p^{max}$), alors la quantité produite diminue quand le prix maximal augmente.
 :::
 
 ### Régulation du monopole naturel
 
-
-Que se passe-t-il quand la fonction de demande inverse coupe la courbe de coût marginal dans la partie où le coût marginal est inférieur au coût moyen (où $C_m<C_M$) ?
+Dans le cas d'un monopole naturel, le coût marginal est inférieur au coût moyen à l'optimum.
+Une régulation qui maximise le surplus total est une régulation qui fait en sorte que la quantité produite est celle produite en concurrence pure et parfaite.
+Dans le cadre du monopole naturel, cela signifie en général que le coût moyen sera supérieur au coût marginal, et donc au prix d'échange de la concurrence pure et parfaite, comme illustré dans la figure \@ref(fig:monopolenaturel).
 
 ```{r monopolenaturel, fig.cap="Régulation du monopole naturel."}
 Rm2 <- function(q){5-4*q}
@@ -841,7 +843,7 @@ fn <- function(x){CM_naturel(x)-D2(x)}
 qr <- uniroot(fn, c(0.5, 2.5))$root
 qm <- uniroot(fn2, c(0.5, 1.25))$root
 
-p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(qcpp, qm, qr), labels=c(TeX("$q_{CPP}^*$"), TeX("$q_{m}$"), TeX("$q_R$"))) +
+p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(qcpp, qm, qr), labels=c(TeX("$q_{CPP}^*$"), TeX("$q_{m}^*$"), TeX("$q_R$"))) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 5), breaks=c(D2(qm), D2(qr), D2(qcpp)), labels=c(TeX("$p_m$"), TeX("$p_R$"), TeX("$p_{CPP}$"))) +
   annotate("text", x=0.5, y=3, label="recette marginale", color="blue") +
   geom_function(fun=Rm2, color="blue")
@@ -851,7 +853,7 @@ Si on impose une tarification au coût marginal, à l'aide d'un prix maximal, pa
 La régulation "optimale" généralement utilisée impose *un prix au coût moyen* et une obligation de satisfaire toute la demande.
 Le monopole fait alors un profit nul.
 
-Une solution alternative est un prix égal au coût moyen assorti de subventions pour couvrir les pertes.
+Une solution alternative est un prix égal au coût marginal assorti de subventions pour couvrir les pertes.
 
 ## Le monopole discriminant
 
