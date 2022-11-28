@@ -942,8 +942,8 @@ Le gouvernement triait les offres par ordre décroissant de prix et les satisfai
 La discrimination du deuxième degré a lieu lorsque les prix de ventes dépendent des quantités achetées.
 :::
 
-Par exemple, si les 10 premières unités vendues le sont à 5€, et les suivantes à 2€.
-Les prix de ventes sont nécessairement *décroissants* avec la quantité vendue.
+Par exemple, si les 10 premières unités vendues le sont à 5€ et les suivantes à 2€.
+Les prix de vente sont nécessairement *décroissants* avec la quantité vendue.
 
 ```{r monopolediscri2degre, fig.cap="Graphique avec une discrimination du deuxième degré. Les quantités inférieures à $q_1$ sont vendues au prix $p_1$, les suivantes au prix $p_2$."}
 p_discri2degre <- p
@@ -977,8 +977,8 @@ Plus il y a de seuils, plus on s'approche d'un situation de discrimination parfa
 
 <!-- A faire si le temps le permet. -->
 
-Il s'agit de faire payer un prix différent à chaque groupe de consommateur, en fonction des caractéristiques de leurs fonctions de demande.
-Tous les membres d'un groupe paient donc le même prix, contrairement à la discrimination au premier degré.
+Il s'agit de faire payer un prix différent à chaque groupe de consommateur en fonction des caractéristiques de leurs fonctions de demande.
+Tous les membres d'un groupe paient le même prix, contrairement à la discrimination au premier degré.
 Les groupes sont en général caractérisés par des propensions à payer différentes.
 Il s'agit d'une segmentation des consommateurs.
 
@@ -1079,7 +1079,7 @@ Le prix est plus élevé pour le groupe avec l'élasticité la plus faible, les 
 :::{.example}
 Les tarifs "professionnels" dans les transports (avion, train, etc).
 Les professionnels sont moins sensibles au prix car leurs dates de voyage sont moins flexibles que celles des particuliers.
-Leur élasticité prix est donc plus faible et leur prix plus élevés.
+Leurs élasticités-prix sont donc plus faibles et leurs prix plus élevés.
 :::
 
-Des fonctions de demande inverse différentes associées à des élasticités prix de la demande différente aboutissent à des prix différents.
+Des fonctions de demande inverse différentes associées à des élasticités-prix de la demande différente aboutissent à des prix différents.
