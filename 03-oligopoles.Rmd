@@ -24,16 +24,16 @@ p <- ggplot(data=df, aes(x=x)) +
 ```
 
 
-On a vu jusqu'à présent deux cas extrêmes :
+Nous avons étudié jusqu'à présent deux cas extrêmes :
 
 - La concurrence pure et parfaite :
-il y a une infinité d'entreprise infinitésimales sur un marché  donné ;
+il y a une infinité d'entreprises infinitésimales sur un marché  donné ;
 - Le monopole : il y a une seule entreprise sur un marché donné.
 
 Dans les deux cas, le ou les entreprises n'ont pas à se préoccuper des autres entreprises.
 Dans le cas du monopole, parce qu'il n'y en a pas.
-Dans le cas de la CPP, l'entreprise observe le prix du marché et prend sa décision en fonction de ce prix, et uniquement de ce prix. 
-Les actions des autres entreprises ne l'influence pas.
+Dans le cas de la CPP, l'entreprise observe le prix du marché et prend sa décision en fonction de ce prix et uniquement de ce prix. 
+Les actions des autres entreprises ne l'influencent pas.
 
 On considère maintenant la situation où il n'y a plus une seule ou une infinité d'entreprises, mais plusieurs, qui sont en situation d'*interactions stratégiques*.
 Les décisions de chaque acteur dépend des décisions des autres acteurs (ou des anticipations de ces décisions).  
@@ -63,10 +63,9 @@ Chaque entreprise est caractérisée par une quantité produite et un coût :
 
 Les fonctions de coût sont **différentes** entre les deux entreprises, contrairement au cas du monopole discriminant au troisième degré, où l'on considérait $C(q_1+q_2)$.
 
-La fonction de demande inverse sur le marché est $P(q_1+q_2)$.
-C'est différent du monopole discriminant où il y avait une fonction de demande par segment.
+La fonction de demande inverse sur le marché est unique et donnée par $P(q_1+q_2)$, contrairement au monopole discriminant où il y avait une fonction de demande par groupe.
 
-On a donc les fonctions de profit:
+Il y a deux entreprises, donc deux fonctions de profit :
 \[
 \begin{array}{rcl}
 \pi_1(q_1, q_2) &=& P(q_1+q_2)\cdot q_1-C_1(q_1)\\
@@ -96,7 +95,7 @@ On a des profits :
 
 Supposons que l'entreprise 1 *croit* que l'entreprise 2 va produire $q_2^a$. 
 Quelle est sa production optimale ?
-Son problème de maximisation est :
+Son problème de maximisation s'écrit dans ce cas :
 \[
 \max_{q_1} \pi_1(q_1, q_2^a) =  q_1P(q_1+q_2^a)-C_1(q_1)
 \]
@@ -303,7 +302,10 @@ On résout le système et on obtient :
 q_1^*=q_2^* = \frac{a}{3b+2c}
 \]
 
-Quand le problème est symétrique, les deux entreprises en compétition à la Cournot produisent la même quantité de bien.
+::: {.proposition}
+Quand le problème est **symétrique** (=les deux entreprises ont la même fonction de coût), deux entreprises en compétition **à la Cournot** produisent la même quantité de bien.
+:::
+
 
 ### Une intuition graphique : les courbes d'isoprofit
 
@@ -513,10 +515,10 @@ En duopoles / oligopoles de Cournot ou de Stackelberg, les entreprises ne coopè
 
 *Question :*  
 Que se passe-t-il si elles peuvent s'entendre ?
-Par exemple, que se passe-t-il si elle peuvent passer un accord sur la quantité à produire.
+Par exemple, que se passe-t-il si elles peuvent passer un accord sur la quantité à produire.
 
-*Résultats :*  
-Les quantités mises sur le marché vont diminuer, et le prix du marché va augmenter.
+*Résultats :* 
+Les quantités mises sur le marché diminueront et le prix du marché augmentera.
 C'est donc néfaste pour les consommateurs.
 La raison est que le cartel se comporte exactement comme un monopole, puis partage les bénéfices.
 
@@ -549,7 +551,7 @@ C'est un raisonnement très similaire à un monopole discriminant au troisième 
 
 Le profit global du cartel s'écrit :
 \[
-\pi_c=qP(q)-C_A(q_A)-C_B(q_B)=(q_A+q_B)P(q_A+q_B)-C_A(q_A)-C_B(q_B)
+\pi_c(q_A, q_B)=qP(q)-C_A(q_A)-C_B(q_B)=(q_A+q_B)P(q_A+q_B)-C_A(q_A)-C_B(q_B)
 \]
 Où $q=q_A+q_B$.
 Le profit est maximisé lorsque les dérivées partielles suivant chacune des quantités sont nulles (condition du premier ordre), c'est-à-dire lorsque $\frac{\partial\pi_C}{\partial q_A}=0$ et $\frac{\partial\pi_C}{\partial q_B}=0$.
@@ -573,9 +575,11 @@ En utilisant le même raisonnement, on a pour l'entreprise B :
 \[R_m(q) = C_{mA}(q_A) = C_{mB}(q_B)\]
 Le cartel égalise la recette marginale *totale* aux coûts marginaux de chacune des deux entreprises.
 
-*Remarque :* Le cartel ne va pas forcément donner à produire la même quantité à chaque entreprise.
+::: {.remark}
+Le cartel ne donnera pas forcément à produire la même quantité à chaque entreprise.
 La répartition dépend des coûts marginaux respectifs.
 Si les coûts marginaux sont identiques, les productions seront identiques.
+:::
 
 *Intuition :* Supposons que la quantité totale produite est fixée.
 Supposons aussi que $C_{mA}(q_A)>C_{mB}(q_B)$.  
@@ -672,7 +676,9 @@ On retrouve ainsi le résultat $P(q^*)=C_m(q^*)$.
 *Rappel :* En monopole, l'indice de Lerner est :
 \[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]
 
-::: {.definition name="Indice de Lerner d'un producteur $i$"}
+(ref:Lerner) Indice de Lerner d'un producteur $i$
+
+::: {.definition name="(ref:Lerner)"}
 On définit l'indice de Lerner pour un producteur $i$, noté $L_i$, comme son taux de marge :
 \[L_i=\frac{P(q^*) -C_{im}(q^*_i)}{P(q^*)}\]
 :::
