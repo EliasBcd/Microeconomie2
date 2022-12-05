@@ -25,7 +25,7 @@
 <meta name="author" content="Antoine Terracol" />
 
 
-<meta name="date" content="2022-11-28" />
+<meta name="date" content="2022-12-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -214,16 +214,16 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="oligopoles" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chapitre 4</span> Oligopoles<a href="oligopoles.html#oligopoles" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>On a vu jusqu’à présent deux cas extrêmes :</p>
+<p>Nous avons étudié jusqu’à présent deux cas extrêmes :</p>
 <ul>
 <li>La concurrence pure et parfaite :
-il y a une infinité d’entreprise infinitésimales sur un marché donné ;</li>
+il y a une infinité d’entreprises infinitésimales sur un marché donné ;</li>
 <li>Le monopole : il y a une seule entreprise sur un marché donné.</li>
 </ul>
 <p>Dans les deux cas, le ou les entreprises n’ont pas à se préoccuper des autres entreprises.
 Dans le cas du monopole, parce qu’il n’y en a pas.
-Dans le cas de la CPP, l’entreprise observe le prix du marché et prend sa décision en fonction de ce prix, et uniquement de ce prix.
-Les actions des autres entreprises ne l’influence pas.</p>
+Dans le cas de la CPP, l’entreprise observe le prix du marché et prend sa décision en fonction de ce prix et uniquement de ce prix.
+Les actions des autres entreprises ne l’influencent pas.</p>
 <p>On considère maintenant la situation où il n’y a plus une seule ou une infinité d’entreprises, mais plusieurs, qui sont en situation d’<em>interactions stratégiques</em>.
 Les décisions de chaque acteur dépend des décisions des autres acteurs (ou des anticipations de ces décisions).<br />
 On parle de <em>duopole</em> dans le cas où le marché compte deux entreprises et d’<em>oligopole</em> dans le cas où il compte plus que deux entreprises.<br />
@@ -248,9 +248,8 @@ Le prix est déterminé par la quantité <em>totale</em> produite par les deux e
 <li>Entreprise 2 : quantité <span class="math inline">\(q_2\)</span> produite au coût <span class="math inline">\(C_2(q_2)\)</span>.</li>
 </ul>
 <p>Les fonctions de coût sont <strong>différentes</strong> entre les deux entreprises, contrairement au cas du monopole discriminant au troisième degré, où l’on considérait <span class="math inline">\(C(q_1+q_2)\)</span>.</p>
-<p>La fonction de demande inverse sur le marché est <span class="math inline">\(P(q_1+q_2)\)</span>.
-C’est différent du monopole discriminant où il y avait une fonction de demande par segment.</p>
-<p>On a donc les fonctions de profit:
+<p>La fonction de demande inverse sur le marché est unique et donnée par <span class="math inline">\(P(q_1+q_2)\)</span>, contrairement au monopole discriminant où il y avait une fonction de demande par groupe.</p>
+<p>Il y a deux entreprises, donc deux fonctions de profit :
 <span class="math display">\[
 \begin{array}{rcl}
 \pi_1(q_1, q_2) &amp;=&amp; P(q_1+q_2)\cdot q_1-C_1(q_1)\\
@@ -277,7 +276,7 @@ Chaque entreprise doit anticiper l’action de l’autre et réagir à cette ant
 \]</span></p>
 <p>Supposons que l’entreprise 1 <em>croit</em> que l’entreprise 2 va produire <span class="math inline">\(q_2^a\)</span>.
 Quelle est sa production optimale ?
-Son problème de maximisation est :
+Son problème de maximisation s’écrit dans ce cas :
 <span class="math display">\[
 \max_{q_1} \pi_1(q_1, q_2^a) =  q_1P(q_1+q_2^a)-C_1(q_1)
 \]</span>
@@ -412,7 +411,9 @@ On résout le système et on obtient :
 <span class="math display">\[
 q_1^*=q_2^* = \frac{a}{3b+2c}
 \]</span></p>
-<p>Quand le problème est symétrique, les deux entreprises en compétition à la Cournot produisent la même quantité de bien.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-48" class="proposition"><strong>Propriétés 4.1  </strong></span>Quand le problème est <strong>symétrique</strong> (=les deux entreprises ont la même fonction de coût), deux entreprises en compétition <strong>à la Cournot</strong> produisent la même quantité de bien.</p>
+</div>
 </div>
 </div>
 <div id="une-intuition-graphique-les-courbes-disoprofit" class="section level3 hasAnchor" number="4.1.4">
@@ -420,7 +421,7 @@ q_1^*=q_2^* = \frac{a}{3b+2c}
 <p>On peut aussi aborder le problème à l’aide d’une intuition graphique.
 Il s’agit de tracer les courbes d’<em>isoprofit</em> des entreprises.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-48" class="definition"><strong>Définition 4.1  (Courbe d'isoprofit) </strong></span>Les courbes d’isoprofit est l’ensemble des couples de quantités <span class="math inline">\((q_1, q_2)\)</span> qui permettent à une entreprise d’atteindre un niveau de profit donné.</p>
+<p><span id="def:unlabeled-div-49" class="definition"><strong>Définition 4.1  (Courbe d'isoprofit) </strong></span>Les courbes d’isoprofit est l’ensemble des couples de quantités <span class="math inline">\((q_1, q_2)\)</span> qui permettent à une entreprise d’atteindre un niveau de profit donné.</p>
 </div>
 <p>Reprenons l’expression générale des profits de l’équation <a href="oligopoles.html#eq:profitcournot">(4.1)</a>.
 <span class="math display">\[
@@ -551,9 +552,9 @@ Si on calcule le profit, on verra que le profit de l’entreprise leader est plu
 </ul>
 <p><em>Question :</em><br />
 Que se passe-t-il si elles peuvent s’entendre ?
-Par exemple, que se passe-t-il si elle peuvent passer un accord sur la quantité à produire.</p>
-<p><em>Résultats :</em><br />
-Les quantités mises sur le marché vont diminuer, et le prix du marché va augmenter.
+Par exemple, que se passe-t-il si elles peuvent passer un accord sur la quantité à produire.</p>
+<p><em>Résultats :</em>
+Les quantités mises sur le marché diminueront et le prix du marché augmentera.
 C’est donc néfaste pour les consommateurs.
 La raison est que le cartel se comporte exactement comme un monopole, puis partage les bénéfices.</p>
 </div>
@@ -578,7 +579,7 @@ C’est un raisonnement très similaire à un monopole discriminant au troisièm
 <h4><span class="header-section-number">4.3.3.2</span> Profits<a href="oligopoles.html#profits-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Le profit global du cartel s’écrit :
 <span class="math display">\[
-\pi_c=qP(q)-C_A(q_A)-C_B(q_B)=(q_A+q_B)P(q_A+q_B)-C_A(q_A)-C_B(q_B)
+\pi_c(q_A, q_B)=qP(q)-C_A(q_A)-C_B(q_B)=(q_A+q_B)P(q_A+q_B)-C_A(q_A)-C_B(q_B)
 \]</span>
 Où <span class="math inline">\(q=q_A+q_B\)</span>.
 Le profit est maximisé lorsque les dérivées partielles suivant chacune des quantités sont nulles (condition du premier ordre), c’est-à-dire lorsque <span class="math inline">\(\frac{\partial\pi_C}{\partial q_A}=0\)</span> et <span class="math inline">\(\frac{\partial\pi_C}{\partial q_B}=0\)</span>.
@@ -601,9 +602,11 @@ En utilisant le même raisonnement, on a pour l’entreprise B :
 <p>À l’optimum pour le cartel, on a donc :
 <span class="math display">\[R_m(q) = C_{mA}(q_A) = C_{mB}(q_B)\]</span>
 Le cartel égalise la recette marginale <em>totale</em> aux coûts marginaux de chacune des deux entreprises.</p>
-<p><em>Remarque :</em> Le cartel ne va pas forcément donner à produire la même quantité à chaque entreprise.
+<div class="remark">
+<p><span id="unlabeled-div-50" class="remark"><em>Remarque</em>. </span>Le cartel ne donnera pas forcément à produire la même quantité à chaque entreprise.
 La répartition dépend des coûts marginaux respectifs.
 Si les coûts marginaux sont identiques, les productions seront identiques.</p>
+</div>
 <p><em>Intuition :</em> Supposons que la quantité totale produite est fixée.
 Supposons aussi que <span class="math inline">\(C_{mA}(q_A)&gt;C_{mB}(q_B)\)</span>.<br />
 Alors, en transférant la production d’une unité de l’entreprise A vers l’entreprise B, le coût diminue de <span class="math inline">\(C_{mA}(q_A)\)</span> et augmente de <span class="math inline">\(C_{mB}(q_B)\)</span>.
@@ -648,7 +651,7 @@ La fonction de demande inverse sur le marché <span class="math inline">\(P(q)\)
 \pi(q_i, q) = q_iP(q) -C_i(q_i)
 \]</span></p>
 <div class="remark">
-<p><span id="unlabeled-div-49" class="remark"><em>Remarque</em> (Quantité globale). </span>Attention, ici <span class="math inline">\(q\)</span>, la quantité globale, dépend de la quantité <span class="math inline">\(q_i\)</span> produite par <span class="math inline">\(i\)</span>.
+<p><span id="unlabeled-div-51" class="remark"><em>Remarque</em> (Quantité globale). </span>Attention, ici <span class="math inline">\(q\)</span>, la quantité globale, dépend de la quantité <span class="math inline">\(q_i\)</span> produite par <span class="math inline">\(i\)</span>.
 Implicitement, on a ainsi définit une fonction <span class="math inline">\(q(q_i)\)</span>, ce qui est important dans la dérivation des résultats.</p>
 </div>
 <p>Le programme de maximisation d’une entreprise <span class="math inline">\(i\)</span> s’écrit :
@@ -669,7 +672,7 @@ Implicitement, on a ainsi définit une fonction <span class="math inline">\(q(q_
 \]</span>
 (La dérivée de la fonction de demande suivant le prix est négative).</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-50" class="definition"><strong>Définition 4.2  (Part de marché) </strong></span>La part de marché détenue par une entreprise <span class="math inline">\(i\)</span> est la part de la quantité totale produite qui l’est par cette entreprise.
+<p><span id="def:unlabeled-div-52" class="definition"><strong>Définition 4.2  (Part de marché) </strong></span>La part de marché détenue par une entreprise <span class="math inline">\(i\)</span> est la part de la quantité totale produite qui l’est par cette entreprise.
 On la note <span class="math inline">\(S_i\)</span> :
 <span class="math display">\[S_i=\frac{q_i}{q}\]</span></p>
 </div>
@@ -677,7 +680,7 @@ On la note <span class="math inline">\(S_i\)</span> :
 <span class="math display">\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]</span>
 La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l’entreprise.</p>
 <div class="remark">
-<p><span id="unlabeled-div-51" class="remark"><em>Remarque</em>. </span>En monopole, <span class="math inline">\(S_i=1\)</span>, on retrouve alors bien :
+<p><span id="unlabeled-div-53" class="remark"><em>Remarque</em>. </span>En monopole, <span class="math inline">\(S_i=1\)</span>, on retrouve alors bien :
 <span class="math display">\[\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}\]</span></p>
 <p>En concurrence pure et parfaite <span class="math inline">\(S_i\to 0\)</span>, donc <span class="math inline">\(\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0\)</span>, ce qui implique bien que <span class="math inline">\(C_{mi}(q_i)\to P(q)\)</span>.
 On retrouve ainsi le résultat <span class="math inline">\(P(q^*)=C_m(q^*)\)</span>.</p>
@@ -686,8 +689,9 @@ On retrouve ainsi le résultat <span class="math inline">\(P(q^*)=C_m(q^*)\)</sp
 <h3><span class="header-section-number">4.4.1</span> Indice de Lerner<a href="oligopoles.html#indice-de-lerner" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Rappel :</em> En monopole, l’indice de Lerner est :
 <span class="math display">\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]</span></p>
+
 <div class="definition">
-<p><span id="def:unlabeled-div-52" class="definition"><strong>Définition 4.3  (Indice de Lerner d'un producteur $i$) </strong></span>On définit l’indice de Lerner pour un producteur <span class="math inline">\(i\)</span>, noté <span class="math inline">\(L_i\)</span>, comme son taux de marge :
+<p><span id="def:unlabeled-div-54" class="definition"><strong>Définition 4.3  (Indice de Lerner d’un producteur <span class="math inline">\(i\)</span>) </strong></span>On définit l’indice de Lerner pour un producteur <span class="math inline">\(i\)</span>, noté <span class="math inline">\(L_i\)</span>, comme son taux de marge :
 <span class="math display">\[L_i=\frac{P(q^*) -C_{im}(q^*_i)}{P(q^*)}\]</span></p>
 </div>
 <p>On peut exprimer cette indice de Lerner ainsi, grâce à la condition du premier ordre trouvée plus haut :
@@ -699,7 +703,7 @@ L_i &amp;=&amp;\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\frac{1}{\left|\varepsilon_{q/
 \tag{4.4}
 \end{equation}\]</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-53" class="definition"><strong>Définition 4.4  (Indice de Lerner du marché) </strong></span>En oligopole à la Cournot avec <span class="math inline">\(N\)</span> producteurs, on définit l’indice de Lerner du marché par :
+<p><span id="def:unlabeled-div-55" class="definition"><strong>Définition 4.4  (Indice de Lerner du marché) </strong></span>En oligopole à la Cournot avec <span class="math inline">\(N\)</span> producteurs, on définit l’indice de Lerner du marché par :
 <span class="math display">\[L = \sum_{i=1}^NS_iL_i\]</span>
 où <span class="math inline">\(S_i=q_i/q\)</span> est la <em>part de marché</em> du producteur <span class="math inline">\(i\)</span> et <span class="math inline">\(L_i\)</span> est l’indice de Lerner d’un producteur <span class="math inline">\(i\)</span>.</p>
 </div>
