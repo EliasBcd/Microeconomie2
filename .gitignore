@@ -36,3 +36,7 @@ _book
 _bookdown_files
 renv
 .Rprofile
+*_files/
+/.quarto/
+
+
