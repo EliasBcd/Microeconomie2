@@ -1,0 +1,66 @@
+project:
+  type: book
+  
+
+
+book: 
+  title: "Microéconomie 2"
+  subtitle: "Notes de cours"
+  author:
+    - name: Elias Bouacida
+      affiliation: Université Paris 8
+      email: elias.bouacida@univ-paris8.fr
+    - name: Hela Maafi
+      affiliation: Université Paris 8
+      email: hela.maafi@univ-paris8.fr
+    - name: Antoine Terracol
+      affiliation: Université Paris 8
+      email: antoine.terracol@univ-paris8.fr
+  date: last-modified
+  chapters:
+    - index.qmd
+    - 01-cpp.qmd
+    - 02-monopole.qmd
+    - 03-oligopoles.qmd
+    - 07-references.qmd
+  appendices: 
+    - 05-cppmono.qmd
+    - 06-equilibres.qmd
+    - 07-surplus.qmd
+  downloads: pdf
+
+lang: fr
+
+github-repo: EliasBcd/Microeconomie2
+
+description: |
+  Cours de microéconomie en licence 2 à l'université Paris 8.
+
+bibliography:
+  - bibliographie.bib
+
+
+
+format:
+  html:
+    theme: cosmo
+  pdf: default
+format-links: true
+
+execute: 
+  warning: false
+  echo: false
+  # cache: refresh
+
+
+delete_merged_file: true
+
+date-format: long
+
+
+crossref: 
+  cnj-title: Hypothèse
+  cnj-prefix: hypothèse
+  fig-prefix: figure
+  tbl-prefix: tableau
+  eq-prefix: équation

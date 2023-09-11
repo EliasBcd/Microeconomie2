@@ -1,0 +1,26 @@
+# Résolution des problèmes
+
+
+
+
+|  Rubrique |  CPP    | Monopole
+|:----------|:-------:|:----------:|
+| Consommateurs | une infinité (atomiques) |  une infinité (atomiques) |
+| Producteurs | une infinité (atomiques)| un (*le* monopole) |
+| Prix | fixé par le marché $p$ | fixé par le producteur $p$ |
+| Demande | agrégée $P(q)$ | agrégée $P(q)$ |
+| Recette | $R(q)=pq$ | $R(q)=P(q)q$ | 
+| Coût  | $C(q)$ | $C(q)$ |
+| Offre | coût marginal ($C_m(q)$) | coût marginal ($C_m(q)$)|
+| Profit | $\pi(q)=qp-C(q)$ | $\pi(q)=qP(q)-C(q)$ |
+| Conditions d'équilibre | Offre égale demande | Coût marginal égal recette marginale |
+| Formellement | $p^*=P(q^*)=C_m(q^*)$  | $C_m(q^*)=R_m(q^*)$, $p^*=P(q^*)$ | 
+| Méthode | On résout d'abord $P(q^*)=C_m(q^*)$ puis on calcule $p^*$ | On calcule $C_m(q^*)=R_m(q^*)$ puis on obtient $p^*$ |
+| Conditions supplémentaires |  | $C_m'(q^*)>R_m'(q^*)$ et $\pi(q^*) \geq 0$ |
+
+: Tableau comparatif concurrence pure et parfaite et monopole, résolution des problèmes {#tbl-Annexe1}
+
+
+La différence entre la concurrence pure et parfaite et le monopole est qu'en monopole il n'y a qu'un seul producteur, qui dispose du pouvoir de fixé les prix.
+Cela lui permet de connaître la demande agrégée des consommateurs $P$ et de l'utiliser dans sa maximisation du profit.
+Cela modifie ainsi la condition d'équilibre en monopole.

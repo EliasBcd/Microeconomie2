@@ -1,0 +1,70 @@
+# Annexes
+
+```{r setup}
+library(ggplot2)
+library(latex2exp)
+```
+
+
+# Comment trouver les équilibres ?
+
+La méthode générale est toujours de maximiser le profit du ou des producteurs.
+Le profit est maximal quand la dérivée du profit suivant les quantités produite est nulle.
+
+En plus de ça, dans différents cas particuliers il est possible de sauter quelques étapes en retenant ces identitées fondamentales
+
+## En concurrence pure et parfaite
+
+L'offre est égale à la demande, et les deux sont égales au prix sur le marché.
+L'offre est déterminée par le coût marginal.
+Avec les notations du cours :
+$$C_m(q^*)=P(q^*)=p^*$$
+
+## En monopole
+
+Le revenu marginal du monopole est égal au coût marginal.
+Le prix est égal à la demande inverse de la quantité d'équilibre.
+
+$$R_m(q^*)=C_m(q^*)\text{ et }p^*=P(q^*)$$
+
+### Avec des régulations
+
+Quand l'État oblige un monopole à une tarification au coût moyen ou au coût marginal, cela signifie qu'il doit utiliser cette fonction comme offre, et l'égaliser avec la demande.
+Par exemple, avec une tarification au coût moyen, on doit avoir :
+
+$$C_M(q^*)=P(q^*)=p^*$$
+
+### Avec une discrimination du 3^e^ degré
+
+En discrimination du 3^e^ degré, le monopole se comporte comme s'il était en monopole sur deux marché différents.
+Le revenu marginal du groupe 1 est égal au revenu marginal du groupe 2 qui est égal au coût marginal total du monopole.
+
+$$R_{m1}(q_1^*)=R_{m2}(q_2^*)=C_m(q^*)$$
+Avec
+$$p_1^*=P_1(q_1^*)\text{ et }p_2^*=P_2(q_2^*)$$
+
+## Oligopoles
+
+### Duopole de Cournot
+
+D'abord, maximiser le profit de chaque entreprise en considérant la quantité produite par l'autre comme une donnée. 
+On obtient alors un système de deux équations à deux inconnues qu'il faut résoudre pour obtenir les quantités optimales.
+Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.
+
+### Duopole de Stackelberg
+
+Maximiser le profit de l'entreprise follower en considérant la quantité produite par le leader comme une donnée. 
+On obtient ainsi la fonction de réaction du follower.
+Le leader utilise ensuite la fonction de réaction du follower dans sa propre maximisation du profit.
+Cela permet d'obtenir la quantité produite par le leader.
+A l'aide de la fonction de réaction du follower, on en déduit la quantité du follower.
+Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.
+
+### Cartel
+
+Quand deux entreprises sont en cartel, elles maximisent leur profit joint.
+On écrit donc le profit du cartel, puis on écrit les conditions du premier suivant chaque quantité.
+On obtient alors un système de deux équations à deux inconnues à résoudre.
+Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.
+
+

@@ -1,94 +1,8 @@
-# (APPENDIX) Annexes {-} 
-
-# Résolution des problèmes
-
-
-
-Table: (\#tab:Annexe1) Tableau comparatif concurrence pure et parfaite et monopole, résolution des problèmes
-
-|  Rubrique |  CPP    | Monopole
-|:----------|:-------:|:----------:|
-| Consommateurs | une infinité (atomiques) |  une infinité (atomiques) |
-| Producteurs | une infinité (atomiques)| un (*le* monopole) |
-| Prix | fixé par le marché $p$ | fixé par le producteur $p$ |
-| Demande | agrégée $P(q)$ | agrégée $P(q)$ |
-| Recette | $R(q)=pq$ | $R(q)=P(q)q$ | 
-| Coût  | $C(q)$ | $C(q)$ |
-| Offre | coût marginal ($C_m(q)$) | coût marginal ($C_m(q)$)|
-| Profit | $\pi(q)=qp-C(q)$ | $\pi(q)=qP(q)-C(q)$ |
-| Conditions d'équilibre | Offre égale demande | Coût marginal égal recette marginale |
-| Formellement | $p^*=P(q^*)=C_m(q^*)$  | $C_m(q^*)=R_m(q^*)$, $p^*=P(q^*)$ | 
-| Méthode | On résout d'abord $P(q^*)=C_m(q^*)$ puis on calcule $p^*$ | On calcule $C_m(q^*)=R_m(q^*)$ puis on obtient $p^*$ |
-| Conditions supplémentaires |  | $C_m'(q^*)>R_m'(q^*)$ et $\pi(q^*) \geq 0$ |
-
-La différence entre la concurrence pure et parfaite et le monopole est qu'en monopole il n'y a qu'un seul producteur, qui dispose du pouvoir de fixé les prix.
-Cela lui permet de connaître la demande agrégée des consommateurs $P$ et de l'utiliser dans sa maximisation du profit.
-Cela modifie ainsi la condition d'équilibre en monopole.
-
-# Comment trouver les équilibres ?
-
-La méthode générale est toujours de maximiser le profit du ou des producteurs.
-Le profit est maximal quand la dérivée du profit suivant les quantités produite est nulle.
-
-En plus de ça, dans différents cas particuliers il est possible de sauter quelques étapes en retenant ces identitées fondamentales
-
-## En concurrence pure et parfaite
-
-L'offre est égale à la demande, et les deux sont égales au prix sur le marché.
-L'offre est déterminée par le coût marginal.
-Avec les notations du cours :
-\[C_m(q^*)=P(q^*)=p^*\]
-
-## En monopole
-
-Le revenu marginal du monopole est égal au coût marginal.
-Le prix est égal à la demande inverse de la quantité d'équilibre.
-
-\[R_m(q^*)=C_m(q^*)\text{ et }p^*=P(q^*)\]
-
-### Avec des régulations
-
-Quand l'État oblige un monopole à une tarification au coût moyen ou au coût marginal, cela signifie qu'il doit utiliser cette fonction comme offre, et l'égaliser avec la demande.
-Par exemple, avec une tarification au coût moyen, on doit avoir :
-
-\[C_M(q^*)=P(q^*)=p^*\]
-
-### Avec une discrimination du 3^e^ degré
-
-En discrimination du 3^e^ degré, le monopole se comporte comme s'il était en monopole sur deux marché différents.
-Le revenu marginal du groupe 1 est égal au revenu marginal du groupe 2 qui est égal au coût marginal total du monopole.
-
-\[R_{m1}(q_1^*)=R_{m2}(q_2^*)=C_m(q^*)\]
-Avec
-\[p_1^*=P_1(q_1^*)\text{ et }p_2^*=P_2(q_2^*)\]
-
-## Oligopoles
-
-### Duopole de Cournot
-
-D'abord, maximiser le profit de chaque entreprise en considérant la quantité produite par l'autre comme une donnée. 
-On obtient alors un système de deux équations à deux inconnues qu'il faut résoudre pour obtenir les quantités optimales.
-Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.
-
-### Duopole de Stackelberg
-
-Maximiser le profit de l'entreprise follower en considérant la quantité produite par le leader comme une donnée. 
-On obtient ainsi la fonction de réaction du follower.
-Le leader utilise ensuite la fonction de réaction du follower dans sa propre maximisation du profit.
-Cela permet d'obtenir la quantité produite par le leader.
-A l'aide de la fonction de réaction du follower, on en déduit la quantité du follower.
-Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.
-
-### Cartel
-
-Quand deux entreprises sont en cartel, elles maximisent leur profit joint.
-On écrit donc le profit du cartel, puis on écrit les conditions du premier suivant chaque quantité.
-On obtient alors un système de deux équations à deux inconnues à résoudre.
-Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.
-
-
 # Calcul des surplus
-
+```{r setup}
+library(ggplot2)
+library(latex2exp)
+```
 
 ```{r  annexessurplus1, fig.cap="Représentation graphique de la demande inverse.", include=F}
 P <- function(q){100-q}
@@ -107,9 +21,9 @@ p <- ggplot() +
 ::: {.definition name="Surplus des consommateurs."}
 Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêt à payer et le prix effectivement payé.
 Mathématiquement, c'est l'intégrale suivante :
-\[
+$$
 S_c(q)=\int_0^qP(x)-pdx=\int_0^qP(x)dx-pq
-\]
+$$
 Où $p$ est le prix payé, $q$ la quantité échangée  et $P$ la demande inverse.
 :::
 
@@ -119,9 +33,9 @@ Dans notre cours, ce sera l'aire d'un triangle ou d'un trapèze.
 ::: { .definition name="Surplus des producteurs"}
 Le surplus des producteurs est la somme de la différence entre le prix reçu par les producteurs et le coût marginal de production.
 Mathématiquement, c'est l'intégrale suivante :
-\[
+$$
 S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx (\#eq:sp)
-\]
+$$
 Où $p$ est le prix reçu par le producteur, $q$ la quantité vendue et $C_m$ la coût marginal.
 :::
 L'intégrale signifie que c'est l'aire comprise entre le prix reçu par les producteurs ($p$), le coût marginal ($C_m$),  l'axe des ordonnées et la quantité échangée ($q$).
@@ -129,19 +43,19 @@ Dans notre cours, ce sera l'aire d'un triangle ou d'un trapèze.
 
 ::: {.remark name="Lien entre surplus et profit"}
 Si on continue l'expression donnée par l'équation \@ref(eq:sp), on obtient :
-\[S_p(q)=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)\]
+$$S_p(q)=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)$$
 Cela prouve la relation donnée informellement dans le cours entre surplus et profit.
 Le surplus est la somme du profit réalisé par les producteurs et des coûts fixes (des coût qui ne dépendent pas de la quantité).
 :::
 
 ::: {.remark name="Aire d'un triangle"}
 L'aire d'un triangle est donnée par la formule suivante :
-\[\text{aire triangle}=\frac{1}{2}\times\text{base}\times\text{hauteur}\]
+$$\text{aire triangle}=\frac{1}{2}\times\text{base}\times\text{hauteur}$$
 :::
 
 ::: {.remark name="Aire d'un trapèze"}
 L'aire d'un trapèze est donnée par la formule suivante :
-\[\text{aire trapèze}=\frac{1}{2}\times(\text{petite base}+\text{grande base})\times\text{hauteur}\]
+$$\text{aire trapèze}=\frac{1}{2}\times(\text{petite base}+\text{grande base})\times\text{hauteur}$$
 :::
 
 On peut illustrer ces formules avec deux cas pratiques (sur les graphiques \@ref(fig:annexesurplus2) et \@ref(fig:annexesurplus3)).
@@ -159,13 +73,13 @@ Le premier cas est illustré sur le graphique \@ref(fig:annexesurplus2).
 Le prix de l'échange $p$ est tel que le surplus des consommateurs est un triangle, et le surplus des producteurs est un trapèze.
 Dans ce cas, on obtient $p_2= C_m(q)$.
 Le surplus des consommateurs est donné par :
-\[
+$$
 S_c=\frac{1}{2}\times(p_3-p)\times q
-\]
+$$
 Et le surplus des producteurs par :
-\[
+$$
 S_p=\frac{1}{2}\times(p-p_2+p-p_1)\times q
-\]
+$$
 
 
 
@@ -191,13 +105,13 @@ Le second cas est illustré sur le graphique \@ref(fig:annexesurplus3).
 Le prix de l'échange $p$ est tel que le surplus des consommateurs est un trapèze, et le surplus des producteurs est un triangle.
 Dans ce cas, on obtient $p_2= P(q)$.
 Le surplus des consommateurs est donné par :
-\[
+$$
 S_c=\frac{1}{2}\times(p_3-p+p_2-p)\times q
-\]
+$$
 Et le surplus des producteurs par :
-\[
+$$
 S_p=\frac{1}{2}\times(p-p_1)\times q
-\]
+$$
 
 ```{r annexesurplus3, fig.cap="Surplus avec un prix de l'échange $p$.", echo=F, warning=F}
 Sc <- data.frame(x=c(0, q), ymin=c(Cm(q), Cm(q)), ymax=c(P(0), P(q)))
