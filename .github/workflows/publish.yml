@@ -26,6 +26,11 @@ jobs:
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
+          
+          
+      - name: Setup tinytex
+        uses: r-lib/actions/setup-tinytex@v2
+      - run: tlmgr --version
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
