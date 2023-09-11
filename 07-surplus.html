@@ -6,12 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Elias Bouacida">
-<meta name="author" content="Hela Maafi">
-<meta name="author" content="Antoine Terracol">
 <meta name="description" content="Cours de microéconomie en licence 2 à l’université Paris 8.">
 
-<title>Microéconomie 2</title>
+<title>Microéconomie 2 - Annexe C — Calcul des surplus</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,26 +21,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -53,7 +31,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-cpp.html" rel="next">
+<link href="./06-equilibres.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -84,6 +62,8 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -96,7 +76,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Microéconomie 2</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-cppmono.html">Annexes</a></li><li class="breadcrumb-item"><a href="./07-surplus.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Calcul des surplus</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -126,7 +106,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Microéconomie 2</span></span></a>
   </div>
 </li>
@@ -177,7 +157,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-surplus.html" class="sidebar-item-text sidebar-link">
+  <a href="./07-surplus.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Calcul des surplus</span></span></a>
   </div>
 </li>
@@ -189,73 +169,21 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table des matières</h2>
-   
-  <ul>
-  <li><a href="#microéconomie-2" id="toc-microéconomie-2" class="nav-link active" data-scroll-target="#microéconomie-2"><span class="header-section-number">1</span> Microéconomie 2</a>
-  <ul class="collapse">
-  <li><a href="#thèmes" id="toc-thèmes" class="nav-link" data-scroll-target="#thèmes"><span class="header-section-number">1.1</span> Thèmes</a></li>
-  <li><a href="#bibliographie" id="toc-bibliographie" class="nav-link" data-scroll-target="#bibliographie"><span class="header-section-number">1.2</span> Bibliographie</a></li>
-  <li><a href="#plan-du-cours" id="toc-plan-du-cours" class="nav-link" data-scroll-target="#plan-du-cours"><span class="header-section-number">1.3</span> Plan du cours</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Microéconomie 2</h1>
-<p class="subtitle lead">Notes de cours</p>
+<h1 class="title">Annexe C — Calcul des surplus</h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>Cours de microéconomie en licence 2 à l’université Paris 8.</p>
-  </div>
-</div>
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Auteur·rice·s</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Elias Bouacida </p>
-  </div>
-    <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Université Paris 8
-          </p>
-      </div>
-      <div class="quarto-title-meta-contents">
-    <p class="author">Hela Maafi </p>
-  </div>
-    <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Université Paris 8
-          </p>
-      </div>
-      <div class="quarto-title-meta-contents">
-    <p class="author">Antoine Terracol </p>
-  </div>
-    <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Université Paris 8
-          </p>
-      </div>
-    </div>
 
 <div class="quarto-title-meta">
 
-      
-    <div>
-    <div class="quarto-title-meta-heading">Date de publication</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">11 septembre 2023</p>
-    </div>
-  </div>
+    
   
     
   </div>
@@ -263,74 +191,68 @@ div.csl-indent {
 
 </header>
 
-<section id="microéconomie-2" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Microéconomie 2</h1>
-<p>Cours de microéconomie 2 en licence 2 à l’université Paris 8, donné par Hela Maafi, Antoine Terracol et Elias Bouacida.<br>
-Ce dépôt contient les notes de cours ainsi que les corrigés des exercices.</p>
-<section id="thèmes" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="thèmes"><span class="header-section-number">1.1</span> Thèmes</h2>
-<p>Les principaux thèmes abordés dans ce cours sont les suivants :</p>
+<div class="definition" name="Surplus des consommateurs.">
+<p>Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêt à payer et le prix effectivement payé. Mathématiquement, c’est l’intégrale suivante : <span class="math display">\[
+S_c(q)=\int_0^qP(x)-pdx=\int_0^qP(x)dx-pq
+\]</span> Où <span class="math inline">\(p\)</span> est le prix payé, <span class="math inline">\(q\)</span> la quantité échangée et <span class="math inline">\(P\)</span> la demande inverse.</p>
+</div>
+<p>L’intégrale signifie que c’est l’aire comprise entre la demande inverse (la fonction <span class="math inline">\(P\)</span>), le prix payé par les consommateurs (le prix <span class="math inline">\(p\)</span>), l’axe des ordonnées et la quantité échangée (<span class="math inline">\(q\)</span>). Dans notre cours, ce sera l’aire d’un triangle ou d’un trapèze.</p>
+<div class="definition" name="Surplus des producteurs">
+<p>Le surplus des producteurs est la somme de la différence entre le prix reçu par les producteurs et le coût marginal de production. Mathématiquement, c’est l’intégrale suivante : <span class="math display">\[
+S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx (\#eq:sp)
+\]</span> Où <span class="math inline">\(p\)</span> est le prix reçu par le producteur, <span class="math inline">\(q\)</span> la quantité vendue et <span class="math inline">\(C_m\)</span> la coût marginal.</p>
+</div>
+<p>L’intégrale signifie que c’est l’aire comprise entre le prix reçu par les producteurs (<span class="math inline">\(p\)</span>), le coût marginal (<span class="math inline">\(C_m\)</span>), l’axe des ordonnées et la quantité échangée (<span class="math inline">\(q\)</span>). Dans notre cours, ce sera l’aire d’un triangle ou d’un trapèze.</p>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remarque</em> (Lien entre surplus et profit). </span>Si on continue l’expression donnée par l’équation @ref(eq:sp), on obtient : <span class="math display">\[S_p(q)=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)\]</span> Cela prouve la relation donnée informellement dans le cours entre surplus et profit. Le surplus est la somme du profit réalisé par les producteurs et des coûts fixes (des coût qui ne dépendent pas de la quantité).</p>
+</div>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remarque</em> (Aire d’un triangle). </span>L’aire d’un triangle est donnée par la formule suivante : <span class="math display">\[\text{aire triangle}=\frac{1}{2}\times\text{base}\times\text{hauteur}\]</span></p>
+</div>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remarque</em> (Aire d’un trapèze). </span>L’aire d’un trapèze est donnée par la formule suivante : <span class="math display">\[\text{aire trapèze}=\frac{1}{2}\times(\text{petite base}+\text{grande base})\times\text{hauteur}\]</span></p>
+</div>
+<p>On peut illustrer ces formules avec deux cas pratiques (sur les graphiques @ref(fig:annexesurplus2) et @ref(fig:annexesurplus3)).</p>
+<p>Les valeurs sur les graphiques sont obtenues de la manière suivante :</p>
 <ul>
-<li>structures de marché ;</li>
-<li>pouvoir de marché ;</li>
-<li>principes de tarification ;</li>
-<li>comportements stratégiques ;</li>
-<li>problèmes d’information.</li>
+<li><span class="math inline">\(q\)</span> est connu ou <span class="math inline">\(p\)</span> est connu ;</li>
+<li>Si <span class="math inline">\(q\)</span> est connu, on obtient <span class="math inline">\(p\)</span> grâce à la fonction de demande inverse : <span class="math inline">\(p=P(q)\)</span>. Si <span class="math inline">\(p\)</span> est connu, on obtient <span class="math inline">\(q\)</span> avec la fonction de demande <span class="math inline">\(q=Q(p)\)</span> ou en résolvant l’équation <span class="math inline">\(p=P(q)\)</span>.</li>
+<li><span class="math inline">\(p_3=P(0)\)</span> ;</li>
+<li><span class="math inline">\(p_1=C_m(0)\)</span> ;</li>
+<li><span class="math inline">\(p_2\)</span> dépendra du cas.</li>
 </ul>
-<p>L’idée générale est de dépasser le cadre de la concurrence pure et parfaite et de se rapprocher un peu du <em>monde réel</em> en levant certaines hypothèses de la concurrence pure et parfaite.</p>
-</section>
-<section id="bibliographie" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="bibliographie"><span class="header-section-number">1.2</span> Bibliographie</h2>
-<p>Le cours ne nécessite pas de se référer à un manuel. Néanmoins, pour ceux qui souhaitent des éclairages différents sur les notions abordés, voici quelques références utiles:</p>
-<ul>
-<li><span class="citation" data-cites="varian2015">Varian et Thiry (<a href="07-references.html#ref-varian2015" role="doc-biblioref">2015</a>)</span> <em>Introduction à la microéconomie</em></li>
-<li><span class="citation" data-cites="varian2008">Varian, Hommet, et Thiry (<a href="07-references.html#ref-varian2008" role="doc-biblioref">2008</a>)</span> <em>Analyse Microéconomique</em></li>
-<li><span class="citation" data-cites="pindyck2012">Pindyck et al. (<a href="07-references.html#ref-pindyck2012" role="doc-biblioref">2012</a>)</span> <em>Microéconomie</em></li>
-<li><span class="citation" data-cites="jeleva2014">Jeleva et Etner (<a href="07-references.html#ref-jeleva2014" role="doc-biblioref">2014</a>)</span> <em>Microéconomie</em></li>
-</ul>
-<p>Et enfin une référence avancée, pour ceux qui cherchent les fondements mathématiques (en anglais) :</p>
-<ul>
-<li><span class="citation" data-cites="mas1995">Mas-Colell, Whinston, et Green (<a href="07-references.html#ref-mas1995" role="doc-biblioref">1995</a>)</span> <em>Microeconomic Theory</em></li>
-</ul>
-</section>
-<section id="plan-du-cours" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="plan-du-cours"><span class="header-section-number">1.3</span> Plan du cours</h2>
-<ol type="1">
-<li>Rappels sur la concurrence pure et parfaite</li>
-<li>Monopoles
-<ul>
-<li>Monopoles simples</li>
-<li>Monopoles discriminants</li>
-<li>Pouvoir de marché et principes de tarification</li>
-</ul></li>
-<li>Oligopoles
-<ul>
-<li>Duopoles à la Cournot</li>
-<li>Duopoles à la Stackelberg</li>
-<li>Collusion</li>
-</ul></li>
-</ol>
+<p>Le premier cas est illustré sur le graphique @ref(fig:annexesurplus2). Le prix de l’échange <span class="math inline">\(p\)</span> est tel que le surplus des consommateurs est un triangle, et le surplus des producteurs est un trapèze. Dans ce cas, on obtient <span class="math inline">\(p_2= C_m(q)\)</span>. Le surplus des consommateurs est donné par : <span class="math display">\[
+S_c=\frac{1}{2}\times(p_3-p)\times q
+\]</span> Et le surplus des producteurs par : <span class="math display">\[
+S_p=\frac{1}{2}\times(p-p_2+p-p_1)\times q
+\]</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="07-surplus_files/figure-html/annexesurplus2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Surplus avec un prix de l’échange <span class="math inline">\(p\)</span>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Le second cas est illustré sur le graphique @ref(fig:annexesurplus3). Le prix de l’échange <span class="math inline">\(p\)</span> est tel que le surplus des consommateurs est un trapèze, et le surplus des producteurs est un triangle. Dans ce cas, on obtient <span class="math inline">\(p_2= P(q)\)</span>. Le surplus des consommateurs est donné par : <span class="math display">\[
+S_c=\frac{1}{2}\times(p_3-p+p_2-p)\times q
+\]</span> Et le surplus des producteurs par : <span class="math display">\[
+S_p=\frac{1}{2}\times(p-p_1)\times q
+\]</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="07-surplus_files/figure-html/annexesurplus3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Surplus avec un prix de l’échange <span class="math inline">\(p\)</span>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-jeleva2014" class="csl-entry" role="listitem">
-Jeleva, M., et J. Etner. 2014. <em>Microéconomie</em>. Openbook. Dunod.
-</div>
-<div id="ref-mas1995" class="csl-entry" role="listitem">
-Mas-Colell, Andreu, Michael Dennis Whinston, et Jerry R Green. 1995. <em>Microeconomic theory</em>. Vol. 1. Oxford university press New York.
-</div>
-<div id="ref-pindyck2012" class="csl-entry" role="listitem">
-Pindyck, R., D. Rubinfeld, C. Sofer, et M. Sollogoub. 2012. <em>Microéconomie</em>. Pearson Education. Pearson.
-</div>
-<div id="ref-varian2008" class="csl-entry" role="listitem">
-Varian, H. R., J. M. Hommet, et B. Thiry. 2008. <em>Analyse microéconomique</em>. Ouvertures économiques. De Boeck Supérieur.
-</div>
-<div id="ref-varian2015" class="csl-entry" role="listitem">
-Varian, H. R., et B. Thiry. 2015. <em>Introduction à la microéconomie</em>. Ouvertures économiques. De Boeck Supérieur.
-</div>
-</div>
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -568,11 +490,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./06-equilibres.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Annexes</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-cpp.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Le marché en concurrence pure et parfaite</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

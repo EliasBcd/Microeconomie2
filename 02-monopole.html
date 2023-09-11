@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Cours de microéconomie en licence 2 à l’université Paris 8.">
+
+<title>Microéconomie 2 - 3&nbsp; Le monopole</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03-oligopoles.html" rel="next">
+<link href="./01-cpp.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-monopole.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Le monopole</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Microéconomie 2</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Microéconomie-2.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Microéconomie 2</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-cpp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Le marché en concurrence pure et parfaite</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-monopole.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Le monopole</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-oligopoles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Oligopoles</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-cppmono.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Résolution des problèmes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-equilibres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Annexes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-surplus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Calcul des surplus</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul>
+  <li><a href="#recette-et-recette-marginale" id="toc-recette-et-recette-marginale" class="nav-link active" data-scroll-target="#recette-et-recette-marginale"><span class="header-section-number">3.1</span> Recette et recette marginale</a>
+  <ul class="collapse">
+  <li><a href="#définition" id="toc-définition" class="nav-link" data-scroll-target="#définition"><span class="header-section-number">3.1.1</span> Définition</a></li>
+  <li><a href="#recette-marginale-et-courbe-de-demande" id="toc-recette-marginale-et-courbe-de-demande" class="nav-link" data-scroll-target="#recette-marginale-et-courbe-de-demande"><span class="header-section-number">3.1.2</span> Recette marginale et courbe de demande</a></li>
+  <li><a href="#représentation-graphique" id="toc-représentation-graphique" class="nav-link" data-scroll-target="#représentation-graphique"><span class="header-section-number">3.1.3</span> Représentation graphique</a></li>
+  </ul></li>
+  <li><a href="#décision-de-production-du-monopole" id="toc-décision-de-production-du-monopole" class="nav-link" data-scroll-target="#décision-de-production-du-monopole"><span class="header-section-number">3.2</span> Décision de production du monopole</a>
+  <ul class="collapse">
+  <li><a href="#maximisation-du-profit" id="toc-maximisation-du-profit" class="nav-link" data-scroll-target="#maximisation-du-profit"><span class="header-section-number">3.2.1</span> Maximisation du profit</a></li>
+  <li><a href="#propriétés-de-la-solution-du-monopole" id="toc-propriétés-de-la-solution-du-monopole" class="nav-link" data-scroll-target="#propriétés-de-la-solution-du-monopole"><span class="header-section-number">3.2.2</span> Propriétés de la solution du monopole</a></li>
+  <li><a href="#indice-de-pouvoir-du-monopole" id="toc-indice-de-pouvoir-du-monopole" class="nav-link" data-scroll-target="#indice-de-pouvoir-du-monopole"><span class="header-section-number">3.2.3</span> Indice de pouvoir du monopole</a></li>
+  <li><a href="#variation-de-la-demande" id="toc-variation-de-la-demande" class="nav-link" data-scroll-target="#variation-de-la-demande"><span class="header-section-number">3.2.4</span> Variation de la demande</a></li>
+  <li><a href="#linefficience-du-monopole" id="toc-linefficience-du-monopole" class="nav-link" data-scroll-target="#linefficience-du-monopole"><span class="header-section-number">3.2.5</span> L’inefficience du monopole</a></li>
+  </ul></li>
+  <li><a href="#régulation-du-monopole" id="toc-régulation-du-monopole" class="nav-link" data-scroll-target="#régulation-du-monopole"><span class="header-section-number">3.3</span> Régulation du monopole</a>
+  <ul class="collapse">
+  <li><a href="#taxes-et-subventions" id="toc-taxes-et-subventions" class="nav-link" data-scroll-target="#taxes-et-subventions"><span class="header-section-number">3.3.1</span> Taxes et subventions</a></li>
+  <li><a href="#prix-maximal" id="toc-prix-maximal" class="nav-link" data-scroll-target="#prix-maximal"><span class="header-section-number">3.3.2</span> Prix maximal</a></li>
+  </ul></li>
+  <li><a href="#le-monopole-naturel" id="toc-le-monopole-naturel" class="nav-link" data-scroll-target="#le-monopole-naturel"><span class="header-section-number">3.4</span> Le monopole naturel</a>
+  <ul class="collapse">
+  <li><a href="#régulation-du-monopole-naturel" id="toc-régulation-du-monopole-naturel" class="nav-link" data-scroll-target="#régulation-du-monopole-naturel"><span class="header-section-number">3.4.1</span> Régulation du monopole naturel</a></li>
+  </ul></li>
+  <li><a href="#le-monopole-discriminant" id="toc-le-monopole-discriminant" class="nav-link" data-scroll-target="#le-monopole-discriminant"><span class="header-section-number">3.5</span> Le monopole discriminant</a>
+  <ul class="collapse">
+  <li><a href="#discrimination-au-premier-degré-discrimination-parfaite" id="toc-discrimination-au-premier-degré-discrimination-parfaite" class="nav-link" data-scroll-target="#discrimination-au-premier-degré-discrimination-parfaite"><span class="header-section-number">3.5.1</span> Discrimination au premier degré (discrimination parfaite)</a></li>
+  <li><a href="#discrimination-du-deuxième-degré" id="toc-discrimination-du-deuxième-degré" class="nav-link" data-scroll-target="#discrimination-du-deuxième-degré"><span class="header-section-number">3.5.2</span> Discrimination du deuxième degré</a></li>
+  <li><a href="#discrimination-du-troisième-degré" id="toc-discrimination-du-troisième-degré" class="nav-link" data-scroll-target="#discrimination-du-troisième-degré"><span class="header-section-number">3.5.3</span> Discrimination du troisième degré</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Le monopole</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="definition" name="Monopole">
+<p>Un <em>monopole</em> est sur un marché donné l’unique entreprise qui produit le bien.</p>
+</div>
+<p>C’est le cas extrême opposé à la concurrence pure et parfaite, du côté du producteur. Il est intéressant à étudier car il nous renseigne sur les principaux aspects du comportement des entreprises dans les cas intermédiaires.</p>
+<p>Il y a de nombreuses raisons qui aboutissent à l’existence de monopoles. Les principales sont :</p>
+<ul>
+<li>Légales, à cause de réglementation particulières. C’est ce qu’on appelle en général des professions réglementées, comme les avocats, les bureaux de tabac, les taxis…</li>
+<li>Légales, à cause des brevets sur une technologie données (industrie pharmaceutique, …) ;</li>
+<li>Historique, le premier arrivé ;</li>
+<li>Monopoles <em>naturels</em> : en présence d’économies d’échelles, produire une quantité donnée revient moins cher avec un seul producteur qu’avec plusieurs. C’est notamment les cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, …). Plus généralement, les industries avec des coûts fixes ou des coûts d’entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile, …) ;</li>
+<li>Exclusivité sur la production de certaines matières premières (cuivre au Chili, terres rares en Chine, …) ;</li>
+<li>Coalitions créant un cartel ;</li>
+<li>…</li>
+</ul>
+<section id="recette-et-recette-marginale" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="recette-et-recette-marginale"><span class="header-section-number">3.1</span> Recette et recette marginale</h2>
+<section id="définition" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="définition"><span class="header-section-number">3.1.1</span> Définition</h3>
+<p>L’avantage du monopole sur des entreprises en concurrence pure et parfaite est qu’il connaît tout le marché. Il peut influencer le prix sur le marché, en modifiant son prix de vente ou la quantité vendue. Cela permet au monopole de percevoir la <em>vraie</em> courbe de demande agrégée et non plus une courbe de demande avec une élasticité infinie. Le choix de la quantité qu’il met sur le marché modifie le prix auquel il pourra vendre sa production et il le sait. Il va choisir <strong>un</strong> des paramètres du couple <span class="math inline">\((q^*, p^*)\)</span> du prix et de la quantité sur le marché. L’autre en découlera, à travers la demande inverse <span class="math inline">\(P(q)\)</span> ou la demande <span class="math inline">\(Q(p)\)</span>. Autrement dit, s’il choisit <span class="math inline">\(q^*\)</span>, le prix sur le marché <span class="math inline">\(p^*\)</span> sera déterminé par le demande inverse (<span class="math inline">\(p^*=P(q^*)\)</span>). Si, au contraire, il choisit <span class="math inline">\(p^*\)</span>, la quantité échangée <span class="math inline">\(q^*\)</span> sera déterminée par la demande (<span class="math inline">\(q^*=Q(p^*)\)</span>.</p>
+<p>En CPP, la recette totale du producteur individuel était <span class="math inline">\(R(q) = q\cdot P(q^*)\)</span>, où <span class="math inline">\(q\)</span> est sa production individuel, <span class="math inline">\(q^*\)</span> la quantité d’équilibre sur le marché (résultat de la production de <em>toutes</em> les entreprises présentes sur le marché) et <span class="math inline">\(P(q^*)=p^*\)</span> est le prix d’équilibre.</p>
+<p>En monopole, le prix dépend de la production du monopole (ou l’inverse, peu importe). La recette totale du monopole s’écrit donc : <span class="math display">\[
+R(q) = q\cdot P(q) = Q(p)\cdot p
+\]</span></p>
+</section>
+<section id="recette-marginale-et-courbe-de-demande" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="recette-marginale-et-courbe-de-demande"><span class="header-section-number">3.1.2</span> Recette marginale et courbe de demande</h3>
+<p>Comme la demande est décroissante (l’élasticité prix de la demande est négative <span class="math inline">\(\varepsilon_{q/p} &lt;0\)</span>), <span class="math inline">\(P(q)\)</span> et <span class="math inline">\(q\)</span> ont une relation inverse. Autrement dit, si <span class="math inline">\(q\)</span> augmente, alors <span class="math inline">\(p\)</span> baisse et inversement. On peut constater sur la figure @ref(fig:monorecettemarginale) que deux phénomènes influencent la variation de la recette totale quand on augmente la production d’une unité (passage de <span class="math inline">\(q\)</span> à <span class="math inline">\(q+\Delta q\)</span> unités vendues). Le gain lié à la vente de <span class="math inline">\(\Delta q\)</span> unités supplémentaires. La perte due à la baisse du prix de vente total de toutes les unités vendues (passage de <span class="math inline">\(P(q)\)</span> à un prix inférieur <span class="math inline">\(P(q+\Delta q)\)</span>)</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monorecettemarginale-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Recette marginale d’un monopole suite à une variation de quantité.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><em>Quel est le paramètre important de la courbe de demande qui détermine si le revenu <span class="math inline">\(R\)</span> augmente ou diminue (c’est-à-dire si la recette marginale <span class="math inline">\(R_m\)</span> est positive ou négative) ?</em></p>
+<p><span class="math display">\[\begin{align*}
+R(q) &amp; = qP(q)\\
+R_m(q)&amp; = R'(q) \\
+&amp; = \left(qP(q)\right)' \\
+&amp; = P(q) + qP'(q) \\
+&amp; = P(q)\left(1 + \frac{q}{P(q)}P'(q) \right)\\
+&amp; = P(q)\left(1 + \frac{1}{\varepsilon_{q/p}(q)}\right)
+\end{align*}\]</span></p>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remarque</em> (Élasticité prix de la demande). </span>L’élasticité prix de la demande <span class="math inline">\(\varepsilon_{q/p}\)</span> s’écrit : <span class="math display">\[\varepsilon_{q/p}(p)=\frac{p}{D(p)}D'(p) &lt;0\]</span> Où <span class="math inline">\(D\)</span> est la fonction de demande. Elle est toujours négative, car la demande diminue quand le prix augmente. On peut la réécrire à l’aide de la fonction de demande inverse <span class="math inline">\(P\)</span>. Comme <span class="math inline">\(D\)</span> et <span class="math inline">\(P\)</span> sont les fonctions réciproques l’une de l’autre, on a <span class="math inline">\(D(P(q)) = q\)</span>. En dérivant à gauche et à droite et en utilisant la formule de la dérivation composée, on obtient : <span class="math display">\[P'(q)D'(P(q)) = 1\]</span> On obtient donc : <span class="math display">\[P'(q)=\frac{1}{D'(p)}\]</span> Et l’élasticité prix de la demande peut aussi s’écrire : <span class="math display">\[\varepsilon_{q/p}(q)=\frac{P(q)}{q}\frac{1}{P'(q)}\]</span></p>
+</div>
+<p>On peut donc écrire : <span class="math display">\[\begin{equation}
+R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
+(\#eq:rm)
+\end{equation}\]</span></p>
+<div class="proposition" name="Elasticité prix de la demande et recette marginale">
+<p>De l’équation @ref(eq:rm), on observe que le signe de la recette marginale <span class="math inline">\(R_m\)</span> dépend de l’élasticité prix de la demande <span class="math inline">\(|\varepsilon_{q/p}(q)|\)</span>.</p>
+<ol type="1">
+<li>Si la demande est élastique (<span class="math inline">\(|\varepsilon_{q/p}(q)|&gt;1\)</span>), alors <span class="math inline">\(R_m(q)&gt;0\)</span>, donc si la quantité augmente, le revenu augmente.</li>
+<li>Si la demande est inélastique (<span class="math inline">\(|\varepsilon_{q/p}(q)|&lt;1\)</span>), alors <span class="math inline">\(R_m(q)&lt;0\)</span>, donc si la quantité augmente, le revenu diminue.</li>
+</ol>
+</div>
+<p>Une représentation graphique de l’allure générale est donnée dans la figure @ref(fig:monopoleelasticite)</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopoleelasticite-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">La recette marginale est maximale lorsque l’élasticité prix de la demande est égale à -1.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="représentation-graphique" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="représentation-graphique"><span class="header-section-number">3.1.3</span> Représentation graphique</h3>
+<p>La courbe de recette marginale est toujours située en-dessous de la courbe de demande : <span class="math display">\[
+R_m(q) = P(q) + qP'(q) &lt; P(q)
+\]</span> car <span class="math inline">\(P'(q)\)</span> est négative (la demande inverse est décroissante).</p>
+<section id="exemple-avec-une-courbe-de-demande-linéaire" class="level4" data-number="3.1.3.1">
+<h4 data-number="3.1.3.1" class="anchored" data-anchor-id="exemple-avec-une-courbe-de-demande-linéaire"><span class="header-section-number">3.1.3.1</span> Exemple avec une courbe de demande linéaire</h4>
+<p>Prenons maintenant l’exemple d’une courbe de demande inverse linéaire quelconque <span class="math inline">\(P(q) = a-bq\)</span> (<span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sont des valeurs numériques quelconques). On obtient alors <span class="math inline">\(R_m(q) = a-2bq\)</span> (et <span class="math inline">\(R(q) = aq-bq^2\)</span>).<br>
+Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus élevée que la demande, et ayant la même ordonnée à l’origine. La recette marginale divise en deux tout segment horizontal entre l’axe des ordonnées et la courbe de demande inverse. On peut ainsi représenter graphiquement, comme dans la figure @ref(fig:recettemarginale) la demande, la recette marginale et la recette totale.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/recettemarginale-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Elasticité et recette.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La recette maximale est atteinte lorsque la valeur absolue de l’élasticité prix de la demande est égale à 1 (<span class="math inline">\(|\varepsilon_{q/p}(q)|=1\)</span>).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopoleprofit-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Recette maximale.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Sur la figure @ref(fig:monopoleprofit), on voit qu’il est possible de calculer la recette totale de deux manières :</p>
+<ol type="1">
+<li>En utilisant l’aire du trapèze vert (intégrale de la recette marginale entre 0 et la quantité échangée <span class="math inline">\(q^*\)</span>) ;</li>
+<li>En utilisant l’aire du rectangle rouge (<span class="math inline">\(\pi=p^* q^*\)</span>).</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="décision-de-production-du-monopole" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="décision-de-production-du-monopole"><span class="header-section-number">3.2</span> Décision de production du monopole</h2>
+<section id="maximisation-du-profit" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="maximisation-du-profit"><span class="header-section-number">3.2.1</span> Maximisation du profit</h3>
+<p>Comme dans le cas de la CPP, on suppose que le monopole cherche à maximiser son profit <span class="math inline">\(\pi(q)=R(q)-C(q)\)</span>, où <span class="math inline">\(C(q)\)</span> est la fonction de coût (total) du monopole.<br>
+Il y a 2 conditions d’optimalités, les conditions de premier ordre (la dérivée du profit à l’optimum est nulle: <span class="math inline">\(\pi'(q^*)=0\)</span>) et de second ordre (la dérivée seconde du profit à l’optimum est strictement négative <span class="math inline">\(\pi''(q^*)&lt;0\)</span>), ainsi qu’une contrainte, que le profit à l’optimum soit positif (<span class="math inline">\(\pi(q^*)&gt;0\)</span>).</p>
+<p>La condition de premier ordre s’exprime ainsi : <span class="math display">\[
+\begin{array}{rcl}
+\pi'(q^*) &amp;=&amp;0\\
+\Leftrightarrow R'(q^*) - C'(q^*) &amp;=&amp; 0\\
+\Leftrightarrow R_m(q^*) &amp;=&amp;C_m(q^*)
+\end{array}
+\]</span> À l’optimum, le monopole égalise le coût marginal et le revenu marginal.</p>
+<p>La condition du second ordre s’exprime ainsi : <span class="math display">\[
+\begin{array}{rcl}
+\pi''(q^*) &amp;&lt;&amp;0\\
+\Leftrightarrow R_m'(q^*) - C_m'(q^*) &amp;&lt;&amp; 0\\
+\Leftrightarrow R_m'(q^*) &amp;&lt;&amp; C_m'(q^*)
+\end{array}
+\]</span></p>
+<p>La dérivée de la recette marginale doit être inférieure à la dérivée du coût marginal. Autrement dit, la recette marginale doit croître moins vite que le coût marginal. Cette condition est en particulier vérifiée si la recette marginale est décroissante et le coût marginal croissant.</p>
+<p>Finalement, il faut vérifier que le profit à l’optimum est positif (<span class="math inline">\(\pi(q^*)&gt;0\)</span>). Dans le cas contraire, le marché n’existerait tout simplement pas, car le monopole ne voudrait pas produire le bien.</p>
+<div class="theorem" name="Optimum du du monopole">
+<p>À l’optimum, le monopole égalise le coût marginal et le revenu marginal. Ce n’est un maximum que si la dérivée de la recette marginale est inférieure à la dérivée du coût marginal et que le profit est positif. <span class="math display">\[\begin{equation}
+R_m(q^*)=C_m(q^*)
+(\#eq:cpo)
+\end{equation}\]</span> <span class="math display">\[\begin{equation}
+R_m'(q^*) &lt;C_m'(q^*) (\#eq:cso)
+\end{equation}\]</span> <span class="math display">\[\begin{equation}
+\pi(q^*)&gt;0 (\#eq:profitpos)
+\end{equation}\]</span></p>
+</div>
+<p>La figure @ref(fig:monopoleoptimale) donne l’intuition graphique de l’égalité entre le coût marginal et la recette marginale. Si le monopole produit plus que <span class="math inline">\(q_m^*\)</span>, alors chaque unité produite en plus lui coûte plus chère qu’elle ne lui rapporte, car le coût marginal est <em>supérieur</em> à la recette marginale. A l’inverse, s’il produit moins, produire des unités en plus lui rapporterait plus que cela ne lui coûte, car le coût marginal est <em>inférieur</em> à la recette marginale.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopoleoptimale-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Production optimale du monopole.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Le prix est lu et obtenu sur la courbe de <strong>demande</strong>.</p>
+<div id="monopoleexemple" class="example" name="Maximisation du monopole">
+<p>Prenons un monopole avec une fonction de coût <span class="math inline">\(C(q)=50+q^2\)</span>. Le monopole fait face à une demande inverse <span class="math inline">\(P(q) = 40-q\)</span>.</p>
+<p>Le coût marginal est : <span class="math display">\[
+C_m(q) = C'(q)=2q
+\]</span></p>
+<p>La recette totale est : <span class="math display">\[
+R(q) = qP(q) = q(40-q) = 40q-q^2
+\]</span> La recette marginale est donc : <span class="math display">\[
+R_m(q) = R'(q) = 40 - 2q
+\]</span> Le profit vaut : <span class="math display">\[
+\pi(q) = R(q)-C(q)
+\]</span> Conformément à l’équation @ref(eq:cpo), il est maximal lorsque : <span class="math display">\[
+\begin{array}{rcl}
+R_m(q^*) &amp;=&amp;C_m(q^*)\\
+\Leftrightarrow 40 -2q &amp;= &amp;2q\\
+\Leftrightarrow q^*&amp;=&amp;10
+\end{array}
+\]</span> La condition de second ordre de l’équation @ref(eq:cso) est bien vérifiée, car <span class="math inline">\(-2&lt;2\)</span>.</p>
+<p>Le prix de vente vaut : <span class="math display">\[P(q^*) = P(10) = 40-10 = 30\]</span> La recette vaut 300, le coût 150. On a donc un profit de <strong>150</strong>, qui est bien positif (condition de l’équation @ref(eq:profitpos).</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopolerecette-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Recette, coût et profit dans l’exemple @ref(exm:monopoleexemple).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopoleprofitexemple-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Demande, prix, coûts et profits dans l’exemple @ref(exm:monopoleexemple).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="propriétés-de-la-solution-du-monopole" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="propriétés-de-la-solution-du-monopole"><span class="header-section-number">3.2.2</span> Propriétés de la solution du monopole</h3>
+<p>On avait dans l’équation @ref(eq:rm) : <span class="math display">\[
+R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
+\]</span> Comme à l’optimum, d’après l’équation @ref(eq:cpo), on doit avoir <span class="math inline">\(R_m(q^*)=C_m(q^*)\)</span>, on a : <span class="math display">\[
+R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*)
+(\#eq:rmcm)
+\]</span> On observe ici un lien avec la solution en CPP. En effet, en CPP, l’élasticité de la demande au prix est perçue comme infinie, on aura donc bien <span class="math inline">\(P(q^*) = C_m(q^*)\)</span>, la solution obtenue en CPP. Dès lors que l’élasticité de la demande au prix n’est plus infinie en revanche, on obtient : <span class="math display">\[
+P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}} &gt; C_m(q^*)
+\]</span></p>
+<p><em>Question :</em> Dans quelle zone d’élasticité le monopole opère-t-il ?</p>
+<p>Si <span class="math inline">\(\left|\varepsilon_{q/p}(q^*)\right|&lt;1\)</span>, c’est-à-dire que si la demande est inélastique, alors <span class="math inline">\(1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} &lt;0\)</span>, ce qui implique que la recette marginale <span class="math inline">\(R_m\)</span> est négative et donc impossible à égaliser avec le coût marginal <span class="math inline">\(C_m\)</span>.<br>
+On peut voir la réponse d’une autre façon. Si la pente est inélastique, alors le revenu <span class="math inline">\(R\)</span> augmente quand la quantité <span class="math inline">\(q\)</span> baisse. Le coût total <span class="math inline">\(C\)</span> baisse aussi quand la quantité baisse. Le monopole aurait donc tout intérêt à réduire sa production lorsque la demande est inélastique.</p>
+<div class="corollary">
+<p>Le monopole opère donc nécessairement dans la zone élastique de la courbe de demande : <span class="math inline">\(\left|\varepsilon_{q/p}(q^*)\right|&gt;1\)</span> .</p>
+</div>
+</section>
+<section id="indice-de-pouvoir-du-monopole" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="indice-de-pouvoir-du-monopole"><span class="header-section-number">3.2.3</span> Indice de pouvoir du monopole</h3>
+<p>La capacité du monopole à vendre à un prix supérieur au coût marginal dépend de la plus ou moins grande élasticité de la demande au prix. Cela permet de construire un indice du <em>pouvoir de monopole</em> à partir de l’élasticité du prix à la demande à l’équilibre. On a, d’après l’équation @ref(eq:rmcm) : <span class="math display">\[
+R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*)
+\]</span> On en déduit :</p>
+<p><span class="math display">\[\begin{array}{rl}
+&amp; C_m(q^*) = P(q^*) - \frac{P(q^*)}{|\varepsilon_{q/p}(q^*)|}\\
+\Leftrightarrow &amp; P(q^*) - C_m(q^*) = \frac{P(q^*)}{|\varepsilon_{q/p}(q^*)|}
+\end{array}
+\]</span></p>
+<div id="Lerner" class="definition" name="Indice de Lerner">
+<p>On définit l’indice de Lerner <span class="math inline">\(L\)</span> par : <span class="math display">\[
+L=\frac{1}{|\varepsilon_{q/p}(q^*)|} = \frac{P(q^*) - C_m(q^*)}{P(q^*)} (\#eq:Lerner)
+\]</span> L’indice de Lerner est donc inversement proportionnel à l’élasticité prix de la demande. Il est aussi égal à la capacité du monopole à vendre au-dessus de son coût marginal, en pourcentage du prix total.</p>
+</div>
+<p>On peut construire à partir de l’équation précédente le <em>markup pricing</em>.</p>
+<div class="definition" name="Markup pricing">
+<p><span class="math display">\[
+P(q^*) =\frac{|\varepsilon_{q/p}(q^*)|}{|\varepsilon_{q/p}(q^*)|-1} C_m(q^*)
+\]</span></p>
+</div>
+</section>
+<section id="variation-de-la-demande" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="variation-de-la-demande"><span class="header-section-number">3.2.4</span> Variation de la demande</h3>
+<p>Les décisions de production du monopole et la fixation de son prix dépendent de la demande à laquelle il fait face et du coût marginal. Le monopole n’a <strong>pas de courbe d’offre</strong> au sens où il n’y a pas de relation univoque entre prix et quantité produite, à la différence des producteurs en CPP. En monopole, si la demande change, le monopole s’adapte, soit en changeant sa production, mais pas son prix (figure @ref(fig:monopolechangementdemande2)), ou l’inverse (figure@ref(fig:monopolechangementdemande1)).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopolechangementdemande1-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Exemple de réaction du monopole à un changement de demande: changement de prix.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopolechangementdemande2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Exemple de réaction du monopole à un changement de demande: changement de quantité.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>En CPP, un changement de demande, si elle implique une changement du prix d’équilibre, entraîne forcément un changement dans la quantité produite par un producteur individuel.</p>
+</section>
+<section id="linefficience-du-monopole" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="linefficience-du-monopole"><span class="header-section-number">3.2.5</span> L’inefficience du monopole</h3>
+<p>La production du monopole est inférieure à la production en CPP et le prix est supérieur au prix de CPP.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monosurplus-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Surplus quand le producteur est en monopole.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu’en CPP, et que le surplus des consommateur est plus faible. Il y a globalement une perte sèche de surplus total. <strong>Le monopole est inefficace au sens de Pareto.</strong> Il existe des consommateurs prêt à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche). Il est donc possible d’avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole. Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d’autre pour obtenir cette amélioration.</p>
+</section>
+</section>
+<section id="régulation-du-monopole" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="régulation-du-monopole"><span class="header-section-number">3.3</span> Régulation du monopole</h2>
+<p>Cette partie va traiter de la manière dont un gouvernement peut inciter ou contraindre un monopole à modifier son comportement. Un premier type de régulation est par la taxation ou la subvention du monopole. Un second type de régulation est l’imposition d’un prix maximal.</p>
+<section id="taxes-et-subventions" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="taxes-et-subventions"><span class="header-section-number">3.3.1</span> Taxes et subventions</h3>
+<section id="taxe-unitaire" class="level4" data-number="3.3.1.1">
+<h4 data-number="3.3.1.1" class="anchored" data-anchor-id="taxe-unitaire"><span class="header-section-number">3.3.1.1</span> Taxe unitaire</h4>
+<div class="definition" name="Taxe unitaire">
+<p>Une taxe unitaire <span class="math inline">\(t\)</span> est une taxe <strong>par unité de bien produite</strong>.</p>
+</div>
+<p>Un gouvernement impose une taxe de <span class="math inline">\(t\)</span> unités monétaire par unité de bien produite. Le profit du monopole se réécrit alors :</p>
+<p><span class="math display">\[
+\pi(q) = R(q) - C(q) -tq
+\]</span> La condition de première ordre de la maximisation du producteur de l’équation @ref(eq:cpo) devient alors : <span class="math display">\[
+\begin{array}{rl}
+&amp;(R(q)-C(q) -tq)'(q^*) = 0\\
+\Leftrightarrow &amp; R_m(q^*)-C_m(q*) -t = 0\\
+\Leftrightarrow &amp; R_m(q^*) = C_m(q^*) + t
+\end{array}
+\]</span> Le problème est exactement le même que précédemment, en intégrant la taxe dans le coût marginal. Pour le monopole, c’est comme si l’État ajoutait un coût <span class="math inline">\(t\)</span> à chaque unité produite. C’est effectivement ce que l’État fait si on considère le coût de production au sens large.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopoletaxeunitaire-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Impact d’une taxe unitaire : augmentation du coût marginal.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Cela entraîne une diminution de la quantité produite et une augmentation du prix. Le surplus des consommateurs baisse, ainsi que celui du monopole.</p>
+<p>Une vue <strong>alternative</strong> à l’augmentation du coût marginal est de considérer que la taxe diminue la recette marginale de <span class="math inline">\(t\)</span> : <span class="math display">\[
+R_m(q^*) -t = C_m(q^*)
+\]</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopoletaxeunitaire2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Impact d’une taxe unitaire : diminution de recette marginale.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Si le gouvernement utilise une taxe négative (= une subvention), alors le gouvernement peut augmenter la production et de diminuer le prix.</p>
+</section>
+<section id="taxe-forfaitaire" class="level4" data-number="3.3.1.2">
+<h4 data-number="3.3.1.2" class="anchored" data-anchor-id="taxe-forfaitaire"><span class="header-section-number">3.3.1.2</span> Taxe forfaitaire</h4>
+<div class="definition" name="Taxe forfaitaire">
+<p>Une taxe forfaitaire est une taxe <span class="math inline">\(T\)</span> imposée au monopole directement sur son profit, indépendamment de tout (prix ou quantité produite).</p>
+</div>
+<p>Avec une taxe forfaitaire, l’état prélève un montant <span class="math inline">\(T\)</span> indépendant de la quantité produite sur le profit du producteur. <span class="math display">\[
+\pi(q) = R(q) - C(q) -T
+\]</span> La condition du premier ordre de l’équation @ref(eq:cpo) devient alors : <span class="math display">\[
+\begin{array}{rl}
+&amp; (R(q)-C(q) -T)'(q^*) = 0\\
+\Leftrightarrow &amp; R_m(q^*)-C_m(q*) = 0\\
+\Leftrightarrow &amp; R_m(q^*) = C_m(q^*)
+\end{array}
+\]</span> On retrouve exactement la même condition d’optimalité qu’en l’absence de taxe. Si elle n’est pas trop élevée, une taxe forfaitaire n’a <em>aucune</em> influence sur la quantité produite et le prix. Si la taxe forfaitaire est très élevée, supérieure au profit <span class="math inline">\(R(q^*) - C(q^*) &lt;T\)</span>, le monopole préfère ne rien produire et le surplus social est nul.</p>
+<p>On peut donc envisager de combiner une subvention unitaire au monopole combinée à une taxe forfaitaire pour augmenter le surplus total.</p>
+</section>
+<section id="impôt-sur-les-bénéfices-profit" class="level4" data-number="3.3.1.3">
+<h4 data-number="3.3.1.3" class="anchored" data-anchor-id="impôt-sur-les-bénéfices-profit"><span class="header-section-number">3.3.1.3</span> Impôt sur les bénéfices (profit)</h4>
+<p>Un autre type d’imposition possible est l’impôt sur les bénéfices.</p>
+<div class="definition" name="Impôt sur les bénéfices">
+<p>L’impôt sur les bénéfices consiste à taxer le profit à un taux <span class="math inline">\(t\)</span>. On impose au monopole de payer un pourcentage de ses profits en impôts.</p>
+</div>
+<p>Au lieu de taxer chaque unité produite, on taxe le niveau de profit à un taux <span class="math inline">\(t\)</span>. Le profit s’écrit alors : <span class="math display">\[
+\pi(q) = R(q) - C(q) -t(R(q) - C(q)) = (1-t)(R(q) - C(q))
+\]</span> La condition du premier ordre de l’équation @ref(eq:cpo) devient alors : <span class="math display">\[
+\begin{array}{rl}
+&amp;((1-t)(R(q)-C(q)))'(q^*) = 0\\
+\Leftrightarrow &amp; (1-t)(R_m(q^*)-C_m(q^*)) = 0\\
+\Leftrightarrow &amp; R_m(q^*) = C_m(q^*)
+\end{array}
+\]</span></p>
+<p>Comme pour la taxe forfaitaire, le comportement du monopole n’est pas modifié par un impôt sur les bénéfices. On peut donc aussi envisager une subvention à la production et une taxe proportionnelle sur le profit.</p>
+</section>
+</section>
+<section id="prix-maximal" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="prix-maximal"><span class="header-section-number">3.3.2</span> Prix maximal</h3>
+<p>L’État fixe un <em>prix maximal</em> <span class="math inline">\(p^{max}\)</span> au dessus duquel le monopole ne peut pas vendre. Il modifie ainsi la demande perçue par le producteur.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopoleprixmaximal-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Fixation d’un prix maximal supérieur au prix de CPP.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopoleprixmaximal2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Fixation d’un prix maximal inférieur au prix de CPP.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Si le prix maximum est inférieur au prix de concurrence pure et parfaite, les quantités produites peuvent devenir sous-optimales. Le gouvernement peux maximiser le surplus social en prenant le prix concurrentiel comme prix maximum.<br>
+<em>Rappel :</em> En CPP, on obtient le prix à l’aide de la courbe de coût marginal. L’équilibre a lieu quand le coût marginal et la demande se croisent.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopoleprixmaximalCPP-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Fixation d’un prix maximal égal au prix de CPP.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Avec un prix maximum égal au prix de concurrence pure et parfaite, le revenu marginal coupe la courbe de coût marginal au point d’équilibre de la concurrence pure et parfaite. Le prix maximal génère alors exactement la situation de CPP. On est donc dans une situation optimale au sens de Pareto.</p>
+<div class="proposition" name="Evolution des quantités produites avec un prix maximal">
+<p>Trois situations sont possibles avec un prix maximal :</p>
+<ol type="1">
+<li>S’il est supérieur au prix de monopole (<span class="math inline">\(p^{max}&gt;p^*_m\)</span>), alors le prix maximal n’a aucune incidence.</li>
+<li>S’il est entre le prix de monopole et le prix de concurrence pure et parfaite (<span class="math inline">\(p^*_{CPP}\leq p^{max}\leq p^*_m\)</span>), alors la quantité produite augmente quand le prix maximal diminue.</li>
+<li>S’il est inférieur au prix de CPP et donc de monopole (<span class="math inline">\(p^*_{CPP}&gt; p^{max}\)</span>), alors la quantité produite diminue quand le prix maximal augmente.</li>
+</ol>
+</div>
+</section>
+</section>
+<section id="le-monopole-naturel" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="le-monopole-naturel"><span class="header-section-number">3.4</span> Le monopole naturel</h2>
+<p>Une situation de monopole est dite <em>naturelle</em> si le monopole émerge à cause d’une structure particulière de la technologie de production et des coûts, plutôt qu’à cause d’une disposition légale.</p>
+<div class="definition" name="Rendements d'échelles">
+<p>Les <em>rendements d’échelles</em> sont croissants lorsque la technologie de production <span class="math inline">\(f\)</span> est telle que : <span class="math display">\[
+f(\lambda z_1, \lambda z_2, ...\lambda z_n) &gt; \lambda f(z_1,z_2, ..., z_n)
+\]</span> où les <span class="math inline">\(z_i\)</span> sont les facteurs de productions. En mots : une entreprise utilisant <span class="math inline">\(\lambda\)</span> fois plus de facteurs de productions qu’une petite entreprise produit plus que <span class="math inline">\(\lambda\)</span> petites entreprises réunies.</p>
+</div>
+<p>Une conséquence des rendements d’échelle croissants est que le coût moyen est décroissant : <span class="math display">\[
+C_M(f(\lambda z)) =\frac{\lambda z\cdot w_z}{f(\lambda z)} &lt; C_M(\lambda f(z)) = \frac{\lambda z\cdot w_z}{\lambda f(z)}
+\]</span> car <span class="math inline">\(f(\lambda z)&gt;\lambda f(z)\)</span>. Cela signifie qu’une seule entreprise qui produit <span class="math inline">\(f(\lambda z)\)</span> est plus efficace que <span class="math inline">\(\lambda\)</span> entreprises qui produisent <span class="math inline">\(\lambda f(z)\)</span>. Il y a ici des économies d’échelle.</p>
+<div class="definition" name="Économie d'échelle">
+<p>Il y a des <em>économies d’échelle</em> quand une unité de bien produite en plus revient moins chère que l’unité précédente. Cela signifie que le <em>coût moyen</em> baisse quand le producteur produit plus d’unités.</p>
+</div>
+<div class="definition" name="Monopole naturel">
+<p>Un monopole naturel émerge en présence d’économies d’échelles dans la zone de production optimale.</p>
+</div>
+<p>En général, les économies d’échelles proviennent de coûts fixes élevés. Par exemple, lorsqu’il faut investir dans un réseau (ferrés, téléphone, électricité, etc).</p>
+<p>Il y a presque toujours une zone où le coût moyen est décroissant, mais elle est rarement très étendue. Dans le graphique @ref(fig:monopolenaturelcout), la demande inverse 1 coupe la courbe de coût marginal à un endroit où les économies d’échelle sont décroissantes. La demande 2, en revanche, la coupe à un endroit où les économies d’échelle sont croissantes.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopolenaturelcout-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Fonction de coût et demande avec et sans économies d’échelle.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remarque</em> (Lien entre coût marginal et coût moyen en monopole naturel.). </span>Lorsque le coût moyen est décroissant, c’est que le coût marginal est inférieur au coût moyen. <span class="math display">\[
+C_M(q) = \frac{C(q)}{q}
+\]</span> <span class="math display">\[
+C_M'(q) =\frac{C'(q)q-C(q)}{q^2} = \frac{C_m(q)-C_M(q)}{q}
+\]</span> Or <span class="math inline">\(C_M'(q)&lt;0\)</span>, comme le coût marginal est décroissant. On en déduit donc que : <span class="math display">\[
+C_m(q)-C_M(q)&lt; 0 \Leftrightarrow C_m(q)&lt;C_M(q)
+\]</span></p>
+</div>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remarque</em> (Rendements d’échelle et économies d’échelle). </span>Il ne faut pas confondre les rendements d’échelle, qui mettent en relation les <strong>quantités</strong> de facteurs de productions et les quantités de biens produites et économies d’échelle, qui est une notion lié au <strong>coût</strong> de production des unités de biens produites.</p>
+</div>
+<section id="régulation-du-monopole-naturel" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="régulation-du-monopole-naturel"><span class="header-section-number">3.4.1</span> Régulation du monopole naturel</h3>
+<p>Dans le cas d’un monopole naturel, le coût marginal est inférieur au coût moyen à l’optimum. Une régulation qui maximise le surplus total est une régulation qui fait en sorte que la quantité produite est celle produite en concurrence pure et parfaite. Dans le cadre du monopole naturel, cela signifie que le coût moyen sera supérieur au coût marginal et donc au prix d’échange de la concurrence pure et parfaite, comme illustré dans la figure @ref(fig:monopolenaturel).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopolenaturel-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Régulation du monopole naturel.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Si on impose une tarification au coût marginal, à l’aide d’un prix maximal, par exemple, alors le monopole fait des pertes, car le prix est inférieur au coût moyen. La régulation “optimale” généralement utilisée impose <em>un prix au coût moyen</em> et une obligation de satisfaire toute la demande. Le monopole fait alors un profit nul.</p>
+<p>Une solution alternative est un prix égal au coût marginal assorti de subventions pour couvrir les pertes.</p>
+</section>
+</section>
+<section id="le-monopole-discriminant" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="le-monopole-discriminant"><span class="header-section-number">3.5</span> Le monopole discriminant</h2>
+<p>Un monopole discriminant pratique un prix différent pour chaque (groupe de) consommateurs. Pour cela, il doit pouvoir identifier l’appartenance de chaque consommateur à un groupe et les marchés entre les consommateurs doivent être hermétiques. En particulier, il ne faut pas qu’un consommateur puisse revendre son unité de bien à un autre consommateur.</p>
+<p>Il existe 3 types de discriminations par les prix, les discrimination du premier, deuxième et troisième degrés. On ne traitera que les discriminations du premier et troisième degrés dans ce cours.</p>
+<section id="discrimination-au-premier-degré-discrimination-parfaite" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="discrimination-au-premier-degré-discrimination-parfaite"><span class="header-section-number">3.5.1</span> Discrimination au premier degré (discrimination parfaite)</h3>
+<p>Dans une discrimination parfaite, le monopole connaît la valorisation (prix de réserve) de chaque individu et lui fait payer le prix maximum qu’il est prêt à payer (son prix de réserve donc). Le consommateur ne retient alors aucun surplus, la <em>totalité</em> du surplus est capturé par le producteur.</p>
+<p><em>Question :</em> Quel va être le niveau de production du monopole ?</p>
+<p>Comme le monopole fait payer chaque unité à la valorisation du consommateur, la première unité est vendue au prix P(1), la deuxième au prix P(2), etc. La recette totale est donc : <span class="math display">\[
+R(q) = \int_0^q P(x) dx
+\]</span> Notons le coût total <span class="math inline">\(C(q)\)</span>. Le profit est : <span class="math display">\[
+\pi(q) = R(q) - C(q) = \int_0^q P(x) dx -C(q)
+\]</span> La condition du premier ordre s’écrit donc : <span class="math display">\[
+\begin{array}{rl}
+&amp;\frac{d\pi(q^*)}{dq} = 0\\
+\Leftrightarrow &amp; \frac{d\int_0^{q^*} P(x) dx -C(q^*)}{dq} = 0\\
+\Leftrightarrow &amp; P(q^*) - C_m(q^*) = 0\\
+\Leftrightarrow &amp; P(q^*) = C_m(q^*)
+\end{array}
+\]</span> La recette marginale est ici confondue avec la courbe de demande. L’optimum se trouve donc au point où la courbe de coût marginal coupe la courbe de demande (inverse). C’est la même condition qu’en CPP. Le monopole parfaitement discriminant produit donc la quantité de concurrence pure et parfaite. Le prix de la dernière unité vendue par le monopole est égal au prix de la concurrence pure et parfaite, même si les prix des autres unités vendues sont supérieurs au prix de la CPP.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopolediscriparfaite-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Surplus du monopole en discrimination parfaite (aire rouge et bleue).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La situation de discrimination parfaite est un optimum de Pareto. En effet, le surplus social est maximal (mais capturé entièrement par le monopole).</p>
+<p>En pratique, il est très difficile de faire de la discrimination parfaite. Les entreprises essaient de s’en approcher le plus possible.</p>
+<div class="example" name="Exemple de discrimination parfaite">
+<p>Lors d’une vente de bons du trésors des Etats-Unis, chaque ménage intéressé soumettait une offre (prix, quantité) au gouvernement. Le gouvernement triait les offres par ordre décroissant de prix et les satisfait jusqu’à épuisement des bons à vendre.</p>
+</div>
+</section>
+<section id="discrimination-du-deuxième-degré" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="discrimination-du-deuxième-degré"><span class="header-section-number">3.5.2</span> Discrimination du deuxième degré</h3>
+<div class="definition" name="Discrimination du deuxième degré">
+<p>La discrimination du deuxième degré a lieu lorsque les prix de ventes dépendent des quantités achetées.</p>
+</div>
+<p>Par exemple, si les 10 premières unités vendues le sont à 5€ et les suivantes à 2€. Les prix de vente sont nécessairement <em>décroissants</em> avec la quantité vendue.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-monopole_files/figure-html/monopolediscri2degre-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Graphique avec une discrimination du deuxième degré. Les quantités inférieures à <span class="math inline">\(q_1\)</span> sont vendues au prix <span class="math inline">\(p_1\)</span>, les suivantes au prix <span class="math inline">\(p_2\)</span>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Le monopole ajuste les quantités seuils afin de maximiser son profit. Il y a un nombre fini de seuils de dégressivité. Plus il y a de seuils, plus on s’approche d’un situation de discrimination parfaite.</p>
+</section>
+<section id="discrimination-du-troisième-degré" class="level3" data-number="3.5.3">
+<h3 data-number="3.5.3" class="anchored" data-anchor-id="discrimination-du-troisième-degré"><span class="header-section-number">3.5.3</span> Discrimination du troisième degré</h3>
+<!-- A faire si le temps le permet. -->
+<p>Il s’agit de faire payer un prix différent à chaque groupe de consommateur en fonction des caractéristiques de leurs fonctions de demande. Tous les membres d’un groupe paient le même prix, contrairement à la discrimination au premier degré. Les groupes sont en général caractérisés par des propensions à payer différentes. Il s’agit d’une segmentation des consommateurs.</p>
+<div class="example" name="Discrimination au troisième degré">
+<p>Les tarifs jeunes de la SNCF, les tarifs familles. Il est important de pouvoir identifier les groupes.</p>
+</div>
+<p><em>Question :</em> Comment répartir la production entre les différents groupes ?</p>
+<ol type="1">
+<li>Quelle production totale ?</li>
+<li>Quelle répartition ?</li>
+</ol>
+<p><em>Méthode :</em> On résout d’abord 2 en supposant que 1 est déjà résolu. On obtient alors la répartition en fonction de la production totale. Puis ou résout 1 à l’aide de la solution de 2.</p>
+<p>On modélise le problème de la manière suivante :</p>
+<ul>
+<li>2 groupes A et B ;</li>
+<li>Avec des fonctions de demande inverses <span class="math inline">\(P_A(q_A)\)</span> et <span class="math inline">\(P_B(q_B)\)</span> ;</li>
+<li>Une quantité <span class="math inline">\(q\)</span> totale a été produite, qu’il faut répartir entre les 2 groupes : <span class="math inline">\(q=q_A+q_B\)</span>.</li>
+</ul>
+<p>Le problème du monopole s’écrit : <span class="math display">\[
+\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q)
+\]</span> La quantité totale <span class="math inline">\(q\)</span> est fixée, donc le coût total l’est aussi et peut être supprimé du problème de maximisation. On cherche donc juste à maximiser la recette totale : <span class="math display">\[
+\max_{q_A, q_B} q_AP_A(q_A) + q_BP_B(q_B)
+\]</span> Avec <span class="math inline">\(q=q_A+q_B\)</span>, donc <span class="math inline">\(q_B=q-q_A\)</span>, le problème devient : <span class="math display">\[
+\begin{array}{rl}
+&amp;\max_{q_A, 0\leq q_A\leq q} q_AP_A(q_A) + (q-q_A)P_B(q-q_A) \\
+\Leftrightarrow &amp;\max_{q_A, 0\leq q_A\leq q} R_A(q_A) + R_B(q-q_A)
+\end{array}
+\]</span> La condition du premier ordre s’écrit : <span class="math display">\[
+\begin{array}{rl}
+&amp;\frac{dR_A(q_A) + R_B(q-q_A) }{dq_A} = 0\\
+\Leftrightarrow &amp; R_{mA}(q_A) - R_{mB}(q-q_A) = 0\\
+\Leftrightarrow &amp; R_{mA}(q_A) = R_{mB}(q_B)
+(\#eq:cpo3e)
+\end{array}
+\]</span> L’équation @ref(eq:cpo3e) nous dit que le monopole réparti la quantité totale produite de manière à égaliser les recettes marginales entre les deux groupes.</p>
+<p>Intuitivement, si la recette marginale issue du groupe A est supérieure à celle issue du groupe B (<span class="math inline">\(R_{mA}(q_A) &gt; R_{mB}(q_B)\)</span>), alors en diminuant la quantité <span class="math inline">\(q_B\)</span> dans le groupe B et en la transférant au groupe A, le monopole perd <span class="math inline">\(R_{mB}(q_B)\)</span> et gagne <span class="math inline">\(R_{mA}(q_A)\)</span>, donc la recette totale augmente et le profit aussi. Inversement dans le cas opposé. Il n’est donc pas intéressant de transférer la production d’un groupe vers un autre lorsque <span class="math inline">\(R_{mA}(q_A) = R_{mB}(q_B)\)</span> (et seulement dans ce cas).</p>
+<p>Maintenant que la répartition est résolue, il faut trouver la quantité totale produite. Le problème devient maintenant : <span class="math display">\[
+\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q_A+q_B)
+\]</span> La condition du premier ordre s’obtient maintenant en dérivant suivant <span class="math inline">\(q_A\)</span> et <span class="math inline">\(q_B\)</span> séparément : <span class="math display">\[
+\begin{array}{rcl}
+\frac{\partial\pi(q_A, q_B)}{\partial q_A} = 0&amp;\Leftrightarrow&amp; R_{mA}(q_A^*) = C_m(q_A^*+q_B^*)\\
+\frac{\partial\pi(q_A, q_B)}{\partial q_B} = 0&amp;\Leftrightarrow&amp; R_{mB}(q_B^*) = C_m(q_A^*+q_B^*)\\
+\end{array}
+\]</span> Le monopole doit faire en sorte que le coût marginal de sa production totale soit égale à la recette marginale sur chacun des marchés.</p>
+<p><em>Intuition :</em> Le monopole doit égaliser la recette marginale sur les deux marchés. Or le coût marginal dépend de la quantité <em>totale</em> produite, pas de la répartition entre les marchés. Si on est dans la situation telle que <span class="math inline">\(C_m(q)&lt;R_{mA}(q_A)\)</span>, alors il y a la possibilité de faire du profit sur le marché A (et le marché B par conséquent). Inversement, si <span class="math inline">\(C_m(q)&gt;R_{mA}(q_A)\)</span>, alors le monopole fait des pertes.</p>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remarque</em>. </span>On utilise bien <span class="math inline">\(C_m(q_A+q_B)\)</span> et non <span class="math inline">\(C_m(q_A)\)</span> ou <span class="math inline">\(C_m(q_B)\)</span> car c’est bien la variation du coût total lorsqu’on augmente “un peu” <span class="math inline">\(q_A\)</span> et <span class="math inline">\(q_B\)</span> reste fixe.</p>
+</div>
+<p>D’après l’équation @ref(eq:rm), on peut écrire : <span class="math display">\[
+\begin{array}{crcl}
+&amp;R_{mA}(q_A^*) &amp;=&amp; R_{mB}(q_B^*)\\
+\Leftrightarrow &amp; P_A(q_A^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_A}(q^*_A)\right|}\right) &amp; = &amp; P_B(q_B^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_B}(q_B^*)\right|}\right)
+\end{array}
+\]</span> Sans perte de généralité, on peut supposer que <span class="math inline">\(P_A(q_A^*)&gt; P_B(q_B^*)\)</span>. On obtient alors que : <span class="math display">\[
+1-\frac{1}{\left|\varepsilon_{q/p_A}(q_A^*)\right|} &lt;1-\frac{1}{\left|\varepsilon_{q/p_B}(q_B^*)\right|}
+\]</span> Autrement dit <span class="math display">\[
+\left|\varepsilon_{q/p_B}(q_B^*)\right|&gt;\left|\varepsilon_{q/p_A}(q^*_A)\right|
+\]</span> Le prix est donc plus faible pour le groupe où l’élasticité prix de la demande est plus élevée. Le prix est plus élevé pour le groupe avec l’élasticité la plus faible, les moins réactifs au prix.</p>
+<div class="example">
+<p>Les tarifs “professionnels” dans les transports (avion, train, etc). Les professionnels sont moins sensibles au prix car leurs dates de voyage sont moins flexibles que celles des particuliers. Leurs élasticités-prix sont donc plus faibles et leurs prix plus élevés.</p>
+</div>
+<p>Des fonctions de demande inverse différentes associées à des élasticités-prix de la demande différente aboutissent à des prix différents.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-cpp.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Le marché en concurrence pure et parfaite</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03-oligopoles.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Oligopoles</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

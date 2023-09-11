@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Cours de microéconomie en licence 2 à l’université Paris 8.">
+
+<title>Microéconomie 2 - 4&nbsp; Oligopoles</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./07-references.html" rel="next">
+<link href="./02-monopole.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-oligopoles.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Oligopoles</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Microéconomie 2</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Microéconomie-2.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Microéconomie 2</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-cpp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Le marché en concurrence pure et parfaite</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-monopole.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Le monopole</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-oligopoles.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Oligopoles</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Annexes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-cppmono.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Résolution des problèmes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-equilibres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Annexes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-surplus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Calcul des surplus</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul>
+  <li><a href="#duopole-à-la-cournot" id="toc-duopole-à-la-cournot" class="nav-link active" data-scroll-target="#duopole-à-la-cournot"><span class="header-section-number">4.1</span> Duopole à la Cournot</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">4.1.1</span> Introduction</a></li>
+  <li><a href="#formalisation-du-problème" id="toc-formalisation-du-problème" class="nav-link" data-scroll-target="#formalisation-du-problème"><span class="header-section-number">4.1.2</span> Formalisation du problème</a></li>
+  <li><a href="#exemple" id="toc-exemple" class="nav-link" data-scroll-target="#exemple"><span class="header-section-number">4.1.3</span> Exemple</a></li>
+  <li><a href="#une-intuition-graphique-les-courbes-disoprofit" id="toc-une-intuition-graphique-les-courbes-disoprofit" class="nav-link" data-scroll-target="#une-intuition-graphique-les-courbes-disoprofit"><span class="header-section-number">4.1.4</span> Une intuition graphique : les courbes d’isoprofit</a></li>
+  </ul></li>
+  <li><a href="#duopole-à-la-stackelberg" id="toc-duopole-à-la-stackelberg" class="nav-link" data-scroll-target="#duopole-à-la-stackelberg"><span class="header-section-number">4.2</span> Duopole à la Stackelberg</a>
+  <ul class="collapse">
+  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1"><span class="header-section-number">4.2.1</span> Introduction</a></li>
+  <li><a href="#résolution-graphique" id="toc-résolution-graphique" class="nav-link" data-scroll-target="#résolution-graphique"><span class="header-section-number">4.2.2</span> Résolution graphique</a></li>
+  <li><a href="#exemple-1" id="toc-exemple-1" class="nav-link" data-scroll-target="#exemple-1"><span class="header-section-number">4.2.3</span> Exemple</a></li>
+  </ul></li>
+  <li><a href="#cartels-et-collusions" id="toc-cartels-et-collusions" class="nav-link" data-scroll-target="#cartels-et-collusions"><span class="header-section-number">4.3</span> Cartels et collusions</a>
+  <ul class="collapse">
+  <li><a href="#introduction-2" id="toc-introduction-2" class="nav-link" data-scroll-target="#introduction-2"><span class="header-section-number">4.3.1</span> Introduction</a></li>
+  <li><a href="#raisonnement-graphique" id="toc-raisonnement-graphique" class="nav-link" data-scroll-target="#raisonnement-graphique"><span class="header-section-number">4.3.2</span> Raisonnement graphique</a></li>
+  <li><a href="#résolution-analytique" id="toc-résolution-analytique" class="nav-link" data-scroll-target="#résolution-analytique"><span class="header-section-number">4.3.3</span> Résolution analytique</a></li>
+  </ul></li>
+  <li><a href="#oligopoles" id="toc-oligopoles" class="nav-link" data-scroll-target="#oligopoles"><span class="header-section-number">4.4</span> Oligopoles</a>
+  <ul class="collapse">
+  <li><a href="#indice-de-lerner" id="toc-indice-de-lerner" class="nav-link" data-scroll-target="#indice-de-lerner"><span class="header-section-number">4.4.1</span> Indice de Lerner</a></li>
+  <li><a href="#indice-de-concentration-du-marché" id="toc-indice-de-concentration-du-marché" class="nav-link" data-scroll-target="#indice-de-concentration-du-marché"><span class="header-section-number">4.4.2</span> Indice de concentration du marché</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Oligopoles</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Nous avons étudié jusqu’à présent deux cas extrêmes :</p>
+<ul>
+<li>La concurrence pure et parfaite : il y a une infinité d’entreprises infinitésimales sur un marché donné ;</li>
+<li>Le monopole : il y a une seule entreprise sur un marché donné.</li>
+</ul>
+<p>Dans les deux cas, le ou les entreprises n’ont pas à se préoccuper des autres entreprises. Dans le cas du monopole, parce qu’il n’y en a pas. Dans le cas de la CPP, l’entreprise observe le prix du marché et prend sa décision en fonction de ce prix et uniquement de ce prix. Les actions des autres entreprises ne l’influencent pas.</p>
+<p>On considère maintenant la situation où il n’y a plus une seule ou une infinité d’entreprises, mais plusieurs, qui sont en situation d’<em>interactions stratégiques</em>. Les décisions de chaque acteur dépend des décisions des autres acteurs (ou des anticipations de ces décisions).<br>
+On parle de <em>duopole</em> dans le cas où le marché compte deux entreprises et d’<em>oligopole</em> dans le cas où il compte plus que deux entreprises.<br>
+Les entreprises peuvent se faire concurrence de différentes manières :</p>
+<ul>
+<li>En quantité, concurrence dite à la <em>Cournot</em> ;</li>
+<li>En prix, concurrence à la <em>Bertrand</em> ;</li>
+<li>En prenant une situation de leader ou de follower, à la <em>Stackelberg</em> ;</li>
+<li>En format une entente, dans un <em>cartel</em> ;</li>
+<li>Dans une concurrence spatiale, à la <em>Hotelling</em>.</li>
+</ul>
+<p>Nous verrons dans ce cours les concurrences à la Cournot et à la Stackelberg, ainsi que les cartels.</p>
+<section id="duopole-à-la-cournot" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="duopole-à-la-cournot"><span class="header-section-number">4.1</span> Duopole à la Cournot</h2>
+<section id="introduction" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">4.1.1</span> Introduction</h3>
+<p>On considère deux entreprises sur le même marché qui doivent choisir les quantités à produire, sans connaître la quantité choisie par l’autre (= décision simultanée).<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Le prix est déterminé par la quantité <em>totale</em> produite par les deux entreprises et la fonction de demande sur le marché.</p>
+<p>Chaque entreprise est caractérisée par une quantité produite et un coût :</p>
+<ul>
+<li>Entreprise 1 : quantité <span class="math inline">\(q_1\)</span> produite au coût <span class="math inline">\(C_1(q_1)\)</span> ;</li>
+<li>Entreprise 2 : quantité <span class="math inline">\(q_2\)</span> produite au coût <span class="math inline">\(C_2(q_2)\)</span>.</li>
+</ul>
+<p>Les fonctions de coût sont <strong>différentes</strong> entre les deux entreprises, contrairement au cas du monopole discriminant au troisième degré, où l’on considérait <span class="math inline">\(C(q_1+q_2)\)</span>.</p>
+<p>La fonction de demande inverse sur le marché est unique et donnée par <span class="math inline">\(P(q_1+q_2)\)</span>, contrairement au monopole discriminant où il y avait une fonction de demande par groupe.</p>
+<p>Il y a deux entreprises, donc deux fonctions de profit : <span class="math display">\[
+\begin{array}{rcl}
+\pi_1(q_1, q_2) &amp;=&amp; P(q_1+q_2)\cdot q_1-C_1(q_1)\\
+\pi_2(q_1, q_2) &amp;=&amp; P(q_1+q_2)\cdot q_2-C_2(q_2)
+\end{array}
+\]</span> L’action d’une entreprise a des conséquences sur le profit réalisé par l’autre entreprise, même si celle-ci ne fait rien. En particulier, si <span class="math inline">\(q_1\)</span> augmente, alors le prix du marché diminue, au travers de la fonction de demande inverse <span class="math inline">\(P\)</span>, et donc le profit de l’entreprise 2, <span class="math inline">\(\pi_2\)</span>, diminue, et réciproquement si <span class="math inline">\(q_2\)</span> augmente. Il y a donc un conflit d’intérêt entre les producteurs. Chaque entreprise doit anticiper l’action de l’autre et réagir à cette anticipation le mieux possible.</p>
+<p><em>Question :</em> Peut-il y avoir un équilibre dans cette situation ?</p>
+</section>
+<section id="formalisation-du-problème" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="formalisation-du-problème"><span class="header-section-number">4.1.2</span> Formalisation du problème</h3>
+<section id="expression-des-profits" class="level4" data-number="4.1.2.1">
+<h4 data-number="4.1.2.1" class="anchored" data-anchor-id="expression-des-profits"><span class="header-section-number">4.1.2.1</span> Expression des profits</h4>
+<p>On a des profits : <span class="math display">\[
+\begin{array}{rcl}
+\pi_1(q_1, q_2) &amp;=&amp; P(q_1+q_2)\cdot q_1-C_1(q_1)\\
+\pi_2(q_1, q_2) &amp;=&amp; P(q_1+q_2)\cdot q_2-C_2(q_2)
+\end{array}
+(\#eq:profitcournot)
+\]</span></p>
+<p>Supposons que l’entreprise 1 <em>croit</em> que l’entreprise 2 va produire <span class="math inline">\(q_2^a\)</span>. Quelle est sa production optimale ? Son problème de maximisation s’écrit dans ce cas : <span class="math display">\[
+\max_{q_1} \pi_1(q_1, q_2^a) =  q_1P(q_1+q_2^a)-C_1(q_1)
+\]</span> On peut déduire de ce problème d’optimisation la <em>fonction de réaction</em> <span class="math inline">\(q_1(q_2^a)=f_1(q_2^a)\)</span> qui maximise <span class="math inline">\(\pi_1(q_1)\)</span> en fonction de la production anticipée <span class="math inline">\(q_2^a\)</span> de l’entreprise 2.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> La fonction de réaction <span class="math inline">\(f_1(q_2^a)\)</span> donne la valeur de <span class="math inline">\(q_1\)</span> qui maximise le profit quand l’entreprise 2 produit <span class="math inline">\(q_2^a\)</span>.</p>
+<p>De la même manière, l’entreprise 2 cherche à maximiser <span class="math inline">\(\pi_2\)</span> en fonction de la production anticipée <span class="math inline">\(q_1^a\)</span> de l’entreprise 1. Son programme est : <span class="math display">\[
+\max_{q_2} \pi_2(q_1^a, q_2) =  q_1P(q_1^a+q_2)-C_2(q_2)
+\]</span> Elle aura également une fonction de réaction <span class="math inline">\(q_2(q_1^a)=f_2(q_1^a)\)</span>.</p>
+</section>
+<section id="forme-des-fonctions-de-réaction" class="level4" data-number="4.1.2.2">
+<h4 data-number="4.1.2.2" class="anchored" data-anchor-id="forme-des-fonctions-de-réaction"><span class="header-section-number">4.1.2.2</span> Forme des fonctions de réaction</h4>
+<p>Si l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> ne va rien produire, alors elle se trouve dans une situation de monopole et se comporte comme tel. Elle produit de manière à égaliser coût marginal et recette marginale (<span class="math inline">\(R_{im}=C_{im}\)</span>).</p>
+<p>Si l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> va produire <span class="math inline">\(q_j^a&gt;0\)</span>, alors elle est en monopole sur le <strong>reste</strong> de la demande. Cette dernière correspond à la demande totale décalée de <span class="math inline">\(q_j^a&gt;0\)</span> vers la gauche. Le croisement entre recette marginale et coût marginal se fait donc à un niveau plus faible qu’auparavant.</p>
+<p>Plus l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> va produire une grande quantité, plus elle aura intérêt à réduire son offre. <span class="math inline">\(q_i\)</span> est décroissante en <span class="math inline">\(q_j^a\)</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-oligodemande" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="03-oligopoles_files/figure-html/fig-oligodemande-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.1: Représentation de la demande perçue par l’entreprise 2 anticipant une offre <span class="math inline">\(q_1^a\)</span> par l’entreprise 1.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="caractérisation-de-léquilibre" class="level4" data-number="4.1.2.3">
+<h4 data-number="4.1.2.3" class="anchored" data-anchor-id="caractérisation-de-léquilibre"><span class="header-section-number">4.1.2.3</span> Caractérisation de l’équilibre</h4>
+<p>Un équilibre <span class="math inline">\((q_1^a, q_2^a)\)</span> doit être tel qu’aucune des deux entreprises n’ait intérêt à dévier unilatéralement : <span class="math display">\[
+\begin{array}{rcl}
+\pi_1(q_1^a, q_2^a) &amp;\geq&amp; \pi_1(q_1, q_2^a)\quad \forall q_1\\
+\pi_2(q_1^a, q_2^a) &amp;\geq&amp; \pi_2(q_1^a, q_2)\quad \forall q_2
+\end{array}
+\]</span> Au point <span class="math inline">\(q_1^a\)</span> et <span class="math inline">\(q_2^a\)</span>, aucune entreprise n’a intérêt à dévier unilatéralement de l’équilibre. Les décisions prises sont mutuellement compatibles. Chaque entreprise donne sa meilleure réponse à la meilleure réponse de l’autre. C’est ce qu’on appelle un <strong>équilibre de Nash</strong> : un équilibre où personne n’a intérêt à dévier unilatéralement.</p>
+<p>Dans le cas du duopole à la Cournot, chaque entreprise doit choisir la quantité qui maximise son profit étant donné le choix de l’autre entreprise. Chaque entreprise est donc sur sa fonction de réaction. L’équilibre est donc à l’intersection des fonctions de réactions des deux entreprises : <span class="math display">\[
+\begin{array}{rcl}
+q_1^a&amp;=&amp;f_1(q_2^a)\\
+q_2^a&amp;=&amp;f_2(q_1^a)
+\end{array}
+\]</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-oligopoles_files/figure-html/oligoreaction-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Représentation d’un équilibre de Cournot où les fonctions de réaction convergent vers le point d’équilibre.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>L’équilibre n’est pas nécessairement stable. La stabilité dépend de la pente des fonctions de réactions.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-oligopoles_files/figure-html/oligoreactioninstable-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Représentation d’un équilibre de Cournot où les fonctions de réaction divergent du point d’équilibre. Equilibre instable</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exemple" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="exemple"><span class="header-section-number">4.1.3</span> Exemple</h3>
+<section id="données-du-problème" class="level4" data-number="4.1.3.1">
+<h4 data-number="4.1.3.1" class="anchored" data-anchor-id="données-du-problème"><span class="header-section-number">4.1.3.1</span> Données du problème</h4>
+<p>Prenons les fonctions suivantes :</p>
+<p><span class="math display">\[
+\begin{array}{l}
+P(q_1+q_2) = a - b(q_1+q_2)\\
+C_1(q_1) = cq^2_1 \\
+C_2(q_2) = cq^2_2 \\
+\end{array}
+\]</span></p>
+</section>
+<section id="profits" class="level4" data-number="4.1.3.2">
+<h4 data-number="4.1.3.2" class="anchored" data-anchor-id="profits"><span class="header-section-number">4.1.3.2</span> Profits</h4>
+<p>On en déduit les profits :</p>
+<p><span class="math display">\[
+\begin{array}{rcl}
+\pi_1(q_1, q_2) &amp;=&amp; \left(a-b(q_1+q_2)\right)q_1-cq_1^2\\
+\pi_2(q_1, q_2) &amp;=&amp; \left(a-b(q_1+q_2)\right)q_2-cq_2^2
+\end{array}
+\]</span></p>
+</section>
+<section id="fonctions-de-réaction" class="level4" data-number="4.1.3.3">
+<h4 data-number="4.1.3.3" class="anchored" data-anchor-id="fonctions-de-réaction"><span class="header-section-number">4.1.3.3</span> Fonctions de réaction</h4>
+<p>Calculons la fonction de réaction de l’entreprise 1. Son profit est : <span class="math display">\[
+\pi_1(q_1, q_2^a) = aq_1-bq_1^2-bq_2^aq_1-cq_1^2 = (a-bq_2^a)q_1-(b+c)q_1^2
+\]</span></p>
+<p>La condition du premier ordre suivant <span class="math inline">\(q_1\)</span> s’écrit (ici <span class="math inline">\(q_2^a\)</span> est considéré comme une donnée par l’entreprise 1) :</p>
+<p><span class="math display">\[
+\begin{array}{crcl}
+&amp;\frac{\partial \pi_1}{\partial q_1}&amp;=&amp;0\\
+\Leftrightarrow &amp; (a-bq_2^a)-2(b+c)q_1^* &amp;=&amp; 0\\
+\Leftrightarrow &amp; q_1^* &amp;=&amp; \frac{(a-bq_2^a)}{2(b+c)}
+(\#eq:FR1)
+\end{array}
+\]</span></p>
+<p>On calcule de la même manière (i.e., en utilisant la condition du premier ordre sur les profits de l’entreprise 2) la fonction de réaction de l’entreprise 2 et on obtient par symétrie du problème une légère réécriture de l’équation @ref(eq:FR1):</p>
+<p><span class="math display">\[
+q_2^* = \frac{(a-bq_1^a)}{2(b+c)}
+\]</span></p>
+<p>La symétrie du problème provient du fait que les deux entreprises ont exactement la même fonction de coût. Ce <em>n’est pas le cas en général</em>. Si dans un problème les fonctions de coût sont identiques, alors vous pouvez faire les calculs pour une seule entreprise et déduire simplement les résultats pour la seconde.</p>
+</section>
+<section id="equilibre-de-cournot" class="level4" data-number="4.1.3.4">
+<h4 data-number="4.1.3.4" class="anchored" data-anchor-id="equilibre-de-cournot"><span class="header-section-number">4.1.3.4</span> Equilibre de Cournot</h4>
+<p>Quel est alors l’équilibre de Cournot ?</p>
+<p>On doit avoir : <span class="math display">\[
+\begin{array}{rcl}
+f_1(q_2^*) &amp;=&amp; q_1^*\\
+f_2(q_1^*) &amp;=&amp; q_2^*\\
+\end{array}
+\]</span> Autrement dit : <span class="math display">\[
+\begin{array}{rcl}
+q_1^* &amp;=&amp; \frac{(a-bq_2^*)}{2(b+c)} \\
+q_2^* &amp;=&amp;\frac{(a-bq_1^*)}{2(b+c)}\\
+\end{array}
+\]</span> On résout le système et on obtient : <span class="math display">\[
+q_1^*=q_2^* = \frac{a}{3b+2c}
+\]</span></p>
+<div class="proposition">
+<p>Quand le problème est <strong>symétrique</strong> (=les deux entreprises ont la même fonction de coût), deux entreprises en compétition <strong>à la Cournot</strong> produisent la même quantité de bien.</p>
+</div>
+</section>
+</section>
+<section id="une-intuition-graphique-les-courbes-disoprofit" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="une-intuition-graphique-les-courbes-disoprofit"><span class="header-section-number">4.1.4</span> Une intuition graphique : les courbes d’isoprofit</h3>
+<p>On peut aussi aborder le problème à l’aide d’une intuition graphique. Il s’agit de tracer les courbes d’<em>isoprofit</em> des entreprises.</p>
+<div class="definition" name="Courbe d'isoprofit">
+<p>Les courbes d’isoprofit est l’ensemble des couples de quantités <span class="math inline">\((q_1, q_2)\)</span> qui permettent à une entreprise d’atteindre un niveau de profit donné.</p>
+</div>
+<p>Reprenons l’expression générale des profits de l’équation @ref(eq:profitcournot). <span class="math display">\[
+\begin{array}{rcl}
+\pi_1(q_1, q_2) &amp;=&amp; q_1P(q_1+q_2)-C_1(q_1)\\
+\pi_2(q_1, q_2) &amp;=&amp; q_2P(q_1+q_2) -C_2(q_2)
+\end{array}
+\]</span> La courbe d’isoprofit pour une valeur <span class="math inline">\(\pi_1\)</span> <strong>donnée et fixe</strong> est : <span class="math display">\[
+\pi_1 = q_1P(q_1+q_2)-C_1(q_1)
+\]</span> L’équation ci-dessus définit implicitement une fonction <span class="math inline">\(q_1=I_\pi(q_1, \pi_1)\)</span> qui permet de représenter la courbe d’isoprofit dans un graphique <span class="math inline">\((q_1,q_2)\)</span>, tout comme la fonction de réaction définit une fonction courbe <span class="math inline">\(q_2(q_1)\)</span> pour l’entreprise 1. La courbe de la fonction de réaction de 1 coupe la courbe d’isoprofit de 1 en son maximum. <!-- Implicitiment, le maximum sur la courbe d'isoprofit est obtenu en dérivant suivant $q_1$, tout comme on obtient la fonction de réaction. --></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-oligopoles_files/figure-html/isoprofit1-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Courbes d’isoprofit et fonction de réaction de l’entreprise 1</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Sur la figure @ref(fig:isoprofit1), le profit est croissant en descendant vers le bas sur les courbes d’isoprofit, autrement dit, les courbes d’isoprofit les plus basses représentent les profits les plus élevés. Le maximum du profit est atteint lorsque l’entreprise 1 est en monopole. La quantité produite est alors <span class="math inline">\(q_m^*\)</span> est le profit <span class="math inline">\(\pi_m^*\)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-oligopoles_files/figure-html/isoprofitCournot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Courbes d’isoprofits et fonctions de réactions des entreprises en équilibre de Cournot Nash.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="duopole-à-la-stackelberg" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="duopole-à-la-stackelberg"><span class="header-section-number">4.2</span> Duopole à la Stackelberg</h2>
+<section id="introduction-1" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="introduction-1"><span class="header-section-number">4.2.1</span> Introduction</h3>
+<p>Il n’y a plus de symétrie des entreprises dans un duopole à la Stackelberg. Une entreprise, dite <em>leader</em>, prend ses décisions avant l’entreprise dite <em>follower</em>. L’entreprise leader connaît les caractéristiques de l’entreprise follower et peut ainsi calculer sa fonction de réaction. Elle en tiendra compte dans ses décisions. On considère ici qu’il n’y a que deux périodes de décisions.</p>
+</section>
+<section id="résolution-graphique" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="résolution-graphique"><span class="header-section-number">4.2.2</span> Résolution graphique</h3>
+<p>Le leader doit choisir sa quantité <span class="math inline">\(q_1\)</span> de façon à être sur la courbe d’isoprofit la plus basse possible compatible avec la fonction de réaction de l’entreprise follower. Il va donc se placer sur la courbe d’isoprofit tangente à la fonction de réaction du follower.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-oligopoles_files/figure-html/equilibreStackelberg-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Courbes d’isoprofits du leader et fonctions de réactions des entreprises en équilibre de Stackelberg.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Sur la figure @ref(fig:equilibreStackelberg), on voit que le profit du leader est plus important en Stackelberg qu’en Cournot (et l’inverse pour le follower). Les quantités produites par l’entreprise leader sont plus importantes en Stackelberg qu’en Cournot, mais celles du follower sont plus faibles. La somme des deux est plus importante (<span class="math inline">\(q_{1C}^*+q_{2C}^*&lt;q_{L}^*+q_{F}^*\)</span>). Le prix sera donc plus faible pour les consommateurs.</p>
+</section>
+<section id="exemple-1" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="exemple-1"><span class="header-section-number">4.2.3</span> Exemple</h3>
+<section id="données-du-problèmes" class="level4" data-number="4.2.3.1">
+<h4 data-number="4.2.3.1" class="anchored" data-anchor-id="données-du-problèmes"><span class="header-section-number">4.2.3.1</span> Données du problèmes</h4>
+<p>Notons les variables et fonctions du leader avec un indice <span class="math inline">\(L\)</span> et celles du follower avec un indice <span class="math inline">\(F\)</span>.</p>
+<p>Gardons une fonction de demande linéaire.</p>
+<p><span class="math display">\[
+P(q_L+q_F) = a - b(q_L+q_F)
+\]</span></p>
+<p>Supposons, afin de simplifier les calculs, que les coûts marginaux sont nuls.</p>
+</section>
+<section id="profits-1" class="level4" data-number="4.2.3.2">
+<h4 data-number="4.2.3.2" class="anchored" data-anchor-id="profits-1"><span class="header-section-number">4.2.3.2</span> Profits</h4>
+<p>On en déduit les profits :</p>
+<p><span class="math display">\[
+\begin{array}{rcl}
+\pi_L(q_L, q_F) &amp;=&amp; \left(a-b(q_L+q_F)\right)q_L\\
+\pi_F(q_L, q_F) &amp;=&amp; \left(a-b(q_L+q_F)\right)q_F
+\end{array}
+\]</span></p>
+</section>
+<section id="fonction-de-réaction-de-lentreprise-follower" class="level4" data-number="4.2.3.3">
+<h4 data-number="4.2.3.3" class="anchored" data-anchor-id="fonction-de-réaction-de-lentreprise-follower"><span class="header-section-number">4.2.3.3</span> Fonction de réaction de l’entreprise follower</h4>
+<p>Calculons la fonction de réaction de l’entreprise follower. La condition du premier ordre suivant <span class="math inline">\(q_F\)</span> s’écrit (ici <span class="math inline">\(q_L\)</span> est considéré comme une donnée par l’entreprise 1) :</p>
+<p><span class="math display">\[
+\begin{array}{crcl}
+&amp;\frac{\partial \pi_F}{\partial q_F}&amp;=&amp;0\\
+\Leftrightarrow &amp; (a-bq_L)-2bq_F^* &amp;=&amp; 0\\
+\Leftrightarrow &amp; q_F^* &amp;=&amp; \frac{a-bq_L}{2b}
+(\#eq:FRFollower)
+\end{array}
+\]</span></p>
+</section>
+<section id="maximisation-de-lentreprise-leader" class="level4" data-number="4.2.3.4">
+<h4 data-number="4.2.3.4" class="anchored" data-anchor-id="maximisation-de-lentreprise-leader"><span class="header-section-number">4.2.3.4</span> Maximisation de l’entreprise leader</h4>
+<p>Comme l’entreprise leader connaît la fonction de réaction de l’entreprise follower (donnée par l’équation @ref(eq:FRFollower)), elle peut l’intégrer à sa propre fonction de profit :</p>
+<p><span class="math display">\[
+\begin{array}{rcl}
+\pi_L(q_L, q_F^*) &amp;=&amp; \left(a-b(q_L+q_F^*(q_L))\right)q_L\\
+&amp;=&amp; \left(a-b\left(q_L+\frac{a-bq_L}{2b}\right)\right)q_L\\
+&amp;=&amp; \frac{a}{2}q_L-\frac{b}{2}q_L^2
+\end{array}
+\]</span></p>
+<p>La condition de premier ordre du leader est :</p>
+<p><span class="math display">\[
+\begin{array}{crcl}
+&amp;\frac{\partial \pi_L}{\partial q_L}&amp;=&amp;0\\
+\Leftrightarrow &amp; \frac{a}{2}-bq_L^* &amp;=&amp; 0\\
+\Leftrightarrow &amp; q_L^* &amp;=&amp; \frac{a}{2b}
+\end{array}
+\]</span></p>
+<p>On en déduit qu’à l’équilibre de Stackelberg, le follower produit : <span class="math display">\[
+q_F^*=\frac{a}{4b}
+\]</span></p>
+<p>L’entreprise leader produit plus que l’entreprise follower. Elle profite de son pouvoir sur la seconde entreprise pour cela. Si on calcule le profit, on verra que le profit de l’entreprise leader est plus important que celui de l’entreprise follower si elles sont exactement symétriques, en dehors de leur prises de décisions.</p>
+</section>
+</section>
+</section>
+<section id="cartels-et-collusions" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="cartels-et-collusions"><span class="header-section-number">4.3</span> Cartels et collusions</h2>
+<section id="introduction-2" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="introduction-2"><span class="header-section-number">4.3.1</span> Introduction</h3>
+<p>En duopoles / oligopoles de Cournot ou de Stackelberg, les entreprises ne coopèrent pas entre elles :</p>
+<ul>
+<li>Elles sont en concurrence ;</li>
+<li>Elles agissent indépendamment les unes des autres.</li>
+</ul>
+<p><em>Question :</em><br>
+Que se passe-t-il si elles peuvent s’entendre ? Par exemple, que se passe-t-il si elles peuvent passer un accord sur la quantité à produire.</p>
+<p><em>Résultats :</em> Les quantités mises sur le marché diminueront et le prix du marché augmentera. C’est donc néfaste pour les consommateurs. La raison est que le cartel se comporte exactement comme un monopole, puis partage les bénéfices.</p>
+</section>
+<section id="raisonnement-graphique" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="raisonnement-graphique"><span class="header-section-number">4.3.2</span> Raisonnement graphique</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-oligopoles_files/figure-html/cartel-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Zone d’amélioration mutuellement bénéfique.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="résolution-analytique" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="résolution-analytique"><span class="header-section-number">4.3.3</span> Résolution analytique</h3>
+<section id="idée" class="level4" data-number="4.3.3.1">
+<h4 data-number="4.3.3.1" class="anchored" data-anchor-id="idée"><span class="header-section-number">4.3.3.1</span> Idée</h4>
+<p>L’idée derrière la résolution analytique du problème du cartel est de considérer que le cartel se comporte comme un monopole avec 2 centres de productions. Le cartel choisit la quantité globale produite et la répartition entre les entreprises. C’est un raisonnement très similaire à un monopole discriminant au troisième degré.</p>
+</section>
+<section id="profits-2" class="level4" data-number="4.3.3.2">
+<h4 data-number="4.3.3.2" class="anchored" data-anchor-id="profits-2"><span class="header-section-number">4.3.3.2</span> Profits</h4>
+<p>Le profit global du cartel s’écrit : <span class="math display">\[
+\pi_c(q_A, q_B)=qP(q)-C_A(q_A)-C_B(q_B)=(q_A+q_B)P(q_A+q_B)-C_A(q_A)-C_B(q_B)
+\]</span> Où <span class="math inline">\(q=q_A+q_B\)</span>. Le profit est maximisé lorsque les dérivées partielles suivant chacune des quantités sont nulles (condition du premier ordre), c’est-à-dire lorsque <span class="math inline">\(\frac{\partial\pi_C}{\partial q_A}=0\)</span> et <span class="math inline">\(\frac{\partial\pi_C}{\partial q_B}=0\)</span>. <span class="math display">\[
+\frac{\partial\pi_C}{\partial q_A} = P(q) + q\frac{\partial P}{\partial q}(q_A)-\frac{\partial C_A}{\partial q_A}(q_A)
+\]</span> On a <span class="math inline">\(P(q) + q\frac{\partial P}{\partial q}=R_m(q)\)</span> est la recette marginale totale du cartel. <span class="math inline">\(\frac{\partial C_A}{\partial q_A}=C_{mA}\)</span> est le coût marginal de l’entreprise A.<br>
+On peut réécrire la dérivée du profit total suivant la quantité produite par l’entreprise A : <span class="math display">\[
+\frac{\partial\pi_C}{\partial q_A} = R_m(q)  - C_{mA}(q_A)
+\]</span> En utilisant le même raisonnement, on a pour l’entreprise B : <span class="math display">\[
+\frac{\partial\pi_C}{\partial q_B} = R_m(q)  - C_{mB}(q_B)
+\]</span></p>
+</section>
+<section id="optimalité-pour-le-cartel" class="level4" data-number="4.3.3.3">
+<h4 data-number="4.3.3.3" class="anchored" data-anchor-id="optimalité-pour-le-cartel"><span class="header-section-number">4.3.3.3</span> Optimalité pour le cartel</h4>
+<p>À l’optimum pour le cartel, on a donc : <span class="math display">\[R_m(q) = C_{mA}(q_A) = C_{mB}(q_B)\]</span> Le cartel égalise la recette marginale <em>totale</em> aux coûts marginaux de chacune des deux entreprises.</p>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remarque</em>. </span>Le cartel ne donnera pas forcément à produire la même quantité à chaque entreprise. La répartition dépend des coûts marginaux respectifs. Si les coûts marginaux sont identiques, les productions seront identiques.</p>
+</div>
+<p><em>Intuition :</em> Supposons que la quantité totale produite est fixée. Supposons aussi que <span class="math inline">\(C_{mA}(q_A)&gt;C_{mB}(q_B)\)</span>.<br>
+Alors, en transférant la production d’une unité de l’entreprise A vers l’entreprise B, le coût diminue de <span class="math inline">\(C_{mA}(q_A)\)</span> et augmente de <span class="math inline">\(C_{mB}(q_B)\)</span>. Il diminue donc au total, tout en maintenant la même quantité totale produite.<br>
+Autrement dit, tant que <span class="math inline">\(C_{mA}(q_A)\neq C_{mB}(q_B)\)</span>, il est possible de diminuer le coût total de production d’une quantité donnée en répartissant celle-ci différemment entre les entreprises.</p>
+</section>
+<section id="optimalité-pour-une-entreprise" class="level4" data-number="4.3.3.4">
+<h4 data-number="4.3.3.4" class="anchored" data-anchor-id="optimalité-pour-une-entreprise"><span class="header-section-number">4.3.3.4</span> Optimalité pour une entreprise</h4>
+<p><em>Question :</em> Prenons l’entreprise A, a-t-elle intérêt à rester dans le cartel (et à respecter la répartition donnée par celui-ci) ?</p>
+<p>Le profit de l’entreprise A s’écrit : <span class="math display">\[
+\pi_A=q_AP(q)-C_A(q_A)=q_AP(q_A+q_B)-C_A(q_A)
+\]</span> La dérivée du profit s’écrit donc : <span class="math display">\[
+\frac{\partial\pi_A}{\partial q_A}(q_A)=P(q_A+q_B)+q_A\frac{\partial P}{\partial q}(q_A)-C_{mA}(q_A)
+\]</span> La condition d’optimalité du cartel suivant <span class="math inline">\(q_A\)</span> donne : <span class="math display">\[
+\begin{array}{crcl}
+&amp; P(q_A^*+q_B^*) + (q_A^*+q_B^*)\frac{\partial P}{\partial q}(q_A^*)-\frac{\partial C_A}{\partial q_A}(q_A^*)&amp; = &amp;0\\
+\Leftrightarrow &amp;  P(q_A^*+q_B^*) + q_A^*\frac{\partial P}{\partial q}(q_A^*)-\frac{\partial C_A}{\partial q_A}(q_A^*)&amp; = &amp;-q_B^*\frac{\partial P}{\partial q}(q_A^*)\\
+\Leftrightarrow &amp; \frac{\partial\pi_A}{\partial q_A}(q_A^*)&amp; =  &amp;-q_B^*\frac{\partial P}{\partial q}(q_A^*)
+\end{array}
+\]</span> Or on sait que la fonction de demande inverse <span class="math inline">\(P(q)\)</span> est décroissante avec les quantités produites, ou que la fonction de demande est décroissante avec le prix, ce qui revient au même. Donc <span class="math inline">\(\frac{\partial P}{\partial q}(q_A)&lt;0\)</span>. On en déduit donc que <span class="math inline">\(\frac{\partial\pi_A}{\partial q_A}(q_A^*)&gt;0\)</span> : l’entreprise A a intérêt à augmenter sa production si elle pense que l’entreprise B va respecter l’accord du cartel (et réciproquement).</p>
+<p>En conclusion, les accords de cartel ne sont pas “naturellement” stable, ils ont besoin d’un mécanisme qui maintient l’accord, par exemple en punissant une entreprise déviant de l’accord.</p>
+</section>
+</section>
+</section>
+<section id="oligopoles" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="oligopoles"><span class="header-section-number">4.4</span> Oligopoles</h2>
+<p>On étend l’analyse à <span class="math inline">\(N\)</span> entreprises qui produisent un bien <em>homogène</em>. Comme ce bien est homogène, le prix est unique sur le marché. Chaque entreprise <span class="math inline">\(i\)</span> choisit une quantité <span class="math inline">\(q_i\geq 0\)</span> et les produit à un coût de production <span class="math inline">\(C_i(q_i)\)</span>. La production totale sur le marché est <span class="math inline">\(q=\sum_i q_i\)</span>. La fonction de demande inverse sur le marché <span class="math inline">\(P(q)\)</span> dépend de la production <em>globable</em> <span class="math inline">\(q\)</span>.</p>
+<p>Le profit de chaque entreprise s’écrit : <span class="math display">\[
+\pi(q_i, q) = q_iP(q) -C_i(q_i)
+\]</span></p>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remarque</em> (Quantité globale). </span>Attention, ici <span class="math inline">\(q\)</span>, la quantité globale, dépend de la quantité <span class="math inline">\(q_i\)</span> produite par <span class="math inline">\(i\)</span>. Implicitement, on a ainsi définit une fonction <span class="math inline">\(q(q_i)\)</span>, ce qui est important dans la dérivation des résultats.</p>
+</div>
+<p>Le programme de maximisation d’une entreprise <span class="math inline">\(i\)</span> s’écrit : <span class="math display">\[
+\max_{q_i}\pi(q_i, q) = q_iP(q) -C_i(q_i)
+\]</span></p>
+<p>La condition du premier ordre est telle que :</p>
+<p><span class="math display">\[
+\begin{array}{crcl}
+&amp;\frac{\partial \pi_i}{\partial q_i}(q_i^*, q(q_i^*)) &amp;=&amp; 0\\
+\Leftrightarrow &amp; \frac{\partial  \left(q_iP(q) -C_i(q_i)\right)}{\partial q_i}(q_i^*, q(q_i^*)) &amp;= &amp;0\\
+\Leftrightarrow &amp; P(q^*) + q_iP'(q^*) -C_{im}(q_i^*)&amp;= &amp;0\\
+\Leftrightarrow &amp; P(q^*) - C_{im}(q_i^*)&amp;= &amp;-q_i^*P'(q^*) \\
+\Leftrightarrow &amp; \frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}&amp;= &amp;-\frac{q_i^*}{P(q^*)}P'(q^*) \\
+\Leftrightarrow &amp; \frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}&amp;= &amp;-\frac{q^*}{P(q^*)}P'(q^*)\frac{q_i^*}{q^*} \\
+\Leftrightarrow &amp; \frac{P(q^*) - C_{im}(q_i^*)}{P(q^*)}&amp;= &amp;S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
+\end{array}
+\]</span> (La dérivée de la fonction de demande suivant le prix est négative).</p>
+<div class="definition" name="Part de marché">
+<p>La part de marché détenue par une entreprise <span class="math inline">\(i\)</span> est la part de la quantité totale produite qui l’est par cette entreprise. On la note <span class="math inline">\(S_i\)</span> : <span class="math display">\[S_i=\frac{q_i}{q}\]</span></p>
+</div>
+<p>On obtient le <em>markup-pricing</em> que peut appliquer un producteur en situation d’oligopole à la Cournot. <span class="math display">\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]</span> La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l’entreprise.</p>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remarque</em>. </span>En monopole, <span class="math inline">\(S_i=1\)</span>, on retrouve alors bien : <span class="math display">\[\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}\]</span></p>
+<p>En concurrence pure et parfaite <span class="math inline">\(S_i\to 0\)</span>, donc <span class="math inline">\(\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0\)</span>, ce qui implique bien que <span class="math inline">\(C_{mi}(q_i)\to P(q)\)</span>. On retrouve ainsi le résultat <span class="math inline">\(P(q^*)=C_m(q^*)\)</span>.</p>
+</div>
+<section id="indice-de-lerner" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="indice-de-lerner"><span class="header-section-number">4.4.1</span> Indice de Lerner</h3>
+<p><em>Rappel :</em> En monopole, l’indice de Lerner est : <span class="math display">\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]</span></p>
+<p>(ref:Lerner) Indice de Lerner d’un producteur <span class="math inline">\(i\)</span></p>
+<div class="definition" name="(ref:Lerner)">
+<p>On définit l’indice de Lerner pour un producteur <span class="math inline">\(i\)</span>, noté <span class="math inline">\(L_i\)</span>, comme son taux de marge : <span class="math display">\[L_i=\frac{P(q^*) -C_{im}(q^*_i)}{P(q^*)}\]</span></p>
+</div>
+<p>On peut exprimer cette indice de Lerner ainsi, grâce à la condition du premier ordre trouvée plus haut : <span class="math display">\[\begin{equation}
+\begin{array}{rcl}
+L_i &amp;=&amp;\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\frac{1}{\left|\varepsilon_{q/p}(q_i, q_{-i})\right|}\\
+&amp;=&amp;S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
+\end{array}
+(\#eq:li)
+\end{equation}\]</span></p>
+<div class="definition" name="Indice de Lerner du marché">
+<p>En oligopole à la Cournot avec <span class="math inline">\(N\)</span> producteurs, on définit l’indice de Lerner du marché par : <span class="math display">\[L = \sum_{i=1}^NS_iL_i\]</span> où <span class="math inline">\(S_i=q_i/q\)</span> est la <em>part de marché</em> du producteur <span class="math inline">\(i\)</span> et <span class="math inline">\(L_i\)</span> est l’indice de Lerner d’un producteur <span class="math inline">\(i\)</span>.</p>
+</div>
+<p>En utilisant l’expression obtenue pour l’indice de Lerner d’un producteur à l’équation @ref(eq:li), on peut réécrire l’indice de Lerner du marché uniquement en fonction de l’élasticité de la demande à l’équilibre et des parts de marchés de chaque producteur : <span class="math display">\[
+L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
+\]</span></p>
+</section>
+<section id="indice-de-concentration-du-marché" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="indice-de-concentration-du-marché"><span class="header-section-number">4.4.2</span> Indice de concentration du marché</h3>
+<div id="HHI" class="definition" name="Indice de Hirschman-Herfindahl (HHI)">
+<p>L’indice de Hirschman-Herfindahl est la somme des carrés des part de marchés. <span class="math display">\[HHI = \sum_{i=1}^NS_i^2\]</span> C’est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l’élasticité prix de la demande à l’optimum. Autrement dit, la moyenne des <span class="math inline">\(L_i\)</span> pondéré par les parts de marché.</p>
+</div>
+<p><span class="math display">\[
+\begin{array}{rcl}
+\sum_{i=1}^{N}\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}S_i &amp;=&amp;\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}S_i \\
+&amp;=&amp;\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2\\
+&amp;=&amp;\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
+\end{array}
+\]</span></p>
+<p><em>Interprétation :</em><br>
+Imaginons que toutes les <span class="math inline">\(N\)</span> producteurs sont identiques (ils ont la même fonction de coût). Ils produisent alors la même quantité optimale à l’équilibre. Leur part de marché est donc <span class="math inline">\(S_i=1/N\)</span>. Le HHI vaut : <span class="math display">\[
+\begin{array}{rcl}
+HHI&amp;=&amp;\sum_{i=1}^NS_i^2\\
+&amp;=&amp;\sum_{i=1}^N\frac{1}{N^2}\\
+&amp;=&amp;\frac{N}{N^2} \\
+&amp;=&amp;\frac{1}{N}
+\end{array}
+\]</span> Le HHI correspond à l’inverse du nombre de producteurs qui seraient identiques sur le marché et donneraient le même écart moyen entre coût marginal et prix. Plus le HHI est proche de 1, plus on se rapproche du monopole. Plus le HHI est proche de 0, plus on se rapproche de la concurrence pure et parfaite.</p>
+<p>Le HHI est utilisé par les autorités de la concurrence pour évaluer les effets sur les prix de fusions d’entreprises. Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.</p>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Même marché : bien unique et prix unique.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>La fonction de réaction est parfois aussi connue sous le nom de <em>fonction de meilleure réponse</em>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-monopole.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Le monopole</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./07-references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
