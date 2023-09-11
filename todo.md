@@ -7,4 +7,8 @@
 - [x] Graphiques pas bon pour les changements de demande.
 - [x] Faire un graphique correct pour la partie coût variable et coût marginal en CPP
 - [x] Vérifier la mise en page, en particulier dans les exercices.
-- [ ] Publier sur Github Pages
+- [x] Publier sur Github Pages
+- [ ] Passer à Quarto
+  - [x] CPP
+  - [ ] Monopole
+  - [ ] Oligopoles
