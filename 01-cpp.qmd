@@ -92,13 +92,14 @@ L'hypothèse de libre entrée et sortie du marché signifie qu'il n'y pas de bar
 Concrètement, il est impossible de faire un bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.
 :::
 
-La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un *pouvoir de marché* aux producteurs en place.
+La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un *pouvoir de marché* aux producteurs ou aux consommateurs en place. 
+Dans le cadre de ce cours, nous allons uniquement nous intéressé au pouvoir de marché des producteurs.
 
 ## Le producteur
 
 ### Fonctions de coût
 
-En général, un producteur est caractérisé par une fonction de production, c'est-à-dire une fonction qui donne  les quantités produites de biens en fonction des facteurs de productions.
+En général, un producteur est modélisé par une fonction de production, c'est-à-dire une fonction qui donne  les quantités produites de biens en fonction des facteurs de productions.
 À l'aide de cette fonction de production, il est possible de construire une fonction de coût.
 
 :::{#def-ctotal}
@@ -152,7 +153,7 @@ Autrement dit, le coût marginal est la variation de coût total quand la produc
 ::: {#prp-variations-cout}
 
 ## Variations des courbes de coût
-Le coût marginal diminue d'abord, puis augmente, car la productivité marginale est, en général, d'abord croissante, puis décroissante,.  
+En général, le coût marginal diminue puis augmente, car la productivité marginale est d'abord croissante, puis décroissante.  
 Le coût variable moyen est d'abord décroissant, puis croissant, pour la même raison.  
 Le coût fixe moyen est toujours décroissant, car le coût fixe ne dépend pas des quantités produites et $CFM=CF/q$ est donc une fonction inverse.  
 La décomposition donnée par l'@eq-CM implique que le coût moyen est d'abord décroissant, puis croissant.
@@ -333,7 +334,7 @@ p_cppcout + geom_ribbon(data=pi, aes(x=x, ymin=ymin, ymax=ymax), fill="green", a
 
 ## Le consommateur
 
-Notre modélisation des consommateurs sera assez simple dans ce cours.
+La modélisation des consommateurs dans ce cours est simple.
 
 ::: {#def-dindiv}
 
@@ -353,7 +354,7 @@ La fonction de demande est décroissante.
 
 
 L'intuition est la suivante, un consommateur est prêt à payer plus pour la première unité de biens reçu que pour la suivante.
-Par exemple, la premier litre d'eau dans le désert à beaucoup de valeur que le dixième.
+Par exemple, la premier litre d'eau dans le désert à beaucoup plus de valeur que le dixième.
 
 ::: {.remark}
 
@@ -470,7 +471,7 @@ p + geom_ribbon(data = Sc, aes(x=x, ymin=0.5, ymax = y), fill="blue") +
 
 L'équilibre en CPP **maximise** le *surplus total*.
 Tout autre couple prix/quantité abouti à un surplus total plus faible.  
-L'équilibre en CPP est *Pareto-optimal*, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
+L'équilibre en CPP est dit *Pareto-optimal*, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
 C'est ce qu'on appelle le *premier théorème du bien-être*.
 :::
 

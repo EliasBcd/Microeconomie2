@@ -1,10 +1,9 @@
 # Microéconomie 2
 
-
-
-
-Cours de microéconomie 2 en licence 2 à l'université Paris 8, donné par Hela Maafi, Antoine Terracol et Elias Bouacida.  
+Notes du cours de microéconomie 2 en licence 2 à l'université Paris 8, donné par Hela Maafi, Antoine Terracol et Elias Bouacida.  
 Ce dépôt contient les notes de cours ainsi que les corrigés des exercices.
+Ces notes ont été réalisées à partir des notes manuscrites d'Antoine Terracol et originellement tapé par Elias Bouacida. 
+Les notes actuelles sont le travail combiné des trois enseignants.
 
 ## Thèmes
 
@@ -34,7 +33,7 @@ Et enfin une référence avancée, pour ceux qui cherchent les fondements mathé
 
 ## Plan du cours
 
-1. Rappels sur la concurrence pure et parfaite
+1. Le marché en concurrence pure et parfaite
 2. Monopoles
     - Monopoles simples
     - Monopoles discriminants
