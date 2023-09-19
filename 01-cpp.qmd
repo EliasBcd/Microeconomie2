@@ -108,7 +108,7 @@ En général, un producteur est modélisé par une fonction de production, c'est
 
 La fonction de coût total, notée $C$ ou $CT$, donne le coût total de production de $q$ unités de bien.
 Elle se décompose en un *coût fixe* $CF$ (qui ne dépend pas de $q$) et un *coût variable* $CV$ qui dépend de $q$ :
-$$CT(q)=CF+ CV(q)$$
+$$C(q)=CF+ CV(q)$$
 :::
 
 :::{#def-cmoyen}
@@ -116,24 +116,24 @@ $$CT(q)=CF+ CV(q)$$
 ## Coût moyen
 
 Le coût moyen est le coût de production moyen d'une unité, noté $C_M$ :
-$$C_M(q) = \frac{CT(q)}{q}$$
+$$C_M(q) = \frac{C(q)}{q}$$
 :::
-Le coût moyen se décompose en un *coût fixe moyen* $CFM$ :
-$$CFM(q)=\frac{CF}{q}$$
-Et un *coût variable moyen* $CVM$ :
-$$CVM(q)=\frac{CV(q)}{q}$$
+Le coût moyen se décompose en un *coût fixe moyen* $CF_M$ :
+$$CF_M(q)=\frac{CF}{q}$$
+Et un *coût variable moyen* $CV_M$ :
+$$CV_M(q)=\frac{CV(q)}{q}$$
 On a alors :
 $$
-C_M(q)=CFM(q) +CVM(q)
+C_M(q)=CF_M(q) +CV_M(q)
 $$ {#eq-CM}
 
 ::: {.proof}
 $$
 \begin{array}{rcl}
-C_M(q) &=& \frac{CT(q)}{q}\\
+C_M(q) &=& \frac{C(q)}{q}\\
  &=& \frac{CF + CV(q)}{q}\\
  &=& \frac{CF}{q}+\frac{CV(q)}{q}\\
- &=& CFM(q) + CVM(q)
+ &=& CF_M(q) + CV_M(q)
 \end{array}
 $$
 :::
@@ -144,7 +144,7 @@ $$
 
 Le coût marginal, noté $C_m$, est l'augmentation du coût lié à la production d'une unité supplémentaire :
 $$
-C_m(q)=\lim_{\Delta q\to 0}\frac{CT(q+\Delta q)-CT(q)}{\Delta q}=CT'(q)
+C_m(q)=\lim_{\Delta q\to 0}\frac{C(q+\Delta q)-C(q)}{\Delta q}=C'(q)
 $$
 :::
 
@@ -176,11 +176,11 @@ En son minimum, le coût moyen est tel que $C_M'(q)=0$.
 $$
 \begin{array}{crcl}
 &C_M'(q)&=&0\\
-\Leftrightarrow & \left(\frac{CT(q)}{q}\right)'&=& 0\\
-\Leftrightarrow & \frac{CT'(q)q-CT(q)}{q^2}&=& 0\\
-\Leftrightarrow & \frac{C_m(q)}{q}-\frac{CT(q)}{q^2}&=& 0\\
-\Leftrightarrow & C_m(q)q-CT(q)&=& 0\\
-\Leftrightarrow & C_m(q)&=& \frac{CT(q)}{q}\\
+\Leftrightarrow & \left(\frac{C(q)}{q}\right)'&=& 0\\
+\Leftrightarrow & \frac{C'(q)q-C(q)}{q^2}&=& 0\\
+\Leftrightarrow & \frac{C_m(q)}{q}-\frac{C(q)}{q^2}&=& 0\\
+\Leftrightarrow & C_m(q)q-C(q)&=& 0\\
+\Leftrightarrow & C_m(q)&=& \frac{C(q)}{q}\\
 \Leftrightarrow & C_m(q)&=& C_M(q)
 \end{array}
 $$
@@ -214,8 +214,8 @@ p_cppcout + scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(), label
 ::: {#def-rtotale}
 
 ## Recette totale
-La recette totale, notée $RT$, est la recette issue de la vente des biens.
-Pour $q$ unités de bien vendus, le producteur gagne $RT(q)$, autrement dit, c'est le chiffre d'affaire du producteur (pour ce bien).
+La recette totale, notée $R$ ou $RT$, est la recette issue de la vente des biens.
+Pour $q$ unités de bien vendus, le producteur gagne $R(q)$, autrement dit, c'est le chiffre d'affaire du producteur (pour ce bien).
 :::
 
 ::: {#def-rmarginale}
@@ -223,7 +223,7 @@ Pour $q$ unités de bien vendus, le producteur gagne $RT(q)$, autrement dit, c'e
 ## Recette marginale
 
 La recette marginale, notée $R_m$ est la recette rapportée par une unité supplémentaire de bien vendue.
-$$R_m(q)=RT'(q)$$
+$$R_m(q)=R'(q)$$
 :::
 
 ::: {#def-profit}
@@ -231,7 +231,7 @@ $$R_m(q)=RT'(q)$$
 ## Profit
 
 Le profit, noté $\pi$ est la différence entre la recette totale et le coût total de production :
-$$\pi(q)=RT(q)-CT(q)$$
+$$\pi(q)=R(q)-C(q)$$
 :::
 
 :::{#cnj-programme-producteur}
@@ -239,27 +239,35 @@ $$\pi(q)=RT(q)-CT(q)$$
 
 Le producteur choisit la quantité produite de manière à maximiser son profit.
 Mathématiquement, il résout le programme suivant :
-$$\max_q\pi(q)=\max_q RT(q)-CT(q)$$
+$$\max_q\pi(q)=\max_q R(q)-C(q)$$
 :::
 
 ::: {#thm-offre}
 ## Offre du producteur
-En concurrence pure et parfaite, le programme du producteur est tel que la quantité produite $q$ égalise le coût marginal et la recette marginale :
+Le programme du producteur est tel que la quantité optimale produite $q^*$ égalise le coût marginal et la recette marginale (condition du premier ordre) :
 $$
-R_m(q) =C_m(q)
+R_m(q^*) =C_m(q^*)
 $$ {#eq-cppopti}
+Il est aussi tel que la recette marginal croît moins vite que le coût marginal à l'optimum (condition du second ordre) :
+$$
+R_m'(q^*) <C_m'(q^*)
+$$
 :::
 
 ::: {.proof}
-Le programme du producteur est de maximiser son profit :
+L'objectif du producteur est de maximiser son profit :
 $$
-\max_q\pi(q)=\max_q RT(q)-CT(q)
+\max_q\pi(q)=\max_q R(q)-C(q)
 $$
-À l'optimum, et à condition que les fonctions de coût et de recette soient dérivables (ce qui sera toujours le cas dans ce cours). La condition du premier ordre s'écrit :
+À l'optimum, et à condition que les fonctions de coût et de recette soient deux fois dérivables (ce qui sera toujours le cas dans ce cours). La condition du premier ordre s'écrit :
 $$
-\pi'(q)=0\Leftrightarrow RT'(q)-CT'(q)=0\Leftrightarrow R_m(q)=C_m(q)
+\pi'(q)=0\Leftrightarrow R'(q)-C'(q)=0\Leftrightarrow R_m(q)=C_m(q)
 $$
 On obtient donc l'@eq-cppopti.
+Et la condition du second ordre s'écrit :
+$$
+\pi''(q)<0\Leftrightarrow R''(q)-C''(q)<0\Leftrightarrow R_m'(q^*) <C_m'(q^*)
+$$
 :::
 
 L'intuition pour ce résultat est la suivante.
@@ -295,20 +303,35 @@ p
 En concurrence pure et parfaite, le producteur est *price-taker*.
 Le prix sur le marché est unique et donné , il vaut $p$ et ne dépend pas des quantités produites par *un* producteur.
 Le producteur vend son bien au prix défini par le marché.
-La recette totale devient donc $RT(q)=p\times q$, avec $p$ fixé.
-La recette marginale est donc $R_m(q)=RT'(q)=p$.
+La recette totale devient donc $R(q)=p\times q$, avec $p$ fixé.
+La recette marginale est donc $R_m(q)=R'(q)=p$.
 En réécrivant l'@eq-cppopti, on obtient en concurrence pure et parfaite :
 $$p=C_m(q)$$
 
 ::: {#prp-offreCPP}
+## Offre du producteur en CPP
+En concurrence pure et parfaite, le producteur maximise son profit en égalisant son coût marginal au prix du marché :
+$$C_m(q^*)=p$$
+À condition que son coût marginal soit croissant en $q^*$ ($C_m'(q^*)>0$).
+:::
+
+::: {#def-offre}
+
+## Courbe d'offre d'un producteur
+
+La courbe d'offre du producteur donne la quantité maximale que souhaite produire un producteur pour chaque prix.
+
+:::
+
+::: {#prp-courbeoffreCPP}
 ## Courbe d'offre en CPP
-En concurrence pure et parfaite, la courbe d'offre du producteur est la courbe de coût marginal.
+En concurrence pure et parfaite, la courbe d'offre du producteur est donnée le coût marginal.
 $$p=C_m(q)$$
 :::
 
 Le profit du producteur s'écrit alors :
 $$
-\pi(q)=RT(q)-CT(q)=pq-CT(q)=pq-C_M(q)q=q(p-C_M(q))
+\pi(q)=R(q)-C(q)=pq-C(q)=pq-C_M(q)q=q(p-C_M(q))
 $$
 $$
 \pi(q)=q(p-C_M(q))
