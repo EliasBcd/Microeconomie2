@@ -11,6 +11,8 @@ library(latex2exp)
 
 
 ```{r theme}
+#| cache: false
+
 theme_perso <- function(base_size = 14) {
     theme_bw(base_size = base_size) %+replace%
         theme(

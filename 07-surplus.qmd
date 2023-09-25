@@ -1,10 +1,44 @@
 # Calcul des surplus
+
 ```{r setup}
 library(ggplot2)
 library(latex2exp)
 ```
 
-```{r  annexessurplus1, fig.cap="Représentation graphique de la demande inverse.", include=F}
+```{r theme}
+#| cache: false
+
+theme_perso <- function(base_size = 14) {
+    theme_bw(base_size = base_size) %+replace%
+        theme(
+      # L'ensemble de la figure
+      plot.title = element_text(size = rel(1), face = "bold", margin = margin(0,0,5,0), hjust = 0),
+      # Zone où se situe le graphique
+      panel.grid.minor = element_blank(),
+      panel.border = element_blank(),
+      # Les axes
+      axis.title = element_text(size = rel(0.85), face = "bold"),
+      axis.text = element_text(size = rel(0.70), face = "bold"),
+      axis.line = element_line(color = "black", arrow = arrow(length = unit(0.3, "lines"), type = "closed")),
+      # La légende
+      legend.title = element_text(size = rel(0.85), face = "bold"),
+      legend.text = element_text(size = rel(0.70), face = "bold"),
+      legend.key = element_rect(fill = "transparent", colour = NA),
+      legend.key.size = unit(1.5, "lines"),
+      legend.background = element_rect(fill = "transparent", colour = NA),
+      # Les étiquettes dans le cas d'un facetting
+      strip.background = element_rect(fill = "#17252D", color = "#17252D"),
+      strip.text = element_text(size = rel(0.85), face = "bold", color = "white", margin = margin(5,0,5,0))
+    )
+}
+
+theme_set(theme_perso())
+```
+
+```{r  annexessurplus1}
+#| label: fig-surplus1
+#| fig-cap: "Représentation graphique de la demande inverse."
+#| include: false
 P <- function(q){100-q}
 Cm <- function(q){10+2*q}
 
@@ -18,7 +52,10 @@ p <- ggplot() +
 ```
 
 
-::: {.definition name="Surplus des consommateurs."}
+::: {#def-surplus-conso}
+
+## Surplus des consommateurs
+
 Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêt à payer et le prix effectivement payé.
 Mathématiquement, c'est l'intégrale suivante :
 $$
@@ -30,35 +67,44 @@ Où $p$ est le prix payé, $q$ la quantité échangée  et $P$ la demande invers
 L'intégrale signifie que c'est l'aire comprise entre la demande inverse (la fonction $P$), le prix payé par les consommateurs (le prix $p$), l'axe des ordonnées et la quantité échangée ($q$).
 Dans notre cours, ce sera l'aire d'un triangle ou d'un trapèze.
 
-::: { .definition name="Surplus des producteurs"}
+::: { #def-surplus-prod }
+
+## Surplus des producteurs
 Le surplus des producteurs est la somme de la différence entre le prix reçu par les producteurs et le coût marginal de production.
 Mathématiquement, c'est l'intégrale suivante :
 $$
-S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx (\#eq:sp)
-$$
+S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx 
+$$ {#eq-sp}
 Où $p$ est le prix reçu par le producteur, $q$ la quantité vendue et $C_m$ la coût marginal.
 :::
 L'intégrale signifie que c'est l'aire comprise entre le prix reçu par les producteurs ($p$), le coût marginal ($C_m$),  l'axe des ordonnées et la quantité échangée ($q$).
 Dans notre cours, ce sera l'aire d'un triangle ou d'un trapèze.
 
-::: {.remark name="Lien entre surplus et profit"}
-Si on continue l'expression donnée par l'équation \@ref(eq:sp), on obtient :
+::: {.remark}
+
+## Lien entre surplus et profit
+
+Si on continue l'expression donnée par l'@eq-sp, on obtient :
 $$S_p(q)=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)$$
 Cela prouve la relation donnée informellement dans le cours entre surplus et profit.
 Le surplus est la somme du profit réalisé par les producteurs et des coûts fixes (des coût qui ne dépendent pas de la quantité).
 :::
 
-::: {.remark name="Aire d'un triangle"}
+::: {.remark}
+
+## Aire d'un triangle
 L'aire d'un triangle est donnée par la formule suivante :
 $$\text{aire triangle}=\frac{1}{2}\times\text{base}\times\text{hauteur}$$
 :::
 
-::: {.remark name="Aire d'un trapèze"}
+::: { .remark}
+## Aire d'un trapèze
+
 L'aire d'un trapèze est donnée par la formule suivante :
 $$\text{aire trapèze}=\frac{1}{2}\times(\text{petite base}+\text{grande base})\times\text{hauteur}$$
 :::
 
-On peut illustrer ces formules avec deux cas pratiques (sur les graphiques \@ref(fig:annexesurplus2) et \@ref(fig:annexesurplus3)).
+On peut illustrer ces formules avec deux cas pratiques (sur la @fig-surplus2 et @fig-surplus3).
 
 Les valeurs sur les graphiques sont obtenues de la manière suivante :
 
@@ -69,7 +115,7 @@ Si $p$ est connu, on obtient $q$ avec la fonction de demande $q=Q(p)$ ou en rés
 - $p_1=C_m(0)$ ;
 - $p_2$ dépendra du cas.
 
-Le premier cas est illustré sur le graphique \@ref(fig:annexesurplus2).
+Le premier cas est illustré sur la @fig-surplus2.
 Le prix de l'échange $p$ est tel que le surplus des consommateurs est un triangle, et le surplus des producteurs est un trapèze.
 Dans ce cas, on obtient $p_2= C_m(q)$.
 Le surplus des consommateurs est donné par :
@@ -83,7 +129,9 @@ $$
 
 
 
-```{r annexesurplus2, fig.cap="Surplus avec un prix de l'échange $p$.", echo=F, warning=F}
+```{r annexesurplus2}
+#| label: fig-surplus2
+#| fig-cap: "Surplus avec un prix de l'échange $p$."
 q  <- 20 
 
 Sc <- data.frame(x=c(0, q), ymin=c(P(q), P(q)), ymax=c(P(0), P(q)))
@@ -101,7 +149,7 @@ p + scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, q), label
 ```
 
 
-Le second cas est illustré sur le graphique \@ref(fig:annexesurplus3).
+Le second cas est illustré sur la @fig-surplus3.
 Le prix de l'échange $p$ est tel que le surplus des consommateurs est un trapèze, et le surplus des producteurs est un triangle.
 Dans ce cas, on obtient $p_2= P(q)$.
 Le surplus des consommateurs est donné par :
@@ -113,7 +161,9 @@ $$
 S_p=\frac{1}{2}\times(p-p_1)\times q
 $$
 
-```{r annexesurplus3, fig.cap="Surplus avec un prix de l'échange $p$.", echo=F, warning=F}
+```{r annexesurplus3}
+#| label: fig-surplus3
+#| fig-cap: "Surplus avec un prix de l'échange $p$."
 Sc <- data.frame(x=c(0, q), ymin=c(Cm(q), Cm(q)), ymax=c(P(0), P(q)))
 Sp <- data.frame(x=c(0, q), ymin=c(Cm(0), Cm(q)), ymax=c(Cm(q), Cm(q)))
 

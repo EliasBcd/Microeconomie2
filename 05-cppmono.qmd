@@ -1,8 +1,5 @@
 # Résolution des problèmes
 
-
-
-
 |  Rubrique |  CPP    | Monopole
 |:----------|:-------:|:----------:|
 | Consommateurs | une infinité (atomiques) |  une infinité (atomiques) |

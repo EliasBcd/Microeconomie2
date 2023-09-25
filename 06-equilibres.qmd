@@ -1,17 +1,9 @@
-# Annexes
-
-```{r setup}
-library(ggplot2)
-library(latex2exp)
-```
-
-
 # Comment trouver les équilibres ?
 
 La méthode générale est toujours de maximiser le profit du ou des producteurs.
 Le profit est maximal quand la dérivée du profit suivant les quantités produite est nulle.
 
-En plus de ça, dans différents cas particuliers il est possible de sauter quelques étapes en retenant ces identitées fondamentales
+En plus de ça, dans différents cas particuliers il est possible de sauter quelques étapes en retenant ces identités fondamentales.
 
 ## En concurrence pure et parfaite
 
