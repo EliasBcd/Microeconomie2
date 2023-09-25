@@ -71,7 +71,7 @@ Le choix de la quantité qu'il met sur le marché modifie le prix auquel il pour
 Il va choisir **un** des paramètres du couple $(q^*, p^*)$ du prix et de la quantité sur le marché. 
 L'autre en découlera, à travers la demande inverse $P(q)$ ou la demande $Q(p)$.
 Autrement dit, s'il choisit $q^*$, le prix sur le marché $p^*$ sera déterminé par le demande inverse ($p^*=P(q^*)$).
-Si, au contraire, il choisit $p^*$, la quantité échangée $q^*$ sera déterminée par la demande ($q^*=Q(p^*)$. 
+Si, au contraire, il choisit $p^*$, la quantité échangée $q^*$ sera déterminée par la demande ($q^*=Q(p^*)$). 
 
 En CPP, la recette totale du producteur individuel était $R(q) = q\cdot P(q^*)$, où $q$ est sa production individuel, $q^*$ la quantité d'équilibre sur le marché (résultat de la production de *toutes* les entreprises présentes sur le marché) et $P(q^*)=p^*$ est le prix d'équilibre.
 
@@ -87,7 +87,7 @@ Comme la demande est décroissante (l'élasticité prix de la demande est négat
 Autrement dit, si $q$ augmente, alors $p$ baisse et inversement.
 On peut constater sur la @fig-monorecettemarginale que deux phénomènes influencent la variation de la recette totale quand on augmente la production d'une unité (passage de $q$ à $q+\Delta q$ unités vendues).
 Le gain lié à la vente de $\Delta q$ unités supplémentaires.
-La perte due à la baisse du prix de vente total de toutes les unités vendues (passage de $P(q)$ à un prix inférieur $P(q+\Delta q)$)
+La perte due à la baisse du prix de vente total de toutes les unités vendues (passage de $P(q)$ à un prix inférieur $P(q+\Delta q)$).
 
 ```{r base}
 #| include: false
@@ -151,7 +151,9 @@ R_m(q)& = R'(q) \\
 & = P(q)\left(1 + \frac{1}{\varepsilon_{q/p}(q)}\right)
 \end{align*}
 
-::: {.remark name="Élasticité prix de la demande"}
+::: {.remark}
+## Élasticité prix de la demande
+
 L'élasticité prix de la demande $\varepsilon_{q/p}$ s'écrit :
 $$\varepsilon_{q/p}(p)=\frac{p}{D(p)}D'(p) <0$$
 Où $D$ est la fonction de demande.
@@ -273,7 +275,7 @@ Sur la @fig-mono-profit, on voit qu'il est possible de calculer la recette total
 ### Maximisation du profit
 
 Comme dans le cas de la CPP, on suppose que le monopole cherche à maximiser son profit $\pi(q)=R(q)-C(q)$, où $C(q)$ est la fonction de coût (total) du monopole.  
-Il y a 2 conditions d'optimalités, les conditions de premier ordre (la dérivée du profit à l'optimum est nulle: $\pi'(q^*)=0$) et de second ordre (la dérivée seconde du profit à l'optimum est strictement négative $\pi''(q^*)<0$), ainsi qu'une contrainte, que le profit à l'optimum soit positif ($\pi(q^*)>0$).
+Il y a 2 conditions d'optimalités, les conditions de premier ordre (la dérivée du profit à l'optimum est nulle : $\pi'(q^*)=0$) et de second ordre (la dérivée seconde du profit à l'optimum est strictement négative $\pi''(q^*)<0$), ainsi qu'une contrainte, que le profit à l'optimum soit positif ($\pi(q^*)>0$).
 
 La condition de premier ordre s'exprime ainsi :
 $$
@@ -301,7 +303,10 @@ Cette condition est en particulier vérifiée si la recette marginale est décro
 Finalement, il faut vérifier que le profit à l'optimum est positif ($\pi(q^*)>0$).
 Dans le cas contraire, le marché n'existerait tout simplement pas, car le monopole ne voudrait pas produire le bien.
 
-::: {.theorem name="Optimum du du monopole"}
+::: { #thm-mono-opti }
+
+## Optimum du monopole
+
 À l'optimum, le monopole égalise le coût marginal et le revenu marginal.
 Ce n'est un maximum que si la dérivée de la recette marginale est inférieure à la dérivée du coût marginal et que le profit est positif.
 $$
@@ -469,7 +474,10 @@ Si la pente est inélastique, alors le revenu $R$ augmente quand la quantité $q
 Le coût total $C$ baisse aussi quand la quantité baisse. 
 Le monopole aurait donc tout intérêt à réduire sa production lorsque la demande est inélastique.
 
-::: {.corollary}
+::: {#cor-elasticite}
+
+## Élasticité de la demande à l'optimum
+
 Le monopole opère donc nécessairement dans la zone élastique de la courbe de demande : $\left|\varepsilon_{q/p}(q^*)\right|>1$ .
 ::: 
 
