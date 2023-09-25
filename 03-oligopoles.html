@@ -153,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06-equilibres.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Annexes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Comment trouver les équilibres ?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -262,13 +262,12 @@ Les entreprises peuvent se faire concurrence de différentes manières :</p>
 <h3 data-number="4.1.2" class="anchored" data-anchor-id="formalisation-du-problème"><span class="header-section-number">4.1.2</span> Formalisation du problème</h3>
 <section id="expression-des-profits" class="level4" data-number="4.1.2.1">
 <h4 data-number="4.1.2.1" class="anchored" data-anchor-id="expression-des-profits"><span class="header-section-number">4.1.2.1</span> Expression des profits</h4>
-<p>On a des profits : <span class="math display">\[
+<p>On a des profits : <span id="eq-profitcournot"><span class="math display">\[
 \begin{array}{rcl}
 \pi_1(q_1, q_2) &amp;=&amp; P(q_1+q_2)\cdot q_1-C_1(q_1)\\
 \pi_2(q_1, q_2) &amp;=&amp; P(q_1+q_2)\cdot q_2-C_2(q_2)
 \end{array}
-(\#eq:profitcournot)
-\]</span></p>
+\tag{4.1}\]</span></span></p>
 <p>Supposons que l’entreprise 1 <em>croit</em> que l’entreprise 2 va produire <span class="math inline">\(q_2^a\)</span>. Quelle est sa production optimale ? Son problème de maximisation s’écrit dans ce cas : <span class="math display">\[
 \max_{q_1} \pi_1(q_1, q_2^a) =  q_1P(q_1+q_2^a)-C_1(q_1)
 \]</span> On peut déduire de ce problème d’optimisation la <em>fonction de réaction</em> <span class="math inline">\(q_1(q_2^a)=f_1(q_2^a)\)</span> qui maximise <span class="math inline">\(\pi_1(q_1)\)</span> en fonction de la production anticipée <span class="math inline">\(q_2^a\)</span> de l’entreprise 2.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> La fonction de réaction <span class="math inline">\(f_1(q_2^a)\)</span> donne la valeur de <span class="math inline">\(q_1\)</span> qui maximise le profit quand l’entreprise 2 produit <span class="math inline">\(q_2^a\)</span>.</p>
@@ -308,10 +307,10 @@ q_2^a&amp;=&amp;f_2(q_1^a)
 \]</span></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-oligo-reaction-stable" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="03-oligopoles_files/figure-html/oligoreaction-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Représentation d’un équilibre de Cournot où les fonctions de réaction convergent vers le point d’équilibre.</figcaption>
+<p><img src="03-oligopoles_files/figure-html/fig-oligo-reaction-stable-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.2: Représentation d’un équilibre de Cournot où les fonctions de réaction convergent vers le point d’équilibre.</figcaption>
 </figure>
 </div>
 </div>
@@ -319,10 +318,10 @@ q_2^a&amp;=&amp;f_2(q_1^a)
 <p>L’équilibre n’est pas nécessairement stable. La stabilité dépend de la pente des fonctions de réactions.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-oligo-reaction-instable" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="03-oligopoles_files/figure-html/oligoreactioninstable-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Représentation d’un équilibre de Cournot où les fonctions de réaction divergent du point d’équilibre. Equilibre instable</figcaption>
+<p><img src="03-oligopoles_files/figure-html/fig-oligo-reaction-instable-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.3: Représentation d’un équilibre de Cournot où les fonctions de réaction divergent du point d’équilibre. Equilibre instable</figcaption>
 </figure>
 </div>
 </div>
@@ -358,15 +357,14 @@ C_2(q_2) = cq^2_2 \\
 \pi_1(q_1, q_2^a) = aq_1-bq_1^2-bq_2^aq_1-cq_1^2 = (a-bq_2^a)q_1-(b+c)q_1^2
 \]</span></p>
 <p>La condition du premier ordre suivant <span class="math inline">\(q_1\)</span> s’écrit (ici <span class="math inline">\(q_2^a\)</span> est considéré comme une donnée par l’entreprise 1) :</p>
-<p><span class="math display">\[
+<p><span id="eq-FR1"><span class="math display">\[
 \begin{array}{crcl}
 &amp;\frac{\partial \pi_1}{\partial q_1}&amp;=&amp;0\\
 \Leftrightarrow &amp; (a-bq_2^a)-2(b+c)q_1^* &amp;=&amp; 0\\
 \Leftrightarrow &amp; q_1^* &amp;=&amp; \frac{(a-bq_2^a)}{2(b+c)}
-(\#eq:FR1)
 \end{array}
-\]</span></p>
-<p>On calcule de la même manière (i.e., en utilisant la condition du premier ordre sur les profits de l’entreprise 2) la fonction de réaction de l’entreprise 2 et on obtient par symétrie du problème une légère réécriture de l’équation @ref(eq:FR1):</p>
+\tag{4.2}\]</span></span></p>
+<p>On calcule de la même manière (i.e., en utilisant la condition du premier ordre sur les profits de l’entreprise 2) la fonction de réaction de l’entreprise 2 et on obtient par symétrie du problème une légère réécriture de l’<a href="#eq-FR1">équation&nbsp;<span>4.2</span></a> :</p>
 <p><span class="math display">\[
 q_2^* = \frac{(a-bq_1^a)}{2(b+c)}
 \]</span></p>
@@ -388,18 +386,18 @@ q_2^* &amp;=&amp;\frac{(a-bq_1^*)}{2(b+c)}\\
 \]</span> On résout le système et on obtient : <span class="math display">\[
 q_1^*=q_2^* = \frac{a}{3b+2c}
 \]</span></p>
-<div class="proposition">
-<p>Quand le problème est <strong>symétrique</strong> (=les deux entreprises ont la même fonction de coût), deux entreprises en compétition <strong>à la Cournot</strong> produisent la même quantité de bien.</p>
+<div id="prp-Cournot" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 4.1 (Production en Cournot symétrique) </strong></span>Quand le problème est <strong>symétrique</strong> (=les deux entreprises ont la même fonction de coût), deux entreprises en compétition <strong>à la Cournot</strong> produisent la même quantité de bien.</p>
 </div>
 </section>
 </section>
 <section id="une-intuition-graphique-les-courbes-disoprofit" class="level3" data-number="4.1.4">
 <h3 data-number="4.1.4" class="anchored" data-anchor-id="une-intuition-graphique-les-courbes-disoprofit"><span class="header-section-number">4.1.4</span> Une intuition graphique : les courbes d’isoprofit</h3>
 <p>On peut aussi aborder le problème à l’aide d’une intuition graphique. Il s’agit de tracer les courbes d’<em>isoprofit</em> des entreprises.</p>
-<div class="definition" name="Courbe d'isoprofit">
-<p>Les courbes d’isoprofit est l’ensemble des couples de quantités <span class="math inline">\((q_1, q_2)\)</span> qui permettent à une entreprise d’atteindre un niveau de profit donné.</p>
+<div id="def-isoprofit" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 4.1 (Courbe d’isoprofit) </strong></span>Les courbes d’isoprofit est l’ensemble des couples de quantités <span class="math inline">\((q_1, q_2)\)</span> qui permettent à une entreprise d’atteindre un niveau de profit donné.</p>
 </div>
-<p>Reprenons l’expression générale des profits de l’équation @ref(eq:profitcournot). <span class="math display">\[
+<p>Reprenons l’expression générale des profits de l’<a href="#eq-profitcournot">équation&nbsp;<span>4.1</span></a>. <span class="math display">\[
 \begin{array}{rcl}
 \pi_1(q_1, q_2) &amp;=&amp; q_1P(q_1+q_2)-C_1(q_1)\\
 \pi_2(q_1, q_2) &amp;=&amp; q_2P(q_1+q_2) -C_2(q_2)
@@ -409,21 +407,21 @@ q_1^*=q_2^* = \frac{a}{3b+2c}
 \]</span> L’équation ci-dessus définit implicitement une fonction <span class="math inline">\(q_1=I_\pi(q_1, \pi_1)\)</span> qui permet de représenter la courbe d’isoprofit dans un graphique <span class="math inline">\((q_1,q_2)\)</span>, tout comme la fonction de réaction définit une fonction courbe <span class="math inline">\(q_2(q_1)\)</span> pour l’entreprise 1. La courbe de la fonction de réaction de 1 coupe la courbe d’isoprofit de 1 en son maximum. <!-- Implicitiment, le maximum sur la courbe d'isoprofit est obtenu en dérivant suivant $q_1$, tout comme on obtient la fonction de réaction. --></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-isoprofit1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="03-oligopoles_files/figure-html/isoprofit1-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Courbes d’isoprofit et fonction de réaction de l’entreprise 1</figcaption>
+<p><img src="03-oligopoles_files/figure-html/fig-isoprofit1-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.4: Courbes d’isoprofit et fonction de réaction de l’entreprise 1</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Sur la figure @ref(fig:isoprofit1), le profit est croissant en descendant vers le bas sur les courbes d’isoprofit, autrement dit, les courbes d’isoprofit les plus basses représentent les profits les plus élevés. Le maximum du profit est atteint lorsque l’entreprise 1 est en monopole. La quantité produite est alors <span class="math inline">\(q_m^*\)</span> est le profit <span class="math inline">\(\pi_m^*\)</span>.</p>
+<p>Sur la <a href="#fig-isoprofit1">figure&nbsp;<span>4.4</span></a>, le profit est croissant en descendant vers le bas sur les courbes d’isoprofit, autrement dit, les courbes d’isoprofit les plus basses représentent les profits les plus élevés. Le maximum du profit est atteint lorsque l’entreprise 1 est en monopole. La quantité produite est alors <span class="math inline">\(q_m^*\)</span> est le profit <span class="math inline">\(\pi_m^*\)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-isoprofit-Cournot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="03-oligopoles_files/figure-html/isoprofitCournot-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Courbes d’isoprofits et fonctions de réactions des entreprises en équilibre de Cournot Nash.</figcaption>
+<p><img src="03-oligopoles_files/figure-html/fig-isoprofit-Cournot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.5: Courbes d’isoprofits et fonctions de réactions des entreprises en équilibre de Cournot Nash.</figcaption>
 </figure>
 </div>
 </div>
@@ -441,15 +439,15 @@ q_1^*=q_2^* = \frac{a}{3b+2c}
 <p>Le leader doit choisir sa quantité <span class="math inline">\(q_1\)</span> de façon à être sur la courbe d’isoprofit la plus basse possible compatible avec la fonction de réaction de l’entreprise follower. Il va donc se placer sur la courbe d’isoprofit tangente à la fonction de réaction du follower.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-Stack-equi" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="03-oligopoles_files/figure-html/equilibreStackelberg-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Courbes d’isoprofits du leader et fonctions de réactions des entreprises en équilibre de Stackelberg.</figcaption>
+<p><img src="03-oligopoles_files/figure-html/fig-Stack-equi-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.6: Courbes d’isoprofits du leader et fonctions de réactions des entreprises en équilibre de Stackelberg.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Sur la figure @ref(fig:equilibreStackelberg), on voit que le profit du leader est plus important en Stackelberg qu’en Cournot (et l’inverse pour le follower). Les quantités produites par l’entreprise leader sont plus importantes en Stackelberg qu’en Cournot, mais celles du follower sont plus faibles. La somme des deux est plus importante (<span class="math inline">\(q_{1C}^*+q_{2C}^*&lt;q_{L}^*+q_{F}^*\)</span>). Le prix sera donc plus faible pour les consommateurs.</p>
+<p>Sur la <a href="#fig-Stack-equi">figure&nbsp;<span>4.6</span></a>, on voit que le profit du leader est plus important en Stackelberg qu’en Cournot (et l’inverse pour le follower). Les quantités produites par l’entreprise leader sont plus importantes en Stackelberg qu’en Cournot, mais celles du follower sont plus faibles. La somme des deux est plus importante (<span class="math inline">\(q_{1C}^*+q_{2C}^*&lt;q_{L}^*+q_{F}^*\)</span>). Le prix sera donc plus faible pour les consommateurs.</p>
 </section>
 <section id="exemple-1" class="level3" data-number="4.2.3">
 <h3 data-number="4.2.3" class="anchored" data-anchor-id="exemple-1"><span class="header-section-number">4.2.3</span> Exemple</h3>
@@ -475,18 +473,17 @@ P(q_L+q_F) = a - b(q_L+q_F)
 <section id="fonction-de-réaction-de-lentreprise-follower" class="level4" data-number="4.2.3.3">
 <h4 data-number="4.2.3.3" class="anchored" data-anchor-id="fonction-de-réaction-de-lentreprise-follower"><span class="header-section-number">4.2.3.3</span> Fonction de réaction de l’entreprise follower</h4>
 <p>Calculons la fonction de réaction de l’entreprise follower. La condition du premier ordre suivant <span class="math inline">\(q_F\)</span> s’écrit (ici <span class="math inline">\(q_L\)</span> est considéré comme une donnée par l’entreprise 1) :</p>
-<p><span class="math display">\[
+<p><span id="eq-FRFollower"><span class="math display">\[
 \begin{array}{crcl}
 &amp;\frac{\partial \pi_F}{\partial q_F}&amp;=&amp;0\\
 \Leftrightarrow &amp; (a-bq_L)-2bq_F^* &amp;=&amp; 0\\
 \Leftrightarrow &amp; q_F^* &amp;=&amp; \frac{a-bq_L}{2b}
-(\#eq:FRFollower)
 \end{array}
-\]</span></p>
+\tag{4.3}\]</span></span></p>
 </section>
 <section id="maximisation-de-lentreprise-leader" class="level4" data-number="4.2.3.4">
 <h4 data-number="4.2.3.4" class="anchored" data-anchor-id="maximisation-de-lentreprise-leader"><span class="header-section-number">4.2.3.4</span> Maximisation de l’entreprise leader</h4>
-<p>Comme l’entreprise leader connaît la fonction de réaction de l’entreprise follower (donnée par l’équation @ref(eq:FRFollower)), elle peut l’intégrer à sa propre fonction de profit :</p>
+<p>Comme l’entreprise leader connaît la fonction de réaction de l’entreprise follower (donnée par l’<a href="#eq-FRFollower">équation&nbsp;<span>4.3</span></a>), elle peut l’intégrer à sa propre fonction de profit :</p>
 <p><span class="math display">\[
 \begin{array}{rcl}
 \pi_L(q_L, q_F^*) &amp;=&amp; \left(a-b(q_L+q_F^*(q_L))\right)q_L\\
@@ -526,10 +523,10 @@ Que se passe-t-il si elles peuvent s’entendre ? Par exemple, que se passe-t-il
 <h3 data-number="4.3.2" class="anchored" data-anchor-id="raisonnement-graphique"><span class="header-section-number">4.3.2</span> Raisonnement graphique</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-cartel" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="03-oligopoles_files/figure-html/cartel-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Zone d’amélioration mutuellement bénéfique.</figcaption>
+<p><img src="03-oligopoles_files/figure-html/fig-cartel-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.7: Zone d’amélioration mutuellement bénéfique.</figcaption>
 </figure>
 </div>
 </div>
@@ -584,7 +581,7 @@ Autrement dit, tant que <span class="math inline">\(C_{mA}(q_A)\neq C_{mB}(q_B)\
 </section>
 <section id="oligopoles" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="oligopoles"><span class="header-section-number">4.4</span> Oligopoles</h2>
-<p>On étend l’analyse à <span class="math inline">\(N\)</span> entreprises qui produisent un bien <em>homogène</em>. Comme ce bien est homogène, le prix est unique sur le marché. Chaque entreprise <span class="math inline">\(i\)</span> choisit une quantité <span class="math inline">\(q_i\geq 0\)</span> et les produit à un coût de production <span class="math inline">\(C_i(q_i)\)</span>. La production totale sur le marché est <span class="math inline">\(q=\sum_i q_i\)</span>. La fonction de demande inverse sur le marché <span class="math inline">\(P(q)\)</span> dépend de la production <em>globable</em> <span class="math inline">\(q\)</span>.</p>
+<p>On étend l’analyse à <span class="math inline">\(N\)</span> entreprises qui produisent un bien <em>homogène</em>. Comme ce bien est homogène, le prix est unique sur le marché. Chaque entreprise <span class="math inline">\(i\)</span> choisit une quantité <span class="math inline">\(q_i\geq 0\)</span> et les produit à un coût de production <span class="math inline">\(C_i(q_i)\)</span>. La production totale sur le marché est <span class="math inline">\(q=\sum_i q_i\)</span>. La fonction de demande inverse sur le marché <span class="math inline">\(P(q)\)</span> dépend de la production <em>globale</em> <span class="math inline">\(q\)</span>.</p>
 <p>Le profit de chaque entreprise s’écrit : <span class="math display">\[
 \pi(q_i, q) = q_iP(q) -C_i(q_i)
 \]</span></p>
@@ -606,8 +603,8 @@ Autrement dit, tant que <span class="math inline">\(C_{mA}(q_A)\neq C_{mB}(q_B)\
 \Leftrightarrow &amp; \frac{P(q^*) - C_{im}(q_i^*)}{P(q^*)}&amp;= &amp;S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
 \end{array}
 \]</span> (La dérivée de la fonction de demande suivant le prix est négative).</p>
-<div class="definition" name="Part de marché">
-<p>La part de marché détenue par une entreprise <span class="math inline">\(i\)</span> est la part de la quantité totale produite qui l’est par cette entreprise. On la note <span class="math inline">\(S_i\)</span> : <span class="math display">\[S_i=\frac{q_i}{q}\]</span></p>
+<div id="def-part-marché" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 4.2 (Part de marché) </strong></span>La part de marché détenue par une entreprise <span class="math inline">\(i\)</span> est la part de la quantité totale produite qui l’est par cette entreprise. On la note <span class="math inline">\(S_i\)</span> : <span class="math display">\[S_i=\frac{q_i}{q}\]</span></p>
 </div>
 <p>On obtient le <em>markup-pricing</em> que peut appliquer un producteur en situation d’oligopole à la Cournot. <span class="math display">\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]</span> La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l’entreprise.</p>
 <div class="remark proof">
@@ -617,28 +614,26 @@ Autrement dit, tant que <span class="math inline">\(C_{mA}(q_A)\neq C_{mB}(q_B)\
 <section id="indice-de-lerner" class="level3" data-number="4.4.1">
 <h3 data-number="4.4.1" class="anchored" data-anchor-id="indice-de-lerner"><span class="header-section-number">4.4.1</span> Indice de Lerner</h3>
 <p><em>Rappel :</em> En monopole, l’indice de Lerner est : <span class="math display">\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]</span></p>
-<p>(ref:Lerner) Indice de Lerner d’un producteur <span class="math inline">\(i\)</span></p>
-<div class="definition" name="(ref:Lerner)">
-<p>On définit l’indice de Lerner pour un producteur <span class="math inline">\(i\)</span>, noté <span class="math inline">\(L_i\)</span>, comme son taux de marge : <span class="math display">\[L_i=\frac{P(q^*) -C_{im}(q^*_i)}{P(q^*)}\]</span></p>
+<div id="def-Lerner-prod" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 4.3 (Indice de Lerner d’un producteur <span class="math inline">\(i\)</span>) </strong></span>On définit l’indice de Lerner pour un producteur <span class="math inline">\(i\)</span>, noté <span class="math inline">\(L_i\)</span>, comme son taux de marge : <span class="math display">\[L_i=\frac{P(q^*) -C_{im}(q^*_i)}{P(q^*)}\]</span></p>
 </div>
-<p>On peut exprimer cette indice de Lerner ainsi, grâce à la condition du premier ordre trouvée plus haut : <span class="math display">\[\begin{equation}
+<p>On peut exprimer cette indice de Lerner ainsi, grâce à la condition du premier ordre trouvée plus haut : <span id="eq-li"><span class="math display">\[
 \begin{array}{rcl}
 L_i &amp;=&amp;\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\frac{1}{\left|\varepsilon_{q/p}(q_i, q_{-i})\right|}\\
 &amp;=&amp;S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
 \end{array}
-(\#eq:li)
-\end{equation}\]</span></p>
-<div class="definition" name="Indice de Lerner du marché">
-<p>En oligopole à la Cournot avec <span class="math inline">\(N\)</span> producteurs, on définit l’indice de Lerner du marché par : <span class="math display">\[L = \sum_{i=1}^NS_iL_i\]</span> où <span class="math inline">\(S_i=q_i/q\)</span> est la <em>part de marché</em> du producteur <span class="math inline">\(i\)</span> et <span class="math inline">\(L_i\)</span> est l’indice de Lerner d’un producteur <span class="math inline">\(i\)</span>.</p>
+\tag{4.4}\]</span></span></p>
+<div id="def-Lerner-marche" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 4.4 (Indice de Lerner du marché) </strong></span>En oligopole à la Cournot avec <span class="math inline">\(N\)</span> producteurs, on définit l’indice de Lerner du marché par : <span class="math display">\[L = \sum_{i=1}^NS_iL_i\]</span> où <span class="math inline">\(S_i=q_i/q\)</span> est la <em>part de marché</em> du producteur <span class="math inline">\(i\)</span> et <span class="math inline">\(L_i\)</span> est l’indice de Lerner d’un producteur <span class="math inline">\(i\)</span>.</p>
 </div>
-<p>En utilisant l’expression obtenue pour l’indice de Lerner d’un producteur à l’équation @ref(eq:li), on peut réécrire l’indice de Lerner du marché uniquement en fonction de l’élasticité de la demande à l’équilibre et des parts de marchés de chaque producteur : <span class="math display">\[
+<p>En utilisant l’expression obtenue pour l’indice de Lerner d’un producteur à l’<a href="#eq-li">équation&nbsp;<span>4.4</span></a>, on peut réécrire l’indice de Lerner du marché uniquement en fonction de l’élasticité de la demande à l’équilibre et des parts de marchés de chaque producteur : <span class="math display">\[
 L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
 \]</span></p>
 </section>
 <section id="indice-de-concentration-du-marché" class="level3" data-number="4.4.2">
 <h3 data-number="4.4.2" class="anchored" data-anchor-id="indice-de-concentration-du-marché"><span class="header-section-number">4.4.2</span> Indice de concentration du marché</h3>
-<div id="HHI" class="definition" name="Indice de Hirschman-Herfindahl (HHI)">
-<p>L’indice de Hirschman-Herfindahl est la somme des carrés des part de marchés. <span class="math display">\[HHI = \sum_{i=1}^NS_i^2\]</span> C’est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l’élasticité prix de la demande à l’optimum. Autrement dit, la moyenne des <span class="math inline">\(L_i\)</span> pondéré par les parts de marché.</p>
+<div id="def-HHI" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 4.5 (Indice de Hirschman-Herfindahl (HHI)) </strong></span>L’indice de Hirschman-Herfindahl est la somme des carrés des part de marchés. <span class="math display">\[HHI = \sum_{i=1}^NS_i^2\]</span> C’est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l’élasticité prix de la demande à l’optimum. Autrement dit, la moyenne des <span class="math inline">\(L_i\)</span> pondéré par les parts de marché.</p>
 </div>
 <p><span class="math display">\[
 \begin{array}{rcl}
