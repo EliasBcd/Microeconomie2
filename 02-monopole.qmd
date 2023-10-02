@@ -60,7 +60,7 @@ Plus généralement, les industries avec des coûts fixes ou des coûts d'entré
 - Coalitions créant un cartel ;
 - ...
 
-## Recette et recette marginale
+## Recette et recette marginale {#sec-rm}
 
 ### Définition
 
@@ -214,7 +214,9 @@ R_m(q) = P(q) + qP'(q) < P(q)
 $$
 car $P'(q)$ est négative (la demande inverse est décroissante).
 
-#### Exemple avec une courbe de demande linéaire
+::: {#exm-lineaire}
+
+## Demande linéaire
 
 Prenons maintenant l'exemple d'une courbe de demande inverse linéaire quelconque $P(q) = a-bq$ ($a$ et $b$ sont des valeurs numériques quelconques).
 On obtient alors $R_m(q) = a-2bq$ (et $R(q) = aq-bq^2$).  
@@ -269,13 +271,14 @@ Sur la @fig-mono-profit, on voit qu'il est possible de calculer la recette total
 1. En utilisant l'aire du trapèze vert (intégrale de la recette marginale entre 0 et la quantité échangée $q^*$) ;
 2. En utilisant l'aire du rectangle rouge ($\pi=p^* q^*$).
 
+:::
 
 ## Décision de production du monopole
 
 ### Maximisation du profit
 
-Comme dans le cas de la CPP, on suppose que le monopole cherche à maximiser son profit $\pi(q)=R(q)-C(q)$, où $C(q)$ est la fonction de coût (total) du monopole.  
-Il y a 2 conditions d'optimalités, les conditions de premier ordre (la dérivée du profit à l'optimum est nulle : $\pi'(q^*)=0$) et de second ordre (la dérivée seconde du profit à l'optimum est strictement négative $\pi''(q^*)<0$), ainsi qu'une contrainte, que le profit à l'optimum soit positif ($\pi(q^*)>0$).
+Comme en CPP, le producteur, ici en situation de monopole, cherche à maximiser son profit $\pi(q)=R(q)-C(q)$, où $C(q)$ est la fonction de coût (total) du monopole.  
+Il y a 2 conditions d'optimalités, les conditions de premier ordre (la dérivée du profit à l'optimum est nulle : $\pi'(q^*)=0$) et de second ordre (la dérivée seconde du profit à l'optimum est strictement négative $\pi''(q^*)<0$), ainsi qu'une contrainte, que le profit à l'optimum soit positif ($\pi(q^*)\geq 0$).
 
 La condition de premier ordre s'exprime ainsi :
 $$
@@ -286,6 +289,8 @@ $$
 \end{array}
 $$
 À l'optimum, le monopole égalise le coût marginal et le revenu marginal.
+Cette condition est similaire en apparence à la condition d'optimalité en CPP.
+La différence réside en fait dans l'expression de la recette marginale, tel que vu en @sec-rm.
 
 La condition du second ordre s'exprime ainsi :
 $$
@@ -300,7 +305,7 @@ La dérivée de la recette marginale doit être inférieure à la dérivée du c
 Autrement dit, la recette marginale doit croître moins vite que le coût marginal.
 Cette condition est en particulier vérifiée si la recette marginale est décroissante et le coût marginal croissant.
 
-Finalement, il faut vérifier que le profit à l'optimum est positif ($\pi(q^*)>0$).
+Finalement, il faut vérifier que le profit à l'optimum est positif ($\pi(q^*)\geq0$).
 Dans le cas contraire, le marché n'existerait tout simplement pas, car le monopole ne voudrait pas produire le bien.
 
 ::: { #thm-mono-opti }
@@ -317,7 +322,7 @@ $$
 R_m'(q^*) <C_m'(q^*)
 $$ {#eq-cso}
 $$
-\pi(q^*)>0 
+\pi(q^*)\geq0 
 $${#eq-profitpos}
 :::
 
@@ -418,7 +423,7 @@ p6 <- ggplot(df2, aes(x=x2)) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 420), breaks = seq(0, 400, by=50), labels=c(0, 50, 100, TeX("$\\pi_m^*=150$"), 200, 250, 300, 350, 400)) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 22), breaks = seq(0, 20, by=5), labels = c(0, 5, TeX("$q_m^*=10$"), 15, 20)) +
   annotate("text", x=18, y=10, label=TeX("Profit"), color="darkgreen") +
-  annotate("text", x=18, y=350, label=TeX("Coût"), color="darkred") +
+  annotate("text", x=18, y=350, label=TeX("Coût"), color="red") +
   annotate("text", x=18, y=400, label=TeX("Recette"), color="blue")
 
 p6
@@ -580,7 +585,7 @@ En CPP, un changement de demande, si elle implique une changement du prix d'équ
 La production du monopole est inférieure à la production en CPP et le prix est supérieur au prix de CPP.
 
 ```{r monosurplus}
-#| label: fig-monosurplus
+#| label: fig-mono-surplus
 #| fig-cap: "Surplus quand le producteur est en monopole."
 qcpp <- uniroot(function(x){P(x) - Cm(x)}, c(0, 1))$root
 
@@ -600,8 +605,8 @@ p_surplus <- ggplot() +
   geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
   geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
   geom_ribbon(data=perte, aes(x=x, ymin=ymin, ymax=ymax), fill="black", alpha=0.5) +
-  annotate("text", x=qm/2, y=3/4, label="Surplus du consommateur", color="blue") +
-  annotate("text", x=qm/2, y=1/3, label="Surplus du producteur", color="red") +
+  annotate("text", x=qm/2, y=3/4, label="Surplus du\nconsommateur", color="blue") +
+  annotate("text", x=qm/2, y=1/3, label="Surplus du\nproducteur", color="red") +
   annotate("text", x=qm/2+qcpp/2, y=1/2, label="Perte sèche", color="black") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm)), labels=c(TeX("$p_m^*$"))) +
   scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm, qcpp), labels=c(TeX("$q_m^*$"), TeX("$q_{CPP}^*$")))
@@ -610,7 +615,7 @@ p_surplus
 ```
 
 Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu'en CPP, et que le surplus des consommateur est plus faible.
-Il y a globalement une perte sèche de surplus total.
+Il y a globalement une perte sèche de surplus total, comme on peut le voir sur la @fig-mono-surplus.
 **Le monopole est inefficace au sens de Pareto.**
 Il existe des consommateurs prêt à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche).
 Il est donc possible d'avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole.
