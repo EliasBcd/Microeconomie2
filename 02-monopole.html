@@ -174,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table des matières</h2>
    
   <ul>
-  <li><a href="#recette-et-recette-marginale" id="toc-recette-et-recette-marginale" class="nav-link active" data-scroll-target="#recette-et-recette-marginale"><span class="header-section-number">3.1</span> Recette et recette marginale</a>
+  <li><a href="#sec-rm" id="toc-sec-rm" class="nav-link active" data-scroll-target="#sec-rm"><span class="header-section-number">3.1</span> Recette et recette marginale</a>
   <ul class="collapse">
   <li><a href="#définition" id="toc-définition" class="nav-link" data-scroll-target="#définition"><span class="header-section-number">3.1.1</span> Définition</a></li>
   <li><a href="#recette-marginale-et-courbe-de-demande" id="toc-recette-marginale-et-courbe-de-demande" class="nav-link" data-scroll-target="#recette-marginale-et-courbe-de-demande"><span class="header-section-number">3.1.2</span> Recette marginale et courbe de demande</a></li>
@@ -238,8 +238,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Coalitions créant un cartel ;</li>
 <li>…</li>
 </ul>
-<section id="recette-et-recette-marginale" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="recette-et-recette-marginale"><span class="header-section-number">3.1</span> Recette et recette marginale</h2>
+<section id="sec-rm" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-rm"><span class="header-section-number">3.1</span> Recette et recette marginale</h2>
 <section id="définition" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="définition"><span class="header-section-number">3.1.1</span> Définition</h3>
 <p>L’avantage du monopole sur des entreprises en concurrence pure et parfaite est qu’il connaît tout le marché. Il peut influencer le prix sur le marché, en modifiant son prix de vente ou la quantité vendue. Cela permet au monopole de percevoir la <em>vraie</em> courbe de demande agrégée et non plus une courbe de demande avec une élasticité infinie. Le choix de la quantité qu’il met sur le marché modifie le prix auquel il pourra vendre sa production et il le sait. Il va choisir <strong>un</strong> des paramètres du couple <span class="math inline">\((q^*, p^*)\)</span> du prix et de la quantité sur le marché. L’autre en découlera, à travers la demande inverse <span class="math inline">\(P(q)\)</span> ou la demande <span class="math inline">\(Q(p)\)</span>. Autrement dit, s’il choisit <span class="math inline">\(q^*\)</span>, le prix sur le marché <span class="math inline">\(p^*\)</span> sera déterminé par le demande inverse (<span class="math inline">\(p^*=P(q^*)\)</span>). Si, au contraire, il choisit <span class="math inline">\(p^*\)</span>, la quantité échangée <span class="math inline">\(q^*\)</span> sera déterminée par la demande (<span class="math inline">\(q^*=Q(p^*)\)</span>).</p>
@@ -300,9 +300,8 @@ R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
 <p>La courbe de recette marginale est toujours située en-dessous de la courbe de demande : <span class="math display">\[
 R_m(q) = P(q) + qP'(q) &lt; P(q)
 \]</span> car <span class="math inline">\(P'(q)\)</span> est négative (la demande inverse est décroissante).</p>
-<section id="exemple-avec-une-courbe-de-demande-linéaire" class="level4" data-number="3.1.3.1">
-<h4 data-number="3.1.3.1" class="anchored" data-anchor-id="exemple-avec-une-courbe-de-demande-linéaire"><span class="header-section-number">3.1.3.1</span> Exemple avec une courbe de demande linéaire</h4>
-<p>Prenons maintenant l’exemple d’une courbe de demande inverse linéaire quelconque <span class="math inline">\(P(q) = a-bq\)</span> (<span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sont des valeurs numériques quelconques). On obtient alors <span class="math inline">\(R_m(q) = a-2bq\)</span> (et <span class="math inline">\(R(q) = aq-bq^2\)</span>).<br>
+<div id="exm-lineaire" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 3.1 (Demande linéaire) </strong></span>Prenons maintenant l’exemple d’une courbe de demande inverse linéaire quelconque <span class="math inline">\(P(q) = a-bq\)</span> (<span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sont des valeurs numériques quelconques). On obtient alors <span class="math inline">\(R_m(q) = a-2bq\)</span> (et <span class="math inline">\(R(q) = aq-bq^2\)</span>).<br>
 Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus élevée que la demande, et ayant la même ordonnée à l’origine. La recette marginale divise en deux tout segment horizontal entre l’axe des ordonnées et la courbe de demande inverse. On peut ainsi représenter graphiquement, comme dans la <a href="#fig-recette-marginale">figure&nbsp;<span>3.3</span></a> la demande, la recette marginale et la recette totale.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -330,22 +329,22 @@ Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus
 <li>En utilisant l’aire du trapèze vert (intégrale de la recette marginale entre 0 et la quantité échangée <span class="math inline">\(q^*\)</span>) ;</li>
 <li>En utilisant l’aire du rectangle rouge (<span class="math inline">\(\pi=p^* q^*\)</span>).</li>
 </ol>
-</section>
+</div>
 </section>
 </section>
 <section id="décision-de-production-du-monopole" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="décision-de-production-du-monopole"><span class="header-section-number">3.2</span> Décision de production du monopole</h2>
 <section id="maximisation-du-profit" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="maximisation-du-profit"><span class="header-section-number">3.2.1</span> Maximisation du profit</h3>
-<p>Comme dans le cas de la CPP, on suppose que le monopole cherche à maximiser son profit <span class="math inline">\(\pi(q)=R(q)-C(q)\)</span>, où <span class="math inline">\(C(q)\)</span> est la fonction de coût (total) du monopole.<br>
-Il y a 2 conditions d’optimalités, les conditions de premier ordre (la dérivée du profit à l’optimum est nulle : <span class="math inline">\(\pi'(q^*)=0\)</span>) et de second ordre (la dérivée seconde du profit à l’optimum est strictement négative <span class="math inline">\(\pi''(q^*)&lt;0\)</span>), ainsi qu’une contrainte, que le profit à l’optimum soit positif (<span class="math inline">\(\pi(q^*)&gt;0\)</span>).</p>
+<p>Comme en CPP, le producteur, ici en situation de monopole, cherche à maximiser son profit <span class="math inline">\(\pi(q)=R(q)-C(q)\)</span>, où <span class="math inline">\(C(q)\)</span> est la fonction de coût (total) du monopole.<br>
+Il y a 2 conditions d’optimalités, les conditions de premier ordre (la dérivée du profit à l’optimum est nulle : <span class="math inline">\(\pi'(q^*)=0\)</span>) et de second ordre (la dérivée seconde du profit à l’optimum est strictement négative <span class="math inline">\(\pi''(q^*)&lt;0\)</span>), ainsi qu’une contrainte, que le profit à l’optimum soit positif (<span class="math inline">\(\pi(q^*)\geq 0\)</span>).</p>
 <p>La condition de premier ordre s’exprime ainsi : <span class="math display">\[
 \begin{array}{rcl}
 \pi'(q^*) &amp;=&amp;0\\
 \Leftrightarrow R'(q^*) - C'(q^*) &amp;=&amp; 0\\
 \Leftrightarrow R_m(q^*) &amp;=&amp;C_m(q^*)
 \end{array}
-\]</span> À l’optimum, le monopole égalise le coût marginal et le revenu marginal.</p>
+\]</span> À l’optimum, le monopole égalise le coût marginal et le revenu marginal. Cette condition est similaire en apparence à la condition d’optimalité en CPP. La différence réside en fait dans l’expression de la recette marginale, tel que vu en <a href="#sec-rm"><span>Section&nbsp;3.1</span></a>.</p>
 <p>La condition du second ordre s’exprime ainsi : <span class="math display">\[
 \begin{array}{rcl}
 \pi''(q^*) &amp;&lt;&amp;0\\
@@ -354,7 +353,7 @@ Il y a 2 conditions d’optimalités, les conditions de premier ordre (la dériv
 \end{array}
 \]</span></p>
 <p>La dérivée de la recette marginale doit être inférieure à la dérivée du coût marginal. Autrement dit, la recette marginale doit croître moins vite que le coût marginal. Cette condition est en particulier vérifiée si la recette marginale est décroissante et le coût marginal croissant.</p>
-<p>Finalement, il faut vérifier que le profit à l’optimum est positif (<span class="math inline">\(\pi(q^*)&gt;0\)</span>). Dans le cas contraire, le marché n’existerait tout simplement pas, car le monopole ne voudrait pas produire le bien.</p>
+<p>Finalement, il faut vérifier que le profit à l’optimum est positif (<span class="math inline">\(\pi(q^*)\geq0\)</span>). Dans le cas contraire, le marché n’existerait tout simplement pas, car le monopole ne voudrait pas produire le bien.</p>
 <div id="thm-mono-opti" class="theorem">
 <p><span class="theorem-title"><strong>Théorème 3.1 (Optimum du monopole) </strong></span>À l’optimum, le monopole égalise le coût marginal et le revenu marginal. Ce n’est un maximum que si la dérivée de la recette marginale est inférieure à la dérivée du coût marginal et que le profit est positif. <span id="eq-cpo"><span class="math display">\[
 R_m(q^*)=C_m(q^*)
@@ -362,7 +361,7 @@ R_m(q^*)=C_m(q^*)
 <p><span id="eq-cso"><span class="math display">\[
 R_m'(q^*) &lt;C_m'(q^*)
 \tag{3.3}\]</span></span> <span id="eq-profitpos"><span class="math display">\[
-\pi(q^*)&gt;0
+\pi(q^*)\geq0
 \tag{3.4}\]</span></span></p>
 </div>
 <p>La <a href="#fig-monopoleoptimale">figure&nbsp;<span>3.5</span></a> donne l’intuition graphique de l’égalité entre le coût marginal et la recette marginale. Si le monopole produit plus que <span class="math inline">\(q_m^*\)</span>, alors chaque unité produite en plus lui coûte plus chère qu’elle ne lui rapporte, car le coût marginal est <em>supérieur</em> à la recette marginale. A l’inverse, s’il produit moins, produire des unités en plus lui rapporterait plus que cela ne lui coûte, car le coût marginal est <em>inférieur</em> à la recette marginale.</p>
@@ -378,7 +377,7 @@ R_m'(q^*) &lt;C_m'(q^*)
 </div>
 <p>Le prix est lu et obtenu sur la courbe de <strong>demande</strong>.</p>
 <div id="exm-mono-exemple" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.1 (Maximisation du monopole) </strong></span>Prenons un monopole avec une fonction de coût <span class="math inline">\(C(q)=50+q^2\)</span>. Le monopole fait face à une demande inverse <span class="math inline">\(P(q) = 40-q\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemple 3.2 (Maximisation du monopole) </strong></span>Prenons un monopole avec une fonction de coût <span class="math inline">\(C(q)=50+q^2\)</span>. Le monopole fait face à une demande inverse <span class="math inline">\(P(q) = 40-q\)</span>.</p>
 <p>Le coût marginal est : <span class="math display">\[
 C_m(q) = C'(q)=2q
 \]</span></p>
@@ -402,7 +401,7 @@ R_m(q^*) &amp;=&amp;C_m(q^*)\\
 <div id="fig-mono-recette-exemple" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="02-monopole_files/figure-html/fig-mono-recette-exemple-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.6: Recette, coût et profit dans l’<a href="#exm-mono-exemple">exemple&nbsp;<span>3.1</span></a>.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3.6: Recette, coût et profit dans l’<a href="#exm-mono-exemple">exemple&nbsp;<span>3.2</span></a>.</figcaption>
 </figure>
 </div>
 </div>
@@ -412,7 +411,7 @@ R_m(q^*) &amp;=&amp;C_m(q^*)\\
 <div id="fig-mono-profit-exemple" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="02-monopole_files/figure-html/fig-mono-profit-exemple-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.7: Demande, prix, coûts et profits dans l’<a href="#exm-mono-exemple">exemple&nbsp;<span>3.1</span></a>.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3.7: Demande, prix, coûts et profits dans l’<a href="#exm-mono-exemple">exemple&nbsp;<span>3.2</span></a>.</figcaption>
 </figure>
 </div>
 </div>
@@ -488,15 +487,15 @@ P(q^*) =\frac{|\varepsilon_{q/p}(q^*)|}{|\varepsilon_{q/p}(q^*)|-1} C_m(q^*)
 <p>La production du monopole est inférieure à la production en CPP et le prix est supérieur au prix de CPP.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-monosurplus" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-mono-surplus" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="02-monopole_files/figure-html/fig-monosurplus-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="02-monopole_files/figure-html/fig-mono-surplus-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption class="figure-caption">Figure&nbsp;3.10: Surplus quand le producteur est en monopole.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu’en CPP, et que le surplus des consommateur est plus faible. Il y a globalement une perte sèche de surplus total. <strong>Le monopole est inefficace au sens de Pareto.</strong> Il existe des consommateurs prêt à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche). Il est donc possible d’avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole. Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d’autre pour obtenir cette amélioration.</p>
+<p>Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu’en CPP, et que le surplus des consommateur est plus faible. Il y a globalement une perte sèche de surplus total, comme on peut le voir sur la <a href="#fig-mono-surplus">figure&nbsp;<span>3.10</span></a>. <strong>Le monopole est inefficace au sens de Pareto.</strong> Il existe des consommateurs prêt à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche). Il est donc possible d’avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole. Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d’autre pour obtenir cette amélioration.</p>
 </section>
 </section>
 <section id="le-monopole-naturel" class="level2" data-number="3.3">
@@ -716,7 +715,7 @@ R(q) = \int_0^q P(x) dx
 <p>La situation de discrimination parfaite est un optimum de Pareto. En effet, le surplus social est maximal (mais capturé entièrement par le monopole).</p>
 <p>En pratique, il est très difficile de faire de la discrimination parfaite. Les entreprises essaient de s’en approcher le plus possible.</p>
 <div id="exm-discri-parfaite" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.2 (Exemple de discrimination parfaite) </strong></span>Lors d’une vente de bons du trésors des Etats-Unis, chaque ménage intéressé soumettait une offre (prix, quantité) au gouvernement. Le gouvernement triait les offres par ordre décroissant de prix et les satisfait jusqu’à épuisement des bons à vendre.</p>
+<p><span class="theorem-title"><strong>Exemple 3.3 (Exemple de discrimination parfaite) </strong></span>Lors d’une vente de bons du trésors des Etats-Unis, chaque ménage intéressé soumettait une offre (prix, quantité) au gouvernement. Le gouvernement triait les offres par ordre décroissant de prix et les satisfait jusqu’à épuisement des bons à vendre.</p>
 </div>
 </section>
 <section id="discrimination-du-deuxième-degré" class="level3" data-number="3.5.2">
@@ -742,7 +741,7 @@ R(q) = \int_0^q P(x) dx
 <!-- A faire si le temps le permet. -->
 <p>Il s’agit de faire payer un prix différent à chaque groupe de consommateur en fonction des caractéristiques de leurs fonctions de demande. Tous les membres d’un groupe paient le même prix, contrairement à la discrimination au premier degré. Les groupes sont en général caractérisés par des propensions à payer différentes. Il s’agit d’une segmentation des consommateurs.</p>
 <div id="exm-discri-3" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.3 (Discrimination au troisième degré) </strong></span>Les tarifs jeunes de la SNCF, les tarifs familles. Il est important de pouvoir identifier les groupes.</p>
+<p><span class="theorem-title"><strong>Exemple 3.4 (Discrimination au troisième degré) </strong></span>Les tarifs jeunes de la SNCF, les tarifs familles. Il est important de pouvoir identifier les groupes.</p>
 </div>
 <p><em>Question :</em> Comment répartir la production entre les différents groupes ?</p>
 <ol type="1">
@@ -796,7 +795,7 @@ R(q) = \int_0^q P(x) dx
 \left|\varepsilon_{q/p_B}(q_B^*)\right|&gt;\left|\varepsilon_{q/p_A}(q^*_A)\right|
 \]</span> Le prix est donc plus faible pour le groupe où l’élasticité prix de la demande est plus élevée. Le prix est plus élevé pour le groupe avec l’élasticité la plus faible, les moins réactifs au prix.</p>
 <div id="exm-discri-pro" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.4 (Tarifs professionnels) </strong></span>Les tarifs “professionnels” dans les transports (avion, train, etc). Les professionnels sont moins sensibles au prix car leurs dates de voyage sont moins flexibles que celles des particuliers. Leurs élasticités-prix sont donc plus faibles et leurs prix plus élevés.</p>
+<p><span class="theorem-title"><strong>Exemple 3.5 (Tarifs professionnels) </strong></span>Les tarifs “professionnels” dans les transports (avion, train, etc). Les professionnels sont moins sensibles au prix car leurs dates de voyage sont moins flexibles que celles des particuliers. Leurs élasticités-prix sont donc plus faibles et leurs prix plus élevés.</p>
 </div>
 <p>Des fonctions de demande inverse différentes associées à des élasticités-prix de la demande différente aboutissent à des prix différents.</p>
 
