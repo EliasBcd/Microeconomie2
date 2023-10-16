@@ -542,7 +542,7 @@ C_m(q)-C_M(q)&lt; 0 \Leftrightarrow C_m(q)&lt;C_M(q)
 </section>
 <section id="régulation-du-monopole" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="régulation-du-monopole"><span class="header-section-number">3.4</span> Régulation du monopole</h2>
-<p>Cette partie va traiter de la manière dont un gouvernement peut inciter ou contraindre un monopole à modifier son comportement. Un premier type de régulation est par la taxation ou la subvention du monopole. Un second type de régulation est l’imposition d’un prix maximal.</p>
+<p>Cette partie va traiter de la manière dont un régulateur, en général l’État, peut inciter ou contraindre un monopole à modifier son comportement. Un premier type de régulation est par la taxation ou la subvention du monopole. Un second type de régulation est l’imposition d’un prix maximal.</p>
 <section id="taxes-et-subventions" class="level3" data-number="3.4.1">
 <h3 data-number="3.4.1" class="anchored" data-anchor-id="taxes-et-subventions"><span class="header-section-number">3.4.1</span> Taxes et subventions</h3>
 <section id="taxe-unitaire" class="level4" data-number="3.4.1.1">
@@ -550,22 +550,22 @@ C_m(q)-C_M(q)&lt; 0 \Leftrightarrow C_m(q)&lt;C_M(q)
 <div id="def-tunitaire" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 3.7 (Taxe unitaire) </strong></span>Une taxe unitaire <span class="math inline">\(t\)</span> est une taxe <strong>par unité de bien produite</strong>.</p>
 </div>
-<p>Un gouvernement impose une taxe de <span class="math inline">\(t\)</span> unités monétaire par unité de bien produite. Le profit du monopole se réécrit alors :</p>
+<p>Si un régulateur impose une taxe de <span class="math inline">\(t\)</span> unités monétaire par unité de bien produite, le profit du monopole se réécrit :</p>
 <p><span class="math display">\[
 \pi(q) = R(q) - C(q) -tq
-\]</span> La condition de première ordre de la maximisation du producteur de l’<a href="#eq-cpo">équation&nbsp;<span>3.2</span></a> devient alors : <span class="math display">\[
-\begin{array}{rl}
-&amp;(R(q)-C(q) -tq)'(q^*) = 0\\
-\Leftrightarrow &amp; R_m(q^*)-C_m(q*) -t = 0\\
-\Leftrightarrow &amp; R_m(q^*) = C_m(q^*) + t
+\]</span> La condition de première ordre de la maximisation du producteur de l’<a href="#eq-cpo">équation&nbsp;<span>3.2</span></a> devient : <span class="math display">\[
+\begin{array}{crcl}
+&amp;(R(q)-C(q) -tq)'(q^*) &amp;=&amp; 0\\
+\Leftrightarrow &amp; R_m(q^*)-C_m(q*) -t &amp;=&amp; 0\\
+\Leftrightarrow &amp; R_m(q^*)&amp; = &amp;C_m(q^*) + t
 \end{array}
-\]</span> Le problème est exactement le même que précédemment, en intégrant la taxe dans le coût marginal. Pour le monopole, c’est comme si l’État ajoutait un coût <span class="math inline">\(t\)</span> à chaque unité produite. C’est effectivement ce que l’État fait si on considère le coût de production au sens large.</p>
+\]</span> Le problème est exactement le même que précédemment, en intégrant la taxe dans le coût marginal. Pour le monopole, c’est comme si le régulateur ajoutait un coût <span class="math inline">\(t\)</span> à chaque unité produite. C’est effectivement ce que le régulateur fait si on considère le coût de production au sens large.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-mono-taxe-unitaire" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="02-monopole_files/figure-html/mono-taxe-unitaire-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Impact d’une taxe unitaire : augmentation du coût marginal.</figcaption>
+<p><img src="02-monopole_files/figure-html/fig-mono-taxe-unitaire-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.12: Impact d’une taxe unitaire : augmentation du coût marginal.</figcaption>
 </figure>
 </div>
 </div>
@@ -579,42 +579,44 @@ R_m(q^*) -t = C_m(q^*)
 <div id="fig-mono-taxe-unitaire-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="02-monopole_files/figure-html/fig-mono-taxe-unitaire-2-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.12: Impact d’une taxe unitaire : diminution de recette marginale.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3.13: Impact d’une taxe unitaire : diminution de recette marginale.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Si le gouvernement utilise une taxe négative (= une subvention), alors le gouvernement peut augmenter la production et de diminuer le prix.</p>
+<p>Si le régulateur utilise une taxe négative (= une subvention), alors il peut augmenter la production et de diminuer le prix.</p>
 </section>
 <section id="taxe-forfaitaire" class="level4" data-number="3.4.1.2">
 <h4 data-number="3.4.1.2" class="anchored" data-anchor-id="taxe-forfaitaire"><span class="header-section-number">3.4.1.2</span> Taxe forfaitaire</h4>
 <div id="def-t-forfaitaire" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 3.8 (Taxe forfaitaire) </strong></span>Une taxe forfaitaire est une taxe <span class="math inline">\(T\)</span> imposée au monopole directement sur son profit, indépendamment de tout (prix ou quantité produite).</p>
+<p><span class="theorem-title"><strong>Définition 3.8 (Taxe forfaitaire) </strong></span>Une taxe forfaitaire est une taxe <span class="math inline">\(T\)</span> imposée au directement au producteur, indépendamment du prix ou de la quantité produite.</p>
 </div>
-<p>Avec une taxe forfaitaire, l’état prélève un montant <span class="math inline">\(T\)</span> indépendant de la quantité produite sur le profit du producteur. <span class="math display">\[
+<p>Avec une taxe forfaitaire, le régulateur prélève un montant <span class="math inline">\(T\)</span> indépendant de la quantité produite sur le profit du producteur. <span class="math display">\[
 \pi(q) = R(q) - C(q) -T
 \]</span> La condition du premier ordre de l’<a href="#eq-cpo">équation&nbsp;<span>3.2</span></a> devient alors : <span class="math display">\[
-\begin{array}{rl}
-&amp; (R(q)-C(q) -T)'(q^*) = 0\\
-\Leftrightarrow &amp; R_m(q^*)-C_m(q*) = 0\\
-\Leftrightarrow &amp; R_m(q^*) = C_m(q^*)
+\begin{array}{crcl}
+&amp; (R(q)-C(q) -T)'(q^*)&amp; =&amp; 0\\
+\Leftrightarrow &amp; R_m(q^*)-C_m(q*)&amp; =&amp; 0\\
+\Leftrightarrow &amp; R_m(q^*) &amp;=&amp; C_m(q^*)
 \end{array}
-\]</span> On retrouve exactement la même condition d’optimalité qu’en l’absence de taxe. Si elle n’est pas trop élevée, une taxe forfaitaire n’a <em>aucune</em> influence sur la quantité produite et le prix. Si la taxe forfaitaire est très élevée, supérieure au profit <span class="math inline">\(R(q^*) - C(q^*) &lt;T\)</span>, le monopole préfère ne rien produire et le surplus social est nul.</p>
-<p>On peut donc envisager de combiner une subvention unitaire au monopole combinée à une taxe forfaitaire pour augmenter le surplus total.</p>
+\]</span> On retrouve exactement la même condition d’optimalité qu’en l’absence de taxe. Si elle n’est pas trop élevée, une taxe forfaitaire n’a <em>aucune</em> influence sur la quantité produite et le prix. Si la taxe forfaitaire est très élevée, supérieure au profit à l’optimum (<span class="math inline">\(\pi(q^*) &lt;T\)</span>), le monopole préfère ne rien produire et le surplus social est nul.</p>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remarque</em>. </span>Le régulateur peut envisager de combiner une subvention unitaire au monopole combinée à une taxe forfaitaire pour augmenter le surplus social.</p>
+</div>
 </section>
 <section id="impôt-sur-les-bénéfices-profit" class="level4" data-number="3.4.1.3">
 <h4 data-number="3.4.1.3" class="anchored" data-anchor-id="impôt-sur-les-bénéfices-profit"><span class="header-section-number">3.4.1.3</span> Impôt sur les bénéfices (profit)</h4>
 <p>Un autre type d’imposition possible est l’impôt sur les bénéfices.</p>
 <div id="def-t-benefice" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 3.9 (Impôt sur les bénéfices) </strong></span>L’impôt sur les bénéfices consiste à taxer le profit à un taux <span class="math inline">\(t\)</span>. On impose au monopole de payer un pourcentage de ses profits en impôts.</p>
+<p><span class="theorem-title"><strong>Définition 3.9 (Impôt sur les bénéfices) </strong></span>L’impôt sur les bénéfices consiste à taxer le <em>profit</em> à un taux <span class="math inline">\(t\)</span>. Le régulateur impose au monopole de payer un pourcentage de ses profits en impôts.</p>
 </div>
-<p>Au lieu de taxer chaque unité produite, on taxe le niveau de profit à un taux <span class="math inline">\(t\)</span>. Le profit s’écrit alors : <span class="math display">\[
+<p>Au lieu de taxer chaque unité produite, le régulateur taxe le niveau de profit à un taux <span class="math inline">\(t\)</span>. Le profit s’écrit : <span class="math display">\[
 \pi(q) = R(q) - C(q) -t(R(q) - C(q)) = (1-t)(R(q) - C(q))
 \]</span> La condition du premier ordre de l’<a href="#eq-cpo">équation&nbsp;<span>3.2</span></a> devient alors : <span class="math display">\[
-\begin{array}{rl}
-&amp;((1-t)(R(q)-C(q)))'(q^*) = 0\\
-\Leftrightarrow &amp; (1-t)(R_m(q^*)-C_m(q^*)) = 0\\
-\Leftrightarrow &amp; R_m(q^*) = C_m(q^*)
+\begin{array}{crcl}
+&amp;((1-t)(R(q)-C(q)))'(q^*) &amp;=&amp; 0\\
+\Leftrightarrow &amp; (1-t)(R_m(q^*)-C_m(q^*)) &amp;=&amp; 0\\
+\Leftrightarrow &amp; R_m(q^*) &amp;=&amp; C_m(q^*)
 \end{array}
 \]</span></p>
 <p>Comme pour la taxe forfaitaire, le comportement du monopole n’est pas modifié par un impôt sur les bénéfices. On peut donc aussi envisager une subvention à la production et une taxe proportionnelle sur le profit.</p>
@@ -622,13 +624,13 @@ R_m(q^*) -t = C_m(q^*)
 </section>
 <section id="prix-maximal" class="level3" data-number="3.4.2">
 <h3 data-number="3.4.2" class="anchored" data-anchor-id="prix-maximal"><span class="header-section-number">3.4.2</span> Prix maximal</h3>
-<p>L’État fixe un <em>prix maximal</em> <span class="math inline">\(p^{max}\)</span> au dessus duquel le monopole ne peut pas vendre. Il modifie ainsi la demande perçue par le producteur.</p>
+<p>Le régulateur fixe un <em>prix maximal</em> <span class="math inline">\(p^{max}\)</span> au dessus duquel le monopole ne peut pas vendre. Il modifie ainsi la demande perçue par le producteur.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-mono-prix-max" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="02-monopole_files/figure-html/fig-mono-prix-max-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.13: Fixation d’un prix maximal supérieur au prix de CPP.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3.14: Fixation d’un prix maximal supérieur au prix de CPP.</figcaption>
 </figure>
 </div>
 </div>
@@ -638,24 +640,24 @@ R_m(q^*) -t = C_m(q^*)
 <div id="fig-mino-prix-max-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="02-monopole_files/figure-html/fig-mino-prix-max-2-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.14: Fixation d’un prix maximal inférieur au prix de CPP.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3.15: Fixation d’un prix maximal inférieur au prix de CPP.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Si le prix maximum est inférieur au prix de concurrence pure et parfaite, les quantités produites peuvent devenir sous-optimales. Le gouvernement peux maximiser le surplus social en prenant le prix concurrentiel comme prix maximum.<br>
-<em>Rappel :</em> En CPP, on obtient le prix à l’aide de la courbe de coût marginal. L’équilibre a lieu quand le coût marginal et la demande se croisent.</p>
+<p>Si le prix maximal est inférieur au prix de concurrence pure et parfaite, les quantités produites peuvent devenir sous-optimales. Le régulateur peut maximiser le surplus social en prenant le prix concurrentiel comme prix maximal.</p>
+<p><em>Rappel :</em> En CPP, on obtient le prix à l’aide de la courbe de coût marginal. L’équilibre a lieu quand le coût marginal et la demande se croisent.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-cpp-prix-max" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="02-monopole_files/figure-html/fig-cpp-prix-max-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.15: Fixation d’un prix maximal égal au prix de CPP.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3.16: Fixation d’un prix maximal égal au prix de CPP.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Avec un prix maximum égal au prix de concurrence pure et parfaite, le revenu marginal coupe la courbe de coût marginal au point d’équilibre de la concurrence pure et parfaite. Le prix maximal génère alors exactement la situation de CPP. On est donc dans une situation optimale au sens de Pareto.</p>
+<p>Avec un prix maximal égal au prix de concurrence pure et parfaite, le revenu marginal coupe la courbe de coût marginal au point d’équilibre de la concurrence pure et parfaite. Le prix maximal génère alors exactement la situation de CPP. On est donc dans une situation optimale au sens de Pareto.</p>
 <div id="prp-variations-prix-max" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 3.2 (Évolution des quantités produites avec un prix maximal) </strong></span>Trois situations sont possibles avec un prix maximal :</p>
 <ol type="1">
@@ -667,18 +669,18 @@ R_m(q^*) -t = C_m(q^*)
 </section>
 <section id="régulation-du-monopole-naturel" class="level3" data-number="3.4.3">
 <h3 data-number="3.4.3" class="anchored" data-anchor-id="régulation-du-monopole-naturel"><span class="header-section-number">3.4.3</span> Régulation du monopole naturel</h3>
-<p>Dans le cas d’un monopole naturel, le coût marginal est inférieur au coût moyen à l’optimum. Une régulation qui maximise le surplus total est une régulation qui fait en sorte que la quantité produite est celle produite en concurrence pure et parfaite. Dans le cadre du monopole naturel, cela signifie que le coût moyen sera supérieur au coût marginal et donc au prix d’échange de la concurrence pure et parfaite, comme illustré dans la <a href="#fig-nat">figure&nbsp;<span>3.16</span></a>.</p>
+<p>Dans le cas d’un monopole naturel, le coût marginal est inférieur au coût moyen à l’optimum. Une régulation qui maximise le surplus total est une régulation qui fait en sorte que la quantité produite est celle produite en concurrence pure et parfaite. Dans le cadre du monopole naturel, cela signifie que le coût moyen sera supérieur au coût marginal et donc au prix d’échange de la concurrence pure et parfaite, comme illustré dans la <a href="#fig-nat">figure&nbsp;<span>3.17</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-nat" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="02-monopole_files/figure-html/fig-nat-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.16: Régulation du monopole naturel.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3.17: Régulation du monopole naturel.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Si on impose une tarification au coût marginal, à l’aide d’un prix maximal, par exemple, alors le monopole fait des pertes, car le prix est inférieur au coût moyen. La régulation “optimale” généralement utilisée impose <em>un prix au coût moyen</em> et une obligation de satisfaire toute la demande. Le monopole fait alors un profit nul.</p>
+<p>Si le régulateur impose une tarification au coût marginal, à l’aide d’un prix maximal, par exemple, alors le monopole fait des pertes, car le prix est inférieur au coût moyen. La régulation “optimale” généralement utilisée impose <em>un prix au coût moyen</em> et une obligation de satisfaire toute la demande. Le monopole fait alors un profit nul.</p>
 <p>Une solution alternative est un prix égal au coût marginal assorti de subventions pour couvrir les pertes.</p>
 </section>
 </section>
@@ -707,7 +709,7 @@ R(q) = \int_0^q P(x) dx
 <div id="fig-disc-parfaite" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="02-monopole_files/figure-html/fig-disc-parfaite-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.17: Surplus du monopole en discrimination parfaite (aire rouge et bleue).</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3.18: Surplus du monopole en discrimination parfaite (aire rouge et bleue).</figcaption>
 </figure>
 </div>
 </div>
@@ -729,7 +731,7 @@ R(q) = \int_0^q P(x) dx
 <div id="fig-discri-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="02-monopole_files/figure-html/fig-discri-2-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.18: Graphique avec une discrimination du deuxième degré. Les quantités inférieures à <span class="math inline">\(q_1\)</span> sont vendues au prix <span class="math inline">\(p_1\)</span>, les suivantes au prix <span class="math inline">\(p_2\)</span>.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3.19: Graphique avec une discrimination du deuxième degré. Les quantités inférieures à <span class="math inline">\(q_1\)</span> sont vendues au prix <span class="math inline">\(p_1\)</span>, les suivantes au prix <span class="math inline">\(p_2\)</span>.</figcaption>
 </figure>
 </div>
 </div>
