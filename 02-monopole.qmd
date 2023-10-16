@@ -725,7 +725,7 @@ Il ne faut pas confondre les rendements d'échelle, qui mettent en relation les 
 
 ## Régulation du monopole
 
-Cette partie va traiter de la manière dont un gouvernement peut inciter ou contraindre un monopole à modifier son comportement.
+Cette partie va traiter de la manière dont un régulateur, en général l'État, peut inciter ou contraindre un monopole à modifier son comportement.
 Un premier type de régulation est par la taxation ou la subvention du monopole.
 Un second type de régulation est l'imposition d'un prix maximal.
 
@@ -742,26 +742,26 @@ Un second type de régulation est l'imposition d'un prix maximal.
 Une taxe unitaire $t$ est une taxe **par unité de bien produite**.
 :::
 
-Un gouvernement impose une taxe de $t$ unités monétaire par unité de bien produite.
-Le profit du monopole se réécrit alors :
+Si un régulateur impose une taxe de $t$ unités monétaire par unité de bien produite,
+le profit du monopole se réécrit :
 
 $$
 \pi(q) = R(q) - C(q) -tq
 $$
-La condition de première ordre de la maximisation du producteur de l'@eq-cpo devient alors :
+La condition de première ordre de la maximisation du producteur de l'@eq-cpo devient :
 $$
-\begin{array}{rl}
-&(R(q)-C(q) -tq)'(q^*) = 0\\
-\Leftrightarrow & R_m(q^*)-C_m(q*) -t = 0\\
-\Leftrightarrow & R_m(q^*) = C_m(q^*) + t
+\begin{array}{crcl}
+&(R(q)-C(q) -tq)'(q^*) &=& 0\\
+\Leftrightarrow & R_m(q^*)-C_m(q*) -t &=& 0\\
+\Leftrightarrow & R_m(q^*)& = &C_m(q^*) + t
 \end{array}
 $$
 Le problème est exactement le même que précédemment, en intégrant la taxe dans le coût marginal.
-Pour le monopole, c'est comme si l'État ajoutait un coût $t$ à chaque unité produite.
-C'est effectivement ce que l'État fait si on considère le coût de production au sens large.
+Pour le monopole, c'est comme si le régulateur ajoutait un coût $t$ à chaque unité produite.
+C'est effectivement ce que le régulateur fait si on considère le coût de production au sens large.
 
 ```{r monopoletaxeunitaire}
-#| label: mono-taxe-unitaire
+#| label: fig-mono-taxe-unitaire
 #| fig-cap: "Impact d'une taxe unitaire : augmentation du coût marginal."
 t <- 0.2
 
@@ -800,7 +800,7 @@ p_taxeunitaire  + geom_function(fun=function(x) P(x)-t, colour="darkblue") +
   annotate("text", x=0.3, y = 0.5, label="Prix perçu par le monopole avec taxe")
 ```
 
-Si le gouvernement utilise une taxe négative (= une subvention), alors le gouvernement peut augmenter la production et de diminuer le prix.
+Si le régulateur utilise une taxe négative (= une subvention), alors il peut augmenter la production et de diminuer le prix.
 
 #### Taxe forfaitaire
  
@@ -808,26 +808,28 @@ Si le gouvernement utilise une taxe négative (= une subvention), alors le gouve
 
 ## Taxe forfaitaire
 
-Une taxe forfaitaire est une taxe $T$ imposée au monopole directement sur son profit, indépendamment de tout (prix ou quantité produite).
+Une taxe forfaitaire est une taxe $T$ imposée au directement au producteur, indépendamment du prix ou de la quantité produite.
 :::
 
-Avec une taxe forfaitaire, l'état prélève un montant $T$ indépendant de la quantité produite sur le profit du producteur.
+Avec une taxe forfaitaire, le régulateur prélève un montant $T$ indépendant de la quantité produite sur le profit du producteur.
 $$
 \pi(q) = R(q) - C(q) -T
 $$
 La condition du premier ordre de l'@eq-cpo devient alors :
 $$
-\begin{array}{rl}
-& (R(q)-C(q) -T)'(q^*) = 0\\
-\Leftrightarrow & R_m(q^*)-C_m(q*) = 0\\
-\Leftrightarrow & R_m(q^*) = C_m(q^*)
+\begin{array}{crcl}
+& (R(q)-C(q) -T)'(q^*)& =& 0\\
+\Leftrightarrow & R_m(q^*)-C_m(q*)& =& 0\\
+\Leftrightarrow & R_m(q^*) &=& C_m(q^*)
 \end{array}
 $$
 On retrouve exactement la même condition d'optimalité qu'en l'absence de taxe.
 Si elle n'est pas trop élevée, une taxe forfaitaire n'a *aucune* influence sur la quantité produite et le prix.
-Si la taxe forfaitaire est très élevée, supérieure au profit $R(q^*) - C(q^*) <T$, le monopole préfère ne rien produire et le surplus social est nul.
+Si la taxe forfaitaire est très élevée, supérieure au profit à l'optimum ($\pi(q^*) <T$), le monopole préfère ne rien produire et le surplus social est nul.
 
-On peut donc envisager de combiner une subvention unitaire au monopole combinée à une taxe forfaitaire pour augmenter le surplus total.
+::: {.remark}
+Le régulateur peut envisager de combiner une subvention unitaire au monopole combinée à une taxe forfaitaire pour augmenter le surplus social.
+:::
 
 #### Impôt sur les bénéfices (profit)
 
@@ -836,21 +838,21 @@ Un autre type d'imposition possible est l'impôt sur les bénéfices.
 ::: { #def-t-benefice}
 
 ## Impôt sur les bénéfices
-L'impôt sur les bénéfices consiste à taxer le profit à un taux $t$.
-On impose au monopole de payer un pourcentage de ses profits en impôts.
+L'impôt sur les bénéfices consiste à taxer le *profit* à un taux $t$.
+Le régulateur impose au monopole de payer un pourcentage de ses profits en impôts.
 :::
 
-Au lieu de taxer chaque unité produite, on taxe le niveau de profit à un taux $t$.
-Le profit s'écrit alors :
+Au lieu de taxer chaque unité produite, le régulateur taxe le niveau de profit à un taux $t$.
+Le profit s'écrit :
 $$
 \pi(q) = R(q) - C(q) -t(R(q) - C(q)) = (1-t)(R(q) - C(q))
 $$
 La condition du premier ordre de l'@eq-cpo devient alors :
 $$
-\begin{array}{rl}
-&((1-t)(R(q)-C(q)))'(q^*) = 0\\
-\Leftrightarrow & (1-t)(R_m(q^*)-C_m(q^*)) = 0\\
-\Leftrightarrow & R_m(q^*) = C_m(q^*)
+\begin{array}{crcl}
+&((1-t)(R(q)-C(q)))'(q^*) &=& 0\\
+\Leftrightarrow & (1-t)(R_m(q^*)-C_m(q^*)) &=& 0\\
+\Leftrightarrow & R_m(q^*) &=& C_m(q^*)
 \end{array}
 $$
 
@@ -860,7 +862,7 @@ On peut donc aussi envisager une subvention à la production et une taxe proport
 ### Prix maximal
 
 
-L'État fixe un *prix maximal* $p^{max}$ au dessus duquel le monopole ne peut pas vendre.
+Le régulateur fixe un *prix maximal* $p^{max}$ au dessus duquel le monopole ne peut pas vendre.
 Il modifie ainsi la demande perçue par le producteur.
 
 ```{r monopoleprixmaximal}
@@ -895,7 +897,7 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkre
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax, P(qm)), labels=c(TeX("$p^{max}>p^*_{CPP}$"), TeX("$p^*_m$"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, 1-pmax), labels=c(TeX("$q^*_m$"), TeX("$q^*_{max}$"))) +
   annotate("text", x=0.9, y=0.1, label="demande avec un prix maximal", color="darkred") +
-  annotate("text", x=0.5, y=0.3, label="recette marginale avec un prix max", color="darkgreen")
+  annotate("text", x=0.5, y=0.3, label="recette marginale avec un prix maximal", color="darkgreen")
 ```
 
 ```{r monopoleprixmaximal2}
@@ -912,8 +914,9 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkre
   annotate("text", x=0.5, y=0.3, label="recette marginale avec un prix max", color="darkgreen")
 ```
 
-Si le prix maximum est inférieur au prix de concurrence pure et parfaite, les quantités produites peuvent devenir sous-optimales.
-Le gouvernement peux maximiser le surplus social en prenant le prix concurrentiel comme prix maximum.  
+Si le prix maximal est inférieur au prix de concurrence pure et parfaite, les quantités produites peuvent devenir sous-optimales.
+Le régulateur peut maximiser le surplus social en prenant le prix concurrentiel comme prix maximal.
+
 *Rappel :* En CPP, on obtient le prix à l'aide de la courbe de coût marginal.
 L'équilibre a lieu quand le coût marginal et la demande se croisent.
 
@@ -933,7 +936,7 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkre
   annotate("text", x=0.5, y=0.2, label="recette marginale avec un prix max", color="darkgreen")
 ```
 
-Avec un prix maximum égal au prix de concurrence pure et parfaite, le revenu marginal coupe la courbe de coût marginal au point d'équilibre de la concurrence pure et parfaite.
+Avec un prix maximal égal au prix de concurrence pure et parfaite, le revenu marginal coupe la courbe de coût marginal au point d'équilibre de la concurrence pure et parfaite.
 Le prix maximal génère alors exactement la situation de CPP.
 On est donc dans une situation optimale au sens de Pareto.
 
@@ -959,18 +962,21 @@ Dans le cadre du monopole naturel, cela signifie que le coût moyen sera supéri
 #| fig-cap: "Régulation du monopole naturel."
 Rm2 <- function(q){5-4*q}
 fn2 <- function(x){Cm_naturel(x)-Rm2(x)}
-
 fn <- function(x){CM_naturel(x)-D2(x)}
+fn_nat <- function(x) {Cm_naturel(x) - D2(x)}
+
 qr <- uniroot(fn, c(0.5, 2.5))$root
 qm <- uniroot(fn2, c(0.5, 1.25))$root
+qcpp_nat <- uniroot(fn_nat, c(0.5, 2.5))$root
 
-p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(qcpp, qm, qr), labels=c(TeX("$q_{CPP}^*$"), TeX("$q_{m}^*$"), TeX("$q_R$"))) +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 5), breaks=c(D2(qm), D2(qr), D2(qcpp)), labels=c(TeX("$p_m$"), TeX("$p_R$"), TeX("$p_{CPP}$"))) +
+p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(qcpp_nat, qm, qr), labels=c(TeX("$q_{CPP}^*$"), TeX("$q_{m}^*$"), TeX("$q_R$"))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 5), breaks=c(D2(qm), D2(qr), D2(qcpp_nat)), labels=c(TeX("$p_m$"), TeX("$p_R$"), TeX("$p_{CPP}$"))) +
   annotate("text", x=0.5, y=3, label="recette marginale", color="blue") +
   geom_function(fun=Rm2, color="blue")
 
 ```
-Si on impose une tarification au coût marginal, à l'aide d'un prix maximal, par exemple, alors le monopole fait des pertes, car le prix est inférieur au coût moyen.
+
+Si le régulateur impose une tarification au coût marginal, à l'aide d'un prix maximal, par exemple, alors le monopole fait des pertes, car le prix est inférieur au coût moyen.
 La régulation "optimale" généralement utilisée impose *un prix au coût moyen* et une obligation de satisfaire toute la demande.
 Le monopole fait alors un profit nul.
 
