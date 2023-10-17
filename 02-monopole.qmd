@@ -488,6 +488,13 @@ Le monopole opère donc nécessairement dans la zone élastique de la courbe de 
 
 ### Indice de pouvoir du monopole
 
+::: {#def-pouvoir-marché}
+
+## Pouvoir de marché
+
+Le pouvoir de marché d'un producteur est sa capacité à élever son prix au-dessus de son coût marginal.
+:::
+
 La capacité du monopole à vendre à un prix supérieur au coût marginal dépend de la plus ou moins grande élasticité de la demande au prix.
 Cela permet de construire un indice du *pouvoir de monopole* à partir de l'élasticité du prix à la demande à l'équilibre.
 On a, d'après l'@eq-rmcm :
@@ -726,9 +733,33 @@ Il ne faut pas confondre les rendements d'échelle, qui mettent en relation les 
 ## Régulation du monopole
 
 Cette partie va traiter de la manière dont un régulateur, en général l'État, peut inciter ou contraindre un monopole à modifier son comportement.
-Un premier type de régulation est par la taxation ou la subvention du monopole.
-Un second type de régulation est l'imposition d'un prix maximal.
 
+
+### Objectif de la régulation
+
+Nous avons jusqu'à présent vu deux types d'acteurs sur un marché : les consommateurs et les producteurs.
+On introduit maintenant un troisième type d'acteur : le régulateur.
+Ce type d'acteur est différent des deux types précédent. 
+Il peut intervenir sur le marché en imposant différent types de règles (loi), que nous verrons par la suite.
+Dans notre modélisation, le régulateur a un objectif : maximiser le bien-être social, autrement dit, maximiser le surplus total.
+On fera l'hypothèse très simplificatrice qu'il n'y a pas de coût à imposer une règle et que la règle est toujours parfaitement suivie.
+
+Nous verrons trois types de règles.
+Le premier type est l'imposition d'une régulation sur la tarification.
+Un deuxième type de régulation est par la taxation ou la subvention du monopole.
+Un troisième type de régulation est l'imposition d'un prix maximal.
+
+### Règles de tarification
+
+On dit que le régulateur impose une tarification au coût marginal pour dire que le régulateur impose au producteur de fixer son prix de vente au niveau de son coût marginal de production. 
+Le monopole doit égaliser la demande inverse avec son coût marginal.
+Cette règle est justifiée par la volonté du régulateur public de restaurer un optimum social dans la production, obtenu dans la situation de CPP par la vente de chaque bien à son coût marginal.
+
+On dit que le régulateur impose une tarification au coût moyen pour dire que le régulateur impose au producteur de fixer son prix de vente au niveau de son coût moyen de production. 
+Le monopole doit égaliser la demande inverse avec son coût moyen.
+Cette règle est surtout utile dans la situation de monopole naturel, où une tarification au coût marginal entraîne des profits négatifs et donc la fermeture du monopole et la fin du marché.
+
+Particulièrement dans le premier cas, cette règle est difficile à mettre en oeuvre en pratique car elle nécessite une information précise sur les coûts de production.
 
 ### Taxes et subventions
 
