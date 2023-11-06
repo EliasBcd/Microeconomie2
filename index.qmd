@@ -2,7 +2,7 @@
 
 Notes du cours de microéconomie 2 en licence 2 à l'université Paris 8, donné par Hela Maafi, Antoine Terracol et Elias Bouacida.  
 Ce dépôt contient les notes de cours ainsi que les corrigés des exercices.
-Ces notes ont été réalisées à partir des notes manuscrites d'Antoine Terracol et originellement tapé par Elias Bouacida. 
+Ces notes ont été réalisées à partir des notes manuscrites d'Antoine Terracol et originellement tapées par Elias Bouacida. 
 Les notes actuelles sont le travail combiné des trois enseignants.
 
 ## Thèmes
