@@ -77,7 +77,7 @@ Les entreprises peuvent se faire concurrence de différentes manières :
 
 - En quantité, concurrence dite à la *Cournot* ;
 - En prix, concurrence à la *Bertrand* ;
-- En prenant une situation de leader ou de follower, à la *Stackelberg* ;
+- En prenant une situation de pilote ou de satellite, à la *Stackelberg* ;
 - En format une entente, dans un *cartel* ;
 - Dans une concurrence spatiale, à la *Hotelling*.
 
@@ -340,10 +340,14 @@ On résout le système et on obtient :
 $$
 q_1^*=q_2^* = \frac{a}{3b+2c}
 $$
+La quantité totale sur le marché en Cournot est :
+$$
+q_C^* = \frac{2a}{3b+2c}
+$$ {#eq-q-Cournot}
 On en déduit que
 $$
 p^* = P(q^*_1+q^*_2) = a\frac{b+2c}{3b+2c}
-$$
+$$ {#eq-p-Cournot}
 
 ::: {#prp-Cournot}
 
@@ -580,19 +584,19 @@ Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.
 ### Introduction
 
 Il n'y a plus de symétrie des entreprises dans un duopole à la Stackelberg.
-Une entreprise, dite *leader*, prend ses décisions avant l'entreprise dite *follower*.
-L'entreprise leader connaît les caractéristiques de l'entreprise follower et peut ainsi calculer sa fonction de réaction.
+Une entreprise, dite *pilote* ou *leader*, prend ses décisions avant l'entreprise dite *satellite* ou *follower*.
+L'entreprise pilote connaît les caractéristiques de l'entreprise satellite et peut ainsi calculer sa fonction de réaction.
 Elle en tiendra compte dans ses décisions.
 On considère ici qu'il n'y a que deux périodes de décisions.
 
 ### Résolution graphique
 
-Le leader doit choisir sa quantité $q_1$ de façon à être sur la courbe d'isoprofit la plus basse possible compatible avec la fonction de réaction de l'entreprise follower.
-Il va donc se placer sur la courbe d'isoprofit tangente à la fonction de réaction du follower.
+L'entreprise pilote choisit sa quantité $q_1$ de façon à être sur la courbe d'isoprofit la plus basse possible compatible avec la fonction de réaction de l'entreprise satellite.
+Elle se placera donc sur la courbe d'isoprofit tangente à la fonction de réaction du satellite.
 
 ```{r equilibreStackelberg}
 #| label: fig-Stack-equi
-#| fig-cap: "Courbes d'isoprofits du leader et fonctions de réactions des entreprises en équilibre de Stackelberg."
+#| fig-cap: "Courbes d'isoprofits du pilote et fonctions de réactions des deux entreprises en équilibre de Stackelberg."
 p <- p_isoprofit
 
 IL <- function(q, pi){1-pi/q-q}
@@ -601,13 +605,13 @@ fL <- function(q)(1-2*q)
 
 
 p_stackelberg <- ggplot() +
-  labs(x="quantité leader", y = "quantité follower") +
+  labs(x="quantité pilote", y = "quantité satellite") +
   geom_function(fun=fF, colour="darkgreen") +
   geom_function(fun=fL, colour="red", linetype="dashed" ) +
   stat_function(fun=function(x) IL(x, 1/9), colour="blue") +
   stat_function(fun=function(x) IL(x, 1/8), colour="red") +
-  annotate("text", x=0.4, y=1, label="Fonction de réaction du leader (en Cournot)", color="red") +
-  annotate("text", x=0.9, y=0.2, label="Fonction de réaction du follower", color="darkgreen") +
+  annotate("text", x=0.4, y=1, label="Fonction de réaction du pilote (en Cournot)", color="red") +
+  annotate("text", x=0.9, y=0.2, label="Fonction de réaction du satellite", color="darkgreen") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(.25, 1/3, 0.5), labels=c(TeX("$q_{2C}^*$"), TeX("$q_{1F}^*$"), TeX("$q_{2m}^*$"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(1/3, 0.5), labels=c(TeX("$q_{1C}^*$"), TeX("$q_{L}^*$"))) +
   annotate("point", x=1/3, y=1/3, colour="blue", size=3) +
@@ -618,8 +622,8 @@ p_stackelberg <- ggplot() +
 p_stackelberg
 ```
 
-Sur la @fig-Stack-equi, on voit que le profit du leader est plus important en Stackelberg qu'en Cournot (et l'inverse pour le follower).
-Les quantités produites par l'entreprise leader sont plus importantes en Stackelberg qu'en Cournot, mais celles du follower sont plus faibles.
+Sur la @fig-Stack-equi, on voit que le profit du pilote est plus important en Stackelberg qu'en Cournot (et l'inverse pour le satellite).
+Les quantités produites par l'entreprise pilote sont plus importantes en Stackelberg qu'en Cournot, mais celles du satellite sont plus faibles.
 La somme des deux est plus importante ($q_{1C}^*+q_{2C}^*<q_{L}^*+q_{F}^*$).
 Le prix sera donc plus faible pour les consommateurs.
 
@@ -627,7 +631,7 @@ Le prix sera donc plus faible pour les consommateurs.
 
 #### Données du problèmes
 
-Notons les variables et fonctions du leader avec un indice $L$ et celles du follower avec un indice $F$.
+Notons les variables et fonctions du pilote avec un indice $L$ et celles du satellite avec un indice $F$.
 
 Gardons une fonction de demande linéaire.
 
@@ -635,7 +639,7 @@ $$
 P(q_L+q_F) = a - b(q_L+q_F)
 $$
 
-Supposons, afin de simplifier les calculs, que les coûts marginaux sont nuls.
+Supposons, afin de simplifier les calculs, que les coûts marginaux nuls.
 
 #### Profits
 
@@ -648,9 +652,9 @@ $$
 \end{array}
 $$
 
-#### Fonction de réaction de l'entreprise follower
+#### Fonction de réaction de l'entreprise satellite
 
-Calculons la fonction de réaction de l'entreprise follower.
+Calculons la fonction de réaction de l'entreprise satellite.
 La condition du premier ordre suivant $q_F$ s'écrit (ici $q_L$ est considéré comme une donnée par l'entreprise 1) :
 
 $$
@@ -662,9 +666,9 @@ $$
 $$ {#eq-FRFollower}
 
 
-#### Maximisation de l'entreprise leader
+#### Maximisation de l'entreprise pilote
 
-Comme l'entreprise leader connaît la fonction de réaction de l'entreprise follower (donnée par l'@eq-FRFollower), elle peut l'intégrer à sa propre fonction de profit :
+Comme l'entreprise pilote connaît la fonction de réaction de l'entreprise satellite (donnée par l'@eq-FRFollower), elle peut l'intégrer à sa propre fonction de profit :
 
 $$
 \begin{array}{rcl}
@@ -674,7 +678,7 @@ $$
 \end{array}
 $$
 
-La condition de premier ordre du leader est :
+La condition de premier ordre du pilote est :
 
 $$
 \begin{array}{crcl}
@@ -684,14 +688,31 @@ $$
 \end{array}
 $$
 
-On en déduit qu'à l'équilibre de Stackelberg, le follower produit :
+On en déduit qu'à l'équilibre de Stackelberg, le satellite produit :
 $$
 q_F^*=\frac{a}{4b}
 $$
 
-L'entreprise leader produit plus que l'entreprise follower.
+L'entreprise pilote produit plus que l'entreprise satellite.
 Elle profite de son pouvoir sur la seconde entreprise pour cela.
-Si on calcule le profit, on verra que le profit de l'entreprise leader est plus important que celui de l'entreprise follower si elles sont exactement symétriques, en dehors de leur prises de décisions.
+La quantité totale produite est :
+$$
+q^*_S = \frac{3a}{4b}
+$$
+Et le prix est :
+$$
+p^*_S = \frac{a}{4}
+$$
+Si on compare ces valeurs à celle obtenu en Cournot avec un coût marginal nul (@eq-q-Cournot et @eq-p-Cournot avec $c=0$), on remarque que la quantité totale en Stackelberg est plus élevée et que le prix est plus faible.
+On calcule maintenant le profit des deux entreprises :
+$$
+\begin{array}{rcl}
+\pi_L(q_L, q_F) &=& p^*_S \times q_L^* = \frac{a^2}{8b}\\
+\pi_F(q_L, q_F) &=& p^*_S \times q_F^* = \frac{a^2}{16b}
+\end{array}
+$$
+Le profit de l'entreprise pilote est plus élevé que celui de l'entreprise satellite quand les deux entreprises ont même coût marginal. 
+La seule différence entre ces deux entreprises est que l'entreprise pilote prend sa décision avant l'entreprise satellite.
 
 ## Cartels et collusions
 
