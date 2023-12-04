@@ -180,6 +180,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#formalisation-du-problème" id="toc-formalisation-du-problème" class="nav-link" data-scroll-target="#formalisation-du-problème"><span class="header-section-number">4.1.2</span> Formalisation du problème</a></li>
   <li><a href="#exemple" id="toc-exemple" class="nav-link" data-scroll-target="#exemple"><span class="header-section-number">4.1.3</span> Exemple</a></li>
   <li><a href="#une-intuition-graphique-les-courbes-disoprofit" id="toc-une-intuition-graphique-les-courbes-disoprofit" class="nav-link" data-scroll-target="#une-intuition-graphique-les-courbes-disoprofit"><span class="header-section-number">4.1.4</span> Une intuition graphique : les courbes d’isoprofit</a></li>
+  <li><a href="#oligopoles-à-la-cournot" id="toc-oligopoles-à-la-cournot" class="nav-link" data-scroll-target="#oligopoles-à-la-cournot"><span class="header-section-number">4.1.5</span> Oligopoles à la Cournot</a></li>
   </ul></li>
   <li><a href="#duopole-à-la-stackelberg" id="toc-duopole-à-la-stackelberg" class="nav-link" data-scroll-target="#duopole-à-la-stackelberg"><span class="header-section-number">4.2</span> Duopole à la Stackelberg</a>
   <ul class="collapse">
@@ -192,11 +193,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction-2" id="toc-introduction-2" class="nav-link" data-scroll-target="#introduction-2"><span class="header-section-number">4.3.1</span> Introduction</a></li>
   <li><a href="#raisonnement-graphique" id="toc-raisonnement-graphique" class="nav-link" data-scroll-target="#raisonnement-graphique"><span class="header-section-number">4.3.2</span> Raisonnement graphique</a></li>
   <li><a href="#résolution-analytique" id="toc-résolution-analytique" class="nav-link" data-scroll-target="#résolution-analytique"><span class="header-section-number">4.3.3</span> Résolution analytique</a></li>
-  </ul></li>
-  <li><a href="#oligopoles" id="toc-oligopoles" class="nav-link" data-scroll-target="#oligopoles"><span class="header-section-number">4.4</span> Oligopoles</a>
-  <ul class="collapse">
-  <li><a href="#indice-de-lerner" id="toc-indice-de-lerner" class="nav-link" data-scroll-target="#indice-de-lerner"><span class="header-section-number">4.4.1</span> Indice de Lerner</a></li>
-  <li><a href="#indice-de-concentration-du-marché" id="toc-indice-de-concentration-du-marché" class="nav-link" data-scroll-target="#indice-de-concentration-du-marché"><span class="header-section-number">4.4.2</span> Indice de concentration du marché</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -233,7 +229,7 @@ Les entreprises peuvent se faire concurrence de différentes manières :</p>
 <ul>
 <li>En quantité, concurrence dite à la <em>Cournot</em> ;</li>
 <li>En prix, concurrence à la <em>Bertrand</em> ;</li>
-<li>En prenant une situation de leader ou de follower, à la <em>Stackelberg</em> ;</li>
+<li>En prenant une situation de pilote ou de satellite, à la <em>Stackelberg</em> ;</li>
 <li>En format une entente, dans un <em>cartel</em> ;</li>
 <li>Dans une concurrence spatiale, à la <em>Hotelling</em>.</li>
 </ul>
@@ -385,7 +381,11 @@ q_2^* &amp;=&amp;\frac{(a-bq_1^*)}{2(b+c)}\\
 \end{array}
 \]</span> On résout le système et on obtient : <span class="math display">\[
 q_1^*=q_2^* = \frac{a}{3b+2c}
-\]</span></p>
+\]</span> La quantité totale sur le marché en Cournot est : <span id="eq-q-Cournot"><span class="math display">\[
+q_C^* = \frac{2a}{3b+2c}
+\tag{4.3}\]</span></span> On en déduit que <span id="eq-p-Cournot"><span class="math display">\[
+p^* = P(q^*_1+q^*_2) = a\frac{b+2c}{3b+2c}
+\tag{4.4}\]</span></span></p>
 <div id="prp-Cournot" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 4.1 (Production en Cournot symétrique) </strong></span>Quand le problème est <strong>symétrique</strong> (=les deux entreprises ont la même fonction de coût), deux entreprises en compétition <strong>à la Cournot</strong> produisent la même quantité de bien.</p>
 </div>
@@ -427,38 +427,113 @@ q_1^*=q_2^* = \frac{a}{3b+2c}
 </div>
 </div>
 </section>
+<section id="oligopoles-à-la-cournot" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="oligopoles-à-la-cournot"><span class="header-section-number">4.1.5</span> Oligopoles à la Cournot</h3>
+<p>On étend l’analyse à <span class="math inline">\(N\)</span> entreprises qui produisent un bien <em>homogène</em>. Comme ce bien est homogène, le prix est unique sur le marché. Chaque entreprise <span class="math inline">\(i\)</span> choisit une quantité <span class="math inline">\(q_i\geq 0\)</span> et les produit à un coût de production <span class="math inline">\(C_i(q_i)\)</span>. La production totale sur le marché est <span class="math inline">\(q=\sum_i q_i\)</span>. La fonction de demande inverse sur le marché <span class="math inline">\(P(q)\)</span> dépend de la production <em>globale</em> <span class="math inline">\(q\)</span>.</p>
+<p>Le profit de chaque entreprise s’écrit : <span class="math display">\[
+\pi(q_i, q) = q_iP(q) -C_i(q_i)
+\]</span></p>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remarque</em> (Quantité globale). </span>Attention, ici <span class="math inline">\(q\)</span>, la quantité globale, dépend de la quantité <span class="math inline">\(q_i\)</span> produite par <span class="math inline">\(i\)</span>. Implicitement, on a ainsi définit une fonction <span class="math inline">\(q(q_i)\)</span>, ce qui est important dans la dérivation des résultats.</p>
+</div>
+<p>Le programme de maximisation d’une entreprise <span class="math inline">\(i\)</span> s’écrit : <span class="math display">\[
+\max_{q_i}\pi(q_i, q) = q_iP(q) -C_i(q_i)
+\]</span></p>
+<p>La condition du premier ordre est telle que :</p>
+<p><span class="math display">\[
+\begin{array}{crcl}
+&amp;\frac{\partial \pi_i}{\partial q_i}(q_i^*, q(q_i^*)) &amp;=&amp; 0\\
+\Leftrightarrow &amp; \frac{\partial  \left(q_iP(q) -C_i(q_i)\right)}{\partial q_i}(q_i^*, q(q_i^*)) &amp;= &amp;0\\
+\Leftrightarrow &amp; P(q^*) + q_iP'(q^*) -C_{im}(q_i^*)&amp;= &amp;0\\
+\Leftrightarrow &amp; P(q^*) - C_{im}(q_i^*)&amp;= &amp;-q_i^*P'(q^*) \\
+\Leftrightarrow &amp; \frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}&amp;= &amp;-\frac{q_i^*}{P(q^*)}P'(q^*) \\
+\Leftrightarrow &amp; \frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}&amp;= &amp;-\frac{q^*}{P(q^*)}P'(q^*)\frac{q_i^*}{q^*} \\
+\Leftrightarrow &amp; \frac{P(q^*) - C_{im}(q_i^*)}{P(q^*)}&amp;= &amp;S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
+\end{array}
+\]</span> (La dérivée de la fonction de demande suivant le prix est négative).</p>
+<div id="def-part-marché" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 4.2 (Part de marché) </strong></span>La part de marché détenue par une entreprise <span class="math inline">\(i\)</span> est la part de la quantité totale produite qui l’est par cette entreprise. On la note <span class="math inline">\(S_i\)</span> : <span class="math display">\[S_i=\frac{q_i}{q}\]</span></p>
+</div>
+<p>On obtient le <em>markup-pricing</em> que peut appliquer un producteur en situation d’oligopole à la Cournot. <span class="math display">\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]</span> La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l’entreprise.</p>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remarque</em>. </span>En monopole, <span class="math inline">\(S_i=1\)</span>, on retrouve alors bien : <span class="math display">\[\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}\]</span></p>
+<p>En concurrence pure et parfaite <span class="math inline">\(S_i\to 0\)</span>, donc <span class="math inline">\(\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0\)</span>, ce qui implique bien que <span class="math inline">\(C_{mi}(q_i)\to P(q)\)</span>. On retrouve ainsi le résultat <span class="math inline">\(P(q^*)=C_m(q^*)\)</span>.</p>
+</div>
+<section id="indice-de-lerner" class="level4" data-number="4.1.5.1">
+<h4 data-number="4.1.5.1" class="anchored" data-anchor-id="indice-de-lerner"><span class="header-section-number">4.1.5.1</span> Indice de Lerner</h4>
+<p><em>Rappel :</em> En monopole, l’indice de Lerner est : <span class="math display">\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]</span></p>
+<div id="def-Lerner-prod" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 4.3 (Indice de Lerner d’un producteur <span class="math inline">\(i\)</span>) </strong></span>On définit l’indice de Lerner pour un producteur <span class="math inline">\(i\)</span>, noté <span class="math inline">\(L_i\)</span>, comme son taux de marge : <span class="math display">\[L_i=\frac{P(q^*) -C_{im}(q^*_i)}{P(q^*)}\]</span></p>
+</div>
+<p>On peut exprimer cette indice de Lerner ainsi, grâce à la condition du premier ordre trouvée plus haut : <span id="eq-li"><span class="math display">\[
+\begin{array}{rcl}
+L_i &amp;=&amp;\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\frac{1}{\left|\varepsilon_{q/p}(q_i, q_{-i})\right|}\\
+&amp;=&amp;S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
+\end{array}
+\tag{4.5}\]</span></span></p>
+<div id="def-Lerner-marche" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 4.4 (Indice de Lerner du marché) </strong></span>En oligopole à la Cournot avec <span class="math inline">\(N\)</span> producteurs, on définit l’indice de Lerner du marché par : <span class="math display">\[L = \sum_{i=1}^NS_iL_i\]</span> où <span class="math inline">\(S_i=q_i/q\)</span> est la <em>part de marché</em> du producteur <span class="math inline">\(i\)</span> et <span class="math inline">\(L_i\)</span> est l’indice de Lerner d’un producteur <span class="math inline">\(i\)</span>.</p>
+</div>
+<p>En utilisant l’expression obtenue pour l’indice de Lerner d’un producteur à l’<a href="#eq-li">équation&nbsp;<span>4.5</span></a>, on peut réécrire l’indice de Lerner du marché uniquement en fonction de l’élasticité de la demande à l’équilibre et des parts de marchés de chaque producteur : <span class="math display">\[
+L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
+\]</span></p>
+</section>
+<section id="indice-de-concentration-du-marché" class="level4" data-number="4.1.5.2">
+<h4 data-number="4.1.5.2" class="anchored" data-anchor-id="indice-de-concentration-du-marché"><span class="header-section-number">4.1.5.2</span> Indice de concentration du marché</h4>
+<div id="def-HHI" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 4.5 (Indice de Hirschman-Herfindahl (HHI)) </strong></span>L’indice de Hirschman-Herfindahl est la somme des carrés des part de marchés. <span class="math display">\[HHI = \sum_{i=1}^NS_i^2\]</span> C’est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l’élasticité prix de la demande à l’optimum. Autrement dit, la moyenne des <span class="math inline">\(L_i\)</span> pondéré par les parts de marché.</p>
+</div>
+<p><span class="math display">\[
+\begin{array}{rcl}
+\sum_{i=1}^{N}\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}S_i &amp;=&amp;\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}S_i \\
+&amp;=&amp;\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2\\
+&amp;=&amp;\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
+\end{array}
+\]</span></p>
+<p><em>Interprétation :</em><br>
+Imaginons que toutes les <span class="math inline">\(N\)</span> producteurs sont identiques (ils ont la même fonction de coût). Ils produisent alors la même quantité optimale à l’équilibre. Leur part de marché est donc <span class="math inline">\(S_i=1/N\)</span>. Le HHI vaut : <span class="math display">\[
+\begin{array}{rcl}
+HHI&amp;=&amp;\sum_{i=1}^NS_i^2\\
+&amp;=&amp;\sum_{i=1}^N\frac{1}{N^2}\\
+&amp;=&amp;\frac{N}{N^2} \\
+&amp;=&amp;\frac{1}{N}
+\end{array}
+\]</span> Le HHI correspond à l’inverse du nombre de producteurs qui seraient identiques sur le marché et donneraient le même écart moyen entre coût marginal et prix. Plus le HHI est proche de 1, plus on se rapproche du monopole. Plus le HHI est proche de 0, plus on se rapproche de la concurrence pure et parfaite.</p>
+<p>Le HHI est utilisé par les autorités de la concurrence pour évaluer les effets sur les prix de fusions d’entreprises. Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.</p>
+</section>
+</section>
 </section>
 <section id="duopole-à-la-stackelberg" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="duopole-à-la-stackelberg"><span class="header-section-number">4.2</span> Duopole à la Stackelberg</h2>
 <section id="introduction-1" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="introduction-1"><span class="header-section-number">4.2.1</span> Introduction</h3>
-<p>Il n’y a plus de symétrie des entreprises dans un duopole à la Stackelberg. Une entreprise, dite <em>leader</em>, prend ses décisions avant l’entreprise dite <em>follower</em>. L’entreprise leader connaît les caractéristiques de l’entreprise follower et peut ainsi calculer sa fonction de réaction. Elle en tiendra compte dans ses décisions. On considère ici qu’il n’y a que deux périodes de décisions.</p>
+<p>Il n’y a plus de symétrie des entreprises dans un duopole à la Stackelberg. Une entreprise, dite <em>pilote</em> ou <em>leader</em>, prend ses décisions avant l’entreprise dite <em>satellite</em> ou <em>follower</em>. L’entreprise pilote connaît les caractéristiques de l’entreprise satellite et peut ainsi calculer sa fonction de réaction. Elle en tiendra compte dans ses décisions. On considère ici qu’il n’y a que deux périodes de décisions.</p>
 </section>
 <section id="résolution-graphique" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="résolution-graphique"><span class="header-section-number">4.2.2</span> Résolution graphique</h3>
-<p>Le leader doit choisir sa quantité <span class="math inline">\(q_1\)</span> de façon à être sur la courbe d’isoprofit la plus basse possible compatible avec la fonction de réaction de l’entreprise follower. Il va donc se placer sur la courbe d’isoprofit tangente à la fonction de réaction du follower.</p>
+<p>L’entreprise pilote choisit sa quantité <span class="math inline">\(q_1\)</span> de façon à être sur la courbe d’isoprofit la plus basse possible compatible avec la fonction de réaction de l’entreprise satellite. Elle se placera donc sur la courbe d’isoprofit tangente à la fonction de réaction du satellite.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-Stack-equi" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="03-oligopoles_files/figure-html/fig-Stack-equi-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.6: Courbes d’isoprofits du leader et fonctions de réactions des entreprises en équilibre de Stackelberg.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;4.6: Courbes d’isoprofits du pilote et fonctions de réactions des deux entreprises en équilibre de Stackelberg.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Sur la <a href="#fig-Stack-equi">figure&nbsp;<span>4.6</span></a>, on voit que le profit du leader est plus important en Stackelberg qu’en Cournot (et l’inverse pour le follower). Les quantités produites par l’entreprise leader sont plus importantes en Stackelberg qu’en Cournot, mais celles du follower sont plus faibles. La somme des deux est plus importante (<span class="math inline">\(q_{1C}^*+q_{2C}^*&lt;q_{L}^*+q_{F}^*\)</span>). Le prix sera donc plus faible pour les consommateurs.</p>
+<p>Sur la <a href="#fig-Stack-equi">figure&nbsp;<span>4.6</span></a>, on voit que le profit du pilote est plus important en Stackelberg qu’en Cournot (et l’inverse pour le satellite). Les quantités produites par l’entreprise pilote sont plus importantes en Stackelberg qu’en Cournot, mais celles du satellite sont plus faibles. La somme des deux est plus importante (<span class="math inline">\(q_{1C}^*+q_{2C}^*&lt;q_{L}^*+q_{F}^*\)</span>). Le prix sera donc plus faible pour les consommateurs.</p>
 </section>
 <section id="exemple-1" class="level3" data-number="4.2.3">
 <h3 data-number="4.2.3" class="anchored" data-anchor-id="exemple-1"><span class="header-section-number">4.2.3</span> Exemple</h3>
 <section id="données-du-problèmes" class="level4" data-number="4.2.3.1">
 <h4 data-number="4.2.3.1" class="anchored" data-anchor-id="données-du-problèmes"><span class="header-section-number">4.2.3.1</span> Données du problèmes</h4>
-<p>Notons les variables et fonctions du leader avec un indice <span class="math inline">\(L\)</span> et celles du follower avec un indice <span class="math inline">\(F\)</span>.</p>
+<p>Notons les variables et fonctions du pilote avec un indice <span class="math inline">\(L\)</span> et celles du satellite avec un indice <span class="math inline">\(F\)</span>.</p>
 <p>Gardons une fonction de demande linéaire.</p>
 <p><span class="math display">\[
 P(q_L+q_F) = a - b(q_L+q_F)
 \]</span></p>
-<p>Supposons, afin de simplifier les calculs, que les coûts marginaux sont nuls.</p>
+<p>Supposons, afin de simplifier les calculs, que les coûts marginaux nuls.</p>
 </section>
 <section id="profits-1" class="level4" data-number="4.2.3.2">
 <h4 data-number="4.2.3.2" class="anchored" data-anchor-id="profits-1"><span class="header-section-number">4.2.3.2</span> Profits</h4>
@@ -470,20 +545,20 @@ P(q_L+q_F) = a - b(q_L+q_F)
 \end{array}
 \]</span></p>
 </section>
-<section id="fonction-de-réaction-de-lentreprise-follower" class="level4" data-number="4.2.3.3">
-<h4 data-number="4.2.3.3" class="anchored" data-anchor-id="fonction-de-réaction-de-lentreprise-follower"><span class="header-section-number">4.2.3.3</span> Fonction de réaction de l’entreprise follower</h4>
-<p>Calculons la fonction de réaction de l’entreprise follower. La condition du premier ordre suivant <span class="math inline">\(q_F\)</span> s’écrit (ici <span class="math inline">\(q_L\)</span> est considéré comme une donnée par l’entreprise 1) :</p>
+<section id="fonction-de-réaction-de-lentreprise-satellite" class="level4" data-number="4.2.3.3">
+<h4 data-number="4.2.3.3" class="anchored" data-anchor-id="fonction-de-réaction-de-lentreprise-satellite"><span class="header-section-number">4.2.3.3</span> Fonction de réaction de l’entreprise satellite</h4>
+<p>Calculons la fonction de réaction de l’entreprise satellite. La condition du premier ordre suivant <span class="math inline">\(q_F\)</span> s’écrit (ici <span class="math inline">\(q_L\)</span> est considéré comme une donnée par l’entreprise 1) :</p>
 <p><span id="eq-FRFollower"><span class="math display">\[
 \begin{array}{crcl}
 &amp;\frac{\partial \pi_F}{\partial q_F}&amp;=&amp;0\\
 \Leftrightarrow &amp; (a-bq_L)-2bq_F^* &amp;=&amp; 0\\
 \Leftrightarrow &amp; q_F^* &amp;=&amp; \frac{a-bq_L}{2b}
 \end{array}
-\tag{4.3}\]</span></span></p>
+\tag{4.6}\]</span></span></p>
 </section>
-<section id="maximisation-de-lentreprise-leader" class="level4" data-number="4.2.3.4">
-<h4 data-number="4.2.3.4" class="anchored" data-anchor-id="maximisation-de-lentreprise-leader"><span class="header-section-number">4.2.3.4</span> Maximisation de l’entreprise leader</h4>
-<p>Comme l’entreprise leader connaît la fonction de réaction de l’entreprise follower (donnée par l’<a href="#eq-FRFollower">équation&nbsp;<span>4.3</span></a>), elle peut l’intégrer à sa propre fonction de profit :</p>
+<section id="maximisation-de-lentreprise-pilote" class="level4" data-number="4.2.3.4">
+<h4 data-number="4.2.3.4" class="anchored" data-anchor-id="maximisation-de-lentreprise-pilote"><span class="header-section-number">4.2.3.4</span> Maximisation de l’entreprise pilote</h4>
+<p>Comme l’entreprise pilote connaît la fonction de réaction de l’entreprise satellite (donnée par l’<a href="#eq-FRFollower">équation&nbsp;<span>4.6</span></a>), elle peut l’intégrer à sa propre fonction de profit :</p>
 <p><span class="math display">\[
 \begin{array}{rcl}
 \pi_L(q_L, q_F^*) &amp;=&amp; \left(a-b(q_L+q_F^*(q_L))\right)q_L\\
@@ -491,7 +566,7 @@ P(q_L+q_F) = a - b(q_L+q_F)
 &amp;=&amp; \frac{a}{2}q_L-\frac{b}{2}q_L^2
 \end{array}
 \]</span></p>
-<p>La condition de premier ordre du leader est :</p>
+<p>La condition de premier ordre du pilote est :</p>
 <p><span class="math display">\[
 \begin{array}{crcl}
 &amp;\frac{\partial \pi_L}{\partial q_L}&amp;=&amp;0\\
@@ -499,10 +574,19 @@ P(q_L+q_F) = a - b(q_L+q_F)
 \Leftrightarrow &amp; q_L^* &amp;=&amp; \frac{a}{2b}
 \end{array}
 \]</span></p>
-<p>On en déduit qu’à l’équilibre de Stackelberg, le follower produit : <span class="math display">\[
+<p>On en déduit qu’à l’équilibre de Stackelberg, le satellite produit : <span class="math display">\[
 q_F^*=\frac{a}{4b}
 \]</span></p>
-<p>L’entreprise leader produit plus que l’entreprise follower. Elle profite de son pouvoir sur la seconde entreprise pour cela. Si on calcule le profit, on verra que le profit de l’entreprise leader est plus important que celui de l’entreprise follower si elles sont exactement symétriques, en dehors de leur prises de décisions.</p>
+<p>L’entreprise pilote produit plus que l’entreprise satellite. Elle profite de son pouvoir sur la seconde entreprise pour cela. La quantité totale produite est : <span class="math display">\[
+q^*_S = \frac{3a}{4b}
+\]</span> Et le prix est : <span class="math display">\[
+p^*_S = \frac{a}{4}
+\]</span> Si on compare ces valeurs à celle obtenu en Cournot avec un coût marginal nul (<a href="#eq-q-Cournot">équation&nbsp;<span>4.3</span></a> et <a href="#eq-p-Cournot">équation&nbsp;<span>4.4</span></a> avec <span class="math inline">\(c=0\)</span>), on remarque que la quantité totale en Stackelberg est plus élevée et que le prix est plus faible. On calcule maintenant le profit des deux entreprises : <span class="math display">\[
+\begin{array}{rcl}
+\pi_L(q_L, q_F) &amp;=&amp; p^*_S \times q_L^* = \frac{a^2}{8b}\\
+\pi_F(q_L, q_F) &amp;=&amp; p^*_S \times q_F^* = \frac{a^2}{16b}
+\end{array}
+\]</span> Le profit de l’entreprise pilote est plus élevé que celui de l’entreprise satellite quand les deux entreprises ont même coût marginal. La seule différence entre ces deux entreprises est que l’entreprise pilote prend sa décision avant l’entreprise satellite.</p>
 </section>
 </section>
 </section>
@@ -576,84 +660,9 @@ Autrement dit, tant que <span class="math inline">\(C_{mA}(q_A)\neq C_{mB}(q_B)\
 \end{array}
 \]</span> Or on sait que la fonction de demande inverse <span class="math inline">\(P(q)\)</span> est décroissante avec les quantités produites, ou que la fonction de demande est décroissante avec le prix, ce qui revient au même. Donc <span class="math inline">\(\frac{\partial P}{\partial q}(q_A)&lt;0\)</span>. On en déduit donc que <span class="math inline">\(\frac{\partial\pi_A}{\partial q_A}(q_A^*)&gt;0\)</span> : l’entreprise A a intérêt à augmenter sa production si elle pense que l’entreprise B va respecter l’accord du cartel (et réciproquement).</p>
 <p>En conclusion, les accords de cartel ne sont pas “naturellement” stable, ils ont besoin d’un mécanisme qui maintient l’accord, par exemple en punissant une entreprise déviant de l’accord.</p>
-</section>
-</section>
-</section>
-<section id="oligopoles" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="oligopoles"><span class="header-section-number">4.4</span> Oligopoles</h2>
-<p>On étend l’analyse à <span class="math inline">\(N\)</span> entreprises qui produisent un bien <em>homogène</em>. Comme ce bien est homogène, le prix est unique sur le marché. Chaque entreprise <span class="math inline">\(i\)</span> choisit une quantité <span class="math inline">\(q_i\geq 0\)</span> et les produit à un coût de production <span class="math inline">\(C_i(q_i)\)</span>. La production totale sur le marché est <span class="math inline">\(q=\sum_i q_i\)</span>. La fonction de demande inverse sur le marché <span class="math inline">\(P(q)\)</span> dépend de la production <em>globale</em> <span class="math inline">\(q\)</span>.</p>
-<p>Le profit de chaque entreprise s’écrit : <span class="math display">\[
-\pi(q_i, q) = q_iP(q) -C_i(q_i)
-\]</span></p>
-<div class="remark proof">
-<p><span class="proof-title"><em>Remarque</em> (Quantité globale). </span>Attention, ici <span class="math inline">\(q\)</span>, la quantité globale, dépend de la quantité <span class="math inline">\(q_i\)</span> produite par <span class="math inline">\(i\)</span>. Implicitement, on a ainsi définit une fonction <span class="math inline">\(q(q_i)\)</span>, ce qui est important dans la dérivation des résultats.</p>
-</div>
-<p>Le programme de maximisation d’une entreprise <span class="math inline">\(i\)</span> s’écrit : <span class="math display">\[
-\max_{q_i}\pi(q_i, q) = q_iP(q) -C_i(q_i)
-\]</span></p>
-<p>La condition du premier ordre est telle que :</p>
-<p><span class="math display">\[
-\begin{array}{crcl}
-&amp;\frac{\partial \pi_i}{\partial q_i}(q_i^*, q(q_i^*)) &amp;=&amp; 0\\
-\Leftrightarrow &amp; \frac{\partial  \left(q_iP(q) -C_i(q_i)\right)}{\partial q_i}(q_i^*, q(q_i^*)) &amp;= &amp;0\\
-\Leftrightarrow &amp; P(q^*) + q_iP'(q^*) -C_{im}(q_i^*)&amp;= &amp;0\\
-\Leftrightarrow &amp; P(q^*) - C_{im}(q_i^*)&amp;= &amp;-q_i^*P'(q^*) \\
-\Leftrightarrow &amp; \frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}&amp;= &amp;-\frac{q_i^*}{P(q^*)}P'(q^*) \\
-\Leftrightarrow &amp; \frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}&amp;= &amp;-\frac{q^*}{P(q^*)}P'(q^*)\frac{q_i^*}{q^*} \\
-\Leftrightarrow &amp; \frac{P(q^*) - C_{im}(q_i^*)}{P(q^*)}&amp;= &amp;S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
-\end{array}
-\]</span> (La dérivée de la fonction de demande suivant le prix est négative).</p>
-<div id="def-part-marché" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 4.2 (Part de marché) </strong></span>La part de marché détenue par une entreprise <span class="math inline">\(i\)</span> est la part de la quantité totale produite qui l’est par cette entreprise. On la note <span class="math inline">\(S_i\)</span> : <span class="math display">\[S_i=\frac{q_i}{q}\]</span></p>
-</div>
-<p>On obtient le <em>markup-pricing</em> que peut appliquer un producteur en situation d’oligopole à la Cournot. <span class="math display">\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]</span> La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l’entreprise.</p>
-<div class="remark proof">
-<p><span class="proof-title"><em>Remarque</em>. </span>En monopole, <span class="math inline">\(S_i=1\)</span>, on retrouve alors bien : <span class="math display">\[\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}\]</span></p>
-<p>En concurrence pure et parfaite <span class="math inline">\(S_i\to 0\)</span>, donc <span class="math inline">\(\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0\)</span>, ce qui implique bien que <span class="math inline">\(C_{mi}(q_i)\to P(q)\)</span>. On retrouve ainsi le résultat <span class="math inline">\(P(q^*)=C_m(q^*)\)</span>.</p>
-</div>
-<section id="indice-de-lerner" class="level3" data-number="4.4.1">
-<h3 data-number="4.4.1" class="anchored" data-anchor-id="indice-de-lerner"><span class="header-section-number">4.4.1</span> Indice de Lerner</h3>
-<p><em>Rappel :</em> En monopole, l’indice de Lerner est : <span class="math display">\[L=\frac{P(q_m^*)-C_m(q_m^*)}{P(q_m^*)} = \frac{1}{\left|\varepsilon_{q/p}(q_m^*)\right|}\]</span></p>
-<div id="def-Lerner-prod" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 4.3 (Indice de Lerner d’un producteur <span class="math inline">\(i\)</span>) </strong></span>On définit l’indice de Lerner pour un producteur <span class="math inline">\(i\)</span>, noté <span class="math inline">\(L_i\)</span>, comme son taux de marge : <span class="math display">\[L_i=\frac{P(q^*) -C_{im}(q^*_i)}{P(q^*)}\]</span></p>
-</div>
-<p>On peut exprimer cette indice de Lerner ainsi, grâce à la condition du premier ordre trouvée plus haut : <span id="eq-li"><span class="math display">\[
-\begin{array}{rcl}
-L_i &amp;=&amp;\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\frac{1}{\left|\varepsilon_{q/p}(q_i, q_{-i})\right|}\\
-&amp;=&amp;S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
-\end{array}
-\tag{4.4}\]</span></span></p>
-<div id="def-Lerner-marche" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 4.4 (Indice de Lerner du marché) </strong></span>En oligopole à la Cournot avec <span class="math inline">\(N\)</span> producteurs, on définit l’indice de Lerner du marché par : <span class="math display">\[L = \sum_{i=1}^NS_iL_i\]</span> où <span class="math inline">\(S_i=q_i/q\)</span> est la <em>part de marché</em> du producteur <span class="math inline">\(i\)</span> et <span class="math inline">\(L_i\)</span> est l’indice de Lerner d’un producteur <span class="math inline">\(i\)</span>.</p>
-</div>
-<p>En utilisant l’expression obtenue pour l’indice de Lerner d’un producteur à l’<a href="#eq-li">équation&nbsp;<span>4.4</span></a>, on peut réécrire l’indice de Lerner du marché uniquement en fonction de l’élasticité de la demande à l’équilibre et des parts de marchés de chaque producteur : <span class="math display">\[
-L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
-\]</span></p>
-</section>
-<section id="indice-de-concentration-du-marché" class="level3" data-number="4.4.2">
-<h3 data-number="4.4.2" class="anchored" data-anchor-id="indice-de-concentration-du-marché"><span class="header-section-number">4.4.2</span> Indice de concentration du marché</h3>
-<div id="def-HHI" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 4.5 (Indice de Hirschman-Herfindahl (HHI)) </strong></span>L’indice de Hirschman-Herfindahl est la somme des carrés des part de marchés. <span class="math display">\[HHI = \sum_{i=1}^NS_i^2\]</span> C’est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l’élasticité prix de la demande à l’optimum. Autrement dit, la moyenne des <span class="math inline">\(L_i\)</span> pondéré par les parts de marché.</p>
-</div>
-<p><span class="math display">\[
-\begin{array}{rcl}
-\sum_{i=1}^{N}\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}S_i &amp;=&amp;\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}S_i \\
-&amp;=&amp;\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2\\
-&amp;=&amp;\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
-\end{array}
-\]</span></p>
-<p><em>Interprétation :</em><br>
-Imaginons que toutes les <span class="math inline">\(N\)</span> producteurs sont identiques (ils ont la même fonction de coût). Ils produisent alors la même quantité optimale à l’équilibre. Leur part de marché est donc <span class="math inline">\(S_i=1/N\)</span>. Le HHI vaut : <span class="math display">\[
-\begin{array}{rcl}
-HHI&amp;=&amp;\sum_{i=1}^NS_i^2\\
-&amp;=&amp;\sum_{i=1}^N\frac{1}{N^2}\\
-&amp;=&amp;\frac{N}{N^2} \\
-&amp;=&amp;\frac{1}{N}
-\end{array}
-\]</span> Le HHI correspond à l’inverse du nombre de producteurs qui seraient identiques sur le marché et donneraient le même écart moyen entre coût marginal et prix. Plus le HHI est proche de 1, plus on se rapproche du monopole. Plus le HHI est proche de 0, plus on se rapproche de la concurrence pure et parfaite.</p>
-<p>Le HHI est utilisé par les autorités de la concurrence pour évaluer les effets sur les prix de fusions d’entreprises. Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.</p>
 
 
+</section>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
