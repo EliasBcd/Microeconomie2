@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="description" content="Cours de microéconomie en licence 2 à l’université Paris 8.">
 
-<title>Microéconomie 2 - 2&nbsp; Le marché en concurrence pure et parfaite</title>
+<title>2&nbsp; Le marché en concurrence pure et parfaite – Microéconomie 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Pas de résultats",
     "search-matching-documents-text": "documents trouvés",
@@ -57,14 +63,42 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "correspondance de plus dans ce document",
     "search-more-matches-text": "correspondances de plus dans ce document",
     "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Annuler",
     "search-submit-button-title": "Envoyer",
     "search-label": "Recherche"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -74,13 +108,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-cpp.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Le marché en concurrence pure et parfaite</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-cpp.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Le marché en concurrence pure et parfaite</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -89,12 +123,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Microéconomie 2</a> 
         <div class="sidebar-tools-main">
-    <a href="./Microéconomie-2.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="./Microéconomie-2.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -137,9 +171,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Annexes</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Basculer la section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -167,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -204,7 +238,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <section id="les-hypothèses-de-la-concurrence-pure-et-parfaite-cpp" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="les-hypothèses-de-la-concurrence-pure-et-parfaite-cpp"><span class="header-section-number">2.1</span> Les hypothèses de la concurrence pure et parfaite (CPP)</h2>
@@ -218,19 +254,19 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>Explicitons ce que signifient chacune de ces hypothèses.</p>
 <div id="cnj-atomicite" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Hypothèse 2.1 (Atomicité des agents) </strong></span>L’hypothèse d’atomicité des agents implique qu’aucun agent, individu ou entreprise, n’a d’influence <em>individuellement</em> sur les prix. En d’autres termes, chaque agent est “petit” face au marché et considère le prix du marché comme une <em>donnée</em> qu’il ne peut pas influencer. On dit que les agents sont <em>price-taker</em> sur le marché.</p>
+<p><span class="theorem-title"><strong>Hypothèse 2.1 (Atomicité des agents)</strong></span> L’hypothèse d’atomicité des agents implique qu’aucun agent, individu ou entreprise, n’a d’influence <em>individuellement</em> sur les prix. En d’autres termes, chaque agent est “petit” face au marché et considère le prix du marché comme une <em>donnée</em> qu’il ne peut pas influencer. On dit que les agents sont <em>price-taker</em> sur le marché.</p>
 </div>
 <div id="cnj-information" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Hypothèse 2.2 (Information parfaite) </strong></span>L’hypothèse d’information parfaite signifie que tous les acteurs disposent de toutes les informations <strong>pertinentes</strong> pour prendre leurs décisions. Il n’y a, par exemple, pas de coût de recherche d’information.</p>
+<p><span class="theorem-title"><strong>Hypothèse 2.2 (Information parfaite)</strong></span> L’hypothèse d’information parfaite signifie que tous les acteurs disposent de toutes les informations <strong>pertinentes</strong> pour prendre leurs décisions. Il n’y a, par exemple, pas de coût de recherche d’information.</p>
 </div>
 <div id="cnj-mobilite" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Hypothèse 2.3 (Mobilité parfaite des facteurs de production) </strong></span>L’hypothèse de mobilité parfaite des facteurs de production garantit l’homogénéité spatiale du prix des facteurs. Les facteurs de production se déplacent où ils sont le mieux rémunérés. Les différences de coûts entre producteurs ne peuvent donc être dues qu’aux différences technologiques entre ceux-ci, et non à une différence de coût des facteurs de production.</p>
+<p><span class="theorem-title"><strong>Hypothèse 2.3 (Mobilité parfaite des facteurs de production)</strong></span> L’hypothèse de mobilité parfaite des facteurs de production garantit l’homogénéité spatiale du prix des facteurs. Les facteurs de production se déplacent où ils sont le mieux rémunérés. Les différences de coûts entre producteurs ne peuvent donc être dues qu’aux différences technologiques entre ceux-ci, et non à une différence de coût des facteurs de production.</p>
 </div>
 <div id="cnj-homogeneite" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Hypothèse 2.4 (Homogénéité des biens) </strong></span>L’homogénéité des biens signifie que tous les biens vendus sur un marché sont parfaitement substituables. Sur un marché donné, tous les biens ont la même qualité. Le consommateur est donc indifférent entre tous les biens vendus. Il n’y aussi pas d’effet des marques.</p>
+<p><span class="theorem-title"><strong>Hypothèse 2.4 (Homogénéité des biens)</strong></span> L’homogénéité des biens signifie que tous les biens vendus sur un marché sont parfaitement substituables. Sur un marché donné, tous les biens ont la même qualité. Le consommateur est donc indifférent entre tous les biens vendus. Il n’y aussi pas d’effet des marques.</p>
 </div>
 <div id="cnj-libre-entree" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Hypothèse 2.5 (Libre entrée et sortie du marché) </strong></span>L’hypothèse de libre entrée et sortie du marché signifie qu’il n’y pas de barrière à l’entrée dans le marché. Concrètement, il est impossible de faire un bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.</p>
+<p><span class="theorem-title"><strong>Hypothèse 2.5 (Libre entrée et sortie du marché)</strong></span> L’hypothèse de libre entrée et sortie du marché signifie qu’il n’y pas de barrière à l’entrée dans le marché. Concrètement, il est impossible de faire un bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.</p>
 </div>
 <p>La violation d’une de ces hypothèses nous fait sortir du cadre de la CPP et confère un <em>pouvoir de marché</em> aux producteurs ou aux consommateurs en place. Dans le cadre de ce cours, nous allons uniquement nous intéressé au pouvoir de marché des producteurs.</p>
 </section>
@@ -240,10 +276,10 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="fonctions-de-coût"><span class="header-section-number">2.2.1</span> Fonctions de coût</h3>
 <p>En général, un producteur est modélisé par une fonction de production, c’est-à-dire une fonction qui donne les quantités produites de biens en fonction des facteurs de productions. À l’aide de cette fonction de production, il est possible de construire une fonction de coût.</p>
 <div id="def-ctotal" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.1 (Fonction de coût total) </strong></span>La fonction de coût total, notée <span class="math inline">\(C\)</span> ou <span class="math inline">\(CT\)</span>, donne le coût total de production de <span class="math inline">\(q\)</span> unités de bien. Elle se décompose en un <em>coût fixe</em> <span class="math inline">\(CF\)</span> (qui ne dépend pas de <span class="math inline">\(q\)</span>) et un <em>coût variable</em> <span class="math inline">\(CV\)</span> qui dépend de <span class="math inline">\(q\)</span> : <span class="math display">\[C(q)=CF+ CV(q)\]</span></p>
+<p><span class="theorem-title"><strong>Définition 2.1 (Fonction de coût total)</strong></span> La fonction de coût total, notée <span class="math inline">\(C\)</span> ou <span class="math inline">\(CT\)</span>, donne le coût total de production de <span class="math inline">\(q\)</span> unités de bien. Elle se décompose en un <em>coût fixe</em> <span class="math inline">\(CF\)</span> (qui ne dépend pas de <span class="math inline">\(q\)</span>) et un <em>coût variable</em> <span class="math inline">\(CV\)</span> qui dépend de <span class="math inline">\(q\)</span> : <span class="math display">\[C(q)=CF+ CV(q)\]</span></p>
 </div>
 <div id="def-cmoyen" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.2 (Coût moyen) </strong></span>Le coût moyen est le coût de production moyen d’une unité, noté <span class="math inline">\(C_M\)</span> : <span class="math display">\[C_M(q) = \frac{C(q)}{q}\]</span></p>
+<p><span class="theorem-title"><strong>Définition 2.2 (Coût moyen)</strong></span> Le coût moyen est le coût de production moyen d’une unité, noté <span class="math inline">\(C_M\)</span> : <span class="math display">\[C_M(q) = \frac{C(q)}{q}\]</span></p>
 </div>
 <p>Le coût moyen se décompose en un <em>coût fixe moyen</em> <span class="math inline">\(CF_M\)</span> : <span class="math display">\[CF_M(q)=\frac{CF}{q}\]</span> Et un <em>coût variable moyen</em> <span class="math inline">\(CV_M\)</span> : <span class="math display">\[CV_M(q)=\frac{CV(q)}{q}\]</span> On a alors : <span id="eq-CM"><span class="math display">\[
 C_M(q)=CF_M(q) +CV_M(q)
@@ -259,21 +295,21 @@ C_M(q) &amp;=&amp; \frac{C(q)}{q}\\
 \]</span></p>
 </div>
 <div id="def-cmarginal" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.3 (Coût marginal) </strong></span>Le coût marginal, noté <span class="math inline">\(C_m\)</span>, est l’augmentation du coût lié à la production d’une unité supplémentaire : <span class="math display">\[
+<p><span class="theorem-title"><strong>Définition 2.3 (Coût marginal)</strong></span> Le coût marginal, noté <span class="math inline">\(C_m\)</span>, est l’augmentation du coût lié à la production d’une unité supplémentaire : <span class="math display">\[
 C_m(q)=\lim_{\Delta q\to 0}\frac{C(q+\Delta q)-C(q)}{\Delta q}=C'(q)
 \]</span></p>
 </div>
 <p>Autrement dit, le coût marginal est la variation de coût total quand la production varie “un tout petit peu” (infiniment peu en fait).</p>
 <div id="prp-variations-cout" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2.1 (Variations des courbes de coût) </strong></span>En général, le coût marginal diminue puis augmente, car la productivité marginale est d’abord croissante, puis décroissante.<br>
+<p><span class="theorem-title"><strong>Proposition 2.1 (Variations des courbes de coût)</strong></span> En général, le coût marginal diminue puis augmente, car la productivité marginale est d’abord croissante, puis décroissante.<br>
 Le coût variable moyen est d’abord décroissant, puis croissant, pour la même raison.<br>
 Le coût fixe moyen est toujours décroissant, car le coût fixe ne dépend pas des quantités produites et <span class="math inline">\(CFM=CF/q\)</span> est donc une fonction inverse.<br>
-La décomposition donnée par l’<a href="#eq-CM">équation&nbsp;<span>2.1</span></a> implique que le coût moyen est d’abord décroissant, puis croissant.</p>
+La décomposition donnée par l’<a href="#eq-CM" class="quarto-xref">équation&nbsp;<span>2.1</span></a> implique que le coût moyen est d’abord décroissant, puis croissant.</p>
 </div>
 <div id="prp-relations-cout" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2.2 (Relations entre les coûts) </strong></span>Lorsque le coût marginal est inférieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&lt;C_M(q)\)</span>), le coût moyen diminue. Lorsque le coût marginal est supérieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&gt;C_M(q)\)</span>), le coût moyen augmente. La courbe de coût marginal coupe donc la courbe de coût (variable) moyen à son minimum.</p>
+<p><span class="theorem-title"><strong>Proposition 2.2 (Relations entre les coûts)</strong></span> Lorsque le coût marginal est inférieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&lt;C_M(q)\)</span>), le coût moyen diminue. Lorsque le coût marginal est supérieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&gt;C_M(q)\)</span>), le coût moyen augmente. La courbe de coût marginal coupe donc la courbe de coût (variable) moyen à son minimum.</p>
 </div>
-<p>L’intuition de ce résultat est la suivante : si le coût d’une unité supplémentaire est supérieur au coût moyen des unités précédentes, alors l’unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen, et vice-versa. L’illustration graphique est donnée sur la <a href="#fig-cppcout">figure&nbsp;<span>2.1</span></a></p>
+<p>L’intuition de ce résultat est la suivante : si le coût d’une unité supplémentaire est supérieur au coût moyen des unités précédentes, alors l’unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen, et vice-versa. L’illustration graphique est donnée sur la <a href="#fig-cppcout" class="quarto-xref">figure&nbsp;<span>2.1</span></a></p>
 <div class="proof">
 <p><span class="proof-title"><em>Preuve</em>. </span>En son minimum, le coût moyen est tel que <span class="math inline">\(C_M'(q)=0\)</span>. <span class="math display">\[
 \begin{array}{crcl}
@@ -289,10 +325,14 @@ La décomposition donnée par l’<a href="#eq-CM">équation&nbsp;<span>2.1</spa
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-cppcout" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="01-cpp_files/figure-html/fig-cppcout-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.1: Exemples de fonctions de coût.</figcaption>
+<div id="fig-cppcout" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cppcout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-cpp_files/figure-html/fig-cppcout-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cppcout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Exemples de fonctions de coût.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -301,19 +341,19 @@ La décomposition donnée par l’<a href="#eq-CM">équation&nbsp;<span>2.1</spa
 <section id="loffre-du-producteur" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="loffre-du-producteur"><span class="header-section-number">2.2.2</span> L’offre du producteur</h3>
 <div id="def-rtotale" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.4 (Recette totale) </strong></span>La recette totale, notée <span class="math inline">\(R\)</span> ou <span class="math inline">\(RT\)</span>, est la recette issue de la vente des biens. Pour <span class="math inline">\(q\)</span> unités de bien vendus, le producteur gagne <span class="math inline">\(R(q)\)</span>, autrement dit, c’est le chiffre d’affaire du producteur (pour ce bien).</p>
+<p><span class="theorem-title"><strong>Définition 2.4 (Recette totale)</strong></span> La recette totale, notée <span class="math inline">\(R\)</span> ou <span class="math inline">\(RT\)</span>, est la recette issue de la vente des biens. Pour <span class="math inline">\(q\)</span> unités de bien vendus, le producteur gagne <span class="math inline">\(R(q)\)</span>, autrement dit, c’est le chiffre d’affaire du producteur (pour ce bien).</p>
 </div>
 <div id="def-rmarginale" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.5 (Recette marginale) </strong></span>La recette marginale, notée <span class="math inline">\(R_m\)</span> est la recette rapportée par une unité supplémentaire de bien vendue. <span class="math display">\[R_m(q)=R'(q)\]</span></p>
+<p><span class="theorem-title"><strong>Définition 2.5 (Recette marginale)</strong></span> La recette marginale, notée <span class="math inline">\(R_m\)</span> est la recette rapportée par une unité supplémentaire de bien vendue. <span class="math display">\[R_m(q)=R'(q)\]</span></p>
 </div>
 <div id="def-profit" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.6 (Profit) </strong></span>Le profit, noté <span class="math inline">\(\pi\)</span> est la différence entre la recette totale et le coût total de production : <span class="math display">\[\pi(q)=R(q)-C(q)\]</span></p>
+<p><span class="theorem-title"><strong>Définition 2.6 (Profit)</strong></span> Le profit, noté <span class="math inline">\(\pi\)</span> est la différence entre la recette totale et le coût total de production : <span class="math display">\[\pi(q)=R(q)-C(q)\]</span></p>
 </div>
 <div id="cnj-programme-producteur" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Hypothèse 2.6 (Programme du producteur) </strong></span>Le producteur choisit la quantité produite de manière à maximiser son profit. Mathématiquement, il résout le programme suivant : <span class="math display">\[\max_q\pi(q)=\max_q R(q)-C(q)\]</span></p>
+<p><span class="theorem-title"><strong>Hypothèse 2.6 (Programme du producteur)</strong></span> Le producteur choisit la quantité produite de manière à maximiser son profit. Mathématiquement, il résout le programme suivant : <span class="math display">\[\max_q\pi(q)=\max_q R(q)-C(q)\]</span></p>
 </div>
 <div id="thm-offre" class="theorem">
-<p><span class="theorem-title"><strong>Théorème 2.1 (Offre du producteur) </strong></span>Le programme du producteur est tel que la quantité optimale produite <span class="math inline">\(q^*\)</span> égalise le coût marginal et la recette marginale (condition du premier ordre) : <span id="eq-cppopti"><span class="math display">\[
+<p><span class="theorem-title"><strong>Théorème 2.1 (Offre du producteur)</strong></span> Le programme du producteur est tel que la quantité optimale produite <span class="math inline">\(q^*\)</span> égalise le coût marginal et la recette marginale (condition du premier ordre) : <span id="eq-cppopti"><span class="math display">\[
 R_m(q^*) =C_m(q^*)
 \tag{2.2}\]</span></span> Il est aussi tel que la recette marginal croît moins vite que le coût marginal à l’optimum (condition du second ordre) : <span class="math display">\[
 R_m'(q^*) &lt;C_m'(q^*)
@@ -324,42 +364,50 @@ R_m'(q^*) &lt;C_m'(q^*)
 \max_q\pi(q)=\max_q R(q)-C(q)
 \]</span> À l’optimum, et à condition que les fonctions de coût et de recette soient deux fois dérivables (ce qui sera toujours le cas dans ce cours). La condition du premier ordre s’écrit : <span class="math display">\[
 \pi'(q)=0\Leftrightarrow R'(q)-C'(q)=0\Leftrightarrow R_m(q)=C_m(q)
-\]</span> On obtient donc l’<a href="#eq-cppopti">équation&nbsp;<span>2.2</span></a>. Et la condition du second ordre s’écrit : <span class="math display">\[
+\]</span> On obtient donc l’<a href="#eq-cppopti" class="quarto-xref">équation&nbsp;<span>2.2</span></a>. Et la condition du second ordre s’écrit : <span class="math display">\[
 \pi''(q)&lt;0\Leftrightarrow R''(q)-C''(q)&lt;0\Leftrightarrow R_m'(q^*) &lt;C_m'(q^*)
 \]</span></p>
 </div>
 <p>L’intuition pour ce résultat est la suivante. Si la recette marginale est supérieure au coût marginal (<span class="math inline">\(R_m(q)&gt;C_m(q)\)</span>), alors augmenter la quantité produite rapporte plus que cela ne coûte et donc augmente le profit. À l’inverse, si la recette marginale est inférieure au coût marginal (<span class="math inline">\(R_m(q)&lt;C_m(q)\)</span>), diminuer la quantité produite diminue plus le coût que la recette du producteur et donc augmente le profit. La situation s’équilibre donc pour <span class="math inline">\(R_m(q)=C_m(q)\)</span>. Si cette égalité n’est pas vérifiée, le producteur peut en effet augmenter son profit en jouant sur la quantité produite.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-profitmax" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="01-cpp_files/figure-html/fig-profitmax-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.2: Maximisation du profit du producteur.</figcaption>
+<div id="fig-profitmax" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-profitmax-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-cpp_files/figure-html/fig-profitmax-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-profitmax-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Maximisation du profit du producteur.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>En concurrence pure et parfaite, le producteur est <em>price-taker</em>. Le prix sur le marché est unique et donné , il vaut <span class="math inline">\(p\)</span> et ne dépend pas des quantités produites par <em>un</em> producteur. Le producteur vend son bien au prix défini par le marché. La recette totale devient donc <span class="math inline">\(R(q)=p\times q\)</span>, avec <span class="math inline">\(p\)</span> fixé. La recette marginale est donc <span class="math inline">\(R_m(q)=R'(q)=p\)</span>. En réécrivant l’<a href="#eq-cppopti">équation&nbsp;<span>2.2</span></a>, on obtient en concurrence pure et parfaite : <span class="math display">\[p=C_m(q)\]</span></p>
+<p>En concurrence pure et parfaite, le producteur est <em>price-taker</em>. Le prix sur le marché est unique et donné , il vaut <span class="math inline">\(p\)</span> et ne dépend pas des quantités produites par <em>un</em> producteur. Le producteur vend son bien au prix défini par le marché. La recette totale devient donc <span class="math inline">\(R(q)=p\times q\)</span>, avec <span class="math inline">\(p\)</span> fixé. La recette marginale est donc <span class="math inline">\(R_m(q)=R'(q)=p\)</span>. En réécrivant l’<a href="#eq-cppopti" class="quarto-xref">équation&nbsp;<span>2.2</span></a>, on obtient en concurrence pure et parfaite : <span class="math display">\[p=C_m(q)\]</span></p>
 <div id="prp-offreCPP" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2.3 (Offre du producteur en CPP) </strong></span>En concurrence pure et parfaite, le producteur maximise son profit en égalisant son coût marginal au prix du marché : <span class="math display">\[C_m(q^*)=p\]</span> À condition que son coût marginal soit croissant en <span class="math inline">\(q^*\)</span> (<span class="math inline">\(C_m'(q^*)&gt;0\)</span>).</p>
+<p><span class="theorem-title"><strong>Proposition 2.3 (Offre du producteur en CPP)</strong></span> En concurrence pure et parfaite, le producteur maximise son profit en égalisant son coût marginal au prix du marché : <span class="math display">\[C_m(q^*)=p\]</span> À condition que son coût marginal soit croissant en <span class="math inline">\(q^*\)</span> (<span class="math inline">\(C_m'(q^*)&gt;0\)</span>).</p>
 </div>
 <div id="def-offre" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.7 (Courbe d’offre d’un producteur) </strong></span>La courbe d’offre du producteur donne la quantité maximale que souhaite produire un producteur pour chaque prix.</p>
+<p><span class="theorem-title"><strong>Définition 2.7 (Courbe d’offre d’un producteur)</strong></span> La courbe d’offre du producteur donne la quantité maximale que souhaite produire un producteur pour chaque prix.</p>
 </div>
 <div id="prp-courbeoffreCPP" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2.4 (Courbe d’offre en CPP) </strong></span>En concurrence pure et parfaite, la courbe d’offre du producteur est donnée le coût marginal. <span class="math display">\[p=C_m(q)\]</span></p>
+<p><span class="theorem-title"><strong>Proposition 2.4 (Courbe d’offre en CPP)</strong></span> En concurrence pure et parfaite, la courbe d’offre du producteur est donnée le coût marginal. <span class="math display">\[p=C_m(q)\]</span></p>
 </div>
 <p>Le profit du producteur s’écrit alors : <span class="math display">\[
 \pi(q)=R(q)-C(q)=pq-C(q)=pq-C_M(q)q=q(p-C_M(q))
 \]</span> <span id="eq-profitCM"><span class="math display">\[
 \pi(q)=q(p-C_M(q))
-\tag{2.3}\]</span></span> L’<a href="#eq-profitCM">équation&nbsp;<span>2.3</span></a> nous dit que le profit d’un producteur en concurrence pure et parfaite est la différence entre le prix de vente et le coût moyen de production multiplié par le nombre d’unités vendues. Si ce prix est inférieur au coût moyen de toutes les unités vendues, le profit sera négatif.</p>
+\tag{2.3}\]</span></span> L’<a href="#eq-profitCM" class="quarto-xref">équation&nbsp;<span>2.3</span></a> nous dit que le profit d’un producteur en concurrence pure et parfaite est la différence entre le prix de vente et le coût moyen de production multiplié par le nombre d’unités vendues. Si ce prix est inférieur au coût moyen de toutes les unités vendues, le profit sera négatif.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-cppprofit" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="01-cpp_files/figure-html/fig-cppprofit-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.3: Profit d’un producteur en concurrence pure et parfaite.</figcaption>
+<div id="fig-cppprofit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cppprofit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-cpp_files/figure-html/fig-cppprofit-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cppprofit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: Profit d’un producteur en concurrence pure et parfaite.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -370,62 +418,70 @@ R_m'(q^*) &lt;C_m'(q^*)
 <h2 data-number="2.3" class="anchored" data-anchor-id="le-consommateur"><span class="header-section-number">2.3</span> Le consommateur</h2>
 <p>La modélisation des consommateurs dans ce cours est simple.</p>
 <div id="def-dindiv" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.8 (Demande individuelle) </strong></span>La fonction de demande d’un consommateur correspond à la suite des prix maximaux qu’un consommateur est prêt à payer pour obtenir une unité <em>supplémentaire</em> du bien. On la note souvent <span class="math inline">\(Q\)</span>.</p>
+<p><span class="theorem-title"><strong>Définition 2.8 (Demande individuelle)</strong></span> La fonction de demande d’un consommateur correspond à la suite des prix maximaux qu’un consommateur est prêt à payer pour obtenir une unité <em>supplémentaire</em> du bien. On la note souvent <span class="math inline">\(Q\)</span>.</p>
 </div>
 <p>On appelle ce prix maximum le <em>prix de réserve</em>.</p>
 <div id="prp-vari-demande" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2.5 (Variation de la fonction de demande) </strong></span>La fonction de demande est décroissante.</p>
+<p><span class="theorem-title"><strong>Proposition 2.5 (Variation de la fonction de demande)</strong></span> La fonction de demande est décroissante.</p>
 </div>
 <p>L’intuition est la suivante, un consommateur est prêt à payer plus pour la première unité de biens reçu que pour la suivante. Par exemple, la premier litre d’eau dans le désert à beaucoup plus de valeur que le dixième.</p>
-<div class="remark proof">
+<div class="proof remark">
 <p><span class="proof-title"><em>Remarque</em> (Demande et demande inverse). </span>La fonction de demande donne la quantité en fonction du prix (<span class="math inline">\(Q(p)\)</span>). La plupart du temps, nous auront besoin de la fonction de demande inverse (<span class="math inline">\(P(q)\)</span>), qui donne le prix en fonction de la quantité. Il faudra donc inverser la fonction de demande pour obtenir la fonction de demande inverse.</p>
 </div>
 </section>
 <section id="léquilibre-de-marché" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="léquilibre-de-marché"><span class="header-section-number">2.4</span> L’équilibre de marché</h2>
 <div id="def-dagregee" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.9 (Demande agrégée (D)) </strong></span>La <em>demande agrégée (D)</em> est la somme des demandes individuelles pour chaque niveau de prix.</p>
+<p><span class="theorem-title"><strong>Définition 2.9 (Demande agrégée (D))</strong></span> La <em>demande agrégée (D)</em> est la somme des demandes individuelles pour chaque niveau de prix.</p>
 </div>
 <div id="def-offre-agregee" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.10 (Offre agrégée (S)) </strong></span>L’<em>offre agrégée (S)</em> est la somme des offres individuelles pour chaque niveau de prix.</p>
+<p><span class="theorem-title"><strong>Définition 2.10 (Offre agrégée (S))</strong></span> L’<em>offre agrégée (S)</em> est la somme des offres individuelles pour chaque niveau de prix.</p>
 </div>
 <p>La courbe d’offre correspond à la série des coûts marginaux de production, c’est-à-dire aux prix minimaux auxquels les producteurs souhaitent vendre une unité supplémentaire du bien.</p>
 <div id="def-equilibreCPP" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.11 (Équilibre de marché) </strong></span>L’équilibre de marché se fait à l’intersection entre l’offre agrégée (S) et la demande agrégée (D) (quand S=D).</p>
+<p><span class="theorem-title"><strong>Définition 2.11 (Équilibre de marché)</strong></span> L’équilibre de marché se fait à l’intersection entre l’offre agrégée (S) et la demande agrégée (D) (quand S=D).</p>
 </div>
 <p>À l’équilibre de marché, on obtient une quantité d’équilibre (notée <span class="math inline">\(q^*\)</span>) et un prix d’équilibre (noté <span class="math inline">\(p^*\)</span>). La vente de toutes les unités jusqu’à la quantité d’équilibre <span class="math inline">\(q^*\)</span> au prix <span class="math inline">\(p^*\)</span> procure un <em>surplus</em> aux agents économiques.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-marche" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="01-cpp_files/figure-html/fig-marche-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.4: Equilibre de marché.</figcaption>
+<div id="fig-marche" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-marche-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-cpp_files/figure-html/fig-marche-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-marche-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.4: Equilibre de marché.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div id="def-surplus-conso" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.12 (Surplus des consommateurs) </strong></span>Le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix payé par le consommateur pour obtenir les biens. Sur le graphique quantité prix <span class="math inline">\((q, p)\)</span>, c’est l’aire comprise entre la courbe de demande et la droite horizontale dont l’ordonnée est le prix d’échange. Formellement : <span class="math display">\[S_c=\int_0^{q^*}P(q)-p^* dq\]</span></p>
+<p><span class="theorem-title"><strong>Définition 2.12 (Surplus des consommateurs)</strong></span> Le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix payé par le consommateur pour obtenir les biens. Sur le graphique quantité prix <span class="math inline">\((q, p)\)</span>, c’est l’aire comprise entre la courbe de demande et la droite horizontale dont l’ordonnée est le prix d’échange. Formellement : <span class="math display">\[S_c=\int_0^{q^*}P(q)-p^* dq\]</span></p>
 </div>
-<div class="remark proof">
+<div class="proof remark">
 <p><span class="proof-title"><em>Remarque</em>. </span>Seule la dernière unité de bien achetée par les consommateur l’est au prix de réserve. Il n’y a pas de gain à l’échange pour cette unité, mais pour toutes les autres, il y en a, ce qui explique pourquoi il y a un surplus à l’échange, et pourquoi celui-ci a lieu.</p>
 </div>
 <div id="def-surplus-prod" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.13 (Surplus des producteurs) </strong></span>Le surplus des producteurs est la somme des différences entre le prix auquel les producteurs vendent le bien et la courbe de coût marginal, qui représente le coût d’une unité supplémentaire produite. Sur le graphique quantité prix <span class="math inline">\((q, p)\)</span>, c’est l’aire comprise entre le prix de vente et la courbe de coût marginal. Formellement : <span class="math display">\[S_p=\int_0^{q^*}p^*-S(q) dq\]</span></p>
+<p><span class="theorem-title"><strong>Définition 2.13 (Surplus des producteurs)</strong></span> Le surplus des producteurs est la somme des différences entre le prix auquel les producteurs vendent le bien et la courbe de coût marginal, qui représente le coût d’une unité supplémentaire produite. Sur le graphique quantité prix <span class="math inline">\((q, p)\)</span>, c’est l’aire comprise entre le prix de vente et la courbe de coût marginal. Formellement : <span class="math display">\[S_p=\int_0^{q^*}p^*-S(q) dq\]</span></p>
 </div>
 <p>En pratique, on utilisera jamais la formule avec des intégrales, mais on calculera l’aire du triangle (ou trapèze) concerné.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-surplus" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="01-cpp_files/figure-html/fig-surplus-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.5: Surplus des consommateurs et des producteurs.</figcaption>
+<div id="fig-surplus" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-surplus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-cpp_files/figure-html/fig-surplus-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-surplus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.5: Surplus des consommateurs et des producteurs.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div id="prp-cppprop" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2.6 (Propriétés de l’équilibre en concurrence pure et parfaite) </strong></span>L’équilibre en CPP <strong>maximise</strong> le <em>surplus total</em>. Tout autre couple prix/quantité abouti à un surplus total plus faible.<br>
+<p><span class="theorem-title"><strong>Proposition 2.6 (Propriétés de l’équilibre en concurrence pure et parfaite)</strong></span> L’équilibre en CPP <strong>maximise</strong> le <em>surplus total</em>. Tout autre couple prix/quantité abouti à un surplus total plus faible.<br>
 L’équilibre en CPP est dit <em>Pareto-optimal</em>, i.e., il est impossible d’améliorer la situation d’un agent sans détériorer celle d’un autre. C’est ce qu’on appelle le <em>premier théorème du bien-être</em>.</p>
 </div>
 <p>Ces propriétés font de la CPP une “référence” par rapport à laquelle on peut comparer les résultats des autres structures de marché.</p>
@@ -435,15 +491,19 @@ L’équilibre en CPP est dit <em>Pareto-optimal</em>, i.e., il est impossible d
 <p>L’hypothèse d’atomicité indique que les agents individuels sont isolés au sein d’un très grand nombre d’autres agents. Ainsi, aucun agent n’a d’influence sur le prix s’il modifie son comportement. Une conséquence directe est que le comportement des autres agents est perçu comme étant infiniment élastique. C’est-à-dire qu’un producteur sait qu’au prix de marché, il pourra vendre toute sa production, mais que s’il pratique un prix même légèrement plus élevé, il ne vendra <strong>rien</strong>. Il perçoit ainsi une demande infiniment élastique au prix, au niveau du prix <span class="math inline">\(p^*\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-elasticite" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="01-cpp_files/figure-html/fig-elasticite-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.6: Perception de la demande globale par un producteur isolé.</figcaption>
+<div id="fig-elasticite" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elasticite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-cpp_files/figure-html/fig-elasticite-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elasticite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.6: Perception de la demande globale par un producteur isolé.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Dans la <a href="#fig-elasticite">figure&nbsp;<span>2.6</span></a>, <span class="math inline">\(q^*\)</span> représente la production optimale de ce producteur quand il est seul.</p>
+<p>Dans la <a href="#fig-elasticite" class="quarto-xref">figure&nbsp;<span>2.6</span></a>, <span class="math inline">\(q^*\)</span> représente la production optimale de ce producteur quand il est seul.</p>
 
 
 </section>
@@ -484,18 +544,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -527,11 +576,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -541,8 +629,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -554,7 +651,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -598,6 +818,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -623,6 +844,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -684,17 +931,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
+      <a href="./index.html" class="pagination-link" aria-label="Microéconomie 2">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Microéconomie 2</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-monopole.html" class="pagination-link">
+      <a href="./02-monopole.html" class="pagination-link" aria-label="Le monopole">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Le monopole</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
