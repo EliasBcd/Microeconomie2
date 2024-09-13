@@ -1,10 +1,10 @@
 ---
-title: Microéconomie 2
-author:
+titre: Microéconomie 2
+auteurs:
   - Elias Bouacida
   - Antoine Terracol
   - Hela Maafi
-date: 2 septembre 2021
+date: 13 septembre 2024
 ---
 
 # Microéconomie 2
@@ -49,4 +49,4 @@ Et enfin une référence avancée, pour ceux qui cherchent les fondements mathé
 3. Oligopoles
     - Duopoles à la Cournot
     - Duopoles à la Stackelberg
-    - Collusion
+    - Collusion et cartel (maintenant hors programme)

@@ -1,4 +1,4 @@
-# Microéconomie 2
+# Microéconomie 2 { .unnumbered }
 
 Notes du cours de microéconomie 2 en licence 2 à l'université Paris 8, donné par Hela Maafi, Antoine Terracol et Elias Bouacida.  
 Ce dépôt contient les notes de cours ainsi que les corrigés des exercices.
@@ -41,7 +41,7 @@ Et enfin une référence avancée, pour ceux qui cherchent les fondements mathé
 3. Oligopoles
     - Duopoles à la Cournot
     - Duopoles à la Stackelberg
-    - Collusion
+    - Collusion et cartel (maintenant hors programme)
 
 
 
