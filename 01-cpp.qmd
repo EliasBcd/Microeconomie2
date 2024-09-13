@@ -3,6 +3,13 @@
 
 {{< include _theme.qmd >}}
 
+
+::: { #def-marche name="Le marché"}
+Un *marché* est un lieu, physique ou virtuel, où se rencontrent l’offre et la demande de biens ou de services. 
+C’est là que les prix sont déterminés par les interactions entre les acheteurs et les vendeurs.
+Tous les biens échangé sur un marché sont parfaitement substituables.
+:::
+
 ## Les hypothèses de la concurrence pure et parfaite (CPP)
 \chaptermark{Les hypothèses de la CPP}
 
@@ -64,7 +71,7 @@ Concrètement, il est impossible de faire un bénéfice sur la dernière unité 
 :::
 
 La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un *pouvoir de marché* aux producteurs ou aux consommateurs en place. 
-Dans le cadre de ce cours, nous allons uniquement nous intéressé au pouvoir de marché des producteurs.
+Dans le cadre de ce cours, nous allons uniquement nous intéresser au pouvoir de marché des producteurs.
 
 ## Le producteur
 
@@ -155,6 +162,7 @@ $$
 \Leftrightarrow & C_m(q)&=& C_M(q)
 \end{array}
 $$
+La démonstration est similaire pour le coût variable moyen.
 :::
 
 ```{r cppcout}
@@ -203,6 +211,7 @@ $$R_m(q)=R'(q)$$
 
 Le profit, noté $\pi$ est la différence entre la recette totale et le coût total de production :
 $$\pi(q)=R(q)-C(q)$$
+Le profit s'appelle aussi généralement le bénéfice.
 :::
 
 :::{#cnj-programme-producteur}
@@ -235,7 +244,7 @@ $$
 \pi'(q)=0\Leftrightarrow R'(q)-C'(q)=0\Leftrightarrow R_m(q)=C_m(q)
 $$
 On obtient donc l'@eq-cppopti.
-Et la condition du second ordre s'écrit :
+Pour obtenir un maximum, la condition du second ordre s'écrit :
 $$
 \pi''(q)<0\Leftrightarrow R''(q)-C''(q)<0\Leftrightarrow R_m'(q^*) <C_m'(q^*)
 $$
@@ -290,13 +299,13 @@ $$C_m(q^*)=p$$
 
 ## Courbe d'offre d'un producteur
 
-La courbe d'offre du producteur donne la quantité maximale que souhaite produire un producteur pour chaque prix.
+La courbe d'offre d'un producteur donne la quantité maximale que souhaite produire un producteur pour chaque prix.
 
 :::
 
 ::: {#prp-courbeoffreCPP}
 ## Courbe d'offre en CPP
-En concurrence pure et parfaite, la courbe d'offre du producteur est donnée le coût marginal.
+En concurrence pure et parfaite, la courbe d'offre d'un producteur est donnée par son coût marginal.
 $$p=C_m(q)$$
 :::
 
@@ -309,6 +318,7 @@ $$
 $${#eq-profitCM}
 L'@eq-profitCM nous dit que le profit d'un producteur en concurrence pure et parfaite est la différence entre le prix de vente et le coût moyen de production multiplié par le nombre d'unités vendues.
 Si ce prix est inférieur au coût moyen de toutes les unités vendues, le profit sera négatif.
+Dans la @fig-cpprofit, le profit est donné par le rectangle vert.
 
 ```{r cppprofit}
 #| label: fig-cppprofit
@@ -355,8 +365,8 @@ Par exemple, la premier litre d'eau dans le désert à beaucoup plus de valeur q
 ## Demande et demande inverse
 
 La fonction de demande donne la quantité en fonction du prix ($Q(p)$).
-La plupart du temps, nous auront besoin de la fonction de demande inverse ($P(q)$), qui donne le prix en fonction de la quantité.
-Il faudra donc inverser la fonction de demande pour obtenir la fonction de demande inverse.
+La plupart du temps, nous aurons besoin de la fonction de demande inverse ($P(q)$), qui donne le prix en fonction de la quantité.
+Il faudra donc inverser, au sens mathématique, la fonction de demande pour obtenir la fonction de demande inverse.
 :::
 
 
@@ -464,7 +474,7 @@ p + geom_ribbon(data = Sc, aes(x=x, ymin=0.5, ymax = y), fill="blue") +
 ## Propriétés de l'équilibre en concurrence pure et parfaite
 
 L'équilibre en CPP **maximise** le *surplus total*.
-Tout autre couple prix/quantité abouti à un surplus total plus faible.  
+Tout autre couple (prix, quantité) abouti à un surplus total plus faible.  
 L'équilibre en CPP est dit *Pareto-optimal*, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
 C'est ce qu'on appelle le *premier théorème du bien-être*.
 :::
