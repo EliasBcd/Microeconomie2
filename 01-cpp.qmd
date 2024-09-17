@@ -6,8 +6,8 @@
 
 ::: { #def-marche name="Le marché"}
 Un *marché* est un lieu, physique ou virtuel, où se rencontrent l’offre et la demande de biens ou de services. 
-C’est là que les prix sont déterminés par les interactions entre les acheteurs et les vendeurs.
-Tous les biens échangé sur un marché sont parfaitement substituables.
+C’est là que les prix sont déterminés par les interactions entre les acheteurs (=consommateurs) et les vendeurs (=producteurs).
+Tous les biens échangés sur un marché sont parfaitement substituables.
 :::
 
 ## Les hypothèses de la concurrence pure et parfaite (CPP)
@@ -318,7 +318,7 @@ $$
 $${#eq-profitCM}
 L'@eq-profitCM nous dit que le profit d'un producteur en concurrence pure et parfaite est la différence entre le prix de vente et le coût moyen de production multiplié par le nombre d'unités vendues.
 Si ce prix est inférieur au coût moyen de toutes les unités vendues, le profit sera négatif.
-Dans la @fig-cpprofit, le profit est donné par le rectangle vert.
+Dans la @fig-cppprofit, le profit est donné par le rectangle vert.
 
 ```{r cppprofit}
 #| label: fig-cppprofit
