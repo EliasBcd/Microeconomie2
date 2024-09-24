@@ -18,11 +18,11 @@ Les principales sont :
 
 - Légales, à cause de réglementation particulières.
 C'est ce qu'on appelle en général des professions réglementées, comme les avocats, les bureaux de tabac, les taxis...
-- Légales, à cause des brevets sur une technologie données (industrie pharmaceutique, ...) ;
+- Légales, à cause des brevets sur une technologie donnée (industrie pharmaceutique, ...) ;
 - Historique, le premier arrivé ;
 - Monopoles *naturels* : en présence d'économies d'échelles, produire une quantité donnée revient moins cher avec un seul producteur qu'avec plusieurs.
 C'est notamment les cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, ...).
-Plus généralement, les industries avec des coûts fixes ou des coûts d'entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile, ...) ;
+Plus généralement, les industries avec des coûts fixes ou des coûts d'entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile, semi-conducteurs...) ;
 - Exclusivité sur la production de certaines matières premières (cuivre au Chili, terres rares en Chine, ...) ;
 - Coalitions créant un cartel ;
 - ...
@@ -49,6 +49,23 @@ R(q) = q\cdot P(q) = Q(p)\cdot p
 $$
 
 ### Recette marginale et courbe de demande
+
+::: {.remark}
+## Élasticité prix de la demande
+
+L'élasticité prix de la demande $\varepsilon_{q/p}$ s'écrit :
+$$\varepsilon_{q/p}(p)=\frac{p}{D(p)}D'(p) <0$$
+Où $D$ est la fonction de demande.
+Elle est toujours négative, car la demande diminue quand le prix augmente.
+On peut la réécrire à l'aide de la fonction de demande inverse $P$.
+Comme $D$ et $P$ sont les fonctions réciproques l'une de l'autre, on a $D(P(q)) = q$.
+En dérivant à gauche et à droite et en utilisant la formule de la dérivation composée, on obtient :
+$$P'(q)D'(P(q)) = 1$$
+On obtient donc :
+$$P'(q)=\frac{1}{D'(p)}$$
+Et l'élasticité prix de la demande peut aussi s'écrire :
+$$\varepsilon_{q/p}(q)=\frac{P(q)}{q}\frac{1}{P'(q)}$$
+:::
 
 Comme la demande est décroissante (l'élasticité prix de la demande est négative $\varepsilon_{q/p} <0$), $P(q)$ et $q$ ont une relation inverse. 
 Autrement dit, si $q$ augmente, alors $p$ baisse et inversement.
@@ -118,22 +135,7 @@ R_m(q)& = R'(q) \\
 & = P(q)\left(1 + \frac{1}{\varepsilon_{q/p}(q)}\right)
 \end{align*}
 
-::: {.remark}
-## Élasticité prix de la demande
 
-L'élasticité prix de la demande $\varepsilon_{q/p}$ s'écrit :
-$$\varepsilon_{q/p}(p)=\frac{p}{D(p)}D'(p) <0$$
-Où $D$ est la fonction de demande.
-Elle est toujours négative, car la demande diminue quand le prix augmente.
-On peut la réécrire à l'aide de la fonction de demande inverse $P$.
-Comme $D$ et $P$ sont les fonctions réciproques l'une de l'autre, on a $D(P(q)) = q$.
-En dérivant à gauche et à droite et en utilisant la formule de la dérivation composée, on obtient :
-$$P'(q)D'(P(q)) = 1$$
-On obtient donc :
-$$P'(q)=\frac{1}{D'(p)}$$
-Et l'élasticité prix de la demande peut aussi s'écrire :
-$$\varepsilon_{q/p}(q)=\frac{P(q)}{q}\frac{1}{P'(q)}$$
-:::
 
 On peut donc écrire :
 $$
@@ -150,11 +152,12 @@ De l'@eq-rm, on observe que le signe de la recette marginale $R_m$ dépend de l'
 2. Si la demande est inélastique ($|\varepsilon_{q/p}(q)|<1$), alors $R_m(q)<0$, donc si la quantité augmente, le revenu diminue.
 :::
 
-Une représentation graphique de l'allure générale est donnée dans la @fig-mono-elasticite.
+
+La @fig-mono-elasticite représente les différentes zone pour l'élasticité prix de la demande sur la courbe de demande.
 
 ```{r monopoleelasticite}
 #| label: fig-mono-elasticite
-#| fig-cap: "La recette marginale est maximale lorsque l'élasticité prix de la demande est égale à -1."
+#| fig-cap: "La recette est maximale lorsque l'élasticité prix de la demande est égale à -1."
 p2 <- p;
 
 lab1 = TeX("$\\left| \\epsilon_{q/p}\\right|>1$")
@@ -175,10 +178,11 @@ p2 + geom_segment(x=0, y=0, xend = 0.5, yend = 0.5, linetype="dashed") +
 
 ### Représentation graphique
 
-La courbe de recette marginale est toujours située en-dessous de la courbe de demande :
+La courbe de recette marginale est toujours située en-dessous de la courbe de demande, en effet :
 $$
 R_m(q) = P(q) + qP'(q) < P(q)
 $$
+
 car $P'(q)$ est négative (la demande inverse est décroissante).
 
 ::: {#exm-lineaire}
@@ -187,7 +191,7 @@ car $P'(q)$ est négative (la demande inverse est décroissante).
 
 Prenons maintenant l'exemple d'une courbe de demande inverse linéaire quelconque $P(q) = a-bq$ ($a$ et $b$ sont des valeurs numériques quelconques).
 On obtient alors $R_m(q) = a-2bq$ (et $R(q) = aq-bq^2$).  
-Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus élevée que la demande, et ayant la même ordonnée à l'origine.
+Dans le cas linéaire, la recette marginale est une droite de pente deux fois plus élevée que la demande, et ayant la même ordonnée à l'origine.
 La recette marginale divise en deux  tout segment horizontal entre l'axe des ordonnées et la courbe de demande inverse.
 On peut ainsi représenter graphiquement, comme dans la @fig-recette-marginale la demande, la recette marginale et la recette totale.
 
@@ -255,9 +259,10 @@ $$
 \Leftrightarrow R_m(q^*) &=&C_m(q^*) 
 \end{array}
 $$
+
 À l'optimum, le monopole égalise le coût marginal et le revenu marginal.
 Cette condition est similaire en apparence à la condition d'optimalité en CPP.
-La différence réside en fait dans l'expression de la recette marginale, tel que vu en @sec-rm.
+La différence réside en fait dans l'expression de la recette marginale, telle que vue en @sec-rm.
 
 La condition du second ordre s'exprime ainsi :
 $$
@@ -273,7 +278,7 @@ Autrement dit, la recette marginale doit croître moins vite que le coût margin
 Cette condition est en particulier vérifiée si la recette marginale est décroissante et le coût marginal croissant.
 
 Finalement, il faut vérifier que le profit à l'optimum est positif ($\pi(q^*)\geq0$).
-Dans le cas contraire, le marché n'existerait tout simplement pas, car le monopole ne voudrait pas produire le bien.
+Dans le cas contraire, le marché n'existerait pas, car le monopole ne produirait pas le bien.
 
 ::: { #thm-mono-opti }
 
@@ -284,7 +289,6 @@ Ce n'est un maximum que si la dérivée de la recette marginale est inférieure 
 $$
 R_m(q^*)=C_m(q^*) 
 $$ {#eq-cpo}
-
 $$
 R_m'(q^*) <C_m'(q^*)
 $$ {#eq-cso}
@@ -360,6 +364,7 @@ La condition de second ordre de l'@eq-cso est bien vérifiée, car $-2<2$.
 
 Le prix de vente vaut :
 $$P(q^*) = P(10) = 40-10 = 30$$
+
 La recette vaut 300, le coût 150. 
 On a donc un profit de **150**, qui est bien positif (condition de l'@eq-profitpos).
 :::
@@ -442,7 +447,7 @@ $$
 
 Si $\left|\varepsilon_{q/p}(q^*)\right|<1$, c'est-à-dire que si la demande est inélastique, alors $1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} <0$, ce qui implique que la recette marginale $R_m$ est négative et donc impossible à égaliser avec le coût marginal $C_m$.  
 On peut voir la réponse d'une autre façon.
-Si la pente est inélastique, alors le revenu $R$ augmente quand la quantité $q$ baisse. 
+Si la pente est inélastique, alors la recette $R$ augmente quand la quantité $q$ baisse. 
 Le coût total $C$ baisse aussi quand la quantité baisse. 
 Le monopole aurait donc tout intérêt à réduire sa production lorsque la demande est inélastique.
 
@@ -450,7 +455,7 @@ Le monopole aurait donc tout intérêt à réduire sa production lorsque la dema
 
 ## Élasticité de la demande à l'optimum
 
-Le monopole opère donc nécessairement dans la zone élastique de la courbe de demande : $\left|\varepsilon_{q/p}(q^*)\right|>1$ .
+À l'optimum, le monopole opère dans la zone élastique de la courbe de demande : $\left|\varepsilon_{q/p}(q^*)\right|>1$ .
 ::: 
 
 ### Indice de pouvoir du monopole
@@ -481,25 +486,17 @@ $$
 
 ## Indice de Lerner
 
-On définit l'indice de Lerner $L$ par :
+L'indice de Lerner $L$ mesure la capacité d'un monopole à vendre au-dessus de son prix marginal :
 $$
-L=\frac{1}{|\varepsilon_{q/p}(q^*)|} = \frac{P(q^*) - C_m(q^*)}{P(q^*)}
+L=\frac{P(q^*) - C_m(q^*)}{P(q^*)} 
 $$ {#eq-Lerner}
-L'indice de Lerner est donc inversement proportionnel à l'élasticité prix de la demande. 
-Il est aussi égal à la capacité du monopole à vendre au-dessus de son coût marginal, en pourcentage du prix total.
 :::
 
-On peut construire à partir de l'équation précédente le *markup pricing*.
-
-:::{ #def-markup}
-
-## Markup pricing
+D'après les calculs précédents, l'indice de Lerner est inversement proportionnel à l'élasticité prix de la demande. 
 
 $$
-P(q^*) =\frac{|\varepsilon_{q/p}(q^*)|}{|\varepsilon_{q/p}(q^*)|-1} C_m(q^*)
+L = \frac{1}{|\varepsilon_{q/p}(q^*)|} 
 $$
-:::
-
 
 
 ### Variation de la demande
@@ -588,7 +585,7 @@ p_surplus <- ggplot() +
 p_surplus
 ```
 
-Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu'en CPP, et que le surplus des consommateur est plus faible.
+Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu'en CPP, et que le surplus des consommateurs est plus faible.
 Il y a globalement une perte sèche de surplus total, comme on peut le voir sur la @fig-mono-surplus.
 **Le monopole est inefficace au sens de Pareto.**
 Il existe des consommateurs prêt à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche).
