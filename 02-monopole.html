@@ -269,9 +269,9 @@ window.Quarto = {
 <p>Il y a de nombreuses raisons qui aboutissent à l’existence de monopoles. Les principales sont :</p>
 <ul>
 <li>Légales, à cause de réglementation particulières. C’est ce qu’on appelle en général des professions réglementées, comme les avocats, les bureaux de tabac, les taxis…</li>
-<li>Légales, à cause des brevets sur une technologie données (industrie pharmaceutique, …) ;</li>
+<li>Légales, à cause des brevets sur une technologie donnée (industrie pharmaceutique, …) ;</li>
 <li>Historique, le premier arrivé ;</li>
-<li>Monopoles <em>naturels</em> : en présence d’économies d’échelles, produire une quantité donnée revient moins cher avec un seul producteur qu’avec plusieurs. C’est notamment les cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, …). Plus généralement, les industries avec des coûts fixes ou des coûts d’entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile, …) ;</li>
+<li>Monopoles <em>naturels</em> : en présence d’économies d’échelles, produire une quantité donnée revient moins cher avec un seul producteur qu’avec plusieurs. C’est notamment les cas des industries où il faut installer des réseaux (chemins de fer, électricité, téléphone, …). Plus généralement, les industries avec des coûts fixes ou des coûts d’entrées très élevées aboutissent à des formes proches du monopole naturel (sidérurgie, automobile, semi-conducteurs…) ;</li>
 <li>Exclusivité sur la production de certaines matières premières (cuivre au Chili, terres rares en Chine, …) ;</li>
 <li>Coalitions créant un cartel ;</li>
 <li>…</li>
@@ -288,6 +288,9 @@ R(q) = q\cdot P(q) = Q(p)\cdot p
 </section>
 <section id="recette-marginale-et-courbe-de-demande" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="recette-marginale-et-courbe-de-demande"><span class="header-section-number">2.1.2</span> Recette marginale et courbe de demande</h3>
+<div class="proof remark">
+<p><span class="proof-title"><em>Remarque</em> (Élasticité prix de la demande). </span>L’élasticité prix de la demande <span class="math inline">\(\varepsilon_{q/p}\)</span> s’écrit : <span class="math display">\[\varepsilon_{q/p}(p)=\frac{p}{D(p)}D'(p) &lt;0\]</span> Où <span class="math inline">\(D\)</span> est la fonction de demande. Elle est toujours négative, car la demande diminue quand le prix augmente. On peut la réécrire à l’aide de la fonction de demande inverse <span class="math inline">\(P\)</span>. Comme <span class="math inline">\(D\)</span> et <span class="math inline">\(P\)</span> sont les fonctions réciproques l’une de l’autre, on a <span class="math inline">\(D(P(q)) = q\)</span>. En dérivant à gauche et à droite et en utilisant la formule de la dérivation composée, on obtient : <span class="math display">\[P'(q)D'(P(q)) = 1\]</span> On obtient donc : <span class="math display">\[P'(q)=\frac{1}{D'(p)}\]</span> Et l’élasticité prix de la demande peut aussi s’écrire : <span class="math display">\[\varepsilon_{q/p}(q)=\frac{P(q)}{q}\frac{1}{P'(q)}\]</span></p>
+</div>
 <p>Comme la demande est décroissante (l’élasticité prix de la demande est négative <span class="math inline">\(\varepsilon_{q/p} &lt;0\)</span>), <span class="math inline">\(P(q)\)</span> et <span class="math inline">\(q\)</span> ont une relation inverse. Autrement dit, si <span class="math inline">\(q\)</span> augmente, alors <span class="math inline">\(p\)</span> baisse et inversement. On peut constater sur la <a href="#fig-monorecettemarginale" class="quarto-xref">figure&nbsp;<span>2.1</span></a> que deux phénomènes influencent la variation de la recette totale quand on augmente la production d’une unité (passage de <span class="math inline">\(q\)</span> à <span class="math inline">\(q+\Delta q\)</span> unités vendues). Le gain lié à la vente de <span class="math inline">\(\Delta q\)</span> unités supplémentaires. La perte due à la baisse du prix de vente total de toutes les unités vendues (passage de <span class="math inline">\(P(q)\)</span> à un prix inférieur <span class="math inline">\(P(q+\Delta q)\)</span>).</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -312,9 +315,6 @@ R_m(q)&amp; = R'(q) \\
 &amp; = P(q)\left(1 + \frac{q}{P(q)}P'(q) \right)\\
 &amp; = P(q)\left(1 + \frac{1}{\varepsilon_{q/p}(q)}\right)
 \end{align*}\]</span></p>
-<div class="proof remark">
-<p><span class="proof-title"><em>Remarque</em> (Élasticité prix de la demande). </span>L’élasticité prix de la demande <span class="math inline">\(\varepsilon_{q/p}\)</span> s’écrit : <span class="math display">\[\varepsilon_{q/p}(p)=\frac{p}{D(p)}D'(p) &lt;0\]</span> Où <span class="math inline">\(D\)</span> est la fonction de demande. Elle est toujours négative, car la demande diminue quand le prix augmente. On peut la réécrire à l’aide de la fonction de demande inverse <span class="math inline">\(P\)</span>. Comme <span class="math inline">\(D\)</span> et <span class="math inline">\(P\)</span> sont les fonctions réciproques l’une de l’autre, on a <span class="math inline">\(D(P(q)) = q\)</span>. En dérivant à gauche et à droite et en utilisant la formule de la dérivation composée, on obtient : <span class="math display">\[P'(q)D'(P(q)) = 1\]</span> On obtient donc : <span class="math display">\[P'(q)=\frac{1}{D'(p)}\]</span> Et l’élasticité prix de la demande peut aussi s’écrire : <span class="math display">\[\varepsilon_{q/p}(q)=\frac{P(q)}{q}\frac{1}{P'(q)}\]</span></p>
-</div>
 <p>On peut donc écrire : <span id="eq-rm"><span class="math display">\[
 R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
 \tag{2.1}\]</span></span></p>
@@ -325,7 +325,7 @@ R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
 <li>Si la demande est inélastique (<span class="math inline">\(|\varepsilon_{q/p}(q)|&lt;1\)</span>), alors <span class="math inline">\(R_m(q)&lt;0\)</span>, donc si la quantité augmente, le revenu diminue.</li>
 </ol>
 </div>
-<p>Une représentation graphique de l’allure générale est donnée dans la <a href="#fig-mono-elasticite" class="quarto-xref">figure&nbsp;<span>2.2</span></a>.</p>
+<p>La <a href="#fig-mono-elasticite" class="quarto-xref">figure&nbsp;<span>2.2</span></a> représente les différentes zone pour l’élasticité prix de la demande sur la courbe de demande.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-mono-elasticite" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -334,7 +334,7 @@ R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)
 <img src="02-monopole_files/figure-html/fig-mono-elasticite-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mono-elasticite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2: La recette marginale est maximale lorsque l’élasticité prix de la demande est égale à -1.
+Figure&nbsp;2.2: La recette est maximale lorsque l’élasticité prix de la demande est égale à -1.
 </figcaption>
 </figure>
 </div>
@@ -343,12 +343,13 @@ Figure&nbsp;2.2: La recette marginale est maximale lorsque l’élasticité prix
 </section>
 <section id="représentation-graphique" class="level3" data-number="2.1.3">
 <h3 data-number="2.1.3" class="anchored" data-anchor-id="représentation-graphique"><span class="header-section-number">2.1.3</span> Représentation graphique</h3>
-<p>La courbe de recette marginale est toujours située en-dessous de la courbe de demande : <span class="math display">\[
+<p>La courbe de recette marginale est toujours située en-dessous de la courbe de demande, en effet : <span class="math display">\[
 R_m(q) = P(q) + qP'(q) &lt; P(q)
-\]</span> car <span class="math inline">\(P'(q)\)</span> est négative (la demande inverse est décroissante).</p>
+\]</span></p>
+<p>car <span class="math inline">\(P'(q)\)</span> est négative (la demande inverse est décroissante).</p>
 <div id="exm-lineaire" class="theorem example">
 <p><span class="theorem-title"><strong>Exemple 2.1 (Demande linéaire)</strong></span> Prenons maintenant l’exemple d’une courbe de demande inverse linéaire quelconque <span class="math inline">\(P(q) = a-bq\)</span> (<span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sont des valeurs numériques quelconques). On obtient alors <span class="math inline">\(R_m(q) = a-2bq\)</span> (et <span class="math inline">\(R(q) = aq-bq^2\)</span>).<br>
-Dans le cas linéaire, le revenu marginal est une droite de pente deux fois plus élevée que la demande, et ayant la même ordonnée à l’origine. La recette marginale divise en deux tout segment horizontal entre l’axe des ordonnées et la courbe de demande inverse. On peut ainsi représenter graphiquement, comme dans la <a href="#fig-recette-marginale" class="quarto-xref">figure&nbsp;<span>2.3</span></a> la demande, la recette marginale et la recette totale.</p>
+Dans le cas linéaire, la recette marginale est une droite de pente deux fois plus élevée que la demande, et ayant la même ordonnée à l’origine. La recette marginale divise en deux tout segment horizontal entre l’axe des ordonnées et la courbe de demande inverse. On peut ainsi représenter graphiquement, comme dans la <a href="#fig-recette-marginale" class="quarto-xref">figure&nbsp;<span>2.3</span></a> la demande, la recette marginale et la recette totale.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-recette-marginale" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -398,7 +399,8 @@ Il y a 2 conditions d’optimalités, les conditions de premier ordre (la dériv
 \Leftrightarrow R'(q^*) - C'(q^*) &amp;=&amp; 0\\
 \Leftrightarrow R_m(q^*) &amp;=&amp;C_m(q^*)
 \end{array}
-\]</span> À l’optimum, le monopole égalise le coût marginal et le revenu marginal. Cette condition est similaire en apparence à la condition d’optimalité en CPP. La différence réside en fait dans l’expression de la recette marginale, tel que vu en <a href="#sec-rm" class="quarto-xref"><span>Section 2.1</span></a>.</p>
+\]</span></p>
+<p>À l’optimum, le monopole égalise le coût marginal et le revenu marginal. Cette condition est similaire en apparence à la condition d’optimalité en CPP. La différence réside en fait dans l’expression de la recette marginale, telle que vue en <a href="#sec-rm" class="quarto-xref"><span>Section 2.1</span></a>.</p>
 <p>La condition du second ordre s’exprime ainsi : <span class="math display">\[
 \begin{array}{rcl}
 \pi''(q^*) &amp;&lt;&amp;0\\
@@ -407,12 +409,11 @@ Il y a 2 conditions d’optimalités, les conditions de premier ordre (la dériv
 \end{array}
 \]</span></p>
 <p>La dérivée de la recette marginale doit être inférieure à la dérivée du coût marginal. Autrement dit, la recette marginale doit croître moins vite que le coût marginal. Cette condition est en particulier vérifiée si la recette marginale est décroissante et le coût marginal croissant.</p>
-<p>Finalement, il faut vérifier que le profit à l’optimum est positif (<span class="math inline">\(\pi(q^*)\geq0\)</span>). Dans le cas contraire, le marché n’existerait tout simplement pas, car le monopole ne voudrait pas produire le bien.</p>
+<p>Finalement, il faut vérifier que le profit à l’optimum est positif (<span class="math inline">\(\pi(q^*)\geq0\)</span>). Dans le cas contraire, le marché n’existerait pas, car le monopole ne produirait pas le bien.</p>
 <div id="thm-mono-opti" class="theorem">
 <p><span class="theorem-title"><strong>Théorème 2.1 (Optimum du monopole)</strong></span> À l’optimum, le monopole égalise le coût marginal et le revenu marginal. Ce n’est un maximum que si la dérivée de la recette marginale est inférieure à la dérivée du coût marginal et que le profit est positif. <span id="eq-cpo"><span class="math display">\[
 R_m(q^*)=C_m(q^*)
-\tag{2.2}\]</span></span></p>
-<p><span id="eq-cso"><span class="math display">\[
+\tag{2.2}\]</span></span> <span id="eq-cso"><span class="math display">\[
 R_m'(q^*) &lt;C_m'(q^*)
 \tag{2.3}\]</span></span> <span id="eq-profitpos"><span class="math display">\[
 \pi(q^*)\geq0
@@ -452,7 +453,8 @@ R_m(q^*) &amp;=&amp;C_m(q^*)\\
 \Leftrightarrow q^*&amp;=&amp;10
 \end{array}
 \]</span> La condition de second ordre de l’<a href="#eq-cso" class="quarto-xref">équation&nbsp;<span>2.3</span></a> est bien vérifiée, car <span class="math inline">\(-2&lt;2\)</span>.</p>
-<p>Le prix de vente vaut : <span class="math display">\[P(q^*) = P(10) = 40-10 = 30\]</span> La recette vaut 300, le coût 150. On a donc un profit de <strong>150</strong>, qui est bien positif (condition de l’<a href="#eq-profitpos" class="quarto-xref">équation&nbsp;<span>2.4</span></a>).</p>
+<p>Le prix de vente vaut : <span class="math display">\[P(q^*) = P(10) = 40-10 = 30\]</span></p>
+<p>La recette vaut 300, le coût 150. On a donc un profit de <strong>150</strong>, qui est bien positif (condition de l’<a href="#eq-profitpos" class="quarto-xref">équation&nbsp;<span>2.4</span></a>).</p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -495,9 +497,9 @@ P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}} &gt; C
 \]</span></p>
 <p><em>Question :</em> Dans quelle zone d’élasticité le monopole opère-t-il ?</p>
 <p>Si <span class="math inline">\(\left|\varepsilon_{q/p}(q^*)\right|&lt;1\)</span>, c’est-à-dire que si la demande est inélastique, alors <span class="math inline">\(1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} &lt;0\)</span>, ce qui implique que la recette marginale <span class="math inline">\(R_m\)</span> est négative et donc impossible à égaliser avec le coût marginal <span class="math inline">\(C_m\)</span>.<br>
-On peut voir la réponse d’une autre façon. Si la pente est inélastique, alors le revenu <span class="math inline">\(R\)</span> augmente quand la quantité <span class="math inline">\(q\)</span> baisse. Le coût total <span class="math inline">\(C\)</span> baisse aussi quand la quantité baisse. Le monopole aurait donc tout intérêt à réduire sa production lorsque la demande est inélastique.</p>
+On peut voir la réponse d’une autre façon. Si la pente est inélastique, alors la recette <span class="math inline">\(R\)</span> augmente quand la quantité <span class="math inline">\(q\)</span> baisse. Le coût total <span class="math inline">\(C\)</span> baisse aussi quand la quantité baisse. Le monopole aurait donc tout intérêt à réduire sa production lorsque la demande est inélastique.</p>
 <div id="cor-elasticite" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollaire 2.1 (Élasticité de la demande à l’optimum)</strong></span> Le monopole opère donc nécessairement dans la zone élastique de la courbe de demande : <span class="math inline">\(\left|\varepsilon_{q/p}(q^*)\right|&gt;1\)</span> .</p>
+<p><span class="theorem-title"><strong>Corollaire 2.1 (Élasticité de la demande à l’optimum)</strong></span> À l’optimum, le monopole opère dans la zone élastique de la courbe de demande : <span class="math inline">\(\left|\varepsilon_{q/p}(q^*)\right|&gt;1\)</span> .</p>
 </div>
 </section>
 <section id="indice-de-pouvoir-du-monopole" class="level3" data-number="2.2.3">
@@ -515,16 +517,14 @@ R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*)
 \end{array}
 \]</span></p>
 <div id="def-Lerner" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.3 (Indice de Lerner)</strong></span> On définit l’indice de Lerner <span class="math inline">\(L\)</span> par : <span id="eq-Lerner"><span class="math display">\[
-L=\frac{1}{|\varepsilon_{q/p}(q^*)|} = \frac{P(q^*) - C_m(q^*)}{P(q^*)}
-\tag{2.6}\]</span></span> L’indice de Lerner est donc inversement proportionnel à l’élasticité prix de la demande. Il est aussi égal à la capacité du monopole à vendre au-dessus de son coût marginal, en pourcentage du prix total.</p>
+<p><span class="theorem-title"><strong>Définition 2.3 (Indice de Lerner)</strong></span> L’indice de Lerner <span class="math inline">\(L\)</span> mesure la capacité d’un monopole à vendre au-dessus de son prix marginal : <span id="eq-Lerner"><span class="math display">\[
+L=\frac{P(q^*) - C_m(q^*)}{P(q^*)}
+\tag{2.6}\]</span></span></p>
 </div>
-<p>On peut construire à partir de l’équation précédente le <em>markup pricing</em>.</p>
-<div id="def-markup" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.4 (Markup pricing)</strong></span> <span class="math display">\[
-P(q^*) =\frac{|\varepsilon_{q/p}(q^*)|}{|\varepsilon_{q/p}(q^*)|-1} C_m(q^*)
+<p>D’après les calculs précédents, l’indice de Lerner est inversement proportionnel à l’élasticité prix de la demande.</p>
+<p><span class="math display">\[
+L = \frac{1}{|\varepsilon_{q/p}(q^*)|}
 \]</span></p>
-</div>
 </section>
 <section id="variation-de-la-demande" class="level3" data-number="2.2.4">
 <h3 data-number="2.2.4" class="anchored" data-anchor-id="variation-de-la-demande"><span class="header-section-number">2.2.4</span> Variation de la demande</h3>
@@ -576,14 +576,14 @@ Figure&nbsp;2.10: Surplus quand le producteur est en monopole.
 </div>
 </div>
 </div>
-<p>Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu’en CPP, et que le surplus des consommateur est plus faible. Il y a globalement une perte sèche de surplus total, comme on peut le voir sur la <a href="#fig-mono-surplus" class="quarto-xref">figure&nbsp;<span>2.10</span></a>. <strong>Le monopole est inefficace au sens de Pareto.</strong> Il existe des consommateurs prêt à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche). Il est donc possible d’avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole. Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d’autre pour obtenir cette amélioration.</p>
+<p>Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu’en CPP, et que le surplus des consommateurs est plus faible. Il y a globalement une perte sèche de surplus total, comme on peut le voir sur la <a href="#fig-mono-surplus" class="quarto-xref">figure&nbsp;<span>2.10</span></a>. <strong>Le monopole est inefficace au sens de Pareto.</strong> Il existe des consommateurs prêt à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche). Il est donc possible d’avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole. Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d’autre pour obtenir cette amélioration.</p>
 </section>
 </section>
 <section id="le-monopole-naturel" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="le-monopole-naturel"><span class="header-section-number">2.3</span> Le monopole naturel</h2>
 <p>Une situation de monopole est dite <em>naturelle</em> si le monopole émerge à cause d’une structure particulière de la technologie de production et des coûts, plutôt qu’à cause d’une disposition légale.</p>
 <div id="def-rdts-echelles" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.5 (Rendements d’échelles)</strong></span> Les <em>rendements d’échelles</em> sont croissants lorsque la technologie de production <span class="math inline">\(f\)</span> est telle que : <span class="math display">\[
+<p><span class="theorem-title"><strong>Définition 2.4 (Rendements d’échelles)</strong></span> Les <em>rendements d’échelles</em> sont croissants lorsque la technologie de production <span class="math inline">\(f\)</span> est telle que : <span class="math display">\[
 f(\lambda z_1, \lambda z_2, ...\lambda z_n) &gt; \lambda f(z_1,z_2, ..., z_n)
 \]</span> où les <span class="math inline">\(z_i\)</span> sont les facteurs de productions. En mots : une entreprise utilisant <span class="math inline">\(\lambda\)</span> fois plus de facteurs de productions qu’une petite entreprise produit plus que <span class="math inline">\(\lambda\)</span> petites entreprises réunies.</p>
 </div>
@@ -591,10 +591,10 @@ f(\lambda z_1, \lambda z_2, ...\lambda z_n) &gt; \lambda f(z_1,z_2, ..., z_n)
 C_M(f(\lambda z)) =\frac{\lambda z\cdot w_z}{f(\lambda z)} &lt; C_M(\lambda f(z)) = \frac{\lambda z\cdot w_z}{\lambda f(z)}
 \]</span> car <span class="math inline">\(f(\lambda z)&gt;\lambda f(z)\)</span>. Cela signifie qu’une seule entreprise qui produit <span class="math inline">\(f(\lambda z)\)</span> est plus efficace que <span class="math inline">\(\lambda\)</span> entreprises qui produisent <span class="math inline">\(\lambda f(z)\)</span>. Il y a ici des économies d’échelle.</p>
 <div id="def-eco-echelle" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.6 (Économie d’échelle)</strong></span> Il y a des <em>économies d’échelle</em> quand une unité de bien produite en plus revient moins chère que l’unité précédente. Cela signifie que le <em>coût moyen</em> baisse quand le producteur produit plus d’unités.</p>
+<p><span class="theorem-title"><strong>Définition 2.5 (Économie d’échelle)</strong></span> Il y a des <em>économies d’échelle</em> quand une unité de bien produite en plus revient moins chère que l’unité précédente. Cela signifie que le <em>coût moyen</em> baisse quand le producteur produit plus d’unités.</p>
 </div>
 <div id="def-mono-naturel" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.7 (Monopole naturel)</strong></span> Un monopole naturel émerge en présence d’économies d’échelles dans la zone de production optimale.</p>
+<p><span class="theorem-title"><strong>Définition 2.6 (Monopole naturel)</strong></span> Un monopole naturel émerge en présence d’économies d’échelles dans la zone de production optimale.</p>
 </div>
 <p>En général, les économies d’échelles proviennent de coûts fixes élevés. Par exemple, lorsqu’il faut investir dans un réseau (ferrés, téléphone, électricité, etc).</p>
 <p>Il y a presque toujours une zone où le coût moyen est décroissant, mais elle est rarement très étendue. Dans la <a href="#fig-nat-cout" class="quarto-xref">figure&nbsp;<span>2.11</span></a>, la demande inverse 1 coupe la courbe de coût marginal à un endroit où les économies d’échelle sont décroissantes. La demande 2, en revanche, la coupe à un endroit où les économies d’échelle sont croissantes.</p>
@@ -644,7 +644,7 @@ C_m(q)-C_M(q)&lt; 0 \Leftrightarrow C_m(q)&lt;C_M(q)
 <section id="taxe-unitaire" class="level4" data-number="2.4.3.1">
 <h4 data-number="2.4.3.1" class="anchored" data-anchor-id="taxe-unitaire"><span class="header-section-number">2.4.3.1</span> Taxe unitaire</h4>
 <div id="def-tunitaire" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.8 (Taxe unitaire)</strong></span> Une taxe unitaire <span class="math inline">\(t\)</span> est une taxe <strong>par unité de bien produite</strong>.</p>
+<p><span class="theorem-title"><strong>Définition 2.7 (Taxe unitaire)</strong></span> Une taxe unitaire <span class="math inline">\(t\)</span> est une taxe <strong>par unité de bien produite</strong>.</p>
 </div>
 <p>Si un régulateur impose une taxe de <span class="math inline">\(t\)</span> unités monétaire par unité de bien produite, le profit du monopole se réécrit :</p>
 <p><span class="math display">\[
@@ -693,7 +693,7 @@ Figure&nbsp;2.13: Impact d’une taxe unitaire : diminution de recette marginale
 <section id="taxe-forfaitaire" class="level4" data-number="2.4.3.2">
 <h4 data-number="2.4.3.2" class="anchored" data-anchor-id="taxe-forfaitaire"><span class="header-section-number">2.4.3.2</span> Taxe forfaitaire</h4>
 <div id="def-t-forfaitaire" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.9 (Taxe forfaitaire)</strong></span> Une taxe forfaitaire est une taxe <span class="math inline">\(T\)</span> imposée au directement au producteur, indépendamment du prix ou de la quantité produite.</p>
+<p><span class="theorem-title"><strong>Définition 2.8 (Taxe forfaitaire)</strong></span> Une taxe forfaitaire est une taxe <span class="math inline">\(T\)</span> imposée au directement au producteur, indépendamment du prix ou de la quantité produite.</p>
 </div>
 <p>Avec une taxe forfaitaire, le régulateur prélève un montant <span class="math inline">\(T\)</span> indépendant de la quantité produite sur le profit du producteur. <span class="math display">\[
 \pi(q) = R(q) - C(q) -T
@@ -712,7 +712,7 @@ Figure&nbsp;2.13: Impact d’une taxe unitaire : diminution de recette marginale
 <h4 data-number="2.4.3.3" class="anchored" data-anchor-id="impôt-sur-les-bénéfices-profit"><span class="header-section-number">2.4.3.3</span> Impôt sur les bénéfices (profit)</h4>
 <p>Un autre type d’imposition possible est l’impôt sur les bénéfices.</p>
 <div id="def-t-benefice" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.10 (Impôt sur les bénéfices)</strong></span> L’impôt sur les bénéfices consiste à taxer le <em>profit</em> à un taux <span class="math inline">\(t\)</span>. Le régulateur impose au monopole de payer un pourcentage de ses profits en impôts.</p>
+<p><span class="theorem-title"><strong>Définition 2.9 (Impôt sur les bénéfices)</strong></span> L’impôt sur les bénéfices consiste à taxer le <em>profit</em> à un taux <span class="math inline">\(t\)</span>. Le régulateur impose au monopole de payer un pourcentage de ses profits en impôts.</p>
 </div>
 <p>Au lieu de taxer chaque unité produite, le régulateur taxe le niveau de profit à un taux <span class="math inline">\(t\)</span>. Le profit s’écrit : <span class="math display">\[
 \pi(q) = R(q) - C(q) -t(R(q) - C(q)) = (1-t)(R(q) - C(q))
@@ -848,7 +848,7 @@ Figure&nbsp;2.18: Surplus du monopole en discrimination parfaite (aire rouge et 
 <section id="discrimination-du-deuxième-degré" class="level3" data-number="2.5.2">
 <h3 data-number="2.5.2" class="anchored" data-anchor-id="discrimination-du-deuxième-degré"><span class="header-section-number">2.5.2</span> Discrimination du deuxième degré</h3>
 <div id="def-discri-2" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 2.11 (Discrimination du deuxième degré)</strong></span> La discrimination du deuxième degré a lieu lorsque les prix de ventes dépendent des quantités achetées.</p>
+<p><span class="theorem-title"><strong>Définition 2.10 (Discrimination du deuxième degré)</strong></span> La discrimination du deuxième degré a lieu lorsque les prix de ventes dépendent des quantités achetées.</p>
 </div>
 <p>Par exemple, si les 10 premières unités vendues le sont à 5€ et les suivantes à 2€. Les prix de vente sont nécessairement <em>décroissants</em> avec la quantité vendue.</p>
 <div class="cell">
