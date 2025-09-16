@@ -1,3 +1,8 @@
+---
+ltex:
+  language: "fr"
+---
+
 # Le marché en concurrence pure et parfaite
 \chaptermark{Le marché en CPP}
 
@@ -77,15 +82,15 @@ Dans le cadre de ce cours, nous allons uniquement nous intéresser au pouvoir de
 
 ### Fonctions de coût
 
-En général, un producteur est modélisé par une fonction de production, c'est-à-dire une fonction qui donne  les quantités produites de biens en fonction des facteurs de productions.
-À l'aide de cette fonction de production, il est possible de construire une fonction de coût.
+En général, un producteur est modélisé par une fonction de production, c'est-à-dire une fonction qui donne  les quantités produites de biens en fonction des facteurs de production.
+On utilise cette fonction de production pour ensuite construire une fonction de coût.
 
 :::{#def-ctotal}
 
 ## Fonction de coût total
 
 La fonction de coût total, notée $C$ ou $CT$, donne le coût total de production de $q$ unités de bien.
-Elle se décompose en un *coût fixe* $CF$ (qui ne dépend pas de $q$) et un *coût variable* $CV$ qui dépend de $q$ :
+Elle se décompose en un *coût fixe* $CF$, qui ne dépend pas de $q$, et un *coût variable* $CV$ qui dépend de $q$ :
 $$C(q)=CF+ CV(q)$$
 :::
 
@@ -133,7 +138,7 @@ Autrement dit, le coût marginal est la variation de coût total quand la produc
 ## Variations des courbes de coût
 En général, le coût marginal diminue puis augmente, car la productivité marginale est d'abord croissante, puis décroissante.  
 Le coût variable moyen est d'abord décroissant, puis croissant, pour la même raison.  
-Le coût fixe moyen est toujours décroissant, car le coût fixe ne dépend pas des quantités produites et $CFM=CF/q$ est donc une fonction inverse.  
+Le coût fixe moyen est toujours décroissant, car le coût fixe ne dépend pas des quantités produites et $CF_M(q)=CF/q$ est une fonction inverse.  
 La décomposition donnée par l'@eq-CM implique que le coût moyen est d'abord décroissant, puis croissant.
 :::
 
@@ -211,7 +216,7 @@ $$R_m(q)=R'(q)$$
 
 Le profit, noté $\pi$ est la différence entre la recette totale et le coût total de production :
 $$\pi(q)=R(q)-C(q)$$
-Le profit s'appelle aussi généralement le bénéfice.
+Le profit s'appelle couramment le bénéfice.
 :::
 
 :::{#cnj-programme-producteur}
