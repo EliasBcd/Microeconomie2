@@ -40,3 +40,5 @@ renv
 /.quarto/
 
 
+
+**/*.quarto_ipynb
