@@ -185,9 +185,9 @@ p_cppcout <- ggplot() +
   geom_function(fun=CM, color="red") +
   geom_function(fun=CVM, color="darkgreen") +
   labs(x="quantité", y="coût") +
-  annotate("text", x=4.5, y=1.3, label=TeX("$C_{VM}$"), color="darkgreen") +
-  annotate("text", x=4.5, y=2, label=TeX("$C_M$"), color="red") +
-  annotate("text", x=4.5, y=2.5, label=TeX("$C_m$"), color="blue")
+  geom_text(aes(x=4.5, y=1.3, label="C[VM]"), color="darkgreen", parse=TRUE) +
+  geom_text(aes(x=4.5, y=2, label="C[M]"), color="red", parse=TRUE) +
+  geom_text(aes(x=4.5, y=2.5, label="C[m]"), color="blue", parse=TRUE)
   
 p_cppcout + scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(), labels=c()) +
   scale_x_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(), labels=c())
@@ -273,7 +273,7 @@ Cm2 <- function(x){2*x}
 
 
 p <- ggplot() +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 0.6), breaks = c(0.25), labels = c(TeX("$q^*$"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 0.6), breaks = c(0.25), labels = c(expression(q^"*"))) +
   scale_y_continuous(expand=c(0, 0), limits=c(0, 1.2), breaks=c(), labels=c()) +
   labs(x="quantité", y = "prix") +
   stat_function(fun=function(x) Rm2(x), colour = "darkgreen") +
@@ -332,12 +332,12 @@ q <- 4
 pi <- data.frame(x=c(0, q), ymin=c(CM(q), CM(q)), ymax=c(Cm(q), Cm(q)))
 
 p_cppcout + geom_ribbon(data=pi, aes(x=x, ymin=ymin, ymax=ymax), fill="green", alpha=0.5) +
-  annotate("text", x=2, y=2, label=TeX("$\\pi$"), color="darkgreen") +
+  geom_text(aes(x=2, y=2, label="pi"), color="darkgreen", parse=TRUE) +
   geom_segment(data=pi, x=q, y=0, xend=q, yend=Cm(q), linetype="dashed") +
   geom_segment(data=pi, x=0, y=CM(q), xend=q, yend=CM(q), linetype="dashed") +
   geom_segment(data=pi, x=0, y=Cm(q), xend=q, yend=Cm(q), linetype="dashed") +
-  scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(CM(q), Cm(q)), labels=c(TeX("$C_M(q^*)$"), TeX("p"))) +
-  scale_x_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(q), labels=c(TeX("$q^*$")))
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(CM(q), Cm(q)), labels=c(expression(C[M](q^"*")), expression(p))) +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(q), labels=c(expression(q^"*")))
 ```
 
 

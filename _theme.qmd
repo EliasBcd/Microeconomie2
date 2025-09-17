@@ -1,6 +1,5 @@
 ```{r setup}
 library(ggplot2)
-library(latex2exp)
 ```
 
 ```{r theme}

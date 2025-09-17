@@ -105,8 +105,8 @@ p <- ggplot(df, aes(x=x)) +
 #| fig-cap: "Recette marginale d'un monopole suite à une variation de quantité."
 p1 <- p
 
-lab1 <- TeX("$P(q+\\Delta q)$")
-lab2 <- TeX("$q+\\Delta q$")
+lab1 <- expression(P(q+Delta*q))
+lab2 <- expression(q+Delta*q)
 
 p1 +  scale_y_continuous(breaks = c(0.1, 0.2, 0.8, 0.9), labels = c(lab1, 'P(q)', lab1, 'P(q)'), expand = c(0, 0), limits = c(0, 1.2)) +
     scale_x_continuous(breaks = c(0.1, 0.2, 0.8, 0.9),  labels = c('q', lab2, 'q', lab2), expand = c(0, 0), limits = c(0, 1.2)) +
@@ -165,9 +165,9 @@ La @fig-mono-elasticite représente les différentes zone pour l'élasticité pr
 #| fig-cap: "La recette est maximale lorsque l'élasticité prix de la demande est égale à -1."
 p2 <- p;
 
-lab1 = TeX("$\\left| \\epsilon_{q/p}\\right|>1$")
-lab2 = TeX("$\\left| \\epsilon_{q/p}\\right|<1$")
-lab3 = TeX("$\\left| \\epsilon_{q/p}\\right|=1$")
+lab1 = expression("|"*epsilon[q/p]*"|>1")
+lab2 = expression("|"*epsilon[q/p]*"|<1")
+lab3 = expression("|"*epsilon[q/p]*"|=1")
 
 
 p2 + geom_segment(x=0, y=0, xend = 0.5, yend = 0.5, linetype="dashed") +
@@ -317,12 +317,12 @@ perte2 <- data.frame(x = c(0.25, 0.35), y = c(0.5, 0.7), z = c(0.5, 0.3))
 
 p5 +   stat_function(fun=function(x) Rm(x), colour = "darkgreen") +
   stat_function(fun=function(x) Cm(x), colour = "red") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.75), labels=c(TeX("$p_m^*$"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.15, 0.25, 0.35), labels = c("", TeX("$q_m^*$"), "")) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.75), labels=c(expression(p[m]^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.15, 0.25, 0.35), labels = c("", expression(q[m]^"*"), "")) +
   geom_ribbon(data = perte1, aes(x=x, ymin=z, ymax = y), fill="red", alpha = 0.5) +
   geom_ribbon(data = perte2, aes(x=x, ymin=z, ymax = y), fill="red", alpha = 0.5) +
-  annotate("text", x=0.15, y=0.5, label=TeX("perte si $q<q_m^*$"), color="darkred") +
-  annotate("text", x=0.4, y=0.5, label=TeX("perte si $q>q_m^*$"), color="darkred") +
+  geom_text(aes(x=0.15, y=0.5, label="perte~si~q<q[m]^'*'"), color="darkred", parse=TRUE) +
+  geom_text(aes(x=0.4, y=0.5, label="perte~si~q>q[m]^'*'"), color="darkred", parse=TRUE) +
   annotate("text", x=0.55, y=0.8, colour="red", label="Coût marginal") +
   geom_segment(x=0.25, y=0, xend=0.25, yend=0.75, linetype="dashed") +
   geom_segment(x=0, y=0.75, xend=0.25, yend=0.75, linetype="dashed") +
@@ -397,11 +397,11 @@ p6 <- ggplot(df2, aes(x=x2)) +
   labs(x="quantité", y = "prix") +
   stat_function(fun=function(x) C(x), colour="red") +
   stat_function(fun=function(x) pi(x), colour="darkgreen") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 420), breaks = seq(0, 400, by=50), labels=c(0, 50, 100, TeX("$\\pi_m^*=150$"), 200, 250, 300, 350, 400)) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 22), breaks = seq(0, 20, by=5), labels = c(0, 5, TeX("$q_m^*=10$"), 15, 20)) +
-  annotate("text", x=18, y=10, label=TeX("Profit"), color="darkgreen") +
-  annotate("text", x=18, y=350, label=TeX("Coût"), color="red") +
-  annotate("text", x=18, y=400, label=TeX("Recette"), color="blue")
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 420), breaks = seq(0, 400, by=50), labels=c(0, 50, 100, expression(pi[m]^"*"==150), 200, 250, 300, 350, 400)) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 22), breaks = seq(0, 20, by=5), labels = c(0, 5, expression(q[m]^"*"==10), 15, 20)) +
+  geom_text(aes(x=18, y=10, label="Profit"), color="darkgreen") +
+  geom_text(aes(x=18, y=350, label="Coût"), color="red") +
+  geom_text(aes(x=18, y=400, label="Recette"), color="blue")
 
 p6
 ```
@@ -417,8 +417,8 @@ p7 <- ggplot(df2, aes(x=x2)) +
   labs(x="quantité", y = "prix") +
   stat_function(fun=function(x) Cm(x), colour="red") +
   stat_function(fun=function(x) CM(x), colour="pink") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 45), breaks = seq(0, 40, by=5), labels=c(seq(0, 25, by=5), TeX("$p_m^*=30$"), 35, 40)) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 22), breaks = seq(0, 20, by=5), labels=c(0, 5, TeX("$q_m^*=10$"), 15, 20)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 45), breaks = seq(0, 40, by=5), labels=c(seq(0, 25, by=5), expression(p[m]^"*"==30), 35, 40)) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 22), breaks = seq(0, 20, by=5), labels=c(0, 5, expression(q[m]^"*"==10), 15, 20)) +
   annotate("text", x=18, y=20, label="Demande", color="blue") +
   annotate("text", x=18, y=1, label="Recette marginale", color="lightblue") +
   annotate("text", x=18, y=40, label="Coût marginal", color="red") +
@@ -529,16 +529,16 @@ p_changement <- ggplot() +
   geom_function(fun=Rm2, colour = "green") +
   geom_function(fun=Cm, colour="red") +
   labs(x="quantité", y = "prix") +
-  annotate("text", x=0.8, y=P(0.8), label=TeX("Demande 1 ($P_1$)"), color="blue") +
-  annotate("text", x=0.4, y=0.2, label=TeX("Recette marginale 1 ($R_{1m})$"), color="lightblue") +
-  annotate("text", x=1, y=Cm(1), label=TeX("Coût marginal ($C_m$)"), color="red") +
-  annotate("text", x=0.5, y=Rm2(0.5), label=TeX("Recette marginale 1 ($R_{2m}$)"), color="green") +
-  annotate("text", x=1, y=P2(1), label=TeX("demande 2 ($P_2$)"), color="darkgreen")
+  geom_text(aes(x=0.8, y=P(0.8), label="Demande~1~(P[1])"), color="blue", parse=TRUE) +
+  geom_text(aes(x=0.4, y=0.2, label="Recette~marginale~1~(R[list(1,m)])"), color="lightblue", parse=TRUE) +
+  geom_text(aes(x=1, y=Cm(1), label="Coût~marginal~(C[m])"), color="red", parse=TRUE) +
+  geom_text(aes(x=0.5, y=Rm2(0.5), label="Recette~marginale~2~(R[list(2,m)])"), color="green", parse=TRUE) +
+  geom_text(aes(x=1, y=P2(1), label="demande~2~(P[2])"), color="darkgreen", parse=TRUE)
 
 
 p_prix <- p_changement +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm), P2(qm)), labels=c(TeX("$p_1^*$"),TeX("$p_2^*$"))) +
-  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm), labels=c(TeX("$q_1^*=q_2^*$")))
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm), P2(qm)), labels=c(expression(p[1]^"*"),expression(p[2]^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm), labels=c(expression(q[1]^"*"==q[2]^"*")))
 
 p_prix
 ```
@@ -548,8 +548,8 @@ p_prix
 #| fig-cap: "Exemple de réaction du monopole à un changement de demande: changement de quantité."
 
 p_quantité <- p_changement +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm)), labels=c(TeX("$p_1^*=p_2^*$"))) +
-  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm, 4/9), labels=c(TeX("$q_1^*$"), TeX("$q_2^*$")))
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm)), labels=c(expression(p[1]^"*"==p[2]^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm, 4/9), labels=c(expression(q[1]^"*"), expression(q[2]^"*")))
 
 p_quantité
 ```
@@ -575,17 +575,17 @@ p_surplus <- ggplot() +
   geom_function(fun=Rm, colour = "lightblue") +
   geom_function(fun=Cm, colour="red") +
   labs(x="quantité", y = "prix") +
-  annotate("text", x=0.8, y=P(0.8), label=TeX("Demande ($P$)"), color="blue") +
-  annotate("text", x=0.4, y=0.2, label=TeX("Recette marginale ($R_{m})$"), color="lightblue") +
-  annotate("text", x=1, y=Cm(1), label=TeX("Coût marginal ($C_m$)"), color="red") +
+  geom_text(aes(x=0.8, y=P(0.8), label="Demande~(P)"), color="blue", parse=TRUE) +
+  geom_text(aes(x=0.4, y=0.2, label="Recette~marginale~(R[m])"), color="lightblue", parse=TRUE) +
+  geom_text(aes(x=1, y=Cm(1), label="Coût~marginal~(C[m])"), color="red", parse=TRUE) +
   geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
   geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
   geom_ribbon(data=perte, aes(x=x, ymin=ymin, ymax=ymax), fill="black", alpha=0.5) +
   annotate("text", x=qm/2, y=3/4, label="Surplus du\nconsommateur", color="blue") +
   annotate("text", x=qm/2, y=1/3, label="Surplus du\nproducteur", color="red") +
   annotate("text", x=qm/2+qcpp/2, y=1/2, label="Perte sèche", color="black") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm)), labels=c(TeX("$p_m^*$"))) +
-  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm, qcpp), labels=c(TeX("$q_m^*$"), TeX("$q_{CPP}^*$")))
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm)), labels=c(expression(p[m]^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm, qcpp), labels=c(expression(q[m]^"*"), expression(q[CPP]^"*")))
   
 p_surplus
 ```
@@ -666,7 +666,7 @@ p_naturel <- ggplot() +
   annotate("text", x=2, y=2, label="demande 2", color="darkgreen") +
   geom_function(fun=D2, color="darkgreen")
   
-p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 10), breaks=c(q2, q1), labels=c(TeX("$q_2$"), TeX("$q_1$"))) +
+p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 10), breaks=c(q2, q1), labels=c(expression(q[2]), expression(q[1]))) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(), labels=c()) +
   annotate("text", x=9, y=2, label="demande 1", color="green") +
   geom_function(fun=D1, color="green")
@@ -770,8 +770,8 @@ p_taxeunitaire <- ggplot() +
   geom_function(fun=function(x) Rm(x), colour = "green") +
   labs(x="quantité", y = "prix") +
   geom_function(fun=function(x) Cm(x), colour="red") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(4/15), P(qm)), labels=c(TeX("$p^*_t$"), TeX("$p^*$"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(4/15, qm), labels=c(TeX("$q^*_t$"), TeX("$q^*$"))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(4/15), P(qm)), labels=c(expression(p[t]^"*"), expression(p^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(4/15, qm), labels=c(expression(q[t]^"*"), expression(q^"*"))) +
   annotate("text", x=0.8, y=0.2, label="demande", color="blue") +
   annotate("text", x=0.5, y=0.2, label="recette marginale", color="green") +
   annotate("text", x=1, y=Cm(1)-0.1, label="coût marginal", color="red")
@@ -894,8 +894,8 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkre
   geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkgreen") +
   geom_segment(aes(x=1-pmax, y=0.2, xend=0.5, yend=0), color="darkgreen") +
   geom_segment(aes(x=1-pmax, y=pmax, xend=0.4, yend=0.2), color="darkgreen") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax, P(qm)), labels=c(TeX("$p^{max}>p^*_{CPP}$"), TeX("$p^*_m$"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, 1-pmax), labels=c(TeX("$q^*_m$"), TeX("$q^*_{max}$"))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax, P(qm)), labels=c(expression(p^{max}>p[CPP]^"*"), expression(p[m]^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, 1-pmax), labels=c(expression(q[m]^"*"), expression(q[max]^"*"))) +
   annotate("text", x=0.9, y=0.1, label="demande avec un prix maximal", color="darkred") +
   annotate("text", x=0.5, y=0.3, label="recette marginale avec un prix maximal", color="darkgreen")
 ```
@@ -908,8 +908,8 @@ pmax <- 0.2
 p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkred") +
   geom_segment(aes(x=1-pmax, y=pmax, xend=1, yend=0), color="darkred") +
   geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkgreen") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm), pmax), labels=c(TeX("$p^*_m$"), TeX("$p^{max}<p^*_{CPP}$"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, pmax), labels=c(TeX("$q^*_m$"), TeX("$q^*_{max}$"))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm), pmax), labels=c(expression(p[m]^"*"), expression(p^{max}<p[CPP]^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, pmax), labels=c(expression(q[m]^"*"), expression(q[max]^"*"))) +
   annotate("text", x=0.9, y=0.1, label="demande avec un prix maximal", color="darkred") +
   annotate("text", x=0.5, y=0.3, label="recette marginale avec un prix max", color="darkgreen")
 ```
@@ -930,8 +930,8 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkre
   geom_segment(aes(x=1-pmax, y=pmax, xend=1, yend=0), color="darkred") +
   geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkgreen") +
   geom_segment(aes(x=1-pmax, y=pmax, xend=pmax, yend=0), color="darkgreen") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax, P(qm)), labels=c(TeX("$p_{max}=p^*_{CPP}$"), TeX("$p^*_m$"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, qcpp), labels=c(TeX("$q^*_m$"), TeX("$q^*_{max}=q^*_{CPP}$"))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax, P(qm)), labels=c(expression(p[max]==p[CPP]^"*"), expression(p[m]^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, qcpp), labels=c(expression(q[m]^"*"), expression(q[max]^"*"==q[CPP]^"*"))) +
   annotate("text", x=0.9, y=0.1, label="demande avec un prix maximal", color="darkred") +
   annotate("text", x=0.5, y=0.2, label="recette marginale avec un prix max", color="darkgreen")
 ```
@@ -969,8 +969,8 @@ qr <- uniroot(fn, c(0.5, 2.5))$root
 qm <- uniroot(fn2, c(0.5, 1.25))$root
 qcpp_nat <- uniroot(fn_nat, c(0.5, 2.5))$root
 
-p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(qcpp_nat, qm, qr), labels=c(TeX("$q_{CPP}^*$"), TeX("$q_{m}^*$"), TeX("$q_R$"))) +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 5), breaks=c(D2(qm), D2(qr), D2(qcpp_nat)), labels=c(TeX("$p_m$"), TeX("$p_R$"), TeX("$p_{CPP}$"))) +
+p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(qcpp_nat, qm, qr), labels=c(expression(q[CPP]^"*"), expression(q[m]^"*"), expression(q[R]))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 5), breaks=c(D2(qm), D2(qr), D2(qcpp_nat)), labels=c(expression(p[m]), expression(p[R]), expression(p[CPP]))) +
   annotate("text", x=0.5, y=3, label="recette marginale", color="blue") +
   geom_function(fun=Rm2, color="blue")
 
@@ -1038,17 +1038,17 @@ Sp <- data.frame(x=c(0, qm), ymin=c(Cm(0), Cm(qm)), ymax=c(pm, pm))
 
 p_discriparfaite +   geom_function(fun=function(x) Rm(x), colour = "darkgreen") +
   geom_function(fun=function(x) Cm(x), colour = "red") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(pcpp, pm), labels=c(TeX("$p_{CPP}^*$"), TeX("$p_m^*$"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(qm, qcpp), labels = c(TeX("$q_m^*$"), TeX("$q_{CPP}^*=q_d$"))) +
-  annotate("text", x=0.45, y=Rm(0.45), colour="darkgreen", label=TeX("$R_m$ en monopole")) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(pcpp, pm), labels=c(expression(p[CPP]^"*"), expression(p[m]^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(qm, qcpp), labels = c(expression(q[m]^"*"), expression(q[CPP]^"*"==q[d]))) +
+  geom_text(aes(x=0.45, y=Rm(0.45), label="R[m]~'en monopole'"), colour="darkgreen", parse=TRUE) +
   annotate("text", x=0.7, y=Cm(0.7), colour="red", label="coût marginal") +
   geom_segment(x=qm, y=0, xend=qm, yend=pm, linetype="dashed") +
   geom_segment(x=0, y=pm, xend=qm, yend=pm, linetype="dashed") +
   geom_ribbon(data=Sp_discri, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
-  annotate("text", x=0.2, y=0.8, label=TeX("$S_p$ en discrimination parfaite"), color="red") +
+  geom_text(aes(x=0.2, y=0.8, label="S[p]~'en discrimination parfaite'"), color="red", parse=TRUE) +
   geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
-  annotate("text", x=0.2, y=0.2, label=TeX("$S_p$ en monopole"), color="blue") +
-  annotate("text", x=0.8, y=P(0.8), label=TeX("$R_m$ en discrimination parfaite"), color="blue")
+  geom_text(aes(x=0.2, y=0.2, label="S[p]~'en monopole'"), color="blue", parse=TRUE) +
+  geom_text(aes(x=0.8, y=P(0.8), label="R[m]~'en discrimination parfaite'"), color="blue", parse=TRUE)
 ```
 
 La situation de discrimination parfaite est un optimum de Pareto.
@@ -1115,9 +1115,9 @@ p_2d_0 <- ggplot() +
   # annotate("text", x=4.5, y=2, label="C", color="darkgreen",size=10) +
   # annotate("text", x=1.1, y=5.5, label="B", color="red",size=10) +
   annotate("text", x=10.2, y=Cm(10), label="c", color="black",size=5) +
-  annotate("text", x=4.5, y=p1(4), label=TeX("$P_1(q)$"), parse=TRUE, color="black",size=5, angle=-45) +
-  annotate("text", x=9.5, y=p2(9), label=TeX("$P_2(q)$"), parse=TRUE, color="black",size=5, angle=-45) +
-  labs(x=TeX("$q$"), y=TeX("$p$")) 
+  geom_text(aes(x=4.5, y=p1(4), label="P[1](q)"), parse=TRUE, color="black",size=5, angle=-45) +
+  geom_text(aes(x=9.5, y=p2(9), label="P[2](q)"), parse=TRUE, color="black",size=5, angle=-45) +
+  labs(x="q", y="p") 
 
   
 
@@ -1134,7 +1134,7 @@ Si le monopoleur était à même d'identifier qui est consommateur de type 1, et
 #| 
 p_2d_1 <- ggplot() +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 10.2),breaks=c(0),labels=c()) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 10.5), breaks = c(q1o, q2o), labels = c(TeX("$q_1^o$"), TeX("$q_2^o"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 10.5), breaks = c(q1o, q2o), labels = c(expression(q[1]^o), expression(q[2]^o))) +
   geom_function(fun = p1, xlim = c(0,5)) +
   geom_function(fun = p2, xlim = c(0,10)) +
   geom_function(fun = Cm, xlim = c(0,10)) +
@@ -1149,7 +1149,7 @@ p_2d_1 <- ggplot() +
   annotate("text", x=4.5, y=2, label="C", color="darkgreen",size=8) +
   annotate("text", x=1.1, y=5.5, label="B", color="red",size=8) +
   annotate("text", x=10.2, y=Cm(8), label="c", color="black",size=5) +
-  labs(x=TeX("$q$"), y=TeX("$p$")) 
+  labs(x="q", y="p") 
 
   
 
@@ -1168,7 +1168,7 @@ Pour éviter cela, le monopoleur peut modifier le menu destiné aux consommateur
 #| fig-cap: "Menu optimal pour la discrimination du 2e degré."
 p_2d_2 <- ggplot() +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 10.2),breaks=c(0),labels=c()) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 10.5), breaks = c(q1m,q1o, q2o), labels = c(TeX("$q_1^m$"),TeX("$q_1^o$"), TeX("$q_2^m=q_2^o"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 10.5), breaks = c(q1m,q1o, q2o), labels = c(expression(q[1]^m), expression(q[1]^o), expression(q[2]^m==q[2]^o))) +
   geom_function(fun = p1, xlim = c(0,5)) +
   geom_function(fun = p2, xlim = c(0,10)) +
   
@@ -1184,10 +1184,10 @@ p_2d_2 <- ggplot() +
   annotate("text", x=1, y=2, label="A", color="blue",size=8) +
   annotate("text", x=4.5, y=2, label="C", color="darkgreen",size=8) +
   annotate("text", x=1.1, y=5.5, label="B", color="red",size=8) +
-  annotate("text", x=2.5, y=4.5, label=TeX("$B\\to C$"),parse=TRUE, color="red",size=6) +
-    annotate("text", x=2.5, y=1.5, label=TeX("$A\\to C$"),parse=TRUE, color="blue",size=6) +
+  geom_text(aes(x=2.5, y=4.5, label="B %->% C"), parse=TRUE, color="red",size=6) +
+  geom_text(aes(x=2.5, y=1.5, label="A %->% C"), parse=TRUE, color="blue",size=6) +
   annotate("text", x=10.2, y=Cm(8), label="c", color="black",size=5) +
-  labs(x=TeX("$q$"), y=TeX("$p$")) 
+  labs(x="q", y="p") 
 
 
 p_2d_2

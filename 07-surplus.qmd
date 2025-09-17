@@ -12,9 +12,9 @@ Cm <- function(q){10+2*q}
 p <- ggplot() +
   geom_function(fun=P, color="blue") +
   labs(x="quantité", y = "prix") +
-  annotate("text", x= 60, y=P(60), label=TeX("Demande inverse ($P$)"), color="blue") +
+  geom_text(aes(x=60, y=P(60), label="'Demande inverse ('*P*')'"), color="blue", parse=TRUE) +
   geom_function(fun=Cm, colour="red") +
-  annotate("text", x=45, y=Cm(45), label=TeX("Coût marginal ($C_m$)"), color="red")
+  geom_text(aes(x=45, y=Cm(45), label="'Coût marginal ('*C[m]*')'"), color="red", parse=TRUE)
 
 ```
 
@@ -104,8 +104,8 @@ q  <- 20
 Sc <- data.frame(x=c(0, q), ymin=c(P(q), P(q)), ymax=c(P(0), P(q)))
 Sp <- data.frame(x=c(0, q), ymin=c(Cm(0), Cm(q)), ymax=c(P(q), P(q)))
 
-p + scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, q), labels=c(0, TeX("$q$"))) +
-  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(Cm(0), Cm(q), P(q), P(0)), labels=c(TeX("$p_1$"), TeX("$p_2$"), TeX("$p$"), TeX("$p_3$"))) +
+p + scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, q), labels=c(0, expression(q))) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(Cm(0), Cm(q), P(q), P(0)), labels=c(expression(p[1]), expression(p[2]), expression(p), expression(p[3]))) +
   geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
   geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
   annotate("text", x=20, y=90, label="Surplus des consommateurs", color="blue") +
@@ -134,8 +134,8 @@ $$
 Sc <- data.frame(x=c(0, q), ymin=c(Cm(q), Cm(q)), ymax=c(P(0), P(q)))
 Sp <- data.frame(x=c(0, q), ymin=c(Cm(0), Cm(q)), ymax=c(Cm(q), Cm(q)))
 
-p +  scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, q), labels=c(0, TeX("$q$"))) +
-  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(Cm(0), Cm(q), P(q), P(0)), labels=c(TeX("$p_1$"), TeX("$p$"), TeX("$p_2$"), TeX("$p_3$"))) +
+p +  scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, q), labels=c(0, expression(q))) +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(Cm(0), Cm(q), P(q), P(0)), labels=c(expression(p[1]), expression(p), expression(p[2]), expression(p[3]))) +
   geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
   geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
   annotate("text", x=20, y=60, label="Surplus des consommateurs", color="blue") +
