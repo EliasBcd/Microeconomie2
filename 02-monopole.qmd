@@ -1075,7 +1075,7 @@ La discrimination du deuxième degré a lieu lorsque le monopole fait face à pl
 
 :::
 
-Prenons le cas où le monopoleur fait face à deux types de consommateurs ayant une valorisation différente du bien. Les consommateurs de type 2 le valorisant plus que les consommateurs de type 1, leur fonction de demande inverse $P_2(q)$ est située au dessus de celle des consommateurs de type 1, $P_1(q)$.  On suppose pour l'exemple que ces fonctions de demande inverse sont linéaires, et que le coût marginal est constant : $Cm(q)=c$. La situation est représentée sur la @fig-discri2-demande.
+Prenons le cas où le monopoleur fait face à deux types de consommateurs ayant une valorisation différente du bien. Les consommateurs de type 2 le valorisant plus que les consommateurs de type 1, leurs fonctions de demande inverse $P_2(q)$ sont situées au-dessus de celles des consommateurs de type 1, $P_1(q)$. Il est important de comprendre que ces fonctions de demande inverse sont des fonctions de demande inverse **individuelles**, et non pas des fonctions agrégées au niveau de chaque groupe de consommateurs. Elles représentent la suite des valorisations marginales de **chaque** consommateur d'un type donné.  On suppose pour simplifier que ces fonctions de demande inverse sont linéaires, et que le coût marginal est constant : $Cm(q)=c$. La situation est représentée sur la @fig-discri2-demande.
 ```{r discri2}
 
 p1 <- function(q) {
@@ -1125,9 +1125,7 @@ p_2d_0
 ```
 
 
-
-Si le monopoleur était à même d'identifier qui est consommateur de type 1, et qui est consommateur de type 2, il pourrait pratiquer une discrimination parfaite. Il proposerait alors aux consommateurs de type 1 la quantité $q_1^o$ telle que $P_1(q_1^o)=c$, et aux consommateurs de type 2 la quantité $q_2^o$ telle que $P_2(q_2^o)=c$. La situation est représentée sur la @fig-discri2-parfaite. Il ferait payer aux consommateurs de type 1 la totalité du surplus que leur procure la consommation de $q_1^o$ unités du bien, c'est à dire la surface $A$. Il ferait de même avec les consommateurs de type 2, leur faisant payer la totalité du surplus que leur procure la consommation de $q_2^o$ unités du bien, c'est à dire la surface $A+B+C$. 
-
+Si le monopoleur était à même d'identifier qui est consommateur de type 1 et qui est consommateur de type 2, il pourrait pratiquer une discrimination parfaite. Il proposerait alors à chaque consommateur de type 1 la quantité $q_1^o$ telle que $P_1(q_1^o)=c$, et à chaque consommateur de type 2 la quantité $q_2^o$ telle que $P_2(q_2^o)=c$. La situation est représentée sur la @fig-discri2d-parfaite. Il ferait payer à chaque consommateur de type 1 la totalité du surplus que lui procure la consommation de $q_1^o$ unités du bien, c'est à dire la surface $A$. Il ferait de même avec les consommateurs de type 2, leur faisant payer à chacun la totalité du surplus que leur procure la consommation de $q_2^o$ unités du bien, c'est à dire la surface $A+B+C$. Comme dans le cas standard de la discrimination parfaite, le monopole produit une quantité qui maximise le surplus total, et est donc Pareto-optimale, et s'approprie la totalité du surplus des consommateurs.  
 ``` {r}
 #| label: fig-discri2-parfaite
 #| fig-cap: "Si le monopole pouvait identifier les consommateurs."
@@ -1156,12 +1154,12 @@ p_2d_1 <- ggplot() +
 p_2d_1
 ```
 
-Cependant, le monopoleur ne sait pas quel consommateur est de type 1, et quel consommateur est de type 2. Si il propose les menus $(q_1^o,A)$ et $(q_2^o,A+B+C)$, les consommateurs de type 1 vont bien choisir le menu $(q_1^o,A)$ et récupérer un surplus nul, mais les consommateurs de type 2 vont également choisir le menu $(q_1^o,A)$, car il leur procure un surplus $B>0$, alors que le menu $(q_2^o,A+B+C)$ leur procure un surplus nul.
+Cependant, le monopoleur discriminant au deuxième degré ne sait pas quel consommateur est de type 1, et quel consommateur est de type 2. S'il propose les menus $(q_1^o,A)$ et $(q_2^o,A+B+C)$, les consommateurs de type 1 choisiront bien le menu $(q_1^o,A)$ et obtenir un surplus nul, mais les consommateurs de type 2 chosiront également le menu $(q_1^o,A)$, car il leur procure un surplus $B>0$, alors que le menu $(q_2^o,A+B+C)$ leur procure un surplus nul.
 
-Pour éviter cela, le monopoleur peut modifier le menu destiné aux consommateurs de type 2, en proposant menu $(q_2^o, A+C)$. Les consommateur de type 2 vont alors choisir ce menu, qui leur rapporte un surplus $B$ et les consommateurs de type 1 vont continuer à  choisir le menu $(q_1^o,A)$.
+Pour éviter cela, le monopoleur peut modifier le menu destiné aux consommateurs de type 2, en proposant menu $(q_2^o, A+C)$. Les consommateurs de type 2 choisiront alors ce menu, qui leur rapporte un surplus $B$ et les consommateurs de type 1 continueront à  choisir le menu $(q_1^o,A)$.
 
 
-À partir de cette situation où les consommateurs s'auto-sélectionnent vers le menu qui leur est destiné, le monopoleur peut encore améliorer son profit en modifiant le menu destiné aux consommateurs de type 1. En réduisant la quantité proposée aux consommateurs de type 1, il diminue les surface $A$ et $B$, mais il augmente la surface $C$ d'autant (voir la @fig-discri2-opti). Le montant payé par les consommateurs de type 1 diminuera de la surface $A\to C$. Dans le même temps, la surface $B$ diminuera de $B\to C$. Par rapport à la situation d'avant, le surplus des consommateurs de type 2 diminuerait de $(B\to C)$ s'ils choisissaient le nouveau menu destiné aux consommateurs de type 1. Le monopoleur peut donc augmenter le prix du menu destiné aux consommateurs de type 2 de cette même quantité $(B\to C)$, tout en maintenant l'incitation à choisir le menu qui est destiné à chaque type. 
+À partir de cette situation où les consommateurs s'auto-sélectionnent vers le menu qui leur est destiné, le monopoleur peut encore améliorer son profit en modifiant le menu destiné aux consommateurs de type 1. En réduisant la quantité proposée aux consommateurs de type 1, il diminue les surface $A$ et $B$, mais il augmente la surface $C$ d'autant (voir la @fig-discri2-opti). Le montant payé par les consommateurs de type 1 diminuera de la surface $A\to C$. Dans le même temps, la surface $B$ diminuera de $B\to C$. Par rapport à la situation antérieure, le surplus des consommateurs de type 2 diminuerait de $(B\to C)$ s'ils choisissaient le nouveau menu destiné aux consommateurs de type 1. Le monopoleur peut donc augmenter le prix du menu destiné aux consommateurs de type 2 de cette même quantité $(B\to C)$, tout en maintenant l'incitation à choisir le menu qui est destiné à chaque type. 
 
 ```{r}
 #| label: fig-discri2-opti
@@ -1194,7 +1192,7 @@ p_2d_2
 ```
 
 
-Jusqu'à quel point le monopoleur peut-il réduire la quantité destinée aux consommateurs de type 1 ? Il le fera tant que la perte de profit engendrée par la réduction de la quantité destinée aux consommateurs de type 1, $P_1(q)$-c, sera compensée par l'augmentation du prix du menu destiné aux consommateurs de type 2, $P_2(q)-P_1(q)$.
+Jusqu'à quel point le monopoleur peut-il réduire la quantité destinée aux consommateurs de type 1 ? Il le fera tant que la perte marginale de profit engendrée par la réduction de la quantité destinée aux consommateurs de type 1, $P_1(q)$-c, sera compensée par l'augmentation marginale du prix du menu destiné aux consommateurs de type 2, $P_2(q)-P_1(q)$.
 
 La quantité optimale destinée aux consommateurs de type 1, $q_1^m$, est donc telle que : 
 
@@ -1202,13 +1200,13 @@ $$
 P_1(q_1^m)-c = P_2(q_1^m)-P_1(q_1^m)
 $$
 
-La quantité optimale destinée aux consommateurs de type 2, $q_2^m$ reste celle du monopole discriminant parfaitement, $q_2^m=q_2^o$, telle que : 
+La quantité optimale destinée à chaque consommateur de type 2, $q_2^m$ reste celle du monopole discriminant parfaitement, $q_2^m=q_2^o$, telle que : 
 
 $$
 P_2(q_2^m)=c
 $$
 
-Et les menus proposés vont être: 
+Et les menus proposés seront: 
 
 Menu 1 : $(q_1^m, A)$
 
@@ -1216,10 +1214,10 @@ Menu 2 : $(q_2^m, A+C)$
 
 où $A$ et $C$ sont les surfaces représentées sur le graphique ci-dessus, après réduction de la quantité destinée aux consommateurs de type 1.
 
-À l'équilibre, les consommateurs de type 1 choisissent le menu 1, et les consommateurs de type 2 choisissent le menu 2. Le monopoleur extrait la totalité du surplus des consommateurs de type 1, mais ne peut extraire qu'une partie du surplus des consommateurs de type 2, qui conservent un surplus égal à la surface $B$.
+À l'équilibre, chaque consommateur de type 1 choisit le menu 1, et chaque consommateur de type 2 choisit le menu 2. Le monopoleur extrait la totalité du surplus des consommateurs de type 1, mais ne peut extraire qu'une partie du surplus des consommateurs de type 2, qui conservent un surplus égal à la surface $B$.
 
 
-En pratique, le monopoleur encourage souvent cette auto-sélection non pas en jouant sur la quantité du bien, comme dans l'exemple précédent, mais plutôt en modulant la qualité du produit. Les quantités du modèle peuvent ainsi être interprétées comme des niveaux de qualité, sans que cela ne change le raisonnement. En général, le monopoleur a intérêt à réduire la qualité offerte aux consommateurs ayant une faible disposition à payer, afin de ne pas cannibaliser les ventes auprès de ceux ayant une forte disposition à payer.
+En pratique, le monopoleur encourage souvent cette auto-sélection non pas en jouant sur la quantité du bien, comme dans l'exemple précédent, mais plutôt en modulant la qualité du produit. Les quantités du modèle peuvent ainsi être interprétées comme des niveaux de qualité, sans que cela ne modifie le raisonnement. En général, le monopoleur a intérêt à réduire la qualité offerte aux consommateurs ayant une faible disposition à payer, afin de ne pas cannibaliser les ventes auprès de ceux ayant une forte disposition à payer.
 Sans les consommateurs à forte disposition à payer, ceux à faible disposition à payer recevraient une qualité plus élevée, mais leur surplus resterait nul. Inversement, sans les consommateurs à faible disposition à payer, ceux à forte disposition à payer auraient également un surplus nul. La présence des premiers bénéficie donc aussi aux seconds. En effet, pour éviter que les consommateurs à forte disposition à payer ne choisissent le produit destiné aux consommateurs à faible disposition à payer, le monopoleur est contraint de réduire le prix qui leur est appliqué.
 
 Ce type de tarification est fréquemment utilisé dans les services de télécommunications. Par exemple, les abonnements mobiles avec un volume de données limité sont destinés aux consommateurs ayant une faible disposition à payer, tandis que les abonnements avec un volume de données illimité ciblent ceux ayant une forte disposition à payer. De même, les compagnies aériennes proposent différentes classes de sièges (économique, affaires, première) pour répondre aux divers segments de clientèle. Dans le secteur des logiciels, les entreprises offrent souvent des versions basiques gratuites ou à faible coût pour attirer les utilisateurs occasionnels, tout en proposant des versions premium payantes avec des fonctionnalités avancées pour les utilisateurs professionnels ou intensifs. Ces stratégies permettent aux entreprises de maximiser leurs profits en capturant une plus grande part du surplus des consommateurs à travers une discrimination tarifaire efficace.
