@@ -44,6 +44,7 @@ bibliography:
 format:
   html:
     theme: cosmo
+    embed-resources: true
   pdf: default
   docx: 
     fontsize: 14pt
