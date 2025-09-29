@@ -50,7 +50,7 @@ En CPP, la recette totale du producteur individuel était $R(q) = q\cdot P(q^*)$
 En monopole, le prix dépend de la production du monopole (ou l'inverse, peu importe).
 La recette totale du monopole s'écrit donc :
 $$
-R(q) = q\cdot P(q) = Q(p)\cdot p
+R(q) = q\cdot P(q) \text{ ou } R(p)= Q(p)\cdot p
 $$
 
 ### Recette marginale et courbe de demande
@@ -59,15 +59,15 @@ $$
 ## Élasticité prix de la demande
 
 L'élasticité prix de la demande $\varepsilon_{q/p}$ s'écrit :
-$$\varepsilon_{q/p}(p)=\frac{p}{D(p)}D'(p) <0$$
-Où $D$ est la fonction de demande.
+$$\varepsilon_{q/p}(p)=\frac{p}{Q(p)}Q'(p) <0$$
+Où $Q$ est la fonction de demande.
 Elle est toujours négative, car la demande diminue quand le prix augmente.
 On peut la réécrire à l'aide de la fonction de demande inverse $P$.
-Comme $D$ et $P$ sont les fonctions réciproques l'une de l'autre, on a $D(P(q)) = q$.
+Comme $Q$ et $P$ sont les fonctions réciproques l'une de l'autre, on a $Q(P(q)) = q$.
 En dérivant à gauche et à droite et en utilisant la formule de la dérivation composée, on obtient :
-$$P'(q)D'(P(q)) = 1$$
+$$P'(q)Q'(P(q)) = 1$$
 On obtient donc :
-$$P'(q)=\frac{1}{D'(p)}$$
+$$P'(q)=\frac{1}{Q'(p)}$$
 Et l'élasticité prix de la demande peut aussi s'écrire :
 $$\varepsilon_{q/p}(q)=\frac{P(q)}{q}\frac{1}{P'(q)}$$
 :::

@@ -193,7 +193,7 @@ p_cppcout + scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(0)) +
   scale_x_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(0))
 ```
 
-### L'offre du producteur
+### L'offre d'un producteur
 
 ::: {#def-rtotale}
 
@@ -264,7 +264,7 @@ Si cette égalité n'est pas vérifiée, le producteur peut en effet augmenter s
 
 ```{r profitmax}
 #| label: fig-profitmax
-#| fig-cap: Maximisation du profit du producteur.
+#| fig-cap: Maximisation du profit d'un producteur.
 
 
 Rm2 <- function(q)(1-2*q)
@@ -274,7 +274,7 @@ Cm2 <- function(x){2*x}
 
 p <- ggplot() +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 0.6), breaks = c(0.25), labels = c(expression(q^"*"))) +
-  scale_y_continuous(expand=c(0, 0), limits=c(0, 1.2), breaks=c(), labels=c()) +
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 1.2), breaks=c(0)) +
   labs(x="quantité", y = "prix") +
   stat_function(fun=function(x) Rm2(x), colour = "darkgreen") +
   stat_function(fun=function(x) Cm2(x), colour = "red") +
@@ -285,17 +285,17 @@ p <- ggplot() +
 p
 ```
 
-En concurrence pure et parfaite, le producteur est *price-taker*.
-Le prix sur le marché est unique et donné , il vaut $p$ et ne dépend pas des quantités produites par *un* producteur.
-Le producteur vend son bien au prix défini par le marché.
+En concurrence pure et parfaite, un producteur est *price-taker*.
+Le prix sur le marché est unique et donné, il vaut $p$ et ne dépend pas des quantités produites par *un* producteur.
+Un producteur vend son bien au prix défini par le marché.
 La recette totale devient donc $R(q)=p\times q$, avec $p$ fixé.
 La recette marginale est donc $R_m(q)=R'(q)=p$.
 En réécrivant l'@eq-cppopti, on obtient en concurrence pure et parfaite :
 $$p=C_m(q)$$
 
 ::: {#prp-offreCPP}
-## Offre du producteur en CPP
-En concurrence pure et parfaite, le producteur maximise son profit en égalisant son coût marginal au prix du marché :
+## Offre d'un producteur en CPP
+En concurrence pure et parfaite, chaque producteur maximise son profit en égalisant son coût marginal au prix du marché :
 $$C_m(q^*)=p$$
 À condition que son coût marginal soit croissant en $q^*$ ($C_m'(q^*)>0$).
 :::
@@ -380,9 +380,9 @@ Il faudra donc inverser, au sens mathématique, la fonction de demande pour obte
 
 :::{#def-dagregee}
 
-## Demande agrégée (D)
+## Demande agrégée (P)
 
-La *demande agrégée (D)* est la somme des demandes individuelles pour chaque niveau de prix.
+La *demande agrégée (P)* est la somme des demandes individuelles pour chaque niveau de prix.
 :::
 
 
@@ -399,7 +399,7 @@ La courbe d'offre correspond à la série des coûts marginaux de production, c'
 :::{#def-equilibreCPP}
 
 ## Équilibre de marché
-L'équilibre de marché se fait à l'intersection entre l'offre agrégée (S) et la demande agrégée (D) (quand S=D).
+L'équilibre de marché se fait à l'intersection entre l'offre agrégée (S) et la demande agrégée (P) (quand S=P).
 :::
 
 À l'équilibre de marché, on obtient une quantité d'équilibre (notée $q^*$) et un prix d'équilibre (noté $p^*$).
@@ -415,17 +415,17 @@ x=seq(0, 1, length=11)
 df <- data.frame(x)
 
 S <- function(q){q}
-D <- function(q){1-q}
+P <- function(q){1-q}
 
 
 p <- ggplot(df, aes(x=x)) +
-    stat_function(fun=function(x) D(x), colour = "blue") +
+    stat_function(fun=function(x) P(x), colour = "blue") +
     stat_function(fun=function(x) S(x), colour = "red") +
     scale_y_continuous(expand = c(0, 0), breaks = c(0.5), labels = c("p*"), limits = c(0, 1.2)) +
     scale_x_continuous(expand = c(0, 0), breaks = c(0.5), labels = c("q*"), limits = c(0, 1.2)) +
     labs(x="quantité", y = "prix") +
     annotate("text", x = 1.1, y = 1, label ="S", colour = "red") +
-    annotate("text", x = 0.1, y = 1, label ="D", colour = "blue") +
+    annotate("text", x = 0.1, y = 1, label ="P", colour = "blue") +
     geom_segment(x = 0.5, y = 0, xend = 0.5, yend = 0.5, linetype="dashed") +
     geom_segment(x = 0, y = 0.5, xend = 0.5, yend = 0.5, linetype = "dashed")
 
@@ -455,6 +455,7 @@ Il n'y a pas de gain à l'échange pour cette unité, mais pour toutes les autre
 :::{#def-surplus-prod}
 
 ## Surplus des producteurs
+
 Le surplus des producteurs est la somme des différences entre le prix auquel les producteurs vendent le bien et la courbe de coût marginal, qui représente le coût d'une unité supplémentaire produite.
 Sur le graphique quantité prix $(q, p)$, c'est l'aire comprise entre le prix de vente et la courbe de coût marginal.
 Formellement :
@@ -503,12 +504,7 @@ Il perçoit ainsi une demande infiniment élastique au prix,  au niveau du prix 
 x=seq(0, 1, length=11)
 df <- data.frame(x)
 
-S <- function(q){q}
-D <- function(q){1-q}
-
-
 p <- ggplot(df, aes(x=x)) +
-    stat_function(fun=function(x) S(x), colour = "red") +
     geom_hline(yintercept = 0.5, colour = "blue") +
     scale_y_continuous(expand = c(0, 0), breaks = c(0.5), labels = c("p*"), limits = c(0, 1.2)) +
     scale_x_continuous(expand = c(0, 0), breaks = c(0.5), labels = c("q*"), limits = c(0, 1.2)) +
