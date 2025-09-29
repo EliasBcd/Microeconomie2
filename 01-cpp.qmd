@@ -189,8 +189,8 @@ p_cppcout <- ggplot() +
   geom_text(aes(x=4.5, y=2, label="C[M]"), color="red", parse=TRUE) +
   geom_text(aes(x=4.5, y=2.5, label="C[m]"), color="blue", parse=TRUE)
   
-p_cppcout + scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(), labels=c()) +
-  scale_x_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(), labels=c())
+p_cppcout + scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(0)) +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(0))
 ```
 
 ### L'offre du producteur

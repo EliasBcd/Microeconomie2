@@ -45,6 +45,8 @@ format:
   html:
     theme: cosmo
   pdf: default
+  docx: 
+    fontsize: 14pt
 format-links: true
 
 execute: 

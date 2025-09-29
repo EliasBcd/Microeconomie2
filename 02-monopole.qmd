@@ -1,6 +1,6 @@
 ---
 ltex:
-  language: "fr"
+  language: fr
 ---
 
 # Le monopole
@@ -177,8 +177,8 @@ p2 + geom_segment(x=0, y=0, xend = 0.5, yend = 0.5, linetype="dashed") +
   annotate("text", x=0.85, y=0.25, label=lab2, size = 5, colour="darkred") +
   annotate("text", x=0.65, y=0.5, label=lab3, size = 5, colour="darkblue") +
   annotate("point", x=0.5, y=0.5, size = 4, colour="darkblue") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c()) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c())
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(0)) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(0))
 ```
 
 ### Représentation graphique
@@ -208,7 +208,7 @@ R <- function(q)(q-q^2)
 
 p3 <- p +
   stat_function(fun=function(x) Rm(x), colour = "darkgreen") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c()) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0)) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.5, 1), labels = c(expression(x[0]/2), expression(x[0]))) +
   stat_function(fun=function(x) R(x), colour = "red") +
   annotate("text", x=0.1, y = 0.2, colour="red", label="Recette") +
@@ -667,7 +667,7 @@ p_naturel <- ggplot() +
   geom_function(fun=D2, color="darkgreen")
   
 p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 10), breaks=c(q2, q1), labels=c(expression(q[2]), expression(q[1]))) +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(), labels=c()) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(0)) +
   annotate("text", x=9, y=2, label="demande 1", color="green") +
   geom_function(fun=D1, color="green")
 
@@ -1125,8 +1125,8 @@ p_2d_0
 ```
 
 
-Si le monopoleur était à même d'identifier qui est consommateur de type 1 et qui est consommateur de type 2, il pourrait pratiquer une discrimination parfaite. Il proposerait alors à chaque consommateur de type 1 la quantité $q_1^o$ telle que $P_1(q_1^o)=c$, et à chaque consommateur de type 2 la quantité $q_2^o$ telle que $P_2(q_2^o)=c$. La situation est représentée sur la @fig-discri2d-parfaite. Il ferait payer à chaque consommateur de type 1 la totalité du surplus que lui procure la consommation de $q_1^o$ unités du bien, c'est à dire la surface $A$. Il ferait de même avec les consommateurs de type 2, leur faisant payer à chacun la totalité du surplus que leur procure la consommation de $q_2^o$ unités du bien, c'est à dire la surface $A+B+C$. Comme dans le cas standard de la discrimination parfaite, le monopole produit une quantité qui maximise le surplus total, et est donc Pareto-optimale, et s'approprie la totalité du surplus des consommateurs.  
-``` {r}
+Si le monopoleur était à même d'identifier qui est consommateur de type 1 et qui est consommateur de type 2, il pourrait pratiquer une discrimination parfaite. Il proposerait alors à chaque consommateur de type 1 la quantité $q_1^o$ telle que $P_1(q_1^o)=c$, et à chaque consommateur de type 2 la quantité $q_2^o$ telle que $P_2(q_2^o)=c$. La situation est représentée sur la @fig-discri2-parfaite. Il ferait payer à chaque consommateur de type 1 la totalité du surplus que lui procure la consommation de $q_1^o$ unités du bien, c'est à dire la surface $A$. Il ferait de même avec les consommateurs de type 2, leur faisant payer à chacun la totalité du surplus que leur procure la consommation de $q_2^o$ unités du bien, c'est à dire la surface $A+B+C$. Comme dans le cas standard de la discrimination parfaite, le monopole produit une quantité qui maximise le surplus total, et est donc Pareto-optimale, et s'approprie la totalité du surplus des consommateurs.  
+``` {r disc2-parfaite}
 #| label: fig-discri2-parfaite
 #| fig-cap: "Si le monopole pouvait identifier les consommateurs."
 #| 
@@ -1161,7 +1161,7 @@ Pour éviter cela, le monopoleur peut modifier le menu destiné aux consommateur
 
 À partir de cette situation où les consommateurs s'auto-sélectionnent vers le menu qui leur est destiné, le monopoleur peut encore améliorer son profit en modifiant le menu destiné aux consommateurs de type 1. En réduisant la quantité proposée aux consommateurs de type 1, il diminue les surface $A$ et $B$, mais il augmente la surface $C$ d'autant (voir la @fig-discri2-opti). Le montant payé par les consommateurs de type 1 diminuera de la surface $A\to C$. Dans le même temps, la surface $B$ diminuera de $B\to C$. Par rapport à la situation antérieure, le surplus des consommateurs de type 2 diminuerait de $(B\to C)$ s'ils choisissaient le nouveau menu destiné aux consommateurs de type 1. Le monopoleur peut donc augmenter le prix du menu destiné aux consommateurs de type 2 de cette même quantité $(B\to C)$, tout en maintenant l'incitation à choisir le menu qui est destiné à chaque type. 
 
-```{r}
+```{r disc2-opti}
 #| label: fig-discri2-opti
 #| fig-cap: "Menu optimal pour la discrimination du 2e degré."
 p_2d_2 <- ggplot() +
