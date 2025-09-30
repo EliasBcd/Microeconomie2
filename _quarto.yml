@@ -46,8 +46,7 @@ format:
     theme: cosmo
     embed-resources: true
   pdf: default
-  docx: 
-    fontsize: 14pt
+  # docx: default
 format-links: true
 
 execute: 
