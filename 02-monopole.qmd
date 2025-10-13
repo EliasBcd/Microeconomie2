@@ -684,7 +684,7 @@ $$
 $$
 C_M'(q) =\frac{C'(q)q-C(q)}{q^2} = \frac{C_m(q)-C_M(q)}{q}
 $$
-Or $C_M'(q)<0$, comme le coût marginal est décroissant.
+Or $C_M'(q)<0$, comme le coût moyen est décroissant.
 On en déduit donc que :
 $$
 C_m(q)-C_M(q)< 0 \Leftrightarrow C_m(q)<C_M(q)
