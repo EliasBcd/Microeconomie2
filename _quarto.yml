@@ -45,7 +45,7 @@ bibliography:
 format:
   html:
     theme: cosmo
-    embed-resources: true
+    # embed-resources: true
   pdf: default
   # docx: default
 format-links: true
