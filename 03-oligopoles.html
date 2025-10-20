@@ -21,41 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -78,7 +43,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3584025bd2775ba93d20b6dabf7256d8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -292,57 +257,6 @@ window.Quarto = {
 </header>
 
 
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>theme_perso <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">base_size =</span> <span class="dv">14</span>) {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>(<span class="at">base_size =</span> base_size) <span class="sc">%+replace%</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      <span class="co"># L'ensemble de la figure</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="dv">1</span>), <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">0</span>), <span class="at">hjust =</span> <span class="dv">0</span>),</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Zone où se situe le graphique</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Les axes</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.85</span>), <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.70</span>), <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"lines"</span>), <span class="at">type =</span> <span class="st">"closed"</span>)),</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      <span class="co"># La légende</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.85</span>), <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.70</span>), <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.key =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.key.size =</span> <span class="fu">unit</span>(<span class="fl">1.5</span>, <span class="st">"lines"</span>),</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Les étiquettes dans le cas d'un facetting</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#17252D"</span>, <span class="at">color =</span> <span class="st">"#17252D"</span>),</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.85</span>), <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">0</span>))</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_perso</span>())</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>p_isoprofit <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"quantité 1"</span>, <span class="at">y =</span> <span class="st">"quantité 2"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="cf">function</span>(q){<span class="dv">1</span><span class="sc">-</span>q}</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Cm <span class="ot">&lt;-</span> <span class="cf">function</span>(q){q}</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Rm <span class="ot">&lt;-</span> <span class="cf">function</span>(q){<span class="dv">1-2</span><span class="sc">*</span>q}</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> <span class="cf">function</span>(q){<span class="dv">1</span><span class="sc">-</span>q}</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length=</span><span class="dv">21</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>x)) <span class="sc">+</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_function</span>(<span class="at">fun=</span>D, <span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"quantité"</span>, <span class="at">y =</span> <span class="st">"prix"</span>) <span class="sc">+</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.8</span>, <span class="at">y =</span> <span class="fu">D</span>(<span class="fl">0.8</span>), <span class="at">label =</span><span class="st">"courbe de demande"</span>, <span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span>Cm, <span class="at">colour=</span><span class="st">'red'</span>) <span class="sc">+</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">0.8</span>, <span class="at">y=</span><span class="fu">Cm</span>(<span class="fl">0.8</span>), <span class="at">label=</span><span class="st">"Courbe d'offre"</span>, <span class="at">colour=</span><span class="st">'red'</span>) <span class="sc">+</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span>Rm, <span class="at">colour=</span><span class="st">'darkblue'</span>) <span class="sc">+</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">0.2</span>, <span class="at">y=</span><span class="fu">Rm</span>(<span class="fl">0.2</span>), <span class="at">label=</span><span class="st">'Recette marginale'</span>, <span class="at">colour=</span><span class="st">'darkblue'</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 <p>Nous avons étudié jusqu’à présent deux cas extrêmes :</p>
 <ul>
 <li>La concurrence pure et parfaite : il y a une infinité d’entreprises infinitésimales sur un marché donné ;</li>
@@ -403,46 +317,6 @@ Les entreprises peuvent se faire concurrence de différentes manières :</p>
 <p>Si l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> va produire <span class="math inline">\(q_j^a&gt;0\)</span>, alors elle est en monopole sur le <strong>reste</strong> de la demande. Cette dernière correspond à la demande totale décalée de <span class="math inline">\(q_j^a&gt;0\)</span> vers la gauche. Le croisement entre recette marginale et coût marginal se fait donc à un niveau plus faible qu’auparavant.</p>
 <p>Plus l’entreprise <span class="math inline">\(i\)</span> pense que l’entreprise <span class="math inline">\(j\)</span> va produire une grande quantité, plus elle aura intérêt à réduire son offre. <span class="math inline">\(q_i\)</span> est décroissante en <span class="math inline">\(q_j^a\)</span></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>q1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">8</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">P</span>(q1)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>D2 <span class="ot">&lt;-</span> <span class="cf">function</span>(q){<span class="fu">D</span>(q)<span class="sc">-</span>q1}</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Rm2 <span class="ot">&lt;-</span> <span class="cf">function</span>(q){<span class="dv">7</span><span class="sc">/</span><span class="dv">8-2</span><span class="sc">*</span>q}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>q2 <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(<span class="cf">function</span>(q) {<span class="fu">Rm2</span>(q)<span class="sc">-</span><span class="fu">Cm</span>(q)}, <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.5</span>))<span class="sc">$</span>root</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>p_demande <span class="ot">&lt;-</span> p</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>p_demande <span class="sc">+</span> </span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span>p1, <span class="at">xend=</span>q1, <span class="at">yend=</span>p1, <span class="at">colour=</span><span class="st">'black'</span>, <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">'cm'</span>), <span class="at">ends=</span><span class="st">'both'</span>)) <span class="sc">+</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x=</span>q1<span class="sc">/</span><span class="dv">2</span>, <span class="at">y=</span>p1<span class="fl">+0.05</span>, <span class="at">label=</span><span class="st">"q[1]^a"</span>), <span class="at">parse=</span><span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(), <span class="at">labels =</span> <span class="fu">c</span>(), <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>)) <span class="sc">+</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(q1, q2),  <span class="at">labels =</span> <span class="fu">c</span>(<span class="fu">expression</span>(q[<span class="dv">1</span>]<span class="sc">^</span>a), <span class="fu">expression</span>(q[<span class="dv">2</span>])), <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>)) <span class="sc">+</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span>D2, <span class="at">colour=</span><span class="st">'darkgreen'</span>) <span class="sc">+</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">'text'</span>, <span class="at">x=</span><span class="fl">0.6</span>, <span class="at">y=</span><span class="fu">D2</span>(<span class="fl">0.6</span>), <span class="at">label=</span><span class="st">'Demande perçue par 2'</span>, <span class="at">colour=</span><span class="st">'darkgreen'</span>) <span class="sc">+</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span>Rm2, <span class="at">colour=</span><span class="st">'green'</span>) <span class="sc">+</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">'text'</span>, <span class="at">x=</span><span class="fl">0.4</span>, <span class="at">y=</span><span class="fu">Rm2</span>(<span class="fl">0.4</span>), <span class="at">label=</span><span class="st">'Recette marginale de 2'</span>, <span class="at">colour=</span><span class="st">'green'</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in geom_text(aes(x = q1/2, y = p1 + 0.05, label = "q[1]^a"), parse = TRUE): All aesthetics have length 1, but the data has 21 rows.
-ℹ Please consider using `annotate()` or provide this layer with data containing
-  a single row.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 17 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 59 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 28 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 64 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <div id="fig-oligodemande" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -472,38 +346,6 @@ q_2^a&amp;=&amp;f_2(q_1^a)
 \end{array}
 \]</span></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(q){<span class="dv">1-3</span><span class="sc">*</span>q}</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="cf">function</span>(q){(<span class="dv">1</span><span class="sc">-</span>q)<span class="sc">/</span><span class="dv">3</span>}</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>qc <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(<span class="cf">function</span>(q){<span class="fu">f1</span>(q)<span class="sc">-</span><span class="fu">f2</span>(q)}, <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))<span class="sc">$</span>root</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>p_equilibre <span class="ot">&lt;-</span> p_isoprofit <span class="sc">+</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span>f1, <span class="at">colour=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span>f2, <span class="at">colour=</span><span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>), <span class="at">breaks=</span><span class="fu">c</span>(qc), <span class="at">labels=</span><span class="fu">c</span>(<span class="fu">expression</span>(q[<span class="dv">2</span>]<span class="sc">^</span><span class="st">"*"</span>))) <span class="sc">+</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>), <span class="at">breaks=</span><span class="fu">c</span>(qc), <span class="at">labels=</span><span class="fu">c</span>(<span class="fu">expression</span>(q[<span class="dv">1</span>]<span class="sc">^</span><span class="st">"*"</span>))) <span class="sc">+</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x=</span>qc, <span class="at">y=</span>qc) <span class="sc">+</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>qc<span class="fl">+0.2</span>, <span class="at">y=</span>qc<span class="fl">+0.05</span>, <span class="at">label=</span><span class="st">'Equilibre de Cournot'</span>) <span class="sc">+</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="at">y=</span><span class="fu">f1</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>), <span class="at">label=</span><span class="st">'Fonction de réaction 1'</span>, <span class="at">colour=</span><span class="st">'red'</span>) <span class="sc">+</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">'text'</span>, <span class="at">x=</span><span class="dv">1</span>, <span class="at">y=</span><span class="fu">f2</span>(<span class="dv">7</span><span class="sc">/</span><span class="dv">8</span>), <span class="at">label=</span><span class="st">'Fonction de réaction 2'</span>, <span class="at">colour=</span><span class="st">'blue'</span>) <span class="sc">+</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>, <span class="at">xend=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">yend=</span><span class="fu">f1</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>))) <span class="sc">+</span></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">y=</span><span class="fu">f1</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>), <span class="at">xend=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">yend=</span><span class="fu">f2</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>))) <span class="sc">+</span>  </span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">y=</span><span class="fu">f2</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>), <span class="at">xend=</span><span class="dv">25</span><span class="sc">/</span><span class="dv">108</span>, <span class="at">yend=</span><span class="fu">f1</span>(<span class="dv">25</span><span class="sc">/</span><span class="dv">108</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>))) <span class="sc">+</span></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">25</span><span class="sc">/</span><span class="dv">108</span>, <span class="at">y=</span><span class="fu">f1</span>(<span class="dv">25</span><span class="sc">/</span><span class="dv">108</span>), <span class="at">xend=</span><span class="dv">25</span><span class="sc">/</span><span class="dv">108</span>, <span class="at">yend=</span><span class="fu">f2</span>(<span class="dv">25</span><span class="sc">/</span><span class="dv">108</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>))) <span class="sc">+</span></span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>, <span class="at">y=</span><span class="dv">0</span>, <span class="at">xend=</span><span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>, <span class="at">yend=</span><span class="fu">f2</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>))) <span class="sc">+</span></span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>, <span class="at">y=</span><span class="fu">f2</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>), <span class="at">xend=</span><span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>, <span class="at">yend=</span><span class="fu">f2</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>))) <span class="sc">+</span></span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>, <span class="at">y=</span><span class="fu">f1</span>(<span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>), <span class="at">xend=</span><span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>, <span class="at">yend=</span><span class="fu">f2</span>(<span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>))) <span class="sc">+</span></span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>, <span class="at">y=</span><span class="fu">f2</span>(<span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>), <span class="at">xend=</span><span class="dv">83</span><span class="sc">/</span><span class="dv">324</span>, <span class="at">yend=</span><span class="fu">f2</span>(<span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>)))</span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>p_equilibre</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 73 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 17 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <div id="fig-oligo-reaction-stable" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -519,33 +361,6 @@ Figure&nbsp;3.2: Représentation d’un équilibre de Cournot où les fonctions 
 </div>
 <p>L’équilibre n’est pas nécessairement stable. La stabilité dépend de la pente des fonctions de réactions.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>p_equilibre <span class="ot">&lt;-</span> p_isoprofit <span class="sc">+</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span>f1, <span class="at">colour=</span><span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span>f2, <span class="at">colour=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>), <span class="at">breaks=</span><span class="fu">c</span>(qc), <span class="at">labels=</span><span class="fu">c</span>(<span class="fu">expression</span>(q[<span class="dv">2</span>]<span class="sc">^</span><span class="st">"*"</span>))) <span class="sc">+</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>), <span class="at">breaks=</span><span class="fu">c</span>(qc), <span class="at">labels=</span><span class="fu">c</span>(<span class="fu">expression</span>(q[<span class="dv">1</span>]<span class="sc">^</span><span class="st">"*"</span>))) <span class="sc">+</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x=</span>qc, <span class="at">y=</span>qc) <span class="sc">+</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>qc<span class="fl">+0.2</span>, <span class="at">y=</span>qc<span class="fl">+0.05</span>, <span class="at">label=</span><span class="st">'Equilibre de Cournot instable'</span>) <span class="sc">+</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="at">y=</span><span class="fu">f1</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>), <span class="at">label=</span><span class="st">'Fonction de réaction 2'</span>, <span class="at">colour=</span><span class="st">'blue'</span>) <span class="sc">+</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">'text'</span>, <span class="at">x=</span><span class="dv">1</span>, <span class="at">y=</span><span class="fu">f2</span>(<span class="dv">7</span><span class="sc">/</span><span class="dv">8</span>), <span class="at">label=</span><span class="st">'Fonction de réaction 1'</span>, <span class="at">colour=</span><span class="st">'red'</span>) <span class="sc">+</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>, <span class="at">xend=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">yend=</span><span class="fu">f1</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>), <span class="at">ends=</span><span class="st">"first"</span>)) <span class="sc">+</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">y=</span><span class="fu">f1</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>), <span class="at">xend=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">yend=</span><span class="fu">f2</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>), <span class="at">ends=</span><span class="st">"first"</span>)) <span class="sc">+</span>  </span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">y=</span><span class="fu">f2</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>), <span class="at">xend=</span><span class="dv">25</span><span class="sc">/</span><span class="dv">108</span>, <span class="at">yend=</span><span class="fu">f1</span>(<span class="dv">25</span><span class="sc">/</span><span class="dv">108</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>), <span class="at">ends=</span><span class="st">"first"</span>)) <span class="sc">+</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">25</span><span class="sc">/</span><span class="dv">108</span>, <span class="at">y=</span><span class="fu">f1</span>(<span class="dv">25</span><span class="sc">/</span><span class="dv">108</span>), <span class="at">xend=</span><span class="dv">25</span><span class="sc">/</span><span class="dv">108</span>, <span class="at">yend=</span><span class="fu">f2</span>(<span class="dv">25</span><span class="sc">/</span><span class="dv">108</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>), <span class="at">ends=</span><span class="st">"first"</span>)) <span class="sc">+</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>, <span class="at">y=</span><span class="dv">0</span>, <span class="at">xend=</span><span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>, <span class="at">yend=</span><span class="fu">f2</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>), <span class="at">ends=</span><span class="st">"first"</span>)) <span class="sc">+</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>, <span class="at">y=</span><span class="fu">f2</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>), <span class="at">xend=</span><span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>, <span class="at">yend=</span><span class="fu">f2</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>), <span class="at">ends=</span><span class="st">"first"</span>)) <span class="sc">+</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>, <span class="at">y=</span><span class="fu">f1</span>(<span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>), <span class="at">xend=</span><span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>, <span class="at">yend=</span><span class="fu">f2</span>(<span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>), <span class="at">ends=</span><span class="st">"first"</span>)) <span class="sc">+</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span><span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>, <span class="at">y=</span><span class="fu">f2</span>(<span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>), <span class="at">xend=</span><span class="dv">83</span><span class="sc">/</span><span class="dv">324</span>, <span class="at">yend=</span><span class="fu">f2</span>(<span class="dv">11</span><span class="sc">/</span><span class="dv">36</span>), <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>), <span class="at">ends=</span><span class="st">"first"</span>))</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>p_equilibre</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 73 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 17 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <div id="fig-oligo-reaction-instable" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -643,53 +458,6 @@ p^* = P(q^*_1+q^*_2) = a\frac{b+2c}{3b+2c}
 \pi_1 = q_1P(q_1+q_2)-C_1(q_1)
 \]</span> L’équation ci-dessus définit implicitement une fonction <span class="math inline">\(q_1=I_\pi(q_1, \pi_1)\)</span> qui permet de représenter la courbe d’isoprofit dans un graphique <span class="math inline">\((q_1,q_2)\)</span>, tout comme la fonction de réaction définit une fonction courbe <span class="math inline">\(q_2(q_1)\)</span> pour l’entreprise 1. La courbe de la fonction de réaction de 1 coupe la courbe d’isoprofit de 1 en son maximum. <!-- Implicitiment, le maximum sur la courbe d'isoprofit est obtenu en dérivant suivant $q_1$, tout comme on obtient la fonction de réaction. --></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>I1 <span class="ot">&lt;-</span> <span class="cf">function</span>(q, pi){<span class="dv">1</span><span class="sc">-</span>pi<span class="sc">/</span>q<span class="dv">-2</span><span class="sc">*</span>q}</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(q)(<span class="dv">1-4</span><span class="sc">*</span>q)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p_isoprofit</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_function</span>(<span class="at">fun=</span><span class="cf">function</span>(x) <span class="fu">I1</span>(x, <span class="fl">0.1</span>), <span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span><span class="cf">function</span>(x) <span class="fu">I1</span>(x, <span class="fl">0.1</span>), <span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span><span class="cf">function</span>(x) <span class="fu">I1</span>(x, <span class="fl">0.11</span>), <span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span><span class="cf">function</span>(x){<span class="fu">I1</span>(x, <span class="fl">0.05</span>)}, <span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span><span class="cf">function</span>(x){<span class="fu">I1</span>(x, <span class="fl">0.12</span>)}, <span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span><span class="cf">function</span>(x){<span class="fu">I1</span>(x, <span class="fl">0.07</span>)}, <span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span>  </span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span><span class="cf">function</span>(x){<span class="fu">I1</span>(x, <span class="fl">0.02</span>)}, <span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span>f1, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">0.2</span>, <span class="at">y=</span><span class="dv">1</span>, <span class="at">label=</span><span class="st">"Fonction de réaction de 1"</span>, <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">0.3</span>, <span class="at">y=</span><span class="fl">0.8</span>, <span class="at">label=</span><span class="st">"Courbes d'isoprofit"</span>, <span class="at">color=</span><span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>), <span class="at">breaks=</span><span class="fu">c</span>(), <span class="at">labels=</span><span class="fu">c</span>()) <span class="sc">+</span></span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>), <span class="at">breaks=</span><span class="fu">c</span>(qc), <span class="at">labels=</span><span class="fu">c</span>(<span class="fu">expression</span>(q[<span class="st">"1m"</span>]<span class="sc">^</span><span class="st">"*"</span>)))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 70 rows containing missing values or values outside the scale range
-(`geom_function()`).
-Removed 70 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 72 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 64 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 75 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 66 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 61 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 80 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <div id="fig-isoprofit1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -705,46 +473,6 @@ Figure&nbsp;3.4: Courbes d’isoprofit et fonction de réaction de l’entrepris
 </div>
 <p>Sur la <a href="#fig-isoprofit1" class="quarto-xref">figure&nbsp;<span>3.4</span></a>, le profit est croissant en descendant vers le bas sur les courbes d’isoprofit, autrement dit, les courbes d’isoprofit les plus basses représentent les profits les plus élevés. Le maximum du profit est atteint lorsque l’entreprise 1 est en monopole. La quantité produite est alors <span class="math inline">\(q_m^*\)</span> est le profit <span class="math inline">\(\pi_m^*\)</span>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>I2 <span class="ot">&lt;-</span> <span class="cf">function</span>(q, pi){<span class="dv">1</span><span class="sc">-</span>pi<span class="sc">/</span>q<span class="dv">-2</span><span class="sc">*</span>q}</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="cf">function</span>(q)(<span class="dv">1</span><span class="sc">/</span><span class="dv">4-1</span><span class="sc">/</span><span class="dv">4</span><span class="sc">*</span>q)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>qc2 <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(<span class="cf">function</span>(q){<span class="fu">f1</span>(q)<span class="sc">-</span><span class="fu">f2</span>(q)}, <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))<span class="sc">$</span>root</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="at">length=</span><span class="dv">1000</span>)</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">I2</span>(x, <span class="dv">2</span><span class="sc">/</span><span class="dv">25</span>), <span class="at">y=</span>x)</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>p_cournot <span class="ot">&lt;-</span> p_isoprofit <span class="sc">+</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span>f2, <span class="at">colour=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span>f1, <span class="at">colour=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span><span class="cf">function</span>(x) <span class="fu">I1</span>(x, <span class="dv">2</span><span class="sc">/</span><span class="dv">25</span>), <span class="at">colour=</span><span class="st">"darkred"</span>) <span class="sc">+</span></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">0.2</span>, <span class="at">y=</span><span class="dv">1</span>, <span class="at">label=</span><span class="st">"Fonction de réaction de 1"</span>, <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">0.4</span>, <span class="at">y=</span><span class="fl">0.1</span>, <span class="at">label=</span><span class="st">'Isoprofit de 1'</span>, <span class="at">color=</span><span class="st">'darkred'</span>) <span class="sc">+</span></span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">0.8</span>, <span class="at">y=</span><span class="fl">0.2</span>, <span class="at">label=</span><span class="st">"Fonction de réaction de 2"</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>), <span class="at">breaks=</span><span class="fu">c</span>(qc2, qc), <span class="at">labels=</span><span class="fu">c</span>(<span class="fu">expression</span>(q[<span class="st">"2c"</span>]<span class="sc">^</span><span class="st">"*"</span>), <span class="fu">expression</span>(q[<span class="st">"2m"</span>]<span class="sc">^</span><span class="st">"*"</span>))) <span class="sc">+</span></span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>), <span class="at">breaks=</span><span class="fu">c</span>(qc2, qc), <span class="at">labels=</span><span class="fu">c</span>(<span class="fu">expression</span>(q[<span class="st">"1c"</span>]<span class="sc">^</span><span class="st">"*"</span>), <span class="fu">expression</span>(q[<span class="st">"1m"</span>]<span class="sc">^</span><span class="st">"*"</span>))) <span class="sc">+</span></span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>df2, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y), <span class="at">size=</span><span class="fl">0.1</span>, <span class="at">color=</span><span class="st">'green'</span>) <span class="sc">+</span></span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">'text'</span>, <span class="at">x=</span><span class="fl">0.1</span>, <span class="at">y=</span><span class="fl">0.4</span>, <span class="at">label=</span><span class="st">'Isoprofit de 2'</span>, <span class="at">colour=</span><span class="st">"green"</span>)</span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>p_cournot <span class="sc">+</span> <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span>qc2<span class="fl">-0.05</span>, <span class="at">xend=</span>qc2<span class="fl">+0.05</span>, <span class="at">y=</span>qc2, <span class="at">yend=</span>qc2, <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.2</span>, <span class="st">"cm"</span>), <span class="at">ends=</span><span class="st">'both'</span>)) <span class="sc">+</span></span>
-<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df, <span class="at">x=</span>qc2, <span class="at">xend=</span>qc2, <span class="at">y=</span>qc2<span class="fl">-0.05</span>, <span class="at">yend=</span>qc2<span class="fl">+0.05</span>, <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.2</span>, <span class="st">"cm"</span>), <span class="at">ends=</span><span class="st">'both'</span>))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 17 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 80 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 67 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 399 rows containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <div id="fig-isoprofit-Cournot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -845,45 +573,6 @@ HHI&amp;=&amp;\sum_{i=1}^NS_i^2\\
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="résolution-graphique"><span class="header-section-number">3.2.2</span> Résolution graphique</h3>
 <p>L’entreprise pilote choisit sa quantité <span class="math inline">\(q_1\)</span> de façon à être sur la courbe d’isoprofit la plus basse possible compatible avec la fonction de réaction de l’entreprise satellite. Elle se placera donc sur la courbe d’isoprofit tangente à la fonction de réaction du satellite.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p_isoprofit</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>IL <span class="ot">&lt;-</span> <span class="cf">function</span>(q, pi){<span class="dv">1</span><span class="sc">-</span>pi<span class="sc">/</span>q<span class="sc">-</span>q}</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>fF <span class="ot">&lt;-</span> <span class="cf">function</span>(q)(<span class="dv">1</span><span class="sc">/</span><span class="dv">2-1</span><span class="sc">/</span><span class="dv">2</span><span class="sc">*</span>q)</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>fL <span class="ot">&lt;-</span> <span class="cf">function</span>(q)(<span class="dv">1-2</span><span class="sc">*</span>q)</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>p_stackelberg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"quantité pilote"</span>, <span class="at">y =</span> <span class="st">"quantité satellite"</span>) <span class="sc">+</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span>fF, <span class="at">colour=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun=</span>fL, <span class="at">colour=</span><span class="st">"red"</span>, <span class="at">linetype=</span><span class="st">"dashed"</span> ) <span class="sc">+</span></span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun=</span><span class="cf">function</span>(x) <span class="fu">IL</span>(x, <span class="dv">1</span><span class="sc">/</span><span class="dv">9</span>), <span class="at">colour=</span><span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun=</span><span class="cf">function</span>(x) <span class="fu">IL</span>(x, <span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>), <span class="at">colour=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">0.4</span>, <span class="at">y=</span><span class="dv">1</span>, <span class="at">label=</span><span class="st">"Fonction de réaction du pilote (en Cournot)"</span>, <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">0.9</span>, <span class="at">y=</span><span class="fl">0.2</span>, <span class="at">label=</span><span class="st">"Fonction de réaction du satellite"</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>), <span class="at">breaks=</span><span class="fu">c</span>(.<span class="dv">25</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="fl">0.5</span>), <span class="at">labels=</span><span class="fu">c</span>(<span class="fu">expression</span>(q[<span class="st">"2C"</span>]<span class="sc">^</span><span class="st">"*"</span>), <span class="fu">expression</span>(q[<span class="st">"1F"</span>]<span class="sc">^</span><span class="st">"*"</span>), <span class="fu">expression</span>(q[<span class="st">"2m"</span>]<span class="sc">^</span><span class="st">"*"</span>))) <span class="sc">+</span></span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>), <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="fl">0.5</span>), <span class="at">labels=</span><span class="fu">c</span>(<span class="fu">expression</span>(q[<span class="st">"1C"</span>]<span class="sc">^</span><span class="st">"*"</span>), <span class="fu">expression</span>(q[L]<span class="sc">^</span><span class="st">"*"</span>))) <span class="sc">+</span></span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="at">y=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="at">colour=</span><span class="st">"blue"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">0.4</span>, <span class="at">y=</span><span class="fl">0.4</span>, <span class="at">colour=</span><span class="st">"blue"</span>, <span class="at">label=</span><span class="st">"Cournot"</span>) <span class="sc">+</span></span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="at">y=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="at">colour=</span><span class="st">"red"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">0.5</span>, <span class="at">y=</span><span class="fl">0.3</span>, <span class="at">colour=</span><span class="st">"red"</span>, <span class="at">label=</span><span class="st">"Stackelberg"</span>) </span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>p_stackelberg</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 17 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 59 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 28 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 29 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <div id="fig-Stack-equi" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -982,33 +671,6 @@ Que se passe-t-il si elles peuvent s’entendre ? Par exemple, que se passe-t-il
 <section id="raisonnement-graphique" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="raisonnement-graphique"><span class="header-section-number">3.3.2</span> Raisonnement graphique</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>qmin <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">15</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>qmax <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">5</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>I2inv <span class="ot">&lt;-</span> <span class="cf">function</span>(q, pi){(<span class="dv">1</span><span class="sc">-</span>q<span class="sc">-</span><span class="fu">sqrt</span>((<span class="dv">1</span><span class="sc">-</span>q)<span class="sc">^</span><span class="dv">2-8</span><span class="sc">*</span>pi))<span class="sc">/</span><span class="dv">4</span>}</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(qmin, qmax, <span class="at">length=</span><span class="dv">100</span>)</span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>zone <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x, <span class="at">ymin=</span><span class="fu">I2inv</span>(x, <span class="dv">2</span><span class="sc">/</span><span class="dv">25</span>), ymax <span class="ot">&lt;-</span> <span class="fu">I1</span>(x, <span class="dv">2</span><span class="sc">/</span><span class="dv">25</span>))</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>p_cournot <span class="sc">+</span> <span class="fu">geom_ribbon</span>(<span class="at">data=</span>zone, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">ymin=</span>ymin, <span class="at">ymax=</span>ymax), <span class="at">fill=</span><span class="st">'blue'</span>, <span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">0.5</span>, <span class="at">y=</span>qc, <span class="at">label=</span><span class="st">"zone d'augmentation des profits individuels"</span>, <span class="at">color=</span><span class="st">"blue"</span>) </span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 17 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 80 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 67 rows containing missing values or values outside the scale range
-(`geom_function()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 399 rows containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <div id="fig-cartel" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
