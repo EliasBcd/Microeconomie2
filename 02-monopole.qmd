@@ -701,34 +701,35 @@ Il ne faut pas confondre les rendements d'échelle, qui mettent en relation les 
 
 ## Régulation du monopole
 
-Cette partie va traiter de la manière dont un régulateur, en général l'État, peut inciter ou contraindre un monopole à modifier son comportement.
+Cette partie traite de la manière dont un régulateur, en général l'État, peut inciter ou contraindre un monopole à modifier son comportement.
 
 
 ### Objectif de la régulation
 
-Nous avons jusqu'à présent vu deux types d'acteurs sur un marché : les consommateurs et les producteurs.
+Nous avons jusqu'à présent étudié deux types d'acteurs sur un marché : les consommateurs et les producteurs.
 On introduit maintenant un troisième type d'acteur : le régulateur.
-Ce type d'acteur est différent des deux types précédent. 
-Il peut intervenir sur le marché en imposant différent types de règles (loi), que nous verrons par la suite.
+Ce type d'acteur diffère des deux types précédents. 
+Il intervient sur le marché en imposant différent types de règles (loi), que nous verrons par la suite.
 Dans notre modélisation, le régulateur a un objectif : maximiser le bien-être social, autrement dit, maximiser le surplus total.
 On fera l'hypothèse très simplificatrice qu'il n'y a pas de coût à imposer une règle et que la règle est toujours parfaitement suivie.
 
 Nous verrons trois types de règles.
-Le premier type est l'imposition d'une régulation sur la tarification.
-Un deuxième type de régulation est par la taxation ou la subvention du monopole.
-Un troisième type de régulation est l'imposition d'un prix maximal.
+
+1. L'imposition d'une régulation sur la tarification ;
+2. La taxation ou la subvention du monopole ;
+3. L'imposition d'un prix maximal.
 
 ### Règles de tarification
 
-On dit que le régulateur impose une tarification au coût marginal pour dire que le régulateur impose au producteur de fixer son prix de vente au niveau de son coût marginal de production. 
-Le monopole doit égaliser la demande inverse avec son coût marginal.
-Cette règle est justifiée par la volonté du régulateur public de restaurer un optimum social dans la production, obtenu dans la situation de CPP par la vente de chaque bien à son coût marginal.
+On dit que le régulateur impose une tarification au coût marginal pour dire que le régulateur impose au producteur de fixer son prix de vente égal à son coût marginal de production. 
+En pratique, le monopole égalise la demande inverse avec son coût marginal.
+Cette règle est justifiée par la volonté du régulateur de restaurer un optimum social dans la production, obtenu dans la situation de CPP par la vente de chaque bien au coût marginal de la dernière unité produite.
 
-On dit que le régulateur impose une tarification au coût moyen pour dire que le régulateur impose au producteur de fixer son prix de vente au niveau de son coût moyen de production. 
-Le monopole doit égaliser la demande inverse avec son coût moyen.
+On dit que le régulateur impose une tarification au coût moyen pour dire que le régulateur impose au producteur de fixer son prix de vente égal à son coût moyen de production. 
+Le monopole égalise la demande inverse avec son coût moyen.
 Cette règle est surtout utile dans la situation de monopole naturel, où une tarification au coût marginal entraîne des profits négatifs et donc la fermeture du monopole et la fin du marché.
 
-Particulièrement dans le premier cas, cette règle est difficile à mettre en oeuvre en pratique car elle nécessite une information précise sur les coûts de production.
+Ces règles de tarification sont en général difficile à mettre en oeuvre, car elle nécessie une information précise sur les coûts de production, en particulier dans la tarification au coût marginal.
 
 ### Taxes et subventions
 
@@ -742,12 +743,12 @@ Particulièrement dans le premier cas, cette règle est difficile à mettre en o
 Une taxe unitaire $t$ est une taxe **par unité de bien produite**.
 :::
 
-Si un régulateur impose une taxe de $t$ unités monétaire par unité de bien produite,
-le profit du monopole se réécrit :
+Si un régulateur impose une taxe de $t$ unités monétaire par unité de bien produite, le profit du monopole se réécrit :
 
 $$
 \pi(q) = R(q) - C(q) -tq
 $$
+
 La condition de première ordre de la maximisation du producteur de l'@eq-cpo devient :
 $$
 \begin{array}{crcl}
@@ -756,6 +757,7 @@ $$
 \Leftrightarrow & R_m(q^*)& = &C_m(q^*) + t
 \end{array}
 $$
+
 Le problème est exactement le même que précédemment, en intégrant la taxe dans le coût marginal.
 Pour le monopole, c'est comme si le régulateur ajoutait un coût $t$ à chaque unité produite.
 C'est effectivement ce que le régulateur fait si on considère le coût de production au sens large.
@@ -784,9 +786,9 @@ p_taxeunitaire  + geom_function(fun=function(x) Cm(x)+t, colour="darkred") +
 Cela entraîne une diminution de la quantité produite et une augmentation du prix.
 Le surplus des consommateurs baisse, ainsi que celui du monopole.
 
-Une vue **alternative** à l'augmentation du coût marginal est de considérer que la taxe diminue la recette marginale de $t$ :
+Une vision **alternative** à l'augmentation du coût marginal est de considérer que la taxe diminue la recette marginale de $t$ :
 $$
- R_m(q^*) -t = C_m(q^*)
+R_m(q^*) -t = C_m(q^*)
 $$
 
 ```{r monopoletaxeunitaire2}
@@ -800,7 +802,7 @@ p_taxeunitaire  + geom_function(fun=function(x) P(x)-t, colour="darkblue") +
   annotate("text", x=0.3, y = 0.5, label="Prix perçu par le monopole avec taxe")
 ```
 
-Si le régulateur utilise une taxe négative (= une subvention), alors il peut augmenter la production et de diminuer le prix.
+Si le régulateur utilise une taxe négative (= une subvention), alors il peut augmenter la production et diminuer le prix.
 
 #### Taxe forfaitaire
  
