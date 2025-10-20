@@ -50,10 +50,10 @@ format:
   # docx: default
 format-links: true
 
-# execute: 
-#   warning: false
-#   echo: false
-#   # cache: refresh
+execute: 
+  warning: false
+  echo: false
+  # cache: refresh
 
 
 # delete_merged_file: true
