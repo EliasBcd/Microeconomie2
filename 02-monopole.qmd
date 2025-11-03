@@ -989,9 +989,8 @@ Une solution alternative est un prix égal au coût marginal assorti de subventi
 Un monopole discriminant pratique un prix différent pour chaque (groupe de) consommateurs.
 Pour cela, il doit pouvoir identifier l'appartenance de chaque consommateur à un groupe et les marchés entre les consommateurs doivent être hermétiques.
 En particulier, il ne faut pas qu'un consommateur puisse revendre son unité de bien à un autre consommateur.
-
 Il existe trois types de discriminations par les prix, les discriminations du premier, deuxième et troisième degrés. 
-On ne traitera que les discriminations du premier et troisième degrés dans le cours, un exercice traitera de la discrimination du deuxième degré.
+
 
 ### Discrimination au premier degré (discrimination parfaite)
 
