@@ -456,8 +456,11 @@ On la note $S_i$ :
 $$S_i=\frac{q_i}{q}$$
 :::
 
-On obtient le *markup-pricing* que peut appliquer un producteur en situation d'oligopole à la Cournot.
-$$\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}$$
+On obtient le *taux de marge* que peut appliquer un producteur en situation d'oligopole à la Cournot.
+$$
+\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}
+$$ {#eq-oligo-markup}
+
 La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l'entreprise.
 
 
@@ -484,10 +487,10 @@ $$L_i=\frac{P(q^*) -C_{im}(q^*_i)}{P(q^*)}$$
 
 :::
 
-On peut exprimer cette indice de Lerner ainsi, grâce à la condition du premier ordre trouvée plus haut :
+Grâce à l'@eq-oligo-markup, on peut exprimer cet indice de Lerner ainsi :
 $$
 \begin{array}{rcl}
-L_i &=&\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\frac{1}{\left|\varepsilon_{q/p}(q_i, q_{-i})\right|}\\
+L_i &=&\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\\
 &=&S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
 \end{array}
 $$ {#eq-li}
@@ -500,10 +503,12 @@ $$L = \sum_{i=1}^NS_iL_i$$
 où $S_i=q_i/q$ est la *part de marché* du producteur $i$ et $L_i$ est l'indice de Lerner d'un producteur $i$.
 :::
 
+L'indice de Lerner du marché est ainsi la moyenne pondérée par les parts de marchés des indices de Lerner de chaque producteur.
+
 En utilisant l'expression obtenue pour l'indice de Lerner d'un producteur à l'@eq-li, on peut réécrire l'indice de Lerner du marché uniquement en fonction de l'élasticité de la demande à l'équilibre et des parts de marchés de chaque producteur :
 $$
 L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
-$$
+$$ {#eq-oligo-lerner}
 
 #### Indice de concentration du marché
 
@@ -514,18 +519,13 @@ $$
 L'indice de Hirschman-Herfindahl est la somme des carrés des part de marchés.
 $$HHI = \sum_{i=1}^NS_i^2$$
 C'est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l'élasticité prix de la demande à l'optimum.
-Autrement dit, la moyenne des $L_i$ pondéré par les parts de marché.
 :::
+Grâce à l'@eq-oligo-lerner, on a immédiatement la relation suivante entre HHI et indice de Lerner.
+$$
+L=\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
+$$
 
- $$
- \begin{array}{rcl}
- \sum_{i=1}^{N}\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}S_i &=&\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}S_i \\
- &=&\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2\\
- &=&\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
- \end{array}
- $$
-
-*Interprétation :*  
+*Interprétation du HHI :*  
 Imaginons que toutes les $N$ producteurs sont identiques (ils ont la même fonction de coût).
 Ils produisent alors la même quantité optimale à l'équilibre.
 Leur part de marché est donc $S_i=1/N$.
