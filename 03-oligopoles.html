@@ -512,7 +512,10 @@ Figure&nbsp;3.5: Courbes d’isoprofits et fonctions de réactions des entrepris
 <div id="def-part-marché" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 3.2 (Part de marché)</strong></span> La part de marché détenue par une entreprise <span class="math inline">\(i\)</span> est la part de la quantité totale produite qui l’est par cette entreprise. On la note <span class="math inline">\(S_i\)</span> : <span class="math display">\[S_i=\frac{q_i}{q}\]</span></p>
 </div>
-<p>On obtient le <em>markup-pricing</em> que peut appliquer un producteur en situation d’oligopole à la Cournot. <span class="math display">\[\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}\]</span> La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l’entreprise.</p>
+<p>On obtient le <em>taux de marge</em> que peut appliquer un producteur en situation d’oligopole à la Cournot. <span id="eq-oligo-markup"><span class="math display">\[
+\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}= \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}
+\tag{3.5}\]</span></span></p>
+<p>La possibilité de fixer un prix au-dessus du coût marginal dépend de la part de marché de l’entreprise.</p>
 <div class="proof remark">
 <p><span class="proof-title"><em>Remarque</em>. </span>En monopole, <span class="math inline">\(S_i=1\)</span>, on retrouve alors bien : <span class="math display">\[\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}\]</span></p>
 <p>En concurrence pure et parfaite <span class="math inline">\(S_i\to 0\)</span>, donc <span class="math inline">\(\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0\)</span>, ce qui implique bien que <span class="math inline">\(C_{mi}(q_i)\to P(q)\)</span>. On retrouve ainsi le résultat <span class="math inline">\(P(q^*)=C_m(q^*)\)</span>.</p>
@@ -523,32 +526,29 @@ Figure&nbsp;3.5: Courbes d’isoprofits et fonctions de réactions des entrepris
 <div id="def-Lerner-prod" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 3.3 (Indice de Lerner d’un producteur <span class="math inline">\(i\)</span>)</strong></span> On définit l’indice de Lerner pour un producteur <span class="math inline">\(i\)</span>, noté <span class="math inline">\(L_i\)</span>, comme son taux de marge : <span class="math display">\[L_i=\frac{P(q^*) -C_{im}(q^*_i)}{P(q^*)}\]</span></p>
 </div>
-<p>On peut exprimer cette indice de Lerner ainsi, grâce à la condition du premier ordre trouvée plus haut : <span id="eq-li"><span class="math display">\[
+<p>Grâce à l’<a href="#eq-oligo-markup" class="quarto-xref">équation&nbsp;<span>3.5</span></a>, on peut exprimer cet indice de Lerner ainsi : <span id="eq-li"><span class="math display">\[
 \begin{array}{rcl}
-L_i &amp;=&amp;\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\frac{1}{\left|\varepsilon_{q/p}(q_i, q_{-i})\right|}\\
+L_i &amp;=&amp;\frac{P(q^*)-C_{im}(q_i^*)}{P(q^*)}\\
 &amp;=&amp;S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
 \end{array}
-\tag{3.5}\]</span></span></p>
+\tag{3.6}\]</span></span></p>
 <div id="def-Lerner-marche" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 3.4 (Indice de Lerner du marché)</strong></span> En oligopole à la Cournot avec <span class="math inline">\(N\)</span> producteurs, on définit l’indice de Lerner du marché par : <span class="math display">\[L = \sum_{i=1}^NS_iL_i\]</span> où <span class="math inline">\(S_i=q_i/q\)</span> est la <em>part de marché</em> du producteur <span class="math inline">\(i\)</span> et <span class="math inline">\(L_i\)</span> est l’indice de Lerner d’un producteur <span class="math inline">\(i\)</span>.</p>
 </div>
-<p>En utilisant l’expression obtenue pour l’indice de Lerner d’un producteur à l’<a href="#eq-li" class="quarto-xref">équation&nbsp;<span>3.5</span></a>, on peut réécrire l’indice de Lerner du marché uniquement en fonction de l’élasticité de la demande à l’équilibre et des parts de marchés de chaque producteur : <span class="math display">\[
+<p>L’indice de Lerner du marché est ainsi la moyenne pondérée par les parts de marchés des indices de Lerner de chaque producteur.</p>
+<p>En utilisant l’expression obtenue pour l’indice de Lerner d’un producteur à l’<a href="#eq-li" class="quarto-xref">équation&nbsp;<span>3.6</span></a>, on peut réécrire l’indice de Lerner du marché uniquement en fonction de l’élasticité de la demande à l’équilibre et des parts de marchés de chaque producteur : <span id="eq-oligo-lerner"><span class="math display">\[
 L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
-\]</span></p>
+\tag{3.7}\]</span></span></p>
 </section>
 <section id="indice-de-concentration-du-marché" class="level4" data-number="3.1.5.2">
 <h4 data-number="3.1.5.2" class="anchored" data-anchor-id="indice-de-concentration-du-marché"><span class="header-section-number">3.1.5.2</span> Indice de concentration du marché</h4>
 <div id="def-HHI" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 3.5 (Indice de Hirschman-Herfindahl (HHI))</strong></span> L’indice de Hirschman-Herfindahl est la somme des carrés des part de marchés. <span class="math display">\[HHI = \sum_{i=1}^NS_i^2\]</span> C’est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l’élasticité prix de la demande à l’optimum. Autrement dit, la moyenne des <span class="math inline">\(L_i\)</span> pondéré par les parts de marché.</p>
+<p><span class="theorem-title"><strong>Définition 3.5 (Indice de Hirschman-Herfindahl (HHI))</strong></span> L’indice de Hirschman-Herfindahl est la somme des carrés des part de marchés. <span class="math display">\[HHI = \sum_{i=1}^NS_i^2\]</span> C’est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l’élasticité prix de la demande à l’optimum.</p>
 </div>
-<p><span class="math display">\[
-\begin{array}{rcl}
-\sum_{i=1}^{N}\frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}S_i &amp;=&amp;\sum_{i=1}^{N} \frac{S_i}{\left|\varepsilon_{q/p}(q^*)\right|}S_i \\
-&amp;=&amp;\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2\\
-&amp;=&amp;\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
-\end{array}
+<p>Grâce à l’<a href="#eq-oligo-lerner" class="quarto-xref">équation&nbsp;<span>3.7</span></a>, on a immédiatement la relation suivante entre HHI et indice de Lerner. <span class="math display">\[
+L=\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
 \]</span></p>
-<p><em>Interprétation :</em><br>
+<p><em>Interprétation du HHI :</em><br>
 Imaginons que toutes les <span class="math inline">\(N\)</span> producteurs sont identiques (ils ont la même fonction de coût). Ils produisent alors la même quantité optimale à l’équilibre. Leur part de marché est donc <span class="math inline">\(S_i=1/N\)</span>. Le HHI vaut : <span class="math display">\[
 \begin{array}{rcl}
 HHI&amp;=&amp;\sum_{i=1}^NS_i^2\\
@@ -616,11 +616,11 @@ P(q_L+q_F) = a - b(q_L+q_F)
 \Leftrightarrow &amp; (a-bq_L)-2bq_F^* &amp;=&amp; 0\\
 \Leftrightarrow &amp; q_F^* &amp;=&amp; \frac{a-bq_L}{2b}
 \end{array}
-\tag{3.6}\]</span></span></p>
+\tag{3.8}\]</span></span></p>
 </section>
 <section id="maximisation-de-lentreprise-pilote" class="level4" data-number="3.2.3.4">
 <h4 data-number="3.2.3.4" class="anchored" data-anchor-id="maximisation-de-lentreprise-pilote"><span class="header-section-number">3.2.3.4</span> Maximisation de l’entreprise pilote</h4>
-<p>Comme l’entreprise pilote connaît la fonction de réaction de l’entreprise satellite (donnée par l’<a href="#eq-FRFollower" class="quarto-xref">équation&nbsp;<span>3.6</span></a>), elle peut l’intégrer à sa propre fonction de profit :</p>
+<p>Comme l’entreprise pilote connaît la fonction de réaction de l’entreprise satellite (donnée par l’<a href="#eq-FRFollower" class="quarto-xref">équation&nbsp;<span>3.8</span></a>), elle peut l’intégrer à sa propre fonction de profit :</p>
 <p><span class="math display">\[
 \begin{array}{rcl}
 \pi_L(q_L, q_F^*) &amp;=&amp; \left(a-b(q_L+q_F^*(q_L))\right)q_L\\
