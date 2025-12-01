@@ -1,3 +1,8 @@
+---
+ltex:
+  language: fr
+---
+
 # Oligopoles
 
 {{< include _theme.qmd >}}
@@ -185,7 +190,7 @@ qc <- uniroot(function(q){f1(q)-f2(q)}, c(0, 1))$root
 p_equilibre <- p_isoprofit +
   geom_function(fun=f1, colour="red") +
   geom_function(fun=f2, colour="blue") +
-    scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q[2]^"*"))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q[2]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q[1]^"*"))) +
   annotate("point", x=qc, y=qc) +
   annotate("text", x=qc+0.2, y=qc+0.05, label='Equilibre de Cournot') +
@@ -204,7 +209,8 @@ p_equilibre
 ```
 
 L'équilibre n'est pas nécessairement stable.
-La stabilité dépend de la pente des fonctions de réactions.
+La stabilité dépend des pentes relatives des fonctions de réactions.
+
 
 ```{r oligoreactioninstable}
 #| label: fig-oligo-reaction-instable
@@ -212,8 +218,8 @@ La stabilité dépend de la pente des fonctions de réactions.
 p_equilibre <- p_isoprofit +
   geom_function(fun=f1, colour="blue") +
   geom_function(fun=f2, colour="red") +
-    scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q[2]^"*"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q[1]^"*"))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc, 1), labels=c(expression(q[2]^"*"), expression(q["2m"]^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc, 1), labels=c(expression(q[1]^"*"), expression(q["2m"]^"*"))) +
   annotate("point", x=qc, y=qc) +
   annotate("text", x=qc+0.2, y=qc+0.05, label='Equilibre de Cournot instable') +
   annotate("text", x=1/4, y=f1(1/8), label='Fonction de réaction 2', colour='blue') +
@@ -225,15 +231,20 @@ p_equilibre <- p_isoprofit +
   geom_segment(data=df, x=3/4, y=0, xend=3/4, yend=f2(3/4), arrow=arrow(length=unit(0.3, "cm"), ends="first")) +
   geom_segment(data=df, x=3/4, y=f2(3/4), xend=11/36, yend=f2(3/4), arrow=arrow(length=unit(0.3, "cm"), ends="first")) +
   geom_segment(data=df, x=11/36, y=f1(11/36), xend=11/36, yend=f2(11/36), arrow=arrow(length=unit(0.3, "cm"), ends="first")) +
-  geom_segment(data=df, x=11/36, y=f2(11/36), xend=83/324, yend=f2(11/36), arrow=arrow(length=unit(0.3, "cm"), ends="first"))
-
+  geom_segment(data=df, x=11/36, y=f2(11/36), xend=83/324, yend=f2(11/36), arrow=arrow(length=unit(0.3, "cm"), ends="first")) + 
+  geom_segment(data=df, x=1, y=0, xend=3/4, yend=0, arrow=arrow(length=unit(0.3, "cm"), ends="first")) +
+  geom_segment(data=df, x=0, y=1, xend=0, yend=3/4, arrow=arrow(length=unit(0.3, "cm"), ends="first"))
+  
 p_equilibre
 ```
+
+Dans le cas d'un équilibre instable, comme sur la @fig-oligo-reaction-instable, toute déviation de l'équilibre aboutit au retour à une situation de monopole en faveur de l'un ou l'autre des producteurs.
 
 ### Exemple
 
 #### Données du problème
 
+Cet exemple est le cas général de deux producteurs en concurrence à la Cournot, avec la même fonction de coût quadratique et faisant face à une demande linéaire.
 Prenons les fonctions suivantes :
 
 $$
@@ -368,7 +379,7 @@ p + geom_function(fun=function(x) I1(x, 0.1), colour = "blue") +
   geom_function(fun=f1, colour = "red") +
   annotate("text", x=0.2, y=1, label="Fonction de réaction de 1", color="red") +
   annotate("text", x=0.3, y=0.8, label="Courbes d'isoprofit", color="blue") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(), labels=c()) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(0), labels=c("")) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q["1m"]^"*")))
 
 ```
@@ -394,12 +405,12 @@ p_cournot <- p_isoprofit +
   geom_function(fun=f1, colour="red") +
   geom_function(fun=function(x) I1(x, 2/25), colour="darkred") +
   annotate("text", x=0.2, y=1, label="Fonction de réaction de 1", color="red") +
-  annotate("text", x=0.4, y=0.1, label='Isoprofit de 1', color='darkred') +
+  annotate("text", x=0.4, y=0.1, label="Isoprofit de 1 à l'équilibre", color='darkred') +
   annotate("text", x=0.8, y=0.2, label="Fonction de réaction de 2", color="darkgreen") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc2, qc), labels=c(expression(q["2c"]^"*"), expression(q["2m"]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc2, qc), labels=c(expression(q["1c"]^"*"), expression(q["1m"]^"*"))) +
   geom_point(data=df2, aes(x=x, y=y), size=0.1, color='green') +
-  annotate('text', x=0.1, y=0.4, label='Isoprofit de 2', colour="green")
+  annotate('text', x=0.1, y=0.4, label="Isoprofit de 2 à l'équilibre", colour="green")
 
 
 p_cournot + geom_segment(data=df, x=qc2-0.05, xend=qc2+0.05, y=qc2, yend=qc2, arrow = arrow(length=unit(0.2, "cm"), ends='both')) +
@@ -433,7 +444,7 @@ $$
 \max_{q_i}\pi(q_i, q) = q_iP(q) -C_i(q_i)
 $$
 
-La condition du premier ordre est telle que :
+La condition du premier ordre est :
 
 $$
 \begin{array}{crcl}
@@ -446,7 +457,8 @@ $$
 \Leftrightarrow & \frac{P(q^*) - C_{im}(q_i^*)}{P(q^*)}&= &S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
 \end{array}
 $$
-(La dérivée de la fonction de demande suivant le prix est négative).
+
+Rappel : la dérivée de la fonction de demande suivant le prix est négative.
 
 ::: {#def-part-marché}
 
@@ -579,7 +591,7 @@ p_stackelberg <- ggplot() +
   stat_function(fun=function(x) IL(x, 1/8), colour="red") +
   annotate("text", x=0.4, y=1, label="Fonction de réaction du pilote (en Cournot)", color="red") +
   annotate("text", x=0.9, y=0.2, label="Fonction de réaction du satellite", color="darkgreen") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(.25, 1/3, 0.5), labels=c(expression(q["2C"]^"*"), expression(q["1F"]^"*"), expression(q["2m"]^"*"))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(1/4, 1/3, 1/2), labels=c(expression(q[F]^"*"), expression(q["2C"]^"*"),  expression(q[m]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(1/3, 0.5), labels=c(expression(q["1C"]^"*"), expression(q[L]^"*"))) +
   annotate("point", x=1/3, y=1/3, colour="blue", size=3) +
   annotate("text", x=0.4, y=0.4, colour="blue", label="Cournot") +
@@ -683,7 +695,7 @@ La seule différence entre ces deux entreprises est que l'entreprise pilote pren
 
 ## Cartels et collusions
 
-**cette partie est maintenant hors-programme.**
+**Cette partie est maintenant hors-programme.**
 
 ### Introduction
 
