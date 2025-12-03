@@ -357,7 +357,7 @@ Figure&nbsp;3.2: Représentation d’un équilibre de Cournot où les fonctions 
 </div>
 </div>
 </div>
-<p>L’équilibre n’est pas nécessairement stable. La stabilité dépend de la pente des fonctions de réactions.</p>
+<p>L’équilibre n’est pas nécessairement stable. La stabilité dépend des pentes relatives des fonctions de réactions.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-oligo-reaction-instable" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -372,13 +372,14 @@ Figure&nbsp;3.3: Représentation d’un équilibre de Cournot où les fonctions 
 </div>
 </div>
 </div>
+<p>Dans le cas d’un équilibre instable, comme sur la <a href="#fig-oligo-reaction-instable" class="quarto-xref">figure&nbsp;<span>3.3</span></a>, toute déviation de l’équilibre aboutit au retour à une situation de monopole en faveur de l’un ou l’autre des producteurs.</p>
 </section>
 </section>
 <section id="exemple" class="level3" data-number="3.1.3">
 <h3 data-number="3.1.3" class="anchored" data-anchor-id="exemple"><span class="header-section-number">3.1.3</span> Exemple</h3>
 <section id="données-du-problème" class="level4" data-number="3.1.3.1">
 <h4 data-number="3.1.3.1" class="anchored" data-anchor-id="données-du-problème"><span class="header-section-number">3.1.3.1</span> Données du problème</h4>
-<p>Prenons les fonctions suivantes :</p>
+<p>Cet exemple est le cas général de deux producteurs en concurrence à la Cournot, avec la même fonction de coût quadratique et faisant face à une demande linéaire. Prenons les fonctions suivantes :</p>
 <p><span class="math display">\[
 \begin{array}{l}
 P(q_1+q_2) = a - b(q_1+q_2)\\
@@ -497,7 +498,7 @@ Figure&nbsp;3.5: Courbes d’isoprofits et fonctions de réactions des entrepris
 <p>Le programme de maximisation d’une entreprise <span class="math inline">\(i\)</span> s’écrit : <span class="math display">\[
 \max_{q_i}\pi(q_i, q) = q_iP(q) -C_i(q_i)
 \]</span></p>
-<p>La condition du premier ordre est telle que :</p>
+<p>La condition du premier ordre est :</p>
 <p><span class="math display">\[
 \begin{array}{crcl}
 &amp;\frac{\partial \pi_i}{\partial q_i}(q_i^*, q(q_i^*)) &amp;=&amp; 0\\
@@ -508,7 +509,8 @@ Figure&nbsp;3.5: Courbes d’isoprofits et fonctions de réactions des entrepris
 \Leftrightarrow &amp; \frac{P(q^*) -C_{im}(q_i^*)}{P(q^*)}&amp;= &amp;-\frac{q^*}{P(q^*)}P'(q^*)\frac{q_i^*}{q^*} \\
 \Leftrightarrow &amp; \frac{P(q^*) - C_{im}(q_i^*)}{P(q^*)}&amp;= &amp;S_i\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}
 \end{array}
-\]</span> (La dérivée de la fonction de demande suivant le prix est négative).</p>
+\]</span></p>
+<p>Rappel : la dérivée de la fonction de demande suivant le prix est négative.</p>
 <div id="def-part-marché" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 3.2 (Part de marché)</strong></span> La part de marché détenue par une entreprise <span class="math inline">\(i\)</span> est la part de la quantité totale produite qui l’est par cette entreprise. On la note <span class="math inline">\(S_i\)</span> : <span class="math display">\[S_i=\frac{q_i}{q}\]</span></p>
 </div>
@@ -654,7 +656,7 @@ p^*_S = \frac{a}{4}
 </section>
 <section id="cartels-et-collusions" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="cartels-et-collusions"><span class="header-section-number">3.3</span> Cartels et collusions</h2>
-<p><strong>cette partie est maintenant hors-programme.</strong></p>
+<p><strong>Cette partie est maintenant hors-programme.</strong></p>
 <section id="introduction-2" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="introduction-2"><span class="header-section-number">3.3.1</span> Introduction</h3>
 <p>En duopoles / oligopoles de Cournot ou de Stackelberg, les entreprises ne coopèrent pas entre elles :</p>
