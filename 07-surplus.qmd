@@ -23,12 +23,12 @@ p <- ggplot() +
 
 ## Surplus des consommateurs
 
-Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêt à payer et le prix effectivement payé.
+Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêts à payer et le prix effectivement payé.
 Mathématiquement, c'est l'intégrale suivante :
 $$
 S_c(q)=\int_0^qP(x)-pdx=\int_0^qP(x)dx-pq
 $$
-Où $p$ est le prix payé, $q$ la quantité échangée  et $P$ la demande inverse.
+Où $p$ est le prix payé, $q$ la quantité échangée et $P$ la demande inverse.
 :::
 
 L'intégrale signifie que c'est l'aire comprise entre la demande inverse (la fonction $P$), le prix payé par les consommateurs (le prix $p$), l'axe des ordonnées et la quantité échangée ($q$).
@@ -42,9 +42,9 @@ Mathématiquement, c'est l'intégrale suivante :
 $$
 S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx 
 $$ {#eq-sp}
-Où $p$ est le prix reçu par le producteur, $q$ la quantité vendue et $C_m$ la coût marginal.
+Où $p$ est le prix reçu par le producteur, $q$ la quantité vendue et $C_m$ le coût marginal.
 :::
-L'intégrale signifie que c'est l'aire comprise entre le prix reçu par les producteurs ($p$), le coût marginal ($C_m$),  l'axe des ordonnées et la quantité échangée ($q$).
+L'intégrale signifie que c'est l'aire comprise entre le prix reçu par les producteurs ($p$), le coût marginal ($C_m$), l'axe des ordonnées et la quantité échangée ($q$).
 Dans notre cours, ce sera l'aire d'un triangle ou d'un trapèze.
 
 ::: {.remark}
@@ -54,7 +54,7 @@ Dans notre cours, ce sera l'aire d'un triangle ou d'un trapèze.
 Si on continue l'expression donnée par l'@eq-sp, on obtient :
 $$S_p(q)=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)$$
 Cela prouve la relation donnée informellement dans le cours entre surplus et profit.
-Le surplus est la somme du profit réalisé par les producteurs et des coûts fixes (des coût qui ne dépendent pas de la quantité).
+Le surplus est la somme du profit réalisé par les producteurs et des coûts fixes (des coûts qui ne dépendent pas de la quantité).
 :::
 
 ::: {.remark}
@@ -71,7 +71,7 @@ L'aire d'un trapèze est donnée par la formule suivante :
 $$\text{aire trapèze}=\frac{1}{2}\times(\text{petite base}+\text{grande base})\times\text{hauteur}$$
 :::
 
-On peut illustrer ces formules avec deux cas pratiques (sur la @fig-surplus2 et @fig-surplus3).
+On peut illustrer ces formules avec deux cas pratiques (sur la @fig-surplus2 et la @fig-surplus3).
 
 Les valeurs sur les graphiques sont obtenues de la manière suivante :
 

@@ -34,23 +34,23 @@ p <- ggplot(data=df, aes(x=x)) +
 Nous avons étudié jusqu'à présent deux cas extrêmes :
 
 - La concurrence pure et parfaite :
-il y a une infinité d'entreprises infinitésimales sur un marché  donné ;
+il y a une infinité d'entreprises infinitésimales sur un marché donné ;
 - Le monopole : il y a une seule entreprise sur un marché donné.
 
-Dans les deux cas, le ou les entreprises n'ont pas à se préoccuper des autres entreprises.
+Dans les deux cas, la ou les entreprises n'ont pas à se préoccuper des autres entreprises.
 Dans le cas du monopole, parce qu'il n'y en a pas.
 Dans le cas de la CPP, l'entreprise observe le prix du marché et prend sa décision en fonction de ce prix et uniquement de ce prix. 
 Les actions des autres entreprises ne l'influencent pas.
 
 On considère maintenant la situation où il n'y a plus une seule ou une infinité d'entreprises, mais plusieurs, qui sont en situation d'*interactions stratégiques*.
-Les décisions de chaque acteur dépend des décisions des autres acteurs (ou des anticipations de ces décisions).  
-On parle de *duopole* dans le cas où le marché compte deux entreprises et d'*oligopole* dans le cas où il compte plus que deux entreprises.  
+Les décisions de chaque acteur dépendent des décisions des autres acteurs (ou des anticipations de ces décisions).  
+On parle de *duopole* dans le cas où le marché compte deux entreprises et d'*oligopole* dans le cas où il compte plus de deux entreprises.  
 Les entreprises peuvent se faire concurrence de différentes manières :
 
 - En quantité, concurrence dite à la *Cournot* ;
 - En prix, concurrence à la *Bertrand* ;
 - En prenant une situation de pilote ou de satellite, à la *Stackelberg* ;
-- En format une entente, dans un *cartel* ;
+- En formant une entente, dans un *cartel* ;
 - Dans une concurrence spatiale, à la *Hotelling*.
 
 Nous verrons dans ce cours les concurrences à la Cournot et à la Stackelberg, ainsi que les cartels.
@@ -111,13 +111,13 @@ La fonction de réaction $f_1(q_2^a)$ donne la valeur de $q_1$ qui maximise le p
 De la même manière, l'entreprise 2 cherche à maximiser $\pi_2$ en fonction de la production anticipée $q_1^a$ de l'entreprise 1.
 Son programme est :
 $$
-\max_{q_2} \pi_2(q_1^a, q_2) =  q_1P(q_1^a+q_2)-C_2(q_2)
+\max_{q_2} \pi_2(q_1^a, q_2) =  q_2P(q_1^a+q_2)-C_2(q_2)
 $$
 Elle aura également une fonction de réaction $q_2(q_1^a)=f_2(q_1^a)$.
 
 #### Forme des fonctions de réaction
 
-Si l'entreprise $i$ pense que l'entreprise $j$ ne va rien produire, alors elle se trouve dans une situation de monopole et se comporte comme tel.
+Si l'entreprise $i$ pense que l'entreprise $j$ ne va rien produire, alors elle se trouve dans une situation de monopole et se comporte comme telle.
 Elle produit de manière à égaliser coût marginal et recette marginale ($R_{im}=C_{im}$).
 
 Si l'entreprise $i$ pense que l'entreprise $j$ va produire $q_j^a>0$, alors elle est en monopole sur le **reste** de la demande.
@@ -125,7 +125,7 @@ Cette dernière correspond à la demande totale décalée de $q_j^a>0$ vers la g
 Le croisement entre recette marginale et coût marginal se fait donc à un niveau plus faible qu'auparavant.
 
 Plus l'entreprise $i$ pense que l'entreprise $j$ va produire une grande quantité, plus elle aura intérêt à réduire son offre.
-$q_i$ est décroissante en $q_j^a$
+$q_i$ est décroissante en $q_j^a$.
 
 ```{r oligodemande}
 #| label: fig-oligodemande
@@ -170,7 +170,7 @@ C'est ce qu'on appelle un **équilibre de Nash** : un équilibre où personne n'
 
 Dans le cas du duopole à la Cournot, chaque entreprise doit choisir la quantité qui maximise son profit étant donné le choix de l'autre entreprise.
 Chaque entreprise est donc sur sa fonction de réaction.
-L'équilibre est donc à l'intersection des fonctions de réactions des deux entreprises :
+L'équilibre est donc à l'intersection des fonctions de réaction des deux entreprises :
 $$
 \begin{array}{rcl}
 q_1^a&=&f_1(q_2^a)\\
@@ -209,12 +209,12 @@ p_equilibre
 ```
 
 L'équilibre n'est pas nécessairement stable.
-La stabilité dépend des pentes relatives des fonctions de réactions.
+La stabilité dépend des pentes relatives des fonctions de réaction.
 
 
 ```{r oligoreactioninstable}
 #| label: fig-oligo-reaction-instable
-#| fig-cap: "Représentation d'un équilibre de Cournot où les fonctions de réaction divergent du point d'équilibre. Equilibre instable"
+#| fig-cap: "Représentation d'un équilibre de Cournot où les fonctions de réaction divergent du point d'équilibre. Équilibre instable"
 p_equilibre <- p_isoprofit +
   geom_function(fun=f1, colour="blue") +
   geom_function(fun=f2, colour="red") +
@@ -257,7 +257,7 @@ $$
 
 #### Profits
 
-On en déduit les  profits :
+On en déduit les profits :
 
 $$
 \begin{array}{rcl}
@@ -296,7 +296,7 @@ Ce *n'est pas le cas en général*.
 Si dans un problème les fonctions de coût sont identiques, alors vous pouvez faire les calculs pour une seule entreprise et déduire simplement les résultats pour la seconde.
 
 
-#### Equilibre de Cournot
+#### Équilibre de Cournot
 
 Quel est alors l'équilibre de Cournot ?
 
@@ -343,7 +343,7 @@ Il s'agit de tracer les courbes d'*isoprofit* des entreprises.
 :::{#def-isoprofit}
 
 ## Courbe d'isoprofit
-Les courbes d'isoprofit est l'ensemble des couples de quantités $(q_1, q_2)$ qui permettent à une entreprise d'atteindre un niveau de profit donné.
+La courbe d'isoprofit est l'ensemble des couples de quantités $(q_1, q_2)$ qui permettent à une entreprise d'atteindre un niveau de profit donné.
 :::
 
 Reprenons l'expression générale des profits de l'@eq-profitcournot.
@@ -357,7 +357,7 @@ La courbe d'isoprofit pour une valeur $\pi_1$ **donnée et fixe** est :
 $$
 \pi_1 = q_1P(q_1+q_2)-C_1(q_1)
 $$
-L'équation ci-dessus définit implicitement une fonction $q_1=I_\pi(q_1, \pi_1)$ qui permet de représenter la courbe d'isoprofit dans un graphique $(q_1,q_2)$, tout comme la fonction de réaction définit une fonction courbe $q_2(q_1)$ pour l'entreprise 1.
+L'équation ci-dessus définit implicitement une fonction $q_2=I_\pi(q_1, \pi_1)$ qui permet de représenter la courbe d'isoprofit dans un graphique $(q_1,q_2)$, tout comme la fonction de réaction définit une courbe $q_2(q_1)$ pour l'entreprise 1.
 La courbe de la fonction de réaction de 1 coupe la courbe d'isoprofit de 1 en son maximum. 
 <!-- Implicitiment, le maximum sur la courbe d'isoprofit est obtenu en dérivant suivant $q_1$, tout comme on obtient la fonction de réaction. -->
 
@@ -386,11 +386,11 @@ p + geom_function(fun=function(x) I1(x, 0.1), colour = "blue") +
 
 Sur la @fig-isoprofit1, le profit est croissant en descendant vers le bas sur les courbes d'isoprofit, autrement dit, les courbes d'isoprofit les plus basses représentent les profits les plus élevés.
 Le maximum du profit est atteint lorsque l'entreprise 1 est en monopole.
-La quantité produite est alors $q_m^*$ est le profit $\pi_m^*$.
+La quantité produite est alors $q_m^*$ et le profit $\pi_m^*$.
 
 ```{r isoprofitCournot}
 #| label: fig-isoprofit-Cournot
-#| fig-cap: "Courbes d'isoprofits et fonctions de réactions des entreprises en équilibre de Cournot Nash."
+#| fig-cap: "Courbes d'isoprofit et fonctions de réaction des entreprises en équilibre de Cournot-Nash."
 I2 <- function(q, pi){1-pi/q-2*q}
 f2 <- function(q)(1/4-1/4*q)
 
@@ -423,7 +423,7 @@ p_cournot + geom_segment(data=df, x=qc2-0.05, xend=qc2+0.05, y=qc2, yend=qc2, ar
 
 On étend l'analyse à $N$ entreprises qui produisent un bien *homogène*.
 Comme ce bien est homogène, le prix est unique sur le marché.
-Chaque entreprise $i$ choisit une quantité $q_i\geq 0$ et les produit à un coût de production $C_i(q_i)$.
+Chaque entreprise $i$ choisit une quantité $q_i\geq 0$ et la produit à un coût de production $C_i(q_i)$.
 La production totale sur le marché est $q=\sum_i q_i$.
 La fonction de demande inverse sur le marché $P(q)$ dépend de la production *globale* $q$.
 
@@ -436,7 +436,7 @@ $$
 
 ## Quantité globale
 Attention, ici $q$, la quantité globale, dépend de la quantité $q_i$ produite par $i$.
-Implicitement, on a ainsi définit une fonction $q(q_i)$, ce qui est important dans la dérivation des résultats.
+Implicitement, on a ainsi défini une fonction $q(q_i)$, ce qui est important dans la dérivation des résultats.
 :::
 
 Le programme de maximisation d'une entreprise $i$ s'écrit :
@@ -480,7 +480,7 @@ La possibilité de fixer un prix au-dessus du coût marginal dépend de la part 
 En monopole, $S_i=1$, on retrouve alors bien :
 $$\frac{P(q) -C_{im}(q)}{P(q)}= \frac{1}{\left|\varepsilon_{q/p}(q)\right|}$$
 
-En concurrence pure et parfaite $S_i\to 0$, donc $\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0$, ce qui implique bien que $C_{mi}(q_i)\to P(q)$.
+En concurrence pure et parfaite $S_i\to 0$, donc $\frac{P(q) -C_{im}(q_i)}{P(q)}\to 0$, ce qui implique bien que $C_{im}(q_i)\to P(q)$.
 On retrouve ainsi le résultat $P(q^*)=C_m(q^*)$.
 :::
 
@@ -515,9 +515,9 @@ $$L = \sum_{i=1}^NS_iL_i$$
 où $S_i=q_i/q$ est la *part de marché* du producteur $i$ et $L_i$ est l'indice de Lerner d'un producteur $i$.
 :::
 
-L'indice de Lerner du marché est ainsi la moyenne pondérée par les parts de marchés des indices de Lerner de chaque producteur.
+L'indice de Lerner du marché est ainsi la moyenne pondérée par les parts de marché des indices de Lerner de chaque producteur.
 
-En utilisant l'expression obtenue pour l'indice de Lerner d'un producteur à l'@eq-li, on peut réécrire l'indice de Lerner du marché uniquement en fonction de l'élasticité de la demande à l'équilibre et des parts de marchés de chaque producteur :
+En utilisant l'expression obtenue pour l'indice de Lerner d'un producteur à l'@eq-li, on peut réécrire l'indice de Lerner du marché uniquement en fonction de l'élasticité de la demande à l'équilibre et des parts de marché de chaque producteur :
 $$
 L=\frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}\sum_{i=1}^NS_i^2
 $$ {#eq-oligo-lerner}
@@ -528,9 +528,9 @@ $$ {#eq-oligo-lerner}
 ::: { #def-HHI}
 ## Indice de Hirschman-Herfindahl (HHI)
 
-L'indice de Hirschman-Herfindahl est la somme des carrés des part de marchés.
+L'indice de Hirschman-Herfindahl est la somme des carrés des parts de marché.
 $$HHI = \sum_{i=1}^NS_i^2$$
-C'est aussi la différence moyenne entre le coût marginal de production et le prix, multiplié par l'élasticité prix de la demande à l'optimum.
+C'est aussi la différence moyenne entre le coût marginal de production et le prix, multipliée par l'élasticité prix de la demande à l'optimum.
 :::
 Grâce à l'@eq-oligo-lerner, on a immédiatement la relation suivante entre HHI et indice de Lerner.
 $$
@@ -538,7 +538,7 @@ L=\frac{HHI}{\left|\varepsilon_{q/p}(q^*)\right|}
 $$
 
 *Interprétation du HHI :*  
-Imaginons que toutes les $N$ producteurs sont identiques (ils ont la même fonction de coût).
+Imaginons que tous les $N$ producteurs sont identiques (ils ont la même fonction de coût).
 Ils produisent alors la même quantité optimale à l'équilibre.
 Leur part de marché est donc $S_i=1/N$.
 Le HHI vaut :
@@ -575,7 +575,7 @@ Elle se placera donc sur la courbe d'isoprofit tangente à la fonction de réact
 
 ```{r equilibreStackelberg}
 #| label: fig-Stack-equi
-#| fig-cap: "Courbes d'isoprofits du pilote et fonctions de réactions des deux entreprises en équilibre de Stackelberg."
+#| fig-cap: "Courbes d'isoprofit du pilote et fonctions de réaction des deux entreprises en équilibre de Stackelberg."
 p <- p_isoprofit
 
 IL <- function(q, pi){1-pi/q-q}
@@ -608,7 +608,7 @@ Le prix sera donc plus faible pour les consommateurs.
 
 ### Exemple
 
-#### Données du problèmes
+#### Données du problème
 
 Notons les variables et fonctions du pilote avec un indice $L$ et celles du satellite avec un indice $F$.
 
@@ -618,11 +618,11 @@ $$
 P(q_L+q_F) = a - b(q_L+q_F)
 $$
 
-Supposons, afin de simplifier les calculs, que les coûts marginaux nuls.
+Supposons, afin de simplifier les calculs, que les coûts marginaux sont nuls.
 
 #### Profits
 
-On en déduit les  profits :
+On en déduit les profits :
 
 $$
 \begin{array}{rcl}
@@ -634,7 +634,7 @@ $$
 #### Fonction de réaction de l'entreprise satellite
 
 Calculons la fonction de réaction de l'entreprise satellite.
-La condition du premier ordre suivant $q_F$ s'écrit (ici $q_L$ est considéré comme une donnée par l'entreprise 1) :
+La condition du premier ordre suivant $q_F$ s'écrit (ici $q_L$ est considéré comme une donnée par l'entreprise satellite) :
 
 $$
 \begin{array}{crcl}
@@ -682,7 +682,7 @@ Et le prix est :
 $$
 p^*_S = \frac{a}{4}
 $$
-Si on compare ces valeurs à celle obtenu en Cournot avec un coût marginal nul (@eq-q-Cournot et @eq-p-Cournot avec $c=0$), on remarque que la quantité totale en Stackelberg est plus élevée et que le prix est plus faible.
+Si on compare ces valeurs à celles obtenues en Cournot avec un coût marginal nul (@eq-q-Cournot et @eq-p-Cournot avec $c=0$), on remarque que la quantité totale en Stackelberg est plus élevée et que le prix est plus faible.
 On calcule maintenant le profit des deux entreprises :
 $$
 \begin{array}{rcl}
@@ -690,12 +690,12 @@ $$
 \pi_F(q_L, q_F) &=& p^*_S \times q_F^* = \frac{a^2}{16b}
 \end{array}
 $$
-Le profit de l'entreprise pilote est plus élevé que celui de l'entreprise satellite quand les deux entreprises ont même coût marginal. 
+Le profit de l'entreprise pilote est plus élevé que celui de l'entreprise satellite quand les deux entreprises ont le même coût marginal. 
 La seule différence entre ces deux entreprises est que l'entreprise pilote prend sa décision avant l'entreprise satellite.
 
 ## Cartels et collusions
 
-**Cette partie est maintenant hors-programme.**
+**Cette partie est maintenant hors programme.**
 
 ### Introduction
 
@@ -706,7 +706,7 @@ En duopoles / oligopoles de Cournot ou de Stackelberg, les entreprises ne coopè
 
 *Question :*  
 Que se passe-t-il si elles peuvent s'entendre ?
-Par exemple, que se passe-t-il si elles peuvent passer un accord sur la quantité à produire.
+Par exemple, que se passe-t-il si elles peuvent passer un accord sur la quantité à produire ?
 
 *Résultats :* 
 Les quantités mises sur le marché diminueront et le prix du marché augmentera.
@@ -736,7 +736,7 @@ p_cournot + geom_ribbon(data=zone, aes(x=x, ymin=ymin, ymax=ymax), fill='blue', 
 
 #### Idée
 
-L'idée derrière la résolution analytique du problème du cartel est de considérer que le cartel se comporte comme un monopole avec 2 centres de productions.
+L'idée derrière la résolution analytique du problème du cartel est de considérer que le cartel se comporte comme un monopole avec 2 centres de production.
 Le cartel choisit la quantité globale produite et la répartition entre les entreprises.
 C'est un raisonnement très similaire à un monopole discriminant au troisième degré.
 
@@ -744,14 +744,14 @@ C'est un raisonnement très similaire à un monopole discriminant au troisième 
 
 Le profit global du cartel s'écrit :
 $$
-\pi_c(q_A, q_B)=qP(q)-C_A(q_A)-C_B(q_B)=(q_A+q_B)P(q_A+q_B)-C_A(q_A)-C_B(q_B)
+\pi_C(q_A, q_B)=qP(q)-C_A(q_A)-C_B(q_B)=(q_A+q_B)P(q_A+q_B)-C_A(q_A)-C_B(q_B)
 $$
 Où $q=q_A+q_B$.
 Le profit est maximisé lorsque les dérivées partielles suivant chacune des quantités sont nulles (condition du premier ordre), c'est-à-dire lorsque $\frac{\partial\pi_C}{\partial q_A}=0$ et $\frac{\partial\pi_C}{\partial q_B}=0$.
 $$
 \frac{\partial\pi_C}{\partial q_A} = P(q) + q\frac{\partial P}{\partial q}(q_A)-\frac{\partial C_A}{\partial q_A}(q_A)
 $$
-On a $P(q) + q\frac{\partial P}{\partial q}=R_m(q)$ est la recette marginale totale du cartel.
+On a $P(q) + q\frac{\partial P}{\partial q}=R_m(q)$, qui est la recette marginale totale du cartel.
 $\frac{\partial C_A}{\partial q_A}=C_{mA}$ est le coût marginal de l'entreprise A.  
 On peut réécrire la dérivée du profit total suivant la quantité produite par l'entreprise A :
 $$
@@ -800,10 +800,10 @@ $$
 \Leftrightarrow & \frac{\partial\pi_A}{\partial q_A}(q_A^*)& =  &-q_B^*\frac{\partial P}{\partial q}(q_A^*)
  \end{array}
 $$
-Or on sait que la fonction de demande inverse $P(q)$ est décroissante avec les quantités produites, ou  que la fonction de demande est décroissante avec le prix, ce qui revient au même.
+Or on sait que la fonction de demande inverse $P(q)$ est décroissante avec les quantités produites, ou que la fonction de demande est décroissante avec le prix, ce qui revient au même.
 Donc $\frac{\partial P}{\partial q}(q_A)<0$.
 On en déduit donc que $\frac{\partial\pi_A}{\partial q_A}(q_A^*)>0$ : l'entreprise A a intérêt à augmenter sa production si elle pense que l'entreprise B va respecter l'accord du cartel (et réciproquement).
 
-En conclusion, les accords de cartel ne sont pas "naturellement" stable, ils ont besoin d'un mécanisme qui maintient l'accord, par exemple en punissant une entreprise déviant de l'accord.
+En conclusion, les accords de cartel ne sont pas « naturellement » stables, ils ont besoin d'un mécanisme qui maintient l'accord, par exemple en punissant une entreprise déviant de l'accord.
 
 

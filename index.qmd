@@ -20,7 +20,7 @@ L'idée générale est de dépasser le cadre de la concurrence pure et parfaite 
 ## Bibliographie
 
 Le cours ne nécessite pas de se référer à un manuel. 
-Néanmoins, pour ceux qui souhaitent des éclairages différents sur les notions abordés, voici quelques références utiles:
+Néanmoins, pour ceux qui souhaitent des éclairages différents sur les notions abordées, voici quelques références utiles :
 
 - @varian2015 *Introduction à la microéconomie*
 - @varian2008 *Analyse Microéconomique*

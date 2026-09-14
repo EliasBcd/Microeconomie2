@@ -18,6 +18,6 @@
 : Tableau comparatif concurrence pure et parfaite et monopole, résolution des problèmes {#tbl-Annexe1}
 
 
-La différence entre la concurrence pure et parfaite et le monopole est qu'en monopole il n'y a qu'un seul producteur, qui dispose du pouvoir de fixé les prix.
+La différence entre la concurrence pure et parfaite et le monopole est qu'en monopole il n'y a qu'un seul producteur, qui dispose du pouvoir de fixer les prix.
 Cela lui permet de connaître la demande agrégée des consommateurs $P$ et de l'utiliser dans sa maximisation du profit.
 Cela modifie ainsi la condition d'équilibre en monopole.

@@ -10,8 +10,8 @@ ltex:
 
 
 ::: { #def-marche name="Le marché"}
-Un *marché* est un lieu, physique ou virtuel, où se rencontrent l’offre et la demande de biens ou de services. 
-C’est là que les prix sont déterminés par les interactions entre les acheteurs (=consommateurs) et les vendeurs (=producteurs).
+Un *marché* est un lieu, physique ou virtuel, où se rencontrent l'offre et la demande de biens ou de services. 
+C'est là que les prix sont déterminés par les interactions entre les acheteurs (=consommateurs) et les vendeurs (=producteurs).
 Tous les biens échangés sur un marché sont parfaitement substituables.
 :::
 
@@ -29,14 +29,14 @@ Tous les biens échangés sur un marché sont parfaitement substituables.
 4. Homogénéité des biens ;
 5. Libre entrée et sortie du marché.
 
-Explicitons ce que signifient chacune de ces hypothèses.
+Explicitons ce que signifie chacune de ces hypothèses.
 
 :::{ #cnj-atomicite }
 
 ## Atomicité des agents
 
 L'hypothèse d'atomicité des agents implique qu'aucun agent, individu ou entreprise, n'a d'influence *individuellement* sur les prix.
-En d'autres termes, chaque agent est "petit" face au marché et considère le prix du marché comme une *donnée* qu'il ne peut pas influencer.
+En d'autres termes, chaque agent est « petit » face au marché et considère le prix du marché comme une *donnée* qu'il ne peut pas influencer.
 On dit que les agents sont *price-taker* sur le marché.
 :::
 
@@ -64,14 +64,14 @@ Les différences de coûts entre producteurs ne peuvent donc être dues qu'aux d
 L'homogénéité des biens signifie que tous les biens vendus sur un marché sont parfaitement substituables.
 Sur un marché donné, tous les biens ont la même qualité.
 Le consommateur est donc indifférent entre tous les biens vendus.
-Il n'y aussi pas d'effet des marques.
+Il n'y a pas non plus d'effet des marques.
 :::
 
 :::{#cnj-libre-entree}
 
 ## Libre entrée et sortie du marché
 
-L'hypothèse de libre entrée et sortie du marché signifie qu'il n'y pas de barrière à l'entrée dans le marché.
+L'hypothèse de libre entrée et sortie du marché signifie qu'il n'y a pas de barrière à l'entrée dans le marché.
 Concrètement, il est impossible de faire un bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.
 :::
 
@@ -82,7 +82,7 @@ Dans le cadre de ce cours, nous allons uniquement nous intéresser au pouvoir de
 
 ### Fonctions de coût
 
-En général, un producteur est modélisé par une fonction de production, c'est-à-dire une fonction qui donne  les quantités produites de biens en fonction des facteurs de production.
+En général, un producteur est modélisé par une fonction de production, c'est-à-dire une fonction qui donne les quantités produites de biens en fonction des facteurs de production.
 On utilise cette fonction de production pour ensuite construire une fonction de coût.
 
 :::{#def-ctotal}
@@ -125,13 +125,13 @@ $$
 
 ## Coût marginal
 
-Le coût marginal, noté $C_m$, est l'augmentation du coût lié à la production d'une unité supplémentaire :
+Le coût marginal, noté $C_m$, est l'augmentation du coût liée à la production d'une unité supplémentaire :
 $$
 C_m(q)=\lim_{\Delta q\to 0}\frac{C(q+\Delta q)-C(q)}{\Delta q}=C'(q)
 $$
 :::
 
-Autrement dit, le coût marginal est la variation de coût total quand la production varie "un tout petit peu" (infiniment peu en fait).
+Autrement dit, le coût marginal est la variation de coût total quand la production varie « un tout petit peu » (infiniment peu en fait).
 
 ::: {#prp-variations-cout}
 
@@ -152,7 +152,7 @@ La courbe de coût marginal coupe donc la courbe de coût (variable) moyen à so
 :::
 
 L'intuition de ce résultat est la suivante : si le coût d'une unité supplémentaire est supérieur au coût moyen des unités précédentes, alors l'unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen, et vice-versa.
-L'illustration graphique est donnée sur la @fig-cppcout
+L'illustration graphique est donnée sur la @fig-cppcout.
 
 :::{ .proof }
 En son minimum, le coût moyen est tel que $C_M'(q)=0$.
@@ -199,14 +199,14 @@ p_cppcout + scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(0)) +
 
 ## Recette totale
 La recette totale, notée $R$ ou $RT$, est la recette issue de la vente des biens.
-Pour $q$ unités de bien vendus, le producteur gagne $R(q)$, autrement dit, c'est le chiffre d'affaire du producteur (pour ce bien).
+Pour $q$ unités de bien vendues, le producteur gagne $R(q)$, autrement dit, c'est le chiffre d'affaires du producteur (pour ce bien).
 :::
 
 ::: {#def-rmarginale}
 
 ## Recette marginale
 
-La recette marginale, notée $R_m$ est la recette rapportée par une unité supplémentaire de bien vendue.
+La recette marginale, notée $R_m$, est la recette rapportée par une unité supplémentaire de bien vendue.
 $$R_m(q)=R'(q)$$
 :::
 
@@ -214,7 +214,7 @@ $$R_m(q)=R'(q)$$
 
 ## Profit
 
-Le profit, noté $\pi$ est la différence entre la recette totale et le coût total de production :
+Le profit, noté $\pi$, est la différence entre la recette totale et le coût total de production :
 $$\pi(q)=R(q)-C(q)$$
 Le profit s'appelle couramment le bénéfice.
 :::
@@ -233,7 +233,7 @@ Le programme du producteur est tel que la quantité optimale produite $q^*$ éga
 $$
 R_m(q^*) =C_m(q^*)
 $$ {#eq-cppopti}
-Il est aussi tel que la recette marginal croît moins vite que le coût marginal à l'optimum (condition du second ordre) :
+Il est aussi tel que la recette marginale croît moins vite que le coût marginal à l'optimum (condition du second ordre) :
 $$
 R_m'(q^*) <C_m'(q^*)
 $$
@@ -244,7 +244,7 @@ L'objectif du producteur est de maximiser son profit :
 $$
 \max_q\pi(q)=\max_q R(q)-C(q)
 $$
-À l'optimum, et à condition que les fonctions de coût et de recette soient deux fois dérivables (ce qui sera toujours le cas dans ce cours). La condition du premier ordre s'écrit :
+À l'optimum, et à condition que les fonctions de coût et de recette soient deux fois dérivables (ce qui sera toujours le cas dans ce cours), la condition du premier ordre s'écrit :
 $$
 \pi'(q)=0\Leftrightarrow R'(q)-C'(q)=0\Leftrightarrow R_m(q)=C_m(q)
 $$
@@ -362,8 +362,8 @@ La fonction de demande est décroissante.
 :::
 
 
-L'intuition est la suivante, un consommateur est prêt à payer plus pour la première unité de biens reçu que pour la suivante.
-Par exemple, la premier litre d'eau dans le désert à beaucoup plus de valeur que le dixième.
+L'intuition est la suivante, un consommateur est prêt à payer plus pour la première unité de bien reçue que pour la suivante.
+Par exemple, le premier litre d'eau dans le désert a beaucoup plus de valeur que le dixième.
 
 ::: {.remark}
 
@@ -409,7 +409,7 @@ La vente de toutes les unités jusqu'à la quantité d'équilibre $q^*$ au prix 
 
 ```{r marche}
 #| label: fig-marche
-#| fig-cap: "Equilibre de marché."
+#| fig-cap: "Équilibre de marché."
 
 x=seq(0, 1, length=11)
 df <- data.frame(x)
@@ -448,7 +448,7 @@ $$S_c=\int_0^{q^*}P(q)-p^* dq$$
 :::
 
 ::: {.remark}
-Seule la dernière unité de bien achetée par les consommateur l'est au prix de réserve.
+Seule la dernière unité de bien achetée par les consommateurs l'est au prix de réserve.
 Il n'y a pas de gain à l'échange pour cette unité, mais pour toutes les autres, il y en a, ce qui explique pourquoi il y a un surplus à l'échange, et pourquoi celui-ci a lieu.
 :::
 
@@ -462,7 +462,7 @@ Formellement :
 $$S_p=\int_0^{q^*}p^*-S(q) dq$$
 :::
 
-En pratique, on utilisera jamais la formule avec des intégrales, mais on calculera l'aire du triangle (ou trapèze) concerné.
+En pratique, on n'utilisera jamais la formule avec des intégrales, mais on calculera l'aire du triangle (ou trapèze) concerné.
 
 ```{r surplus}
 #| label: fig-surplus
@@ -480,12 +480,12 @@ p + geom_ribbon(data = Sc, aes(x=x, ymin=0.5, ymax = y), fill="blue") +
 ## Propriétés de l'équilibre en concurrence pure et parfaite
 
 L'équilibre en CPP **maximise** le *surplus total*.
-Tout autre couple (prix, quantité) abouti à un surplus total plus faible.  
+Tout autre couple (prix, quantité) aboutit à un surplus total plus faible.  
 L'équilibre en CPP est dit *Pareto-optimal*, i.e., il est impossible d'améliorer la situation d'un agent sans détériorer celle d'un autre.
 C'est ce qu'on appelle le *premier théorème du bien-être*.
 :::
 
-Ces propriétés font de la CPP une "référence" par rapport à laquelle on peut comparer les résultats des autres structures de marché.
+Ces propriétés font de la CPP une « référence » par rapport à laquelle on peut comparer les résultats des autres structures de marché.
 
 ## Perception par les agents isolés
 
@@ -493,7 +493,7 @@ L'hypothèse d'atomicité indique que les agents individuels sont isolés au sei
 Ainsi, aucun agent n'a d'influence sur le prix s'il modifie son comportement.
 Une conséquence directe est que le comportement des autres agents est perçu comme étant infiniment élastique.
 C'est-à-dire qu'un producteur sait qu'au prix de marché, il pourra vendre toute sa production, mais que s'il pratique un prix même légèrement plus élevé, il ne vendra **rien**.
-Il perçoit ainsi une demande infiniment élastique au prix,  au niveau du prix $p^*$.
+Il perçoit ainsi une demande infiniment élastique au prix, au niveau du prix $p^*$.
 
 
 ```{r elasticite}

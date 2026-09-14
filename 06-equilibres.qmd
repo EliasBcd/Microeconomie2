@@ -1,7 +1,7 @@
 # Comment trouver les équilibres ?
 
 La méthode générale est toujours de maximiser le profit du ou des producteurs.
-Le profit est maximal quand la dérivée du profit suivant les quantités produite est nulle.
+Le profit est maximal quand la dérivée du profit suivant les quantités produites est nulle.
 
 En plus de ça, dans différents cas particuliers il est possible de sauter quelques étapes en retenant ces identités fondamentales.
 
@@ -28,7 +28,7 @@ $$C_M(q^*)=P(q^*)=p^*$$
 
 ### Avec une discrimination du 3^e^ degré
 
-En discrimination du 3^e^ degré, le monopole se comporte comme s'il était en monopole sur deux marché différents.
+En discrimination du 3^e^ degré, le monopole se comporte comme s'il était en monopole sur deux marchés différents.
 Le revenu marginal du groupe 1 est égal au revenu marginal du groupe 2 qui est égal au coût marginal total du monopole.
 
 $$R_{m1}(q_1^*)=R_{m2}(q_2^*)=C_m(q^*)$$
@@ -49,13 +49,13 @@ Maximiser le profit de l'entreprise follower en considérant la quantité produi
 On obtient ainsi la fonction de réaction du follower.
 Le leader utilise ensuite la fonction de réaction du follower dans sa propre maximisation du profit.
 Cela permet d'obtenir la quantité produite par le leader.
-A l'aide de la fonction de réaction du follower, on en déduit la quantité du follower.
+À l'aide de la fonction de réaction du follower, on en déduit la quantité du follower.
 Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.
 
 ### Cartel
 
 Quand deux entreprises sont en cartel, elles maximisent leur profit joint.
-On écrit donc le profit du cartel, puis on écrit les conditions du premier suivant chaque quantité.
+On écrit donc le profit du cartel, puis on écrit les conditions du premier ordre suivant chaque quantité.
 On obtient alors un système de deux équations à deux inconnues à résoudre.
 Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.
 
