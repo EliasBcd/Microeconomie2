@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,10 +10,16 @@
 
 <title>Annexe C — Calcul des surplus – Microéconomie 2</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -34,15 +40,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="./06-equilibres.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ed7344add5f1663e434276306a2aa159.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -167,7 +172,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Références</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -230,7 +235,7 @@ window.Quarto = {
 
 
 <div id="def-surplus-conso" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition C.1 (Surplus des consommateurs)</strong></span> Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêt à payer et le prix effectivement payé. Mathématiquement, c’est l’intégrale suivante : <span class="math display">\[
+<p><span class="theorem-title"><strong>Définition C.1 (Surplus des consommateurs)</strong></span> Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêts à payer et le prix effectivement payé. Mathématiquement, c’est l’intégrale suivante : <span class="math display">\[
 S_c(q)=\int_0^qP(x)-pdx=\int_0^qP(x)dx-pq
 \]</span> Où <span class="math inline">\(p\)</span> est le prix payé, <span class="math inline">\(q\)</span> la quantité échangée et <span class="math inline">\(P\)</span> la demande inverse.</p>
 </div>
@@ -238,11 +243,11 @@ S_c(q)=\int_0^qP(x)-pdx=\int_0^qP(x)dx-pq
 <div id="def-surplus-prod" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition C.2 (Surplus des producteurs)</strong></span> Le surplus des producteurs est la somme de la différence entre le prix reçu par les producteurs et le coût marginal de production. Mathématiquement, c’est l’intégrale suivante : <span id="eq-sp"><span class="math display">\[
 S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx
-\tag{C.1}\]</span></span> Où <span class="math inline">\(p\)</span> est le prix reçu par le producteur, <span class="math inline">\(q\)</span> la quantité vendue et <span class="math inline">\(C_m\)</span> la coût marginal.</p>
+\tag{C.1}\]</span></span> Où <span class="math inline">\(p\)</span> est le prix reçu par le producteur, <span class="math inline">\(q\)</span> la quantité vendue et <span class="math inline">\(C_m\)</span> le coût marginal.</p>
 </div>
 <p>L’intégrale signifie que c’est l’aire comprise entre le prix reçu par les producteurs (<span class="math inline">\(p\)</span>), le coût marginal (<span class="math inline">\(C_m\)</span>), l’axe des ordonnées et la quantité échangée (<span class="math inline">\(q\)</span>). Dans notre cours, ce sera l’aire d’un triangle ou d’un trapèze.</p>
 <div class="proof remark">
-<p><span class="proof-title"><em>Remarque</em> (Lien entre surplus et profit). </span>Si on continue l’expression donnée par l’<a href="#eq-sp" class="quarto-xref">équation&nbsp;<span>C.1</span></a>, on obtient : <span class="math display">\[S_p(q)=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)\]</span> Cela prouve la relation donnée informellement dans le cours entre surplus et profit. Le surplus est la somme du profit réalisé par les producteurs et des coûts fixes (des coût qui ne dépendent pas de la quantité).</p>
+<p><span class="proof-title"><em>Remarque</em> (Lien entre surplus et profit). </span>Si on continue l’expression donnée par l’<a href="#eq-sp" class="quarto-xref">équation&nbsp;<span>C.1</span></a>, on obtient : <span class="math display">\[S_p(q)=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)\]</span> Cela prouve la relation donnée informellement dans le cours entre surplus et profit. Le surplus est la somme du profit réalisé par les producteurs et des coûts fixes (des coûts qui ne dépendent pas de la quantité).</p>
 </div>
 <div class="proof remark">
 <p><span class="proof-title"><em>Remarque</em> (Aire d’un triangle). </span>L’aire d’un triangle est donnée par la formule suivante : <span class="math display">\[\text{aire triangle}=\frac{1}{2}\times\text{base}\times\text{hauteur}\]</span></p>
@@ -250,7 +255,7 @@ S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx
 <div class="proof remark">
 <p><span class="proof-title"><em>Remarque</em> (Aire d’un trapèze). </span>L’aire d’un trapèze est donnée par la formule suivante : <span class="math display">\[\text{aire trapèze}=\frac{1}{2}\times(\text{petite base}+\text{grande base})\times\text{hauteur}\]</span></p>
 </div>
-<p>On peut illustrer ces formules avec deux cas pratiques (sur la <a href="#fig-surplus2" class="quarto-xref">figure&nbsp;<span>C.1</span></a> et <a href="#fig-surplus3" class="quarto-xref">figure&nbsp;<span>C.2</span></a>).</p>
+<p>On peut illustrer ces formules avec deux cas pratiques (sur la <a href="#fig-surplus2" class="quarto-xref">figure&nbsp;<span>C.1</span></a> et la <a href="#fig-surplus3" class="quarto-xref">figure&nbsp;<span>C.2</span></a>).</p>
 <p>Les valeurs sur les graphiques sont obtenues de la manière suivante :</p>
 <ul>
 <li><span class="math inline">\(q\)</span> est connu ou <span class="math inline">\(p\)</span> est connu ;</li>

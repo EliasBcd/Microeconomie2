@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,10 +10,16 @@
 
 <title>1&nbsp; Le marché en concurrence pure et parfaite – Microéconomie 2</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -35,15 +41,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ed7344add5f1663e434276306a2aa159.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -168,7 +173,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Références</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -257,9 +262,9 @@ window.Quarto = {
 <li>Homogénéité des biens ;</li>
 <li>Libre entrée et sortie du marché.</li>
 </ol>
-<p>Explicitons ce que signifient chacune de ces hypothèses.</p>
+<p>Explicitons ce que signifie chacune de ces hypothèses.</p>
 <div id="cnj-atomicite" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Hypothèse 1.1 (Atomicité des agents)</strong></span> L’hypothèse d’atomicité des agents implique qu’aucun agent, individu ou entreprise, n’a d’influence <em>individuellement</em> sur les prix. En d’autres termes, chaque agent est “petit” face au marché et considère le prix du marché comme une <em>donnée</em> qu’il ne peut pas influencer. On dit que les agents sont <em>price-taker</em> sur le marché.</p>
+<p><span class="theorem-title"><strong>Hypothèse 1.1 (Atomicité des agents)</strong></span> L’hypothèse d’atomicité des agents implique qu’aucun agent, individu ou entreprise, n’a d’influence <em>individuellement</em> sur les prix. En d’autres termes, chaque agent est « petit » face au marché et considère le prix du marché comme une <em>donnée</em> qu’il ne peut pas influencer. On dit que les agents sont <em>price-taker</em> sur le marché.</p>
 </div>
 <div id="cnj-information" class="theorem conjecture">
 <p><span class="theorem-title"><strong>Hypothèse 1.2 (Information parfaite)</strong></span> L’hypothèse d’information parfaite signifie que tous les acteurs disposent de toutes les informations <strong>pertinentes</strong> pour prendre leurs décisions. Il n’y a, par exemple, pas de coût de recherche d’information.</p>
@@ -268,10 +273,10 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>Hypothèse 1.3 (Mobilité parfaite des facteurs de production)</strong></span> L’hypothèse de mobilité parfaite des facteurs de production garantit l’homogénéité spatiale du prix des facteurs. Les facteurs de production se déplacent où ils sont le mieux rémunérés. Les différences de coûts entre producteurs ne peuvent donc être dues qu’aux différences technologiques entre ceux-ci, et non à une différence de coût des facteurs de production.</p>
 </div>
 <div id="cnj-homogeneite" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Hypothèse 1.4 (Homogénéité des biens)</strong></span> L’homogénéité des biens signifie que tous les biens vendus sur un marché sont parfaitement substituables. Sur un marché donné, tous les biens ont la même qualité. Le consommateur est donc indifférent entre tous les biens vendus. Il n’y aussi pas d’effet des marques.</p>
+<p><span class="theorem-title"><strong>Hypothèse 1.4 (Homogénéité des biens)</strong></span> L’homogénéité des biens signifie que tous les biens vendus sur un marché sont parfaitement substituables. Sur un marché donné, tous les biens ont la même qualité. Le consommateur est donc indifférent entre tous les biens vendus. Il n’y a pas non plus d’effet des marques.</p>
 </div>
 <div id="cnj-libre-entree" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Hypothèse 1.5 (Libre entrée et sortie du marché)</strong></span> L’hypothèse de libre entrée et sortie du marché signifie qu’il n’y pas de barrière à l’entrée dans le marché. Concrètement, il est impossible de faire un bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.</p>
+<p><span class="theorem-title"><strong>Hypothèse 1.5 (Libre entrée et sortie du marché)</strong></span> L’hypothèse de libre entrée et sortie du marché signifie qu’il n’y a pas de barrière à l’entrée dans le marché. Concrètement, il est impossible de faire un bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.</p>
 </div>
 <p>La violation d’une de ces hypothèses nous fait sortir du cadre de la CPP et confère un <em>pouvoir de marché</em> aux producteurs ou aux consommateurs en place. Dans le cadre de ce cours, nous allons uniquement nous intéresser au pouvoir de marché des producteurs.</p>
 </section>
@@ -300,11 +305,11 @@ C_M(q) &amp;=&amp; \frac{C(q)}{q}\\
 \]</span></p>
 </div>
 <div id="def-cmarginal" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.4 (Coût marginal)</strong></span> Le coût marginal, noté <span class="math inline">\(C_m\)</span>, est l’augmentation du coût lié à la production d’une unité supplémentaire : <span class="math display">\[
+<p><span class="theorem-title"><strong>Définition 1.4 (Coût marginal)</strong></span> Le coût marginal, noté <span class="math inline">\(C_m\)</span>, est l’augmentation du coût liée à la production d’une unité supplémentaire : <span class="math display">\[
 C_m(q)=\lim_{\Delta q\to 0}\frac{C(q+\Delta q)-C(q)}{\Delta q}=C'(q)
 \]</span></p>
 </div>
-<p>Autrement dit, le coût marginal est la variation de coût total quand la production varie “un tout petit peu” (infiniment peu en fait).</p>
+<p>Autrement dit, le coût marginal est la variation de coût total quand la production varie « un tout petit peu » (infiniment peu en fait).</p>
 <div id="prp-variations-cout" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 1.1 (Variations des courbes de coût)</strong></span> En général, le coût marginal diminue puis augmente, car la productivité marginale est d’abord croissante, puis décroissante.<br>
 Le coût variable moyen est d’abord décroissant, puis croissant, pour la même raison.<br>
@@ -314,7 +319,7 @@ La décomposition donnée par l’<a href="#eq-CM" class="quarto-xref">équation
 <div id="prp-relations-cout" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 1.2 (Relations entre les coûts)</strong></span> Lorsque le coût marginal est inférieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&lt;C_M(q)\)</span>), le coût moyen diminue. Lorsque le coût marginal est supérieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&gt;C_M(q)\)</span>), le coût moyen augmente. La courbe de coût marginal coupe donc la courbe de coût (variable) moyen à son minimum.</p>
 </div>
-<p>L’intuition de ce résultat est la suivante : si le coût d’une unité supplémentaire est supérieur au coût moyen des unités précédentes, alors l’unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen, et vice-versa. L’illustration graphique est donnée sur la <a href="#fig-cppcout" class="quarto-xref">figure&nbsp;<span>1.1</span></a></p>
+<p>L’intuition de ce résultat est la suivante : si le coût d’une unité supplémentaire est supérieur au coût moyen des unités précédentes, alors l’unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen, et vice-versa. L’illustration graphique est donnée sur la <a href="#fig-cppcout" class="quarto-xref">figure&nbsp;<span>1.1</span></a>.</p>
 <div class="proof">
 <p><span class="proof-title"><em>Preuve</em>. </span>En son minimum, le coût moyen est tel que <span class="math inline">\(C_M'(q)=0\)</span>. <span class="math display">\[
 \begin{array}{crcl}
@@ -346,13 +351,13 @@ Figure&nbsp;1.1: Exemples de fonctions de coût.
 <section id="loffre-dun-producteur" class="level3" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="loffre-dun-producteur"><span class="header-section-number">1.2.2</span> L’offre d’un producteur</h3>
 <div id="def-rtotale" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.5 (Recette totale)</strong></span> La recette totale, notée <span class="math inline">\(R\)</span> ou <span class="math inline">\(RT\)</span>, est la recette issue de la vente des biens. Pour <span class="math inline">\(q\)</span> unités de bien vendus, le producteur gagne <span class="math inline">\(R(q)\)</span>, autrement dit, c’est le chiffre d’affaire du producteur (pour ce bien).</p>
+<p><span class="theorem-title"><strong>Définition 1.5 (Recette totale)</strong></span> La recette totale, notée <span class="math inline">\(R\)</span> ou <span class="math inline">\(RT\)</span>, est la recette issue de la vente des biens. Pour <span class="math inline">\(q\)</span> unités de bien vendues, le producteur gagne <span class="math inline">\(R(q)\)</span>, autrement dit, c’est le chiffre d’affaires du producteur (pour ce bien).</p>
 </div>
 <div id="def-rmarginale" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.6 (Recette marginale)</strong></span> La recette marginale, notée <span class="math inline">\(R_m\)</span> est la recette rapportée par une unité supplémentaire de bien vendue. <span class="math display">\[R_m(q)=R'(q)\]</span></p>
+<p><span class="theorem-title"><strong>Définition 1.6 (Recette marginale)</strong></span> La recette marginale, notée <span class="math inline">\(R_m\)</span>, est la recette rapportée par une unité supplémentaire de bien vendue. <span class="math display">\[R_m(q)=R'(q)\]</span></p>
 </div>
 <div id="def-profit" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.7 (Profit)</strong></span> Le profit, noté <span class="math inline">\(\pi\)</span> est la différence entre la recette totale et le coût total de production : <span class="math display">\[\pi(q)=R(q)-C(q)\]</span> Le profit s’appelle couramment le bénéfice.</p>
+<p><span class="theorem-title"><strong>Définition 1.7 (Profit)</strong></span> Le profit, noté <span class="math inline">\(\pi\)</span>, est la différence entre la recette totale et le coût total de production : <span class="math display">\[\pi(q)=R(q)-C(q)\]</span> Le profit s’appelle couramment le bénéfice.</p>
 </div>
 <div id="cnj-programme-producteur" class="theorem conjecture">
 <p><span class="theorem-title"><strong>Hypothèse 1.6 (Programme du producteur)</strong></span> Le producteur choisit la quantité produite de manière à maximiser son profit. Mathématiquement, il résout le programme suivant : <span class="math display">\[\max_q\pi(q)=\max_q R(q)-C(q)\]</span></p>
@@ -360,14 +365,14 @@ Figure&nbsp;1.1: Exemples de fonctions de coût.
 <div id="thm-offre" class="theorem">
 <p><span class="theorem-title"><strong>Théorème 1.1 (Offre du producteur)</strong></span> Le programme du producteur est tel que la quantité optimale produite <span class="math inline">\(q^*\)</span> égalise le coût marginal et la recette marginale (condition du premier ordre) : <span id="eq-cppopti"><span class="math display">\[
 R_m(q^*) =C_m(q^*)
-\tag{1.2}\]</span></span> Il est aussi tel que la recette marginal croît moins vite que le coût marginal à l’optimum (condition du second ordre) : <span class="math display">\[
+\tag{1.2}\]</span></span> Il est aussi tel que la recette marginale croît moins vite que le coût marginal à l’optimum (condition du second ordre) : <span class="math display">\[
 R_m'(q^*) &lt;C_m'(q^*)
 \]</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Preuve</em>. </span>L’objectif du producteur est de maximiser son profit : <span class="math display">\[
 \max_q\pi(q)=\max_q R(q)-C(q)
-\]</span> À l’optimum, et à condition que les fonctions de coût et de recette soient deux fois dérivables (ce qui sera toujours le cas dans ce cours). La condition du premier ordre s’écrit : <span class="math display">\[
+\]</span> À l’optimum, et à condition que les fonctions de coût et de recette soient deux fois dérivables (ce qui sera toujours le cas dans ce cours), la condition du premier ordre s’écrit : <span class="math display">\[
 \pi'(q)=0\Leftrightarrow R'(q)-C'(q)=0\Leftrightarrow R_m(q)=C_m(q)
 \]</span> On obtient donc l’<a href="#eq-cppopti" class="quarto-xref">équation&nbsp;<span>1.2</span></a>. Pour obtenir un maximum, la condition du second ordre s’écrit : <span class="math display">\[
 \pi''(q)&lt;0\Leftrightarrow R''(q)-C''(q)&lt;0\Leftrightarrow R_m'(q^*) &lt;C_m'(q^*)
@@ -429,7 +434,7 @@ Figure&nbsp;1.3: Profit d’un producteur en concurrence pure et parfaite.
 <div id="prp-vari-demande" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 1.5 (Variation de la fonction de demande)</strong></span> La fonction de demande est décroissante.</p>
 </div>
-<p>L’intuition est la suivante, un consommateur est prêt à payer plus pour la première unité de biens reçu que pour la suivante. Par exemple, la premier litre d’eau dans le désert à beaucoup plus de valeur que le dixième.</p>
+<p>L’intuition est la suivante, un consommateur est prêt à payer plus pour la première unité de bien reçue que pour la suivante. Par exemple, le premier litre d’eau dans le désert a beaucoup plus de valeur que le dixième.</p>
 <div class="proof remark">
 <p><span class="proof-title"><em>Remarque</em> (Demande et demande inverse). </span>La fonction de demande donne la quantité en fonction du prix (<span class="math inline">\(Q(p)\)</span>). La plupart du temps, nous aurons besoin de la fonction de demande inverse (<span class="math inline">\(P(q)\)</span>), qui donne le prix en fonction de la quantité. Il faudra donc inverser, au sens mathématique, la fonction de demande pour obtenir la fonction de demande inverse.</p>
 </div>
@@ -455,7 +460,7 @@ Figure&nbsp;1.3: Profit d’un producteur en concurrence pure et parfaite.
 <img src="01-cpp_files/figure-html/fig-marche-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-marche-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.4: Equilibre de marché.
+Figure&nbsp;1.4: Équilibre de marché.
 </figcaption>
 </figure>
 </div>
@@ -465,12 +470,12 @@ Figure&nbsp;1.4: Equilibre de marché.
 <p><span class="theorem-title"><strong>Définition 1.13 (Surplus des consommateurs)</strong></span> Le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix payé par le consommateur pour obtenir les biens. Sur le graphique quantité prix <span class="math inline">\((q, p)\)</span>, c’est l’aire comprise entre la courbe de demande et la droite horizontale dont l’ordonnée est le prix d’échange. Formellement : <span class="math display">\[S_c=\int_0^{q^*}P(q)-p^* dq\]</span></p>
 </div>
 <div class="proof remark">
-<p><span class="proof-title"><em>Remarque</em>. </span>Seule la dernière unité de bien achetée par les consommateur l’est au prix de réserve. Il n’y a pas de gain à l’échange pour cette unité, mais pour toutes les autres, il y en a, ce qui explique pourquoi il y a un surplus à l’échange, et pourquoi celui-ci a lieu.</p>
+<p><span class="proof-title"><em>Remarque</em>. </span>Seule la dernière unité de bien achetée par les consommateurs l’est au prix de réserve. Il n’y a pas de gain à l’échange pour cette unité, mais pour toutes les autres, il y en a, ce qui explique pourquoi il y a un surplus à l’échange, et pourquoi celui-ci a lieu.</p>
 </div>
 <div id="def-surplus-prod" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 1.14 (Surplus des producteurs)</strong></span> Le surplus des producteurs est la somme des différences entre le prix auquel les producteurs vendent le bien et la courbe de coût marginal, qui représente le coût d’une unité supplémentaire produite. Sur le graphique quantité prix <span class="math inline">\((q, p)\)</span>, c’est l’aire comprise entre le prix de vente et la courbe de coût marginal. Formellement : <span class="math display">\[S_p=\int_0^{q^*}p^*-S(q) dq\]</span></p>
 </div>
-<p>En pratique, on utilisera jamais la formule avec des intégrales, mais on calculera l’aire du triangle (ou trapèze) concerné.</p>
+<p>En pratique, on n’utilisera jamais la formule avec des intégrales, mais on calculera l’aire du triangle (ou trapèze) concerné.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-surplus" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -486,10 +491,10 @@ Figure&nbsp;1.5: Surplus des consommateurs et des producteurs.
 </div>
 </div>
 <div id="prp-cppprop" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1.6 (Propriétés de l’équilibre en concurrence pure et parfaite)</strong></span> L’équilibre en CPP <strong>maximise</strong> le <em>surplus total</em>. Tout autre couple (prix, quantité) abouti à un surplus total plus faible.<br>
+<p><span class="theorem-title"><strong>Proposition 1.6 (Propriétés de l’équilibre en concurrence pure et parfaite)</strong></span> L’équilibre en CPP <strong>maximise</strong> le <em>surplus total</em>. Tout autre couple (prix, quantité) aboutit à un surplus total plus faible.<br>
 L’équilibre en CPP est dit <em>Pareto-optimal</em>, i.e., il est impossible d’améliorer la situation d’un agent sans détériorer celle d’un autre. C’est ce qu’on appelle le <em>premier théorème du bien-être</em>.</p>
 </div>
-<p>Ces propriétés font de la CPP une “référence” par rapport à laquelle on peut comparer les résultats des autres structures de marché.</p>
+<p>Ces propriétés font de la CPP une « référence » par rapport à laquelle on peut comparer les résultats des autres structures de marché.</p>
 </section>
 <section id="perception-par-les-agents-isolés" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="perception-par-les-agents-isolés"><span class="header-section-number">1.5</span> Perception par les agents isolés</h2>
