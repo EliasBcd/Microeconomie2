@@ -56,7 +56,7 @@ Le 13 octobre : vocabulaire harmonisé avec le TD et notations clarifiées (voir
 
 1. ~~Harmoniser le vocabulaire avec le TD~~ (fait).
 2. **Réorganiser les chapitres.** Chapitre 2 fait le 13 octobre : 2.1.1 renommée « Le monopole choisit son prix ou sa quantité » ; « Le monopole n'a pas de courbe d'offre » (ex-« Variation de la demande ») en 2.2.2, juste après la maximisation ; régulation sur trois niveaux (subvention unitaire, taxe forfaitaire, impôt sur les bénéfices en sous-sections 2.4.3 à 2.4.5) ; discrimination dans l'ordre 1ᵉʳ → 3ᵉ → 2ᵉ degré. Attention : les blocs R de ce chapitre redéfinissent `P`, `Rm`, `Cm`, `qm`, et l'ordre d'exécution compte lors d'un déplacement. Chapitre 1 fait le 13 octobre : la remarque sur les seuils suit la figure du profit ; « Perception par les agents isolés » a été déplacée en ouverture de 2.1.1 (elle sert de charnière CPP → monopole : en CPP, le producteur ne peut ni fixer son prix ni l'influencer par sa quantité ; le monopole fixe l'un et observe l'autre). Chapitre 3 fait le 13 octobre : le cartel reste dans le chapitre (choix de l'auteur, pour pouvoir le réintégrer au programme), signalé par un encadré « Hors programme », par l'introduction du chapitre et par le titre de sa méthode dans l'annexe B.
-3. **Ajouts pour l'asynchrone :**
+3. **Ajouts pour l'asynchrone** (prochaine étape : proposer un format type sur un seul chapitre, à valider avant de le généraliser) :
    - objectifs et prérequis en début de chapitre, encadré « À retenir » et « Erreurs fréquentes » en fin de chapitre ;
    - transformer les « *Question :* » en auto-évaluation, avec la réponse dans un callout repliable ;
    - renvois vers les exercices du TD par numéro ;
