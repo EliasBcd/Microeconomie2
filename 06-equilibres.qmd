@@ -14,7 +14,7 @@ $$C_m(q^*)=P(q^*)=p^*$$
 
 ## En monopole
 
-Le revenu marginal du monopole est égal au coût marginal.
+La recette marginale du monopole est égale au coût marginal.
 Le prix est égal à la demande inverse de la quantité d'équilibre.
 
 $$R_m(q^*)=C_m(q^*)\text{ et }p^*=P(q^*)$$
@@ -29,7 +29,7 @@ $$C_M(q^*)=P(q^*)=p^*$$
 ### Avec une discrimination du 3^e^ degré
 
 En discrimination du 3^e^ degré, le monopole se comporte comme s'il était en monopole sur deux marchés différents.
-Le revenu marginal du groupe 1 est égal au revenu marginal du groupe 2 qui est égal au coût marginal total du monopole.
+La recette marginale du groupe 1 est égale à la recette marginale du groupe 2, qui est égale au coût marginal total du monopole.
 
 $$R_{m1}(q_1^*)=R_{m2}(q_2^*)=C_m(q^*)$$
 Avec
@@ -45,14 +45,14 @@ Le prix est ensuite obtenu en utilisant la demande inverse de la quantité total
 
 ### Duopole de Stackelberg
 
-Maximiser le profit de l'entreprise follower en considérant la quantité produite par le leader comme une donnée. 
-On obtient ainsi la fonction de réaction du follower.
-Le leader utilise ensuite la fonction de réaction du follower dans sa propre maximisation du profit.
-Cela permet d'obtenir la quantité produite par le leader.
-À l'aide de la fonction de réaction du follower, on en déduit la quantité du follower.
+Maximiser le profit de l'entreprise satellite en considérant la quantité produite par le pilote comme une donnée.
+On obtient ainsi la fonction de réaction du satellite.
+Le pilote utilise ensuite la fonction de réaction du satellite dans sa propre maximisation du profit.
+Cela permet d'obtenir la quantité produite par le pilote.
+À l'aide de la fonction de réaction du satellite, on en déduit la quantité du satellite.
 Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.
 
-### Cartel
+### Cartel (hors programme)
 
 Quand deux entreprises sont en cartel, elles maximisent leur profit joint.
 On écrit donc le profit du cartel, puis on écrit les conditions du premier ordre suivant chaque quantité.

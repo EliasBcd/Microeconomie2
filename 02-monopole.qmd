@@ -32,7 +32,43 @@ Les principales sont :
 
 ## Recette et recette marginale {#sec-rm}
 
-### Définition {#sec-choix-monopole}
+### Le monopole choisit son prix ou sa quantité {#sec-choix-monopole}
+
+Commençons par rappeler comment un producteur perçoit la demande en concurrence pure et parfaite.
+L'hypothèse d'atomicité indique que les agents individuels sont isolés au sein d'un très grand nombre d'autres agents.
+Ainsi, aucun agent n'a d'influence sur le prix s'il modifie son comportement.
+Une conséquence directe est que le comportement des autres agents est perçu comme étant infiniment élastique.
+C'est-à-dire qu'un producteur sait qu'au prix de marché, il pourra vendre toute sa production, mais que s'il pratique un prix même légèrement plus élevé, il ne vendra **rien**.
+Il perçoit ainsi une demande infiniment élastique au prix, au niveau du prix $p^*$.
+
+
+```{r elasticite}
+#| label: fig-elasticite
+#| fig-cap: "Perception de la demande globale par un producteur isolé."
+#| fig-align: 'center'
+
+x=seq(0, 1, length=11)
+df <- data.frame(x)
+
+p <- ggplot(df, aes(x=x)) +
+    geom_hline(yintercept = 0.5, colour = "blue") +
+    geom_function(fun = function(x) x, colour = "red") +
+    scale_y_continuous(expand = c(0, 0), breaks = c(0.5), labels = c("p*"), limits = c(0, 1.2)) +
+    scale_x_continuous(expand = c(0, 0), breaks = c(0.5), labels = c("q*"), limits = c(0, 1.2)) +
+    labs(x="quantité", y = "prix") +
+    annotate("text", x = 0.75, y = 1, label ="offre individuelle", colour ="red") +
+    annotate("text", x = 0.8, y = 0.55, label ="demande perçue", colour ="blue") +
+    geom_segment(x = 0.5, y = 0, xend = 0.5, yend = 0.5, linetype="dashed") +
+    geom_segment(x = 0, y = 0.5, xend = 0.5, yend = 0.5, linetype = "dashed")
+
+
+p
+```
+
+Dans la @fig-elasticite, $q^*$ est la quantité que choisit ce producteur : celle pour laquelle son offre individuelle (son coût marginal) est égale au prix du marché $p^*$, qu'il considère comme donné.
+
+Le producteur en concurrence pure et parfaite ne peut donc pas jouer sur le prix : au-dessus de $p^*$, il ne vend rien.
+Il ne peut pas non plus faire varier le prix en changeant sa quantité, puisque sa production est négligeable face au marché.
 
 Contrairement à une entreprise en concurrence pure et parfaite, le monopole est seul face à toute la demande du marché.
 Il peut influencer le prix sur le marché, en modifiant son prix de vente ou la quantité vendue.
@@ -240,7 +276,7 @@ La condition de premier ordre s'exprime ainsi : $$\begin{array}{rcl}
 \Leftrightarrow R_m(q^*) &=&C_m(q^*) 
 \end{array}$$
 
-À l'optimum, le monopole égalise le coût marginal et le revenu marginal.
+À l'optimum, le monopole égalise le coût marginal et la recette marginale.
 Cette condition est similaire en apparence à la condition d'optimalité en CPP.
 La différence réside en fait dans l'expression de la recette marginale, telle que vue en @sec-rm.
 
@@ -260,7 +296,7 @@ Dans le cas contraire, le marché n'existerait pas, car le monopole ne produirai
 ::: {#thm-mono-opti}
 ## Optimum du monopole
 
-À l'optimum, le monopole égalise le coût marginal et le revenu marginal.
+À l'optimum, le monopole égalise le coût marginal et la recette marginale.
 Ce n'est un maximum que si la dérivée de la recette marginale est inférieure à la dérivée du coût marginal et que le profit est positif.
 
 $$R_m(q^*)=C_m(q^*) $$ {#eq-cpo} $$R_m'(q^*) <C_m'(q^*)$$ {#eq-cso} $$\pi(q^*)\geq0 $$ {#eq-profitpos}
@@ -372,56 +408,7 @@ p7 <- ggplot(df2, aes(x=x2)) +
 p7  
 ```
 
-### Propriétés de la solution du monopole
-
-On avait dans l'@eq-rm : $$R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)$$ Comme à l'optimum, d'après l'@eq-cpo, on doit avoir $R_m(q^*)=C_m(q^*)$, on a : $$R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) $$ {#eq-rmcm}
-
-On observe ici un lien avec la solution en CPP.
-En effet, en CPP, l'élasticité de la demande au prix est perçue comme infinie, on aura donc bien $P(q^*) = C_m(q^*)$, la solution obtenue en CPP.
-Dès lors que l'élasticité de la demande au prix n'est plus infinie en revanche, on obtient : $$ P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}} > C_m(q^*)$$
-
-*Question :* Dans quelle zone d'élasticité le monopole opère-t-il ?
-
-Si $\left|\varepsilon_{q/p}(q^*)\right|<1$, c'est-à-dire que si la demande est inélastique, alors $1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} <0$, ce qui implique que la recette marginale $R_m$ est négative et donc impossible à égaliser avec le coût marginal $C_m$.\
-On peut voir la réponse d'une autre façon.
-Si la demande est inélastique, alors la recette $R$ augmente quand la quantité $q$ baisse.
-Le coût total $C$ baisse aussi quand la quantité baisse.
-Le monopole aurait donc tout intérêt à réduire sa production lorsque la demande est inélastique.
-
-::: {#cor-elasticite}
-## Élasticité de la demande à l'optimum
-
-À l'optimum, le monopole opère dans la zone élastique de la courbe de demande : $\left|\varepsilon_{q/p}(q^*)\right|>1$.
-:::
-
-### Indice de pouvoir du monopole
-
-::: {#def-pouvoir-marché}
-## Pouvoir de marché
-
-Le pouvoir de marché d'un producteur est sa capacité à élever son prix au-dessus de son coût marginal.
-:::
-
-La capacité du monopole à vendre à un prix supérieur au coût marginal dépend de la plus ou moins grande élasticité de la demande au prix.
-Cela permet de construire un indice du *pouvoir de monopole* à partir de l'élasticité de la demande au prix à l'équilibre.
-On a, d'après l'@eq-rmcm : $$R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) $$ On en déduit :
-
-$$\begin{array}{rl}
-& C_m(q^*) = P(q^*) - \frac{P(q^*)}{|\varepsilon_{q/p}(q^*)|}\\
-\Leftrightarrow & P(q^*) - C_m(q^*) = \frac{P(q^*)}{|\varepsilon_{q/p}(q^*)|}
-\end{array}$$
-
-::: {#def-Lerner}
-## Indice de Lerner
-
-L'indice de Lerner $L$ mesure la capacité d'un monopole à vendre au-dessus de son coût marginal : $$L=\frac{P(q^*) - C_m(q^*)}{P(q^*)} $$ {#eq-Lerner}
-:::
-
-D'après les calculs précédents, l'indice de Lerner est inversement proportionnel à l'élasticité prix de la demande.
-
-$$L = \frac{1}{|\varepsilon_{q/p}(q^*)|} $$
-
-### Variation de la demande
+### Le monopole n'a pas de courbe d'offre
 
 Comme on l'a vu en @sec-choix-monopole, le monopole choisit **soit** son prix, **soit** la quantité vendue, mais jamais les deux : l'autre variable lui est imposée par la demande.
 Ses décisions dépendent donc à la fois de la demande à laquelle il fait face et de son coût marginal.
@@ -491,6 +478,55 @@ changement_demande(P2_quantite, Rm2_quantite, lab_P2=c(1, P2_quantite(1)+0.07, 0
 
 En CPP, un changement de demande, s'il implique un changement du prix d'équilibre, entraîne forcément un changement dans la quantité produite par un producteur individuel.
 
+### Propriétés de la solution du monopole
+
+On avait dans l'@eq-rm : $$R_m(q) = P(q)\left(1 - \frac{1}{|\varepsilon_{q/p}(q)|}\right)$$ Comme à l'optimum, d'après l'@eq-cpo, on doit avoir $R_m(q^*)=C_m(q^*)$, on a : $$R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) $$ {#eq-rmcm}
+
+On observe ici un lien avec la solution en CPP.
+En effet, en CPP, l'élasticité de la demande au prix est perçue comme infinie, on aura donc bien $P(q^*) = C_m(q^*)$, la solution obtenue en CPP.
+Dès lors que l'élasticité de la demande au prix n'est plus infinie en revanche, on obtient : $$ P(q^*)=\frac{C_m(q^*)}{1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|}} > C_m(q^*)$$
+
+*Question :* Dans quelle zone d'élasticité le monopole opère-t-il ?
+
+Si $\left|\varepsilon_{q/p}(q^*)\right|<1$, c'est-à-dire que si la demande est inélastique, alors $1 - \frac{1}{\left|\varepsilon_{q/p}(q^*)\right|} <0$, ce qui implique que la recette marginale $R_m$ est négative et donc impossible à égaliser avec le coût marginal $C_m$.\
+On peut voir la réponse d'une autre façon.
+Si la demande est inélastique, alors la recette $R$ augmente quand la quantité $q$ baisse.
+Le coût total $C$ baisse aussi quand la quantité baisse.
+Le monopole aurait donc tout intérêt à réduire sa production lorsque la demande est inélastique.
+
+::: {#cor-elasticite}
+## Élasticité de la demande à l'optimum
+
+À l'optimum, le monopole opère dans la zone élastique de la courbe de demande : $\left|\varepsilon_{q/p}(q^*)\right|>1$.
+:::
+
+### Indice de pouvoir du monopole
+
+::: {#def-pouvoir-marché}
+## Pouvoir de marché
+
+Le pouvoir de marché d'un producteur est sa capacité à élever son prix au-dessus de son coût marginal.
+:::
+
+La capacité du monopole à vendre à un prix supérieur au coût marginal dépend de la plus ou moins grande élasticité de la demande au prix.
+Cela permet de construire un indice du *pouvoir de monopole* à partir de l'élasticité de la demande au prix à l'équilibre.
+On a, d'après l'@eq-rmcm : $$R_m(q^*) = P(q^*)\left(1 - \frac{1}{|\varepsilon_{q/p}(q^*)|}\right) = C_m(q^*) $$ On en déduit :
+
+$$\begin{array}{rl}
+& C_m(q^*) = P(q^*) - \frac{P(q^*)}{|\varepsilon_{q/p}(q^*)|}\\
+\Leftrightarrow & P(q^*) - C_m(q^*) = \frac{P(q^*)}{|\varepsilon_{q/p}(q^*)|}
+\end{array}$$
+
+::: {#def-Lerner}
+## Indice de Lerner
+
+L'indice de Lerner $L$ mesure la capacité d'un monopole à vendre au-dessus de son coût marginal : $$L=\frac{P(q^*) - C_m(q^*)}{P(q^*)} $$ {#eq-Lerner}
+:::
+
+D'après les calculs précédents, l'indice de Lerner est inversement proportionnel à l'élasticité prix de la demande.
+
+$$L = \frac{1}{|\varepsilon_{q/p}(q^*)|} $$
+
 ### L'inefficience du monopole
 
 La production du monopole est inférieure à la production en CPP et le prix est supérieur au prix de CPP.
@@ -526,7 +562,7 @@ p_surplus
 ```
 
 Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu'en CPP, et que le surplus des consommateurs est plus faible.
-Il y a globalement une perte sèche de surplus total, comme on peut le voir sur la @fig-mono-surplus.
+Il y a globalement une perte sèche de surplus total, aussi appelée *charge morte*, comme on peut le voir sur la @fig-mono-surplus.
 **Le monopole est inefficace au sens de Pareto.** Il existe des consommateurs prêts à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche).
 Il est donc possible d'avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole.
 Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d'autre pour obtenir cette amélioration.
@@ -645,9 +681,7 @@ Cette règle est surtout utile dans la situation de monopole naturel, où une ta
 
 Ces règles de tarification sont en général difficiles à mettre en œuvre, car elles nécessitent une information précise sur les coûts de production, en particulier dans la tarification au coût marginal.
 
-### Taxes et subventions
-
-#### Subvention unitaire
+### Subvention unitaire
 
 ::: {#def-subvunitaire}
 ## Subvention unitaire
@@ -710,7 +744,7 @@ p_subvunitaire +
                      labels=c(expression(p[s]^"*"), expression(p^"*"), expression(p[s]^"*"+s)))
 ```
 
-##### La subvention qui rétablit l'optimum
+#### La subvention qui rétablit l'optimum
 
 Le régulateur ne choisit pas $s$ au hasard : il cherche le niveau de subvention qui amène le monopole à produire *de lui-même* la quantité de concurrence pure et parfaite $q^*_{CPP}$, celle qui maximise le surplus total.
 Il lui suffit pour cela de choisir $s$ de sorte que la recette marginale et le coût marginal se croisent en $q^*_{CPP}$.
@@ -777,16 +811,16 @@ Vérification : avec cette subvention, le monopole égalise $R_m(q) = C_m(q)-s^*
 Le profit du monopole subventionné vaut alors : $$\pi = R(q^*_{CPP}) - C(q^*_{CPP}) + s^*q^*_{CPP} = \frac{1}{4}-\frac{1}{8}+\frac{1}{4} = \frac{3}{8}$$
 :::
 
-##### Le coût de la subvention
+#### Le coût de la subvention
 
-La subvention n'est pas gratuite : le régulateur verse au monopole $$S = s^*\,q^*_{CPP}$$ Dans l'@exm-subv-opti, cela représente $S = \tfrac{1}{2}\times\tfrac{1}{2} = \tfrac{1}{4}$.
+La subvention n'est pas gratuite : le régulateur verse au monopole un montant total $$S_{\text{tot}} = s^*\,q^*_{CPP}$$ Dans l'@exm-subv-opti, cela représente $S_{\text{tot}} = \tfrac{1}{2}\times\tfrac{1}{2} = \tfrac{1}{4}$.
 
 Il faut donc financer cette dépense.
 Le régulateur ne peut pas le faire avec une taxe unitaire : celle-ci viendrait exactement compenser la subvention, puisque seul le solde net perçu par unité produite entre dans la décision du monopole.
 Il lui faut un instrument qui prélève des ressources **sans modifier la décision marginale** du producteur.
 C'est le cas des deux instruments qui suivent : la taxe forfaitaire et l'impôt sur les bénéfices.
 
-#### Taxe forfaitaire
+### Taxe forfaitaire
 
 ::: {#def-t-forfaitaire}
 ## Taxe forfaitaire
@@ -804,10 +838,10 @@ $$\pi(q) = R(q) - C(q) -T$$ La condition du premier ordre de l'@eq-cpo devient a
 Si elle n'est pas trop élevée, une taxe forfaitaire n'a *aucune* influence sur la quantité produite et le prix.
 Si la taxe forfaitaire est très élevée, supérieure au profit à l'optimum ($\pi(q^*) <T$), le monopole préfère ne rien produire et le surplus social est nul.
 
-##### Financer la subvention par une taxe forfaitaire
+#### Financer la subvention par une taxe forfaitaire
 
 Puisqu'elle ne modifie pas la décision du monopole, la taxe forfaitaire est l'instrument naturel pour financer la subvention unitaire de l'@eq-subv-opti.
-Le régulateur équilibre son budget en prélevant exactement ce qu'il verse : $$T = S = s^*q^*_{CPP}$$ {#eq-T-financement}
+Le régulateur équilibre son budget en prélevant exactement ce qu'il verse : $$T = S_{\text{tot}} = s^*q^*_{CPP}$$ {#eq-T-financement}
 
 Le monopole continue alors de produire $q^*_{CPP}$ — la taxe forfaitaire ne change pas sa condition du premier ordre — et le budget du régulateur est équilibré.
 
@@ -815,7 +849,7 @@ Le monopole continue alors de produire $q^*_{CPP}$ — la taxe forfaitaire ne ch
 ## Financement de la subvention
 
 Reprenons l'@exm-subv-opti, où $s^*=\tfrac{1}{2}$ et $q^*_{CPP}=\tfrac{1}{2}$.
-La subvention coûte : $$S = \frac{1}{2}\times\frac{1}{2} = \frac{1}{4}$$
+La subvention coûte : $$S_{\text{tot}} = \frac{1}{2}\times\frac{1}{2} = \frac{1}{4}$$
 
 La taxe forfaitaire doit donc valoir $T=\tfrac{1}{4}$.
 Elle est réalisable, car elle reste inférieure au profit du monopole subventionné, qui vaut $\tfrac{3}{8}$ : $$T = \frac{1}{4} \leq \frac{3}{8} = \pi(q^*_{CPP})$$
@@ -850,7 +884,7 @@ En revanche, le surplus des consommateurs augmente davantage que le profit ne di
 Dans l'@exm-financement, les consommateurs gagnent $\tfrac{5}{72}$, le monopole perd $\tfrac{3}{72}$, et le surplus total augmente de $\tfrac{2}{72}=\tfrac{1}{36}$, qui est précisément la perte sèche de la @fig-mono-surplus.
 :::
 
-#### Impôt sur les bénéfices (profit)
+### Impôt sur les bénéfices (profit)
 
 Un autre type d'imposition possible est l'impôt sur les bénéfices.
 
@@ -870,10 +904,10 @@ Le profit s'écrit : $$\pi(q) = R(q) - C(q) -t(R(q) - C(q)) = (1-t)(R(q) - C(q))
 
 Comme pour la taxe forfaitaire, le comportement du monopole n'est pas modifié par un impôt sur les bénéfices.
 
-##### Financer la subvention par un impôt sur les bénéfices
+#### Financer la subvention par un impôt sur les bénéfices
 
 L'impôt sur les bénéfices étant lui aussi neutre, il peut également financer la subvention.
-Le régulateur choisit cette fois le *taux* $t$ qui lui rapporte le montant $S$ : $$t\,\pi(q^*_{CPP}) = S = s^*q^*_{CPP} \quad\Leftrightarrow\quad t^* = \frac{s^*q^*_{CPP}}{R(q^*_{CPP}) - C(q^*_{CPP}) + s^*q^*_{CPP}}$$
+Le régulateur choisit cette fois le *taux* $t$ qui lui rapporte le montant $S_{\text{tot}}$ : $$t\,\pi(q^*_{CPP}) = S_{\text{tot}} = s^*q^*_{CPP} \quad\Leftrightarrow\quad t^* = \frac{s^*q^*_{CPP}}{R(q^*_{CPP}) - C(q^*_{CPP}) + s^*q^*_{CPP}}$$
 
 où le profit imposé $\pi(q^*_{CPP})$ inclut bien la subvention reçue, qui fait partie des recettes du monopole.
 
@@ -888,7 +922,7 @@ Les deux instruments ne se valent cependant pas du point de vue de l'information
 - Le taux $t$ s'applique au profit *réalisé*. Tant que $t<1$, le profit net $(1-t)\pi$ reste positif : l'impôt sur les bénéfices ne peut jamais provoquer la fermeture du monopole.
 
 En contrepartie, l'impôt sur les bénéfices suppose que le régulateur puisse observer et vérifier le profit du monopole, ce qui est en pratique bien plus difficile que de prélever une somme fixe.
-La condition de réalisabilité $t^*\leq 1$ est en revanche la même que pour la taxe forfaitaire : il faut que $S\leq\pi(q^*_{CPP})$.
+La condition de réalisabilité $t^*\leq 1$ est en revanche la même que pour la taxe forfaitaire : il faut que $S_{\text{tot}}\leq\pi(q^*_{CPP})$.
 :::
 
 ### Prix maximal
@@ -967,7 +1001,7 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkre
   annotate("text", x=0.5, y=0.2, label="recette marginale avec un prix max", color="darkgreen")
 ```
 
-Avec un prix maximal égal au prix de concurrence pure et parfaite, le revenu marginal coupe la courbe de coût marginal au point d'équilibre de la concurrence pure et parfaite.
+Avec un prix maximal égal au prix de concurrence pure et parfaite, la recette marginale coupe la courbe de coût marginal au point d'équilibre de la concurrence pure et parfaite.
 Le prix maximal génère alors exactement la situation de CPP.
 On est donc dans une situation optimale au sens de Pareto.
 
@@ -1080,6 +1114,87 @@ Les entreprises essaient de s'en approcher le plus possible.
 Lors d'une vente de bons du Trésor des États-Unis, chaque ménage intéressé soumettait une offre (prix, quantité) au gouvernement.
 Le gouvernement triait les offres par ordre décroissant de prix et les satisfaisait jusqu'à épuisement des bons à vendre.
 :::
+
+### Discrimination du troisième degré
+
+Il s'agit de faire payer un prix différent à chaque groupe de consommateurs en fonction des caractéristiques de leurs fonctions de demande.
+Les groupes sont en général caractérisés par des propensions à payer différentes.
+Tous les membres d'un groupe paient le même prix, contrairement à la discrimination au premier degré.
+Il s'agit d'une segmentation des consommateurs.
+
+::: {#exm-discri-3}
+## Discrimination au troisième degré
+
+Les tarifs jeunes de la SNCF, les tarifs familles.
+La carte Izly du CROUS pour faire payer des prix différents aux étudiants, aux étudiants boursiers et aux différents personnels.
+Pour pratiquer la discrimination au troisième degré, il faut pouvoir identifier les groupes.
+:::
+
+*Question :* Comment répartir la production entre les différents groupes ?
+
+1.  Quelle production totale ?
+2.  Quelle répartition ?
+
+*Méthode :* On résout d'abord 2 en supposant que 1 est déjà résolu.
+On obtient alors la répartition en fonction de la production totale.
+Puis on résout 1 à l'aide de la solution de 2.
+
+On modélise le problème de la manière suivante :
+
+- 2 groupes A et B ;
+- Avec des fonctions de demande inverses $P_A(q_A)$ et $P_B(q_B)$ ;
+- Une quantité $q$ totale a été produite, qu'il faut répartir entre les 2 groupes : $q=q_A+q_B$.
+
+Le problème du monopole s'écrit : $$\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q)$$ Dans un premier temps, on suppose que la quantité totale $q$ est fixée, donc le coût total l'est aussi et peut être supprimé du problème de maximisation.
+On cherche donc juste à maximiser la recette totale : $$\max_{q_A, q_B} q_AP_A(q_A) + q_BP_B(q_B) $$ Avec $q=q_A+q_B$, donc $q_B=q-q_A$, le problème devient : $$\begin{array}{rl}
+&\max_{q_A, 0\leq q_A\leq q} q_AP_A(q_A) + (q-q_A)P_B(q-q_A) \\
+\Leftrightarrow &\max_{q_A, 0\leq q_A\leq q} R_A(q_A) + R_B(q-q_A) 
+\end{array}$$ La condition du premier ordre s'écrit : $$\begin{array}{rl}
+&\frac{dR_A(q_A) + R_B(q-q_A) }{dq_A} = 0\\
+\Leftrightarrow & R_{mA}(q_A) - R_{mB}(q-q_A) = 0\\
+\Leftrightarrow & R_{mA}(q_A) = R_{mB}(q_B) 
+\end{array}$$ {#eq-cpo3e}
+
+L'@eq-cpo3e nous dit que le monopole répartit la quantité totale produite de manière à égaliser les recettes marginales entre les deux groupes.
+Elle nous donne aussi une relation implicite entre $q_A$ et $q_B$, qui nous permet ainsi d'obtenir $q_A^*(q_B)$ ou bien $q_B^*(q_A)$.
+
+Intuitivement, si la recette marginale issue du groupe A est supérieure à celle issue du groupe B ($R_{mA}(q_A) > R_{mB}(q_B)$), alors en diminuant la quantité $q_B$ dans le groupe B et en la transférant au groupe A, le monopole perd $R_{mB}(q_B)$ et gagne $R_{mA}(q_A)$, donc la recette totale augmente et le profit aussi.
+Inversement dans le cas opposé.
+Il n'est donc pas intéressant de transférer la production d'un groupe vers un autre lorsque $R_{mA}(q_A) = R_{mB}(q_B)$ (et seulement dans ce cas).
+
+Maintenant que la répartition est résolue, il faut trouver la quantité totale produite.
+Le problème devient maintenant : $$\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q_A+q_B)$$ La condition du premier ordre s'obtient maintenant en dérivant suivant $q_A$ et $q_B$ séparément : $$\begin{array}{rcl}
+\frac{\partial\pi(q_A, q_B)}{\partial q_A} = 0&\Leftrightarrow& R_{mA}(q_A^*) = C_m(q_A^*+q_B^*)\\
+\frac{\partial\pi(q_A, q_B)}{\partial q_B} = 0&\Leftrightarrow& R_{mB}(q_B^*) = C_m(q_A^*+q_B^*)\\
+\end{array}$$ Le monopole doit faire en sorte que le coût marginal de sa production totale soit égal à la recette marginale sur chacun des marchés.
+
+*Intuition :* Le monopole doit égaliser la recette marginale sur les deux marchés.
+Or le coût marginal dépend de la quantité *totale* produite, pas de la répartition entre les marchés.
+Si on est dans la situation telle que $C_m(q)<R_{mA}(q_A)$, alors il y a la possibilité de faire du profit sur le marché A (et le marché B par conséquent).
+Inversement, si $C_m(q)>R_{mA}(q_A)$, alors le monopole fait des pertes.
+
+::: remark
+On utilise bien $C_m(q_A+q_B)$ et non $C_m(q_A)$ ou $C_m(q_B)$ car c'est bien la variation du coût total lorsqu'on augmente « un peu » $q_A$ avec $q_B$ qui reste fixe.
+:::
+
+#### Prix et élasticité-prix
+
+D'après l'@eq-rm, on a : $$\begin{array}{crcl}
+&R_{mA}(q_A^*) &=& R_{mB}(q_B^*)\\
+\Leftrightarrow & P_A(q_A^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_A}(q^*_A)\right|}\right) & = & P_B(q_B^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_B}(q_B^*)\right|}\right)
+\end{array}$$ Sans perte de généralité, on peut supposer que $P_A(q_A^*)> P_B(q_B^*)$.
+On obtient alors que : $$1-\frac{1}{\left|\varepsilon_{q/p_A}(q_A^*)\right|} <1-\frac{1}{\left|\varepsilon_{q/p_B}(q_B^*)\right|}$$ Autrement dit $$\left|\varepsilon_{q/p_B}(q_B^*)\right|>\left|\varepsilon_{q/p_A}(q^*_A)\right|$$ Le prix est donc plus faible pour le groupe où l'élasticité prix de la demande est plus élevée.
+Le prix est plus élevé pour le groupe avec l'élasticité la plus faible, les moins réactifs au prix.
+
+::: {#exm-discri-pro}
+## Tarifs professionnels
+
+Les tarifs « professionnels » dans les transports (avion, train, etc.).
+Les professionnels sont moins sensibles au prix car leurs dates de voyage sont moins flexibles que celles des particuliers.
+Leurs élasticités-prix sont donc plus faibles et leurs prix plus élevés.
+:::
+
+Des fonctions de demande inverse différentes associées à des élasticités-prix de la demande différentes aboutissent à des prix différents.
 
 ### Discrimination du deuxième degré
 
@@ -1336,86 +1451,3 @@ Par exemple, les abonnements mobiles avec un volume de données limité sont des
 De même, les compagnies aériennes proposent différentes classes de sièges (économique, affaires, première) pour répondre aux divers segments de clientèle.
 Dans le secteur des logiciels, les entreprises offrent souvent des versions basiques gratuites ou à faible coût pour attirer les utilisateurs occasionnels, tout en proposant des versions premium payantes avec des fonctionnalités avancées pour les utilisateurs professionnels ou intensifs.
 Ces stratégies permettent aux entreprises de maximiser leurs profits en capturant une plus grande part du surplus des consommateurs à travers une discrimination tarifaire efficace.
-
-### Discrimination du troisième degré
-
-<!-- A faire si le temps le permet. -->
-
-Il s'agit de faire payer un prix différent à chaque groupe de consommateurs en fonction des caractéristiques de leurs fonctions de demande.
-Les groupes sont en général caractérisés par des propensions à payer différentes.
-Tous les membres d'un groupe paient le même prix, contrairement à la discrimination au premier degré.
-Il s'agit d'une segmentation des consommateurs.
-
-::: {#exm-discri-3}
-## Discrimination au troisième degré
-
-Les tarifs jeunes de la SNCF, les tarifs familles.
-La carte Izly du CROUS pour faire payer des prix différents aux étudiants, aux étudiants boursiers et aux différents personnels.
-Pour pratiquer la discrimination au troisième degré, il faut pouvoir identifier les groupes.
-:::
-
-*Question :* Comment répartir la production entre les différents groupes ?
-
-1.  Quelle production totale ?
-2.  Quelle répartition ?
-
-*Méthode :* On résout d'abord 2 en supposant que 1 est déjà résolu.
-On obtient alors la répartition en fonction de la production totale.
-Puis on résout 1 à l'aide de la solution de 2.
-
-On modélise le problème de la manière suivante :
-
-- 2 groupes A et B ;
-- Avec des fonctions de demande inverses $P_A(q_A)$ et $P_B(q_B)$ ;
-- Une quantité $q$ totale a été produite, qu'il faut répartir entre les 2 groupes : $q=q_A+q_B$.
-
-Le problème du monopole s'écrit : $$\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q)$$ Dans un premier temps, on suppose que la quantité totale $q$ est fixée, donc le coût total l'est aussi et peut être supprimé du problème de maximisation.
-On cherche donc juste à maximiser la recette totale : $$\max_{q_A, q_B} q_AP_A(q_A) + q_BP_B(q_B) $$ Avec $q=q_A+q_B$, donc $q_B=q-q_A$, le problème devient : $$\begin{array}{rl}
-&\max_{q_A, 0\leq q_A\leq q} q_AP_A(q_A) + (q-q_A)P_B(q-q_A) \\
-\Leftrightarrow &\max_{q_A, 0\leq q_A\leq q} R_A(q_A) + R_B(q-q_A) 
-\end{array}$$ La condition du premier ordre s'écrit : $$\begin{array}{rl}
-&\frac{dR_A(q_A) + R_B(q-q_A) }{dq_A} = 0\\
-\Leftrightarrow & R_{mA}(q_A) - R_{mB}(q-q_A) = 0\\
-\Leftrightarrow & R_{mA}(q_A) = R_{mB}(q_B) 
-\end{array}$$ {#eq-cpo3e}
-
-L'@eq-cpo3e nous dit que le monopole répartit la quantité totale produite de manière à égaliser les recettes marginales entre les deux groupes.
-Elle nous donne aussi une relation implicite entre $q_A$ et $q_B$, qui nous permet ainsi d'obtenir $q_A^*(q_B)$ ou bien $q_B^*(q_A)$.
-
-Intuitivement, si la recette marginale issue du groupe A est supérieure à celle issue du groupe B ($R_{mA}(q_A) > R_{mB}(q_B)$), alors en diminuant la quantité $q_B$ dans le groupe B et en la transférant au groupe A, le monopole perd $R_{mB}(q_B)$ et gagne $R_{mA}(q_A)$, donc la recette totale augmente et le profit aussi.
-Inversement dans le cas opposé.
-Il n'est donc pas intéressant de transférer la production d'un groupe vers un autre lorsque $R_{mA}(q_A) = R_{mB}(q_B)$ (et seulement dans ce cas).
-
-Maintenant que la répartition est résolue, il faut trouver la quantité totale produite.
-Le problème devient maintenant : $$\max_{q_A, q_B} \pi(q_A, q_B) = q_AP_A(q_A) + q_BP_B(q_B) -C(q_A+q_B)$$ La condition du premier ordre s'obtient maintenant en dérivant suivant $q_A$ et $q_B$ séparément : $$\begin{array}{rcl}
-\frac{\partial\pi(q_A, q_B)}{\partial q_A} = 0&\Leftrightarrow& R_{mA}(q_A^*) = C_m(q_A^*+q_B^*)\\
-\frac{\partial\pi(q_A, q_B)}{\partial q_B} = 0&\Leftrightarrow& R_{mB}(q_B^*) = C_m(q_A^*+q_B^*)\\
-\end{array}$$ Le monopole doit faire en sorte que le coût marginal de sa production totale soit égal à la recette marginale sur chacun des marchés.
-
-*Intuition :* Le monopole doit égaliser la recette marginale sur les deux marchés.
-Or le coût marginal dépend de la quantité *totale* produite, pas de la répartition entre les marchés.
-Si on est dans la situation telle que $C_m(q)<R_{mA}(q_A)$, alors il y a la possibilité de faire du profit sur le marché A (et le marché B par conséquent).
-Inversement, si $C_m(q)>R_{mA}(q_A)$, alors le monopole fait des pertes.
-
-::: remark
-On utilise bien $C_m(q_A+q_B)$ et non $C_m(q_A)$ ou $C_m(q_B)$ car c'est bien la variation du coût total lorsqu'on augmente « un peu » $q_A$ avec $q_B$ qui reste fixe.
-:::
-
-#### Prix et élasticité-prix
-
-D'après l'@eq-rm, on a : $$\begin{array}{crcl}
-&R_{mA}(q_A^*) &=& R_{mB}(q_B^*)\\
-\Leftrightarrow & P_A(q_A^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_A}(q^*_A)\right|}\right) & = & P_B(q_B^*)\left(1-\frac{1}{\left|\varepsilon_{q/p_B}(q_B^*)\right|}\right)
-\end{array}$$ Sans perte de généralité, on peut supposer que $P_A(q_A^*)> P_B(q_B^*)$.
-On obtient alors que : $$1-\frac{1}{\left|\varepsilon_{q/p_A}(q_A^*)\right|} <1-\frac{1}{\left|\varepsilon_{q/p_B}(q_B^*)\right|}$$ Autrement dit $$\left|\varepsilon_{q/p_B}(q_B^*)\right|>\left|\varepsilon_{q/p_A}(q^*_A)\right|$$ Le prix est donc plus faible pour le groupe où l'élasticité prix de la demande est plus élevée.
-Le prix est plus élevé pour le groupe avec l'élasticité la plus faible, les moins réactifs au prix.
-
-::: {#exm-discri-pro}
-## Tarifs professionnels
-
-Les tarifs « professionnels » dans les transports (avion, train, etc.).
-Les professionnels sont moins sensibles au prix car leurs dates de voyage sont moins flexibles que celles des particuliers.
-Leurs élasticités-prix sont donc plus faibles et leurs prix plus élevés.
-:::
-
-Des fonctions de demande inverse différentes associées à des élasticités-prix de la demande différentes aboutissent à des prix différents.

@@ -28,42 +28,34 @@ Auteurs : Elias Bouacida, Hela Maafi, Antoine Terracol. Langue : français.
 | `05-cppmono.qmd`, `06-equilibres.qmd`, `07-surplus.qmd` | Annexes A, B, C : tableau CPP/monopole, méthodes de résolution, calcul des surplus |
 | `_theme.qmd` | Charge ggplot2 et le thème `theme_perso`, inclus en tête de chaque chapitre |
 
-## Compilation
+## Piège d'édition
 
-L'environnement R local est fragile :
-- `renv/activate.R` (ignoré par git) contient un espace réservé `..md5..` non remplacé, qui fait échouer la compilation quand renv est actif ;
-- la bibliothèque renv de R 4.6 est vide, et R 4.4.1 est une installation incomplète (pas de `Rscript`).
-
-Pour vérifier un chapitre sans toucher à renv, on désactive renv et on fournit à R un profil vide. La bibliothèque personnelle de R 4.6.1 contient ggplot2, knitr et rmarkdown.
-
-```bash
-export RENV_ACTIVATE_PROJECT=FALSE R_PROFILE_USER=/chemin/vers/un/fichier/vide.Rprofile
-quarto render 02-monopole.qmd --to html   # sortie dans _book/
-```
-
-Ne jamais lancer `quarto render` avec renv actif sans l'avoir décidé : renv peut réécrire `renv.lock` et `activate.R`.
-Pour tester une figure seule : extraire le code du bloc dans un script R, avec `library(ggplot2)` et le thème de `_theme.qmd`, puis l'exécuter **hors du dossier du projet** avec `ggsave`.
-
-**Piège d'édition :** ne pas écrire de LaTeX via des chaînes Python ou sed non brutes. `\t`, `\r` et `\f` deviennent des caractères de contrôle (`\text` → tabulation, `\right` → retour chariot). Utiliser l'outil Edit, puis vérifier avec `git diff | grep -P '^\+.*[\x00-\x08\x0b-\x1f]'`.
+Ne pas écrire de LaTeX via des chaînes Python ou sed non brutes. `\t`, `\r` et `\f` deviennent des caractères de contrôle (`\text` → tabulation, `\right` → retour chariot). Utiliser l'outil Edit, puis vérifier avec `git diff | grep -P '^\+.*[\x00-\x08\x0b-\x1f]'`.
 
 ## Conventions
 
 - Environnements Quarto : `def-`, `prp-`, `thm-`, `cor-`, `exm-`, `cnj-` (hypothèses), `.remark`, `.proof`. Figures `fig-`, équations `eq-`, sections `sec-`.
 - Les préfixes de renvoi sont en minuscules (`_quarto.yml` : `crossref` et `language: crossref-sec-prefix: section`).
 - Les identifiants doivent être uniques dans tout le livre (ceux de l'annexe C portent le suffixe `-annexe`).
-- Notations : $C_m$ coût marginal, $C_M$ coût moyen, $CV_M$ coût variable moyen, $R_m$ recette marginale, $P(q)$ demande inverse, $Q(p)$ demande, $\varepsilon_{q/p}$ élasticité prix, $S$ offre agrégée (aussi $S_c$, $S_p$ pour les surplus et $S_i$ pour la part de marché : ambiguïté connue).
+- Notations : $C_m$ coût marginal, $C_M$ coût moyen, $CV_M$ coût variable moyen, $R_m$ recette marginale, $P(q)$ demande (agrégée) inverse, $Q(p)$ demande, $S(q)$ offre agrégée inverse, $\varepsilon_{q/p}$ élasticité prix, $S_c$ et $S_p$ surplus, $S_i$ part de marché.
+  - Régulation : $s$ subvention unitaire, $S_{\text{tot}}=s^*q^*_{CPP}$ montant total versé (ni $D$, réservé à la demande, ni $S_F$, qui suggérerait une subvention forfaitaire).
+  - Cournot : le coût quadratique est $C_i(q_i)=kq_i^2$ ; $c$ est réservé à un coût marginal constant, comme dans le TD.
+  - L'étoile signale un **choix optimal** : $q_1^*=f_1(q_2^a)$ est la meilleure réponse à l'anticipation $q_2^a$ ; à l'équilibre, les anticipations sont justes et $(q_1^*, q_2^*)$ désigne l'équilibre. Même convention pour $q_F^*$ en Stackelberg.
+- Vocabulaire : on garde les termes du cours et on signale ceux du TD à leur première apparition (perte sèche / charge morte, recette / revenu marginal, pilote / meneuse / leader, satellite / suiveuse / follower, équilibre de Cournot / Cournot-Nash, fonction de réaction / meilleure réponse). « Revenu marginal » n'est employé qu'une fois, dans la définition.
 - Couleurs habituelles des figures : demande en bleu, coût marginal en rouge, recette marginale en vert.
 
-## État d'avancement (au 12 octobre 2026, non commité)
+## État d'avancement (au 12 octobre 2026)
 
 **Fait :**
 - 10 corrections d'erreurs de fond : prix maximal, économies d'échelle, figures de changement de demande (avec renvoi à `@sec-choix-monopole`), valeurs de la discrimination du 2ᵉ degré ($P_1=6-q$, $P_2=8-q$, $c=2$), recette notée $\pi$, annexe A, HHI, courbe d'offre CPP avec seuils de fermeture et de rentabilité, libre entrée, définition de la demande.
 - 10 problèmes techniques : identifiants en double, figure de la demande perçue, $x_0$, légendes et étiquettes de figures, `ymax <-`, intégrales, préfixe des sections.
 
+Le 13 octobre : vocabulaire harmonisé avec le TD et notations clarifiées (voir Conventions).
+
 **Reste à faire, dans l'ordre convenu :**
 
-1. **Harmoniser le vocabulaire avec le TD.** Garder les termes du cours et ajouter les synonymes du TD à leur première apparition : perte sèche / charge morte, recette / revenu marginal, pilote / leader / meneuse, satellite / follower / suiveuse, fonction de réaction / meilleure réponse, équilibre de Cournot / Cournot-Nash. Autres ambiguïtés à régler : la lettre $S$ (4 usages), $c$ (coût quadratique en Cournot, coût marginal constant en discrimination), « Demande agrégée (P) », mélange de $q_i^a$ et $q_i^*$ en Cournot.
-2. **Réorganiser les chapitres** (à discuter, en commençant par le chapitre 2). Pistes : déplacer la sous-section « Variation de la demande » ; placer la remarque sur les seuils après `@eq-profitCM` dans le chapitre 1 ; déplacer « Perception par les agents isolés » après la notion de *price-taker* ; ordre de la discrimination 1ᵉʳ → 3ᵉ → 2ᵉ degré ; cartel en annexe « Pour aller plus loin » ; titres de niveau 5 dans la partie régulation.
+1. ~~Harmoniser le vocabulaire avec le TD~~ (fait).
+2. **Réorganiser les chapitres.** Chapitre 2 fait le 13 octobre : 2.1.1 renommée « Le monopole choisit son prix ou sa quantité » ; « Le monopole n'a pas de courbe d'offre » (ex-« Variation de la demande ») en 2.2.2, juste après la maximisation ; régulation sur trois niveaux (subvention unitaire, taxe forfaitaire, impôt sur les bénéfices en sous-sections 2.4.3 à 2.4.5) ; discrimination dans l'ordre 1ᵉʳ → 3ᵉ → 2ᵉ degré. Attention : les blocs R de ce chapitre redéfinissent `P`, `Rm`, `Cm`, `qm`, et l'ordre d'exécution compte lors d'un déplacement. Chapitre 1 fait le 13 octobre : la remarque sur les seuils suit la figure du profit ; « Perception par les agents isolés » a été déplacée en ouverture de 2.1.1 (elle sert de charnière CPP → monopole : en CPP, le producteur ne peut ni fixer son prix ni l'influencer par sa quantité ; le monopole fixe l'un et observe l'autre). Chapitre 3 fait le 13 octobre : le cartel reste dans le chapitre (choix de l'auteur, pour pouvoir le réintégrer au programme), signalé par un encadré « Hors programme », par l'introduction du chapitre et par le titre de sa méthode dans l'annexe B.
 3. **Ajouts pour l'asynchrone :**
    - objectifs et prérequis en début de chapitre, encadré « À retenir » et « Erreurs fréquentes » en fin de chapitre ;
    - transformer les « *Question :* » en auto-évaluation, avec la réponse dans un callout repliable ;

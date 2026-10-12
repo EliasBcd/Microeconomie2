@@ -208,7 +208,7 @@ Pour $q$ unités de bien vendues, le producteur gagne $R(q)$, autrement dit, c'e
 
 ## Recette marginale
 
-La recette marginale, notée $R_m$, est la recette rapportée par une unité supplémentaire de bien vendue.
+La recette marginale, notée $R_m$, aussi appelée *revenu marginal*, est la recette rapportée par une unité supplémentaire de bien vendue.
 $$R_m(q)=R'(q)$$
 :::
 
@@ -317,14 +317,6 @@ $$p=C_m(q) \quad \text{si} \quad p\geq \min_q CV_M(q)$$
 En dessous de ce prix, le producteur ne produit rien.
 :::
 
-::: remark
-## Seuil de fermeture et seuil de rentabilité
-
-- Le *seuil de fermeture* est le minimum du coût variable moyen. En dessous, le prix ne couvre même pas le coût variable de chaque unité : le producteur perd moins en ne produisant rien (il ne perd alors que son coût fixe).
-- Le *seuil de rentabilité* est le minimum du coût moyen. Au-dessus, le profit est positif, d'après l'@eq-profitCM.
-- Entre les deux seuils, le producteur produit à perte, car cette perte est plus faible que son coût fixe, qu'il paierait de toute façon.
-:::
-
 Le profit du producteur s'écrit alors :
 $$
 \pi(q)=R(q)-C(q)=pq-C(q)=pq-C_M(q)q=q(p-C_M(q))
@@ -350,6 +342,14 @@ p_cppcout + geom_ribbon(data=pi, aes(x=x, ymin=ymin, ymax=ymax), fill="green", a
   scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(CM(q), Cm(q)), labels=c(expression(C[M](q^"*")), expression(p))) +
   scale_x_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(q), labels=c(expression(q^"*")))
 ```
+
+::: remark
+## Seuil de fermeture et seuil de rentabilité
+
+- Le *seuil de fermeture* est le minimum du coût variable moyen. En dessous, le prix ne couvre même pas le coût variable de chaque unité : le producteur perd moins en ne produisant rien (il ne perd alors que son coût fixe).
+- Le *seuil de rentabilité* est le minimum du coût moyen. Au-dessus, le profit est positif, d'après l'@eq-profitCM.
+- Entre les deux seuils, le producteur produit à perte, car cette perte est plus faible que son coût fixe, qu'il paierait de toute façon.
+:::
 
 
 ## Le consommateur
@@ -391,18 +391,20 @@ Il faudra donc inverser, au sens mathématique, la fonction de demande pour obte
 
 :::{#def-dagregee}
 
-## Demande agrégée (P)
+## Demande agrégée
 
-La *demande agrégée (P)* est la somme des demandes individuelles pour chaque niveau de prix.
+La *demande agrégée* est la somme des demandes individuelles pour chaque niveau de prix : à chaque prix $p$, on additionne les quantités demandées par tous les consommateurs.
+Comme pour la demande individuelle, on utilise surtout la demande agrégée inverse, notée $P(q)$, qui donne le prix auquel les consommateurs achètent au total la quantité $q$.
 :::
 
 
 
 :::{#def-offre-agregee}
 
-## Offre agrégée (S)
+## Offre agrégée
 
-L'*offre agrégée (S)* est la somme des offres individuelles pour chaque niveau de prix.
+L'*offre agrégée* est la somme des offres individuelles pour chaque niveau de prix.
+On note $S(q)$ l'offre agrégée inverse, qui donne le prix auquel les producteurs offrent au total la quantité $q$.
 :::
 
 La courbe d'offre correspond à la série des coûts marginaux de production, c'est-à-dire aux prix minimaux auxquels les producteurs souhaitent vendre une unité supplémentaire du bien.
@@ -410,8 +412,11 @@ La courbe d'offre correspond à la série des coûts marginaux de production, c'
 :::{#def-equilibreCPP}
 
 ## Équilibre de marché
-L'équilibre de marché se fait à l'intersection entre l'offre agrégée (S) et la demande agrégée (P) (quand S=P).
+L'équilibre de marché se fait à l'intersection des courbes d'offre et de demande agrégées : au prix d'équilibre $p^*$, la quantité offerte est égale à la quantité demandée.
 :::
+
+Avec les fonctions inverses, le même point s'écrit $P(q^*)=S(q^*)=p^*$ : à la quantité d'équilibre $q^*$, le prix que les consommateurs sont prêts à payer est égal au prix auquel les producteurs acceptent de vendre.
+C'est cette écriture que nous utiliserons dans les calculs.
 
 À l'équilibre de marché, on obtient une quantité d'équilibre (notée $q^*$) et un prix d'équilibre (noté $p^*$).
 La vente de toutes les unités jusqu'à la quantité d'équilibre $q^*$ au prix $p^*$ procure un *surplus* aux agents économiques.
@@ -497,37 +502,3 @@ C'est ce qu'on appelle le *premier théorème du bien-être*.
 :::
 
 Ces propriétés font de la CPP une « référence » par rapport à laquelle on peut comparer les résultats des autres structures de marché.
-
-## Perception par les agents isolés
-
-L'hypothèse d'atomicité indique que les agents individuels sont isolés au sein d'un très grand nombre d'autres agents.
-Ainsi, aucun agent n'a d'influence sur le prix s'il modifie son comportement.
-Une conséquence directe est que le comportement des autres agents est perçu comme étant infiniment élastique.
-C'est-à-dire qu'un producteur sait qu'au prix de marché, il pourra vendre toute sa production, mais que s'il pratique un prix même légèrement plus élevé, il ne vendra **rien**.
-Il perçoit ainsi une demande infiniment élastique au prix, au niveau du prix $p^*$.
-
-
-```{r elasticite}
-#| label: fig-elasticite
-#| fig-cap: "Perception de la demande globale par un producteur isolé."
-#| fig-align: 'center'
-
-x=seq(0, 1, length=11)
-df <- data.frame(x)
-
-p <- ggplot(df, aes(x=x)) +
-    geom_hline(yintercept = 0.5, colour = "blue") +
-    geom_function(fun = function(x) x, colour = "red") +
-    scale_y_continuous(expand = c(0, 0), breaks = c(0.5), labels = c("p*"), limits = c(0, 1.2)) +
-    scale_x_continuous(expand = c(0, 0), breaks = c(0.5), labels = c("q*"), limits = c(0, 1.2)) +
-    labs(x="quantité", y = "prix") +
-    annotate("text", x = 0.75, y = 1, label ="offre individuelle", colour ="red") +
-    annotate("text", x = 0.8, y = 0.55, label ="demande perçue", colour ="blue") +
-    geom_segment(x = 0.5, y = 0, xend = 0.5, yend = 0.5, linetype="dashed") +
-    geom_segment(x = 0, y = 0.5, xend = 0.5, yend = 0.5, linetype = "dashed")
-
-
-p
-```
-
-Dans la @fig-elasticite, $q^*$ est la quantité que choisit ce producteur : celle pour laquelle son offre individuelle (son coût marginal) est égale au prix du marché $p^*$, qu'il considère comme donné.
