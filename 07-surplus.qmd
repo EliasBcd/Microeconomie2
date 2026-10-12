@@ -19,14 +19,14 @@ p <- ggplot() +
 ```
 
 
-::: {#def-surplus-conso}
+::: {#def-surplus-conso-annexe}
 
 ## Surplus des consommateurs
 
 Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêts à payer et le prix effectivement payé.
 Mathématiquement, c'est l'intégrale suivante :
 $$
-S_c(q)=\int_0^qP(x)-pdx=\int_0^qP(x)dx-pq
+S_c(q)=\int_0^q\left(P(x)-p\right)dx=\int_0^qP(x)\,dx-pq
 $$
 Où $p$ est le prix payé, $q$ la quantité échangée et $P$ la demande inverse.
 :::
@@ -34,13 +34,13 @@ Où $p$ est le prix payé, $q$ la quantité échangée et $P$ la demande inverse
 L'intégrale signifie que c'est l'aire comprise entre la demande inverse (la fonction $P$), le prix payé par les consommateurs (le prix $p$), l'axe des ordonnées et la quantité échangée ($q$).
 Dans notre cours, ce sera l'aire d'un triangle ou d'un trapèze.
 
-::: { #def-surplus-prod }
+::: { #def-surplus-prod-annexe }
 
 ## Surplus des producteurs
 Le surplus des producteurs est la somme de la différence entre le prix reçu par les producteurs et le coût marginal de production.
 Mathématiquement, c'est l'intégrale suivante :
 $$
-S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx 
+S_p(q)=\int_0^q\left(p-C_m(x)\right)dx=pq-\int_0^qC_m(x)\,dx 
 $$ {#eq-sp}
 Où $p$ est le prix reçu par le producteur, $q$ la quantité vendue et $C_m$ le coût marginal.
 :::

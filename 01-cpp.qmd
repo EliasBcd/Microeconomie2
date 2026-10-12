@@ -71,8 +71,10 @@ Il n'y a pas non plus d'effet des marques.
 
 ## Libre entrée et sortie du marché
 
-L'hypothèse de libre entrée et sortie du marché signifie qu'il n'y a pas de barrière à l'entrée dans le marché.
-Concrètement, il est impossible de faire un bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.
+L'hypothèse de libre entrée et sortie du marché signifie qu'il n'y a pas de barrière à l'entrée dans le marché, ni à la sortie.
+Concrètement, si les entreprises en place font des profits, de nouveaux concurrents entrent sur le marché, ce qui fait baisser le prix.
+Si elles font des pertes, certaines sortent du marché, ce qui fait monter le prix.
+À long terme, le profit des entreprises est donc nul : le prix est égal au minimum du coût moyen.
 :::
 
 La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un *pouvoir de marché* aux producteurs ou aux consommateurs en place. 
@@ -304,14 +306,23 @@ $$C_m(q^*)=p$$
 
 ## Courbe d'offre d'un producteur
 
-La courbe d'offre d'un producteur donne la quantité maximale que souhaite produire un producteur pour chaque prix.
+La courbe d'offre d'un producteur donne, pour chaque prix, la quantité qui maximise son profit.
 
 :::
 
 ::: {#prp-courbeoffreCPP}
 ## Courbe d'offre en CPP
-En concurrence pure et parfaite, la courbe d'offre d'un producteur est donnée par son coût marginal.
-$$p=C_m(q)$$
+En concurrence pure et parfaite, la courbe d'offre d'un producteur est donnée par la partie croissante de son coût marginal située au-dessus du minimum du coût variable moyen :
+$$p=C_m(q) \quad \text{si} \quad p\geq \min_q CV_M(q)$$
+En dessous de ce prix, le producteur ne produit rien.
+:::
+
+::: remark
+## Seuil de fermeture et seuil de rentabilité
+
+- Le *seuil de fermeture* est le minimum du coût variable moyen. En dessous, le prix ne couvre même pas le coût variable de chaque unité : le producteur perd moins en ne produisant rien (il ne perd alors que son coût fixe).
+- Le *seuil de rentabilité* est le minimum du coût moyen. Au-dessus, le profit est positif, d'après l'@eq-profitCM.
+- Entre les deux seuils, le producteur produit à perte, car cette perte est plus faible que son coût fixe, qu'il paierait de toute façon.
 :::
 
 Le profit du producteur s'écrit alors :
@@ -348,8 +359,8 @@ La modélisation des consommateurs dans ce cours est simple.
 ::: {#def-dindiv}
 
 ## Demande individuelle
-La fonction de demande d'un consommateur correspond à la suite des prix maximaux qu'un consommateur est prêt à payer pour obtenir une unité *supplémentaire* du bien.
-On la note souvent $Q$.
+La fonction de demande d'un consommateur, notée $Q$, donne la quantité $Q(p)$ de bien qu'il souhaite acheter à chaque prix $p$.
+Lue dans l'autre sens, elle donne pour chaque quantité $q$ le prix maximal que le consommateur est prêt à payer pour obtenir une unité *supplémentaire* du bien.
 :::
 
 On appelle ce prix maximum le *prix de réserve*.
@@ -444,7 +455,7 @@ p
 Le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix payé par le consommateur pour obtenir les biens.
 Sur le graphique quantité prix $(q, p)$, c'est l'aire comprise entre la courbe de demande et la droite horizontale dont l'ordonnée est le prix d'échange.
 Formellement :
-$$S_c=\int_0^{q^*}P(q)-p^* dq$$
+$$S_c=\int_0^{q^*}\left(P(q)-p^*\right)dq$$
 :::
 
 ::: {.remark}
@@ -458,8 +469,8 @@ Il n'y a pas de gain à l'échange pour cette unité, mais pour toutes les autre
 
 Le surplus des producteurs est la somme des différences entre le prix auquel les producteurs vendent le bien et la courbe de coût marginal, qui représente le coût d'une unité supplémentaire produite.
 Sur le graphique quantité prix $(q, p)$, c'est l'aire comprise entre le prix de vente et la courbe de coût marginal.
-Formellement :
-$$S_p=\int_0^{q^*}p^*-S(q) dq$$
+Formellement, en notant $S$ l'offre agrégée, c'est-à-dire la courbe des coûts marginaux :
+$$S_p=\int_0^{q^*}\left(p^*-S(q)\right)dq$$
 :::
 
 En pratique, on n'utilisera jamais la formule avec des intégrales, mais on calculera l'aire du triangle (ou trapèze) concerné.
@@ -506,10 +517,11 @@ df <- data.frame(x)
 
 p <- ggplot(df, aes(x=x)) +
     geom_hline(yintercept = 0.5, colour = "blue") +
+    geom_function(fun = function(x) x, colour = "red") +
     scale_y_continuous(expand = c(0, 0), breaks = c(0.5), labels = c("p*"), limits = c(0, 1.2)) +
     scale_x_continuous(expand = c(0, 0), breaks = c(0.5), labels = c("q*"), limits = c(0, 1.2)) +
     labs(x="quantité", y = "prix") +
-    annotate("text", x = 0.9, y = 1, label ="offre individuelle", colour ="red") +
+    annotate("text", x = 0.75, y = 1, label ="offre individuelle", colour ="red") +
     annotate("text", x = 0.8, y = 0.55, label ="demande perçue", colour ="blue") +
     geom_segment(x = 0.5, y = 0, xend = 0.5, yend = 0.5, linetype="dashed") +
     geom_segment(x = 0, y = 0.5, xend = 0.5, yend = 0.5, linetype = "dashed")
@@ -518,4 +530,4 @@ p <- ggplot(df, aes(x=x)) +
 p
 ```
 
-Dans la @fig-elasticite, $q^*$ représente la production optimale de ce producteur quand il est seul.
+Dans la @fig-elasticite, $q^*$ est la quantité que choisit ce producteur : celle pour laquelle son offre individuelle (son coût marginal) est égale au prix du marché $p^*$, qu'il considère comme donné.

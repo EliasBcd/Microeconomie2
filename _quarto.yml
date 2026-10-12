@@ -67,3 +67,6 @@ crossref:
   tbl-prefix: tableau
   eq-prefix: équation
   exm-prefix: exemple
+
+language:
+  crossref-sec-prefix: section

@@ -32,9 +32,9 @@ Les principales sont :
 
 ## Recette et recette marginale {#sec-rm}
 
-### Définition
+### Définition {#sec-choix-monopole}
 
-L'avantage du monopole sur des entreprises en concurrence pure et parfaite est qu'il connaît tout le marché.
+Contrairement à une entreprise en concurrence pure et parfaite, le monopole est seul face à toute la demande du marché.
 Il peut influencer le prix sur le marché, en modifiant son prix de vente ou la quantité vendue.
 Cela permet au monopole de percevoir la *vraie* courbe de demande agrégée et non plus une courbe de demande avec une élasticité infinie.
 Le choix de la quantité qu'il met sur le marché modifie le prix auquel il pourra vendre sa production et il le sait.
@@ -186,7 +186,7 @@ R <- function(q)(q-q^2)
 p3 <- p +
   stat_function(fun=function(x) Rm(x), colour = "darkgreen") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0)) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.5, 1), labels = c(expression(x[0]/2), expression(x[0]))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.5, 1), labels = c(expression(frac(a, 2*b)), expression(frac(a, b)))) +
   stat_function(fun=function(x) R(x), colour = "red") +
   annotate("text", x=0.1, y = 0.2, colour="red", label="Recette") +
   annotate("text", x=0.65, y=0.5, label=lab3, size=5, colour="darkblue") +
@@ -202,7 +202,7 @@ La recette maximale est atteinte lorsque la valeur absolue de l'élasticité pri
 
 ```{r monopoleprofit}
 #| label: fig-mono-profit
-#| fig-cap: "Recette maximale."
+#| fig-cap: "Deux façons de calculer la recette totale : l'aire sous la recette marginale (trapèze vert) ou le rectangle prix × quantité (rectangle rouge)."
 
 profit <- data.frame(x=c(0, 0.4), y=c(1, 0.2))
 
@@ -210,7 +210,6 @@ p4 <- p +
   stat_function(fun=function(x) Rm(x), colour = "darkgreen") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.6), labels=c("p*")) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.4), labels = c("q*")) +
-  annotate("text", x=0.1, y = 0.2, colour="red", label="Recette") +
   geom_ribbon(data = profit, aes(x=x, ymin=0, ymax = y), fill="green", alpha = 0.5) +
   geom_ribbon(data = profit, aes(x=x, ymin=0, ymax = 0.6), fill="red", alpha = 0.5) +
   annotate("text", x=0.5, y=0.1, colour="darkgreen", label="Recette marginale")
@@ -222,7 +221,10 @@ p4
 Sur la @fig-mono-profit, on voit qu'il est possible de calculer la recette totale de deux manières :
 
 1.  En utilisant l'aire du trapèze vert (intégrale de la recette marginale entre 0 et la quantité échangée $q^*$) ;
-2.  En utilisant l'aire du rectangle rouge ($\pi=p^* q^*$).
+2.  En utilisant l'aire du rectangle rouge ($R(q^*)=p^* q^*$).
+
+Les deux aires se superposent sur la figure : leur partie commune apparaît en brun.
+Elles sont égales, car le triangle vert (au-dessus du prix) a la même aire que le triangle rouge (sous le prix, à droite de la recette marginale).
 :::
 
 ## Décision de production du monopole
@@ -334,7 +336,7 @@ pi <- function(q){ R(q) - C(q)}
 
 p6 <- ggplot(df2, aes(x=x2)) +
   stat_function(fun=function(x) R(x), colour = "blue") +
-  labs(x="quantité", y = "prix") +
+  labs(x="quantité", y = "montant") +
   stat_function(fun=function(x) C(x), colour="red") +
   stat_function(fun=function(x) pi(x), colour="darkgreen") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 420), breaks = seq(0, 400, by=50), labels=c(0, 50, 100, expression(pi[m]^"*"==150), 200, 250, 300, 350, 400)) +
@@ -421,9 +423,11 @@ $$L = \frac{1}{|\varepsilon_{q/p}(q^*)|} $$
 
 ### Variation de la demande
 
-Les décisions de production du monopole et la fixation de son prix dépendent de la demande à laquelle il fait face et du coût marginal.
-Le monopole n'a **pas de courbe d'offre** au sens où il n'y a pas de relation univoque entre prix et quantité produite, à la différence des producteurs en CPP.
-En monopole, si la demande change, le monopole s'adapte, soit en changeant sa production, mais pas son prix (@fig-mono-changement-demande2), ou l'inverse (@fig-mono-changement-demande1).
+Comme on l'a vu en @sec-choix-monopole, le monopole choisit **soit** son prix, **soit** la quantité vendue, mais jamais les deux : l'autre variable lui est imposée par la demande.
+Ses décisions dépendent donc à la fois de la demande à laquelle il fait face et de son coût marginal.
+Quand la demande change, le monopole recalcule son optimum ($R_m=C_m$) avec la nouvelle recette marginale.
+Selon la forme de la nouvelle demande, il peut garder la même quantité et changer son prix (@fig-mono-changement-demande1), ou garder le même prix et changer sa quantité (@fig-mono-changement-demande2).
+À un même prix peuvent donc correspondre plusieurs quantités, et inversement : le monopole n'a **pas de courbe d'offre**, au sens où il n'y a pas de relation univoque entre prix et quantité produite, à la différence des producteurs en CPP.
 
 ```{r monopolechangementdemande1}
 #| label: fig-mono-changement-demande1
@@ -431,42 +435,58 @@ En monopole, si la demande change, le monopole s'adapte, soit en changeant sa pr
 
 P <- function(q){1-q}
 Rm <- function(q){1-2*q}
-P2 <- function(q){1-3*q/4}
-Rm2 <- function(q){1-3*q/2}
 Cm <- function(q){q}
 
 qm <- uniroot(function(x){Rm(x) - Cm(x)}, c(0, 1))$root
 
-p_changement <- ggplot() +
-  geom_function(fun=P, colour = "blue") +
-  geom_function(fun=Rm, colour = "lightblue") +
-  geom_function(fun=P2, colour = "darkgreen") +
-  geom_function(fun=Rm2, colour = "green") +
-  geom_function(fun=Cm, colour="red") +
-  labs(x="quantité", y = "prix") +
-  geom_text(aes(x=0.8, y=P(0.8), label="Demande~1~(P[1])"), color="blue", parse=TRUE) +
-  geom_text(aes(x=0.4, y=0.2, label="Recette~marginale~1~(R[list(1,m)])"), color="lightblue", parse=TRUE) +
-  geom_text(aes(x=1, y=Cm(1), label="Coût~marginal~(C[m])"), color="red", parse=TRUE) +
-  geom_text(aes(x=0.5, y=Rm2(0.5), label="Recette~marginale~2~(R[list(2,m)])"), color="green", parse=TRUE) +
-  geom_text(aes(x=1, y=P2(1), label="demande~2~(P[2])"), color="darkgreen", parse=TRUE)
+# Trace la demande initiale (P, Rm), la nouvelle demande (P2, Rm2) et le coût marginal,
+# avec les pointillés vers les deux optimums. lab_P2 : position (x, y) et justification de l'étiquette de P2.
+# Les étiquettes des recettes marginales sont placées là où elles coupent l'axe des abscisses.
+changement_demande <- function(P2, Rm2, lab_P2) {
+  qm2 <- uniroot(function(x){Rm2(x) - Cm(x)}, c(0, 1))$root
+  z1 <- uniroot(Rm, c(0, 2))$root
+  z2 <- uniroot(Rm2, c(0, 2))$root
+  ggplot() +
+    geom_function(fun=P, colour = "blue") +
+    geom_function(fun=Rm, colour = "lightblue") +
+    geom_function(fun=P2, colour = "darkgreen") +
+    geom_function(fun=Rm2, colour = "green") +
+    geom_function(fun=Cm, colour="red") +
+    labs(x="quantité", y = "prix") +
+    geom_text(aes(x=0.85, y=P(0.85)+0.06, label="Demande~1~(P[1])"), color="blue", parse=TRUE) +
+    geom_text(aes(x=0.95, y=Cm(0.95)+0.06, label="Coût~marginal~(C[m])"), color="red", parse=TRUE) +
+    geom_text(aes(x=lab_P2[1], y=lab_P2[2], label="Demande~2~(P[2])", hjust=lab_P2[3]), color="darkgreen", parse=TRUE) +
+    geom_text(aes(x=z1+ifelse(z2<z1, 0.02, -0.02), y=0.04, label="R[list(1,m)]",
+                  hjust=ifelse(z2<z1, 0, 1)), color="lightblue", parse=TRUE) +
+    geom_text(aes(x=z2+ifelse(z2<z1, -0.02, 0.02), y=0.04, label="R[list(2,m)]",
+                  hjust=ifelse(z2<z1, 1, 0)), color="green", parse=TRUE) +
+    geom_segment(aes(x=qm, y=0, xend=qm, yend=P(qm)), linetype="dashed") +
+    geom_segment(aes(x=0, y=P(qm), xend=qm, yend=P(qm)), linetype="dashed") +
+    geom_segment(aes(x=qm2, y=0, xend=qm2, yend=P2(qm2)), linetype="dashed") +
+    geom_segment(aes(x=0, y=P2(qm2), xend=qm2, yend=P2(qm2)), linetype="dashed")
+}
 
+# Demande 2 plus pentue (moins élastique) : même quantité, prix plus élevé.
+P2_prix <- function(q){7/6-5*q/4}
+Rm2_prix <- function(q){7/6-5*q/2}
 
-p_prix <- p_changement +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm), P2(qm)), labels=c(expression(p[1]^"*"),expression(p[2]^"*"))) +
+changement_demande(P2_prix, Rm2_prix, lab_P2=c(0.05, 1.15, 0)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm), P2_prix(qm)), labels=c(expression(p[1]^"*"),expression(p[2]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm), labels=c(expression(q[1]^"*"==q[2]^"*")))
-
-p_prix
 ```
 
 ```{r monopolechangementdemande2}
 #| label: fig-mono-changement-demande2
 #| fig-cap: "Exemple de réaction du monopole à un changement de demande : changement de quantité."
 
-p_quantité <- p_changement +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm)), labels=c(expression(p[1]^"*"==p[2]^"*"))) +
-  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm, 4/9), labels=c(expression(q[1]^"*"), expression(q[2]^"*")))
+# Demande 2 plus plate (plus élastique) : même prix, quantité plus élevée.
+P2_quantite <- function(q){14/15-2*q/3}
+Rm2_quantite <- function(q){14/15-4*q/3}
+qm2 <- uniroot(function(x){Rm2_quantite(x) - Cm(x)}, c(0, 1))$root
 
-p_quantité
+changement_demande(P2_quantite, Rm2_quantite, lab_P2=c(1, P2_quantite(1)+0.07, 0.5)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm)), labels=c(expression(p[1]^"*"==p[2]^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm, qm2), labels=c(expression(q[1]^"*"), expression(q[2]^"*")))
 ```
 
 En CPP, un changement de demande, s'il implique un changement du prix d'équilibre, entraîne forcément un changement dans la quantité produite par un producteur individuel.
@@ -529,8 +549,8 @@ Il y a ici des économies d'échelle.
 ::: {#def-eco-echelle}
 ## Économie d'échelle
 
-Il y a des *économies d'échelle* quand une unité de bien produite en plus revient moins cher que l'unité précédente.
-Cela signifie que le *coût moyen* baisse quand le producteur produit plus d'unités.
+Il y a des *économies d'échelle* quand une unité de bien produite en plus revient moins cher que le coût moyen des unités précédentes ($C_m(q)<C_M(q)$).
+Produire cette unité fait alors baisser la moyenne : le *coût moyen* baisse quand le producteur produit plus d'unités.
 :::
 
 ::: {#def-mono-naturel}
@@ -912,7 +932,7 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkre
 ```
 
 ```{r monopoleprixmaximal2}
-#| label: fig-mino-prix-max-2
+#| label: fig-mono-prix-max-2
 #| fig-cap: "Fixation d'un prix maximal inférieur au prix de CPP."
 pmax <- 0.2
 
@@ -958,7 +978,7 @@ Trois situations sont possibles avec un prix maximal :
 
 1.  S'il est supérieur au prix de monopole ($p^{max}>p^*_m$), alors le prix maximal n'a aucune incidence.
 2.  S'il est entre le prix de monopole et le prix de concurrence pure et parfaite ($p^*_{CPP}\leq p^{max}\leq p^*_m$), alors la quantité produite augmente quand le prix maximal diminue.
-3.  S'il est inférieur au prix de CPP et donc de monopole ($p^*_{CPP}> p^{max}$), alors la quantité produite diminue quand le prix maximal augmente.
+3.  S'il est inférieur au prix de CPP et donc de monopole ($p^*_{CPP}> p^{max}$), alors le monopole produit la quantité telle que $C_m(q)=p^{max}$ : la quantité produite diminue quand le prix maximal diminue.
 :::
 
 ### Régulation du monopole naturel {#sec-regul-naturel}
@@ -1081,15 +1101,15 @@ La situation est représentée sur la @fig-discri2-demande.
 ```{r discri2}
 
 p1 <- function(q) {
-  (5-q)
+  (6-q)
 }
-p2 <- function(q){10-q}
+p2 <- function(q){8-q}
 
 Cm <- function(q){2}
 
-q1o <- 3
+q1o <- 4
 q1m <- 2
-q2o <- 8
+q2o <- 6
 ```
 
 ```{r}
@@ -1097,14 +1117,14 @@ q2o <- 8
 #| fig-cap: "Représentation des fonctions de demande des deux types de consommateurs et du coût marginal."
 
 p_2d_0 <- ggplot() +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 10.2),breaks=c(0),labels=c()) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 10.5), breaks = c(0), labels = c(0)) +
-  geom_function(fun = p1, xlim = c(0,5)) +
-  geom_function(fun = p2, xlim = c(0,10)) +
-  geom_function(fun = Cm, xlim = c(0,10)) +
-  annotate("text", x=10.2, y=Cm(10), label="c", color="black",size=5) +
-  geom_text(aes(x=4.5, y=p1(4), label="P[1](q)"), parse=TRUE, color="black",size=5, angle=-45) +
-  geom_text(aes(x=9.5, y=p2(9), label="P[2](q)"), parse=TRUE, color="black",size=5, angle=-45) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 8.2),breaks=c(0),labels=c()) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 8.5), breaks = c(0), labels = c(0)) +
+  geom_function(fun = p1, xlim = c(0,6)) +
+  geom_function(fun = p2, xlim = c(0,8)) +
+  geom_function(fun = Cm, xlim = c(0,8)) +
+  annotate("text", x=8.2, y=Cm(10), label="c", color="black",size=5) +
+  geom_text(aes(x=5.5, y=p1(5), label="P[1](q)"), parse=TRUE, color="black",size=5, angle=-45) +
+  geom_text(aes(x=7.5, y=p2(7), label="P[2](q)"), parse=TRUE, color="black",size=5, angle=-45) +
   labs(x="q", y="p")
 
 p_2d_0
@@ -1123,11 +1143,11 @@ Comme dans le cas standard de la discrimination parfaite, le monopole produit le
 #| fig-cap: "Si le monopole pouvait identifier les consommateurs."
 #|
 p_2d_1 <- ggplot() +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 10.2),breaks=c(0),labels=c()) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 10.5), breaks = c(q1o, q2o), labels = c(expression(q[1]^o), expression(q[2]^o))) +
-  geom_function(fun = p1, xlim = c(0,5)) +
-  geom_function(fun = p2, xlim = c(0,10)) +
-  geom_function(fun = Cm, xlim = c(0,10)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 8.2),breaks=c(0),labels=c()) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 8.5), breaks = c(q1o, q2o), labels = c(expression(q[1]^o), expression(q[2]^o))) +
+  geom_function(fun = p1, xlim = c(0,6)) +
+  geom_function(fun = p2, xlim = c(0,8)) +
+  geom_function(fun = Cm, xlim = c(0,8)) +
 
   geom_ribbon(aes(x=c(0,q1o), ymin=c(0,0), ymax=c(p1(0),p1(q1o))), fill="blue", alpha=0.5) +
   geom_ribbon(aes(x=c(q1o,q2o), ymin=c(0,0), ymax=c(p2(q1o),p2(q2o))), fill="lightgreen", alpha=0.5) +
@@ -1135,10 +1155,10 @@ p_2d_1 <- ggplot() +
     geom_segment(aes(x=q1o,y=0,xend=q1o,yend=p2(q1o)), linetype="dashed", color="black") +
   geom_segment(aes(x=q2o,y=0,xend=q2o,yend=Cm(1)), linetype="dashed", color="black") +
   geom_ribbon(aes(x=c(0,q1o), ymin=c(p1(0),p1(q1o)), ymax=c(p2(0),p2(q1o))), fill="red", alpha=0.5) +
-  annotate("text", x=1, y=2, label="A", color="blue",size=8) +
-  annotate("text", x=4.5, y=2, label="C", color="darkgreen",size=8) +
-  annotate("text", x=1.1, y=5.5, label="B", color="red",size=8) +
-  annotate("text", x=10.2, y=Cm(8), label="c", color="black",size=5) +
+  annotate("text", x=1.5, y=1, label="A", color="blue",size=8) +
+  annotate("text", x=5, y=1.5, label="C", color="darkgreen",size=8) +
+  annotate("text", x=1, y=6, label="B", color="red",size=8) +
+  annotate("text", x=8.2, y=Cm(8), label="c", color="black",size=5) +
   labs(x="q", y="p")
 
 p_2d_1
@@ -1247,21 +1267,21 @@ Le monopoleur extrait la totalité du surplus des consommateurs de type 1 (surpl
 #| label: fig-discri2-opti
 #| fig-cap: "Menu optimal pour la discrimination du 2e degré."
 p_2d_2 <- ggplot() +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 10.2),breaks=c(0),labels=c()) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 10.5), breaks = c(q1m,q1o, q2o), labels = c(expression(q[1]^m), expression(q[1]^o), expression(q[2]^m==q[2]^o))) +
-  geom_function(fun = p1, xlim = c(0,5)) +
-  geom_function(fun = p2, xlim = c(0,10)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 8.2),breaks=c(0),labels=c()) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 8.5), breaks = c(q1m,q1o, q2o), labels = c(expression(q[1]^m), expression(q[1]^o), expression(q[2]^m==q[2]^o))) +
+  geom_function(fun = p1, xlim = c(0,6)) +
+  geom_function(fun = p2, xlim = c(0,8)) +
   geom_ribbon(aes(x=c(0,q1m), ymin=c(0,0), ymax=c(p1(0),p1(q1m))), fill="blue", alpha=0.5) +
   geom_ribbon(aes(x=c(0,q1m), ymin=c(p1(0),p1(q1m)), ymax=c(p2(0),p2(q1m))), fill="red", alpha=0.5) +
   geom_ribbon(aes(x=c(q1m,q2o), ymin=c(0,0), ymax=c(p2(q1m),p2(q2o))), fill="lightgreen", alpha=0.5) +
   geom_segment(aes(x=q1m,y=0,xend=q1m,yend=p2(q1m)), linetype="dashed", color="black") +
   geom_segment(aes(x=q2o,y=0,xend=q2o,yend=Cm(1)), linetype="dashed", color="black") +
   geom_segment(aes(x=q1o,y=0,xend=q1o,yend=p2(q1o)), linetype="dashed", color="grey") +
-  geom_function(fun = Cm, xlim = c(0,10)) +
-  annotate("text", x=0.9, y=1.5, label="A", color="blue",size=8) +
-  annotate("text", x=5, y=2, label="C", color="darkgreen",size=8) +
-  annotate("text", x=0.9, y=5.5, label="B", color="red",size=8) +
-  annotate("text", x=10.2, y=Cm(8), label="c", color="black",size=5) +
+  geom_function(fun = Cm, xlim = c(0,8)) +
+  annotate("text", x=0.8, y=1, label="A", color="blue",size=8) +
+  annotate("text", x=4, y=3.2, label="C", color="darkgreen",size=8) +
+  annotate("text", x=0.8, y=6.2, label="B", color="red",size=8) +
+  annotate("text", x=8.2, y=Cm(8), label="c", color="black",size=5) +
   labs(x="q", y="p")
 
 p_2d_2
