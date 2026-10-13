@@ -590,6 +590,69 @@ p + geom_ribbon(data = Sc, aes(x=x, ymin=0.5, ymax = y), fill="blue") +
     geom_ribbon(data = Sp, aes(x=x, ymin=y, ymax = 0.5), fill="red")
 ```
 
+::: {.callout-caution}
+## Méthode : tracer l'équilibre et les surplus
+
+Avec une demande inverse $P(q)$ et une offre agrégée inverse $S(q)$ linéaires :
+
+1. Tracez la demande inverse à partir de deux points : son ordonnée à l'origine $P(0)$ et la quantité pour laquelle le prix s'annule.
+2. Tracez l'offre agrégée inverse à partir de deux points, par exemple $S(0)$ et sa valeur en une autre quantité. Attention : $S(0)$ n'est pas forcément nul.
+3. Au croisement des deux droites, lisez la quantité d'équilibre $q^*$ sur l'axe horizontal et le prix d'équilibre $p^*$ sur l'axe vertical.
+4. Tracez la droite horizontale d'ordonnée $p^*$, de l'axe des prix jusqu'au point d'équilibre.
+5. Le surplus des consommateurs est le triangle compris entre la demande et cette droite : $\frac{1}{2}\times q^*\times\left(P(0)-p^*\right)$.
+6. Le surplus des producteurs est le triangle compris entre cette droite et l'offre : $\frac{1}{2}\times q^*\times\left(p^*-S(0)\right)$.
+:::
+
+::: {.callout-tip}
+## Testez-vous : lire un graphique
+
+La figure ci-dessous représente la demande inverse et l'offre agrégée inverse d'un marché en concurrence pure et parfaite.
+
+1. Identifiez chaque courbe.
+2. Lisez la quantité et le prix d'équilibre.
+3. Calculez le surplus des consommateurs et le surplus des producteurs.
+
+```{r}
+ggplot() +
+  geom_function(fun=function(q) 10-q, xlim=c(0, 10), colour="black") +
+  geom_function(fun=function(q) 2+q, xlim=c(0, 9), colour="black") +
+  labs(x="quantité", y="prix") +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 11), breaks=0:10) +
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 11.5), breaks=0:11) +
+  theme(panel.grid.major=element_line(colour="grey90"))
+```
+
+<details>
+<summary>Réponse</summary>
+
+```{r}
+sc <- data.frame(x=c(0, 4), ymin=c(6, 6), ymax=c(10, 6))
+sp <- data.frame(x=c(0, 4), ymin=c(2, 6), ymax=c(6, 6))
+ggplot() +
+  geom_ribbon(data=sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.4) +
+  geom_ribbon(data=sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.4) +
+  geom_function(fun=function(q) 10-q, xlim=c(0, 10), colour="blue") +
+  geom_function(fun=function(q) 2+q, xlim=c(0, 9), colour="red") +
+  geom_segment(aes(x=4, y=0, xend=4, yend=6), linetype="dashed") +
+  geom_segment(aes(x=0, y=6, xend=4, yend=6), linetype="dashed") +
+  annotate("text", x=8.6, y=0.6, label="Demande", colour="blue") +
+  annotate("text", x=7.3, y=10.6, label="Offre", colour="red", hjust=1) +
+  annotate("text", x=1.2, y=7.3, label="S[c]", parse=TRUE, colour="darkblue", size=5) +
+  annotate("text", x=1.2, y=4.6, label="S[p]", parse=TRUE, colour="darkred", size=5) +
+  labs(x="quantité", y="prix") +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 11), breaks=0:10) +
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 11.5), breaks=0:11) +
+  theme(panel.grid.major=element_line(colour="grey90"))
+```
+
+1. La droite décroissante est la demande, la droite croissante est l'offre.
+2. Elles se coupent en $q^*=4$ et $p^*=6$.
+3. Surplus des consommateurs : $\frac{1}{2}\times 4\times(10-6)=8$.
+   Surplus des producteurs : $\frac{1}{2}\times 4\times(6-2)=8$, car l'offre part de $S(0)=2$ et non de zéro.
+
+</details>
+:::
+
 ::: {.callout-tip}
 ## Testez-vous
 
