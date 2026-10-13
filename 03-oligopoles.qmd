@@ -146,6 +146,7 @@ $q_i$ est décroissante en $q_j^a$.
 ```{r}
 #| label: fig-oligodemande
 #| fig-cap: "Représentation de la demande perçue par l'entreprise 2 anticipant une offre $q_1^a$ par l'entreprise 1."
+#| fig-alt: "Demande de marché, recette marginale et coût marginal, avec la demande perçue par l'entreprise 2 : la demande de marché décalée vers la gauche de la quantité q_1^a anticipée. La recette marginale correspondante coupe le coût marginal à la quantité q_2 choisie par l'entreprise 2."
 
 q1 <- 1/8
 p1 <- P(q1)
@@ -198,6 +199,7 @@ $$
 ```{r}
 #| label: fig-oligo-reaction-stable
 #| fig-cap: "Représentation d'un équilibre de Cournot où les fonctions de réaction convergent vers le point d'équilibre."
+#| fig-alt: "Plan des quantités q_1, à l'horizontale, et q_2, à la verticale, avec deux fonctions de réaction décroissantes qui se coupent à l'équilibre de Cournot. Des flèches en escalier, partant d'une quantité quelconque, se rapprochent de l'équilibre."
 
 f1 <- function(q){1-3*q}
 f2 <- function(q){(1-q)/3}
@@ -241,6 +243,7 @@ Graphiquement, dans le plan $(q_1, q_2)$, la fonction de réaction de l'entrepri
 ```{r}
 #| label: fig-oligo-reaction-instable
 #| fig-cap: "Représentation d'un équilibre de Cournot où les fonctions de réaction divergent du point d'équilibre. Équilibre instable"
+#| fig-alt: "Même plan avec deux fonctions de réaction dont les pentes sont inversées. Les flèches en escalier s'éloignent de l'équilibre de Cournot et aboutissent à une situation où une seule entreprise produit, au niveau de sa quantité de monopole."
 p_equilibre <- p_isoprofit +
   geom_function(fun=f1, colour="blue") +
   geom_function(fun=f2, colour="red") +
@@ -389,6 +392,7 @@ La demande inverse est $P(q)=30-q$, et chaque entreprise a un coût marginal con
 3. Calculez le prix et le profit de chaque entreprise.
 
 ```{r}
+#| fig-alt: "Graphique quadrillé, gradué de 0 à 24 sur les deux axes : quantité de l'entreprise 1 à l'horizontale, quantité de l'entreprise 2 à la verticale. Deux droites non nommées : l'une va de 24 sur l'axe vertical à 12 sur l'axe horizontal, l'autre de 12 sur l'axe vertical à 24 sur l'axe horizontal."
 ggplot() +
   geom_segment(aes(x=0, y=24, xend=12, yend=0)) +
   geom_segment(aes(x=0, y=12, xend=24, yend=0)) +
@@ -402,6 +406,7 @@ ggplot() +
 <summary>Réponse</summary>
 
 ```{r}
+#| fig-alt: "Même graphique avec légendes : la droite la plus pentue est la fonction de réaction de l'entreprise 1, l'autre celle de l'entreprise 2. Elles se coupent à l'équilibre de Cournot, où chaque entreprise produit 8."
 ggplot() +
   geom_segment(aes(x=0, y=24, xend=12, yend=0), colour="red") +
   geom_segment(aes(x=0, y=12, xend=24, yend=0), colour="blue") +
@@ -454,6 +459,7 @@ On trace de la même façon les isoprofits $\pi_1=9$ et $\pi_1=25$.
 ```{r}
 #| label: fig-isoprofit-exemple
 #| fig-cap: "Trois isoprofits de l'entreprise 1 et sa fonction de réaction, avec $P(q)=12-q$ et un coût nul."
+#| fig-alt: "Plan des quantités des deux entreprises, gradué de 0 à 12. Trois courbes d'isoprofit de l'entreprise 1 en forme de cloche, pour des profits de 9, 16 et 25 : plus le profit est élevé, plus la courbe est basse. La fonction de réaction de l'entreprise 1, une droite décroissante, passe par le sommet de chaque cloche, aux points (3, 6), (4, 4) et (5, 2). Quatre points de l'isoprofit 16 sont marqués."
 iso <- function(pi){ function(q1) 12 - q1 - pi/q1 }
 pts <- data.frame(x=c(2, 4, 6, 8), y=c(2, 4, 12-6-16/6, 2))
 ggplot() +
@@ -493,6 +499,7 @@ Comme nous allons le voir, la fonction de réaction de l'entreprise 1 passe par 
 ```{r}
 #| label: fig-isoprofit1
 #| fig-cap: "Courbes d'isoprofit et fonction de réaction de l'entreprise 1"
+#| fig-alt: "Plan des quantités q_1 et q_2 avec plusieurs courbes d'isoprofit de l'entreprise 1 en forme de cloche, et sa fonction de réaction, une droite décroissante qui passe par le sommet de chacune. Les courbes les plus basses correspondent aux profits les plus élevés."
 I1 <- function(q, pi){1-pi/q-2*q}
 f1 <- function(q)(1-4*q)
 
@@ -525,6 +532,7 @@ Cette isoprofit ne touche la droite qu'en un point, son sommet : c'est la quanti
 ```{r}
 #| label: fig-isoprofit-Cournot
 #| fig-cap: "Courbes d'isoprofit et fonctions de réaction des entreprises en équilibre de Cournot-Nash."
+#| fig-alt: "Plan des quantités avec les fonctions de réaction des deux entreprises, qui se coupent à l'équilibre de Cournot. L'isoprofit de l'entreprise 1 qui passe par l'équilibre y atteint son sommet ; celle de l'entreprise 2 y atteint son point le plus à droite. Deux flèches, horizontale et verticale, indiquent les déviations unilatérales autour de l'équilibre."
 I2 <- function(q, pi){1-pi/q-2*q}
 f2 <- function(q)(1/4-1/4*q)
 
@@ -742,6 +750,7 @@ Elle se placera donc sur la courbe d'isoprofit tangente à la fonction de réact
 ```{r}
 #| label: fig-Stack-equi
 #| fig-cap: "Équilibre de Stackelberg : fonction de réaction du satellite (en vert), fonction de réaction du pilote en Cournot (en pointillés), et isoprofits du pilote passant par l'équilibre de Cournot (en bleu) et par l'équilibre de Stackelberg (en rouge)."
+#| fig-alt: "Plan des quantités du pilote, à l'horizontale, et du satellite, à la verticale. L'équilibre de Stackelberg est le point de la fonction de réaction du satellite où celle-ci est tangente à une isoprofit du pilote. Cette isoprofit, en rouge, est plus basse que l'isoprofit bleue qui passe par l'équilibre de Cournot : le pilote gagne plus en Stackelberg. Il produit plus, et le satellite moins, qu'en Cournot."
 p <- p_isoprofit
 
 IL <- function(q, pi){1-pi/q-q}
@@ -952,6 +961,7 @@ La raison est que le cartel se comporte exactement comme un monopole, puis parta
 ```{r}
 #| label: fig-cartel
 #| fig-cap: "Zone d'amélioration mutuellement bénéfique."
+#| fig-alt: "Fonctions de réaction et isoprofits des deux entreprises à l'équilibre de Cournot. La zone bleue, en forme de lentille entre les deux isoprofits, contient les couples de quantités qui augmentent le profit des deux entreprises à la fois."
 
 qmin <- 2/15
 qmax <- 1/5

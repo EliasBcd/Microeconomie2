@@ -62,6 +62,7 @@ Il perçoit ainsi une demande infiniment élastique au prix, au niveau du prix $
 ```{r}
 #| label: fig-elasticite
 #| fig-cap: "Perception de la demande globale par un producteur isolé."
+#| fig-alt: "Graphique prix-quantité vu par un producteur en concurrence pure et parfaite : la demande perçue est une droite horizontale au prix p*, et l'offre individuelle est une droite croissante qui la coupe à la quantité q*."
 #| fig-align: 'center'
 
 x=seq(0, 1, length=11)
@@ -144,6 +145,7 @@ p <- ggplot(df, aes(x=x)) +
 ```{r}
 #| label: fig-monorecettemarginale
 #| fig-cap: "Recette marginale d'un monopole suite à une variation de quantité."
+#| fig-alt: "Droite de demande décroissante avec deux exemples d'augmentation de la quantité vendue. Dans chaque cas, un rectangle rouge marqué moins montre la perte due à la baisse du prix sur les unités déjà vendues, et un rectangle vert marqué plus le gain lié aux unités supplémentaires. Près de l'axe des prix, le gain l'emporte ; près de l'axe des quantités, c'est la perte."
 p1 <- p
 
 lab1 <- expression(P(q+Delta*q))
@@ -197,6 +199,7 @@ La @fig-mono-elasticite représente les différentes zones pour l'élasticité p
 ```{r}
 #| label: fig-mono-elasticite
 #| fig-cap: "La recette est maximale lorsque l'élasticité prix de la demande est égale à -1."
+#| fig-alt: "Droite de demande décroissante découpée en son milieu : sur la partie haute, en vert, la valeur absolue de l'élasticité est supérieure à 1 ; sur la partie basse, en rouge, elle est inférieure à 1 ; au milieu, l'élasticité vaut -1."
 p2 <- p;
 
 lab1 = expression("|"*epsilon[q/p]*"|>1")
@@ -233,6 +236,7 @@ On peut ainsi représenter graphiquement, comme dans la @fig-recette-marginale, 
 ```{r}
 #| label: fig-recette-marginale
 #| fig-cap: "Élasticité et recette."
+#| fig-alt: "Demande linéaire, recette marginale et recette totale. La recette marginale a la même ordonnée à l'origine que la demande et coupe l'axe des quantités à mi-chemin, en a/(2b). La recette totale est une courbe en cloche dont le maximum est atteint en a/(2b), là où l'élasticité vaut -1."
 Rm <- function(q)(1-2*q)
 R <- function(q)(q-q^2)
 
@@ -256,6 +260,7 @@ La recette maximale est atteinte lorsque la valeur absolue de l'élasticité pri
 ```{r}
 #| label: fig-mono-profit
 #| fig-cap: "Deux façons de calculer la recette totale : l'aire sous la recette marginale (trapèze vert) ou le rectangle prix × quantité (rectangle rouge)."
+#| fig-alt: "Demande et recette marginale linéaires, avec une quantité q* et un prix p*. Un trapèze vert sous la recette marginale et un rectangle rouge de hauteur p* et de largeur q* se superposent : les deux aires représentent la même recette totale."
 
 profit <- data.frame(x=c(0, 0.4), y=c(1, 0.2))
 
@@ -345,6 +350,7 @@ Si le monopole produit plus que $q_m^*$, alors chaque unité produite en plus lu
 ```{r}
 #| label: fig-monopoleoptimale
 #| fig-cap: "Production optimale du monopole."
+#| fig-alt: "Demande, recette marginale décroissante et coût marginal croissant. La recette marginale et le coût marginal se coupent à la quantité q_m* ; le prix p_m* se lit sur la demande au-dessus de ce point. Deux triangles rouges, de part et d'autre de q_m*, montrent la perte de profit si le monopole produit moins ou plus."
 p5 <- p
 
 Cm <- function(x){2*x}
@@ -391,6 +397,7 @@ On a donc un profit de **150**, qui est bien positif (condition de l'@eq-profitp
 ```{r}
 #| label: fig-mono-recette-exemple
 #| fig-cap: "Recette, coût et profit dans l'@exm-mono-exemple."
+#| fig-alt: "Recette, coût et profit en fonction de la quantité, de 0 à 20. La recette et le coût sont croissants ; le profit, leur différence, est une courbe en cloche qui atteint son maximum, 150, pour une quantité de 10."
 
 
 x2 <- seq(0, 20, length=100)
@@ -423,6 +430,7 @@ p6
 ```{r}
 #| label: fig-mono-profit-exemple
 #| fig-cap: "Demande, prix, coûts et profits dans l'@exm-mono-exemple."
+#| fig-alt: "Demande, recette marginale, coût marginal et coût moyen de l'exemple. La recette marginale coupe le coût marginal en quantité 10 ; le prix se lit sur la demande, à 30. Le rectangle vert entre le prix 30 et le coût moyen 15, de 0 à 10, représente le profit."
 profit <- data.frame(x=c(0, 10), ymax=c(30, 30), ymin=c(15, 15))
 
 p7 <- ggplot(df2, aes(x=x2)) +
@@ -455,6 +463,7 @@ Selon la forme de la nouvelle demande, il peut garder la même quantité et chan
 ```{r}
 #| label: fig-mono-changement-demande1
 #| fig-cap: "Exemple de réaction du monopole à un changement de demande : changement de prix."
+#| fig-alt: "Deux demandes, leurs recettes marginales et un coût marginal croissant. La seconde demande, plus pentue, conduit à la même quantité optimale que la première, mais à un prix plus élevé."
 
 P <- function(q){1-q}
 Rm <- function(q){1-2*q}
@@ -501,6 +510,7 @@ changement_demande(P2_prix, Rm2_prix, lab_P2=c(0.05, 1.15, 0)) +
 ```{r}
 #| label: fig-mono-changement-demande2
 #| fig-cap: "Exemple de réaction du monopole à un changement de demande : changement de quantité."
+#| fig-alt: "Deux demandes, leurs recettes marginales et un coût marginal croissant. La seconde demande, moins pentue, conduit au même prix que la première, mais à une quantité optimale plus élevée."
 
 # Demande 2 plus plate (plus élastique) : même prix, quantité plus élevée.
 P2_quantite <- function(q){14/15-2*q/3}
@@ -588,6 +598,7 @@ La production du monopole est inférieure à la production en CPP et le prix est
 ```{r}
 #| label: fig-mono-surplus
 #| fig-cap: "Surplus quand le producteur est en monopole."
+#| fig-alt: "Demande, recette marginale et coût marginal d'un monopole, avec trois aires : en bleu, le surplus des consommateurs, triangle sous la demande au-dessus du prix de monopole ; en rouge, le surplus du producteur, trapèze entre le prix de monopole et le coût marginal ; en gris, la perte sèche, triangle entre la demande et le coût marginal, de la quantité de monopole à la quantité de concurrence pure et parfaite."
 qcpp <- uniroot(function(x){P(x) - Cm(x)}, c(0, 1))$root
 
 Sc <- data.frame(x=c(0, qm), ymin=c(P(qm), P(qm)), ymax=c(P(0), P(qm)))
@@ -648,6 +659,7 @@ La figure ci-dessous représente la demande inverse, la recette marginale et le 
 3. Calculez le surplus des consommateurs, le surplus du producteur et la perte sèche.
 
 ```{r}
+#| fig-alt: "Graphique quadrillé, gradué de 0 à 12 sur les deux axes, avec trois droites non nommées : deux droites décroissantes qui partent de 12 sur l'axe des prix, l'une atteignant 0 en quantité 6 et l'autre en quantité 12, et une droite croissante qui part de l'origine."
 ggplot() +
   geom_function(fun=function(q) 12-q, xlim=c(0, 12), colour="black") +
   geom_function(fun=function(q) 12-2*q, xlim=c(0, 6), colour="black") +
@@ -662,6 +674,7 @@ ggplot() +
 <summary>Réponse</summary>
 
 ```{r}
+#| fig-alt: "Même graphique avec légendes : la demande, la recette marginale, plus pentue, et le coût marginal. La recette marginale coupe le coût marginal en quantité 4 ; le prix de monopole, lu sur la demande, vaut 8. Les aires colorées montrent le surplus des consommateurs (triangle bleu), le surplus du producteur (trapèze rouge) et la perte sèche (triangle gris, entre les quantités 4 et 6)."
 sc <- data.frame(x=c(0, 4), ymin=c(8, 8), ymax=c(12, 8))
 sp <- data.frame(x=c(0, 4), ymin=c(0, 4), ymax=c(8, 8))
 ps <- data.frame(x=c(4, 6), ymin=c(4, 6), ymax=c(8, 6))
@@ -741,6 +754,7 @@ La demande 2, en revanche, la coupe à un endroit où le coût moyen est encore 
 ```{r}
 #| label: fig-nat-cout
 #| fig-cap: "Fonction de coût et demande avec et sans économies d'échelle."
+#| fig-alt: "Coût moyen et coût marginal d'un monopole naturel, et deux demandes. La demande 1 coupe le coût marginal là où le coût moyen est croissant ; la demande 2 le coupe là où le coût moyen est encore décroissant, c'est-à-dire en présence d'économies d'échelle."
 
 
 Cm_naturel <- function(q){q/16+1/(1+q)}
@@ -841,6 +855,7 @@ Pour le monopole, c'est comme si le régulateur retranchait un coût $s$ à chaq
 ```{r}
 #| label: fig-mono-subv-unitaire
 #| fig-cap: "Impact d'une subvention unitaire : diminution du coût marginal."
+#| fig-alt: "Demande, recette marginale et coût marginal, ainsi que le coût marginal diminué de la subvention s, parallèle et plus bas. Avec la subvention, la quantité produite augmente et le prix lu sur la demande baisse."
 s <- 0.2
 qs <- (1+s)/3
 
@@ -870,6 +885,7 @@ Le monopole vend chaque unité au prix $P(q)$ et reçoit en plus $s$ du régulat
 ```{r}
 #| label: fig-mono-subv-unitaire-2
 #| fig-cap: "Impact d'une subvention unitaire : augmentation de la recette marginale."
+#| fig-alt: "Même situation représentée autrement : la demande et la recette marginale sont relevées de la subvention s. La nouvelle recette marginale coupe le coût marginal à une quantité plus élevée, et le prix payé par les consommateurs baisse."
 p_subvunitaire +
   geom_function(fun=function(x) P(x)+s, colour="darkblue") +
   geom_function(fun=function(x) Rm(x)+s, colour="darkgreen") +
@@ -906,6 +922,7 @@ En utilisant l'expression de la recette marginale de l'@eq-rm, on peut aussi éc
 ```{r}
 #| label: fig-mono-subv-opti
 #| fig-cap: "Subvention unitaire rétablissant l'optimum social."
+#| fig-alt: "Demande, recette marginale, coût marginal, et recette marginale relevée de la subvention optimale s*. Celle-ci passe par le point où la demande coupe le coût marginal : le monopole produit alors la quantité de concurrence pure et parfaite. Une flèche verticale de longueur s* relie la recette marginale à la demande en cette quantité."
 s_opt <- P(qcpp) - Rm(qcpp)
 
 ggplot() +
@@ -1068,7 +1085,7 @@ Le régulateur envisage trois façons de taxer un monopole :
 
 - une taxe unitaire de $t$ par unité produite ;
 - une taxe forfaitaire de montant $T$ ;
-- un impôt sur les bénéfices au taux $t$.
+- un impôt sur les bénéfices, à un taux donné.
 
 Lesquelles modifient la quantité produite par le monopole ? Pourquoi ?
 
@@ -1079,7 +1096,7 @@ Seule la taxe unitaire modifie la quantité produite.
 Elle augmente de $t$ le coût de chaque unité : la condition du premier ordre devient $R_m(q^*)=C_m(q^*)+t$, ce qui réduit la quantité et augmente le prix (c'est l'effet inverse d'une subvention unitaire).
 
 La taxe forfaitaire et l'impôt sur les bénéfices ne modifient pas la condition du premier ordre $R_m(q^*)=C_m(q^*)$ : le monopole produit la même quantité.
-Il faut seulement que le profit reste positif après la taxe, sinon le monopole cesse de produire (ce qui ne peut pas arriver avec l'impôt sur les bénéfices tant que $t<1$).
+Il faut seulement que le profit reste positif après la taxe, sinon le monopole cesse de produire (ce qui ne peut pas arriver avec l'impôt sur les bénéfices, tant que son taux reste inférieur à 100 %).
 
 </details>
 :::
@@ -1092,6 +1109,7 @@ Il modifie ainsi la demande perçue par le producteur.
 ```{r}
 #| label: fig-mono-prix-max
 #| fig-cap: "Fixation d'un prix maximal supérieur au prix de CPP."
+#| fig-alt: "Demande, recette marginale et coût marginal avec un prix maximal supérieur au prix de concurrence pure et parfaite. La demande perçue est horizontale au niveau du prix maximal jusqu'à la quantité q_max, puis suit la demande initiale ; la recette marginale perçue fait un saut vers le bas en q_max. Le monopole produit q_max, plus que sans régulation."
 pmax <- 0.6
 P_max <- function(q){
   if(P(q)>pmax){
@@ -1127,6 +1145,7 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkre
 ```{r}
 #| label: fig-mono-prix-max-2
 #| fig-cap: "Fixation d'un prix maximal inférieur au prix de CPP."
+#| fig-alt: "Même construction avec un prix maximal inférieur au prix de concurrence pure et parfaite. La recette marginale perçue, horizontale au niveau du prix maximal, coupe le coût marginal : le monopole produit la quantité pour laquelle son coût marginal est égal au prix maximal."
 pmax <- 0.2
 
 p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkred") +
@@ -1147,6 +1166,7 @@ L'équilibre a lieu quand le coût marginal et la demande se croisent.
 ```{r}
 #| label: fig-cpp-prix-max
 #| fig-cap: "Fixation d'un prix maximal égal au prix de CPP."
+#| fig-alt: "Même construction avec un prix maximal égal au prix de concurrence pure et parfaite. Le coût marginal coupe la recette marginale perçue exactement à l'équilibre de concurrence pure et parfaite : le monopole produit la quantité de concurrence pure et parfaite."
 pmax <-  P(qcpp)
 
 
@@ -1196,6 +1216,7 @@ Dans le cadre du monopole naturel, cela signifie que le coût moyen sera supéri
 ```{r}
 #| label: fig-nat
 #| fig-cap: "Régulation du monopole naturel."
+#| fig-alt: "Monopole naturel : coût moyen décroissant, coût marginal en dessous, demande et recette marginale. Trois quantités sont repérées, avec les prix correspondants : la quantité de monopole, la quantité obtenue avec une tarification au coût moyen, et la quantité de concurrence pure et parfaite."
 Rm2 <- function(q){5-4*q}
 fn2 <- function(x){Cm_naturel(x)-Rm2(x)}
 fn <- function(x){CM_naturel(x)-D2(x)}
@@ -1275,6 +1296,7 @@ Le prix de la dernière unité vendue par le monopole est égal au prix de la co
 ```{r}
 #| label: fig-disc-parfaite
 #| fig-cap: "Surplus du monopole en discrimination parfaite (aire rouge et bleue)."
+#| fig-alt: "Demande, recette marginale et coût marginal. En bleu, le surplus du producteur en monopole simple, entre le prix de monopole et le coût marginal ; en rouge, le surplus du producteur en discrimination parfaite, qui couvre toute l'aire entre la demande et le coût marginal jusqu'à la quantité de concurrence pure et parfaite."
 p_discriparfaite <- p
 
 qm <-  1/3
@@ -1455,6 +1477,7 @@ q2o <- 6
 ```{r}
 #| label: fig-discri2-demande
 #| fig-cap: "Représentation des fonctions de demande des deux types de consommateurs et du coût marginal."
+#| fig-alt: "Deux demandes inverses individuelles parallèles et décroissantes, P_1 pour le type 1 et P_2, plus haute, pour le type 2, et une droite horizontale au niveau du coût marginal constant c."
 
 p_2d_0 <- ggplot() +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 8.2),breaks=c(0),labels=c()) +
@@ -1481,6 +1504,7 @@ Comme dans le cas standard de la discrimination parfaite, le monopole produit le
 ```{r}
 #| label: fig-discri2-parfaite
 #| fig-cap: "Si le monopole pouvait identifier les consommateurs."
+#| fig-alt: "Les deux demandes et le coût marginal, avec les quantités efficaces q_1^o et q_2^o, où chaque demande coupe le coût marginal. L'aire A, sous la demande du type 1 jusqu'à q_1^o, est en bleu ; l'aire B, entre les deux demandes jusqu'à q_1^o, en rouge ; l'aire C, sous la demande du type 2 entre q_1^o et q_2^o, en vert."
 #|
 p_2d_1 <- ggplot() +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 8.2),breaks=c(0),labels=c()) +
@@ -1606,6 +1630,7 @@ Le monopoleur extrait la totalité du surplus des consommateurs de type 1 (surpl
 ```{r}
 #| label: fig-discri2-opti
 #| fig-cap: "Menu optimal pour la discrimination du 2e degré."
+#| fig-alt: "Même graphique avec la quantité q_1^m offerte au type 1, plus petite que q_1^o. L'aire A est sous la demande du type 1 jusqu'à q_1^m, l'aire B entre les deux demandes jusqu'à q_1^m, et l'aire C sous la demande du type 2 entre q_1^m et q_2^m, égale à q_2^o. La rente informationnelle B est plus petite qu'avec q_1^o."
 p_2d_2 <- ggplot() +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 8.2),breaks=c(0),labels=c()) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 8.5), breaks = c(q1m,q1o, q2o), labels = c(expression(q[1]^m), expression(q[1]^o), expression(q[2]^m==q[2]^o))) +

@@ -28,6 +28,8 @@ book:
     - 05-cppmono.qmd
     - 06-equilibres.qmd
     - 07-surplus.qmd
+    - 08-rappels.qmd
+    - 09-notations.qmd
   downloads: pdf
 
 lang: fr

@@ -11,8 +11,8 @@
 | Offre | coût marginal ($C_m(q)$) | pas de courbe d'offre |
 | Profit | $\pi(q)=qp-C(q)$ | $\pi(q)=qP(q)-C(q)$ |
 | Conditions d'équilibre | Offre égale demande | Coût marginal égal recette marginale |
-| Formellement | $p^*=P(q^*)=C_m(q^*)$  | $C_m(q^*)=R_m(q^*)$, $p^*=P(q^*)$ | 
-| Méthode | On résout d'abord $P(q^*)=C_m(q^*)$ puis on calcule $p^*$ | On calcule $C_m(q^*)=R_m(q^*)$ puis on obtient $p^*$ |
+| Formellement | $P(q^*)=S(q^*)=p^*$ ; chaque producteur produit $q$ tel que $C_m(q)=p^*$ | $C_m(q^*)=R_m(q^*)$, $p^*=P(q^*)$ |
+| Méthode | On résout d'abord $P(q^*)=S(q^*)$, puis on calcule $p^*$ | On résout d'abord $C_m(q^*)=R_m(q^*)$, puis on calcule $p^*=P(q^*)$ |
 | Conditions supplémentaires | $C_m'(q^*)>0$ et $p^*\geq \min CV_M$ | $C_m'(q^*)>R_m'(q^*)$ et $\pi(q^*) \geq 0$ |
 
 : Tableau comparatif concurrence pure et parfaite et monopole, résolution des problèmes {#tbl-Annexe1}
