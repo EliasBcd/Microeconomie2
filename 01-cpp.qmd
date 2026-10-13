@@ -183,12 +183,12 @@ q_sc <- 1 - p_sc
 Sc_p <- data.frame(x=c(0, q_sc), ymin=c(p_sc, p_sc), ymax=c(P_sc(0), p_sc))
 
 ggplot() +
-  geom_ribbon(data=Sc_p, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.4) +
-  geom_function(fun=P_sc, colour="blue") +
+  geom_ribbon(data=Sc_p, aes(x=x, ymin=ymin, ymax=ymax), fill=col_demande, alpha=0.5) +
+  geom_function(fun=P_sc, colour=col_demande, linewidth=0.9) +
   geom_segment(aes(x=0, y=p_sc, xend=1.1, yend=p_sc), linetype="dashed") +
   geom_segment(aes(x=q_sc, y=0, xend=q_sc, yend=p_sc), linetype="dashed") +
-  annotate("text", x=0.18, y=0.55, label="S[c](p)", parse=TRUE, colour="darkblue", size=5) +
-  annotate("text", x=0.32, y=0.8, label="Demande", colour="blue", hjust=0) +
+  annotate("text", x=0.18, y=0.55, label="S[c](p)", parse=TRUE, colour="black", size=5) +
+  annotate("text", x=0.32, y=0.8, label="Demande", colour=col_demande, hjust=0) +
   labs(x="quantité", y="prix") +
   scale_y_continuous(expand=c(0, 0), limits=c(0, 1.2), breaks=c(p_sc), labels=c(expression(p))) +
   scale_x_continuous(expand=c(0, 0), limits=c(0, 1.2), breaks=c(q_sc), labels=c(expression(Q(p))))
@@ -304,13 +304,13 @@ CM <- function(q){CT(q)/q}
 CVM <- function(q){CV(q)/q}
 
 p_cppcout <- ggplot() +
-  geom_function(fun=Cm, color="blue") +
-  geom_function(fun=CM, color="red") +
-  geom_function(fun=CVM, color="darkgreen") +
+  geom_function(fun=Cm, color=col_cout, linewidth=0.9) +
+  geom_function(fun=CM, color=col_cout, linewidth=0.9, linetype="dashed") +
+  geom_function(fun=CVM, color=col_cout, linewidth=0.9, linetype="dotted") +
   labs(x="quantité", y="coût") +
-  geom_text(aes(x=4.5, y=1.3, label="C[VM]"), color="darkgreen", parse=TRUE) +
-  geom_text(aes(x=4.5, y=2, label="C[M]"), color="red", parse=TRUE) +
-  geom_text(aes(x=4.5, y=2.5, label="C[m]"), color="blue", parse=TRUE)
+  geom_text(aes(x=4.5, y=1.3, label="C[VM]"), color=col_cout, parse=TRUE) +
+  geom_text(aes(x=4.5, y=2, label="C[M]"), color=col_cout, parse=TRUE) +
+  geom_text(aes(x=4.5, y=2.8, label="C[m]"), color=col_cout, parse=TRUE)
   
 p_cppcout + scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(0)) +
   scale_x_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(0))
@@ -415,10 +415,10 @@ p <- ggplot() +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 0.6), breaks = c(0.25), labels = c(expression(q^"*"))) +
   scale_y_continuous(expand=c(0, 0), limits=c(0, 1.2), breaks=c(0)) +
   labs(x="quantité", y = "prix") +
-  stat_function(fun=function(x) Rm2(x), colour = "darkgreen") +
-  stat_function(fun=function(x) Cm2(x), colour = "red") +
-  annotate("text", x=0.5, y=0.1, colour="darkgreen", label="Recette~marginale~R[m]", parse = TRUE) +
-  annotate("text", x=0.45, y=0.8, colour="red", label="Coût~marginal~C[m]", parse = TRUE) +
+  stat_function(fun=function(x) Rm2(x), colour = col_recette, linewidth=0.9) +
+  stat_function(fun=function(x) Cm2(x), colour = col_cout, linewidth=0.9) +
+  annotate("text", x=0.38, y=0.32, colour=col_recette, label="Recette~marginale~R[m]", parse = TRUE, hjust=0) +
+  annotate("text", x=0.38, y=0.95, colour=col_cout, label="Coût~marginal~C[m]", parse = TRUE, hjust=1) +
   geom_segment(x=0.25, y=0, xend=0.25, yend=0.5, linetype="dashed") 
 
 p
@@ -463,17 +463,17 @@ $$
 $${#eq-profitCM}
 L'@eq-profitCM nous dit que le profit d'un producteur en concurrence pure et parfaite est la différence entre le prix de vente et le coût moyen de production multiplié par le nombre d'unités vendues.
 Si ce prix est inférieur au coût moyen de toutes les unités vendues, le profit sera négatif.
-Dans la @fig-cppprofit, le profit est donné par le rectangle vert.
+Dans la @fig-cppprofit, le profit est donné par le rectangle jaune.
 
 ```{r}
 #| label: fig-cppprofit
 #| fig-cap: "Profit d'un producteur en concurrence pure et parfaite."
-#| fig-alt: "Courbes de coût d'un producteur en concurrence pure et parfaite et droite horizontale du prix p. Au point où le prix est égal au coût marginal, on lit la quantité q*. Le rectangle vert, entre le prix et le coût moyen, de 0 à q*, représente le profit."
+#| fig-alt: "Courbes de coût d'un producteur en concurrence pure et parfaite et droite horizontale du prix p. Au point où le prix est égal au coût marginal, on lit la quantité q*. Le rectangle jaune, entre le prix et le coût moyen, de 0 à q*, représente le profit."
 q <- 4
 pi <- data.frame(x=c(0, q), ymin=c(CM(q), CM(q)), ymax=c(Cm(q), Cm(q)))
 
-p_cppcout + geom_ribbon(data=pi, aes(x=x, ymin=ymin, ymax=ymax), fill="green", alpha=0.5) +
-  geom_text(aes(x=2, y=2, label="pi"), color="darkgreen", parse=TRUE) +
+p_cppcout + geom_ribbon(data=pi, aes(x=x, ymin=ymin, ymax=ymax), fill=col_producteur, alpha=0.7) +
+  geom_text(aes(x=2, y=2, label="pi"), color="black", parse=TRUE) +
   geom_segment(data=pi, x=q, y=0, xend=q, yend=Cm(q), linetype="dashed") +
   geom_segment(data=pi, x=0, y=CM(q), xend=q, yend=CM(q), linetype="dashed") +
   geom_segment(data=pi, x=0, y=Cm(q), xend=q, yend=Cm(q), linetype="dashed") +
@@ -503,19 +503,19 @@ Le surplus d'un producteur n'est pas non plus égal à son profit : il est égal
 ```{r}
 #| label: fig-surplus-prod-indiv
 #| fig-cap: "Surplus d'un producteur lorsque le prix est $p$."
-#| fig-alt: "Graphique prix-quantité : une droite de coût marginal croissante qui part d'une valeur positive C_m(0) sur l'axe des prix, et une droite horizontale au prix p. Le triangle rouge compris entre le prix et le coût marginal, de 0 à la quantité q, est le surplus du producteur."
+#| fig-alt: "Graphique prix-quantité : une droite de coût marginal croissante qui part d'une valeur positive C_m(0) sur l'axe des prix, et une droite horizontale au prix p. Le triangle jaune compris entre le prix et le coût marginal, de 0 à la quantité q, est le surplus du producteur."
 Cm_sp <- function(q){0.2+q}
 p_sp <- 0.6
 q_sp <- p_sp - 0.2
 Sp_p <- data.frame(x=c(0, q_sp), ymin=c(Cm_sp(0), p_sp), ymax=c(p_sp, p_sp))
 
 ggplot() +
-  geom_ribbon(data=Sp_p, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.4) +
-  geom_function(fun=Cm_sp, colour="red") +
+  geom_ribbon(data=Sp_p, aes(x=x, ymin=ymin, ymax=ymax), fill=col_producteur, alpha=0.7) +
+  geom_function(fun=Cm_sp, colour=col_cout, linewidth=0.9) +
   geom_segment(aes(x=0, y=p_sp, xend=1.1, yend=p_sp), linetype="dashed") +
   geom_segment(aes(x=q_sp, y=0, xend=q_sp, yend=p_sp), linetype="dashed") +
-  annotate("text", x=0.12, y=0.5, label="S[p](p)", parse=TRUE, colour="darkred", size=5) +
-  annotate("text", x=0.62, y=0.92, label="Coût~marginal~(C[m])", parse=TRUE, colour="red", hjust=1) +
+  annotate("text", x=0.12, y=0.5, label="S[p](p)", parse=TRUE, colour="black", size=5) +
+  annotate("text", x=0.62, y=0.92, label="Coût~marginal~(C[m])", parse=TRUE, colour=col_cout, hjust=1) +
   labs(x="quantité", y="prix") +
   scale_y_continuous(expand=c(0, 0), limits=c(0, 1.2), breaks=c(Cm_sp(0), p_sp), labels=c(expression(C[m](0)), expression(p))) +
   scale_x_continuous(expand=c(0, 0), limits=c(0, 1.2), breaks=c(q_sp), labels=c(expression(q)))
@@ -567,13 +567,13 @@ P <- function(q){1-q}
 
 
 p <- ggplot(df, aes(x=x)) +
-    stat_function(fun=function(x) P(x), colour = "blue") +
-    stat_function(fun=function(x) S(x), colour = "red") +
+    stat_function(fun=function(x) P(x), colour = col_demande, linewidth=0.9) +
+    stat_function(fun=function(x) S(x), colour = col_cout, linewidth=0.9) +
     scale_y_continuous(expand = c(0, 0), breaks = c(0.5), labels = c("p*"), limits = c(0, 1.2)) +
     scale_x_continuous(expand = c(0, 0), breaks = c(0.5), labels = c("q*"), limits = c(0, 1.2)) +
     labs(x="quantité", y = "prix") +
-    annotate("text", x = 1.1, y = 1, label ="S", colour = "red") +
-    annotate("text", x = 0.1, y = 1, label ="P", colour = "blue") +
+    annotate("text", x = 1.1, y = 1, label ="S", colour = col_cout) +
+    annotate("text", x = 0.1, y = 1, label ="P", colour = col_demande) +
     geom_segment(x = 0.5, y = 0, xend = 0.5, yend = 0.5, linetype="dashed") +
     geom_segment(x = 0, y = 0.5, xend = 0.5, yend = 0.5, linetype = "dashed")
 
@@ -587,14 +587,14 @@ Leur somme est le *surplus total*.
 
 ```{r}
 #| label: fig-surplus
-#| fig-cap: "Surplus des consommateurs (en bleu) et des producteurs (en rouge) à l'équilibre."
-#| fig-alt: "Même graphique que l'équilibre de marché, avec deux triangles : en bleu, entre la demande et le prix d'équilibre, le surplus des consommateurs ; en rouge, entre le prix d'équilibre et l'offre, le surplus des producteurs."
+#| fig-cap: "Surplus des consommateurs (en bleu) et des producteurs (en jaune) à l'équilibre."
+#| fig-alt: "Même graphique que l'équilibre de marché, avec deux triangles : en bleu, entre la demande et le prix d'équilibre, le surplus des consommateurs ; en jaune, entre le prix d'équilibre et l'offre, le surplus des producteurs."
 
 Sc = data.frame(x = c(0, 0.5), y = c(1, 0.5))
 Sp = data.frame(x = c(0, 0.5), y = c(0, 0.5))
 
-p + geom_ribbon(data = Sc, aes(x=x, ymin=0.5, ymax = y), fill="blue") +
-    geom_ribbon(data = Sp, aes(x=x, ymin=y, ymax = 0.5), fill="red")
+p + geom_ribbon(data = Sc, aes(x=x, ymin=0.5, ymax = y), fill=col_demande, alpha=0.5) +
+    geom_ribbon(data = Sp, aes(x=x, ymin=y, ymax = 0.5), fill=col_producteur, alpha=0.7)
 ```
 
 ::: {.callout-caution}
@@ -634,20 +634,20 @@ ggplot() +
 <summary>Réponse</summary>
 
 ```{r}
-#| fig-alt: "Même graphique avec légendes : la demande, décroissante, et l'offre, croissante, se coupent en quantité 4 et prix 6. Le triangle bleu au-dessus du prix 6 est le surplus des consommateurs ; le triangle rouge entre le prix 6 et l'offre, qui part de 2, est le surplus des producteurs."
+#| fig-alt: "Même graphique avec légendes : la demande, décroissante, et l'offre, croissante, se coupent en quantité 4 et prix 6. Le triangle bleu au-dessus du prix 6 est le surplus des consommateurs ; le triangle jaune entre le prix 6 et l'offre, qui part de 2, est le surplus des producteurs."
 sc <- data.frame(x=c(0, 4), ymin=c(6, 6), ymax=c(10, 6))
 sp <- data.frame(x=c(0, 4), ymin=c(2, 6), ymax=c(6, 6))
 ggplot() +
-  geom_ribbon(data=sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.4) +
-  geom_ribbon(data=sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.4) +
-  geom_function(fun=function(q) 10-q, xlim=c(0, 10), colour="blue") +
-  geom_function(fun=function(q) 2+q, xlim=c(0, 9), colour="red") +
+  geom_ribbon(data=sc, aes(x=x, ymin=ymin, ymax=ymax), fill=col_demande, alpha=0.5) +
+  geom_ribbon(data=sp, aes(x=x, ymin=ymin, ymax=ymax), fill=col_producteur, alpha=0.7) +
+  geom_function(fun=function(q) 10-q, xlim=c(0, 10), colour=col_demande, linewidth=0.9) +
+  geom_function(fun=function(q) 2+q, xlim=c(0, 9), colour=col_cout, linewidth=0.9) +
   geom_segment(aes(x=4, y=0, xend=4, yend=6), linetype="dashed") +
   geom_segment(aes(x=0, y=6, xend=4, yend=6), linetype="dashed") +
-  annotate("text", x=8.6, y=0.6, label="Demande", colour="blue") +
-  annotate("text", x=7.3, y=10.6, label="Offre", colour="red", hjust=1) +
-  annotate("text", x=1.2, y=7.3, label="S[c]", parse=TRUE, colour="darkblue", size=5) +
-  annotate("text", x=1.2, y=4.6, label="S[p]", parse=TRUE, colour="darkred", size=5) +
+  annotate("text", x=8.6, y=0.6, label="Demande", colour=col_demande) +
+  annotate("text", x=7.3, y=10.6, label="Offre", colour=col_cout, hjust=1) +
+  annotate("text", x=1.2, y=7.3, label="S[c]", parse=TRUE, colour="black", size=5) +
+  annotate("text", x=1.2, y=4.6, label="S[p]", parse=TRUE, colour="black", size=5) +
   labs(x="quantité", y="prix") +
   scale_x_continuous(expand=c(0, 0), limits=c(0, 11), breaks=0:10) +
   scale_y_continuous(expand=c(0, 0), limits=c(0, 11.5), breaks=0:11) +

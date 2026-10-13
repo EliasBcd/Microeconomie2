@@ -30,4 +30,12 @@ theme_perso <- function(base_size = 14) {
 }
 
 theme_set(theme_perso())
+
+# Palette viridis, lisible par les daltoniens. Chaque couleur a un rôle fixe dans tout le cours ;
+# une seconde courbe du même type est tracée en pointillés plutôt qu'avec une autre couleur.
+col_demande    <- "#31688E"  # bleu : demande, surplus des consommateurs
+col_cout       <- "#440154"  # violet : coût marginal, offre ; entreprise 1 (ou pilote) en oligopole
+col_recette    <- "#35B779"  # vert : recette marginale ; entreprise 2 (ou satellite) en oligopole
+col_producteur <- "#FDE725"  # jaune : surplus du producteur (aires seulement)
+col_perte      <- "grey50"   # gris : perte sèche, éléments secondaires
 ```

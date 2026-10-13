@@ -21,13 +21,13 @@ x=seq(0, 1, length=21)
 df <- data.frame(x)
 
 p <- ggplot(data=df, aes(x=x)) +
-    geom_function(fun=D, colour = "blue") +
+    geom_function(fun=D, colour = col_demande, linewidth=0.9) +
     labs(x="quantité", y = "prix") +
-    annotate("text", x = 0.8, y = D(0.8), label ="courbe de demande", colour = "blue") +
-  geom_function(fun=Cm, colour='red') +
-  annotate("text", x=0.8, y=Cm(0.8), label="Coût marginal", colour='red') +
-  geom_function(fun=Rm, colour='darkblue') +
-  annotate("text", x=0.2, y=Rm(0.2), label='Recette marginale', colour='darkblue')
+    annotate("text", x = 0.8, y = D(0.8), label ="courbe de demande", colour = col_demande) +
+  geom_function(fun=Cm, colour=col_cout, linewidth=0.9) +
+  annotate("text", x=0.8, y=Cm(0.8), label="Coût marginal", colour=col_cout) +
+  geom_function(fun=Rm, colour=col_recette, linewidth=0.9) +
+  annotate("text", x=0.2, y=Rm(0.2), label='Recette marginale', colour=col_recette)
 ```
 
 
@@ -163,10 +163,10 @@ p_demande +
   geom_text(aes(x=q1/2, y=p1+0.05, label="q[1]^a"), parse=TRUE) +
   scale_y_continuous(breaks = c(), labels = c(), expand = c(0, 0), limits = c(0, 1.2)) +
   scale_x_continuous(breaks = c(q1, q2),  labels = c(expression(q[1]^a), expression(q[2])), expand = c(0, 0), limits = c(0, 1.2)) +
-  geom_function(fun=D2, colour='darkgreen') +
-  annotate('text', x=0.6, y=D2(0.6), label='Demande perçue par 2', colour='darkgreen') +
-  geom_function(fun=Rm2, colour='green') +
-  annotate('text', x=0.4, y=Rm2(0.4), label='Recette marginale de 2', colour='green')
+  geom_function(fun=D2, colour=col_demande, linewidth=0.9, linetype='dashed') +
+  annotate('text', x=0.6, y=D2(0.6), label='Demande perçue par 2', colour=col_demande) +
+  geom_function(fun=Rm2, colour=col_recette, linewidth=0.9, linetype='dashed') +
+  annotate('text', x=0.4, y=Rm2(0.4), label='Recette marginale de 2', colour=col_recette)
 
 ```
 
@@ -207,14 +207,14 @@ f2 <- function(q){(1-q)/3}
 qc <- uniroot(function(q){f1(q)-f2(q)}, c(0, 1))$root
 
 p_equilibre <- p_isoprofit +
-  geom_function(fun=f1, colour="red") +
-  geom_function(fun=f2, colour="blue") +
+  geom_function(fun=f1, colour=col_cout, linewidth=0.9) +
+  geom_function(fun=f2, colour=col_recette, linewidth=0.9) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q[2]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q[1]^"*"))) +
   annotate("point", x=qc, y=qc) +
   annotate("text", x=qc+0.2, y=qc+0.05, label='Équilibre de Cournot') +
-  annotate("text", x=1/4, y=f1(1/8), label='Fonction de réaction 1', colour='red') +
-  annotate('text', x=1, y=f2(7/8), label='Fonction de réaction 2', colour='blue') +
+  annotate("text", x=1/4, y=f1(1/8), label='Fonction de réaction 1', colour=col_cout) +
+  annotate('text', x=1, y=f2(7/8), label='Fonction de réaction 2', colour=col_recette) +
   geom_segment(data=df, x=0, y=3/4, xend=1/12, yend=f1(1/12), arrow=arrow(length=unit(0.3, "cm"))) +
   geom_segment(data=df, x=1/12, y=f1(1/12), xend=1/12, yend=f2(1/12), arrow=arrow(length=unit(0.3, "cm"))) +  
   geom_segment(data=df, x=1/12, y=f2(1/12), xend=25/108, yend=f1(25/108), arrow=arrow(length=unit(0.3, "cm"))) +
@@ -245,14 +245,14 @@ Graphiquement, dans le plan $(q_1, q_2)$, la fonction de réaction de l'entrepri
 #| fig-cap: "Représentation d'un équilibre de Cournot où les fonctions de réaction divergent du point d'équilibre. Équilibre instable"
 #| fig-alt: "Même plan avec deux fonctions de réaction dont les pentes sont inversées. Les flèches en escalier s'éloignent de l'équilibre de Cournot et aboutissent à une situation où une seule entreprise produit, au niveau de sa quantité de monopole."
 p_equilibre <- p_isoprofit +
-  geom_function(fun=f1, colour="blue") +
-  geom_function(fun=f2, colour="red") +
+  geom_function(fun=f1, colour=col_recette, linewidth=0.9) +
+  geom_function(fun=f2, colour=col_cout, linewidth=0.9) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc, 1), labels=c(expression(q[2]^"*"), expression(q["2m"]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc, 1), labels=c(expression(q[1]^"*"), expression(q["1m"]^"*"))) +
   annotate("point", x=qc, y=qc) +
   annotate("text", x=qc+0.2, y=qc+0.05, label='Équilibre de Cournot instable') +
-  annotate("text", x=1/4, y=f1(1/8), label='Fonction de réaction 2', colour='blue') +
-  annotate('text', x=1, y=f2(7/8), label='Fonction de réaction 1', colour='red') +
+  annotate("text", x=1/4, y=f1(1/8), label='Fonction de réaction 2', colour=col_recette) +
+  annotate('text', x=1, y=f2(7/8), label='Fonction de réaction 1', colour=col_cout) +
   geom_segment(data=df, x=0, y=3/4, xend=1/12, yend=f1(1/12), arrow=arrow(length=unit(0.3, "cm"), ends="first")) +
   geom_segment(data=df, x=1/12, y=f1(1/12), xend=1/12, yend=f2(1/12), arrow=arrow(length=unit(0.3, "cm"), ends="first")) +  
   geom_segment(data=df, x=1/12, y=f2(1/12), xend=25/108, yend=f1(25/108), arrow=arrow(length=unit(0.3, "cm"), ends="first")) +
@@ -408,14 +408,14 @@ ggplot() +
 ```{r}
 #| fig-alt: "Même graphique avec légendes : la droite la plus pentue est la fonction de réaction de l'entreprise 1, l'autre celle de l'entreprise 2. Elles se coupent à l'équilibre de Cournot, où chaque entreprise produit 8."
 ggplot() +
-  geom_segment(aes(x=0, y=24, xend=12, yend=0), colour="red") +
-  geom_segment(aes(x=0, y=12, xend=24, yend=0), colour="blue") +
+  geom_segment(aes(x=0, y=24, xend=12, yend=0), colour=col_cout, linewidth=0.9) +
+  geom_segment(aes(x=0, y=12, xend=24, yend=0), colour=col_recette, linewidth=0.9) +
   geom_segment(aes(x=8, y=0, xend=8, yend=8), linetype="dashed") +
   geom_segment(aes(x=0, y=8, xend=8, yend=8), linetype="dashed") +
   annotate("point", x=8, y=8, size=3) +
   annotate("text", x=8.6, y=9.2, label="Équilibre de Cournot", hjust=0) +
-  annotate("text", x=3, y=23, label="Fonction de réaction de 1", colour="red", hjust=0) +
-  annotate("text", x=16, y=6, label="Fonction de réaction de 2", colour="blue", hjust=0) +
+  annotate("text", x=3, y=23, label="Fonction de réaction de 1", colour=col_cout, hjust=0) +
+  annotate("text", x=16, y=6, label="Fonction de réaction de 2", colour=col_recette, hjust=0) +
   labs(x="quantité de l'entreprise 1", y="quantité de l'entreprise 2") +
   scale_x_continuous(expand=c(0, 0), limits=c(0, 26), breaks=seq(0, 24, 2)) +
   scale_y_continuous(expand=c(0, 0), limits=c(0, 26), breaks=seq(0, 24, 2)) +
@@ -463,15 +463,15 @@ On trace de la même façon les isoprofits $\pi_1=9$ et $\pi_1=25$.
 iso <- function(pi){ function(q1) 12 - q1 - pi/q1 }
 pts <- data.frame(x=c(2, 4, 6, 8), y=c(2, 4, 12-6-16/6, 2))
 ggplot() +
-  geom_function(fun=iso(9), xlim=c(0.85, 11), colour="blue", linetype="dotted") +
-  geom_function(fun=iso(16), xlim=c(1.5, 10.5), colour="blue") +
-  geom_function(fun=iso(25), xlim=c(2.8, 9), colour="darkblue", linewidth=0.9) +
-  geom_function(fun=function(q1) 12-2*q1, xlim=c(0, 6), colour="red") +
-  geom_point(data=pts, aes(x=x, y=y), colour="blue", size=2) +
-  annotate("text", x=3.6, y=6.35, label="pi[1]==9", parse=TRUE, colour="blue", hjust=0) +
-  annotate("text", x=4.6, y=4.35, label="pi[1]==16", parse=TRUE, colour="blue", hjust=0) +
-  annotate("text", x=5.6, y=2.35, label="pi[1]==25", parse=TRUE, colour="darkblue", hjust=0) +
-  annotate("text", x=1.3, y=11, label="Fonction de réaction de 1", colour="red", hjust=0) +
+  geom_function(fun=iso(9), xlim=c(0.85, 11), colour=col_cout, linetype="dotted") +
+  geom_function(fun=iso(16), xlim=c(1.5, 10.5), colour=col_cout) +
+  geom_function(fun=iso(25), xlim=c(2.8, 9), colour=col_cout, linewidth=1.2) +
+  geom_function(fun=function(q1) 12-2*q1, xlim=c(0, 6), colour="black", linewidth=0.9) +
+  geom_point(data=pts, aes(x=x, y=y), colour=col_cout, size=2) +
+  annotate("text", x=3.6, y=6.35, label="pi[1]==9", parse=TRUE, colour=col_cout, hjust=0) +
+  annotate("text", x=4.6, y=4.35, label="pi[1]==16", parse=TRUE, colour=col_cout, hjust=0) +
+  annotate("text", x=5.6, y=2.35, label="pi[1]==25", parse=TRUE, colour=col_cout, hjust=0) +
+  annotate("text", x=1.3, y=11, label="Fonction de réaction de 1", colour="black", hjust=0) +
   labs(x="quantité de l'entreprise 1", y="quantité de l'entreprise 2") +
   scale_x_continuous(expand=c(0, 0), limits=c(0, 12), breaks=0:12) +
   scale_y_continuous(expand=c(0, 0), limits=c(0, 12), breaks=0:12) +
@@ -505,16 +505,16 @@ f1 <- function(q)(1-4*q)
 
 p <- p_isoprofit
 
-p + geom_function(fun=function(x) I1(x, 0.1), colour = "blue") +
-  geom_function(fun=function(x) I1(x, 0.1), colour = "blue") +
-  geom_function(fun=function(x) I1(x, 0.11), colour = "blue") +
-  geom_function(fun=function(x){I1(x, 0.05)}, colour = "blue") +
-  geom_function(fun=function(x){I1(x, 0.12)}, colour = "blue") +
-  geom_function(fun=function(x){I1(x, 0.07)}, colour = "blue") +  
-  geom_function(fun=function(x){I1(x, 0.02)}, colour = "blue") +
-  geom_function(fun=f1, colour = "red") +
-  annotate("text", x=0.2, y=1, label="Fonction de réaction de 1", color="red") +
-  annotate("text", x=0.3, y=0.8, label="Courbes d'isoprofit", color="blue") +
+p + geom_function(fun=function(x) I1(x, 0.1), colour = col_cout) +
+  geom_function(fun=function(x) I1(x, 0.1), colour = col_cout) +
+  geom_function(fun=function(x) I1(x, 0.11), colour = col_cout) +
+  geom_function(fun=function(x){I1(x, 0.05)}, colour = col_cout) +
+  geom_function(fun=function(x){I1(x, 0.12)}, colour = col_cout) +
+  geom_function(fun=function(x){I1(x, 0.07)}, colour = col_cout) +  
+  geom_function(fun=function(x){I1(x, 0.02)}, colour = col_cout) +
+  geom_function(fun=f1, colour = "black", linewidth=0.9) +
+  annotate("text", x=0.2, y=1, label="Fonction de réaction de 1", color="black") +
+  annotate("text", x=0.3, y=0.8, label="Courbes d'isoprofit", color=col_cout) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(0), labels=c("")) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q["1m"]^"*")))
 
@@ -543,16 +543,16 @@ df2 <- data.frame(x=I2(x, 2/25), y=x)
 
 
 p_cournot <- p_isoprofit +
-  geom_function(fun=f2, colour="darkgreen") +
-  geom_function(fun=f1, colour="red") +
-  geom_function(fun=function(x) I1(x, 2/25), colour="darkred") +
-  annotate("text", x=0.2, y=1, label="Fonction de réaction de 1", color="red") +
-  annotate("text", x=0.4, y=0.1, label="Isoprofit de 1 à l'équilibre", color='darkred') +
-  annotate("text", x=0.8, y=0.2, label="Fonction de réaction de 2", color="darkgreen") +
+  geom_function(fun=f2, colour=col_recette, linewidth=0.9) +
+  geom_function(fun=f1, colour=col_cout, linewidth=0.9) +
+  geom_function(fun=function(x) I1(x, 2/25), colour=col_cout, linetype="dashed") +
+  annotate("text", x=0.2, y=1, label="Fonction de réaction de 1", color=col_cout) +
+  annotate("text", x=0.4, y=0.1, label="Isoprofit de 1 à l'équilibre", color=col_cout) +
+  annotate("text", x=0.8, y=0.2, label="Fonction de réaction de 2", color=col_recette) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc2, qc), labels=c(expression(q["2c"]^"*"), expression(q["2m"]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc2, qc), labels=c(expression(q["1c"]^"*"), expression(q["1m"]^"*"))) +
-  geom_point(data=df2, aes(x=x, y=y), size=0.1, color='green') +
-  annotate('text', x=0.1, y=0.4, label="Isoprofit de 2 à l'équilibre", colour="green")
+  geom_point(data=df2, aes(x=x, y=y), size=0.1, color=col_recette) +
+  annotate('text', x=0.1, y=0.4, label="Isoprofit de 2 à l'équilibre", colour=col_recette)
 
 
 p_cournot + geom_segment(data=df, x=qc2-0.05, xend=qc2+0.05, y=qc2, yend=qc2, arrow = arrow(length=unit(0.2, "cm"), ends='both')) +
@@ -749,8 +749,8 @@ Elle se placera donc sur la courbe d'isoprofit tangente à la fonction de réact
 
 ```{r}
 #| label: fig-Stack-equi
-#| fig-cap: "Équilibre de Stackelberg : fonction de réaction du satellite (en vert), fonction de réaction du pilote en Cournot (en pointillés), et isoprofits du pilote passant par l'équilibre de Cournot (en bleu) et par l'équilibre de Stackelberg (en rouge)."
-#| fig-alt: "Plan des quantités du pilote, à l'horizontale, et du satellite, à la verticale. L'équilibre de Stackelberg est le point de la fonction de réaction du satellite où celle-ci est tangente à une isoprofit du pilote. Cette isoprofit, en rouge, est plus basse que l'isoprofit bleue qui passe par l'équilibre de Cournot : le pilote gagne plus en Stackelberg. Il produit plus, et le satellite moins, qu'en Cournot."
+#| fig-cap: "Équilibre de Stackelberg : fonction de réaction du satellite (en vert), fonction de réaction du pilote en Cournot (en pointillés), et isoprofits du pilote passant par l'équilibre de Cournot (en gris) et par l'équilibre de Stackelberg (en violet)."
+#| fig-alt: "Plan des quantités du pilote, à l'horizontale, et du satellite, à la verticale. L'équilibre de Stackelberg est le point de la fonction de réaction du satellite où celle-ci est tangente à une isoprofit du pilote. Cette isoprofit, en violet, est plus basse que l'isoprofit grise qui passe par l'équilibre de Cournot : le pilote gagne plus en Stackelberg. Il produit plus, et le satellite moins, qu'en Cournot."
 p <- p_isoprofit
 
 IL <- function(q, pi){1-pi/q-q}
@@ -760,23 +760,23 @@ fL <- function(q)(1-2*q)
 
 p_stackelberg <- ggplot() +
   labs(x="quantité pilote", y = "quantité satellite") +
-  geom_function(fun=fF, colour="darkgreen") +
-  geom_function(fun=fL, colour="red", linetype="dashed" ) +
-  stat_function(fun=function(x) IL(x, 1/9), colour="blue") +
-  stat_function(fun=function(x) IL(x, 1/8), colour="red") +
-  annotate("text", x=0.4, y=1, label="Fonction de réaction du pilote (en Cournot)", color="red") +
-  annotate("text", x=1.18, y=0.25, label="Fonction de réaction du satellite", color="darkgreen", hjust=1) +
+  geom_function(fun=fF, colour=col_recette, linewidth=0.9) +
+  geom_function(fun=fL, colour=col_cout, linetype="dashed" ) +
+  stat_function(fun=function(x) IL(x, 1/9), colour=col_perte, linewidth=0.9) +
+  stat_function(fun=function(x) IL(x, 1/8), colour=col_cout, linewidth=0.9) +
+  annotate("text", x=0.4, y=1, label="Fonction de réaction du pilote (en Cournot)", color=col_cout) +
+  annotate("text", x=1.18, y=0.25, label="Fonction de réaction du satellite", color=col_recette, hjust=1) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(1/4, 1/3, 1/2), labels=c(expression(q[F]^"*"), expression(q[FC]^"*"),  expression(q[Fm]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(1/3, 0.5), labels=c(expression(q[LC]^"*"), expression(q[L]^"*"))) +
-  annotate("point", x=1/3, y=1/3, colour="blue", size=3) +
-  annotate("text", x=0.4, y=0.4, colour="blue", label="Cournot") +
-  annotate("point", x=1/2, y=1/4, colour="red", size=3) +
-  annotate("text", x=0.52, y=0.33, colour="red", label="Stackelberg", hjust=0) 
+  annotate("point", x=1/3, y=1/3, colour=col_perte, size=3) +
+  annotate("text", x=0.4, y=0.4, colour=col_perte, label="Cournot") +
+  annotate("point", x=1/2, y=1/4, colour=col_cout, size=3) +
+  annotate("text", x=0.52, y=0.33, colour=col_cout, label="Stackelberg", hjust=0) 
 
 p_stackelberg
 ```
 
-Sur la @fig-Stack-equi, on voit que le profit du pilote est plus important en Stackelberg qu'en Cournot : son isoprofit à l'équilibre de Stackelberg (en rouge) est plus basse que celle qui passe par l'équilibre de Cournot (en bleu). C'est l'inverse pour le satellite.
+Sur la @fig-Stack-equi, on voit que le profit du pilote est plus important en Stackelberg qu'en Cournot : son isoprofit à l'équilibre de Stackelberg (en violet) est plus basse que celle qui passe par l'équilibre de Cournot (en gris). C'est l'inverse pour le satellite.
 Les quantités produites par l'entreprise pilote sont plus importantes en Stackelberg qu'en Cournot, mais celles du satellite sont plus faibles.
 La somme des deux est plus importante ($q_{LC}^*+q_{FC}^*<q_{L}^*+q_{F}^*$).
 Le prix sera donc plus faible pour les consommateurs.
@@ -972,8 +972,8 @@ x <- seq(qmin, qmax, length=100)
 zone <- data.frame(x=x, ymin=I2inv(x, 2/25), ymax=I1(x, 2/25))
 
 
-p_cournot + geom_ribbon(data=zone, aes(x=x, ymin=ymin, ymax=ymax), fill='blue', alpha=0.5) +
-  annotate("text", x=0.5, y=qc, label="zone d'augmentation des profits individuels", color="blue") 
+p_cournot + geom_ribbon(data=zone, aes(x=x, ymin=ymin, ymax=ymax), fill=col_demande, alpha=0.5) +
+  annotate("text", x=0.5, y=qc, label="zone d'augmentation des profits individuels", color=col_demande) 
 ```
 
 ### Résolution analytique
