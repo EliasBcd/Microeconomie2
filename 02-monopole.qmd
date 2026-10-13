@@ -250,7 +250,7 @@ p3 <- p +
   annotate("point", x=0.5, y=0.5, size = 4, colour="black") +
   annotate("point", x=0.5, y=0.25, size = 4, colour=col_recette) +
   annotate("text", x=0.65, y=0.3, size = 5, colour=col_recette, label="Recette maximale") +
-  annotate("text", x=0.5, y=0.1, colour=col_recette, label="Recette marginale")
+  annotate("text", x=0.52, y=0.1, colour=col_recette, label="Recette marginale", hjust=0)
 
 p3
 ```
@@ -270,7 +270,7 @@ p4 <- p +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.4), labels = c("q*")) +
   geom_ribbon(data = profit, aes(x=x, ymin=0, ymax = y), fill=col_recette, alpha = 0.5) +
   geom_ribbon(data = profit, aes(x=x, ymin=0, ymax = 0.6), fill=col_producteur, alpha = 0.6) +
-  annotate("text", x=0.5, y=0.1, colour=col_recette, label="Recette marginale")
+  annotate("text", x=0.52, y=0.1, colour=col_recette, label="Recette marginale", hjust=0)
 
 
 p4
@@ -363,12 +363,12 @@ p5 +   stat_function(fun=function(x) Rm(x), colour = col_recette, linewidth=0.9)
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(0.15, 0.25, 0.35), labels = c("", expression(q[m]^"*"), "")) +
   geom_ribbon(data = perte1, aes(x=x, ymin=z, ymax = y), fill=col_perte, alpha = 0.6) +
   geom_ribbon(data = perte2, aes(x=x, ymin=z, ymax = y), fill=col_perte, alpha = 0.6) +
-  geom_text(aes(x=0.15, y=0.5, label="perte~si~q<q[m]^'*'"), color="black", parse=TRUE) +
-  geom_text(aes(x=0.4, y=0.5, label="perte~si~q>q[m]^'*'"), color="black", parse=TRUE) +
+  geom_text(aes(x=0.005, y=0.5, label="perte~si~q<q[m]^'*'"), color="black", parse=TRUE, hjust=0, size=3.5) +
+  geom_text(aes(x=0.37, y=0.4, label="perte~si~q>q[m]^'*'"), color="black", parse=TRUE, hjust=0, size=3.5) +
   annotate("text", x=0.55, y=0.8, colour=col_cout, label="Coût marginal") +
   geom_segment(x=0.25, y=0, xend=0.25, yend=0.75, linetype="dashed") +
   geom_segment(x=0, y=0.75, xend=0.25, yend=0.75, linetype="dashed") +
-  annotate("text", x=0.5, y=0.1, colour=col_recette, label="Recette marginale")
+  annotate("text", x=0.52, y=0.1, colour=col_recette, label="Recette marginale", hjust=0)
 
 ```
 
@@ -420,9 +420,9 @@ p6 <- ggplot(df2, aes(x=x2)) +
   stat_function(fun=function(x) pi(x), colour="black", linewidth=0.9) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 420), breaks = seq(0, 400, by=50), labels=c(0, 50, 100, expression(pi[m]^"*"==150), 200, 250, 300, 350, 400)) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 22), breaks = seq(0, 20, by=5), labels = c(0, 5, expression(q[m]^"*"==10), 15, 20)) +
-  geom_text(aes(x=18, y=10, label="Profit"), color="black") +
-  geom_text(aes(x=18, y=350, label="Coût"), color=col_cout) +
-  geom_text(aes(x=18, y=400, label="Recette"), color=col_recette)
+  geom_text(aes(x=13.5, y=160, label="Profit"), color="black", hjust=0) +
+  geom_text(aes(x=19.5, y=330, label="Coût"), color=col_cout, hjust=0) +
+  geom_text(aes(x=12, y=395, label="Recette"), color=col_recette, hjust=1)
 
 p6
 ```
@@ -441,9 +441,9 @@ p7 <- ggplot(df2, aes(x=x2)) +
   stat_function(fun=function(x) CM(x), colour=col_cout, linewidth=0.9, linetype="dashed") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 45), breaks = seq(0, 40, by=5), labels=c(seq(0, 25, by=5), expression(p[m]^"*"==30), 35, 40)) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 22), breaks = seq(0, 20, by=5), labels=c(0, 5, expression(q[m]^"*"==10), 15, 20)) +
-  annotate("text", x=18, y=20, label="Demande", color=col_demande) +
-  annotate("text", x=18, y=1, label="Recette marginale", color=col_recette) +
-  annotate("text", x=18, y=40, label="Coût marginal", color=col_cout) +
+  annotate("text", x=21, y=16, label="Demande", color=col_demande, hjust=1) +
+  annotate("text", x=20.3, y=2.2, label="R[m]", parse=TRUE, color=col_recette, hjust=0) +
+  annotate("text", x=17, y=40, label="Coût marginal", color=col_cout, hjust=1) +
   annotate("text", x=18, y=25, label="Coût moyen", color=col_cout) +
   geom_ribbon(data = profit, aes(x=x, ymin=ymin, ymax = ymax), fill=col_producteur, alpha = 0.7) +
   annotate("text", x=5, y=25, label="Profit", color="black")
@@ -462,7 +462,7 @@ Selon la forme de la nouvelle demande, il peut garder la même quantité et chan
 
 ```{r}
 #| label: fig-mono-changement-demande1
-#| fig-cap: "Exemple de réaction du monopole à un changement de demande : changement de prix."
+#| fig-cap: "Exemple de réaction du monopole à un changement de demande : changement de prix. Demande initiale $P_1$ et sa recette marginale en trait plein, nouvelle demande $P_2$ et sa recette marginale en tirets."
 #| fig-alt: "Deux demandes, leurs recettes marginales et un coût marginal croissant. La seconde demande, plus pentue, conduit à la même quantité optimale que la première, mais à un prix plus élevé."
 
 P <- function(q){1-q}
@@ -485,9 +485,9 @@ changement_demande <- function(P2, Rm2, lab_P2) {
     geom_function(fun=Rm2, colour = col_recette, linewidth=0.9, linetype="dashed") +
     geom_function(fun=Cm, colour=col_cout, linewidth=0.9) +
     labs(x="quantité", y = "prix") +
-    geom_text(aes(x=0.85, y=P(0.85)+0.06, label="Demande~1~(P[1])"), color=col_demande, parse=TRUE) +
-    geom_text(aes(x=0.95, y=Cm(0.95)+0.06, label="Coût~marginal~(C[m])"), color=col_cout, parse=TRUE) +
-    geom_text(aes(x=lab_P2[1], y=lab_P2[2], label="Demande~2~(P[2])", hjust=lab_P2[3]), color=col_demande, parse=TRUE) +
+    geom_text(aes(x=1.0, y=0.06, label="P[1]"), color=col_demande, parse=TRUE, hjust=0) +
+    geom_text(aes(x=0.9, y=1.05, label="Coût~marginal~(C[m])"), color=col_cout, parse=TRUE, hjust=1) +
+    geom_text(aes(x=lab_P2[1], y=lab_P2[2], label="P[2]", hjust=lab_P2[3]), color=col_demande, parse=TRUE) +
     geom_text(aes(x=z1+ifelse(z2<z1, 0.02, -0.02), y=0.04, label="R[list(1,m)]",
                   hjust=ifelse(z2<z1, 0, 1)), color=col_recette, parse=TRUE) +
     geom_text(aes(x=z2+ifelse(z2<z1, -0.02, 0.02), y=0.04, label="R[list(2,m)]",
@@ -509,7 +509,7 @@ changement_demande(P2_prix, Rm2_prix, lab_P2=c(0.05, 1.15, 0)) +
 
 ```{r}
 #| label: fig-mono-changement-demande2
-#| fig-cap: "Exemple de réaction du monopole à un changement de demande : changement de quantité."
+#| fig-cap: "Exemple de réaction du monopole à un changement de demande : changement de quantité. Demande initiale $P_1$ et sa recette marginale en trait plein, nouvelle demande $P_2$ et sa recette marginale en tirets."
 #| fig-alt: "Deux demandes, leurs recettes marginales et un coût marginal croissant. La seconde demande, moins pentue, conduit au même prix que la première, mais à une quantité optimale plus élevée."
 
 # Demande 2 plus plate (plus élastique) : même prix, quantité plus élevée.
@@ -517,7 +517,7 @@ P2_quantite <- function(q){14/15-2*q/3}
 Rm2_quantite <- function(q){14/15-4*q/3}
 qm2 <- uniroot(function(x){Rm2_quantite(x) - Cm(x)}, c(0, 1))$root
 
-changement_demande(P2_quantite, Rm2_quantite, lab_P2=c(1, P2_quantite(1)+0.07, 0.5)) +
+changement_demande(P2_quantite, Rm2_quantite, lab_P2=c(1.05, P2_quantite(1.05)+0.06, 0.5)) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm)), labels=c(expression(p[1]^"*"==p[2]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm, qm2), labels=c(expression(q[1]^"*"), expression(q[2]^"*")))
 ```
@@ -597,7 +597,7 @@ La production du monopole est inférieure à la production en CPP et le prix est
 
 ```{r}
 #| label: fig-mono-surplus
-#| fig-cap: "Surplus quand le producteur est en monopole."
+#| fig-cap: "Surplus en monopole : surplus du consommateur $S_c$ (en bleu), surplus du producteur $S_p$ (en jaune) et perte sèche (en gris)."
 #| fig-alt: "Demande, recette marginale et coût marginal d'un monopole, avec trois aires : en bleu, le surplus des consommateurs, triangle sous la demande au-dessus du prix de monopole ; en jaune, le surplus du producteur, trapèze entre le prix de monopole et le coût marginal ; en gris, la perte sèche, triangle entre la demande et le coût marginal, de la quantité de monopole à la quantité de concurrence pure et parfaite."
 qcpp <- uniroot(function(x){P(x) - Cm(x)}, c(0, 1))$root
 
@@ -611,15 +611,16 @@ p_surplus <- ggplot() +
   geom_function(fun=Rm, colour = col_recette, linewidth=0.9) +
   geom_function(fun=Cm, colour=col_cout, linewidth=0.9) +
   labs(x="quantité", y = "prix") +
-  geom_text(aes(x=0.8, y=P(0.8), label="Demande~(P)"), color=col_demande, parse=TRUE) +
-  geom_text(aes(x=0.4, y=0.2, label="Recette~marginale~(R[m])"), color=col_recette, parse=TRUE) +
-  geom_text(aes(x=1, y=Cm(1), label="Coût~marginal~(C[m])"), color=col_cout, parse=TRUE) +
+  geom_text(aes(x=0.82, y=0.27, label="Demande~(P)"), color=col_demande, parse=TRUE, hjust=0) +
+  geom_text(aes(x=0.52, y=0.06, label="Recette~marginale~(R[m])"), color=col_recette, parse=TRUE, hjust=0) +
+  geom_text(aes(x=0.9, y=1.0, label="Coût~marginal~(C[m])"), color=col_cout, parse=TRUE, hjust=1) +
   geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill=col_demande, alpha=0.5) +
   geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill=col_producteur, alpha=0.7) +
   geom_ribbon(data=perte, aes(x=x, ymin=ymin, ymax=ymax), fill=col_perte, alpha=0.6) +
-  annotate("text", x=qm/2, y=3/4, label="Surplus du\nconsommateur", color="black") +
-  annotate("text", x=qm/2, y=1/3, label="Surplus du\nproducteur", color="black") +
-  annotate("text", x=qm/2+qcpp/2, y=1/2, label="Perte sèche", color="black") +
+  annotate("text", x=0.07, y=0.76, label="S[c]", parse=TRUE, size=5) +
+  annotate("text", x=0.12, y=0.42, label="S[p]", parse=TRUE, size=5) +
+  annotate("text", x=0.45, y=0.85, label="perte sèche", hjust=0) +
+  annotate("segment", x=0.47, y=0.82, xend=0.43, yend=0.52, arrow=arrow(length=unit(0.15, "cm"))) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm)), labels=c(expression(p[m]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm, qcpp), labels=c(expression(q[m]^"*"), expression(q[CPP]^"*")))
   
@@ -771,14 +772,14 @@ p_naturel <- ggplot() +
   geom_function(fun=Cm_naturel, color=col_cout, linewidth=0.9) +
   geom_function(fun=CM_naturel, color=col_cout, linewidth=0.9, linetype="dashed") +
   labs(x="quantité", y = "prix") +
-  annotate("text", x=1, y=1.5, label="coût moyen", color=col_cout) +
-  annotate("text", x=1, y=0.5, label="coût marginal", color=col_cout) +
-  annotate("text", x=2, y=2, label="demande 2", color=col_demande) +
   geom_function(fun=D2, color=col_demande, linewidth=0.9)
   
 p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 10), breaks=c(q2, q1), labels=c(expression(q[2]), expression(q[1]))) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(0)) +
-  annotate("text", x=9, y=2, label="demande 1", color=col_demande) +
+  annotate("text", x=7.4, y=2.2, label="demande 1", color=col_demande, hjust=1) +
+  annotate("text", x=2.3, y=2.2, label="demande 2", color=col_demande, hjust=0) +
+  annotate("text", x=3, y=1.05, label="coût moyen", color=col_cout, hjust=0) +
+  annotate("text", x=3, y=0.3, label="coût marginal", color=col_cout, hjust=0) +
   geom_function(fun=D1, color=col_demande, linewidth=0.9, linetype="dashed")
 
 ```
@@ -865,11 +866,11 @@ p_subvunitaire <- ggplot() +
   geom_function(fun=function(x) Cm(x), colour=col_cout, linewidth=0.9) +
   labs(x="quantité", y = "prix") +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, qs), labels=c(expression(q^"*"), expression(q[s]^"*"))) +
-  geom_text(aes(x=0.80, y=P(0.80)+0.09, label="Demande~(P)"), color=col_demande, parse=TRUE) +
-  geom_text(aes(x=0.33, y=0.06, label="Recette~marginale~(R[m])"), color=col_recette, parse=TRUE) +
-  geom_text(aes(x=0.88, y=Cm(0.88)+0.09, label="Coût~marginal~(C[m])"), color=col_cout, parse=TRUE)
+  geom_text(aes(x=0.1, y=0.72, label="R[m]"), color=col_recette, parse=TRUE, hjust=1) +
+  geom_text(aes(x=0.85, y=1.0, label="Coût~marginal~(C[m])"), color=col_cout, parse=TRUE, hjust=1)
 
 p_subvunitaire +
+  geom_text(aes(x=0.82, y=0.3, label="Demande~(P)"), color=col_demande, parse=TRUE, hjust=0) +
   geom_function(fun=function(x) Cm(x)-s, colour=col_cout, linewidth=0.9, linetype="dashed") +
   geom_text(aes(x=1.06, y=Cm(1.06)-s-0.09, label="C[m]-s"), color=col_cout, parse=TRUE) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qs), P(qm)), labels=c(expression(p[s]^"*"), expression(p^"*")))
@@ -887,6 +888,7 @@ Le monopole vend chaque unité au prix $P(q)$ et reçoit en plus $s$ du régulat
 #| fig-cap: "Impact d'une subvention unitaire : augmentation de la recette marginale."
 #| fig-alt: "Même situation représentée autrement : la demande et la recette marginale sont relevées de la subvention s. La nouvelle recette marginale coupe le coût marginal à une quantité plus élevée, et le prix payé par les consommateurs baisse."
 p_subvunitaire +
+  geom_text(aes(x=0.97, y=0.1, label="P"), color=col_demande, parse=TRUE, hjust=0) +
   geom_function(fun=function(x) P(x)+s, colour=col_demande, linewidth=0.9, linetype="dashed") +
   geom_function(fun=function(x) Rm(x)+s, colour=col_recette, linewidth=0.9, linetype="dashed") +
   geom_text(aes(x=1.10, y=P(1.10)+s+0.09, label="P+s"), color=col_demande, parse=TRUE) +
@@ -937,9 +939,9 @@ ggplot() +
   geom_text(aes(x=qcpp+0.05, y=0.25, label="s^'*'"), color=col_recette, parse=TRUE, size=5) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm), P(qcpp)), labels=c(expression(p[m]^"*"), expression(p[CPP]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, qcpp), labels=c(expression(q[m]^"*"), expression(q[CPP]^"*"))) +
-  geom_text(aes(x=0.80, y=P(0.80)+0.09, label="Demande~(P)"), color=col_demande, parse=TRUE) +
-  geom_text(aes(x=0.30, y=Rm(0.30)-0.09, label="Recette~marginale~(R[m])"), color=col_recette, parse=TRUE) +
-  geom_text(aes(x=0.88, y=Cm(0.88)+0.09, label="Coût~marginal~(C[m])"), color=col_cout, parse=TRUE) +
+  geom_text(aes(x=0.82, y=0.3, label="Demande~(P)"), color=col_demande, parse=TRUE, hjust=0) +
+  geom_text(aes(x=0.52, y=0.06, label="R[m]"), color=col_recette, parse=TRUE, hjust=0) +
+  geom_text(aes(x=0.85, y=1.0, label="Coût~marginal~(C[m])"), color=col_cout, parse=TRUE, hjust=1) +
   geom_text(aes(x=0.17, y=1.03, label="R[m]+s^'*'"), color=col_recette, parse=TRUE)
 ```
 
@@ -1126,9 +1128,9 @@ p_prixmax <- ggplot() +
   geom_function(fun=function(x) Rm(x), colour = col_recette, linewidth=0.9) +
   labs(x="quantité", y = "prix") +
   geom_function(fun=function(x) Cm(x), colour=col_cout, linewidth=0.9) +
-  annotate("text", x=0.2, y=P(0.2), label="demande", color=col_demande) +
-  annotate("text", x=0.3, y=Rm(0.3), label="recette marginale", color=col_recette) +
-  annotate("text", x=1, y=Cm(1)-0.1, label="coût marginal", color=col_cout)
+  annotate("text", x=0.3, y=0.83, label="demande", color=col_demande, hjust=0) +
+  annotate("text", x=0.1, y=0.65, label="R[m]", parse=TRUE, color=col_recette, hjust=1) +
+  annotate("text", x=0.75, y=0.55, label="coût marginal", color=col_cout, hjust=0)
 
 
 p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color=col_demande, linewidth=3, alpha=0.35) +
@@ -1138,8 +1140,9 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color=col_dem
   geom_segment(aes(x=1-pmax, y=pmax, xend=0.4, yend=0.2), color=col_recette, linewidth=1.1, linetype="dashed") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax, P(qm)), labels=c(expression(p^{max}>p[CPP]^"*"), expression(p[m]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, 1-pmax), labels=c(expression(q[m]^"*"), expression(q[max]^"*"))) +
-  annotate("text", x=0.9, y=0.1, label="demande avec un prix maximal", color=col_demande) +
-  annotate("text", x=0.5, y=0.3, label="recette marginale avec un prix maximal", color=col_recette)
+  annotate("text", x=0.93, y=0.03, label="demande avec un prix maximal", color=col_demande, hjust=1, size=3.5) +
+  annotate("text", x=0.05, y=1.13, label="recette marginale avec un prix maximal", color=col_recette, hjust=0) +
+  annotate("segment", x=0.12, y=1.09, xend=0.15, yend=pmax+0.02, colour=col_recette, arrow=arrow(length=unit(0.15, "cm")))
 ```
 
 ```{r}
@@ -1153,8 +1156,9 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color=col_dem
   geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color=col_recette, linewidth=1.1, linetype="dashed") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(P(qm), pmax), labels=c(expression(p[m]^"*"), expression(p^{max}<p[CPP]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, pmax), labels=c(expression(q[m]^"*"), expression(q[max]^"*"))) +
-  annotate("text", x=0.9, y=0.1, label="demande avec un prix maximal", color=col_demande) +
-  annotate("text", x=0.5, y=0.3, label="recette marginale avec un prix max", color=col_recette)
+  annotate("text", x=0.93, y=0.03, label="demande avec un prix maximal", color=col_demande, hjust=1, size=3.5) +
+  annotate("text", x=0.05, y=1.13, label="recette marginale avec un prix maximal", color=col_recette, hjust=0) +
+  annotate("segment", x=0.12, y=1.09, xend=0.15, yend=pmax+0.02, colour=col_recette, arrow=arrow(length=unit(0.15, "cm")))
 ```
 
 Si le prix maximal est inférieur au prix de concurrence pure et parfaite, les quantités produites peuvent devenir sous-optimales.
@@ -1176,8 +1180,9 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color=col_dem
   geom_segment(aes(x=1-pmax, y=pmax, xend=pmax, yend=0), color=col_recette, linewidth=1.1, linetype="dashed") +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(pmax, P(qm)), labels=c(expression(p[max]==p[CPP]^"*"), expression(p[m]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qm, qcpp), labels=c(expression(q[m]^"*"), expression(q[max]^"*"==q[CPP]^"*"))) +
-  annotate("text", x=0.9, y=0.1, label="demande avec un prix maximal", color=col_demande) +
-  annotate("text", x=0.5, y=0.2, label="recette marginale avec un prix max", color=col_recette)
+  annotate("text", x=0.93, y=0.03, label="demande avec un prix maximal", color=col_demande, hjust=1, size=3.5) +
+  annotate("text", x=0.05, y=1.13, label="recette marginale avec un prix maximal", color=col_recette, hjust=0) +
+  annotate("segment", x=0.12, y=1.09, xend=0.15, yend=pmax+0.02, colour=col_recette, arrow=arrow(length=unit(0.15, "cm")))
 ```
 
 Avec un prix maximal égal au prix de concurrence pure et parfaite, la recette marginale coupe la courbe de coût marginal au point d'équilibre de la concurrence pure et parfaite.
@@ -1228,7 +1233,10 @@ qcpp_nat <- uniroot(fn_nat, c(0.5, 2.5))$root
 
 p_naturel + scale_x_continuous(expand = c(0, 0), limits = c(0, 2.5), breaks=c(qcpp_nat, qm, qr), labels=c(expression(q[CPP]^"*"), expression(q[m]^"*"), expression(q[R]))) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 5), breaks=c(D2(qm), D2(qr), D2(qcpp_nat)), labels=c(expression(p[m]), expression(p[R]), expression(p[CPP]))) +
-  annotate("text", x=0.5, y=3, label="recette marginale", color=col_recette) +
+  annotate("text", x=0.6, y=3.2, label="R[m]", parse=TRUE, color=col_recette, hjust=0) +
+  annotate("text", x=1.6, y=2.2, label="demande 2", color=col_demande, hjust=0) +
+  annotate("text", x=0.8, y=2.2, label="coût moyen", color=col_cout, hjust=0) +
+  annotate("text", x=0.05, y=0.4, label="coût marginal", color=col_cout, hjust=0) +
   geom_function(fun=Rm2, color=col_recette, linewidth=0.9)
 
 ```
@@ -1313,16 +1321,18 @@ p_discriparfaite +   geom_function(fun=function(x) Rm(x), colour = col_recette, 
   geom_function(fun=function(x) Cm(x), colour = col_cout, linewidth=0.9) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(pcpp, pm), labels=c(expression(p[CPP]^"*"), expression(p[m]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks = c(qm, qcpp), labels = c(expression(q[m]^"*"), expression(q[CPP]^"*"==q[d]))) +
-  geom_text(aes(x=0.45, y=Rm(0.45), label="R[m]~'en monopole'"), colour=col_recette, parse=TRUE) +
-  annotate("text", x=0.7, y=Cm(0.7), colour=col_cout, label="coût marginal") +
+  geom_text(aes(x=0.52, y=0.06, label="R[m]~'en monopole'"), colour=col_recette, parse=TRUE, hjust=0) +
+  annotate("text", x=0.95, y=1.1, colour=col_cout, label="coût marginal", hjust=1) +
   geom_segment(x=qm, y=0, xend=qm, yend=pm, linetype="dashed") +
   geom_segment(x=0, y=pm, xend=qm, yend=pm, linetype="dashed") +
   geom_ribbon(data=Sp_haut, aes(x=x, ymin=ymin, ymax=ymax), fill=col_producteur, alpha=0.7) +
   geom_ribbon(data=Sp_droite, aes(x=x, ymin=ymin, ymax=ymax), fill=col_producteur, alpha=0.7) +
-  geom_text(aes(x=0.2, y=0.8, label="S[p]~'en discrimination parfaite'"), color="black", parse=TRUE) +
+  geom_text(aes(x=0.4, y=0.95, label="S[p]~'en discrimination parfaite'"), color="black", parse=TRUE, hjust=0) +
+  annotate("segment", x=0.45, y=0.91, xend=0.17, yend=0.76, arrow=arrow(length=unit(0.15, "cm"))) +
+  annotate("segment", x=0.47, y=0.91, xend=0.43, yend=0.52, arrow=arrow(length=unit(0.15, "cm"))) +
   geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill=col_cout, alpha=0.5) +
   geom_text(aes(x=0.2, y=0.2, label="S[p]~'en monopole'"), color="black", parse=TRUE) +
-  geom_text(aes(x=0.8, y=P(0.8), label="R[m]~'en discrimination parfaite'"), color=col_demande, parse=TRUE)
+  geom_text(aes(x=0.7, y=0.4, label="R[m]~'en discrimination parfaite'"), color=col_demande, parse=TRUE, hjust=0)
 ```
 
 La situation de discrimination parfaite est un optimum de Pareto.

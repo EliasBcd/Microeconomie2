@@ -23,11 +23,12 @@ df <- data.frame(x)
 p <- ggplot(data=df, aes(x=x)) +
     geom_function(fun=D, colour = col_demande, linewidth=0.9) +
     labs(x="quantité", y = "prix") +
-    annotate("text", x = 0.8, y = D(0.8), label ="courbe de demande", colour = col_demande) +
+    annotate("text", x = 0.95, y = 0.12, label ="demande", colour = col_demande, hjust = 0) +
   geom_function(fun=Cm, colour=col_cout, linewidth=0.9) +
-  annotate("text", x=0.8, y=Cm(0.8), label="Coût marginal", colour=col_cout) +
+  annotate("text", x=0.78, y=0.86, label="Coût marginal", colour=col_cout, hjust=1) +
   geom_function(fun=Rm, colour=col_recette, linewidth=0.9) +
-  annotate("text", x=0.2, y=Rm(0.2), label='Recette marginale', colour=col_recette)
+  annotate("text", x=0.2, y=1.15, label='Recette marginale', colour=col_recette, hjust=0) +
+  annotate("segment", x=0.22, y=1.11, xend=0.15, yend=0.72, colour=col_recette, arrow=arrow(length=unit(0.15, 'cm')))
 ```
 
 
@@ -164,9 +165,11 @@ p_demande +
   scale_y_continuous(breaks = c(), labels = c(), expand = c(0, 0), limits = c(0, 1.2)) +
   scale_x_continuous(breaks = c(q1, q2),  labels = c(expression(q[1]^a), expression(q[2])), expand = c(0, 0), limits = c(0, 1.2)) +
   geom_function(fun=D2, colour=col_demande, linewidth=0.9, linetype='dashed') +
-  annotate('text', x=0.6, y=D2(0.6), label='Demande perçue par 2', colour=col_demande) +
+  annotate('text', x=0.62, y=0.48, label='Demande perçue par 2', colour=col_demande, hjust=0) +
+  annotate('segment', x=0.64, y=0.45, xend=0.6, yend=D2(0.6)+0.02, colour=col_demande, arrow=arrow(length=unit(0.15, 'cm'))) +
   geom_function(fun=Rm2, colour=col_recette, linewidth=0.9, linetype='dashed') +
-  annotate('text', x=0.4, y=Rm2(0.4), label='Recette marginale de 2', colour=col_recette)
+  annotate('text', x=0.38, y=0.95, label='Recette marginale de 2', colour=col_recette, hjust=0) +
+  annotate('segment', x=0.4, y=0.91, xend=0.3, yend=Rm2(0.3)+0.02, colour=col_recette, arrow=arrow(length=unit(0.15, 'cm')))
 
 ```
 
@@ -213,8 +216,8 @@ p_equilibre <- p_isoprofit +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q[1]^"*"))) +
   annotate("point", x=qc, y=qc) +
   annotate("text", x=qc+0.2, y=qc+0.05, label='Équilibre de Cournot') +
-  annotate("text", x=1/4, y=f1(1/8), label='Fonction de réaction 1', colour=col_cout) +
-  annotate('text', x=1, y=f2(7/8), label='Fonction de réaction 2', colour=col_recette) +
+  annotate("text", x=0.3, y=0.6, label='Fonction de réaction 1', colour=col_cout, hjust=0) +
+  annotate('text', x=0.75, y=0.15, label='Fonction de réaction 2', colour=col_recette, hjust=0) +
   geom_segment(data=df, x=0, y=3/4, xend=1/12, yend=f1(1/12), arrow=arrow(length=unit(0.3, "cm"))) +
   geom_segment(data=df, x=1/12, y=f1(1/12), xend=1/12, yend=f2(1/12), arrow=arrow(length=unit(0.3, "cm"))) +  
   geom_segment(data=df, x=1/12, y=f2(1/12), xend=25/108, yend=f1(25/108), arrow=arrow(length=unit(0.3, "cm"))) +
@@ -250,9 +253,9 @@ p_equilibre <- p_isoprofit +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc, 1), labels=c(expression(q[2]^"*"), expression(q["2m"]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc, 1), labels=c(expression(q[1]^"*"), expression(q["1m"]^"*"))) +
   annotate("point", x=qc, y=qc) +
-  annotate("text", x=qc+0.2, y=qc+0.05, label='Équilibre de Cournot instable') +
-  annotate("text", x=1/4, y=f1(1/8), label='Fonction de réaction 2', colour=col_recette) +
-  annotate('text', x=1, y=f2(7/8), label='Fonction de réaction 1', colour=col_cout) +
+  annotate("text", x=0.3, y=0.32, label='Équilibre de Cournot instable', hjust=0) +
+  annotate("text", x=0.3, y=0.6, label='Fonction de réaction 2', colour=col_recette, hjust=0) +
+  annotate('text', x=0.75, y=0.15, label='Fonction de réaction 1', colour=col_cout, hjust=0) +
   geom_segment(data=df, x=0, y=3/4, xend=1/12, yend=f1(1/12), arrow=arrow(length=unit(0.3, "cm"), ends="first")) +
   geom_segment(data=df, x=1/12, y=f1(1/12), xend=1/12, yend=f2(1/12), arrow=arrow(length=unit(0.3, "cm"), ends="first")) +  
   geom_segment(data=df, x=1/12, y=f2(1/12), xend=25/108, yend=f1(25/108), arrow=arrow(length=unit(0.3, "cm"), ends="first")) +
@@ -513,7 +516,7 @@ p + geom_function(fun=function(x) I1(x, 0.1), colour = col_cout) +
   geom_function(fun=function(x){I1(x, 0.07)}, colour = col_cout) +  
   geom_function(fun=function(x){I1(x, 0.02)}, colour = col_cout) +
   geom_function(fun=f1, colour = "black", linewidth=0.9) +
-  annotate("text", x=0.2, y=1, label="Fonction de réaction de 1", color="black") +
+  annotate("text", x=0.04, y=1, label="Fonction de réaction de 1", color="black", hjust=0) +
   annotate("text", x=0.3, y=0.8, label="Courbes d'isoprofit", color=col_cout) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(0), labels=c("")) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q["1m"]^"*")))
@@ -546,13 +549,15 @@ p_cournot <- p_isoprofit +
   geom_function(fun=f2, colour=col_recette, linewidth=0.9) +
   geom_function(fun=f1, colour=col_cout, linewidth=0.9) +
   geom_function(fun=function(x) I1(x, 2/25), colour=col_cout, linetype="dashed") +
-  annotate("text", x=0.2, y=1, label="Fonction de réaction de 1", color=col_cout) +
-  annotate("text", x=0.4, y=0.1, label="Isoprofit de 1 à l'équilibre", color=col_cout) +
+  annotate("text", x=0.06, y=1, label="Fonction de réaction de 1", color=col_cout, hjust=0) +
+  annotate("text", x=0.47, y=0.04, label="Isoprofit de 1 à l'équilibre", color=col_cout, hjust=0) +
+  annotate("segment", x=0.48, y=0.06, xend=0.37, yend=0.05, colour=col_cout, arrow=arrow(length=unit(0.15, 'cm'))) +
   annotate("text", x=0.8, y=0.2, label="Fonction de réaction de 2", color=col_recette) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc2, qc), labels=c(expression(q["2c"]^"*"), expression(q["2m"]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc2, qc), labels=c(expression(q["1c"]^"*"), expression(q["1m"]^"*"))) +
   geom_point(data=df2, aes(x=x, y=y), size=0.1, color=col_recette) +
-  annotate('text', x=0.1, y=0.4, label="Isoprofit de 2 à l'équilibre", colour=col_recette)
+  annotate('text', x=0.36, y=0.45, label="Isoprofit de 2 à l'équilibre", colour=col_recette, hjust=0) +
+  annotate('segment', x=0.38, y=0.43, xend=0.08, yend=0.35, colour=col_recette, arrow=arrow(length=unit(0.15, 'cm')))
 
 
 p_cournot + geom_segment(data=df, x=qc2-0.05, xend=qc2+0.05, y=qc2, yend=qc2, arrow = arrow(length=unit(0.2, "cm"), ends='both')) +
@@ -765,7 +770,7 @@ p_stackelberg <- ggplot() +
   stat_function(fun=function(x) IL(x, 1/9), colour=col_perte, linewidth=0.9) +
   stat_function(fun=function(x) IL(x, 1/8), colour=col_cout, linewidth=0.9) +
   annotate("text", x=0.4, y=1, label="Fonction de réaction du pilote (en Cournot)", color=col_cout) +
-  annotate("text", x=1.18, y=0.25, label="Fonction de réaction du satellite", color=col_recette, hjust=1) +
+  annotate("text", x=1.2, y=0.22, label="Fonction de réaction du satellite", color=col_recette, hjust=1) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(1/4, 1/3, 1/2), labels=c(expression(q[F]^"*"), expression(q[FC]^"*"),  expression(q[Fm]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(1/3, 0.5), labels=c(expression(q[LC]^"*"), expression(q[L]^"*"))) +
   annotate("point", x=1/3, y=1/3, colour=col_perte, size=3) +
@@ -973,7 +978,8 @@ zone <- data.frame(x=x, ymin=I2inv(x, 2/25), ymax=I1(x, 2/25))
 
 
 p_cournot + geom_ribbon(data=zone, aes(x=x, ymin=ymin, ymax=ymax), fill=col_demande, alpha=0.5) +
-  annotate("text", x=0.5, y=qc, label="zone d'augmentation des profits individuels", color=col_demande) 
+  annotate("text", x=0.25, y=0.75, label="zone d'augmentation des profits individuels", color=col_demande, hjust=0) +
+  annotate("segment", x=0.27, y=0.72, xend=0.17, yend=0.19, colour=col_demande, arrow=arrow(length=unit(0.15, 'cm'))) 
 ```
 
 ### Résolution analytique
