@@ -2,7 +2,7 @@
 
 {{< include _theme.qmd >}}
 
-```{r  annexessurplus1}
+```{r}
 #| label: fig-surplus1
 #| fig-cap: "Représentation graphique de la demande inverse."
 #| include: false
@@ -96,7 +96,7 @@ $$
 
 
 
-```{r annexesurplus2}
+```{r}
 #| label: fig-surplus2
 #| fig-cap: "Surplus avec un prix de l'échange $p$."
 q  <- 20 
@@ -128,7 +128,7 @@ $$
 S_p=\frac{1}{2}\times(p-p_1)\times q
 $$
 
-```{r annexesurplus3}
+```{r}
 #| label: fig-surplus3
 #| fig-cap: "Surplus avec un prix de l'échange $p$."
 Sc <- data.frame(x=c(0, q), ymin=c(Cm(q), Cm(q)), ymax=c(P(0), P(q)))

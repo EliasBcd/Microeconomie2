@@ -128,7 +128,7 @@ Le croisement entre recette marginale et coût marginal se fait donc à un nivea
 Plus l'entreprise $i$ pense que l'entreprise $j$ va produire une grande quantité, plus elle aura intérêt à réduire son offre.
 $q_i$ est décroissante en $q_j^a$.
 
-```{r oligodemande}
+```{r}
 #| label: fig-oligodemande
 #| fig-cap: "Représentation de la demande perçue par l'entreprise 2 anticipant une offre $q_1^a$ par l'entreprise 1."
 
@@ -180,7 +180,7 @@ q_2^*&=&f_2(q_1^*)
 \end{array}
 $$
 
-```{r oligoreaction}
+```{r}
 #| label: fig-oligo-reaction-stable
 #| fig-cap: "Représentation d'un équilibre de Cournot où les fonctions de réaction convergent vers le point d'équilibre."
 
@@ -214,7 +214,7 @@ L'équilibre n'est pas nécessairement stable.
 La stabilité dépend des pentes relatives des fonctions de réaction.
 
 
-```{r oligoreactioninstable}
+```{r}
 #| label: fig-oligo-reaction-instable
 #| fig-cap: "Représentation d'un équilibre de Cournot où les fonctions de réaction divergent du point d'équilibre. Équilibre instable"
 p_equilibre <- p_isoprofit +
@@ -369,7 +369,7 @@ L'équation ci-dessus définit implicitement une fonction $q_2=I_\pi(q_1, \pi_1)
 La courbe de la fonction de réaction de 1 coupe la courbe d'isoprofit de 1 en son maximum. 
 <!-- Implicitiment, le maximum sur la courbe d'isoprofit est obtenu en dérivant suivant $q_1$, tout comme on obtient la fonction de réaction. -->
 
-```{r isoprofit1}
+```{r}
 #| label: fig-isoprofit1
 #| fig-cap: "Courbes d'isoprofit et fonction de réaction de l'entreprise 1"
 I1 <- function(q, pi){1-pi/q-2*q}
@@ -396,7 +396,7 @@ Sur la @fig-isoprofit1, le profit est croissant en descendant vers le bas sur le
 Le maximum du profit est atteint lorsque l'entreprise 1 est en monopole.
 La quantité produite est alors $q_m^*$ et le profit $\pi_m^*$.
 
-```{r isoprofitCournot}
+```{r}
 #| label: fig-isoprofit-Cournot
 #| fig-cap: "Courbes d'isoprofit et fonctions de réaction des entreprises en équilibre de Cournot-Nash."
 I2 <- function(q, pi){1-pi/q-2*q}
@@ -580,7 +580,7 @@ On considère ici qu'il n'y a que deux périodes de décisions.
 L'entreprise pilote choisit sa quantité $q_1$ de façon à être sur la courbe d'isoprofit la plus basse possible compatible avec la fonction de réaction de l'entreprise satellite.
 Elle se placera donc sur la courbe d'isoprofit tangente à la fonction de réaction du satellite.
 
-```{r equilibreStackelberg}
+```{r}
 #| label: fig-Stack-equi
 #| fig-cap: "Courbes d'isoprofit du pilote et fonctions de réaction des deux entreprises en équilibre de Stackelberg."
 p <- p_isoprofit
@@ -727,7 +727,7 @@ La raison est que le cartel se comporte exactement comme un monopole, puis parta
 
 ### Raisonnement graphique
 
-```{r cartel}
+```{r}
 #| label: fig-cartel
 #| fig-cap: "Zone d'amélioration mutuellement bénéfique."
 

@@ -10,6 +10,23 @@ editor:
 
 {{< include _theme.qmd >}}
 
+::: {.callout-note}
+## Objectifs du chapitre
+
+À la fin de ce chapitre, vous saurez :
+
+- expliquer pourquoi le monopole choisit son prix ou sa quantité, mais pas les deux ;
+- calculer la recette marginale et la relier à l'élasticité prix de la demande ;
+- déterminer l'optimum du monopole (quantité, prix, profit) et le représenter graphiquement ;
+- mesurer le pouvoir de marché avec l'indice de Lerner ;
+- calculer les surplus et la perte sèche du monopole ;
+- reconnaître un monopole naturel ;
+- analyser les effets d'une régulation : tarification, subvention, taxes, prix maximal ;
+- déterminer les prix et les quantités d'un monopole qui discrimine par les prix.
+
+**Prérequis :** le chapitre 1 (coûts, surplus, équilibre de concurrence pure et parfaite), l'élasticité prix de la demande, la dérivée d'un produit de fonctions et les dérivées partielles (pour la discrimination du troisième degré).
+:::
+
 ::: {#def-monopole}
 ## Monopole
 
@@ -42,7 +59,7 @@ C'est-à-dire qu'un producteur sait qu'au prix de marché, il pourra vendre tout
 Il perçoit ainsi une demande infiniment élastique au prix, au niveau du prix $p^*$.
 
 
-```{r elasticite}
+```{r}
 #| label: fig-elasticite
 #| fig-cap: "Perception de la demande globale par un producteur isolé."
 #| fig-align: 'center'
@@ -124,7 +141,7 @@ p <- ggplot(df, aes(x=x)) +
 
 ```
 
-```{r monorecettemarginale}
+```{r}
 #| label: fig-monorecettemarginale
 #| fig-cap: "Recette marginale d'un monopole suite à une variation de quantité."
 p1 <- p
@@ -177,7 +194,7 @@ De l'@eq-rm, on observe que le signe de la recette marginale $R_m$ dépend de l'
 
 La @fig-mono-elasticite représente les différentes zones pour l'élasticité prix de la demande sur la courbe de demande.
 
-```{r monopoleelasticite}
+```{r}
 #| label: fig-mono-elasticite
 #| fig-cap: "La recette est maximale lorsque l'élasticité prix de la demande est égale à -1."
 p2 <- p;
@@ -213,7 +230,7 @@ Dans le cas linéaire, la recette marginale est une droite de pente deux fois pl
 La recette marginale divise en deux tout segment horizontal entre l'axe des ordonnées et la courbe de demande inverse.
 On peut ainsi représenter graphiquement, comme dans la @fig-recette-marginale, la demande, la recette marginale et la recette totale.
 
-```{r recettemarginale}
+```{r}
 #| label: fig-recette-marginale
 #| fig-cap: "Élasticité et recette."
 Rm <- function(q)(1-2*q)
@@ -236,7 +253,7 @@ p3
 
 La recette maximale est atteinte lorsque la valeur absolue de l'élasticité prix de la demande est égale à 1 ($|\varepsilon_{q/p}(q)|=1$).
 
-```{r monopoleprofit}
+```{r}
 #| label: fig-mono-profit
 #| fig-cap: "Deux façons de calculer la recette totale : l'aire sous la recette marginale (trapèze vert) ou le rectangle prix × quantité (rectangle rouge)."
 
@@ -261,6 +278,25 @@ Sur la @fig-mono-profit, on voit qu'il est possible de calculer la recette total
 
 Les deux aires se superposent sur la figure : leur partie commune apparaît en brun.
 Elles sont égales, car le triangle vert (au-dessus du prix) a la même aire que le triangle rouge (sous le prix, à droite de la recette marginale).
+:::
+
+::: {.callout-tip}
+## Testez-vous
+
+La demande inverse est $P(q)=20-2q$.
+
+1. Calculez la recette totale et la recette marginale.
+2. Pour quelles quantités la recette totale augmente-t-elle quand le monopole vend une unité de plus ?
+
+<details>
+<summary>Réponse</summary>
+
+1. $R(q)=qP(q)=20q-2q^2$, donc $R_m(q)=20-4q$.
+   On retrouve la règle de la demande linéaire : même ordonnée à l'origine que la demande, pente deux fois plus forte.
+2. La recette augmente tant que $R_m(q)>0$, c'est-à-dire pour $q<5$.
+   C'est la zone où la demande est élastique : en $q=5$, le prix vaut $P(5)=10$ et l'élasticité vaut $\frac{P(q)}{q}\frac{1}{P'(q)}=\frac{10}{5}\times\frac{1}{-2}=-1$.
+
+</details>
 :::
 
 ## Décision de production du monopole
@@ -306,7 +342,7 @@ La @fig-monopoleoptimale donne l'intuition graphique de l'égalité entre le co�
 Si le monopole produit plus que $q_m^*$, alors chaque unité produite en plus lui coûte plus cher qu'elle ne lui rapporte, car le coût marginal est *supérieur* à la recette marginale.
 À l'inverse, s'il produit moins, produire des unités en plus lui rapporterait plus que cela ne lui coûte, car le coût marginal est *inférieur* à la recette marginale.
 
-```{r monopoleoptimale}
+```{r}
 #| label: fig-monopoleoptimale
 #| fig-cap: "Production optimale du monopole."
 p5 <- p
@@ -352,7 +388,7 @@ La recette vaut 300, le coût 150.
 On a donc un profit de **150**, qui est bien positif (condition de l'@eq-profitpos).
 :::
 
-```{r monopolerecette}
+```{r}
 #| label: fig-mono-recette-exemple
 #| fig-cap: "Recette, coût et profit dans l'@exm-mono-exemple."
 
@@ -384,7 +420,7 @@ p6 <- ggplot(df2, aes(x=x2)) +
 p6
 ```
 
-```{r monopoleprofitexemple}
+```{r}
 #| label: fig-mono-profit-exemple
 #| fig-cap: "Demande, prix, coûts et profits dans l'@exm-mono-exemple."
 profit <- data.frame(x=c(0, 10), ymax=c(30, 30), ymin=c(15, 15))
@@ -416,7 +452,7 @@ Quand la demande change, le monopole recalcule son optimum ($R_m=C_m$) avec la n
 Selon la forme de la nouvelle demande, il peut garder la même quantité et changer son prix (@fig-mono-changement-demande1), ou garder le même prix et changer sa quantité (@fig-mono-changement-demande2).
 À un même prix peuvent donc correspondre plusieurs quantités, et inversement : le monopole n'a **pas de courbe d'offre**, au sens où il n'y a pas de relation univoque entre prix et quantité produite, à la différence des producteurs en CPP.
 
-```{r monopolechangementdemande1}
+```{r}
 #| label: fig-mono-changement-demande1
 #| fig-cap: "Exemple de réaction du monopole à un changement de demande : changement de prix."
 
@@ -462,7 +498,7 @@ changement_demande(P2_prix, Rm2_prix, lab_P2=c(0.05, 1.15, 0)) +
   scale_x_continuous(expand = c(0, 0), limits=c(0, 1.2), breaks=c(qm), labels=c(expression(q[1]^"*"==q[2]^"*")))
 ```
 
-```{r monopolechangementdemande2}
+```{r}
 #| label: fig-mono-changement-demande2
 #| fig-cap: "Exemple de réaction du monopole à un changement de demande : changement de quantité."
 
@@ -527,11 +563,29 @@ D'après les calculs précédents, l'indice de Lerner est inversement proportion
 
 $$L = \frac{1}{|\varepsilon_{q/p}(q^*)|} $$
 
+::: {.callout-tip}
+## Testez-vous
+
+À l'optimum, un monopole vend son bien au prix de 50, et son coût marginal vaut 30.
+
+1. Calculez son indice de Lerner.
+2. Déduisez-en l'élasticité prix de la demande à l'optimum.
+
+<details>
+<summary>Réponse</summary>
+
+1. $L=\frac{50-30}{50}=0{,}4$ : le monopole vend à un prix supérieur de 40 % du prix à son coût marginal.
+2. $L=\frac{1}{|\varepsilon_{q/p}(q^*)|}$, donc $|\varepsilon_{q/p}(q^*)|=\frac{1}{0{,}4}=2{,}5$.
+   On vérifie que $|\varepsilon_{q/p}(q^*)|>1$ : le monopole opère bien dans la zone élastique de la demande (@cor-elasticite).
+
+</details>
+:::
+
 ### L'inefficience du monopole
 
 La production du monopole est inférieure à la production en CPP et le prix est supérieur au prix de CPP.
 
-```{r monosurplus}
+```{r}
 #| label: fig-mono-surplus
 #| fig-cap: "Surplus quand le producteur est en monopole."
 qcpp <- uniroot(function(x){P(x) - Cm(x)}, c(0, 1))$root
@@ -561,11 +615,93 @@ p_surplus <- ggplot() +
 p_surplus
 ```
 
-Cela implique que le surplus du producteur (son profit) est plus élevé en monopole qu'en CPP, et que le surplus des consommateurs est plus faible.
+Cela implique que le surplus du producteur et, pas conséquent, son profit sont plus élevés en monopole qu'en CPP, et que le surplus des consommateurs est plus faible.
 Il y a globalement une perte sèche de surplus total, aussi appelée *charge morte*, comme on peut le voir sur la @fig-mono-surplus.
 **Le monopole est inefficace au sens de Pareto.** Il existe des consommateurs prêts à acheter à un prix supérieur au coût marginal (dans le triangle de la perte sèche).
 Il est donc possible d'avoir une amélioration parétienne qui améliore à la fois la situation des consommateurs et du monopole.
 Il suffirait pour cela que le monopole produise une unité supplémentaire du bien à un prix supérieur au coût marginal, sans rien changer d'autre pour obtenir cette amélioration.
+
+::: {.callout-caution}
+## Méthode : tracer le graphique du monopole
+
+Avec une demande inverse linéaire $P(q)=a-bq$ :
+
+1. Tracez la demande inverse à partir de deux points : l'ordonnée à l'origine $a$ et l'abscisse $a/b$, où le prix s'annule.
+2. Tracez la recette marginale $R_m(q)=a-2bq$ : même ordonnée à l'origine $a$, pente deux fois plus forte. Elle coupe l'axe des quantités en $a/(2b)$, au milieu de l'intervalle $[0, a/b]$.
+3. Tracez le coût marginal, à partir de deux points (par exemple sa valeur en $q=0$ et en une autre quantité).
+4. Au croisement de la recette marginale et du coût marginal, lisez la quantité $q_m^*$ sur l'axe horizontal.
+5. Remontez verticalement jusqu'à la **demande** pour lire le prix $p_m^*$ sur l'axe vertical. Le prix ne se lit jamais sur la recette marginale.
+6. Au croisement de la demande et du coût marginal, lisez la quantité $q_{CPP}^*$ de concurrence pure et parfaite.
+7. Repérez les trois aires de la @fig-mono-surplus :
+   - le surplus des consommateurs : le triangle sous la demande et au-dessus de $p_m^*$ ;
+   - le surplus du producteur : le **trapèze** entre $p_m^*$ et le coût marginal, de $0$ à $q_m^*$ ;
+   - la perte sèche : le triangle entre la demande et le coût marginal, de $q_m^*$ à $q_{CPP}^*$.
+:::
+
+::: {.callout-tip}
+## Testez-vous : lire un graphique
+
+La figure ci-dessous représente la demande inverse, la recette marginale et le coût marginal d'un monopole.
+
+1. Identifiez chaque courbe.
+2. Lisez la quantité et le prix du monopole, puis la quantité de concurrence pure et parfaite.
+3. Calculez le surplus des consommateurs, le surplus du producteur et la perte sèche.
+
+```{r}
+ggplot() +
+  geom_function(fun=function(q) 12-q, xlim=c(0, 12), colour="black") +
+  geom_function(fun=function(q) 12-2*q, xlim=c(0, 6), colour="black") +
+  geom_function(fun=function(q) q, xlim=c(0, 12), colour="black") +
+  labs(x="quantité", y="prix") +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 13), breaks=0:12) +
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 13), breaks=0:12) +
+  theme(panel.grid.major=element_line(colour="grey90"))
+```
+
+<details>
+<summary>Réponse</summary>
+
+```{r}
+sc <- data.frame(x=c(0, 4), ymin=c(8, 8), ymax=c(12, 8))
+sp <- data.frame(x=c(0, 4), ymin=c(0, 4), ymax=c(8, 8))
+ps <- data.frame(x=c(4, 6), ymin=c(4, 6), ymax=c(8, 6))
+ggplot() +
+  geom_ribbon(data=sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.4) +
+  geom_ribbon(data=sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.4) +
+  geom_ribbon(data=ps, aes(x=x, ymin=ymin, ymax=ymax), fill="black", alpha=0.4) +
+  geom_function(fun=function(q) 12-q, xlim=c(0, 12), colour="blue") +
+  geom_function(fun=function(q) 12-2*q, xlim=c(0, 6), colour="darkgreen") +
+  geom_function(fun=function(q) q, xlim=c(0, 12), colour="red") +
+  geom_segment(aes(x=4, y=0, xend=4, yend=8), linetype="dashed") +
+  geom_segment(aes(x=0, y=8, xend=4, yend=8), linetype="dashed") +
+  geom_segment(aes(x=6, y=0, xend=6, yend=6), linetype="dashed") +
+  annotate("text", x=10.5, y=3.3, label="Demande", colour="blue") +
+  annotate("text", x=6.3, y=1, label="Recette marginale", colour="darkgreen", hjust=0) +
+  annotate("text", x=8.8, y=11.6, label="Coût marginal", colour="red", hjust=1) +
+  annotate("text", x=1.3, y=9.2, label="S[c]", parse=TRUE, colour="darkblue", size=5) +
+  annotate("text", x=1.3, y=5, label="S[p]", parse=TRUE, colour="darkred", size=5) +
+  annotate("segment", x=5.6, y=8.8, xend=4.8, yend=6.3, arrow=arrow(length=unit(0.2, "cm"))) +
+  annotate("text", x=5.8, y=9.2, label="perte sèche", hjust=0) +
+  labs(x="quantité", y="prix") +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 13), breaks=0:12) +
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 13), breaks=0:12) +
+  theme(panel.grid.major=element_line(colour="grey90"))
+```
+
+1. La demande et la recette marginale partent du même point (12) ; la recette marginale est la plus pentue. La droite croissante est le coût marginal.
+2. La recette marginale coupe le coût marginal en $q_m^*=4$. En remontant jusqu'à la demande, on lit $p_m^*=8$. La demande coupe le coût marginal en $q_{CPP}^*=6$.
+3. Surplus des consommateurs : triangle, $\frac{1}{2}\times 4\times(12-8)=8$.
+   Surplus du producteur : trapèze de bases $8-0=8$ (en $q=0$) et $8-4=4$ (en $q=4$), $\frac{1}{2}\times(8+4)\times 4=24$.
+   Perte sèche : triangle, $\frac{1}{2}\times(6-4)\times(8-4)=4$.
+
+</details>
+:::
+
+::: {.callout-note}
+## Pour vous entraîner
+
+Fiche 2, exercices 2.1 à 2.4 : questions de cours, lecture graphique, solution du monopole, surplus et perte sèche.
+:::
 
 ## Le monopole naturel
 
@@ -602,7 +738,7 @@ Il y a presque toujours une zone où le coût moyen est décroissant, mais elle 
 Dans la @fig-nat-cout, la demande inverse 1 coupe la courbe de coût marginal à un endroit où le coût moyen est croissant : il n'y a plus d'économies d'échelle.
 La demande 2, en revanche, la coupe à un endroit où le coût moyen est encore décroissant, donc en présence d'économies d'échelle.
 
-```{r monopolenaturelcout}
+```{r}
 #| label: fig-nat-cout
 #| fig-cap: "Fonction de coût et demande avec et sans économies d'échelle."
 
@@ -702,7 +838,7 @@ La condition du premier ordre de l'@eq-cpo devient : $$\begin{array}{crcl}
 Le problème est exactement le même que précédemment, en intégrant la subvention dans le coût marginal.
 Pour le monopole, c'est comme si le régulateur retranchait un coût $s$ à chaque unité produite.
 
-```{r monopolesubventionunitaire}
+```{r}
 #| label: fig-mono-subv-unitaire
 #| fig-cap: "Impact d'une subvention unitaire : diminution du coût marginal."
 s <- 0.2
@@ -731,7 +867,7 @@ Une vision **alternative** à la diminution du coût marginal est de considérer
 
 Le monopole vend chaque unité au prix $P(q)$ et reçoit en plus $s$ du régulateur : il perçoit donc en réalité une demande $P(q)+s$, et la recette marginale qui lui correspond est $R_m(q)+s$.
 
-```{r monopolesubventionunitaire2}
+```{r}
 #| label: fig-mono-subv-unitaire-2
 #| fig-cap: "Impact d'une subvention unitaire : augmentation de la recette marginale."
 p_subvunitaire +
@@ -767,7 +903,7 @@ La subvention lui rembourse précisément cette perte, unité par unité.
 
 En utilisant l'expression de la recette marginale de l'@eq-rm, on peut aussi écrire la subvention optimale en fonction de l'élasticité : $$\frac{s^*}{P(q^*_{CPP})}=\frac{1}{\left|\varepsilon_{q/p}(q^*_{CPP})\right|}$$ On retrouve la même expression que l'indice de Lerner de l'@eq-Lerner, évaluée cette fois en $q^*_{CPP}$ : *plus la demande est inélastique, plus le monopole restreint sa production, et plus la subvention nécessaire est élevée.*
 
-```{r monopolesubventionoptimale}
+```{r}
 #| label: fig-mono-subv-opti
 #| fig-cap: "Subvention unitaire rétablissant l'optimum social."
 s_opt <- P(qcpp) - Rm(qcpp)
@@ -925,12 +1061,35 @@ En contrepartie, l'impôt sur les bénéfices suppose que le régulateur puisse 
 La condition de réalisabilité $t^*\leq 1$ est en revanche la même que pour la taxe forfaitaire : il faut que $S_{\text{tot}}\leq\pi(q^*_{CPP})$.
 :::
 
+::: {.callout-tip}
+## Testez-vous
+
+Le régulateur envisage trois façons de taxer un monopole :
+
+- une taxe unitaire de $t$ par unité produite ;
+- une taxe forfaitaire de montant $T$ ;
+- un impôt sur les bénéfices au taux $t$.
+
+Lesquelles modifient la quantité produite par le monopole ? Pourquoi ?
+
+<details>
+<summary>Réponse</summary>
+
+Seule la taxe unitaire modifie la quantité produite.
+Elle augmente de $t$ le coût de chaque unité : la condition du premier ordre devient $R_m(q^*)=C_m(q^*)+t$, ce qui réduit la quantité et augmente le prix (c'est l'effet inverse d'une subvention unitaire).
+
+La taxe forfaitaire et l'impôt sur les bénéfices ne modifient pas la condition du premier ordre $R_m(q^*)=C_m(q^*)$ : le monopole produit la même quantité.
+Il faut seulement que le profit reste positif après la taxe, sinon le monopole cesse de produire (ce qui ne peut pas arriver avec l'impôt sur les bénéfices tant que $t<1$).
+
+</details>
+:::
+
 ### Prix maximal
 
 Le régulateur fixe un *prix maximal* $p^{max}$ au-dessus duquel le monopole ne peut pas vendre.
 Il modifie ainsi la demande perçue par le producteur.
 
-```{r monopoleprixmaximal}
+```{r}
 #| label: fig-mono-prix-max
 #| fig-cap: "Fixation d'un prix maximal supérieur au prix de CPP."
 pmax <- 0.6
@@ -965,7 +1124,7 @@ p_prixmax + geom_segment(aes(x=0, y=pmax, xend=1-pmax, yend=pmax), color="darkre
   annotate("text", x=0.5, y=0.3, label="recette marginale avec un prix maximal", color="darkgreen")
 ```
 
-```{r monopoleprixmaximal2}
+```{r}
 #| label: fig-mono-prix-max-2
 #| fig-cap: "Fixation d'un prix maximal inférieur au prix de CPP."
 pmax <- 0.2
@@ -985,7 +1144,7 @@ Le régulateur peut maximiser le surplus social en prenant le prix concurrentiel
 *Rappel :* En CPP, on obtient le prix à l'aide de la courbe de coût marginal.
 L'équilibre a lieu quand le coût marginal et la demande se croisent.
 
-```{r monopoleprixmaximalCPP}
+```{r}
 #| label: fig-cpp-prix-max
 #| fig-cap: "Fixation d'un prix maximal égal au prix de CPP."
 pmax <-  P(qcpp)
@@ -1015,13 +1174,26 @@ Trois situations sont possibles avec un prix maximal :
 3.  S'il est inférieur au prix de CPP et donc de monopole ($p^*_{CPP}> p^{max}$), alors le monopole produit la quantité telle que $C_m(q)=p^{max}$ : la quantité produite diminue quand le prix maximal diminue.
 :::
 
+::: {.callout-caution}
+## Méthode : tracer le graphique avec un prix maximal
+
+1. Tracez la demande inverse, la recette marginale et le coût marginal, comme pour le monopole sans régulation.
+2. Tracez la droite horizontale d'ordonnée $p^{max}$, de l'axe des prix jusqu'à la demande. Elle la rencontre en $q_{max}$, la quantité demandée au prix $p^{max}$.
+3. La demande perçue par le monopole est cette droite horizontale jusqu'à $q_{max}$, puis la demande initiale : il ne peut pas vendre plus cher que $p^{max}$.
+4. Sur la partie horizontale, chaque unité supplémentaire se vend au prix $p^{max}$ : la recette marginale est égale à $p^{max}$. Au-delà de $q_{max}$, on retrouve la recette marginale initiale. La recette marginale perçue fait donc un saut vers le bas en $q_{max}$.
+5. Cherchez où le coût marginal coupe cette recette marginale perçue :
+   - sur la partie horizontale, si $p^{max}<p^*_{CPP}$ : le monopole produit la quantité telle que $C_m(q)=p^{max}$ (@fig-mono-prix-max-2) ;
+   - dans le saut, en $q_{max}$, si $p^*_{CPP}\leq p^{max}\leq p^*_m$ : le monopole produit $q_{max}$ (@fig-mono-prix-max ; @fig-cpp-prix-max pour le cas $p^{max}=p^*_{CPP}$) ;
+   - sur la recette marginale initiale, si $p^{max}>p^*_m$ : le prix maximal n'a aucun effet.
+:::
+
 ### Régulation du monopole naturel {#sec-regul-naturel}
 
 Dans le cas d'un monopole naturel, le coût marginal est inférieur au coût moyen à l'optimum.
 Une régulation qui maximise le surplus total est une régulation qui fait en sorte que la quantité produite est celle produite en concurrence pure et parfaite.
 Dans le cadre du monopole naturel, cela signifie que le coût moyen sera supérieur au coût marginal et donc au prix d'échange de la concurrence pure et parfaite, comme illustré dans la @fig-nat.
 
-```{r monopolenaturel}
+```{r}
 #| label: fig-nat
 #| fig-cap: "Régulation du monopole naturel."
 Rm2 <- function(q){5-4*q}
@@ -1045,6 +1217,32 @@ La régulation « optimale » généralement utilisée impose *un prix au coût 
 Le monopole fait alors un profit nul.
 
 Une solution alternative est un prix égal au coût marginal assorti de subventions pour couvrir les pertes.
+
+::: {.callout-tip}
+## Testez-vous
+
+Un monopole naturel a un coût moyen décroissant sur toute la zone de la demande.
+Le régulateur lui impose une tarification au coût marginal.
+
+1. Quel est le signe du profit du monopole ?
+2. Quelles solutions le régulateur peut-il retenir ?
+
+<details>
+<summary>Réponse</summary>
+
+1. Quand le coût moyen est décroissant, le coût marginal est inférieur au coût moyen.
+   Avec un prix égal au coût marginal, le prix est donc inférieur au coût moyen, et le profit $\pi=q\,(p-C_M(q))$ est négatif : le monopole cesse de produire.
+2. Le régulateur peut imposer un prix égal au coût moyen, avec l'obligation de satisfaire toute la demande : le profit est alors nul.
+   Il peut aussi imposer un prix égal au coût marginal et verser une subvention qui couvre les pertes.
+
+</details>
+:::
+
+::: {.callout-note}
+## Pour vous entraîner
+
+Fiche 2, exercices 2.5 à 2.8 : subvention unitaire et taxe forfaitaire (2.5), prix plafond (2.6), monopole naturel (2.7), tarification au coût marginal (2.8).
+:::
 
 ## Le monopole discriminant
 
@@ -1074,7 +1272,7 @@ C'est la même condition qu'en CPP.
 Le monopole parfaitement discriminant produit donc la quantité de concurrence pure et parfaite.
 Le prix de la dernière unité vendue par le monopole est égal au prix de la concurrence pure et parfaite, même si les prix des autres unités vendues sont supérieurs au prix de la CPP.
 
-```{r monopolediscriparfaite}
+```{r}
 #| label: fig-disc-parfaite
 #| fig-cap: "Surplus du monopole en discrimination parfaite (aire rouge et bleue)."
 p_discriparfaite <- p
@@ -1196,6 +1394,33 @@ Leurs élasticités-prix sont donc plus faibles et leurs prix plus élevés.
 
 Des fonctions de demande inverse différentes associées à des élasticités-prix de la demande différentes aboutissent à des prix différents.
 
+::: {.callout-tip}
+## Testez-vous
+
+Un monopole discrimine entre deux groupes de consommateurs.
+À l'optimum, son coût marginal vaut 30, et la valeur absolue de l'élasticité prix de la demande vaut 2 dans le groupe A et 4 dans le groupe B.
+
+1. Quel groupe paie le prix le plus élevé ?
+2. Calculez le prix payé par chaque groupe.
+
+<details>
+<summary>Réponse</summary>
+
+1. Le groupe A, dont la demande est la moins élastique : il réagit moins au prix.
+2. À l'optimum, la recette marginale de chaque groupe est égale au coût marginal : $P_i(q_i^*)\left(1-\frac{1}{|\varepsilon_i|}\right)=30$.
+   Pour le groupe A : $p_A\times\frac{1}{2}=30$, donc $p_A=60$.
+   Pour le groupe B : $p_B\times\frac{3}{4}=30$, donc $p_B=40$.
+   Le groupe A paie bien plus cher, une fois et demie le prix du groupe B.
+
+</details>
+:::
+
+::: {.callout-note}
+## Pour vous entraîner
+
+Fiche 2, exercices 2.10 à 2.12 : discrimination du troisième degré.
+:::
+
 ### Discrimination du deuxième degré
 
 ::: {#def-discri-2}
@@ -1253,7 +1478,7 @@ La situation est représentée sur la @fig-discri2-parfaite.
 Il ferait payer à chaque consommateur de type 1 la totalité du surplus que lui procure la consommation de $q_1^o$ unités, c'est-à-dire la surface $A$, et à chaque consommateur de type 2 la totalité du surplus que lui procure $q_2^o$ unités, c'est-à-dire la surface $A+B+C$.
 Comme dans le cas standard de la discrimination parfaite, le monopole produit les quantités qui maximisent le surplus total (Pareto-optimales) et s'approprie la totalité du surplus des consommateurs.
 
-```{r disc2-parfaite}
+```{r}
 #| label: fig-discri2-parfaite
 #| fig-cap: "Si le monopole pouvait identifier les consommateurs."
 #|
@@ -1378,7 +1603,7 @@ $$\text{Menu 1 : } (q_1^m,\ A) \qquad\qquad \text{Menu 2 : } (q_2^m,\ A+C).$$
 À l'équilibre, chaque consommateur de type 1 choisit le menu 1, et chaque consommateur de type 2 choisit le menu 2.
 Le monopoleur extrait la totalité du surplus des consommateurs de type 1 (surplus nul, contrainte CP$_1$ saturée), mais ne peut extraire qu'une partie du surplus des consommateurs de type 2, qui conservent la rente $B$ (contrainte CI$_2$ saturée).
 
-```{r disc2-opti}
+```{r}
 #| label: fig-discri2-opti
 #| fig-cap: "Menu optimal pour la discrimination du 2e degré."
 p_2d_2 <- ggplot() +
@@ -1451,3 +1676,53 @@ Par exemple, les abonnements mobiles avec un volume de données limité sont des
 De même, les compagnies aériennes proposent différentes classes de sièges (économique, affaires, première) pour répondre aux divers segments de clientèle.
 Dans le secteur des logiciels, les entreprises offrent souvent des versions basiques gratuites ou à faible coût pour attirer les utilisateurs occasionnels, tout en proposant des versions premium payantes avec des fonctionnalités avancées pour les utilisateurs professionnels ou intensifs.
 Ces stratégies permettent aux entreprises de maximiser leurs profits en capturant une plus grande part du surplus des consommateurs à travers une discrimination tarifaire efficace.
+
+::: {.callout-tip}
+## Testez-vous
+
+Un monopole propose deux menus à deux types de consommateurs qu'il ne sait pas distinguer : le type 1 valorise moins le bien que le type 2.
+
+1. Quelles contraintes sont saturées à l'optimum ?
+2. Pourquoi les consommateurs de type 2 conservent-ils un surplus ?
+3. Pourquoi le monopole réduit-il la quantité offerte au type 1, mais pas celle offerte au type 2 ?
+
+<details>
+<summary>Réponse</summary>
+
+1. La contrainte de participation du type 1 (son surplus est nul) et la contrainte d'incitation du type 2 (il est indifférent entre les deux menus).
+2. Parce que les consommateurs de type 2 peuvent toujours choisir le menu destiné au type 1, qui leur procure un surplus $V_2(q_1)-V_1(q_1)>0$.
+   Le monopole doit leur laisser au moins ce surplus : c'est la rente informationnelle.
+3. Réduire $q_1$ diminue la rente qu'il faut laisser au type 2, au prix d'une perte d'efficacité sur le type 1.
+   Modifier $q_2$ ne change pas cette rente : le monopole choisit donc pour le type 2 la quantité efficace, telle que $P_2(q_2)=c$.
+
+</details>
+:::
+
+::: {.callout-note}
+## Pour vous entraîner
+
+Fiche 2, exercice 2.9 : discrimination du deuxième degré, avec des proportions de types égales puis différentes.
+:::
+
+::: {.callout-important}
+## À retenir
+
+- Le monopole choisit son prix ou sa quantité, mais pas les deux ; il n'a pas de courbe d'offre.
+- La recette marginale est la dérivée de la recette totale $R(q)=P(q)\times q$ : $R_m(q)=R'(q)$. Avec une demande linéaire, elle a la même ordonnée à l'origine que la demande et une pente deux fois plus forte.
+- À l'optimum, $R_m(q^*)=C_m(q^*)$, et le prix se lit sur la demande : $p^*=P(q^*)$. Le monopole opère dans la zone élastique de la demande.
+- L'indice de Lerner mesure le pouvoir de marché : $L=\frac{p^*-C_m(q^*)}{p^*}=\frac{1}{|\varepsilon_{q/p}(q^*)|}$.
+- Le monopole produit moins et vend plus cher qu'en CPP : il crée une perte sèche.
+- Régulation : une subvention unitaire bien choisie, ou un prix maximal égal au prix de CPP, rétablit l'optimum ; la taxe forfaitaire et l'impôt sur les bénéfices ne modifient pas la quantité produite.
+- Discrimination : au premier degré, le monopole produit la quantité de CPP et capte tout le surplus ; au troisième degré, $R_{mA}(q_A^*)=R_{mB}(q_B^*)=C_m(q_A^*+q_B^*)$, et le groupe le moins élastique paie le plus cher ; au deuxième degré, il n'y a pas de distorsion « en haut », mais une distorsion « en bas ».
+:::
+
+::: {.callout-warning}
+## Erreurs fréquentes
+
+- Lire le prix du monopole sur la recette marginale : il se lit toujours sur la demande.
+- Écrire $R_m=p$ comme en CPP, en oubliant que le prix baisse quand le monopole vend une unité de plus.
+- Calculer le surplus du producteur comme un triangle : en monopole, c'est un trapèze, car le prix $p_m^*$ est au-dessus du coût marginal $C_m(q_m^*)$.
+- Confondre taxe unitaire et taxe forfaitaire : seule la taxe unitaire modifie la quantité produite.
+- En discrimination du troisième degré, égaliser $R_{mA}$ à $C_m(q_A)$ au lieu du coût marginal de la production totale, $C_m(q_A+q_B)$.
+- Confondre la subvention unitaire $s$ et le montant total versé $S_{\text{tot}}=s^*q^*_{CPP}$.
+:::
