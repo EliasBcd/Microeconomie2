@@ -42,3 +42,5 @@ renv
 
 
 **/*.quarto_ipynb
+
+/.luarc.json

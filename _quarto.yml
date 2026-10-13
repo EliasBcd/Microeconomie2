@@ -1,5 +1,6 @@
 project:
   type: book
+  post-render: moodle-liens.R
   
 
 
@@ -50,6 +51,11 @@ format:
   # docx: default
 format-links: true
 
+# Adaptations du HTML pour l'import dans un livre Moodle (sans effet sur le PDF).
+filters:
+  - quarto
+  - moodle.lua
+
 execute: 
   warning: false
   echo: false
@@ -67,6 +73,10 @@ crossref:
   tbl-prefix: tableau
   eq-prefix: équation
   exm-prefix: exemple
+  def-prefix: définition
+  prp-prefix: proposition
+  thm-prefix: théorème
+  cor-prefix: corollaire
 
 language:
   crossref-sec-prefix: section

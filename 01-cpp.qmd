@@ -8,6 +8,20 @@ ltex:
 
 {{< include _theme.qmd >}}
 
+::: {.callout-note}
+## Objectifs du chapitre
+
+À la fin de ce chapitre, vous saurez :
+
+- énoncer les cinq hypothèses de la concurrence pure et parfaite et dire ce que chacune implique ;
+- passer de la fonction de demande à la fonction de demande inverse, et inversement ;
+- calculer le surplus des consommateurs pour un prix donné ;
+- calculer le coût moyen, le coût marginal et la recette marginale à partir d'une fonction de coût ;
+- déterminer l'offre d'un producteur en concurrence pure et parfaite, et calculer le surplus des producteurs pour un prix donné ;
+- calculer l'équilibre de marché et les surplus à l'équilibre.
+
+**Prérequis :** dériver une fonction d'une variable, inverser une fonction affine, calculer l'aire d'un triangle et d'un trapèze.
+:::
 
 ::: { #def-marche name="Le marché"}
 Un *marché* est un lieu, physique ou virtuel, où se rencontrent l'offre et la demande de biens ou de services. 
@@ -79,6 +93,110 @@ Si elles font des pertes, certaines sortent du marché, ce qui fait monter le pr
 
 La violation d'une de ces hypothèses nous fait sortir du cadre de la CPP et confère un *pouvoir de marché* aux producteurs ou aux consommateurs en place. 
 Dans le cadre de ce cours, nous allons uniquement nous intéresser au pouvoir de marché des producteurs.
+
+## Le consommateur
+
+La modélisation des consommateurs dans ce cours est simple.
+
+::: {#def-dindiv}
+
+## Demande individuelle
+La fonction de demande d'un consommateur, notée $Q$, donne la quantité $Q(p)$ de bien qu'il souhaite acheter à chaque prix $p$.
+Lue dans l'autre sens, elle donne pour chaque quantité $q$ le prix maximal que le consommateur est prêt à payer pour obtenir une unité *supplémentaire* du bien.
+:::
+
+On appelle ce prix maximum le *prix de réserve*.
+
+::: {#prp-vari-demande}
+
+## Variation de la fonction de demande
+La fonction de demande est décroissante. 
+
+:::
+
+
+L'intuition est la suivante, un consommateur est prêt à payer plus pour la première unité de bien reçue que pour la suivante.
+Par exemple, le premier litre d'eau dans le désert a beaucoup plus de valeur que le dixième.
+
+::: {.remark}
+
+## Demande et demande inverse
+
+La fonction de demande donne la quantité en fonction du prix ($Q(p)$).
+La plupart du temps, nous aurons besoin de la fonction de demande inverse ($P(q)$), qui donne le prix en fonction de la quantité.
+Il faudra donc inverser, au sens mathématique, la fonction de demande pour obtenir la fonction de demande inverse.
+:::
+
+::: {.callout-tip}
+## Testez-vous
+
+La demande d'un consommateur est $Q(p)=12-3p$.
+Quelle est sa demande inverse $P(q)$ ?
+
+<details>
+<summary>Réponse</summary>
+
+On part de $q=12-3p$ et on isole $p$ : $3p=12-q$, donc
+$$P(q)=4-\frac{q}{3}$$
+Vérification : au prix $p=1$, le consommateur demande $Q(1)=9$, et on retrouve bien $P(9)=4-3=1$.
+
+</details>
+:::
+
+:::{#def-dagregee}
+
+## Demande agrégée
+
+La *demande agrégée* est la somme des demandes individuelles pour chaque niveau de prix : à chaque prix $p$, on additionne les quantités demandées par tous les consommateurs.
+Comme pour la demande individuelle, on utilise surtout la demande agrégée inverse, notée $P(q)$, qui donne le prix auquel les consommateurs achètent au total la quantité $q$.
+:::
+
+Supposons que le prix du bien soit $p$.
+Les consommateurs achètent alors la quantité $Q(p)$ : toutes les unités pour lesquelles leur prix de réserve est au moins égal à $p$.
+Pour chacune de ces unités, sauf la dernière, ils paient moins que ce qu'ils étaient prêts à payer : ce gain s'appelle le *surplus*.
+
+:::{#def-surplus-conso}
+
+## Surplus des consommateurs
+
+Au prix $p$, le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix $p$ qu'ils paient, pour toutes les unités achetées.
+Sur le graphique quantité-prix $(q, p)$, c'est l'aire comprise entre la courbe de demande inverse et la droite horizontale d'ordonnée $p$, entre $0$ et la quantité achetée $Q(p)$.
+Formellement :
+$$S_c(p)=\int_0^{Q(p)}\left(P(q)-p\right)dq$$
+:::
+
+::: {.remark}
+Seule la dernière unité de bien achetée par les consommateurs l'est au prix de réserve.
+Il n'y a pas de gain à l'échange pour cette unité, mais pour toutes les autres, il y en a, ce qui explique pourquoi il y a un surplus à l'échange, et pourquoi celui-ci a lieu.
+:::
+
+En pratique, on n'utilisera jamais la formule avec des intégrales, mais on calculera l'aire du triangle (ou du trapèze) concerné, comme sur la @fig-surplus-conso.
+
+```{r surplusconso}
+#| label: fig-surplus-conso
+#| fig-cap: "Surplus des consommateurs lorsque le prix est $p$."
+P_sc <- function(q){1-q}
+p_sc <- 0.4
+q_sc <- 1 - p_sc
+Sc_p <- data.frame(x=c(0, q_sc), ymin=c(p_sc, p_sc), ymax=c(P_sc(0), p_sc))
+
+ggplot() +
+  geom_ribbon(data=Sc_p, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.4) +
+  geom_function(fun=P_sc, colour="blue") +
+  geom_segment(aes(x=0, y=p_sc, xend=1.1, yend=p_sc), linetype="dashed") +
+  geom_segment(aes(x=q_sc, y=0, xend=q_sc, yend=p_sc), linetype="dashed") +
+  annotate("text", x=0.18, y=0.55, label="S[c](p)", parse=TRUE, colour="darkblue", size=5) +
+  annotate("text", x=0.32, y=0.8, label="Demande~inverse~(P)", parse=TRUE, colour="blue", hjust=0) +
+  labs(x="quantité", y="prix") +
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 1.2), breaks=c(p_sc), labels=c(expression(p))) +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 1.2), breaks=c(q_sc), labels=c(expression(Q(p))))
+```
+
+::: {.callout-note}
+## Pour vous entraîner
+
+Fiche 1, exercice 1.1 : demande inverse, prix de réserve et surplus du consommateur.
+:::
 
 ## Le producteur
 
@@ -194,6 +312,21 @@ p_cppcout <- ggplot() +
 p_cppcout + scale_y_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(0)) +
   scale_x_continuous(expand=c(0, 0), limits=c(0, 5), breaks=c(0))
 ```
+
+::: {.callout-tip}
+## Testez-vous
+
+Le coût moyen d'une entreprise est décroissant.
+Son coût marginal est-il au-dessus ou au-dessous de son coût moyen ?
+
+<details>
+<summary>Réponse</summary>
+
+Au-dessous.
+Si l'unité supplémentaire coûtait plus que le coût moyen des unités précédentes, elle ferait monter la moyenne (@prp-relations-cout).
+
+</details>
+:::
 
 ### L'offre d'un producteur
 
@@ -351,53 +484,36 @@ p_cppcout + geom_ribbon(data=pi, aes(x=x, ymin=ymin, ymax=ymax), fill="green", a
 - Entre les deux seuils, le producteur produit à perte, car cette perte est plus faible que son coût fixe, qu'il paierait de toute façon.
 :::
 
+### Surplus des producteurs
 
-## Le consommateur
+Comme pour les consommateurs, on peut mesurer le gain que les producteurs retirent de l'échange lorsque le prix est $p$.
+Un producteur qui fait face au prix $p$ produit la quantité $q$ telle que $C_m(q)=p$.
+Chaque unité lui rapporte $p$ et lui coûte son coût marginal : il gagne donc $p-C_m$ sur chaque unité, sauf la dernière.
+Le surplus de ce producteur est la somme de ces gains, c'est-à-dire l'aire comprise entre le prix $p$ et sa courbe de coût marginal, entre $0$ et $q$ :
+$$\int_0^{q}\left(p-C_m(x)\right)dx$$
 
-La modélisation des consommateurs dans ce cours est simple.
+Comme sur la @fig-surplus-prod-indiv, le coût marginal ne part pas forcément de zéro : la hauteur du triangle est alors $p-C_m(0)$, et non $p$.
+Le surplus d'un producteur n'est pas non plus égal à son profit : il est égal au profit augmenté du coût fixe (la démonstration est donnée en annexe).
 
-::: {#def-dindiv}
+```{r surplusprodindiv}
+#| label: fig-surplus-prod-indiv
+#| fig-cap: "Surplus d'un producteur lorsque le prix est $p$."
+Cm_sp <- function(q){0.2+q}
+p_sp <- 0.6
+q_sp <- p_sp - 0.2
+Sp_p <- data.frame(x=c(0, q_sp), ymin=c(Cm_sp(0), p_sp), ymax=c(p_sp, p_sp))
 
-## Demande individuelle
-La fonction de demande d'un consommateur, notée $Q$, donne la quantité $Q(p)$ de bien qu'il souhaite acheter à chaque prix $p$.
-Lue dans l'autre sens, elle donne pour chaque quantité $q$ le prix maximal que le consommateur est prêt à payer pour obtenir une unité *supplémentaire* du bien.
-:::
-
-On appelle ce prix maximum le *prix de réserve*.
-
-::: {#prp-vari-demande}
-
-## Variation de la fonction de demande
-La fonction de demande est décroissante. 
-
-:::
-
-
-L'intuition est la suivante, un consommateur est prêt à payer plus pour la première unité de bien reçue que pour la suivante.
-Par exemple, le premier litre d'eau dans le désert a beaucoup plus de valeur que le dixième.
-
-::: {.remark}
-
-## Demande et demande inverse
-
-La fonction de demande donne la quantité en fonction du prix ($Q(p)$).
-La plupart du temps, nous aurons besoin de la fonction de demande inverse ($P(q)$), qui donne le prix en fonction de la quantité.
-Il faudra donc inverser, au sens mathématique, la fonction de demande pour obtenir la fonction de demande inverse.
-:::
-
-
-## L'équilibre de marché
-
-
-:::{#def-dagregee}
-
-## Demande agrégée
-
-La *demande agrégée* est la somme des demandes individuelles pour chaque niveau de prix : à chaque prix $p$, on additionne les quantités demandées par tous les consommateurs.
-Comme pour la demande individuelle, on utilise surtout la demande agrégée inverse, notée $P(q)$, qui donne le prix auquel les consommateurs achètent au total la quantité $q$.
-:::
-
-
+ggplot() +
+  geom_ribbon(data=Sp_p, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.4) +
+  geom_function(fun=Cm_sp, colour="red") +
+  geom_segment(aes(x=0, y=p_sp, xend=1.1, yend=p_sp), linetype="dashed") +
+  geom_segment(aes(x=q_sp, y=0, xend=q_sp, yend=p_sp), linetype="dashed") +
+  annotate("text", x=0.12, y=0.5, label="S[p](p)", parse=TRUE, colour="darkred", size=5) +
+  annotate("text", x=0.62, y=0.92, label="Coût~marginal~(C[m])", parse=TRUE, colour="red", hjust=1) +
+  labs(x="quantité", y="prix") +
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 1.2), breaks=c(Cm_sp(0), p_sp), labels=c(expression(C[m](0)), expression(p))) +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 1.2), breaks=c(q_sp), labels=c(expression(q)))
+```
 
 :::{#def-offre-agregee}
 
@@ -407,7 +523,21 @@ L'*offre agrégée* est la somme des offres individuelles pour chaque niveau de 
 On note $S(q)$ l'offre agrégée inverse, qui donne le prix auquel les producteurs offrent au total la quantité $q$.
 :::
 
-La courbe d'offre correspond à la série des coûts marginaux de production, c'est-à-dire aux prix minimaux auxquels les producteurs souhaitent vendre une unité supplémentaire du bien.
+Chaque producteur offre la quantité pour laquelle son coût marginal est égal au prix.
+L'offre agrégée s'obtient donc en additionnant, à chaque prix $p$, les quantités offertes par tous les producteurs : c'est la somme des courbes de coût marginal des producteurs.
+Chaque point de la courbe d'offre agrégée inverse donne ainsi le prix minimal auquel les producteurs acceptent de vendre une unité supplémentaire du bien.
+
+:::{#def-surplus-prod}
+
+## Surplus des producteurs
+
+Au prix $p$, le surplus des producteurs est la somme des surplus de tous les producteurs.
+Sur le graphique quantité-prix $(q, p)$, c'est l'aire comprise entre la droite horizontale d'ordonnée $p$ et la courbe d'offre agrégée inverse, entre $0$ et la quantité offerte.
+Formellement, en notant $S$ l'offre agrégée inverse, obtenue en additionnant les courbes de coût marginal des producteurs, et $q(p)$ la quantité offerte au prix $p$, c'est-à-dire telle que $S(q(p))=p$ :
+$$S_p(p)=\int_0^{q(p)}\left(p-S(q)\right)dq$$
+:::
+
+## L'équilibre de marché
 
 :::{#def-equilibreCPP}
 
@@ -417,11 +547,6 @@ L'équilibre de marché se fait à l'intersection des courbes d'offre et de dema
 
 Avec les fonctions inverses, le même point s'écrit $P(q^*)=S(q^*)=p^*$ : à la quantité d'équilibre $q^*$, le prix que les consommateurs sont prêts à payer est égal au prix auquel les producteurs acceptent de vendre.
 C'est cette écriture que nous utiliserons dans les calculs.
-
-À l'équilibre de marché, on obtient une quantité d'équilibre (notée $q^*$) et un prix d'équilibre (noté $p^*$).
-La vente de toutes les unités jusqu'à la quantité d'équilibre $q^*$ au prix $p^*$ procure un *surplus* aux agents économiques.
-
-
 
 ```{r marche}
 #| label: fig-marche
@@ -449,40 +574,13 @@ p <- ggplot(df, aes(x=x)) +
 p
 ```
 
-
-
-
-
-:::{#def-surplus-conso}
-
-## Surplus des consommateurs
-
-Le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix payé par le consommateur pour obtenir les biens.
-Sur le graphique quantité prix $(q, p)$, c'est l'aire comprise entre la courbe de demande et la droite horizontale dont l'ordonnée est le prix d'échange.
-Formellement :
-$$S_c=\int_0^{q^*}\left(P(q)-p^*\right)dq$$
-:::
-
-::: {.remark}
-Seule la dernière unité de bien achetée par les consommateurs l'est au prix de réserve.
-Il n'y a pas de gain à l'échange pour cette unité, mais pour toutes les autres, il y en a, ce qui explique pourquoi il y a un surplus à l'échange, et pourquoi celui-ci a lieu.
-:::
-
-:::{#def-surplus-prod}
-
-## Surplus des producteurs
-
-Le surplus des producteurs est la somme des différences entre le prix auquel les producteurs vendent le bien et la courbe de coût marginal, qui représente le coût d'une unité supplémentaire produite.
-Sur le graphique quantité prix $(q, p)$, c'est l'aire comprise entre le prix de vente et la courbe de coût marginal.
-Formellement, en notant $S$ l'offre agrégée, c'est-à-dire la courbe des coûts marginaux :
-$$S_p=\int_0^{q^*}\left(p^*-S(q)\right)dq$$
-:::
-
-En pratique, on n'utilisera jamais la formule avec des intégrales, mais on calculera l'aire du triangle (ou trapèze) concerné.
+À l'équilibre, la quantité échangée est $q^*$ et tous les échanges se font au prix $p^*$.
+Les surplus des consommateurs et des producteurs s'obtiennent en appliquant la @def-surplus-conso et la @def-surplus-prod avec $p=p^*$ : ce sont les deux aires de la @fig-surplus.
+Leur somme est le *surplus total*.
 
 ```{r surplus}
 #| label: fig-surplus
-#| fig-cap: "Surplus des consommateurs et des producteurs."
+#| fig-cap: "Surplus des consommateurs (en bleu) et des producteurs (en rouge) à l'équilibre."
 
 Sc = data.frame(x = c(0, 0.5), y = c(1, 0.5))
 Sp = data.frame(x = c(0, 0.5), y = c(0, 0.5))
@@ -490,6 +588,23 @@ Sp = data.frame(x = c(0, 0.5), y = c(0, 0.5))
 p + geom_ribbon(data = Sc, aes(x=x, ymin=0.5, ymax = y), fill="blue") +
     geom_ribbon(data = Sp, aes(x=x, ymin=y, ymax = 0.5), fill="red")
 ```
+
+::: {.callout-tip}
+## Testez-vous
+
+La demande inverse est $P(q)=100-q$ et l'offre agrégée inverse est $S(q)=10+2q$.
+Calculez l'équilibre et le surplus des producteurs.
+
+<details>
+<summary>Réponse</summary>
+
+L'équilibre vérifie $100-q^*=10+2q^*$, soit $q^*=30$ et $p^*=70$.
+Le surplus des producteurs est le triangle compris entre le prix $p^*=70$ et la courbe d'offre, qui part de $S(0)=10$ :
+$$S_p=\frac{1}{2}\times 30\times(70-10)=900$$
+Attention : écrire $\frac{1}{2}\times 30\times 70=1050$ revient à supposer que la courbe d'offre part de zéro.
+
+</details>
+:::
 
 :::{ #prp-cppprop }
 
@@ -502,3 +617,30 @@ C'est ce qu'on appelle le *premier théorème du bien-être*.
 :::
 
 Ces propriétés font de la CPP une « référence » par rapport à laquelle on peut comparer les résultats des autres structures de marché.
+
+::: {.callout-note}
+## Pour vous entraîner
+
+Fiche 1, exercice 1.2, questions 1 à 4 : offre d'un producteur, équilibre de marché, surplus, et effet d'un prix imposé sur le surplus total.
+:::
+
+::: {.callout-important}
+## À retenir
+
+- La demande inverse $P(q)$ donne le prix maximal que les consommateurs sont prêts à payer pour une unité supplémentaire.
+- À un prix $p$ donné, le surplus des consommateurs est l'aire comprise entre la demande inverse et le prix ; le surplus des producteurs est l'aire comprise entre le prix et l'offre.
+- En CPP, chaque producteur est *price-taker* : sa recette marginale est égale au prix, $R_m=p$. Son offre est la partie croissante de son coût marginal, $p=C_m(q)$, au-dessus du seuil de fermeture.
+- Le profit s'écrit $\pi=q\,(p-C_M(q))$ : il est positif si le prix dépasse le coût moyen.
+- À l'équilibre de marché, $P(q^*)=S(q^*)=p^*$.
+- L'équilibre de CPP maximise le surplus total : c'est la référence pour juger les autres structures de marché.
+:::
+
+::: {.callout-warning}
+## Erreurs fréquentes
+
+- Confondre le coût marginal $C_m$ et le coût moyen $C_M$ : seule la majuscule les distingue.
+- Utiliser la demande $Q(p)$ quand le calcul demande la demande inverse $P(q)$, et inversement.
+- Dans le calcul du surplus des producteurs, supposer que la courbe d'offre (ou de coût marginal) part de zéro.
+  Si elle part d'une valeur positive, la hauteur du triangle est $p-S(0)$ (ou $p-C_m(0)$), et non $p$.
+- Confondre surplus des producteurs et profit : le surplus d'un producteur est égal à son profit augmenté de son coût fixe.
+:::
