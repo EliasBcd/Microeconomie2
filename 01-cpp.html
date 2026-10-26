@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -45,10 +45,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ed7344add5f1663e434276306a2aa159.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-fd0503e23dce65854c81c5baaade3bdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -203,6 +203,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Calcul des surplus</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-rappels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Rappels mathématiques</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-notations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Notations</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -216,14 +228,14 @@ window.Quarto = {
    
   <ul>
   <li><a href="#les-hypothèses-de-la-concurrence-pure-et-parfaite-cpp" id="toc-les-hypothèses-de-la-concurrence-pure-et-parfaite-cpp" class="nav-link active" data-scroll-target="#les-hypothèses-de-la-concurrence-pure-et-parfaite-cpp"><span class="header-section-number">1.1</span> Les hypothèses de la concurrence pure et parfaite (CPP)</a></li>
-  <li><a href="#le-producteur" id="toc-le-producteur" class="nav-link" data-scroll-target="#le-producteur"><span class="header-section-number">1.2</span> Le producteur</a>
+  <li><a href="#le-consommateur" id="toc-le-consommateur" class="nav-link" data-scroll-target="#le-consommateur"><span class="header-section-number">1.2</span> Le consommateur</a></li>
+  <li><a href="#le-producteur" id="toc-le-producteur" class="nav-link" data-scroll-target="#le-producteur"><span class="header-section-number">1.3</span> Le producteur</a>
   <ul class="collapse">
-  <li><a href="#fonctions-de-coût" id="toc-fonctions-de-coût" class="nav-link" data-scroll-target="#fonctions-de-coût"><span class="header-section-number">1.2.1</span> Fonctions de coût</a></li>
-  <li><a href="#loffre-dun-producteur" id="toc-loffre-dun-producteur" class="nav-link" data-scroll-target="#loffre-dun-producteur"><span class="header-section-number">1.2.2</span> L’offre d’un producteur</a></li>
+  <li><a href="#fonctions-de-coût" id="toc-fonctions-de-coût" class="nav-link" data-scroll-target="#fonctions-de-coût"><span class="header-section-number">1.3.1</span> Fonctions de coût</a></li>
+  <li><a href="#loffre-dun-producteur" id="toc-loffre-dun-producteur" class="nav-link" data-scroll-target="#loffre-dun-producteur"><span class="header-section-number">1.3.2</span> L’offre d’un producteur</a></li>
+  <li><a href="#surplus-des-producteurs" id="toc-surplus-des-producteurs" class="nav-link" data-scroll-target="#surplus-des-producteurs"><span class="header-section-number">1.3.3</span> Surplus des producteurs</a></li>
   </ul></li>
-  <li><a href="#le-consommateur" id="toc-le-consommateur" class="nav-link" data-scroll-target="#le-consommateur"><span class="header-section-number">1.3</span> Le consommateur</a></li>
   <li><a href="#léquilibre-de-marché" id="toc-léquilibre-de-marché" class="nav-link" data-scroll-target="#léquilibre-de-marché"><span class="header-section-number">1.4</span> L’équilibre de marché</a></li>
-  <li><a href="#perception-par-les-agents-isolés" id="toc-perception-par-les-agents-isolés" class="nav-link" data-scroll-target="#perception-par-les-agents-isolés"><span class="header-section-number">1.5</span> Perception par les agents isolés</a></li>
   </ul>
 </nav>
     </div>
@@ -249,6 +261,28 @@ window.Quarto = {
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objectifs du chapitre
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>À la fin de ce chapitre, vous saurez :</p>
+<ul>
+<li>énoncer les cinq hypothèses de la concurrence pure et parfaite et dire ce que chacune implique ;</li>
+<li>passer de la fonction de demande à la fonction de demande inverse, et inversement ;</li>
+<li>calculer le surplus des consommateurs pour un prix donné ;</li>
+<li>calculer le coût moyen, le coût marginal et la recette marginale à partir d’une fonction de coût ;</li>
+<li>déterminer l’offre d’un producteur en concurrence pure et parfaite, et calculer le surplus des producteurs pour un prix donné ;</li>
+<li>calculer l’équilibre de marché et les surplus à l’équilibre.</li>
+</ul>
+<p><strong>Prérequis :</strong> dériver une fonction d’une variable, inverser une fonction affine, calculer l’aire d’un triangle et d’un trapèze.</p>
+</div>
+</div>
 <div id="def-marche" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 1.1 (Le marché)</strong></span> Un <em>marché</em> est un lieu, physique ou virtuel, où se rencontrent l’offre et la demande de biens ou de services. C’est là que les prix sont déterminés par les interactions entre les acheteurs (=consommateurs) et les vendeurs (=producteurs). Tous les biens échangés sur un marché sont parfaitement substituables.</p>
 </div>
@@ -276,52 +310,126 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>Hypothèse 1.4 (Homogénéité des biens)</strong></span> L’homogénéité des biens signifie que tous les biens vendus sur un marché sont parfaitement substituables. Sur un marché donné, tous les biens ont la même qualité. Le consommateur est donc indifférent entre tous les biens vendus. Il n’y a pas non plus d’effet des marques.</p>
 </div>
 <div id="cnj-libre-entree" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Hypothèse 1.5 (Libre entrée et sortie du marché)</strong></span> L’hypothèse de libre entrée et sortie du marché signifie qu’il n’y a pas de barrière à l’entrée dans le marché. Concrètement, il est impossible de faire un bénéfice sur la dernière unité vendue en concurrence pure et parfaite, sinon un concurrent pourrait entrer sur le marché et faire des bénéfices.</p>
+<p><span class="theorem-title"><strong>Hypothèse 1.5 (Libre entrée et sortie du marché)</strong></span> L’hypothèse de libre entrée et sortie du marché signifie qu’il n’y a pas de barrière à l’entrée dans le marché, ni à la sortie. Concrètement, si les entreprises en place font des profits, de nouveaux concurrents entrent sur le marché, ce qui fait baisser le prix. Si elles font des pertes, certaines sortent du marché, ce qui fait monter le prix. À long terme, le profit des entreprises est donc nul : le prix est égal au minimum du coût moyen.</p>
 </div>
 <p>La violation d’une de ces hypothèses nous fait sortir du cadre de la CPP et confère un <em>pouvoir de marché</em> aux producteurs ou aux consommateurs en place. Dans le cadre de ce cours, nous allons uniquement nous intéresser au pouvoir de marché des producteurs.</p>
 </section>
-<section id="le-producteur" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="le-producteur"><span class="header-section-number">1.2</span> Le producteur</h2>
-<section id="fonctions-de-coût" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="fonctions-de-coût"><span class="header-section-number">1.2.1</span> Fonctions de coût</h3>
+<section id="le-consommateur" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="le-consommateur"><span class="header-section-number">1.2</span> Le consommateur</h2>
+<p>La modélisation des consommateurs dans ce cours est simple.</p>
+<div id="def-dindiv" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 1.2 (Demande individuelle)</strong></span> La fonction de demande d’un consommateur, notée <span class="math inline">\(Q\)</span>, donne la quantité <span class="math inline">\(Q(p)\)</span> de bien qu’il souhaite acheter à chaque prix <span class="math inline">\(p\)</span>. Lue dans l’autre sens, elle donne pour chaque quantité <span class="math inline">\(q\)</span> le prix maximal que le consommateur est prêt à payer pour obtenir une unité <em>supplémentaire</em> du bien.</p>
+</div>
+<p>On appelle ce prix maximum le <em>prix de réserve</em>.</p>
+<div id="prp-vari-demande" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1.1 (Variation de la fonction de demande)</strong></span> La fonction de demande est décroissante.</p>
+</div>
+<p>L’intuition est la suivante, un consommateur est prêt à payer plus pour la première unité de bien reçue que pour la suivante. Par exemple, le premier litre d’eau dans le désert a beaucoup plus de valeur que le dixième.</p>
+<div class="proof remark">
+<p><span class="proof-title"><em>Remarque</em> (Demande et demande inverse). </span>La fonction de demande donne la quantité en fonction du prix (<span class="math inline">\(Q(p)\)</span>). La plupart du temps, nous aurons besoin de la fonction de demande inverse (<span class="math inline">\(P(q)\)</span>), qui donne le prix en fonction de la quantité. Il faudra donc inverser, au sens mathématique, la fonction de demande pour obtenir la fonction de demande inverse. Sur un graphique quantité-prix, la courbe de demande représente à la fois <span class="math inline">\(Q(p)\)</span> et <span class="math inline">\(P(q)\)</span> : on lit <span class="math inline">\(Q(p)\)</span> en partant d’un prix sur l’axe vertical, et <span class="math inline">\(P(q)\)</span> en partant d’une quantité sur l’axe horizontal.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Testez-vous
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La demande d’un consommateur est <span class="math inline">\(Q(p)=12-3p\)</span>. Quelle est sa demande inverse <span class="math inline">\(P(q)\)</span> ?</p>
+<details>
+<summary>
+Réponse
+</summary>
+<p>On part de <span class="math inline">\(q=12-3p\)</span> et on isole <span class="math inline">\(p\)</span> : <span class="math inline">\(3p=12-q\)</span>, donc <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[P(q)=4-\frac{q}{3}\]</span></span> Vérification : au prix <span class="math inline">\(p=1\)</span>, le consommateur demande <span class="math inline">\(Q(1)=9\)</span>, et on retrouve bien <span class="math inline">\(P(9)=4-3=1\)</span>.</p>
+</details>
+</div>
+</div>
+<div id="def-dagregee" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 1.3 (Demande agrégée)</strong></span> La <em>demande agrégée</em> est la somme des demandes individuelles pour chaque niveau de prix : à chaque prix <span class="math inline">\(p\)</span>, on additionne les quantités demandées par tous les consommateurs. Comme pour la demande individuelle, on utilise surtout la demande agrégée inverse, notée <span class="math inline">\(P(q)\)</span>, qui donne le prix auquel les consommateurs achètent au total la quantité <span class="math inline">\(q\)</span>.</p>
+</div>
+<p>Supposons que le prix du bien soit <span class="math inline">\(p\)</span>. Les consommateurs achètent alors la quantité <span class="math inline">\(Q(p)\)</span> : toutes les unités pour lesquelles leur prix de réserve est au moins égal à <span class="math inline">\(p\)</span>. Pour chacune de ces unités, sauf la dernière, ils paient moins que ce qu’ils étaient prêts à payer : ce gain s’appelle le <em>surplus</em>.</p>
+<div id="def-surplus-conso" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 1.4 (Surplus des consommateurs)</strong></span> Au prix <span class="math inline">\(p\)</span>, le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix <span class="math inline">\(p\)</span> qu’ils paient, pour toutes les unités achetées. Sur le graphique quantité-prix <span class="math inline">\((q, p)\)</span>, c’est l’aire comprise entre la courbe de demande inverse et la droite horizontale d’ordonnée <span class="math inline">\(p\)</span>, entre <span class="math inline">\(0\)</span> et la quantité achetée <span class="math inline">\(Q(p)\)</span>. Formellement : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[S_c(p)=\int_0^{Q(p)}\left(P(q)-p\right)dq\]</span></span></p>
+</div>
+<div class="proof remark">
+<p><span class="proof-title"><em>Remarque</em>. </span>Seule la dernière unité de bien achetée par les consommateurs l’est au prix de réserve. Il n’y a pas de gain à l’échange pour cette unité, mais pour toutes les autres, il y en a, ce qui explique pourquoi il y a un surplus à l’échange, et pourquoi celui-ci a lieu.</p>
+</div>
+<p>En pratique, on n’utilisera jamais la formule avec des intégrales, mais on calculera l’aire du triangle (ou du trapèze) concerné, comme sur la <a href="#fig-surplus-conso" class="quarto-xref">figure&nbsp;<span>1.1</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-surplus-conso" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Graphique prix-quantité : une droite de demande décroissante et une droite horizontale au prix p. Le triangle compris entre la demande et cette droite, de 0 à la quantité Q(p), est coloré en bleu : c'est le surplus des consommateurs.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-surplus-conso-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-cpp_files/figure-html/fig-surplus-conso-1.png" class="img-fluid figure-img" alt="Graphique prix-quantité : une droite de demande décroissante et une droite horizontale au prix p. Le triangle compris entre la demande et cette droite, de 0 à la quantité Q(p), est coloré en bleu : c'est le surplus des consommateurs." width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-surplus-conso-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: Surplus des consommateurs lorsque le prix est <span class="math inline">\(p\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Pour vous entraîner
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Fiche 1, exercice 1.1 : demande inverse, prix de réserve et surplus du consommateur.</p>
+</div>
+</div>
+</section>
+<section id="le-producteur" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="le-producteur"><span class="header-section-number">1.3</span> Le producteur</h2>
+<section id="fonctions-de-coût" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="fonctions-de-coût"><span class="header-section-number">1.3.1</span> Fonctions de coût</h3>
 <p>En général, un producteur est modélisé par une fonction de production, c’est-à-dire une fonction qui donne les quantités produites de biens en fonction des facteurs de production. On utilise cette fonction de production pour ensuite construire une fonction de coût.</p>
 <div id="def-ctotal" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.2 (Fonction de coût total)</strong></span> La fonction de coût total, notée <span class="math inline">\(C\)</span> ou <span class="math inline">\(CT\)</span>, donne le coût total de production de <span class="math inline">\(q\)</span> unités de bien. Elle se décompose en un <em>coût fixe</em> <span class="math inline">\(CF\)</span>, qui ne dépend pas de <span class="math inline">\(q\)</span>, et un <em>coût variable</em> <span class="math inline">\(CV\)</span> qui dépend de <span class="math inline">\(q\)</span> : <span class="math display">\[C(q)=CF+ CV(q)\]</span></p>
+<p><span class="theorem-title"><strong>Définition 1.5 (Fonction de coût total)</strong></span> La fonction de coût total, notée <span class="math inline">\(C\)</span> ou <span class="math inline">\(CT\)</span>, donne le coût total de production de <span class="math inline">\(q\)</span> unités de bien. Elle se décompose en un <em>coût fixe</em> <span class="math inline">\(CF\)</span>, qui ne dépend pas de <span class="math inline">\(q\)</span>, et un <em>coût variable</em> <span class="math inline">\(CV\)</span> qui dépend de <span class="math inline">\(q\)</span> : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[C(q)=CF+ CV(q)\]</span></span></p>
 </div>
 <div id="def-cmoyen" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.3 (Coût moyen)</strong></span> Le coût moyen est le coût de production moyen d’une unité, noté <span class="math inline">\(C_M\)</span> : <span class="math display">\[C_M(q) = \frac{C(q)}{q}\]</span></p>
+<p><span class="theorem-title"><strong>Définition 1.6 (Coût moyen)</strong></span> Le coût moyen est le coût de production moyen d’une unité, noté <span class="math inline">\(C_M\)</span> : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[C_M(q) = \frac{C(q)}{q}\]</span></span></p>
 </div>
-<p>Le coût moyen se décompose en un <em>coût fixe moyen</em> <span class="math inline">\(CF_M\)</span> : <span class="math display">\[CF_M(q)=\frac{CF}{q}\]</span> Et un <em>coût variable moyen</em> <span class="math inline">\(CV_M\)</span> : <span class="math display">\[CV_M(q)=\frac{CV(q)}{q}\]</span> On a alors : <span id="eq-CM"><span class="math display">\[
+<div id="eq-CM">
+<p>Le coût moyen se décompose en un <em>coût fixe moyen</em> <span class="math inline">\(CF_M\)</span> : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[CF_M(q)=\frac{CF}{q}\]</span></span> Et un <em>coût variable moyen</em> <span class="math inline">\(CV_M\)</span> : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[CV_M(q)=\frac{CV(q)}{q}\]</span></span> On a alors : <span><span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 C_M(q)=CF_M(q) +CV_M(q)
-\tag{1.1}\]</span></span></p>
+\tag{1.1}\]</span></span></span></p>
+</div>
 <div class="proof">
-<p><span class="proof-title"><em>Preuve</em>. </span><span class="math display">\[
+<p><span class="proof-title"><em>Preuve</em>. </span><span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 \begin{array}{rcl}
 C_M(q) &amp;=&amp; \frac{C(q)}{q}\\
 &amp;=&amp; \frac{CF + CV(q)}{q}\\
 &amp;=&amp; \frac{CF}{q}+\frac{CV(q)}{q}\\
 &amp;=&amp; CF_M(q) + CV_M(q)
 \end{array}
-\]</span></p>
+\]</span></span></p>
 </div>
 <div id="def-cmarginal" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.4 (Coût marginal)</strong></span> Le coût marginal, noté <span class="math inline">\(C_m\)</span>, est l’augmentation du coût liée à la production d’une unité supplémentaire : <span class="math display">\[
+<p><span class="theorem-title"><strong>Définition 1.7 (Coût marginal)</strong></span> Le coût marginal, noté <span class="math inline">\(C_m\)</span>, est l’augmentation du coût liée à la production d’une unité supplémentaire : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 C_m(q)=\lim_{\Delta q\to 0}\frac{C(q+\Delta q)-C(q)}{\Delta q}=C'(q)
-\]</span></p>
+\]</span></span></p>
 </div>
 <p>Autrement dit, le coût marginal est la variation de coût total quand la production varie « un tout petit peu » (infiniment peu en fait).</p>
 <div id="prp-variations-cout" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1.1 (Variations des courbes de coût)</strong></span> En général, le coût marginal diminue puis augmente, car la productivité marginale est d’abord croissante, puis décroissante.<br>
+<p><span class="theorem-title"><strong>Proposition 1.2 (Variations des courbes de coût)</strong></span> En général, le coût marginal diminue puis augmente, car la productivité marginale est d’abord croissante, puis décroissante.<br>
 Le coût variable moyen est d’abord décroissant, puis croissant, pour la même raison.<br>
 Le coût fixe moyen est toujours décroissant, car le coût fixe ne dépend pas des quantités produites et <span class="math inline">\(CF_M(q)=CF/q\)</span> est une fonction inverse.<br>
 La décomposition donnée par l’<a href="#eq-CM" class="quarto-xref">équation&nbsp;<span>1.1</span></a> implique que le coût moyen est d’abord décroissant, puis croissant.</p>
 </div>
 <div id="prp-relations-cout" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1.2 (Relations entre les coûts)</strong></span> Lorsque le coût marginal est inférieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&lt;C_M(q)\)</span>), le coût moyen diminue. Lorsque le coût marginal est supérieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&gt;C_M(q)\)</span>), le coût moyen augmente. La courbe de coût marginal coupe donc la courbe de coût (variable) moyen à son minimum.</p>
+<p><span class="theorem-title"><strong>Proposition 1.3 (Relations entre les coûts)</strong></span> Lorsque le coût marginal est inférieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&lt;C_M(q)\)</span>), le coût moyen diminue. Lorsque le coût marginal est supérieur au coût (variable) moyen (<span class="math inline">\(C_m(q)&gt;C_M(q)\)</span>), le coût moyen augmente. La courbe de coût marginal coupe donc la courbe de coût (variable) moyen à son minimum.</p>
 </div>
-<p>L’intuition de ce résultat est la suivante : si le coût d’une unité supplémentaire est supérieur au coût moyen des unités précédentes, alors l’unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen, et vice-versa. L’illustration graphique est donnée sur la <a href="#fig-cppcout" class="quarto-xref">figure&nbsp;<span>1.1</span></a>.</p>
+<p>L’intuition de ce résultat est la suivante : si le coût d’une unité supplémentaire est supérieur au coût moyen des unités précédentes, alors l’unité supplémentaire produite sera plus chère que la moyenne du coût des unités précédentes produites, augmentant de ce fait le coût moyen, et vice-versa. L’illustration graphique est donnée sur la <a href="#fig-cppcout" class="quarto-xref">figure&nbsp;<span>1.2</span></a>.</p>
 <div class="proof">
-<p><span class="proof-title"><em>Preuve</em>. </span>En son minimum, le coût moyen est tel que <span class="math inline">\(C_M'(q)=0\)</span>. <span class="math display">\[
+<p><span class="proof-title"><em>Preuve</em>. </span>En son minimum, le coût moyen est tel que <span class="math inline">\(C_M'(q)=0\)</span>. <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 \begin{array}{crcl}
 &amp;C_M'(q)&amp;=&amp;0\\
 \Leftrightarrow &amp; \left(\frac{C(q)}{q}\right)'&amp;=&amp; 0\\
@@ -331,163 +439,275 @@ La décomposition donnée par l’<a href="#eq-CM" class="quarto-xref">équation
 \Leftrightarrow &amp; C_m(q)&amp;=&amp; \frac{C(q)}{q}\\
 \Leftrightarrow &amp; C_m(q)&amp;=&amp; C_M(q)
 \end{array}
-\]</span> La démonstration est similaire pour le coût variable moyen.</p>
+\]</span></span> La démonstration est similaire pour le coût variable moyen.</p>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-cppcout" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-cppcout" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Graphique coût-quantité avec trois courbes en U : le coût marginal, le coût moyen et le coût variable moyen. Le coût marginal coupe les deux coûts moyens à leur minimum, et le coût moyen est au-dessus du coût variable moyen.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cppcout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-cpp_files/figure-html/fig-cppcout-1.png" class="img-fluid figure-img" width="672">
+<img src="01-cpp_files/figure-html/fig-cppcout-1.png" class="img-fluid figure-img" alt="Graphique coût-quantité avec trois courbes en U : le coût marginal, le coût moyen et le coût variable moyen. Le coût marginal coupe les deux coûts moyens à leur minimum, et le coût moyen est au-dessus du coût variable moyen." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cppcout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: Exemples de fonctions de coût.
+Figure&nbsp;1.2: Exemples de fonctions de coût.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Testez-vous
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le coût moyen d’une entreprise est décroissant. Son coût marginal est-il au-dessus ou au-dessous de son coût moyen ?</p>
+<details>
+<summary>
+Réponse
+</summary>
+<p>Au-dessous. Si l’unité supplémentaire coûtait plus que le coût moyen des unités précédentes, elle ferait monter la moyenne (<a href="#prp-relations-cout" class="quarto-xref">proposition&nbsp;<span>1.3</span></a>).</p>
+</details>
+</div>
+</div>
 </section>
-<section id="loffre-dun-producteur" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="loffre-dun-producteur"><span class="header-section-number">1.2.2</span> L’offre d’un producteur</h3>
+<section id="loffre-dun-producteur" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="loffre-dun-producteur"><span class="header-section-number">1.3.2</span> L’offre d’un producteur</h3>
 <div id="def-rtotale" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.5 (Recette totale)</strong></span> La recette totale, notée <span class="math inline">\(R\)</span> ou <span class="math inline">\(RT\)</span>, est la recette issue de la vente des biens. Pour <span class="math inline">\(q\)</span> unités de bien vendues, le producteur gagne <span class="math inline">\(R(q)\)</span>, autrement dit, c’est le chiffre d’affaires du producteur (pour ce bien).</p>
+<p><span class="theorem-title"><strong>Définition 1.8 (Recette totale)</strong></span> La recette totale, notée <span class="math inline">\(R\)</span> ou <span class="math inline">\(RT\)</span>, est la recette issue de la vente des biens. Pour <span class="math inline">\(q\)</span> unités de bien vendues, le producteur gagne <span class="math inline">\(R(q)\)</span>, autrement dit, c’est le chiffre d’affaires du producteur (pour ce bien).</p>
 </div>
 <div id="def-rmarginale" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.6 (Recette marginale)</strong></span> La recette marginale, notée <span class="math inline">\(R_m\)</span>, est la recette rapportée par une unité supplémentaire de bien vendue. <span class="math display">\[R_m(q)=R'(q)\]</span></p>
+<p><span class="theorem-title"><strong>Définition 1.9 (Recette marginale)</strong></span> La recette marginale, notée <span class="math inline">\(R_m\)</span>, aussi appelée <em>revenu marginal</em>, est la recette rapportée par une unité supplémentaire de bien vendue. <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[R_m(q)=R'(q)\]</span></span></p>
 </div>
 <div id="def-profit" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.7 (Profit)</strong></span> Le profit, noté <span class="math inline">\(\pi\)</span>, est la différence entre la recette totale et le coût total de production : <span class="math display">\[\pi(q)=R(q)-C(q)\]</span> Le profit s’appelle couramment le bénéfice.</p>
+<p><span class="theorem-title"><strong>Définition 1.10 (Profit)</strong></span> Le profit, noté <span class="math inline">\(\pi\)</span>, est la différence entre la recette totale et le coût total de production : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[\pi(q)=R(q)-C(q)\]</span></span> Le profit s’appelle couramment le bénéfice.</p>
 </div>
 <div id="cnj-programme-producteur" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Hypothèse 1.6 (Programme du producteur)</strong></span> Le producteur choisit la quantité produite de manière à maximiser son profit. Mathématiquement, il résout le programme suivant : <span class="math display">\[\max_q\pi(q)=\max_q R(q)-C(q)\]</span></p>
+<p><span class="theorem-title"><strong>Hypothèse 1.6 (Programme du producteur)</strong></span> Le producteur choisit la quantité produite de manière à maximiser son profit. Mathématiquement, il résout le programme suivant : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[\max_q\pi(q)=\max_q R(q)-C(q)\]</span></span></p>
 </div>
 <div id="thm-offre" class="theorem">
-<p><span class="theorem-title"><strong>Théorème 1.1 (Offre du producteur)</strong></span> Le programme du producteur est tel que la quantité optimale produite <span class="math inline">\(q^*\)</span> égalise le coût marginal et la recette marginale (condition du premier ordre) : <span id="eq-cppopti"><span class="math display">\[
+<div id="eq-cppopti">
+<p><span class="theorem-title"><strong>Théorème 1.1 (Offre du producteur)</strong></span> Le programme du producteur est tel que la quantité optimale produite <span class="math inline">\(q^*\)</span> égalise le coût marginal et la recette marginale (condition du premier ordre) : <span><span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 R_m(q^*) =C_m(q^*)
-\tag{1.2}\]</span></span> Il est aussi tel que la recette marginale croît moins vite que le coût marginal à l’optimum (condition du second ordre) : <span class="math display">\[
+\tag{1.2}\]</span></span></span> Il est aussi tel que la recette marginale croît moins vite que le coût marginal à l’optimum (condition du second ordre) : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 R_m'(q^*) &lt;C_m'(q^*)
-\]</span></p>
+\]</span></span></p>
+</div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Preuve</em>. </span>L’objectif du producteur est de maximiser son profit : <span class="math display">\[
+<p><span class="proof-title"><em>Preuve</em>. </span>L’objectif du producteur est de maximiser son profit : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 \max_q\pi(q)=\max_q R(q)-C(q)
-\]</span> À l’optimum, et à condition que les fonctions de coût et de recette soient deux fois dérivables (ce qui sera toujours le cas dans ce cours), la condition du premier ordre s’écrit : <span class="math display">\[
+\]</span></span> À l’optimum, et à condition que les fonctions de coût et de recette soient deux fois dérivables (ce qui sera toujours le cas dans ce cours), la condition du premier ordre s’écrit : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 \pi'(q)=0\Leftrightarrow R'(q)-C'(q)=0\Leftrightarrow R_m(q)=C_m(q)
-\]</span> On obtient donc l’<a href="#eq-cppopti" class="quarto-xref">équation&nbsp;<span>1.2</span></a>. Pour obtenir un maximum, la condition du second ordre s’écrit : <span class="math display">\[
+\]</span></span> On obtient donc l’<a href="#eq-cppopti" class="quarto-xref">équation&nbsp;<span>1.2</span></a>. Pour obtenir un maximum, la condition du second ordre s’écrit : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 \pi''(q)&lt;0\Leftrightarrow R''(q)-C''(q)&lt;0\Leftrightarrow R_m'(q^*) &lt;C_m'(q^*)
-\]</span></p>
+\]</span></span></p>
 </div>
 <p>L’intuition pour ce résultat est la suivante. Si la recette marginale est supérieure au coût marginal (<span class="math inline">\(R_m(q)&gt;C_m(q)\)</span>), alors augmenter la quantité produite rapporte plus que cela ne coûte et donc augmente le profit. À l’inverse, si la recette marginale est inférieure au coût marginal (<span class="math inline">\(R_m(q)&lt;C_m(q)\)</span>), diminuer la quantité produite diminue plus le coût que la recette du producteur et donc augmente le profit. La situation s’équilibre donc pour <span class="math inline">\(R_m(q)=C_m(q)\)</span>. Si cette égalité n’est pas vérifiée, le producteur peut en effet augmenter son profit en jouant sur la quantité produite.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-profitmax" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-profitmax" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Graphique prix-quantité : une recette marginale décroissante et un coût marginal croissant se coupent à la quantité q*, qui maximise le profit.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-profitmax-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-cpp_files/figure-html/fig-profitmax-1.png" class="img-fluid figure-img" width="672">
+<img src="01-cpp_files/figure-html/fig-profitmax-1.png" class="img-fluid figure-img" alt="Graphique prix-quantité : une recette marginale décroissante et un coût marginal croissant se coupent à la quantité q*, qui maximise le profit." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-profitmax-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.2: Maximisation du profit d’un producteur.
+Figure&nbsp;1.3: Maximisation du profit d’un producteur.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>En concurrence pure et parfaite, un producteur est <em>price-taker</em>. Le prix sur le marché est unique et donné, il vaut <span class="math inline">\(p\)</span> et ne dépend pas des quantités produites par <em>un</em> producteur. Un producteur vend son bien au prix défini par le marché. La recette totale devient donc <span class="math inline">\(R(q)=p\times q\)</span>, avec <span class="math inline">\(p\)</span> fixé. La recette marginale est donc <span class="math inline">\(R_m(q)=R'(q)=p\)</span>. En réécrivant l’<a href="#eq-cppopti" class="quarto-xref">équation&nbsp;<span>1.2</span></a>, on obtient en concurrence pure et parfaite : <span class="math display">\[p=C_m(q)\]</span></p>
+<p>En concurrence pure et parfaite, un producteur est <em>price-taker</em>. Le prix sur le marché est unique et donné, il vaut <span class="math inline">\(p\)</span> et ne dépend pas des quantités produites par <em>un</em> producteur. Un producteur vend son bien au prix défini par le marché. La recette totale devient donc <span class="math inline">\(R(q)=p\times q\)</span>, avec <span class="math inline">\(p\)</span> fixé. La recette marginale est donc <span class="math inline">\(R_m(q)=R'(q)=p\)</span>. En réécrivant l’<a href="#eq-cppopti" class="quarto-xref">équation&nbsp;<span>1.2</span></a>, on obtient en concurrence pure et parfaite : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[p=C_m(q)\]</span></span></p>
 <div id="prp-offreCPP" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1.3 (Offre d’un producteur en CPP)</strong></span> En concurrence pure et parfaite, chaque producteur maximise son profit en égalisant son coût marginal au prix du marché : <span class="math display">\[C_m(q^*)=p\]</span> À condition que son coût marginal soit croissant en <span class="math inline">\(q^*\)</span> (<span class="math inline">\(C_m'(q^*)&gt;0\)</span>).</p>
+<p><span class="theorem-title"><strong>Proposition 1.4 (Offre d’un producteur en CPP)</strong></span> En concurrence pure et parfaite, chaque producteur maximise son profit en égalisant son coût marginal au prix du marché : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[C_m(q^*)=p\]</span></span> À condition que son coût marginal soit croissant en <span class="math inline">\(q^*\)</span> (<span class="math inline">\(C_m'(q^*)&gt;0\)</span>).</p>
 </div>
 <div id="def-offre" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.8 (Courbe d’offre d’un producteur)</strong></span> La courbe d’offre d’un producteur donne la quantité maximale que souhaite produire un producteur pour chaque prix.</p>
+<p><span class="theorem-title"><strong>Définition 1.11 (Courbe d’offre d’un producteur)</strong></span> La courbe d’offre d’un producteur donne, pour chaque prix, la quantité qui maximise son profit.</p>
 </div>
 <div id="prp-courbeoffreCPP" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1.4 (Courbe d’offre en CPP)</strong></span> En concurrence pure et parfaite, la courbe d’offre d’un producteur est donnée par son coût marginal. <span class="math display">\[p=C_m(q)\]</span></p>
+<p><span class="theorem-title"><strong>Proposition 1.5 (Courbe d’offre en CPP)</strong></span> En concurrence pure et parfaite, la courbe d’offre d’un producteur est donnée par la partie croissante de son coût marginal située au-dessus du minimum du coût variable moyen : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[p=C_m(q) \quad \text{si} \quad p\geq \min_q CV_M(q)\]</span></span> En dessous de ce prix, le producteur ne produit rien.</p>
 </div>
-<p>Le profit du producteur s’écrit alors : <span class="math display">\[
+<div id="eq-profitCM">
+<p>Le profit du producteur s’écrit alors : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 \pi(q)=R(q)-C(q)=pq-C(q)=pq-C_M(q)q=q(p-C_M(q))
-\]</span> <span id="eq-profitCM"><span class="math display">\[
+\]</span></span> <span><span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 \pi(q)=q(p-C_M(q))
-\tag{1.3}\]</span></span> L’<a href="#eq-profitCM" class="quarto-xref">équation&nbsp;<span>1.3</span></a> nous dit que le profit d’un producteur en concurrence pure et parfaite est la différence entre le prix de vente et le coût moyen de production multiplié par le nombre d’unités vendues. Si ce prix est inférieur au coût moyen de toutes les unités vendues, le profit sera négatif. Dans la <a href="#fig-cppprofit" class="quarto-xref">figure&nbsp;<span>1.3</span></a>, le profit est donné par le rectangle vert.</p>
+\tag{1.3}\]</span></span></span> L’<a href="#eq-profitCM" class="quarto-xref">équation&nbsp;<span>1.3</span></a> nous dit que le profit d’un producteur en concurrence pure et parfaite est la différence entre le prix de vente et le coût moyen de production multiplié par le nombre d’unités vendues. Si ce prix est inférieur au coût moyen de toutes les unités vendues, le profit sera négatif. Dans la <a href="#fig-cppprofit" class="quarto-xref">figure&nbsp;<span>1.4</span></a>, le profit est donné par le rectangle jaune.</p>
+</div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-cppprofit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-cppprofit" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Courbes de coût d'un producteur en concurrence pure et parfaite et droite horizontale du prix p. Au point où le prix est égal au coût marginal, on lit la quantité q*. Le rectangle jaune, entre le prix et le coût moyen, de 0 à q*, représente le profit.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cppprofit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-cpp_files/figure-html/fig-cppprofit-1.png" class="img-fluid figure-img" width="672">
+<img src="01-cpp_files/figure-html/fig-cppprofit-1.png" class="img-fluid figure-img" alt="Courbes de coût d'un producteur en concurrence pure et parfaite et droite horizontale du prix p. Au point où le prix est égal au coût marginal, on lit la quantité q*. Le rectangle jaune, entre le prix et le coût moyen, de 0 à q*, représente le profit." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cppprofit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.3: Profit d’un producteur en concurrence pure et parfaite.
+Figure&nbsp;1.4: Profit d’un producteur en concurrence pure et parfaite.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="le-consommateur" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="le-consommateur"><span class="header-section-number">1.3</span> Le consommateur</h2>
-<p>La modélisation des consommateurs dans ce cours est simple.</p>
-<div id="def-dindiv" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.9 (Demande individuelle)</strong></span> La fonction de demande d’un consommateur correspond à la suite des prix maximaux qu’un consommateur est prêt à payer pour obtenir une unité <em>supplémentaire</em> du bien. On la note souvent <span class="math inline">\(Q\)</span>.</p>
-</div>
-<p>On appelle ce prix maximum le <em>prix de réserve</em>.</p>
-<div id="prp-vari-demande" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1.5 (Variation de la fonction de demande)</strong></span> La fonction de demande est décroissante.</p>
-</div>
-<p>L’intuition est la suivante, un consommateur est prêt à payer plus pour la première unité de bien reçue que pour la suivante. Par exemple, le premier litre d’eau dans le désert a beaucoup plus de valeur que le dixième.</p>
 <div class="proof remark">
-<p><span class="proof-title"><em>Remarque</em> (Demande et demande inverse). </span>La fonction de demande donne la quantité en fonction du prix (<span class="math inline">\(Q(p)\)</span>). La plupart du temps, nous aurons besoin de la fonction de demande inverse (<span class="math inline">\(P(q)\)</span>), qui donne le prix en fonction de la quantité. Il faudra donc inverser, au sens mathématique, la fonction de demande pour obtenir la fonction de demande inverse.</p>
+<p><span class="proof-title"><em>Remarque</em> (Seuil de fermeture et seuil de rentabilité). </span></p>
+<ul>
+<li>Le <em>seuil de fermeture</em> est le minimum du coût variable moyen. En dessous, le prix ne couvre même pas le coût variable de chaque unité : le producteur perd moins en ne produisant rien (il ne perd alors que son coût fixe).</li>
+<li>Le <em>seuil de rentabilité</em> est le minimum du coût moyen. Au-dessus, le profit est positif, d’après l’<a href="#eq-profitCM" class="quarto-xref">équation&nbsp;<span>1.3</span></a>.</li>
+<li>Entre les deux seuils, le producteur produit à perte, car cette perte est plus faible que son coût fixe, qu’il paierait de toute façon.</li>
+</ul>
 </div>
+</section>
+<section id="surplus-des-producteurs" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="surplus-des-producteurs"><span class="header-section-number">1.3.3</span> Surplus des producteurs</h3>
+<p>Comme pour les consommateurs, on peut mesurer le gain que les producteurs retirent de l’échange lorsque le prix est <span class="math inline">\(p\)</span>. Un producteur qui fait face au prix <span class="math inline">\(p\)</span> produit la quantité <span class="math inline">\(q\)</span> telle que <span class="math inline">\(C_m(q)=p\)</span>. Chaque unité lui rapporte <span class="math inline">\(p\)</span> et lui coûte son coût marginal : il gagne donc <span class="math inline">\(p-C_m\)</span> sur chaque unité, sauf la dernière. Le surplus de ce producteur est la somme de ces gains, c’est-à-dire l’aire comprise entre le prix <span class="math inline">\(p\)</span> et sa courbe de coût marginal, entre <span class="math inline">\(0\)</span> et <span class="math inline">\(q\)</span> : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[\int_0^{q}\left(p-C_m(x)\right)dx\]</span></span></p>
+<p>Comme sur la <a href="#fig-surplus-prod-indiv" class="quarto-xref">figure&nbsp;<span>1.5</span></a>, le coût marginal ne part pas forcément de zéro : la hauteur du triangle est alors <span class="math inline">\(p-C_m(0)\)</span>, et non <span class="math inline">\(p\)</span>. Le surplus d’un producteur n’est pas non plus égal à son profit : il est égal au profit augmenté du coût fixe (la démonstration est donnée en annexe).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-surplus-prod-indiv" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Graphique prix-quantité : une droite de coût marginal croissante qui part d'une valeur positive C_m(0) sur l'axe des prix, et une droite horizontale au prix p. Le triangle jaune compris entre le prix et le coût marginal, de 0 à la quantité q, est le surplus du producteur.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-surplus-prod-indiv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-cpp_files/figure-html/fig-surplus-prod-indiv-1.png" class="img-fluid figure-img" alt="Graphique prix-quantité : une droite de coût marginal croissante qui part d'une valeur positive C_m(0) sur l'axe des prix, et une droite horizontale au prix p. Le triangle jaune compris entre le prix et le coût marginal, de 0 à la quantité q, est le surplus du producteur." width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-surplus-prod-indiv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.5: Surplus d’un producteur lorsque le prix est <span class="math inline">\(p\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="def-offre-agregee" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 1.12 (Offre agrégée)</strong></span> L’<em>offre agrégée</em> est la somme des offres individuelles pour chaque niveau de prix. On note <span class="math inline">\(S(q)\)</span> l’offre agrégée inverse, qui donne le prix auquel les producteurs offrent au total la quantité <span class="math inline">\(q\)</span>.</p>
+</div>
+<p>Chaque producteur offre la quantité pour laquelle son coût marginal est égal au prix. L’offre agrégée s’obtient donc en additionnant, à chaque prix <span class="math inline">\(p\)</span>, les quantités offertes par tous les producteurs : c’est la somme des courbes de coût marginal des producteurs. Chaque point de la courbe d’offre agrégée inverse donne ainsi le prix minimal auquel les producteurs acceptent de vendre une unité supplémentaire du bien.</p>
+<div id="def-surplus-prod" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 1.13 (Surplus des producteurs)</strong></span> Au prix <span class="math inline">\(p\)</span>, le surplus des producteurs est la somme des surplus de tous les producteurs. Sur le graphique quantité-prix <span class="math inline">\((q, p)\)</span>, c’est l’aire comprise entre la droite horizontale d’ordonnée <span class="math inline">\(p\)</span> et la courbe d’offre agrégée inverse, entre <span class="math inline">\(0\)</span> et la quantité offerte. Formellement, en notant <span class="math inline">\(S\)</span> l’offre agrégée inverse, obtenue en additionnant les courbes de coût marginal des producteurs, et <span class="math inline">\(q(p)\)</span> la quantité offerte au prix <span class="math inline">\(p\)</span>, c’est-à-dire telle que <span class="math inline">\(S(q(p))=p\)</span> : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[S_p(p)=\int_0^{q(p)}\left(p-S(q)\right)dq\]</span></span></p>
+</div>
+</section>
 </section>
 <section id="léquilibre-de-marché" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="léquilibre-de-marché"><span class="header-section-number">1.4</span> L’équilibre de marché</h2>
-<div id="def-dagregee" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.10 (Demande agrégée (P))</strong></span> La <em>demande agrégée (P)</em> est la somme des demandes individuelles pour chaque niveau de prix.</p>
-</div>
-<div id="def-offre-agregee" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.11 (Offre agrégée (S))</strong></span> L’<em>offre agrégée (S)</em> est la somme des offres individuelles pour chaque niveau de prix.</p>
-</div>
-<p>La courbe d’offre correspond à la série des coûts marginaux de production, c’est-à-dire aux prix minimaux auxquels les producteurs souhaitent vendre une unité supplémentaire du bien.</p>
 <div id="def-equilibreCPP" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.12 (Équilibre de marché)</strong></span> L’équilibre de marché se fait à l’intersection entre l’offre agrégée (S) et la demande agrégée (P) (quand S=P).</p>
+<p><span class="theorem-title"><strong>Définition 1.14 (Équilibre de marché)</strong></span> L’équilibre de marché se fait à l’intersection des courbes d’offre et de demande agrégées : au prix d’équilibre <span class="math inline">\(p^*\)</span>, la quantité offerte est égale à la quantité demandée.</p>
 </div>
-<p>À l’équilibre de marché, on obtient une quantité d’équilibre (notée <span class="math inline">\(q^*\)</span>) et un prix d’équilibre (noté <span class="math inline">\(p^*\)</span>). La vente de toutes les unités jusqu’à la quantité d’équilibre <span class="math inline">\(q^*\)</span> au prix <span class="math inline">\(p^*\)</span> procure un <em>surplus</em> aux agents économiques.</p>
+<p>Avec les fonctions inverses, le même point s’écrit <span class="math inline">\(P(q^*)=S(q^*)=p^*\)</span> : à la quantité d’équilibre <span class="math inline">\(q^*\)</span>, le prix que les consommateurs sont prêts à payer est égal au prix auquel les producteurs acceptent de vendre. C’est cette écriture que nous utiliserons dans les calculs.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-marche" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-marche" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Graphique prix-quantité : une demande décroissante P et une offre croissante S se coupent au point d'équilibre, de quantité q* et de prix p*, repérés par des pointillés.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-marche-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-cpp_files/figure-html/fig-marche-1.png" class="img-fluid figure-img" width="672">
+<img src="01-cpp_files/figure-html/fig-marche-1.png" class="img-fluid figure-img" alt="Graphique prix-quantité : une demande décroissante P et une offre croissante S se coupent au point d'équilibre, de quantité q* et de prix p*, repérés par des pointillés." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-marche-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.4: Équilibre de marché.
+Figure&nbsp;1.6: Équilibre de marché.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div id="def-surplus-conso" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.13 (Surplus des consommateurs)</strong></span> Le surplus des consommateurs est la somme des différences entre le prix de réserve des consommateurs et le prix payé par le consommateur pour obtenir les biens. Sur le graphique quantité prix <span class="math inline">\((q, p)\)</span>, c’est l’aire comprise entre la courbe de demande et la droite horizontale dont l’ordonnée est le prix d’échange. Formellement : <span class="math display">\[S_c=\int_0^{q^*}P(q)-p^* dq\]</span></p>
-</div>
-<div class="proof remark">
-<p><span class="proof-title"><em>Remarque</em>. </span>Seule la dernière unité de bien achetée par les consommateurs l’est au prix de réserve. Il n’y a pas de gain à l’échange pour cette unité, mais pour toutes les autres, il y en a, ce qui explique pourquoi il y a un surplus à l’échange, et pourquoi celui-ci a lieu.</p>
-</div>
-<div id="def-surplus-prod" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.14 (Surplus des producteurs)</strong></span> Le surplus des producteurs est la somme des différences entre le prix auquel les producteurs vendent le bien et la courbe de coût marginal, qui représente le coût d’une unité supplémentaire produite. Sur le graphique quantité prix <span class="math inline">\((q, p)\)</span>, c’est l’aire comprise entre le prix de vente et la courbe de coût marginal. Formellement : <span class="math display">\[S_p=\int_0^{q^*}p^*-S(q) dq\]</span></p>
-</div>
-<p>En pratique, on n’utilisera jamais la formule avec des intégrales, mais on calculera l’aire du triangle (ou trapèze) concerné.</p>
+<p>À l’équilibre, la quantité échangée est <span class="math inline">\(q^*\)</span> et tous les échanges se font au prix <span class="math inline">\(p^*\)</span>. Les surplus des consommateurs et des producteurs s’obtiennent en appliquant la <a href="#def-surplus-conso" class="quarto-xref">définition&nbsp;<span>1.4</span></a> et la <a href="#def-surplus-prod" class="quarto-xref">définition&nbsp;<span>1.13</span></a> avec <span class="math inline">\(p=p^*\)</span> : ce sont les deux aires de la <a href="#fig-surplus" class="quarto-xref">figure&nbsp;<span>1.7</span></a>. Leur somme est le <em>surplus total</em>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-surplus" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-surplus" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Même graphique que l'équilibre de marché, avec deux triangles : en bleu, entre la demande et le prix d'équilibre, le surplus des consommateurs ; en jaune, entre le prix d'équilibre et l'offre, le surplus des producteurs.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-surplus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-cpp_files/figure-html/fig-surplus-1.png" class="img-fluid figure-img" width="672">
+<img src="01-cpp_files/figure-html/fig-surplus-1.png" class="img-fluid figure-img" alt="Même graphique que l'équilibre de marché, avec deux triangles : en bleu, entre la demande et le prix d'équilibre, le surplus des consommateurs ; en jaune, entre le prix d'équilibre et l'offre, le surplus des producteurs." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-surplus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.5: Surplus des consommateurs et des producteurs.
+Figure&nbsp;1.7: Surplus des consommateurs (en bleu) et des producteurs (en jaune) à l’équilibre.
 </figcaption>
 </figure>
 </div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Méthode : tracer l’équilibre et les surplus
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Avec une demande inverse <span class="math inline">\(P(q)\)</span> et une offre agrégée inverse <span class="math inline">\(S(q)\)</span> linéaires :</p>
+<ol type="1">
+<li>Tracez la demande inverse à partir de deux points : son ordonnée à l’origine <span class="math inline">\(P(0)\)</span> et la quantité pour laquelle le prix s’annule.</li>
+<li>Tracez l’offre agrégée inverse à partir de deux points, par exemple <span class="math inline">\(S(0)\)</span> et sa valeur en une autre quantité. Attention : <span class="math inline">\(S(0)\)</span> n’est pas forcément nul.</li>
+<li>Au croisement des deux droites, lisez la quantité d’équilibre <span class="math inline">\(q^*\)</span> sur l’axe horizontal et le prix d’équilibre <span class="math inline">\(p^*\)</span> sur l’axe vertical.</li>
+<li>Tracez la droite horizontale d’ordonnée <span class="math inline">\(p^*\)</span>, de l’axe des prix jusqu’au point d’équilibre.</li>
+<li>Le surplus des consommateurs est le triangle compris entre la demande et cette droite : <span class="math inline">\(\frac{1}{2}\times q^*\times\left(P(0)-p^*\right)\)</span>.</li>
+<li>Le surplus des producteurs est le triangle compris entre cette droite et l’offre : <span class="math inline">\(\frac{1}{2}\times q^*\times\left(p^*-S(0)\right)\)</span>.</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Testez-vous : lire un graphique
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La figure ci-dessous représente la demande inverse et l’offre agrégée inverse d’un marché en concurrence pure et parfaite.</p>
+<ol type="1">
+<li>Identifiez chaque courbe.</li>
+<li>Lisez la quantité et le prix d’équilibre.</li>
+<li>Calculez le surplus des consommateurs et le surplus des producteurs.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01-cpp_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" alt="Graphique quadrillé, gradué de 0 à 10 en quantité et de 0 à 11 en prix, avec deux droites non nommées : une droite décroissante qui part de 10 sur l'axe des prix et atteint 0 en quantité 10, et une droite croissante qui part de 2 sur l'axe des prix." width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<details>
+<summary>
+Réponse
+</summary>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01-cpp_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" alt="Même graphique avec légendes : la demande, décroissante, et l'offre, croissante, se coupent en quantité 4 et prix 6. Le triangle bleu au-dessus du prix 6 est le surplus des consommateurs ; le triangle jaune entre le prix 6 et l'offre, qui part de 2, est le surplus des producteurs." width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>La droite décroissante est la demande, la droite croissante est l’offre.</li>
+<li>Elles se coupent en <span class="math inline">\(q^*=4\)</span> et <span class="math inline">\(p^*=6\)</span>.</li>
+<li>Surplus des consommateurs : <span class="math inline">\(\frac{1}{2}\times 4\times(10-6)=8\)</span>. Surplus des producteurs : <span class="math inline">\(\frac{1}{2}\times 4\times(6-2)=8\)</span>, car l’offre part de <span class="math inline">\(S(0)=2\)</span> et non de zéro.</li>
+</ol>
+</details>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Testez-vous
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La demande inverse est <span class="math inline">\(P(q)=100-q\)</span> et l’offre agrégée inverse est <span class="math inline">\(S(q)=10+2q\)</span>. Calculez l’équilibre et le surplus des producteurs.</p>
+<details>
+<summary>
+Réponse
+</summary>
+<p>L’équilibre vérifie <span class="math inline">\(100-q^*=10+2q^*\)</span>, soit <span class="math inline">\(q^*=30\)</span> et <span class="math inline">\(p^*=70\)</span>. Le surplus des producteurs est le triangle compris entre le prix <span class="math inline">\(p^*=70\)</span> et la courbe d’offre, qui part de <span class="math inline">\(S(0)=10\)</span> : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[S_p=\frac{1}{2}\times 30\times(70-10)=900\]</span></span> Attention : écrire <span class="math inline">\(\frac{1}{2}\times 30\times 70=1050\)</span> revient à supposer que la courbe d’offre part de zéro.</p>
+</details>
 </div>
 </div>
 <div id="prp-cppprop" class="theorem proposition">
@@ -495,25 +715,57 @@ Figure&nbsp;1.5: Surplus des consommateurs et des producteurs.
 L’équilibre en CPP est dit <em>Pareto-optimal</em>, i.e., il est impossible d’améliorer la situation d’un agent sans détériorer celle d’un autre. C’est ce qu’on appelle le <em>premier théorème du bien-être</em>.</p>
 </div>
 <p>Ces propriétés font de la CPP une « référence » par rapport à laquelle on peut comparer les résultats des autres structures de marché.</p>
-</section>
-<section id="perception-par-les-agents-isolés" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="perception-par-les-agents-isolés"><span class="header-section-number">1.5</span> Perception par les agents isolés</h2>
-<p>L’hypothèse d’atomicité indique que les agents individuels sont isolés au sein d’un très grand nombre d’autres agents. Ainsi, aucun agent n’a d’influence sur le prix s’il modifie son comportement. Une conséquence directe est que le comportement des autres agents est perçu comme étant infiniment élastique. C’est-à-dire qu’un producteur sait qu’au prix de marché, il pourra vendre toute sa production, mais que s’il pratique un prix même légèrement plus élevé, il ne vendra <strong>rien</strong>. Il perçoit ainsi une demande infiniment élastique au prix, au niveau du prix <span class="math inline">\(p^*\)</span>.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-elasticite" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-elasticite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-cpp_files/figure-html/fig-elasticite-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elasticite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.6: Perception de la demande globale par un producteur isolé.
-</figcaption>
-</figure>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Pour vous entraîner
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>Fiche 1, exercice 1.2, questions 1 à 4 : offre d’un producteur, équilibre de marché, surplus, et effet d’un prix imposé sur le surplus total.</p>
 </div>
-<p>Dans la <a href="#fig-elasticite" class="quarto-xref">figure&nbsp;<span>1.6</span></a>, <span class="math inline">\(q^*\)</span> représente la production optimale de ce producteur quand il est seul.</p>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>À retenir
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>La demande inverse <span class="math inline">\(P(q)\)</span> donne le prix maximal que les consommateurs sont prêts à payer pour une unité supplémentaire.</li>
+<li>À un prix <span class="math inline">\(p\)</span> donné, le surplus des consommateurs est l’aire comprise entre la demande inverse et le prix ; le surplus des producteurs est l’aire comprise entre le prix et l’offre.</li>
+<li>En CPP, chaque producteur est <em>price-taker</em> : sa recette marginale est égale au prix, <span class="math inline">\(R_m=p\)</span>. Son offre est la partie croissante de son coût marginal, <span class="math inline">\(p=C_m(q)\)</span>, au-dessus du seuil de fermeture.</li>
+<li>Le profit s’écrit <span class="math inline">\(\pi=q\,(p-C_M(q))\)</span> : il est positif si le prix dépasse le coût moyen.</li>
+<li>À l’équilibre de marché, <span class="math inline">\(P(q^*)=S(q^*)=p^*\)</span>.</li>
+<li>L’équilibre de CPP maximise le surplus total : c’est la référence pour juger les autres structures de marché.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Erreurs fréquentes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Confondre le coût marginal <span class="math inline">\(C_m\)</span> et le coût moyen <span class="math inline">\(C_M\)</span> : seule la majuscule les distingue.</li>
+<li>Utiliser la demande <span class="math inline">\(Q(p)\)</span> quand le calcul demande la demande inverse <span class="math inline">\(P(q)\)</span>, et inversement.</li>
+<li>Dans le calcul du surplus des producteurs, supposer que la courbe d’offre (ou de coût marginal) part de zéro. Si elle part d’une valeur positive, la hauteur du triangle est <span class="math inline">\(p-S(0)\)</span> (ou <span class="math inline">\(p-C_m(0)\)</span>), et non <span class="math inline">\(p\)</span>.</li>
+<li>Confondre surplus des producteurs et profit : le surplus d’un producteur est égal à son profit augmenté de son coût fixe.</li>
+</ul>
+</div>
+</div>
 
 
 </section>

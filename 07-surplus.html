@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,6 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./08-rappels.html" rel="next">
 <link href="./06-equilibres.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -44,10 +45,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ed7344add5f1663e434276306a2aa159.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-fd0503e23dce65854c81c5baaade3bdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -202,6 +203,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Calcul des surplus</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-rappels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Rappels mathématiques</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-notations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Notations</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -234,26 +247,28 @@ window.Quarto = {
 </header>
 
 
-<div id="def-surplus-conso" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition C.1 (Surplus des consommateurs)</strong></span> Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêts à payer et le prix effectivement payé. Mathématiquement, c’est l’intégrale suivante : <span class="math display">\[
-S_c(q)=\int_0^qP(x)-pdx=\int_0^qP(x)dx-pq
-\]</span> Où <span class="math inline">\(p\)</span> est le prix payé, <span class="math inline">\(q\)</span> la quantité échangée et <span class="math inline">\(P\)</span> la demande inverse.</p>
+<div id="def-surplus-conso-annexe" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition C.1 (Surplus des consommateurs)</strong></span> Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêts à payer et le prix effectivement payé. Mathématiquement, c’est l’intégrale suivante : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
+S_c(q)=\int_0^q\left(P(x)-p\right)dx=\int_0^qP(x)\,dx-pq
+\]</span></span> Où <span class="math inline">\(p\)</span> est le prix payé, <span class="math inline">\(q\)</span> la quantité échangée et <span class="math inline">\(P\)</span> la demande inverse.</p>
 </div>
 <p>L’intégrale signifie que c’est l’aire comprise entre la demande inverse (la fonction <span class="math inline">\(P\)</span>), le prix payé par les consommateurs (le prix <span class="math inline">\(p\)</span>), l’axe des ordonnées et la quantité échangée (<span class="math inline">\(q\)</span>). Dans notre cours, ce sera l’aire d’un triangle ou d’un trapèze.</p>
-<div id="def-surplus-prod" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition C.2 (Surplus des producteurs)</strong></span> Le surplus des producteurs est la somme de la différence entre le prix reçu par les producteurs et le coût marginal de production. Mathématiquement, c’est l’intégrale suivante : <span id="eq-sp"><span class="math display">\[
-S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx
-\tag{C.1}\]</span></span> Où <span class="math inline">\(p\)</span> est le prix reçu par le producteur, <span class="math inline">\(q\)</span> la quantité vendue et <span class="math inline">\(C_m\)</span> le coût marginal.</p>
+<div id="def-surplus-prod-annexe" class="theorem definition">
+<div id="eq-sp">
+<p><span class="theorem-title"><strong>Définition C.2 (Surplus des producteurs)</strong></span> Le surplus des producteurs est la somme de la différence entre le prix reçu par les producteurs et le prix minimal auquel ils acceptent de vendre chaque unité, donné par l’offre. Mathématiquement, c’est l’intégrale suivante : <span><span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
+S_p(q)=\int_0^q\left(p-S(x)\right)dx=pq-\int_0^qS(x)\,dx
+\tag{C.1}\]</span></span></span> Où <span class="math inline">\(p\)</span> est le prix reçu par les producteurs, <span class="math inline">\(q\)</span> la quantité vendue et <span class="math inline">\(S\)</span> l’offre agrégée inverse. Pour un seul producteur, ou pour un monopole, on remplace <span class="math inline">\(S\)</span> par son coût marginal <span class="math inline">\(C_m\)</span>.</p>
 </div>
-<p>L’intégrale signifie que c’est l’aire comprise entre le prix reçu par les producteurs (<span class="math inline">\(p\)</span>), le coût marginal (<span class="math inline">\(C_m\)</span>), l’axe des ordonnées et la quantité échangée (<span class="math inline">\(q\)</span>). Dans notre cours, ce sera l’aire d’un triangle ou d’un trapèze.</p>
+</div>
+<p>L’intégrale signifie que c’est l’aire comprise entre le prix reçu par les producteurs (<span class="math inline">\(p\)</span>), l’offre (<span class="math inline">\(S\)</span>), l’axe des ordonnées et la quantité échangée (<span class="math inline">\(q\)</span>). Dans notre cours, ce sera l’aire d’un triangle ou d’un trapèze.</p>
 <div class="proof remark">
-<p><span class="proof-title"><em>Remarque</em> (Lien entre surplus et profit). </span>Si on continue l’expression donnée par l’<a href="#eq-sp" class="quarto-xref">équation&nbsp;<span>C.1</span></a>, on obtient : <span class="math display">\[S_p(q)=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)\]</span> Cela prouve la relation donnée informellement dans le cours entre surplus et profit. Le surplus est la somme du profit réalisé par les producteurs et des coûts fixes (des coûts qui ne dépendent pas de la quantité).</p>
+<p><span class="proof-title"><em>Remarque</em> (Lien entre surplus et profit). </span>Considérons un seul producteur, de fonction de coût <span class="math inline">\(C\)</span> : dans l’<a href="#eq-sp" class="quarto-xref">équation&nbsp;<span>C.1</span></a>, <span class="math inline">\(S\)</span> est alors son coût marginal <span class="math inline">\(C_m=C'\)</span>. En continuant le calcul, on obtient : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[S_p(q)=pq-\int_0^qC_m(x)\,dx=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)\]</span></span> Cela prouve la relation donnée dans le cours entre surplus et profit. Le surplus d’un producteur est la somme de son profit et de ses coûts fixes (les coûts qui ne dépendent pas de la quantité).</p>
 </div>
 <div class="proof remark">
-<p><span class="proof-title"><em>Remarque</em> (Aire d’un triangle). </span>L’aire d’un triangle est donnée par la formule suivante : <span class="math display">\[\text{aire triangle}=\frac{1}{2}\times\text{base}\times\text{hauteur}\]</span></p>
+<p><span class="proof-title"><em>Remarque</em> (Aire d’un triangle). </span>L’aire d’un triangle est donnée par la formule suivante : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[\text{aire triangle}=\frac{1}{2}\times\text{base}\times\text{hauteur}\]</span></span></p>
 </div>
 <div class="proof remark">
-<p><span class="proof-title"><em>Remarque</em> (Aire d’un trapèze). </span>L’aire d’un trapèze est donnée par la formule suivante : <span class="math display">\[\text{aire trapèze}=\frac{1}{2}\times(\text{petite base}+\text{grande base})\times\text{hauteur}\]</span></p>
+<p><span class="proof-title"><em>Remarque</em> (Aire d’un trapèze). </span>L’aire d’un trapèze est donnée par la formule suivante : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[\text{aire trapèze}=\frac{1}{2}\times(\text{petite base}+\text{grande base})\times\text{hauteur}\]</span></span></p>
 </div>
 <p>On peut illustrer ces formules avec deux cas pratiques (sur la <a href="#fig-surplus2" class="quarto-xref">figure&nbsp;<span>C.1</span></a> et la <a href="#fig-surplus3" class="quarto-xref">figure&nbsp;<span>C.2</span></a>).</p>
 <p>Les valeurs sur les graphiques sont obtenues de la manière suivante :</p>
@@ -261,42 +276,42 @@ S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx
 <li><span class="math inline">\(q\)</span> est connu ou <span class="math inline">\(p\)</span> est connu ;</li>
 <li>Si <span class="math inline">\(q\)</span> est connu, on obtient <span class="math inline">\(p\)</span> grâce à la fonction de demande inverse : <span class="math inline">\(p=P(q)\)</span>. Si <span class="math inline">\(p\)</span> est connu, on obtient <span class="math inline">\(q\)</span> avec la fonction de demande <span class="math inline">\(q=Q(p)\)</span> ou en résolvant l’équation <span class="math inline">\(p=P(q)\)</span>.</li>
 <li><span class="math inline">\(p_3=P(0)\)</span> ;</li>
-<li><span class="math inline">\(p_1=C_m(0)\)</span> ;</li>
+<li><span class="math inline">\(p_1=S(0)\)</span> ;</li>
 <li><span class="math inline">\(p_2\)</span> dépendra du cas.</li>
 </ul>
-<p>Le premier cas est illustré sur la <a href="#fig-surplus2" class="quarto-xref">figure&nbsp;<span>C.1</span></a>. Le prix de l’échange <span class="math inline">\(p\)</span> est tel que le surplus des consommateurs est un triangle, et le surplus des producteurs est un trapèze. Dans ce cas, on obtient <span class="math inline">\(p_2= C_m(q)\)</span>. Le surplus des consommateurs est donné par : <span class="math display">\[
+<p>Le premier cas est illustré sur la <a href="#fig-surplus2" class="quarto-xref">figure&nbsp;<span>C.1</span></a>. Le prix de l’échange <span class="math inline">\(p\)</span> est tel que le surplus des consommateurs est un triangle, et le surplus des producteurs est un trapèze. Dans ce cas, on obtient <span class="math inline">\(p_2= S(q)\)</span>. Le surplus des consommateurs est donné par : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 S_c=\frac{1}{2}\times(p_3-p)\times q
-\]</span> Et le surplus des producteurs par : <span class="math display">\[
+\]</span></span> Et le surplus des producteurs par : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 S_p=\frac{1}{2}\times(p-p_2+p-p_1)\times q
-\]</span></p>
+\]</span></span></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-surplus2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-surplus2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Demande inverse décroissante et offre croissante qui part de p_1 sur l'axe des prix. Pour une quantité q échangée au prix p, supérieur au prix d'équilibre, le surplus des consommateurs est un triangle bleu entre la demande et p, et le surplus des producteurs un trapèze jaune entre p et l'offre, de 0 à q.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-surplus2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="07-surplus_files/figure-html/fig-surplus2-1.png" class="img-fluid figure-img" width="672">
+<img src="07-surplus_files/figure-html/fig-surplus2-1.png" class="img-fluid figure-img" alt="Demande inverse décroissante et offre croissante qui part de p_1 sur l'axe des prix. Pour une quantité q échangée au prix p, supérieur au prix d'équilibre, le surplus des consommateurs est un triangle bleu entre la demande et p, et le surplus des producteurs un trapèze jaune entre p et l'offre, de 0 à q." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-surplus2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;C.1: Surplus avec un prix de l’échange <span class="math inline">\(p\)</span>.
+Figure&nbsp;C.1: Surplus des consommateurs (en bleu) et des producteurs (en jaune) avec un prix de l’échange <span class="math inline">\(p\)</span>.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Le second cas est illustré sur la <a href="#fig-surplus3" class="quarto-xref">figure&nbsp;<span>C.2</span></a>. Le prix de l’échange <span class="math inline">\(p\)</span> est tel que le surplus des consommateurs est un trapèze, et le surplus des producteurs est un triangle. Dans ce cas, on obtient <span class="math inline">\(p_2= P(q)\)</span>. Le surplus des consommateurs est donné par : <span class="math display">\[
+<p>Le second cas est illustré sur la <a href="#fig-surplus3" class="quarto-xref">figure&nbsp;<span>C.2</span></a>. Le prix de l’échange <span class="math inline">\(p\)</span> est tel que le surplus des consommateurs est un trapèze, et le surplus des producteurs est un triangle. Dans ce cas, on obtient <span class="math inline">\(p_2= P(q)\)</span>. Le surplus des consommateurs est donné par : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 S_c=\frac{1}{2}\times(p_3-p+p_2-p)\times q
-\]</span> Et le surplus des producteurs par : <span class="math display">\[
+\]</span></span> Et le surplus des producteurs par : <span style="display:block; text-align:center; margin:0.8em 0;"><span class="math display">\[
 S_p=\frac{1}{2}\times(p-p_1)\times q
-\]</span></p>
+\]</span></span></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-surplus3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-surplus3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Même graphique avec un prix p inférieur au prix d'équilibre, égal à l'offre en q. Le surplus des consommateurs est un trapèze bleu entre la demande et p, et le surplus des producteurs un triangle jaune entre p et l'offre.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-surplus3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="07-surplus_files/figure-html/fig-surplus3-1.png" class="img-fluid figure-img" width="672">
+<img src="07-surplus_files/figure-html/fig-surplus3-1.png" class="img-fluid figure-img" alt="Même graphique avec un prix p inférieur au prix d'équilibre, égal à l'offre en q. Le surplus des consommateurs est un trapèze bleu entre la demande et p, et le surplus des producteurs un triangle jaune entre p et l'offre." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-surplus3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;C.2: Surplus avec un prix de l’échange <span class="math inline">\(p\)</span>.
+Figure&nbsp;C.2: Surplus des consommateurs (en bleu) et des producteurs (en jaune) avec un prix de l’échange <span class="math inline">\(p\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -713,6 +728,9 @@ Figure&nbsp;C.2: Surplus avec un prix de l’échange <span class="math inline">
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./08-rappels.html" class="pagination-link" aria-label="Rappels mathématiques">
+        <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Rappels mathématiques</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

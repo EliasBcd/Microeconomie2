@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -45,10 +45,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ed7344add5f1663e434276306a2aa159.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-fd0503e23dce65854c81c5baaade3bdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -203,6 +203,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Calcul des surplus</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-rappels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Rappels mathématiques</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-notations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Notations</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -218,14 +230,14 @@ window.Quarto = {
   <li><a href="#en-concurrence-pure-et-parfaite" id="toc-en-concurrence-pure-et-parfaite" class="nav-link active" data-scroll-target="#en-concurrence-pure-et-parfaite"><span class="header-section-number">B.1</span> En concurrence pure et parfaite</a></li>
   <li><a href="#en-monopole" id="toc-en-monopole" class="nav-link" data-scroll-target="#en-monopole"><span class="header-section-number">B.2</span> En monopole</a>
   <ul class="collapse">
-  <li><a href="#avec-des-régulations" id="toc-avec-des-régulations" class="nav-link" data-scroll-target="#avec-des-régulations"><span class="header-section-number">B.2.1</span> Avec des régulations</a></li>
-  <li><a href="#avec-une-discrimination-du-3e-degré" id="toc-avec-une-discrimination-du-3e-degré" class="nav-link" data-scroll-target="#avec-une-discrimination-du-3e-degré"><span class="header-section-number">B.2.2</span> Avec une discrimination du 3<sup>e</sup> degré</a></li>
+  <li><a href="#avec-une-régulation" id="toc-avec-une-régulation" class="nav-link" data-scroll-target="#avec-une-régulation"><span class="header-section-number">B.2.1</span> Avec une régulation</a></li>
+  <li><a href="#avec-une-discrimination-par-les-prix" id="toc-avec-une-discrimination-par-les-prix" class="nav-link" data-scroll-target="#avec-une-discrimination-par-les-prix"><span class="header-section-number">B.2.2</span> Avec une discrimination par les prix</a></li>
   </ul></li>
-  <li><a href="#oligopoles" id="toc-oligopoles" class="nav-link" data-scroll-target="#oligopoles"><span class="header-section-number">B.3</span> Oligopoles</a>
+  <li><a href="#en-oligopole" id="toc-en-oligopole" class="nav-link" data-scroll-target="#en-oligopole"><span class="header-section-number">B.3</span> En oligopole</a>
   <ul class="collapse">
   <li><a href="#duopole-de-cournot" id="toc-duopole-de-cournot" class="nav-link" data-scroll-target="#duopole-de-cournot"><span class="header-section-number">B.3.1</span> Duopole de Cournot</a></li>
   <li><a href="#duopole-de-stackelberg" id="toc-duopole-de-stackelberg" class="nav-link" data-scroll-target="#duopole-de-stackelberg"><span class="header-section-number">B.3.2</span> Duopole de Stackelberg</a></li>
-  <li><a href="#cartel" id="toc-cartel" class="nav-link" data-scroll-target="#cartel"><span class="header-section-number">B.3.3</span> Cartel</a></li>
+  <li><a href="#cartel-hors-programme" id="toc-cartel-hors-programme" class="nav-link" data-scroll-target="#cartel-hors-programme"><span class="header-section-number">B.3.3</span> Cartel (hors programme)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -252,40 +264,83 @@ window.Quarto = {
 </header>
 
 
-<p>La méthode générale est toujours de maximiser le profit du ou des producteurs. Le profit est maximal quand la dérivée du profit suivant les quantités produites est nulle.</p>
-<p>En plus de ça, dans différents cas particuliers il est possible de sauter quelques étapes en retenant ces identités fondamentales.</p>
+<p>Cette fiche résume, pour chaque situation du cours, les étapes du calcul. La méthode générale est toujours la même : on maximise le profit du ou des producteurs. Le profit est maximal lorsque sa dérivée par rapport à la quantité produite est nulle (condition du premier ordre) et que sa dérivée seconde est négative (condition du second ordre). Le calcul des surplus est détaillé dans l’annexe C.</p>
 <section id="en-concurrence-pure-et-parfaite" class="level2" data-number="B.1">
 <h2 data-number="B.1" class="anchored" data-anchor-id="en-concurrence-pure-et-parfaite"><span class="header-section-number">B.1</span> En concurrence pure et parfaite</h2>
-<p>L’offre est égale à la demande, et les deux sont égales au prix sur le marché. L’offre est déterminée par le coût marginal. Avec les notations du cours : <span class="math display">\[C_m(q^*)=P(q^*)=p^*\]</span></p>
+<ol type="1">
+<li>Écrivez la demande inverse <span class="math inline">\(P(q)\)</span> et l’offre agrégée inverse <span class="math inline">\(S(q)\)</span>.</li>
+<li>Résolvez <span class="math inline">\(P(q^*)=S(q^*)\)</span> pour obtenir la quantité d’équilibre <span class="math inline">\(q^*\)</span>.</li>
+<li>Calculez le prix d’équilibre <span class="math inline">\(p^*=P(q^*)\)</span>.</li>
+<li>Si besoin, la quantité produite par chaque producteur est celle pour laquelle son coût marginal est égal au prix : <span class="math inline">\(C_m(q)=p^*\)</span>.</li>
+</ol>
 </section>
 <section id="en-monopole" class="level2" data-number="B.2">
 <h2 data-number="B.2" class="anchored" data-anchor-id="en-monopole"><span class="header-section-number">B.2</span> En monopole</h2>
-<p>Le revenu marginal du monopole est égal au coût marginal. Le prix est égal à la demande inverse de la quantité d’équilibre.</p>
-<p><span class="math display">\[R_m(q^*)=C_m(q^*)\text{ et }p^*=P(q^*)\]</span></p>
-<section id="avec-des-régulations" class="level3" data-number="B.2.1">
-<h3 data-number="B.2.1" class="anchored" data-anchor-id="avec-des-régulations"><span class="header-section-number">B.2.1</span> Avec des régulations</h3>
-<p>Quand l’État oblige un monopole à une tarification au coût moyen ou au coût marginal, cela signifie qu’il doit utiliser cette fonction comme offre, et l’égaliser avec la demande. Par exemple, avec une tarification au coût moyen, on doit avoir :</p>
-<p><span class="math display">\[C_M(q^*)=P(q^*)=p^*\]</span></p>
+<ol type="1">
+<li>Calculez la recette totale <span class="math inline">\(R(q)=P(q)\times q\)</span>, puis la recette marginale <span class="math inline">\(R_m(q)=R'(q)\)</span>.</li>
+<li>Calculez le coût marginal <span class="math inline">\(C_m(q)=C'(q)\)</span>.</li>
+<li>Résolvez <span class="math inline">\(R_m(q^*)=C_m(q^*)\)</span> pour obtenir <span class="math inline">\(q^*\)</span>.</li>
+<li>Calculez le prix sur la <strong>demande</strong> : <span class="math inline">\(p^*=P(q^*)\)</span>.</li>
+<li>Vérifiez la condition du second ordre <span class="math inline">\(R_m'(q^*)&lt;C_m'(q^*)\)</span> et que le profit <span class="math inline">\(\pi(q^*)\)</span> est positif.</li>
+</ol>
+<section id="avec-une-régulation" class="level3" data-number="B.2.1">
+<h3 data-number="B.2.1" class="anchored" data-anchor-id="avec-une-régulation"><span class="header-section-number">B.2.1</span> Avec une régulation</h3>
+<ul>
+<li><strong>Tarification au coût marginal</strong> : on remplace la condition <span class="math inline">\(R_m=C_m\)</span> par <span class="math inline">\(P(q^*)=C_m(q^*)\)</span>.</li>
+<li><strong>Tarification au coût moyen</strong> : on résout <span class="math inline">\(P(q^*)=C_M(q^*)\)</span>.</li>
+<li><strong>Subvention unitaire <span class="math inline">\(s\)</span></strong> : on résout <span class="math inline">\(R_m(q^*)=C_m(q^*)-s\)</span>. La subvention qui rétablit l’optimum vaut <span class="math inline">\(s^*=P(q^*_{CPP})-R_m(q^*_{CPP})\)</span>.</li>
+<li><strong>Taxe forfaitaire ou impôt sur les bénéfices</strong> : la quantité et le prix ne changent pas ; seul le profit diminue.</li>
+<li><strong>Prix maximal <span class="math inline">\(p^{max}\)</span></strong> : si <span class="math inline">\(p^{max}&gt;p^*_m\)</span>, il n’a pas d’effet ; si <span class="math inline">\(p^*_{CPP}\leq p^{max}\leq p^*_m\)</span>, le monopole produit la quantité demandée au prix <span class="math inline">\(p^{max}\)</span> ; si <span class="math inline">\(p^{max}&lt;p^*_{CPP}\)</span>, il produit la quantité telle que <span class="math inline">\(C_m(q)=p^{max}\)</span>.</li>
+</ul>
 </section>
-<section id="avec-une-discrimination-du-3e-degré" class="level3" data-number="B.2.2">
-<h3 data-number="B.2.2" class="anchored" data-anchor-id="avec-une-discrimination-du-3e-degré"><span class="header-section-number">B.2.2</span> Avec une discrimination du 3<sup>e</sup> degré</h3>
-<p>En discrimination du 3<sup>e</sup> degré, le monopole se comporte comme s’il était en monopole sur deux marchés différents. Le revenu marginal du groupe 1 est égal au revenu marginal du groupe 2 qui est égal au coût marginal total du monopole.</p>
-<p><span class="math display">\[R_{m1}(q_1^*)=R_{m2}(q_2^*)=C_m(q^*)\]</span> Avec <span class="math display">\[p_1^*=P_1(q_1^*)\text{ et }p_2^*=P_2(q_2^*)\]</span></p>
+<section id="avec-une-discrimination-par-les-prix" class="level3" data-number="B.2.2">
+<h3 data-number="B.2.2" class="anchored" data-anchor-id="avec-une-discrimination-par-les-prix"><span class="header-section-number">B.2.2</span> Avec une discrimination par les prix</h3>
+<ul>
+<li><strong>Premier degré</strong> : le monopole produit la quantité de CPP, <span class="math inline">\(P(q^*)=C_m(q^*)\)</span>, et capte tout le surplus.</li>
+<li><strong>Troisième degré</strong> :
+<ol type="1">
+<li>Calculez la recette marginale de chaque groupe, <span class="math inline">\(R_{m1}\)</span> et <span class="math inline">\(R_{m2}\)</span>.</li>
+<li>Résolvez le système <span class="math inline">\(R_{m1}(q_1^*)=C_m(q_1^*+q_2^*)\)</span> et <span class="math inline">\(R_{m2}(q_2^*)=C_m(q_1^*+q_2^*)\)</span> : le coût marginal porte sur la production <strong>totale</strong>.</li>
+<li>Calculez les prix sur la demande de chaque groupe : <span class="math inline">\(p_1^*=P_1(q_1^*)\)</span> et <span class="math inline">\(p_2^*=P_2(q_2^*)\)</span>.</li>
+</ol></li>
+<li><strong>Deuxième degré</strong> (deux types, coût marginal constant <span class="math inline">\(c\)</span>) :
+<ol type="1">
+<li>Calculez les valorisations totales <span class="math inline">\(V_1(q)\)</span> et <span class="math inline">\(V_2(q)\)</span> (aires sous les demandes inverses individuelles).</li>
+<li>Saturez la contrainte de participation du type 1 et la contrainte d’incitation du type 2 : <span class="math inline">\(T_1=V_1(q_1)\)</span> et <span class="math inline">\(T_2=V_2(q_2)-\left[V_2(q_1)-V_1(q_1)\right]\)</span>.</li>
+<li>La quantité du type 2 est efficace : <span class="math inline">\(P_2(q_2^*)=c\)</span>.</li>
+<li>La quantité du type 1 vérifie <span class="math inline">\(P_1(q_1^*)-c=\frac{\lambda_2}{\lambda_1}\left(P_2(q_1^*)-P_1(q_1^*)\right)\)</span>, où <span class="math inline">\(\lambda_1\)</span> et <span class="math inline">\(\lambda_2\)</span> sont les proportions de chaque type.</li>
+<li>Déduisez-en les tarifs <span class="math inline">\(T_1\)</span> et <span class="math inline">\(T_2\)</span>.</li>
+</ol></li>
+</ul>
 </section>
 </section>
-<section id="oligopoles" class="level2" data-number="B.3">
-<h2 data-number="B.3" class="anchored" data-anchor-id="oligopoles"><span class="header-section-number">B.3</span> Oligopoles</h2>
+<section id="en-oligopole" class="level2" data-number="B.3">
+<h2 data-number="B.3" class="anchored" data-anchor-id="en-oligopole"><span class="header-section-number">B.3</span> En oligopole</h2>
 <section id="duopole-de-cournot" class="level3" data-number="B.3.1">
 <h3 data-number="B.3.1" class="anchored" data-anchor-id="duopole-de-cournot"><span class="header-section-number">B.3.1</span> Duopole de Cournot</h3>
-<p>D’abord, maximiser le profit de chaque entreprise en considérant la quantité produite par l’autre comme une donnée. On obtient alors un système de deux équations à deux inconnues qu’il faut résoudre pour obtenir les quantités optimales. Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.</p>
+<ol type="1">
+<li>Écrivez le profit de chaque entreprise : <span class="math inline">\(\pi_i=P(q_1+q_2)\,q_i-C_i(q_i)\)</span>.</li>
+<li>Dérivez le profit de chaque entreprise par rapport à <strong>sa propre</strong> quantité, en traitant celle de l’autre comme une constante : vous obtenez les fonctions de réaction <span class="math inline">\(q_1=f_1(q_2)\)</span> et <span class="math inline">\(q_2=f_2(q_1)\)</span>.</li>
+<li>Résolvez le système formé par les deux fonctions de réaction. Si les coûts sont identiques, l’équilibre est symétrique : <span class="math inline">\(q_1^*=q_2^*\)</span>.</li>
+<li>Calculez le prix avec la quantité totale : <span class="math inline">\(p^*=P(q_1^*+q_2^*)\)</span>, puis les profits.</li>
+</ol>
 </section>
 <section id="duopole-de-stackelberg" class="level3" data-number="B.3.2">
 <h3 data-number="B.3.2" class="anchored" data-anchor-id="duopole-de-stackelberg"><span class="header-section-number">B.3.2</span> Duopole de Stackelberg</h3>
-<p>Maximiser le profit de l’entreprise follower en considérant la quantité produite par le leader comme une donnée. On obtient ainsi la fonction de réaction du follower. Le leader utilise ensuite la fonction de réaction du follower dans sa propre maximisation du profit. Cela permet d’obtenir la quantité produite par le leader. À l’aide de la fonction de réaction du follower, on en déduit la quantité du follower. Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.</p>
+<ol type="1">
+<li>Calculez la fonction de réaction du satellite, <span class="math inline">\(q_F=f_F(q_L)\)</span>, comme en Cournot.</li>
+<li>Remplacez <span class="math inline">\(q_F\)</span> par <span class="math inline">\(f_F(q_L)\)</span> dans le profit du pilote : il ne dépend plus que de <span class="math inline">\(q_L\)</span>.</li>
+<li>Maximisez ce profit pour obtenir <span class="math inline">\(q_L^*\)</span>.</li>
+<li>Déduisez-en <span class="math inline">\(q_F^*=f_F(q_L^*)\)</span>, puis le prix <span class="math inline">\(p^*=P(q_L^*+q_F^*)\)</span> et les profits.</li>
+</ol>
 </section>
-<section id="cartel" class="level3" data-number="B.3.3">
-<h3 data-number="B.3.3" class="anchored" data-anchor-id="cartel"><span class="header-section-number">B.3.3</span> Cartel</h3>
-<p>Quand deux entreprises sont en cartel, elles maximisent leur profit joint. On écrit donc le profit du cartel, puis on écrit les conditions du premier ordre suivant chaque quantité. On obtient alors un système de deux équations à deux inconnues à résoudre. Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.</p>
+<section id="cartel-hors-programme" class="level3" data-number="B.3.3">
+<h3 data-number="B.3.3" class="anchored" data-anchor-id="cartel-hors-programme"><span class="header-section-number">B.3.3</span> Cartel (hors programme)</h3>
+<ol type="1">
+<li>Écrivez le profit joint du cartel : <span class="math inline">\(\pi=P(q_1+q_2)\,(q_1+q_2)-C_1(q_1)-C_2(q_2)\)</span>.</li>
+<li>Dérivez-le par rapport à chaque quantité, et résolvez le système de deux équations obtenu.</li>
+<li>Calculez le prix avec la quantité totale.</li>
+</ol>
 
 
 </section>
