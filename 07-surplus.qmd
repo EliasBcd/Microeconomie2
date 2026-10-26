@@ -2,31 +2,31 @@
 
 {{< include _theme.qmd >}}
 
-```{r  annexessurplus1}
+```{r}
 #| label: fig-surplus1
 #| fig-cap: "Représentation graphique de la demande inverse."
 #| include: false
 P <- function(q){100-q}
-Cm <- function(q){10+2*q}
+S <- function(q){10+2*q}
 
 p <- ggplot() +
-  geom_function(fun=P, color="blue") +
+  geom_function(fun=P, color=col_demande, linewidth=0.9) +
   labs(x="quantité", y = "prix") +
-  geom_text(aes(x=60, y=P(60), label="'Demande inverse ('*P*')'"), color="blue", parse=TRUE) +
-  geom_function(fun=Cm, colour="red") +
-  geom_text(aes(x=45, y=Cm(45), label="'Coût marginal ('*C[m]*')'"), color="red", parse=TRUE)
+  geom_text(aes(x=62, y=25, label="'Demande inverse ('*P*')'"), color=col_demande, parse=TRUE, hjust=1) +
+  geom_function(fun=S, colour=col_cout, linewidth=0.9) +
+  geom_text(aes(x=36, y=100, label="'Offre ('*S*')'"), color=col_cout, parse=TRUE, hjust=1)
 
 ```
 
 
-::: {#def-surplus-conso}
+::: {#def-surplus-conso-annexe}
 
 ## Surplus des consommateurs
 
 Le surplus des consommateurs est la somme de la différence entre le prix maximum que les consommateurs étaient prêts à payer et le prix effectivement payé.
 Mathématiquement, c'est l'intégrale suivante :
 $$
-S_c(q)=\int_0^qP(x)-pdx=\int_0^qP(x)dx-pq
+S_c(q)=\int_0^q\left(P(x)-p\right)dx=\int_0^qP(x)\,dx-pq
 $$
 Où $p$ est le prix payé, $q$ la quantité échangée et $P$ la demande inverse.
 :::
@@ -34,27 +34,29 @@ Où $p$ est le prix payé, $q$ la quantité échangée et $P$ la demande inverse
 L'intégrale signifie que c'est l'aire comprise entre la demande inverse (la fonction $P$), le prix payé par les consommateurs (le prix $p$), l'axe des ordonnées et la quantité échangée ($q$).
 Dans notre cours, ce sera l'aire d'un triangle ou d'un trapèze.
 
-::: { #def-surplus-prod }
+::: { #def-surplus-prod-annexe }
 
 ## Surplus des producteurs
-Le surplus des producteurs est la somme de la différence entre le prix reçu par les producteurs et le coût marginal de production.
+Le surplus des producteurs est la somme de la différence entre le prix reçu par les producteurs et le prix minimal auquel ils acceptent de vendre chaque unité, donné par l'offre.
 Mathématiquement, c'est l'intégrale suivante :
 $$
-S_p(q)=\int_0^qp-C_m(x)dx=pq-\int_0^qC_m(x)dx 
+S_p(q)=\int_0^q\left(p-S(x)\right)dx=pq-\int_0^qS(x)\,dx
 $$ {#eq-sp}
-Où $p$ est le prix reçu par le producteur, $q$ la quantité vendue et $C_m$ le coût marginal.
+Où $p$ est le prix reçu par les producteurs, $q$ la quantité vendue et $S$ l'offre agrégée inverse.
+Pour un seul producteur, ou pour un monopole, on remplace $S$ par son coût marginal $C_m$.
 :::
-L'intégrale signifie que c'est l'aire comprise entre le prix reçu par les producteurs ($p$), le coût marginal ($C_m$), l'axe des ordonnées et la quantité échangée ($q$).
+L'intégrale signifie que c'est l'aire comprise entre le prix reçu par les producteurs ($p$), l'offre ($S$), l'axe des ordonnées et la quantité échangée ($q$).
 Dans notre cours, ce sera l'aire d'un triangle ou d'un trapèze.
 
 ::: {.remark}
 
 ## Lien entre surplus et profit
 
-Si on continue l'expression donnée par l'@eq-sp, on obtient :
-$$S_p(q)=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)$$
-Cela prouve la relation donnée informellement dans le cours entre surplus et profit.
-Le surplus est la somme du profit réalisé par les producteurs et des coûts fixes (des coûts qui ne dépendent pas de la quantité).
+Considérons un seul producteur, de fonction de coût $C$ : dans l'@eq-sp, $S$ est alors son coût marginal $C_m=C'$.
+En continuant le calcul, on obtient :
+$$S_p(q)=pq-\int_0^qC_m(x)\,dx=pq-\left[C(x)\right]_0^q=pq-C(q)+C(0)=\pi(q)+C(0)$$
+Cela prouve la relation donnée dans le cours entre surplus et profit.
+Le surplus d'un producteur est la somme de son profit et de ses coûts fixes (les coûts qui ne dépendent pas de la quantité).
 :::
 
 ::: {.remark}
@@ -79,12 +81,12 @@ Les valeurs sur les graphiques sont obtenues de la manière suivante :
 - Si $q$ est connu, on obtient $p$ grâce à la fonction de demande inverse : $p=P(q)$. 
 Si $p$ est connu, on obtient $q$ avec la fonction de demande $q=Q(p)$ ou en résolvant l'équation $p=P(q)$.
 - $p_3=P(0)$ ;
-- $p_1=C_m(0)$ ;
+- $p_1=S(0)$ ;
 - $p_2$ dépendra du cas.
 
 Le premier cas est illustré sur la @fig-surplus2.
 Le prix de l'échange $p$ est tel que le surplus des consommateurs est un triangle, et le surplus des producteurs est un trapèze.
-Dans ce cas, on obtient $p_2= C_m(q)$.
+Dans ce cas, on obtient $p_2= S(q)$.
 Le surplus des consommateurs est donné par :
 $$
 S_c=\frac{1}{2}\times(p_3-p)\times q
@@ -96,23 +98,24 @@ $$
 
 
 
-```{r annexesurplus2}
+```{r}
 #| label: fig-surplus2
-#| fig-cap: "Surplus avec un prix de l'échange $p$."
+#| fig-cap: "Surplus des consommateurs (en bleu) et des producteurs (en jaune) avec un prix de l'échange $p$."
+#| fig-alt: "Demande inverse décroissante et offre croissante qui part de p_1 sur l'axe des prix. Pour une quantité q échangée au prix p, supérieur au prix d'équilibre, le surplus des consommateurs est un triangle bleu entre la demande et p, et le surplus des producteurs un trapèze jaune entre p et l'offre, de 0 à q."
 q  <- 20 
 
 Sc <- data.frame(x=c(0, q), ymin=c(P(q), P(q)), ymax=c(P(0), P(q)))
-Sp <- data.frame(x=c(0, q), ymin=c(Cm(0), Cm(q)), ymax=c(P(q), P(q)))
+Sp <- data.frame(x=c(0, q), ymin=c(S(0), S(q)), ymax=c(P(q), P(q)))
 
 p + scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, q), labels=c(0, expression(q))) +
-  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(Cm(0), Cm(q), P(q), P(0)), labels=c(expression(p[1]), expression(p[2]), expression(p), expression(p[3]))) +
-  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
-  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
-  annotate("text", x=20, y=90, label="Surplus des consommateurs", color="blue") +
-  annotate("text", x=20, y=60, label="Surplus des producteurs", color="red") +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(S(0), S(q), P(q), P(0)), labels=c(expression(p[1]), expression(p[2]), expression(p), expression(p[3]))) +
+  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill=col_demande, alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill=col_producteur, alpha=0.7) +
+  annotate("text", x=5, y=86, label="S[c]", parse=TRUE, color="black", size=5) +
+  annotate("text", x=8, y=60, label="S[p]", parse=TRUE, color="black", size=5) +
   geom_segment(data=Sc, aes(x=x), x=0, xend=q, y=P(q), yend=P(q), linetype="dashed") +
   geom_segment(data=Sc, aes(x=x), x=q, xend=q, y=0, yend=P(q), linetype="dashed") +
-  geom_segment(data=Sc, aes(x=x), x=0, xend=q, y=Cm(q), yend=Cm(q), linetype="dashed")
+  geom_segment(data=Sc, aes(x=x), x=0, xend=q, y=S(q), yend=S(q), linetype="dashed")
 ```
 
 
@@ -128,19 +131,20 @@ $$
 S_p=\frac{1}{2}\times(p-p_1)\times q
 $$
 
-```{r annexesurplus3}
+```{r}
 #| label: fig-surplus3
-#| fig-cap: "Surplus avec un prix de l'échange $p$."
-Sc <- data.frame(x=c(0, q), ymin=c(Cm(q), Cm(q)), ymax=c(P(0), P(q)))
-Sp <- data.frame(x=c(0, q), ymin=c(Cm(0), Cm(q)), ymax=c(Cm(q), Cm(q)))
+#| fig-cap: "Surplus des consommateurs (en bleu) et des producteurs (en jaune) avec un prix de l'échange $p$."
+#| fig-alt: "Même graphique avec un prix p inférieur au prix d'équilibre, égal à l'offre en q. Le surplus des consommateurs est un trapèze bleu entre la demande et p, et le surplus des producteurs un triangle jaune entre p et l'offre."
+Sc <- data.frame(x=c(0, q), ymin=c(S(q), S(q)), ymax=c(P(0), P(q)))
+Sp <- data.frame(x=c(0, q), ymin=c(S(0), S(q)), ymax=c(S(q), S(q)))
 
 p +  scale_x_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(0, q), labels=c(0, expression(q))) +
-  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(Cm(0), Cm(q), P(q), P(0)), labels=c(expression(p[1]), expression(p), expression(p[2]), expression(p[3]))) +
-  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill="blue", alpha=0.5) +
-  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill="red", alpha=0.5) +
-  annotate("text", x=20, y=60, label="Surplus des consommateurs", color="blue") +
-  annotate("text", x=15, y=30, label="Surplus des producteurs", color="red") +
+  scale_y_continuous(expand = c(0, 0), limits=c(0, 110), breaks=c(S(0), S(q), P(q), P(0)), labels=c(expression(p[1]), expression(p), expression(p[2]), expression(p[3]))) +
+  geom_ribbon(data=Sc, aes(x=x, ymin=ymin, ymax=ymax), fill=col_demande, alpha=0.5) +
+  geom_ribbon(data=Sp, aes(x=x, ymin=ymin, ymax=ymax), fill=col_producteur, alpha=0.7) +
+  annotate("text", x=8, y=70, label="S[c]", parse=TRUE, color="black", size=5) +
+  annotate("text", x=4, y=42, label="S[p]", parse=TRUE, color="black", size=5) +
   geom_segment(data=Sc, aes(x=x), x=0, xend=q, y=P(q), yend=P(q), linetype="dashed") +
   geom_segment(data=Sc, aes(x=x), x=q, xend=q, y=0, yend=P(q), linetype="dashed") +
-  geom_segment(data=Sc, aes(x=x), x=0, xend=q, y=Cm(q), yend=Cm(q), linetype="dashed")
+  geom_segment(data=Sc, aes(x=x), x=0, xend=q, y=S(q), yend=S(q), linetype="dashed")
 ```

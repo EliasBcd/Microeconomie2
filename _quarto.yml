@@ -1,5 +1,6 @@
 project:
   type: book
+  post-render: moodle-liens.R
   
 
 
@@ -27,6 +28,8 @@ book:
     - 05-cppmono.qmd
     - 06-equilibres.qmd
     - 07-surplus.qmd
+    - 08-rappels.qmd
+    - 09-notations.qmd
   downloads: pdf
 
 lang: fr
@@ -50,6 +53,11 @@ format:
   # docx: default
 format-links: true
 
+# Adaptations du HTML pour l'import dans un livre Moodle (sans effet sur le PDF).
+filters:
+  - quarto
+  - moodle.lua
+
 execute: 
   warning: false
   echo: false
@@ -67,3 +75,10 @@ crossref:
   tbl-prefix: tableau
   eq-prefix: équation
   exm-prefix: exemple
+  def-prefix: définition
+  prp-prefix: proposition
+  thm-prefix: théorème
+  cor-prefix: corollaire
+
+language:
+  crossref-sec-prefix: section

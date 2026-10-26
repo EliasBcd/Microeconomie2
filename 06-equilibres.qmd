@@ -1,62 +1,65 @@
 # Comment trouver les équilibres ?
 
-La méthode générale est toujours de maximiser le profit du ou des producteurs.
-Le profit est maximal quand la dérivée du profit suivant les quantités produites est nulle.
-
-En plus de ça, dans différents cas particuliers il est possible de sauter quelques étapes en retenant ces identités fondamentales.
+Cette fiche résume, pour chaque situation du cours, les étapes du calcul.
+La méthode générale est toujours la même : on maximise le profit du ou des producteurs.
+Le profit est maximal lorsque sa dérivée par rapport à la quantité produite est nulle (condition du premier ordre) et que sa dérivée seconde est négative (condition du second ordre).
+Le calcul des surplus est détaillé dans l'annexe C.
 
 ## En concurrence pure et parfaite
 
-L'offre est égale à la demande, et les deux sont égales au prix sur le marché.
-L'offre est déterminée par le coût marginal.
-Avec les notations du cours :
-$$C_m(q^*)=P(q^*)=p^*$$
+1. Écrivez la demande inverse $P(q)$ et l'offre agrégée inverse $S(q)$.
+2. Résolvez $P(q^*)=S(q^*)$ pour obtenir la quantité d'équilibre $q^*$.
+3. Calculez le prix d'équilibre $p^*=P(q^*)$.
+4. Si besoin, la quantité produite par chaque producteur est celle pour laquelle son coût marginal est égal au prix : $C_m(q)=p^*$.
 
 ## En monopole
 
-Le revenu marginal du monopole est égal au coût marginal.
-Le prix est égal à la demande inverse de la quantité d'équilibre.
+1. Calculez la recette totale $R(q)=P(q)\times q$, puis la recette marginale $R_m(q)=R'(q)$.
+2. Calculez le coût marginal $C_m(q)=C'(q)$.
+3. Résolvez $R_m(q^*)=C_m(q^*)$ pour obtenir $q^*$.
+4. Calculez le prix sur la **demande** : $p^*=P(q^*)$.
+5. Vérifiez la condition du second ordre $R_m'(q^*)<C_m'(q^*)$ et que le profit $\pi(q^*)$ est positif.
 
-$$R_m(q^*)=C_m(q^*)\text{ et }p^*=P(q^*)$$
+### Avec une régulation
 
-### Avec des régulations
+- **Tarification au coût marginal** : on remplace la condition $R_m=C_m$ par $P(q^*)=C_m(q^*)$.
+- **Tarification au coût moyen** : on résout $P(q^*)=C_M(q^*)$.
+- **Subvention unitaire $s$** : on résout $R_m(q^*)=C_m(q^*)-s$. La subvention qui rétablit l'optimum vaut $s^*=P(q^*_{CPP})-R_m(q^*_{CPP})$.
+- **Taxe forfaitaire ou impôt sur les bénéfices** : la quantité et le prix ne changent pas ; seul le profit diminue.
+- **Prix maximal $p^{max}$** : si $p^{max}>p^*_m$, il n'a pas d'effet ; si $p^*_{CPP}\leq p^{max}\leq p^*_m$, le monopole produit la quantité demandée au prix $p^{max}$ ; si $p^{max}<p^*_{CPP}$, il produit la quantité telle que $C_m(q)=p^{max}$.
 
-Quand l'État oblige un monopole à une tarification au coût moyen ou au coût marginal, cela signifie qu'il doit utiliser cette fonction comme offre, et l'égaliser avec la demande.
-Par exemple, avec une tarification au coût moyen, on doit avoir :
+### Avec une discrimination par les prix
 
-$$C_M(q^*)=P(q^*)=p^*$$
+- **Premier degré** : le monopole produit la quantité de CPP, $P(q^*)=C_m(q^*)$, et capte tout le surplus.
+- **Troisième degré** :
+  1. Calculez la recette marginale de chaque groupe, $R_{m1}$ et $R_{m2}$.
+  2. Résolvez le système $R_{m1}(q_1^*)=C_m(q_1^*+q_2^*)$ et $R_{m2}(q_2^*)=C_m(q_1^*+q_2^*)$ : le coût marginal porte sur la production **totale**.
+  3. Calculez les prix sur la demande de chaque groupe : $p_1^*=P_1(q_1^*)$ et $p_2^*=P_2(q_2^*)$.
+- **Deuxième degré** (deux types, coût marginal constant $c$) :
+  1. Calculez les valorisations totales $V_1(q)$ et $V_2(q)$ (aires sous les demandes inverses individuelles).
+  2. Saturez la contrainte de participation du type 1 et la contrainte d'incitation du type 2 : $T_1=V_1(q_1)$ et $T_2=V_2(q_2)-\left[V_2(q_1)-V_1(q_1)\right]$.
+  3. La quantité du type 2 est efficace : $P_2(q_2^*)=c$.
+  4. La quantité du type 1 vérifie $P_1(q_1^*)-c=\frac{\lambda_2}{\lambda_1}\left(P_2(q_1^*)-P_1(q_1^*)\right)$, où $\lambda_1$ et $\lambda_2$ sont les proportions de chaque type.
+  5. Déduisez-en les tarifs $T_1$ et $T_2$.
 
-### Avec une discrimination du 3^e^ degré
-
-En discrimination du 3^e^ degré, le monopole se comporte comme s'il était en monopole sur deux marchés différents.
-Le revenu marginal du groupe 1 est égal au revenu marginal du groupe 2 qui est égal au coût marginal total du monopole.
-
-$$R_{m1}(q_1^*)=R_{m2}(q_2^*)=C_m(q^*)$$
-Avec
-$$p_1^*=P_1(q_1^*)\text{ et }p_2^*=P_2(q_2^*)$$
-
-## Oligopoles
+## En oligopole
 
 ### Duopole de Cournot
 
-D'abord, maximiser le profit de chaque entreprise en considérant la quantité produite par l'autre comme une donnée. 
-On obtient alors un système de deux équations à deux inconnues qu'il faut résoudre pour obtenir les quantités optimales.
-Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.
+1. Écrivez le profit de chaque entreprise : $\pi_i=P(q_1+q_2)\,q_i-C_i(q_i)$.
+2. Dérivez le profit de chaque entreprise par rapport à **sa propre** quantité, en traitant celle de l'autre comme une constante : vous obtenez les fonctions de réaction $q_1=f_1(q_2)$ et $q_2=f_2(q_1)$.
+3. Résolvez le système formé par les deux fonctions de réaction. Si les coûts sont identiques, l'équilibre est symétrique : $q_1^*=q_2^*$.
+4. Calculez le prix avec la quantité totale : $p^*=P(q_1^*+q_2^*)$, puis les profits.
 
 ### Duopole de Stackelberg
 
-Maximiser le profit de l'entreprise follower en considérant la quantité produite par le leader comme une donnée. 
-On obtient ainsi la fonction de réaction du follower.
-Le leader utilise ensuite la fonction de réaction du follower dans sa propre maximisation du profit.
-Cela permet d'obtenir la quantité produite par le leader.
-À l'aide de la fonction de réaction du follower, on en déduit la quantité du follower.
-Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.
+1. Calculez la fonction de réaction du satellite, $q_F=f_F(q_L)$, comme en Cournot.
+2. Remplacez $q_F$ par $f_F(q_L)$ dans le profit du pilote : il ne dépend plus que de $q_L$.
+3. Maximisez ce profit pour obtenir $q_L^*$.
+4. Déduisez-en $q_F^*=f_F(q_L^*)$, puis le prix $p^*=P(q_L^*+q_F^*)$ et les profits.
 
-### Cartel
+### Cartel (hors programme)
 
-Quand deux entreprises sont en cartel, elles maximisent leur profit joint.
-On écrit donc le profit du cartel, puis on écrit les conditions du premier ordre suivant chaque quantité.
-On obtient alors un système de deux équations à deux inconnues à résoudre.
-Le prix est ensuite obtenu en utilisant la demande inverse de la quantité totale.
-
-
+1. Écrivez le profit joint du cartel : $\pi=P(q_1+q_2)\,(q_1+q_2)-C_1(q_1)-C_2(q_2)$.
+2. Dérivez-le par rapport à chaque quantité, et résolvez le système de deux équations obtenu.
+3. Calculez le prix avec la quantité totale.

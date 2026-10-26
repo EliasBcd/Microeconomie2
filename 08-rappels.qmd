@@ -1,0 +1,71 @@
+# Rappels mathématiques
+
+Cette annexe rassemble les outils mathématiques utilisés dans le cours.
+
+## Dérivées
+
+| Fonction $f(x)$ | Dérivée $f'(x)$ |
+|:--|:--|
+| $a$ (constante) | $0$ |
+| $ax$ | $a$ |
+| $x^n$ | $nx^{n-1}$ |
+| $\frac{1}{x}$ | $-\frac{1}{x^2}$ |
+| $\ln x$ | $\frac{1}{x}$ |
+
+Pour deux fonctions $u$ et $v$ et une constante $a$ :
+
+- $(u+v)'=u'+v'$ et $(au)'=au'$ ;
+- dérivée d'un produit : $(uv)'=u'v+uv'$ ;
+- dérivée d'un quotient : $\left(\frac{u}{v}\right)'=\frac{u'v-uv'}{v^2}$ ;
+- dérivée d'une composée : $\left(f(g(x))\right)'=g'(x)\,f'(g(x))$.
+
+**Application : la recette marginale.**
+La recette totale $R(q)=q\,P(q)$ est un produit. Sa dérivée est donc $R_m(q)=P(q)+q\,P'(q)$.
+Par exemple, avec $P(q)=20-2q$, on obtient $R_m(q)=(20-2q)+q\times(-2)=20-4q$.
+
+**Trouver un maximum.**
+Une fonction $f$ atteint un maximum en $x^*$ si $f'(x^*)=0$ (condition du premier ordre) et $f''(x^*)<0$ (condition du second ordre).
+
+## Dérivées partielles
+
+Lorsqu'une fonction dépend de plusieurs variables, sa dérivée partielle par rapport à l'une d'elles se calcule en traitant **les autres comme des constantes**.
+
+**Exemple.** En duopole de Cournot avec $P(q)=30-q$ et un coût marginal de 6, le profit de l'entreprise 1 est $\pi_1(q_1, q_2)=(30-q_1-q_2)\,q_1-6q_1=24q_1-q_1^2-q_1q_2$.
+Sa dérivée partielle par rapport à $q_1$, où $q_2$ est traitée comme une constante, vaut :
+$$\frac{\partial \pi_1}{\partial q_1}=24-2q_1-q_2$$
+En l'annulant, on obtient la fonction de réaction $q_1=\frac{24-q_2}{2}$.
+
+## Inverser une fonction affine
+
+Pour passer de la demande $Q(p)$ à la demande inverse $P(q)$, on écrit $q=Q(p)$ et on isole $p$.
+
+**Exemple.** Si $Q(p)=100-2p$, alors $q=100-2p$, donc $2p=100-q$, et $P(q)=50-\frac{q}{2}$.
+On vérifie avec un point : au prix $p=10$, la quantité demandée est $Q(10)=80$, et on retrouve bien $P(80)=50-40=10$.
+
+## Résoudre un système de deux équations
+
+La méthode la plus simple est la **substitution** : on exprime une inconnue en fonction de l'autre dans une équation, puis on la remplace dans l'autre équation.
+
+**Exemple.** L'équilibre de Cournot de l'exemple précédent vérifie :
+$$q_1=\frac{24-q_2}{2} \qquad\text{et}\qquad q_2=\frac{24-q_1}{2}$$
+On remplace $q_2$ dans la première équation : $q_1=\frac{1}{2}\left(24-\frac{24-q_1}{2}\right)$, soit $4q_1=48-24+q_1$, donc $q_1^*=8$.
+On en déduit $q_2^*=\frac{24-8}{2}=8$.
+
+Lorsque le problème est symétrique (mêmes fonctions de coût), on peut gagner du temps : on sait que $q_1^*=q_2^*$, et il suffit de remplacer $q_2$ par $q_1$ dans la première équation.
+
+## Élasticité prix de la demande
+
+L'élasticité prix de la demande mesure la variation de la quantité demandée, en pourcentage, quand le prix augmente de 1 % :
+$$\varepsilon_{q/p}(p)=\frac{p}{Q(p)}\,Q'(p)$$
+Avec la demande inverse, elle s'écrit $\varepsilon_{q/p}(q)=\frac{P(q)}{q}\,\frac{1}{P'(q)}$.
+Elle est négative, puisque la demande diminue quand le prix augmente.
+La demande est dite **élastique** si $|\varepsilon_{q/p}|>1$, et **inélastique** si $|\varepsilon_{q/p}|<1$.
+
+**Exemple.** Avec $P(q)=20-2q$, en $q=3$ : $P(3)=14$ et $P'(3)=-2$, donc $\varepsilon_{q/p}=\frac{14}{3}\times\frac{1}{-2}=-\frac{7}{3}$. La demande est élastique en ce point.
+
+## Aires
+
+Dans le cours, les surplus sont toujours des aires de triangles ou de trapèzes :
+$$\text{aire d'un triangle}=\frac{1}{2}\times\text{base}\times\text{hauteur}$$
+$$\text{aire d'un trapèze}=\frac{1}{2}\times(\text{petite base}+\text{grande base})\times\text{hauteur}$$
+L'annexe C montre comment les utiliser pour calculer les surplus.

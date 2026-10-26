@@ -1,9 +1,32 @@
 # Microéconomie 2 { .unnumbered }
 
-Notes du cours de microéconomie 2 en licence 2 à l'université Paris 8, donné par Hela Maafi, Antoine Terracol et Elias Bouacida.  
-Ce dépôt contient les notes de cours ainsi que les corrigés des exercices.
-Ces notes ont été réalisées à partir des notes manuscrites d'Antoine Terracol et originellement tapées par Elias Bouacida. 
+Notes du cours de microéconomie 2 en licence 2 à l'université Paris 8, donné par Hela Maafi, Antoine Terracol et Elias Bouacida.
+Elles accompagnent la brochure de travaux dirigés, qui contient les exercices et est diffusée séparément, avec ses corrigés.
+Ces notes ont été réalisées à partir des notes manuscrites d'Antoine Terracol et originellement tapées par Elias Bouacida.
 Les notes actuelles sont le travail combiné des trois enseignants.
+
+## Comment utiliser ces notes
+
+Ce cours est conçu pour être suivi en autonomie.
+Pour chaque chapitre, nous vous conseillons la démarche suivante :
+
+1. Lisez l'encadré « Objectifs du chapitre » et vérifiez que vous maîtrisez les prérequis.
+2. Lisez le cours section par section, avec un crayon et du papier : refaites les calculs et tracez vous-même les graphiques.
+3. Répondez aux questions « Testez-vous » **avant** d'ouvrir la réponse, en cliquant sur « Réponse ».
+4. Faites les exercices de la brochure de TD indiqués dans les encadrés « Pour vous entraîner », puis comparez avec le corrigé.
+5. Terminez par les encadrés « À retenir » et « Erreurs fréquentes », à la fin du chapitre.
+
+Les notes utilisent plusieurs types d'encadrés :
+
+- **Objectifs du chapitre** : ce que vous saurez faire à la fin du chapitre, et les connaissances nécessaires pour le suivre.
+- **Testez-vous** : une question courte pour vérifier votre compréhension ; la réponse est cachée.
+- **Méthode** : la marche à suivre, étape par étape, pour tracer et lire un graphique.
+- **Pour vous entraîner** : les exercices de la brochure de TD qui correspondent à la section.
+- **À retenir** : les résultats essentiels du chapitre.
+- **Erreurs fréquentes** : les pièges dans lesquels tombent souvent les étudiants.
+- **Hors programme** : une partie donnée pour aller plus loin, qui ne sera pas évaluée.
+
+Pour poser vos questions, vous pouvez venir aux séances de questions-réponses en visioconférence, écrire sur le forum Moodle du cours, envoyer un message à votre enseignant, ou passer par le Discord de la licence.
 
 ## Thèmes
 
@@ -34,14 +57,21 @@ Et enfin une référence avancée, pour ceux qui cherchent les fondements mathé
 ## Plan du cours
 
 1. Le marché en concurrence pure et parfaite
-2. Monopoles
-    - Monopoles simples
-    - Monopoles discriminants
-    - Pouvoir de marché et principes de tarification
-3. Oligopoles
-    - Duopoles à la Cournot
-    - Duopoles à la Stackelberg
-    - Collusion et cartel (maintenant hors programme)
+    - Les hypothèses de la concurrence pure et parfaite
+    - Le consommateur : demande et surplus
+    - Le producteur : coûts, offre et surplus
+    - L'équilibre de marché
+2. Le monopole
+    - Recette marginale et décision de production
+    - Le monopole naturel
+    - La régulation du monopole
+    - Le monopole discriminant (discrimination du premier, du troisième et du deuxième degré)
+3. Les oligopoles
+    - Le duopole et l'oligopole à la Cournot
+    - Le duopole à la Stackelberg
+    - Cartels et collusions (hors programme)
+
+Les annexes rassemblent des fiches de révision : un tableau comparatif de la concurrence pure et parfaite et du monopole (annexe A), les méthodes pour trouver les équilibres (annexe B), le calcul des surplus (annexe C), des rappels mathématiques (annexe D) et le tableau des notations (annexe E).
 
 
 

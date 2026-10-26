@@ -1,0 +1,62 @@
+# Notations
+
+Ce tableau rassemble les notations utilisées dans le cours.
+Lorsque la brochure de TD emploie un autre terme, il est indiqué entre parenthèses.
+
+## Quantités, prix et fonctions de marché
+
+| Notation | Signification |
+|:--|:--|
+| $q$, $p$ | quantité et prix |
+| $Q(p)$ | demande : quantité demandée au prix $p$ |
+| $P(q)$ | demande inverse : prix auquel les consommateurs achètent la quantité $q$ |
+| $S(q)$ | offre agrégée inverse : prix auquel les producteurs offrent la quantité $q$ |
+| $\varepsilon_{q/p}$ | élasticité prix de la demande |
+| $q^*$, $p^*$ | quantité et prix optimaux ou d'équilibre (l'étoile signale un choix optimal) |
+| $q^*_m$, $p^*_m$ | quantité et prix du monopole |
+| $q^*_{CPP}$, $p^*_{CPP}$ | quantité et prix de concurrence pure et parfaite |
+
+## Coûts, recettes et profit
+
+| Notation | Signification |
+|:--|:--|
+| $C(q)$ ou $CT$ | coût total |
+| $CF$, $CV(q)$ | coût fixe et coût variable |
+| $C_M$, $CV_M$, $CF_M$ | coût moyen, coût variable moyen et coût fixe moyen (avec un **M majuscule**) |
+| $C_m$ | coût marginal (avec un **m minuscule**) |
+| $R(q)$ ou $RT$ | recette totale |
+| $R_m$ | recette marginale (revenu marginal) |
+| $\pi$ | profit, ou bénéfice |
+
+## Surplus et pouvoir de marché
+
+| Notation | Signification |
+|:--|:--|
+| $S_c$, $S_p$ | surplus des consommateurs et des producteurs ($S_C$, $S_P$ ; le surplus total est noté $S_T$) |
+| $L$, $L_i$ | indice de Lerner du marché et de l'entreprise $i$ |
+| $S_i$ | part de marché de l'entreprise $i$ |
+| $HHI$ | indice de Hirschman-Herfindahl |
+
+## Régulation et discrimination
+
+| Notation | Signification |
+|:--|:--|
+| $s$ | subvention unitaire, versée par unité produite |
+| $S_{\text{tot}}$ | montant total de la subvention versé au monopole |
+| $T$ | taxe forfaitaire |
+| $t$ | montant d'une taxe unitaire (par unité produite) ou taux de l'impôt sur les bénéfices, selon le contexte |
+| $p^{max}$ | prix maximal imposé |
+| $V_i(q)$ | valorisation totale d'un consommateur de type $i$ |
+| $(q_i, T_i)$ | menu proposé au type $i$ : quantité et tarif |
+| $\lambda_i$ | proportion des consommateurs de type $i$ |
+
+## Oligopoles
+
+| Notation | Signification |
+|:--|:--|
+| $q_j^a$ | quantité de l'entreprise $j$ anticipée par l'entreprise $i$ |
+| $f_i$ | fonction de réaction de l'entreprise $i$ (meilleure réponse) |
+| indice $L$ | entreprise pilote (meneuse, *leader*) |
+| indice $F$ | entreprise satellite (suiveuse, *follower*) |
+| $c$ | coût marginal constant |
+| $k$ | coefficient d'un coût quadratique $C(q)=kq^2$ |

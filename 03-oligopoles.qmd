@@ -21,15 +21,31 @@ x=seq(0, 1, length=21)
 df <- data.frame(x)
 
 p <- ggplot(data=df, aes(x=x)) +
-    geom_function(fun=D, colour = "blue") +
+    geom_function(fun=D, colour = col_demande, linewidth=0.9) +
     labs(x="quantité", y = "prix") +
-    annotate("text", x = 0.8, y = D(0.8), label ="courbe de demande", colour = "blue") +
-  geom_function(fun=Cm, colour='red') +
-  annotate("text", x=0.8, y=Cm(0.8), label="Courbe d'offre", colour='red') +
-  geom_function(fun=Rm, colour='darkblue') +
-  annotate("text", x=0.2, y=Rm(0.2), label='Recette marginale', colour='darkblue')
+    annotate("text", x = 0.95, y = 0.12, label ="demande", colour = col_demande, hjust = 0) +
+  geom_function(fun=Cm, colour=col_cout, linewidth=0.9) +
+  annotate("text", x=0.78, y=0.86, label="Coût marginal", colour=col_cout, hjust=1) +
+  geom_function(fun=Rm, colour=col_recette, linewidth=0.9) +
+  annotate("text", x=0.2, y=1.15, label='Recette marginale', colour=col_recette, hjust=0) +
+  annotate("segment", x=0.22, y=1.11, xend=0.15, yend=0.72, colour=col_recette, arrow=arrow(length=unit(0.15, 'cm')))
 ```
 
+
+::: {.callout-note}
+## Objectifs du chapitre
+
+À la fin de ce chapitre, vous saurez :
+
+- expliquer ce qu'est une interaction stratégique et un équilibre de Nash ;
+- calculer les fonctions de réaction et l'équilibre d'un duopole de Cournot, et les représenter dans le plan $(q_1, q_2)$ ;
+- lire un graphique de courbes d'isoprofit ;
+- relier le pouvoir de marché aux parts de marché et à la concentration (indice de Lerner, indice de Hirschman-Herfindahl) ;
+- calculer l'équilibre d'un duopole de Stackelberg ;
+- comparer le monopole, la concurrence à la Cournot, la concurrence à la Stackelberg et la concurrence pure et parfaite.
+
+**Prérequis :** le chapitre 2 (optimum du monopole, indice de Lerner), les dérivées partielles et la résolution d'un système de deux équations à deux inconnues.
+:::
 
 Nous avons étudié jusqu'à présent deux cas extrêmes :
 
@@ -53,7 +69,8 @@ Les entreprises peuvent se faire concurrence de différentes manières :
 - En formant une entente, dans un *cartel* ;
 - Dans une concurrence spatiale, à la *Hotelling*.
 
-Nous verrons dans ce cours les concurrences à la Cournot et à la Stackelberg, ainsi que les cartels.
+Nous verrons dans ce cours les concurrences à la Cournot et à la Stackelberg.
+Une dernière section, hors programme, présente les cartels pour ceux qui veulent aller plus loin.
 
 
 ## Duopole à la Cournot
@@ -68,7 +85,7 @@ Chaque entreprise est caractérisée par une quantité produite et un coût :
 - Entreprise 1 : quantité $q_1$ produite au coût $C_1(q_1)$ ;
 - Entreprise 2 : quantité $q_2$ produite au coût $C_2(q_2)$.
 
-Les fonctions de coût sont **différentes** entre les deux entreprises, contrairement au cas du monopole discriminant au troisième degré, où l'on considérait $C(q_1+q_2)$.
+Chaque entreprise a **sa propre** fonction de coût, qui dépend de sa seule production : ces fonctions peuvent être différentes. C'est une différence avec le monopole discriminant au troisième degré, où un seul producteur avait un coût $C(q_1+q_2)$ portant sur la production totale.
 
 La fonction de demande inverse sur le marché est unique et donnée par $P(q_1+q_2)$, contrairement au monopole discriminant où il y avait une fonction de demande par groupe.
 
@@ -127,9 +144,10 @@ Le croisement entre recette marginale et coût marginal se fait donc à un nivea
 Plus l'entreprise $i$ pense que l'entreprise $j$ va produire une grande quantité, plus elle aura intérêt à réduire son offre.
 $q_i$ est décroissante en $q_j^a$.
 
-```{r oligodemande}
+```{r}
 #| label: fig-oligodemande
 #| fig-cap: "Représentation de la demande perçue par l'entreprise 2 anticipant une offre $q_1^a$ par l'entreprise 1."
+#| fig-alt: "Demande de marché, recette marginale et coût marginal, avec la demande perçue par l'entreprise 2 : la demande de marché décalée vers la gauche de la quantité q_1^a anticipée. La recette marginale correspondante coupe le coût marginal à la quantité q_2 choisie par l'entreprise 2."
 
 q1 <- 1/8
 p1 <- P(q1)
@@ -146,41 +164,45 @@ p_demande +
   geom_text(aes(x=q1/2, y=p1+0.05, label="q[1]^a"), parse=TRUE) +
   scale_y_continuous(breaks = c(), labels = c(), expand = c(0, 0), limits = c(0, 1.2)) +
   scale_x_continuous(breaks = c(q1, q2),  labels = c(expression(q[1]^a), expression(q[2])), expand = c(0, 0), limits = c(0, 1.2)) +
-  geom_function(fun=D2, colour='darkgreen') +
-  annotate('text', x=0.6, y=D2(0.6), label='Demande perçue par 2', colour='darkgreen') +
-  geom_function(fun=Rm2, colour='green') +
-  annotate('text', x=0.4, y=Rm2(0.4), label='Recette marginale de 2', colour='green')
+  geom_function(fun=D2, colour=col_demande, linewidth=0.9, linetype='dashed') +
+  annotate('text', x=0.62, y=0.48, label='Demande perçue par 2', colour=col_demande, hjust=0) +
+  annotate('segment', x=0.64, y=0.45, xend=0.6, yend=D2(0.6)+0.02, colour=col_demande, arrow=arrow(length=unit(0.15, 'cm'))) +
+  geom_function(fun=Rm2, colour=col_recette, linewidth=0.9, linetype='dashed') +
+  annotate('text', x=0.38, y=0.95, label='Recette marginale de 2', colour=col_recette, hjust=0) +
+  annotate('segment', x=0.4, y=0.91, xend=0.3, yend=Rm2(0.3)+0.02, colour=col_recette, arrow=arrow(length=unit(0.15, 'cm')))
 
 ```
 
 
 #### Caractérisation de l'équilibre
 
-Un équilibre $(q_1^a, q_2^a)$ doit être tel qu'aucune des deux entreprises n'ait intérêt à dévier unilatéralement :
+Un équilibre $(q_1^*, q_2^*)$ doit être tel qu'aucune des deux entreprises n'ait intérêt à dévier unilatéralement :
 $$
 \begin{array}{rcl}
-\pi_1(q_1^a, q_2^a) &\geq& \pi_1(q_1, q_2^a)\quad \forall q_1\\
-\pi_2(q_1^a, q_2^a) &\geq& \pi_2(q_1^a, q_2)\quad \forall q_2
+\pi_1(q_1^*, q_2^*) &\geq& \pi_1(q_1, q_2^*)\quad \forall q_1\\
+\pi_2(q_1^*, q_2^*) &\geq& \pi_2(q_1^*, q_2)\quad \forall q_2
 \end{array}
 $$
-Au point $q_1^a$ et $q_2^a$, aucune entreprise n'a intérêt à dévier unilatéralement de l'équilibre.
+Au point $q_1^*$ et $q_2^*$, aucune entreprise n'a intérêt à dévier unilatéralement de l'équilibre.
 Les décisions prises sont mutuellement compatibles.
 Chaque entreprise donne sa meilleure réponse à la meilleure réponse de l'autre.
 C'est ce qu'on appelle un **équilibre de Nash** : un équilibre où personne n'a intérêt à dévier unilatéralement.
+Dans le duopole de Cournot, on parle d'**équilibre de Cournot**, ou d'**équilibre de Cournot-Nash** : les deux expressions désignent la même chose.
 
 Dans le cas du duopole à la Cournot, chaque entreprise doit choisir la quantité qui maximise son profit étant donné le choix de l'autre entreprise.
 Chaque entreprise est donc sur sa fonction de réaction.
 L'équilibre est donc à l'intersection des fonctions de réaction des deux entreprises :
 $$
 \begin{array}{rcl}
-q_1^a&=&f_1(q_2^a)\\
-q_2^a&=&f_2(q_1^a)
+q_1^*&=&f_1(q_2^*)\\
+q_2^*&=&f_2(q_1^*)
 \end{array}
 $$
 
-```{r oligoreaction}
+```{r}
 #| label: fig-oligo-reaction-stable
 #| fig-cap: "Représentation d'un équilibre de Cournot où les fonctions de réaction convergent vers le point d'équilibre."
+#| fig-alt: "Plan des quantités q_1, à l'horizontale, et q_2, à la verticale, avec deux fonctions de réaction décroissantes qui se coupent à l'équilibre de Cournot. Des flèches en escalier, partant d'une quantité quelconque, se rapprochent de l'équilibre."
 
 f1 <- function(q){1-3*q}
 f2 <- function(q){(1-q)/3}
@@ -188,14 +210,14 @@ f2 <- function(q){(1-q)/3}
 qc <- uniroot(function(q){f1(q)-f2(q)}, c(0, 1))$root
 
 p_equilibre <- p_isoprofit +
-  geom_function(fun=f1, colour="red") +
-  geom_function(fun=f2, colour="blue") +
+  geom_function(fun=f1, colour=col_cout, linewidth=0.9) +
+  geom_function(fun=f2, colour=col_recette, linewidth=0.9) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q[2]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q[1]^"*"))) +
   annotate("point", x=qc, y=qc) +
-  annotate("text", x=qc+0.2, y=qc+0.05, label='Equilibre de Cournot') +
-  annotate("text", x=1/4, y=f1(1/8), label='Fonction de réaction 1', colour='red') +
-  annotate('text', x=1, y=f2(7/8), label='Fonction de réaction 2', colour='blue') +
+  annotate("text", x=qc+0.2, y=qc+0.05, label='Équilibre de Cournot') +
+  annotate("text", x=0.3, y=0.6, label='Fonction de réaction 1', colour=col_cout, hjust=0) +
+  annotate('text', x=0.75, y=0.15, label='Fonction de réaction 2', colour=col_recette, hjust=0) +
   geom_segment(data=df, x=0, y=3/4, xend=1/12, yend=f1(1/12), arrow=arrow(length=unit(0.3, "cm"))) +
   geom_segment(data=df, x=1/12, y=f1(1/12), xend=1/12, yend=f2(1/12), arrow=arrow(length=unit(0.3, "cm"))) +  
   geom_segment(data=df, x=1/12, y=f2(1/12), xend=25/108, yend=f1(25/108), arrow=arrow(length=unit(0.3, "cm"))) +
@@ -208,22 +230,32 @@ p_equilibre <- p_isoprofit +
 p_equilibre
 ```
 
-L'équilibre n'est pas nécessairement stable.
-La stabilité dépend des pentes relatives des fonctions de réaction.
+Pour lire les flèches de la @fig-oligo-reaction-stable, imaginons que les entreprises ne trouvent pas l'équilibre immédiatement, mais ajustent leur production tour à tour.
+Partons d'une quantité quelconque de l'entreprise 2, par exemple $q_2=\frac{3}{4}$.
+L'entreprise 1 y répond par sa meilleure réponse : on se déplace horizontalement jusqu'à la fonction de réaction de l'entreprise 1.
+L'entreprise 2 répond à son tour à cette nouvelle quantité : on se déplace verticalement jusqu'à sa fonction de réaction.
+Et ainsi de suite.
+Sur la @fig-oligo-reaction-stable, ce processus se rapproche de l'équilibre de Cournot : l'équilibre est *stable*.
+
+L'équilibre n'est cependant pas toujours stable.
+Sur la @fig-oligo-reaction-instable, le même processus s'éloigne de l'équilibre.
+La différence vient de l'intensité des réactions : l'équilibre est stable lorsque chaque entreprise réagit peu à la production de l'autre, c'est-à-dire lorsqu'une hausse d'une unité de $q_j$ fait baisser $q_i$ de moins d'une unité.
+Graphiquement, dans le plan $(q_1, q_2)$, la fonction de réaction de l'entreprise 1 est alors plus pentue que celle de l'entreprise 2.
 
 
-```{r oligoreactioninstable}
+```{r}
 #| label: fig-oligo-reaction-instable
 #| fig-cap: "Représentation d'un équilibre de Cournot où les fonctions de réaction divergent du point d'équilibre. Équilibre instable"
+#| fig-alt: "Même plan avec deux fonctions de réaction dont les pentes sont inversées. Les flèches en escalier s'éloignent de l'équilibre de Cournot et aboutissent à une situation où une seule entreprise produit, au niveau de sa quantité de monopole."
 p_equilibre <- p_isoprofit +
-  geom_function(fun=f1, colour="blue") +
-  geom_function(fun=f2, colour="red") +
+  geom_function(fun=f1, colour=col_recette, linewidth=0.9) +
+  geom_function(fun=f2, colour=col_cout, linewidth=0.9) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc, 1), labels=c(expression(q[2]^"*"), expression(q["2m"]^"*"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc, 1), labels=c(expression(q[1]^"*"), expression(q["2m"]^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc, 1), labels=c(expression(q[1]^"*"), expression(q["1m"]^"*"))) +
   annotate("point", x=qc, y=qc) +
-  annotate("text", x=qc+0.2, y=qc+0.05, label='Equilibre de Cournot instable') +
-  annotate("text", x=1/4, y=f1(1/8), label='Fonction de réaction 2', colour='blue') +
-  annotate('text', x=1, y=f2(7/8), label='Fonction de réaction 1', colour='red') +
+  annotate("text", x=0.3, y=0.32, label='Équilibre de Cournot instable', hjust=0) +
+  annotate("text", x=0.3, y=0.6, label='Fonction de réaction 2', colour=col_recette, hjust=0) +
+  annotate('text', x=0.75, y=0.15, label='Fonction de réaction 1', colour=col_cout, hjust=0) +
   geom_segment(data=df, x=0, y=3/4, xend=1/12, yend=f1(1/12), arrow=arrow(length=unit(0.3, "cm"), ends="first")) +
   geom_segment(data=df, x=1/12, y=f1(1/12), xend=1/12, yend=f2(1/12), arrow=arrow(length=unit(0.3, "cm"), ends="first")) +  
   geom_segment(data=df, x=1/12, y=f2(1/12), xend=25/108, yend=f1(25/108), arrow=arrow(length=unit(0.3, "cm"), ends="first")) +
@@ -250,8 +282,8 @@ Prenons les fonctions suivantes :
 $$
 \begin{array}{l}
 P(q_1+q_2) = a - b(q_1+q_2)\\
-C_1(q_1) = cq^2_1 \\
-C_2(q_2) = cq^2_2 \\
+C_1(q_1) = kq^2_1 \\
+C_2(q_2) = kq^2_2 \\
 \end{array}
 $$
 
@@ -261,8 +293,8 @@ On en déduit les profits :
 
 $$
 \begin{array}{rcl}
-\pi_1(q_1, q_2) &=& \left(a-b(q_1+q_2)\right)q_1-cq_1^2\\
-\pi_2(q_1, q_2) &=& \left(a-b(q_1+q_2)\right)q_2-cq_2^2
+\pi_1(q_1, q_2) &=& \left(a-b(q_1+q_2)\right)q_1-kq_1^2\\
+\pi_2(q_1, q_2) &=& \left(a-b(q_1+q_2)\right)q_2-kq_2^2
 \end{array}
 $$
 
@@ -272,7 +304,7 @@ $$
 Calculons la fonction de réaction de l'entreprise 1.
 Son profit est :
 $$
-\pi_1(q_1, q_2^a) = aq_1-bq_1^2-bq_2^aq_1-cq_1^2 = (a-bq_2^a)q_1-(b+c)q_1^2
+\pi_1(q_1, q_2^a) = aq_1-bq_1^2-bq_2^aq_1-kq_1^2 = (a-bq_2^a)q_1-(b+k)q_1^2
 $$
 
 La condition du premier ordre suivant $q_1$ s'écrit (ici $q_2^a$ est considéré comme une donnée par l'entreprise 1) :
@@ -280,15 +312,18 @@ La condition du premier ordre suivant $q_1$ s'écrit (ici $q_2^a$ est considér�
 $$
 \begin{array}{crcl}
 &\frac{\partial \pi_1}{\partial q_1}&=&0\\
-\Leftrightarrow & (a-bq_2^a)-2(b+c)q_1^* &=& 0\\
-\Leftrightarrow & q_1^* &=& \frac{(a-bq_2^a)}{2(b+c)}
+\Leftrightarrow & (a-bq_2^a)-2(b+k)q_1^* &=& 0\\
+\Leftrightarrow & q_1^* &=& \frac{(a-bq_2^a)}{2(b+k)}
 \end{array}
 $$ {#eq-FR1}
+
+Ici, l'étoile signale un choix optimal : $q_1^*$ est la quantité qui maximise le profit de l'entreprise 1 lorsqu'elle anticipe $q_2^a$.
+C'est donc une fonction de $q_2^a$, sa fonction de réaction : $q_1^* = f_1(q_2^a)$.
 
 On calcule de la même manière (i.e., en utilisant la condition du premier ordre sur les profits de l'entreprise 2) la fonction de réaction de l'entreprise 2 et on obtient par symétrie du problème une légère réécriture de l'@eq-FR1 :
 
 $$
-q_2^* = \frac{(a-bq_1^a)}{2(b+c)}
+q_2^* = \frac{(a-bq_1^a)}{2(b+k)}
 $$
 
 La symétrie du problème provient du fait que les deux entreprises ont exactement la même fonction de coût.
@@ -300,6 +335,9 @@ Si dans un problème les fonctions de coût sont identiques, alors vous pouvez f
 
 Quel est alors l'équilibre de Cournot ?
 
+À l'équilibre, les anticipations sont justes : chaque entreprise anticipe exactement la quantité que l'autre choisit.
+On peut donc remplacer $q_2^a$ par $q_2^*$ et $q_1^a$ par $q_1^*$ dans les fonctions de réaction.
+
 On doit avoir :
 $$
 \begin{array}{rcl}
@@ -310,21 +348,21 @@ $$
 Autrement dit :
 $$
 \begin{array}{rcl}
-q_1^* &=& \frac{(a-bq_2^*)}{2(b+c)} \\
-q_2^* &=&\frac{(a-bq_1^*)}{2(b+c)}\\
+q_1^* &=& \frac{(a-bq_2^*)}{2(b+k)} \\
+q_2^* &=&\frac{(a-bq_1^*)}{2(b+k)}\\
 \end{array}
 $$
 On résout le système et on obtient :
 $$
-q_1^*=q_2^* = \frac{a}{3b+2c}
+q_1^*=q_2^* = \frac{a}{3b+2k}
 $$
 La quantité totale sur le marché en Cournot est :
 $$
-q_C^* = \frac{2a}{3b+2c}
+q_C^* = \frac{2a}{3b+2k}
 $$ {#eq-q-Cournot}
 On en déduit que
 $$
-p^* = P(q^*_1+q^*_2) = a\frac{b+2c}{3b+2c}
+p^* = P(q^*_1+q^*_2) = a\frac{b+2k}{3b+2k}
 $$ {#eq-p-Cournot}
 
 ::: {#prp-Cournot}
@@ -334,6 +372,66 @@ $$ {#eq-p-Cournot}
 Quand le problème est **symétrique** (=les deux entreprises ont la même fonction de coût), deux entreprises en compétition **à la Cournot** produisent la même quantité de bien.
 :::
 
+::: {.callout-caution}
+## Méthode : tracer les fonctions de réaction
+
+1. Placez la quantité de l'entreprise 1 sur l'axe horizontal et celle de l'entreprise 2 sur l'axe vertical. Les deux axes portent des **quantités** : le prix n'apparaît pas sur ce graphique.
+2. Tracez la fonction de réaction de l'entreprise 1, $q_1=f_1(q_2)$, à partir de deux points :
+   - si $q_2=0$, l'entreprise 1 est en monopole : on obtient sa quantité de monopole sur l'axe horizontal ;
+   - la quantité $q_2$ pour laquelle $f_1(q_2)=0$, c'est-à-dire pour laquelle l'entreprise 1 préfère ne rien produire, se place sur l'axe vertical.
+3. Tracez de la même façon la fonction de réaction de l'entreprise 2, $q_2=f_2(q_1)$ : sa quantité de monopole se place sur l'axe **vertical**, et la quantité $q_1$ pour laquelle $f_2(q_1)=0$ sur l'axe horizontal.
+4. Au croisement des deux droites, lisez l'équilibre de Cournot $(q_1^*, q_2^*)$.
+5. Calculez le prix avec la demande inverse appliquée à la quantité **totale** : $p^*=P(q_1^*+q_2^*)$.
+:::
+
+::: {.callout-tip}
+## Testez-vous : lire un graphique
+
+La figure ci-dessous représente les fonctions de réaction de deux entreprises en concurrence à la Cournot, dans le plan $(q_1, q_2)$.
+La demande inverse est $P(q)=30-q$, et chaque entreprise a un coût marginal constant égal à 6.
+
+1. Identifiez la fonction de réaction de chaque entreprise.
+2. Lisez l'équilibre de Cournot.
+3. Calculez le prix et le profit de chaque entreprise.
+
+```{r}
+#| fig-alt: "Graphique quadrillé, gradué de 0 à 24 sur les deux axes : quantité de l'entreprise 1 à l'horizontale, quantité de l'entreprise 2 à la verticale. Deux droites non nommées : l'une va de 24 sur l'axe vertical à 12 sur l'axe horizontal, l'autre de 12 sur l'axe vertical à 24 sur l'axe horizontal."
+ggplot() +
+  geom_segment(aes(x=0, y=24, xend=12, yend=0)) +
+  geom_segment(aes(x=0, y=12, xend=24, yend=0)) +
+  labs(x="quantité de l'entreprise 1", y="quantité de l'entreprise 2") +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 26), breaks=seq(0, 24, 2)) +
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 26), breaks=seq(0, 24, 2)) +
+  theme(panel.grid.major=element_line(colour="grey90"))
+```
+
+<details>
+<summary>Réponse</summary>
+
+```{r}
+#| fig-alt: "Même graphique avec légendes : la droite la plus pentue est la fonction de réaction de l'entreprise 1, l'autre celle de l'entreprise 2. Elles se coupent à l'équilibre de Cournot, où chaque entreprise produit 8."
+ggplot() +
+  geom_segment(aes(x=0, y=24, xend=12, yend=0), colour=col_cout, linewidth=0.9) +
+  geom_segment(aes(x=0, y=12, xend=24, yend=0), colour=col_recette, linewidth=0.9) +
+  geom_segment(aes(x=8, y=0, xend=8, yend=8), linetype="dashed") +
+  geom_segment(aes(x=0, y=8, xend=8, yend=8), linetype="dashed") +
+  annotate("point", x=8, y=8, size=3) +
+  annotate("text", x=8.6, y=9.2, label="Équilibre de Cournot", hjust=0) +
+  annotate("text", x=3, y=23, label="Fonction de réaction de 1", colour=col_cout, hjust=0) +
+  annotate("text", x=16, y=6, label="Fonction de réaction de 2", colour=col_recette, hjust=0) +
+  labs(x="quantité de l'entreprise 1", y="quantité de l'entreprise 2") +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 26), breaks=seq(0, 24, 2)) +
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 26), breaks=seq(0, 24, 2)) +
+  theme(panel.grid.major=element_line(colour="grey90"))
+```
+
+1. La fonction de réaction de l'entreprise 1 coupe l'axe horizontal en sa quantité de monopole, 12 : c'est la droite la plus pentue.
+   Celle de l'entreprise 2 coupe l'axe vertical en 12.
+2. Elles se coupent en $q_1^*=q_2^*=8$ : les entreprises ont le même coût, l'équilibre est symétrique.
+3. Le prix est $P(8+8)=30-16=14$, et le profit de chaque entreprise vaut $(14-6)\times 8=64$.
+
+</details>
+:::
 
 ### Une intuition graphique : les courbes d'isoprofit
 
@@ -345,6 +443,47 @@ Il s'agit de tracer les courbes d'*isoprofit* des entreprises.
 ## Courbe d'isoprofit
 La courbe d'isoprofit est l'ensemble des couples de quantités $(q_1, q_2)$ qui permettent à une entreprise d'atteindre un niveau de profit donné.
 :::
+
+Une courbe d'isoprofit joue pour l'entreprise le même rôle qu'une courbe d'indifférence pour un consommateur : l'entreprise est indifférente entre tous les couples $(q_1, q_2)$ situés sur une même isoprofit, puisqu'ils lui rapportent le même profit.
+
+Construisons quelques isoprofits de l'entreprise 1 avec une demande inverse $P(q)=12-q$ et un coût nul.
+Son profit s'écrit $\pi_1=q_1\left(12-q_1-q_2\right)$.
+Les couples $(q_1, q_2)$ qui lui rapportent un profit de 16 vérifient $16=q_1\left(12-q_1-q_2\right)$, c'est-à-dire :
+$$q_2=12-q_1-\frac{16}{q_1}$$
+On peut calculer quelques points de cette isoprofit :
+
+| $q_1$ | 2 | 4 | 6 | 8 |
+|:--|:--:|:--:|:--:|:--:|
+| $q_2$ | 2 | 4 | 3,33 | 2 |
+
+L'isoprofit a une forme en cloche (@fig-isoprofit-exemple) : elle monte, atteint un sommet en $q_1=4$, puis redescend.
+On trace de la même façon les isoprofits $\pi_1=9$ et $\pi_1=25$.
+
+```{r}
+#| label: fig-isoprofit-exemple
+#| fig-cap: "Trois isoprofits de l'entreprise 1 et sa fonction de réaction, avec $P(q)=12-q$ et un coût nul."
+#| fig-alt: "Plan des quantités des deux entreprises, gradué de 0 à 12. Trois courbes d'isoprofit de l'entreprise 1 en forme de cloche, pour des profits de 9, 16 et 25 : plus le profit est élevé, plus la courbe est basse. La fonction de réaction de l'entreprise 1, une droite décroissante, passe par le sommet de chaque cloche, aux points (3, 6), (4, 4) et (5, 2). Quatre points de l'isoprofit 16 sont marqués."
+iso <- function(pi){ function(q1) 12 - q1 - pi/q1 }
+pts <- data.frame(x=c(2, 4, 6, 8), y=c(2, 4, 12-6-16/6, 2))
+ggplot() +
+  geom_function(fun=iso(9), xlim=c(0.85, 11), colour=col_cout, linetype="dotted") +
+  geom_function(fun=iso(16), xlim=c(1.5, 10.5), colour=col_cout) +
+  geom_function(fun=iso(25), xlim=c(2.8, 9), colour=col_cout, linewidth=1.2) +
+  geom_function(fun=function(q1) 12-2*q1, xlim=c(0, 6), colour="black", linewidth=0.9) +
+  geom_point(data=pts, aes(x=x, y=y), colour=col_cout, size=2) +
+  annotate("text", x=3.6, y=6.35, label="pi[1]==9", parse=TRUE, colour=col_cout, hjust=0) +
+  annotate("text", x=4.6, y=4.35, label="pi[1]==16", parse=TRUE, colour=col_cout, hjust=0) +
+  annotate("text", x=5.6, y=2.35, label="pi[1]==25", parse=TRUE, colour=col_cout, hjust=0) +
+  annotate("text", x=1.3, y=11, label="Fonction de réaction de 1", colour="black", hjust=0) +
+  labs(x="quantité de l'entreprise 1", y="quantité de l'entreprise 2") +
+  scale_x_continuous(expand=c(0, 0), limits=c(0, 12), breaks=0:12) +
+  scale_y_continuous(expand=c(0, 0), limits=c(0, 12), breaks=0:12) +
+  theme(panel.grid.major=element_line(colour="grey90"))
+```
+
+Les isoprofits les plus basses correspondent aux profits les plus élevés.
+En effet, pour une même quantité $q_1$, si l'entreprise 2 produit moins, le prix est plus élevé, et le profit de l'entreprise 1 aussi.
+C'est une différence avec les courbes d'indifférence, où les situations préférées se trouvent en général vers le haut.
 
 Reprenons l'expression générale des profits de l'@eq-profitcournot.
 $$
@@ -358,39 +497,45 @@ $$
 \pi_1 = q_1P(q_1+q_2)-C_1(q_1)
 $$
 L'équation ci-dessus définit implicitement une fonction $q_2=I_\pi(q_1, \pi_1)$ qui permet de représenter la courbe d'isoprofit dans un graphique $(q_1,q_2)$, tout comme la fonction de réaction définit une courbe $q_2(q_1)$ pour l'entreprise 1.
-La courbe de la fonction de réaction de 1 coupe la courbe d'isoprofit de 1 en son maximum. 
-<!-- Implicitiment, le maximum sur la courbe d'isoprofit est obtenu en dérivant suivant $q_1$, tout comme on obtient la fonction de réaction. -->
+Comme nous allons le voir, la fonction de réaction de l'entreprise 1 passe par le sommet de chacune de ses courbes d'isoprofit.
 
-```{r isoprofit1}
+```{r}
 #| label: fig-isoprofit1
 #| fig-cap: "Courbes d'isoprofit et fonction de réaction de l'entreprise 1"
+#| fig-alt: "Plan des quantités q_1 et q_2 avec plusieurs courbes d'isoprofit de l'entreprise 1 en forme de cloche, et sa fonction de réaction, une droite décroissante qui passe par le sommet de chacune. Les courbes les plus basses correspondent aux profits les plus élevés."
 I1 <- function(q, pi){1-pi/q-2*q}
 f1 <- function(q)(1-4*q)
 
 p <- p_isoprofit
 
-p + geom_function(fun=function(x) I1(x, 0.1), colour = "blue") +
-  geom_function(fun=function(x) I1(x, 0.1), colour = "blue") +
-  geom_function(fun=function(x) I1(x, 0.11), colour = "blue") +
-  geom_function(fun=function(x){I1(x, 0.05)}, colour = "blue") +
-  geom_function(fun=function(x){I1(x, 0.12)}, colour = "blue") +
-  geom_function(fun=function(x){I1(x, 0.07)}, colour = "blue") +  
-  geom_function(fun=function(x){I1(x, 0.02)}, colour = "blue") +
-  geom_function(fun=f1, colour = "red") +
-  annotate("text", x=0.2, y=1, label="Fonction de réaction de 1", color="red") +
-  annotate("text", x=0.3, y=0.8, label="Courbes d'isoprofit", color="blue") +
+p + geom_function(fun=function(x) I1(x, 0.1), colour = col_cout) +
+  geom_function(fun=function(x) I1(x, 0.1), colour = col_cout) +
+  geom_function(fun=function(x) I1(x, 0.11), colour = col_cout) +
+  geom_function(fun=function(x){I1(x, 0.05)}, colour = col_cout) +
+  geom_function(fun=function(x){I1(x, 0.12)}, colour = col_cout) +
+  geom_function(fun=function(x){I1(x, 0.07)}, colour = col_cout) +  
+  geom_function(fun=function(x){I1(x, 0.02)}, colour = col_cout) +
+  geom_function(fun=f1, colour = "black", linewidth=0.9) +
+  annotate("text", x=0.04, y=1, label="Fonction de réaction de 1", color="black", hjust=0) +
+  annotate("text", x=0.3, y=0.8, label="Courbes d'isoprofit", color=col_cout) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(0), labels=c("")) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc), labels=c(expression(q["1m"]^"*")))
 
 ```
 
-Sur la @fig-isoprofit1, le profit est croissant en descendant vers le bas sur les courbes d'isoprofit, autrement dit, les courbes d'isoprofit les plus basses représentent les profits les plus élevés.
+Comme dans l'exemple, les isoprofits les plus basses de la @fig-isoprofit1 correspondent aux profits les plus élevés.
 Le maximum du profit est atteint lorsque l'entreprise 1 est en monopole.
 La quantité produite est alors $q_m^*$ et le profit $\pi_m^*$.
 
-```{r isoprofitCournot}
+On comprend alors pourquoi la fonction de réaction passe par le sommet des isoprofits.
+Fixer la quantité $q_2$ de l'entreprise 2 revient à se placer sur une droite horizontale de la @fig-isoprofit1.
+Sur cette droite, l'entreprise 1 choisit le point qui lui donne le profit le plus élevé, c'est-à-dire le point situé sur l'isoprofit la plus basse que la droite touche encore.
+Cette isoprofit ne touche la droite qu'en un point, son sommet : c'est la quantité $q_1$ donnée par la fonction de réaction.
+
+```{r}
 #| label: fig-isoprofit-Cournot
 #| fig-cap: "Courbes d'isoprofit et fonctions de réaction des entreprises en équilibre de Cournot-Nash."
+#| fig-alt: "Plan des quantités avec les fonctions de réaction des deux entreprises, qui se coupent à l'équilibre de Cournot. L'isoprofit de l'entreprise 1 qui passe par l'équilibre y atteint son sommet ; celle de l'entreprise 2 y atteint son point le plus à droite. Deux flèches, horizontale et verticale, indiquent les déviations unilatérales autour de l'équilibre."
 I2 <- function(q, pi){1-pi/q-2*q}
 f2 <- function(q)(1/4-1/4*q)
 
@@ -401,23 +546,30 @@ df2 <- data.frame(x=I2(x, 2/25), y=x)
 
 
 p_cournot <- p_isoprofit +
-  geom_function(fun=f2, colour="darkgreen") +
-  geom_function(fun=f1, colour="red") +
-  geom_function(fun=function(x) I1(x, 2/25), colour="darkred") +
-  annotate("text", x=0.2, y=1, label="Fonction de réaction de 1", color="red") +
-  annotate("text", x=0.4, y=0.1, label="Isoprofit de 1 à l'équilibre", color='darkred') +
-  annotate("text", x=0.8, y=0.2, label="Fonction de réaction de 2", color="darkgreen") +
+  geom_function(fun=f2, colour=col_recette, linewidth=0.9) +
+  geom_function(fun=f1, colour=col_cout, linewidth=0.9) +
+  geom_function(fun=function(x) I1(x, 2/25), colour=col_cout, linetype="dashed") +
+  annotate("text", x=0.06, y=1, label="Fonction de réaction de 1", color=col_cout, hjust=0) +
+  annotate("text", x=0.47, y=0.04, label="Isoprofit de 1 à l'équilibre", color=col_cout, hjust=0) +
+  annotate("segment", x=0.48, y=0.06, xend=0.37, yend=0.05, colour=col_cout, arrow=arrow(length=unit(0.15, 'cm'))) +
+  annotate("text", x=0.8, y=0.2, label="Fonction de réaction de 2", color=col_recette) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc2, qc), labels=c(expression(q["2c"]^"*"), expression(q["2m"]^"*"))) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(qc2, qc), labels=c(expression(q["1c"]^"*"), expression(q["1m"]^"*"))) +
-  geom_point(data=df2, aes(x=x, y=y), size=0.1, color='green') +
-  annotate('text', x=0.1, y=0.4, label="Isoprofit de 2 à l'équilibre", colour="green")
+  geom_point(data=df2, aes(x=x, y=y), size=0.1, color=col_recette) +
+  annotate('text', x=0.36, y=0.45, label="Isoprofit de 2 à l'équilibre", colour=col_recette, hjust=0) +
+  annotate('segment', x=0.38, y=0.43, xend=0.08, yend=0.35, colour=col_recette, arrow=arrow(length=unit(0.15, 'cm')))
 
 
 p_cournot + geom_segment(data=df, x=qc2-0.05, xend=qc2+0.05, y=qc2, yend=qc2, arrow = arrow(length=unit(0.2, "cm"), ends='both')) +
   geom_segment(data=df, x=qc2, xend=qc2, y=qc2-0.05, yend=qc2+0.05, arrow = arrow(length=unit(0.2, "cm"), ends='both'))
 ```
 
-
+La @fig-isoprofit-Cournot représente l'équilibre de Cournot avec les isoprofits des deux entreprises qui passent par ce point.
+L'isoprofit de l'entreprise 1 y atteint son sommet, sur la fonction de réaction de l'entreprise 1 : $q_1^*$ est bien la meilleure réponse à $q_2^*$.
+De même, l'isoprofit de l'entreprise 2 y atteint son point le plus à droite, sur la fonction de réaction de l'entreprise 2 : $q_2^*$ est la meilleure réponse à $q_1^*$.
+Les flèches représentent les déviations unilatérales.
+Si l'entreprise 1 modifie seule sa quantité (flèche horizontale), elle passe sur une isoprofit plus haute, donc sur un profit plus faible ; de même pour l'entreprise 2 (flèche verticale).
+Aucune entreprise n'a intérêt à dévier : c'est bien un équilibre de Nash.
 
 ### Oligopoles à la Cournot
 
@@ -530,7 +682,6 @@ $$ {#eq-oligo-lerner}
 
 L'indice de Hirschman-Herfindahl est la somme des carrés des parts de marché.
 $$HHI = \sum_{i=1}^NS_i^2$$
-C'est aussi la différence moyenne entre le coût marginal de production et le prix, multipliée par l'élasticité prix de la demande à l'optimum.
 :::
 Grâce à l'@eq-oligo-lerner, on a immédiatement la relation suivante entre HHI et indice de Lerner.
 $$
@@ -550,12 +701,39 @@ HHI&=&\sum_{i=1}^NS_i^2\\
 &=&\frac{1}{N}
 \end{array}
 $$
-Le HHI correspond à l'inverse du nombre de producteurs qui seraient identiques sur le marché et donneraient le même écart moyen entre coût marginal et prix.
+Le HHI correspond donc à l'inverse du nombre de producteurs identiques qui donneraient le même indice de Lerner du marché.
+Par exemple, un HHI de 0,25 correspond au même pouvoir de marché que quatre entreprises identiques.
 Plus le HHI est proche de 1, plus on se rapproche du monopole.
 Plus le HHI est proche de 0, plus on se rapproche de la concurrence pure et parfaite.
 
 Le HHI est utilisé par les autorités de la concurrence pour évaluer les effets sur les prix de fusions d'entreprises.
 Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.
+
+::: {.callout-tip}
+## Testez-vous
+
+Quatre entreprises se partagent un marché, avec des parts de marché de 40 %, 30 %, 20 % et 10 %.
+À l'équilibre, la valeur absolue de l'élasticité prix de la demande vaut 1,5.
+
+1. Calculez l'indice de Hirschman-Herfindahl.
+2. À combien d'entreprises identiques ce marché équivaut-il ?
+3. Calculez l'indice de Lerner du marché.
+
+<details>
+<summary>Réponse</summary>
+
+1. $HHI=0{,}4^2+0{,}3^2+0{,}2^2+0{,}1^2=0{,}16+0{,}09+0{,}04+0{,}01=0{,}30$.
+2. $\frac{1}{0{,}30}\approx 3{,}3$ : ce marché donne le même pouvoir de marché qu'un peu plus de trois entreprises identiques, et non quatre, car les parts de marché sont inégales.
+3. $L=\frac{HHI}{|\varepsilon_{q/p}|}=\frac{0{,}30}{1{,}5}=0{,}2$ : en moyenne, l'écart entre le prix et le coût marginal représente 20 % du prix.
+
+</details>
+:::
+
+::: {.callout-note}
+## Pour vous entraîner
+
+Fiche 3, exercices 3.2 et 3.3 : duopole de Cournot, comparaison avec le monopole et la concurrence pure et parfaite, cas de $n$ entreprises et de coûts marginaux différents.
+:::
 
 
 ## Duopole à la Stackelberg
@@ -563,19 +741,21 @@ Elles peuvent interdire des fusions qui augmenteraient trop fortement le HHI.
 ### Introduction
 
 Il n'y a plus de symétrie des entreprises dans un duopole à la Stackelberg.
-Une entreprise, dite *pilote* ou *leader*, prend ses décisions avant l'entreprise dite *satellite* ou *follower*.
+Une entreprise, dite *pilote* (ou *meneuse*, ou *leader* en anglais), prend ses décisions avant l'entreprise dite *satellite* (ou *suiveuse*, ou *follower* en anglais).
 L'entreprise pilote connaît les caractéristiques de l'entreprise satellite et peut ainsi calculer sa fonction de réaction.
 Elle en tiendra compte dans ses décisions.
 On considère ici qu'il n'y a que deux périodes de décisions.
+Notons les variables et fonctions du pilote avec un indice $L$ et celles du satellite avec un indice $F$.
 
 ### Résolution graphique
 
-L'entreprise pilote choisit sa quantité $q_1$ de façon à être sur la courbe d'isoprofit la plus basse possible compatible avec la fonction de réaction de l'entreprise satellite.
+L'entreprise pilote choisit sa quantité $q_L$ de façon à être sur la courbe d'isoprofit la plus basse possible compatible avec la fonction de réaction de l'entreprise satellite.
 Elle se placera donc sur la courbe d'isoprofit tangente à la fonction de réaction du satellite.
 
-```{r equilibreStackelberg}
+```{r}
 #| label: fig-Stack-equi
-#| fig-cap: "Courbes d'isoprofit du pilote et fonctions de réaction des deux entreprises en équilibre de Stackelberg."
+#| fig-cap: "Équilibre de Stackelberg : fonction de réaction du satellite (en vert), fonction de réaction du pilote en Cournot (en pointillés), et isoprofits du pilote passant par l'équilibre de Cournot (en gris) et par l'équilibre de Stackelberg (en violet)."
+#| fig-alt: "Plan des quantités du pilote, à l'horizontale, et du satellite, à la verticale. L'équilibre de Stackelberg est le point de la fonction de réaction du satellite où celle-ci est tangente à une isoprofit du pilote. Cette isoprofit, en violet, est plus basse que l'isoprofit grise qui passe par l'équilibre de Cournot : le pilote gagne plus en Stackelberg. Il produit plus, et le satellite moins, qu'en Cournot."
 p <- p_isoprofit
 
 IL <- function(q, pi){1-pi/q-q}
@@ -585,32 +765,30 @@ fL <- function(q)(1-2*q)
 
 p_stackelberg <- ggplot() +
   labs(x="quantité pilote", y = "quantité satellite") +
-  geom_function(fun=fF, colour="darkgreen") +
-  geom_function(fun=fL, colour="red", linetype="dashed" ) +
-  stat_function(fun=function(x) IL(x, 1/9), colour="blue") +
-  stat_function(fun=function(x) IL(x, 1/8), colour="red") +
-  annotate("text", x=0.4, y=1, label="Fonction de réaction du pilote (en Cournot)", color="red") +
-  annotate("text", x=0.9, y=0.2, label="Fonction de réaction du satellite", color="darkgreen") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(1/4, 1/3, 1/2), labels=c(expression(q[F]^"*"), expression(q["2C"]^"*"),  expression(q[m]^"*"))) +
-  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(1/3, 0.5), labels=c(expression(q["1C"]^"*"), expression(q[L]^"*"))) +
-  annotate("point", x=1/3, y=1/3, colour="blue", size=3) +
-  annotate("text", x=0.4, y=0.4, colour="blue", label="Cournot") +
-  annotate("point", x=1/2, y=1/4, colour="red", size=3) +
-  annotate("text", x=0.5, y=0.3, colour="red", label="Stackelberg") 
+  geom_function(fun=fF, colour=col_recette, linewidth=0.9) +
+  geom_function(fun=fL, colour=col_cout, linetype="dashed" ) +
+  stat_function(fun=function(x) IL(x, 1/9), colour=col_perte, linewidth=0.9) +
+  stat_function(fun=function(x) IL(x, 1/8), colour=col_cout, linewidth=0.9) +
+  annotate("text", x=0.4, y=1, label="Fonction de réaction du pilote (en Cournot)", color=col_cout) +
+  annotate("text", x=1.2, y=0.22, label="Fonction de réaction du satellite", color=col_recette, hjust=1) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(1/4, 1/3, 1/2), labels=c(expression(q[F]^"*"), expression(q[FC]^"*"),  expression(q[Fm]^"*"))) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 1.2), breaks=c(1/3, 0.5), labels=c(expression(q[LC]^"*"), expression(q[L]^"*"))) +
+  annotate("point", x=1/3, y=1/3, colour=col_perte, size=3) +
+  annotate("text", x=0.4, y=0.4, colour=col_perte, label="Cournot") +
+  annotate("point", x=1/2, y=1/4, colour=col_cout, size=3) +
+  annotate("text", x=0.52, y=0.33, colour=col_cout, label="Stackelberg", hjust=0) 
 
 p_stackelberg
 ```
 
-Sur la @fig-Stack-equi, on voit que le profit du pilote est plus important en Stackelberg qu'en Cournot (et l'inverse pour le satellite).
+Sur la @fig-Stack-equi, on voit que le profit du pilote est plus important en Stackelberg qu'en Cournot : son isoprofit à l'équilibre de Stackelberg (en violet) est plus basse que celle qui passe par l'équilibre de Cournot (en gris). C'est l'inverse pour le satellite.
 Les quantités produites par l'entreprise pilote sont plus importantes en Stackelberg qu'en Cournot, mais celles du satellite sont plus faibles.
-La somme des deux est plus importante ($q_{1C}^*+q_{2C}^*<q_{L}^*+q_{F}^*$).
+La somme des deux est plus importante ($q_{LC}^*+q_{FC}^*<q_{L}^*+q_{F}^*$).
 Le prix sera donc plus faible pour les consommateurs.
 
 ### Exemple
 
 #### Données du problème
-
-Notons les variables et fonctions du pilote avec un indice $L$ et celles du satellite avec un indice $F$.
 
 Gardons une fonction de demande linéaire.
 
@@ -673,7 +851,7 @@ q_F^*=\frac{a}{4b}
 $$
 
 L'entreprise pilote produit plus que l'entreprise satellite.
-Elle profite de son pouvoir sur la seconde entreprise pour cela.
+Elle tire parti de son avantage à jouer en premier : en s'engageant sur une grande quantité, elle conduit le satellite, qui réagit à cette quantité, à réduire la sienne.
 La quantité totale produite est :
 $$
 q^*_S = \frac{3a}{4b}
@@ -682,7 +860,8 @@ Et le prix est :
 $$
 p^*_S = \frac{a}{4}
 $$
-Si on compare ces valeurs à celles obtenues en Cournot avec un coût marginal nul (@eq-q-Cournot et @eq-p-Cournot avec $c=0$), on remarque que la quantité totale en Stackelberg est plus élevée et que le prix est plus faible.
+Comparons ces valeurs à celles obtenues en Cournot sans coût de production (@eq-q-Cournot et @eq-p-Cournot avec $k=0$) : $q_C^*=\frac{2a}{3b}$ et $p^*=\frac{a}{3}$.
+La quantité totale est plus élevée en Stackelberg ($\frac{3a}{4b}>\frac{2a}{3b}$) et le prix plus faible ($\frac{a}{4}<\frac{a}{3}$).
 On calcule maintenant le profit des deux entreprises :
 $$
 \begin{array}{rcl}
@@ -693,9 +872,78 @@ $$
 Le profit de l'entreprise pilote est plus élevé que celui de l'entreprise satellite quand les deux entreprises ont le même coût marginal. 
 La seule différence entre ces deux entreprises est que l'entreprise pilote prend sa décision avant l'entreprise satellite.
 
+Le @tbl-comparaison résume les résultats obtenus avec une demande $P(q)=a-bq$ et un coût de production nul.
+
+|  | Monopole | Cournot | Stackelberg | CPP |
+|:--|:--:|:--:|:--:|:--:|
+| Quantité totale | $\frac{a}{2b}$ | $\frac{2a}{3b}$ | $\frac{3a}{4b}$ | $\frac{a}{b}$ |
+| Prix | $\frac{a}{2}$ | $\frac{a}{3}$ | $\frac{a}{4}$ | $0$ |
+| Profit | $\frac{a^2}{4b}$ | $\frac{a^2}{9b}$ par entreprise | $\frac{a^2}{8b}$ (pilote), $\frac{a^2}{16b}$ (satellite) | $0$ |
+
+: Comparaison des structures de marché, avec une demande linéaire et un coût de production nul. {#tbl-comparaison}
+
+Le duopole se situe entre le monopole et la concurrence pure et parfaite : la quantité est plus élevée et le prix plus faible qu'en monopole, mais moins qu'en CPP.
+La concurrence à la Stackelberg est plus proche de la CPP que la concurrence à la Cournot.
+
+::: {.callout-tip}
+## Testez-vous
+
+Reprenons le marché du « Testez-vous » sur Cournot : $P(q)=30-q$, et un coût marginal constant égal à 6 pour chaque entreprise.
+L'entreprise 1 est maintenant pilote, et l'entreprise 2 satellite.
+
+1. Calculez les quantités, le prix et les profits à l'équilibre de Stackelberg.
+2. Comparez avec l'équilibre de Cournot ($q_1^*=q_2^*=8$, $p^*=14$, profit de 64 pour chaque entreprise).
+
+<details>
+<summary>Réponse</summary>
+
+1. La fonction de réaction du satellite est la même qu'en Cournot : $q_F=\frac{24-q_L}{2}$.
+   Le pilote l'intègre dans son profit :
+   $$\pi_L=\left(30-q_L-\frac{24-q_L}{2}-6\right)q_L=\frac{24-q_L}{2}\,q_L$$
+   La condition du premier ordre $12-q_L=0$ donne $q_L^*=12$, puis $q_F^*=\frac{24-12}{2}=6$.
+   Le prix vaut $P(18)=12$, le profit du pilote $(12-6)\times 12=72$ et celui du satellite $(12-6)\times 6=36$.
+2. Le pilote produit plus et gagne plus qu'en Cournot (72 contre 64), le satellite produit moins et gagne moins (36 contre 64).
+   La quantité totale est plus élevée (18 contre 16) et le prix plus faible (12 contre 14) : les consommateurs y gagnent.
+
+</details>
+:::
+
+::: {.callout-note}
+## Pour vous entraîner
+
+Fiche 3, exercices 3.4 à 3.7 : duopole de Stackelberg, rôle des coûts fixes, comparaison avec Cournot, et exercice de révision.
+Fiche 3, exercice 3.1 : questions de cours sur l'ensemble du chapitre.
+:::
+
+::: {.callout-important}
+## À retenir
+
+- En oligopole, les entreprises sont en interaction stratégique : le profit de chacune dépend des quantités produites par toutes.
+- En Cournot, chaque entreprise choisit sa quantité en prenant celle de l'autre comme donnée. La condition du premier ordre $\frac{\partial \pi_i}{\partial q_i}=0$ donne sa fonction de réaction $q_i=f_i(q_j)$.
+- L'équilibre de Cournot, qui est un équilibre de Nash, se trouve à l'intersection des fonctions de réaction. Le prix se calcule avec la quantité totale : $p^*=P(q_1^*+q_2^*)$.
+- Avec $N$ entreprises, le taux de marge de chacune dépend de sa part de marché, $L_i=\frac{S_i}{|\varepsilon_{q/p}|}$, et celui du marché de la concentration, $L=\frac{HHI}{|\varepsilon_{q/p}|}$. $\frac{1}{HHI}$ est le nombre d'entreprises identiques équivalent.
+- En Stackelberg, le pilote intègre la fonction de réaction du satellite dans son propre profit : il produit plus et gagne plus qu'en Cournot.
+- De la moins concurrentielle à la plus concurrentielle (@tbl-comparaison) : monopole, Cournot, Stackelberg, CPP. La quantité totale augmente et le prix baisse dans cet ordre.
+:::
+
+::: {.callout-warning}
+## Erreurs fréquentes
+
+- Se tromper d'axes dans le graphique des fonctions de réaction : les deux axes portent des quantités, et la quantité de monopole de l'entreprise 2 se place sur l'axe vertical.
+- En dérivant le profit de l'entreprise $i$, oublier que la quantité $q_j$ de l'autre entreprise est traitée comme une constante.
+- Calculer le prix avec la quantité d'une seule entreprise, $P(q_i)$, au lieu de la quantité totale $P(q_1+q_2)$.
+- En Stackelberg, chercher une fonction de réaction pour le pilote : il n'en a pas, il remplace $q_F$ par la fonction de réaction du satellite dans son profit.
+- Supposer que l'équilibre est symétrique alors que les coûts des deux entreprises sont différents.
+:::
+
 ## Cartels et collusions
 
-**Cette partie est maintenant hors programme.**
+::: {.callout-note}
+## Hors programme
+
+Cette section est hors programme.
+Elle est donnée pour ceux qui veulent aller plus loin et ne sera pas évaluée.
+:::
 
 ### Introduction
 
@@ -715,9 +963,10 @@ La raison est que le cartel se comporte exactement comme un monopole, puis parta
 
 ### Raisonnement graphique
 
-```{r cartel}
+```{r}
 #| label: fig-cartel
 #| fig-cap: "Zone d'amélioration mutuellement bénéfique."
+#| fig-alt: "Fonctions de réaction et isoprofits des deux entreprises à l'équilibre de Cournot. La zone bleue, en forme de lentille entre les deux isoprofits, contient les couples de quantités qui augmentent le profit des deux entreprises à la fois."
 
 qmin <- 2/15
 qmax <- 1/5
@@ -725,11 +974,12 @@ qmax <- 1/5
 I2inv <- function(q, pi){(1-q-sqrt((1-q)^2-8*pi))/4}
 
 x <- seq(qmin, qmax, length=100)
-zone <- data.frame(x=x, ymin=I2inv(x, 2/25), ymax <- I1(x, 2/25))
+zone <- data.frame(x=x, ymin=I2inv(x, 2/25), ymax=I1(x, 2/25))
 
 
-p_cournot + geom_ribbon(data=zone, aes(x=x, ymin=ymin, ymax=ymax), fill='blue', alpha=0.5) +
-  annotate("text", x=0.5, y=qc, label="zone d'augmentation des profits individuels", color="blue") 
+p_cournot + geom_ribbon(data=zone, aes(x=x, ymin=ymin, ymax=ymax), fill=col_demande, alpha=0.5) +
+  annotate("text", x=0.25, y=0.75, label="zone d'augmentation des profits individuels", color=col_demande, hjust=0) +
+  annotate("segment", x=0.27, y=0.72, xend=0.17, yend=0.19, colour=col_demande, arrow=arrow(length=unit(0.15, 'cm'))) 
 ```
 
 ### Résolution analytique
